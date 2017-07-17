@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description" xmi:id="_zTf0IGrEEeeGwYrF4ALCmg" selectedViews="_zcQukGrEEeeGwYrF4ALCmg" version="11.1.0.201608251200">
+  <semanticResources>model/vmware.occie</semanticResources>
+  <semanticResources>http://schemas.ogf.org/occi/core</semanticResources>
+  <semanticResources>http://schemas.ogf.org/occi/infrastructure/compute/template/1.1</semanticResources>
+  <semanticResources>http://schemas.ogf.org/occi/infrastructure</semanticResources>
+  <semanticResources>platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore</semanticResources>
+  <semanticResources>platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore</semanticResources>
+  <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
+  <semanticResources>platform:/plugin/org.eclipse.cmf.occi.crtp/model/crtp.genmodel</semanticResources>
+  <semanticResources>platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.genmodel</semanticResources>
+  <semanticResources>platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.genmodel</semanticResources>
+  <semanticResources>platform:/plugin/org.eclipse.cmf.occi.crtp/model/crtp.ecore</semanticResources>
+  <semanticResources>model/vmware.ecore</semanticResources>
+  <semanticResources>model/vmware.genmodel</semanticResources>
+  <ownedViews xmi:type="viewpoint:DView" xmi:id="_zcQukGrEEeeGwYrF4ALCmg">
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']"/>
+  </ownedViews>
+</viewpoint:DAnalysis>

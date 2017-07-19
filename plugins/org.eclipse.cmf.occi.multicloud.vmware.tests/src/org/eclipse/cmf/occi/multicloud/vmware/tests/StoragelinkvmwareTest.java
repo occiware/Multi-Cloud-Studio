@@ -16,30 +16,30 @@ import junit.framework.TestCase;
 
 import junit.textui.TestRunner;
 
-import org.eclipse.cmf.occi.multicloud.vmware.Credential;
+import org.eclipse.cmf.occi.multicloud.vmware.Storagelinkvmware;
 import org.eclipse.cmf.occi.multicloud.vmware.VmwareFactory;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Credential</b></em>'.
+ * A test case for the model object '<em><b>Storagelinkvmware</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.vmware.Credential#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.vmware.Storagelinkvmware#targetConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Target Constraint</em>}</li>
  * </ul>
  * </p>
  * @generated
  */
-public class CredentialTest extends TestCase {
+public class StoragelinkvmwareTest extends TestCase {
 
 	/**
-	 * The fixture for this Credential test case.
+	 * The fixture for this Storagelinkvmware test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Credential fixture = null;
+	protected Storagelinkvmware fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -47,36 +47,36 @@ public class CredentialTest extends TestCase {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(CredentialTest.class);
+		TestRunner.run(StoragelinkvmwareTest.class);
 	}
 
 	/**
-	 * Constructs a new Credential test case with the given name.
+	 * Constructs a new Storagelinkvmware test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CredentialTest(String name) {
+	public StoragelinkvmwareTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Sets the fixture for this Credential test case.
+	 * Sets the fixture for this Storagelinkvmware test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(Credential fixture) {
+	protected void setFixture(Storagelinkvmware fixture) {
 		this.fixture = fixture;
 	}
 
 	/**
-	 * Returns the fixture for this Credential test case.
+	 * Returns the fixture for this Storagelinkvmware test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Credential getFixture() {
+	protected Storagelinkvmware getFixture() {
 		return fixture;
 	}
 
@@ -88,7 +88,7 @@ public class CredentialTest extends TestCase {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(VmwareFactory.eINSTANCE.createCredential());
+		setFixture(VmwareFactory.eINSTANCE.createStoragelinkvmware());
 	}
 
 	/**
@@ -103,16 +103,16 @@ public class CredentialTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link org.eclipse.cmf.occi.multicloud.vmware.Credential#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
+	 * Tests the '{@link org.eclipse.cmf.occi.multicloud.vmware.Storagelinkvmware#targetConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Target Constraint</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.vmware.Credential#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see org.eclipse.cmf.occi.multicloud.vmware.Storagelinkvmware#targetConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testAppliesConstraint__DiagnosticChain_Map() {
+	public void testTargetConstraint__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
-} //CredentialTest
+} //StoragelinkvmwareTest

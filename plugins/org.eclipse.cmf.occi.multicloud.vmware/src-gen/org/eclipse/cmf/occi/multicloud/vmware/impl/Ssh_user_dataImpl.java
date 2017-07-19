@@ -20,7 +20,10 @@ import org.eclipse.cmf.occi.core.Entity;
 
 import org.eclipse.cmf.occi.core.impl.MixinBaseImpl;
 
-import org.eclipse.cmf.occi.multicloud.vmware.Credential;
+import org.eclipse.cmf.occi.infrastructure.InfrastructurePackage;
+import org.eclipse.cmf.occi.infrastructure.User_data;
+
+import org.eclipse.cmf.occi.multicloud.vmware.Ssh_user_data;
 import org.eclipse.cmf.occi.multicloud.vmware.VmwarePackage;
 import org.eclipse.cmf.occi.multicloud.vmware.VmwareTables;
 
@@ -52,39 +55,40 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Credential</b></em>'.
+ * An implementation of the model object '<em><b>Ssh user data</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.vmware.impl.CredentialImpl#getUser <em>User</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.vmware.impl.CredentialImpl#getPassword <em>Password</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.vmware.impl.CredentialImpl#getOcciComputeUserdataFile <em>Occi Compute Userdata File</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.vmware.impl.Ssh_user_dataImpl#getOcciComputeUserdata <em>Occi Compute Userdata</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.vmware.impl.Ssh_user_dataImpl#getPassword <em>Password</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.vmware.impl.Ssh_user_dataImpl#getOcciComputeUserdataFile <em>Occi Compute Userdata File</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.vmware.impl.Ssh_user_dataImpl#getUser <em>User</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class CredentialImpl extends MixinBaseImpl implements Credential {
+public class Ssh_user_dataImpl extends MixinBaseImpl implements Ssh_user_data {
 	/**
-	 * The default value of the '{@link #getUser() <em>User</em>}' attribute.
+	 * The default value of the '{@link #getOcciComputeUserdata() <em>Occi Compute Userdata</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUser()
+	 * @see #getOcciComputeUserdata()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String USER_EDEFAULT = null;
+	protected static final String OCCI_COMPUTE_USERDATA_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getUser() <em>User</em>}' attribute.
+	 * The cached value of the '{@link #getOcciComputeUserdata() <em>Occi Compute Userdata</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUser()
+	 * @see #getOcciComputeUserdata()
 	 * @generated
 	 * @ordered
 	 */
-	protected String user = USER_EDEFAULT;
+	protected String occiComputeUserdata = OCCI_COMPUTE_USERDATA_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPassword() <em>Password</em>}' attribute.
@@ -127,11 +131,31 @@ public class CredentialImpl extends MixinBaseImpl implements Credential {
 	protected String occiComputeUserdataFile = OCCI_COMPUTE_USERDATA_FILE_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getUser() <em>User</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUser()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String USER_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getUser() <em>User</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUser()
+	 * @generated
+	 * @ordered
+	 */
+	protected String user = USER_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CredentialImpl() {
+	protected Ssh_user_dataImpl() {
 		super();
 	}
 
@@ -142,7 +166,7 @@ public class CredentialImpl extends MixinBaseImpl implements Credential {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return VmwarePackage.Literals.CREDENTIAL;
+		return VmwarePackage.Literals.SSH_USER_DATA;
 	}
 
 	/**
@@ -150,8 +174,8 @@ public class CredentialImpl extends MixinBaseImpl implements Credential {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getUser() {
-		return user;
+	public String getOcciComputeUserdata() {
+		return occiComputeUserdata;
 	}
 
 	/**
@@ -159,11 +183,11 @@ public class CredentialImpl extends MixinBaseImpl implements Credential {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setUser(String newUser) {
-		String oldUser = user;
-		user = newUser;
+	public void setOcciComputeUserdata(String newOcciComputeUserdata) {
+		String oldOcciComputeUserdata = occiComputeUserdata;
+		occiComputeUserdata = newOcciComputeUserdata;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VmwarePackage.CREDENTIAL__USER, oldUser, user));
+			eNotify(new ENotificationImpl(this, Notification.SET, VmwarePackage.SSH_USER_DATA__OCCI_COMPUTE_USERDATA, oldOcciComputeUserdata, occiComputeUserdata));
 	}
 
 	/**
@@ -184,7 +208,7 @@ public class CredentialImpl extends MixinBaseImpl implements Credential {
 		String oldPassword = password;
 		password = newPassword;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VmwarePackage.CREDENTIAL__PASSWORD, oldPassword, password));
+			eNotify(new ENotificationImpl(this, Notification.SET, VmwarePackage.SSH_USER_DATA__PASSWORD, oldPassword, password));
 	}
 
 	/**
@@ -205,7 +229,28 @@ public class CredentialImpl extends MixinBaseImpl implements Credential {
 		String oldOcciComputeUserdataFile = occiComputeUserdataFile;
 		occiComputeUserdataFile = newOcciComputeUserdataFile;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VmwarePackage.CREDENTIAL__OCCI_COMPUTE_USERDATA_FILE, oldOcciComputeUserdataFile, occiComputeUserdataFile));
+			eNotify(new ENotificationImpl(this, Notification.SET, VmwarePackage.SSH_USER_DATA__OCCI_COMPUTE_USERDATA_FILE, oldOcciComputeUserdataFile, occiComputeUserdataFile));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getUser() {
+		return user;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUser(String newUser) {
+		String oldUser = user;
+		user = newUser;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VmwarePackage.SSH_USER_DATA__USER, oldUser, user));
 	}
 
 	/**
@@ -217,30 +262,30 @@ public class CredentialImpl extends MixinBaseImpl implements Credential {
 		/**
 		 *
 		 * inv appliesConstraint:
-		 *   let severity : Integer[1] = 'Credential::appliesConstraint'.getSeverity()
+		 *   let severity : Integer[1] = 'Ssh_user_data::appliesConstraint'.getSeverity()
 		 *   in
 		 *     if severity <= 0
 		 *     then true
 		 *     else
 		 *       let
-		 *         result : occi::Boolean[1] = self.entity.oclIsKindOf(infrastructure::Compute)
+		 *         result : occi::Boolean[1] = self.entity.oclIsKindOf(Instancevmware)
 		 *       in
-		 *         'Credential::appliesConstraint'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+		 *         'Ssh_user_data::appliesConstraint'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
 		 *     endif
 		 */
 		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
 		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
-		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, VmwareTables.STR_Credential_c_c_appliesConstraint);
+		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, VmwareTables.STR_Ssh_user_data_c_c_appliesConstraint);
 		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, VmwareTables.INT_0).booleanValue();
 		/*@NonInvalid*/ boolean symbol_0;
 		if (le) {
 			symbol_0 = ValueUtil.TRUE_VALUE;
 		}
 		else {
-			final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_infrastructure_c_c_Compute_0 = idResolver.getClass(VmwareTables.CLSSid_Compute, null);
+			final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_vmware_c_c_Instancevmware_0 = idResolver.getClass(VmwareTables.CLSSid_Instancevmware, null);
 			final /*@NonInvalid*/ Entity entity = this.getEntity();
-			final /*@NonInvalid*/ boolean result = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity, TYP_infrastructure_c_c_Compute_0).booleanValue();
-			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, VmwareTables.STR_Credential_c_c_appliesConstraint, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, VmwareTables.INT_0).booleanValue();
+			final /*@NonInvalid*/ boolean result = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity, TYP_vmware_c_c_Instancevmware_0).booleanValue();
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, VmwareTables.STR_Ssh_user_data_c_c_appliesConstraint, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, VmwareTables.INT_0).booleanValue();
 			symbol_0 = logDiagnostic;
 		}
 		return Boolean.TRUE == symbol_0;
@@ -254,12 +299,14 @@ public class CredentialImpl extends MixinBaseImpl implements Credential {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case VmwarePackage.CREDENTIAL__USER:
-				return getUser();
-			case VmwarePackage.CREDENTIAL__PASSWORD:
+			case VmwarePackage.SSH_USER_DATA__OCCI_COMPUTE_USERDATA:
+				return getOcciComputeUserdata();
+			case VmwarePackage.SSH_USER_DATA__PASSWORD:
 				return getPassword();
-			case VmwarePackage.CREDENTIAL__OCCI_COMPUTE_USERDATA_FILE:
+			case VmwarePackage.SSH_USER_DATA__OCCI_COMPUTE_USERDATA_FILE:
 				return getOcciComputeUserdataFile();
+			case VmwarePackage.SSH_USER_DATA__USER:
+				return getUser();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -272,14 +319,17 @@ public class CredentialImpl extends MixinBaseImpl implements Credential {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case VmwarePackage.CREDENTIAL__USER:
-				setUser((String)newValue);
+			case VmwarePackage.SSH_USER_DATA__OCCI_COMPUTE_USERDATA:
+				setOcciComputeUserdata((String)newValue);
 				return;
-			case VmwarePackage.CREDENTIAL__PASSWORD:
+			case VmwarePackage.SSH_USER_DATA__PASSWORD:
 				setPassword((String)newValue);
 				return;
-			case VmwarePackage.CREDENTIAL__OCCI_COMPUTE_USERDATA_FILE:
+			case VmwarePackage.SSH_USER_DATA__OCCI_COMPUTE_USERDATA_FILE:
 				setOcciComputeUserdataFile((String)newValue);
+				return;
+			case VmwarePackage.SSH_USER_DATA__USER:
+				setUser((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -293,14 +343,17 @@ public class CredentialImpl extends MixinBaseImpl implements Credential {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case VmwarePackage.CREDENTIAL__USER:
-				setUser(USER_EDEFAULT);
+			case VmwarePackage.SSH_USER_DATA__OCCI_COMPUTE_USERDATA:
+				setOcciComputeUserdata(OCCI_COMPUTE_USERDATA_EDEFAULT);
 				return;
-			case VmwarePackage.CREDENTIAL__PASSWORD:
+			case VmwarePackage.SSH_USER_DATA__PASSWORD:
 				setPassword(PASSWORD_EDEFAULT);
 				return;
-			case VmwarePackage.CREDENTIAL__OCCI_COMPUTE_USERDATA_FILE:
+			case VmwarePackage.SSH_USER_DATA__OCCI_COMPUTE_USERDATA_FILE:
 				setOcciComputeUserdataFile(OCCI_COMPUTE_USERDATA_FILE_EDEFAULT);
+				return;
+			case VmwarePackage.SSH_USER_DATA__USER:
+				setUser(USER_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -314,14 +367,48 @@ public class CredentialImpl extends MixinBaseImpl implements Credential {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case VmwarePackage.CREDENTIAL__USER:
-				return USER_EDEFAULT == null ? user != null : !USER_EDEFAULT.equals(user);
-			case VmwarePackage.CREDENTIAL__PASSWORD:
+			case VmwarePackage.SSH_USER_DATA__OCCI_COMPUTE_USERDATA:
+				return OCCI_COMPUTE_USERDATA_EDEFAULT == null ? occiComputeUserdata != null : !OCCI_COMPUTE_USERDATA_EDEFAULT.equals(occiComputeUserdata);
+			case VmwarePackage.SSH_USER_DATA__PASSWORD:
 				return PASSWORD_EDEFAULT == null ? password != null : !PASSWORD_EDEFAULT.equals(password);
-			case VmwarePackage.CREDENTIAL__OCCI_COMPUTE_USERDATA_FILE:
+			case VmwarePackage.SSH_USER_DATA__OCCI_COMPUTE_USERDATA_FILE:
 				return OCCI_COMPUTE_USERDATA_FILE_EDEFAULT == null ? occiComputeUserdataFile != null : !OCCI_COMPUTE_USERDATA_FILE_EDEFAULT.equals(occiComputeUserdataFile);
+			case VmwarePackage.SSH_USER_DATA__USER:
+				return USER_EDEFAULT == null ? user != null : !USER_EDEFAULT.equals(user);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == User_data.class) {
+			switch (derivedFeatureID) {
+				case VmwarePackage.SSH_USER_DATA__OCCI_COMPUTE_USERDATA: return InfrastructurePackage.USER_DATA__OCCI_COMPUTE_USERDATA;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == User_data.class) {
+			switch (baseFeatureID) {
+				case InfrastructurePackage.USER_DATA__OCCI_COMPUTE_USERDATA: return VmwarePackage.SSH_USER_DATA__OCCI_COMPUTE_USERDATA;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**
@@ -333,7 +420,7 @@ public class CredentialImpl extends MixinBaseImpl implements Credential {
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case VmwarePackage.CREDENTIAL___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP:
+			case VmwarePackage.SSH_USER_DATA___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP:
 				return appliesConstraint((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
@@ -349,14 +436,16 @@ public class CredentialImpl extends MixinBaseImpl implements Credential {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (user: ");
-		result.append(user);
+		result.append(" (occiComputeUserdata: ");
+		result.append(occiComputeUserdata);
 		result.append(", password: ");
 		result.append(password);
 		result.append(", occiComputeUserdataFile: ");
 		result.append(occiComputeUserdataFile);
+		result.append(", user: ");
+		result.append(user);
 		result.append(')');
 		return result.toString();
 	}
 
-} //CredentialImpl
+} //Ssh_user_dataImpl

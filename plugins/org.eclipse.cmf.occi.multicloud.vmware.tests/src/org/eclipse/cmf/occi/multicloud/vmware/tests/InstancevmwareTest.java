@@ -16,30 +16,24 @@ import junit.framework.TestCase;
 
 import junit.textui.TestRunner;
 
-import org.eclipse.cmf.occi.multicloud.vmware.Vmimage;
+import org.eclipse.cmf.occi.multicloud.vmware.Instancevmware;
 import org.eclipse.cmf.occi.multicloud.vmware.VmwareFactory;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Vmimage</b></em>'.
+ * A test case for the model object '<em><b>Instancevmware</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * The following operations are tested:
- * <ul>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.vmware.Vmimage#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}</li>
- * </ul>
- * </p>
  * @generated
  */
-public class VmimageTest extends TestCase {
+public class InstancevmwareTest extends TestCase {
 
 	/**
-	 * The fixture for this Vmimage test case.
+	 * The fixture for this Instancevmware test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Vmimage fixture = null;
+	protected Instancevmware fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -47,36 +41,36 @@ public class VmimageTest extends TestCase {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(VmimageTest.class);
+		TestRunner.run(InstancevmwareTest.class);
 	}
 
 	/**
-	 * Constructs a new Vmimage test case with the given name.
+	 * Constructs a new Instancevmware test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public VmimageTest(String name) {
+	public InstancevmwareTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Sets the fixture for this Vmimage test case.
+	 * Sets the fixture for this Instancevmware test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(Vmimage fixture) {
+	protected void setFixture(Instancevmware fixture) {
 		this.fixture = fixture;
 	}
 
 	/**
-	 * Returns the fixture for this Vmimage test case.
+	 * Returns the fixture for this Instancevmware test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Vmimage getFixture() {
+	protected Instancevmware getFixture() {
 		return fixture;
 	}
 
@@ -88,7 +82,7 @@ public class VmimageTest extends TestCase {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(VmwareFactory.eINSTANCE.createVmimage());
+		setFixture(VmwareFactory.eINSTANCE.createInstancevmware());
 	}
 
 	/**
@@ -102,17 +96,4 @@ public class VmimageTest extends TestCase {
 		setFixture(null);
 	}
 
-	/**
-	 * Tests the '{@link org.eclipse.cmf.occi.multicloud.vmware.Vmimage#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.vmware.Vmimage#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	public void testAppliesConstraint__DiagnosticChain_Map() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-} //VmimageTest
+} //InstancevmwareTest

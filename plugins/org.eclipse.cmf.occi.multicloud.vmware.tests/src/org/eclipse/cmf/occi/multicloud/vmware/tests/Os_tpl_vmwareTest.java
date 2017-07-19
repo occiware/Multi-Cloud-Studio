@@ -16,30 +16,30 @@ import junit.framework.TestCase;
 
 import junit.textui.TestRunner;
 
+import org.eclipse.cmf.occi.multicloud.vmware.Os_tpl_vmware;
 import org.eclipse.cmf.occi.multicloud.vmware.VmwareFactory;
-import org.eclipse.cmf.occi.multicloud.vmware.Vswitchinfos;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Vswitchinfos</b></em>'.
+ * A test case for the model object '<em><b>Os tpl vmware</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.vmware.Vswitchinfos#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.vmware.Os_tpl_vmware#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}</li>
  * </ul>
  * </p>
  * @generated
  */
-public class VswitchinfosTest extends TestCase {
+public class Os_tpl_vmwareTest extends TestCase {
 
 	/**
-	 * The fixture for this Vswitchinfos test case.
+	 * The fixture for this Os tpl vmware test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Vswitchinfos fixture = null;
+	protected Os_tpl_vmware fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -47,36 +47,36 @@ public class VswitchinfosTest extends TestCase {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(VswitchinfosTest.class);
+		TestRunner.run(Os_tpl_vmwareTest.class);
 	}
 
 	/**
-	 * Constructs a new Vswitchinfos test case with the given name.
+	 * Constructs a new Os tpl vmware test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public VswitchinfosTest(String name) {
+	public Os_tpl_vmwareTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Sets the fixture for this Vswitchinfos test case.
+	 * Sets the fixture for this Os tpl vmware test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(Vswitchinfos fixture) {
+	protected void setFixture(Os_tpl_vmware fixture) {
 		this.fixture = fixture;
 	}
 
 	/**
-	 * Returns the fixture for this Vswitchinfos test case.
+	 * Returns the fixture for this Os tpl vmware test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Vswitchinfos getFixture() {
+	protected Os_tpl_vmware getFixture() {
 		return fixture;
 	}
 
@@ -88,7 +88,7 @@ public class VswitchinfosTest extends TestCase {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(VmwareFactory.eINSTANCE.createVswitchinfos());
+		setFixture(VmwareFactory.eINSTANCE.createOs_tpl_vmware());
 	}
 
 	/**
@@ -103,10 +103,10 @@ public class VswitchinfosTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link org.eclipse.cmf.occi.multicloud.vmware.Vswitchinfos#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
+	 * Tests the '{@link org.eclipse.cmf.occi.multicloud.vmware.Os_tpl_vmware#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.vmware.Vswitchinfos#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see org.eclipse.cmf.occi.multicloud.vmware.Os_tpl_vmware#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
 	public void testAppliesConstraint__DiagnosticChain_Map() {
@@ -115,4 +115,4 @@ public class VswitchinfosTest extends TestCase {
 		fail();
 	}
 
-} //VswitchinfosTest
+} //Os_tpl_vmwareTest

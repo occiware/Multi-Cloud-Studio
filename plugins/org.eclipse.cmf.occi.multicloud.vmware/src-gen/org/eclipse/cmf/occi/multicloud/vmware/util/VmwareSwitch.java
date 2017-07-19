@@ -12,9 +12,18 @@
  */
 package org.eclipse.cmf.occi.multicloud.vmware.util;
 
+import org.eclipse.cmf.occi.core.Entity;
+import org.eclipse.cmf.occi.core.Link;
 import org.eclipse.cmf.occi.core.MixinBase;
+import org.eclipse.cmf.occi.core.Resource;
 
+import org.eclipse.cmf.occi.infrastructure.Compute;
+import org.eclipse.cmf.occi.infrastructure.Network;
+import org.eclipse.cmf.occi.infrastructure.Networkinterface;
 import org.eclipse.cmf.occi.infrastructure.Os_tpl;
+import org.eclipse.cmf.occi.infrastructure.Storage;
+import org.eclipse.cmf.occi.infrastructure.Storagelink;
+import org.eclipse.cmf.occi.infrastructure.User_data;
 
 import org.eclipse.cmf.occi.multicloud.vmware.*;
 
@@ -80,32 +89,64 @@ public class VmwareSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+			case VmwarePackage.INSTANCEVMWARE: {
+				Instancevmware instancevmware = (Instancevmware)theEObject;
+				T result = caseInstancevmware(instancevmware);
+				if (result == null) result = caseCompute(instancevmware);
+				if (result == null) result = caseResource(instancevmware);
+				if (result == null) result = caseEntity(instancevmware);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case VmwarePackage.STORAGEVMWARE: {
+				Storagevmware storagevmware = (Storagevmware)theEObject;
+				T result = caseStoragevmware(storagevmware);
+				if (result == null) result = caseStorage(storagevmware);
+				if (result == null) result = caseResource(storagevmware);
+				if (result == null) result = caseEntity(storagevmware);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case VmwarePackage.STORAGELINKVMWARE: {
+				Storagelinkvmware storagelinkvmware = (Storagelinkvmware)theEObject;
+				T result = caseStoragelinkvmware(storagelinkvmware);
+				if (result == null) result = caseStoragelink(storagelinkvmware);
+				if (result == null) result = caseLink(storagelinkvmware);
+				if (result == null) result = caseEntity(storagelinkvmware);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case VmwarePackage.VSWITCH: {
+				Vswitch vswitch = (Vswitch)theEObject;
+				T result = caseVswitch(vswitch);
+				if (result == null) result = caseNetwork(vswitch);
+				if (result == null) result = caseResource(vswitch);
+				if (result == null) result = caseEntity(vswitch);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case VmwarePackage.NETWORKADAPTER: {
+				Networkadapter networkadapter = (Networkadapter)theEObject;
+				T result = caseNetworkadapter(networkadapter);
+				if (result == null) result = caseNetworkinterface(networkadapter);
+				if (result == null) result = caseLink(networkadapter);
+				if (result == null) result = caseEntity(networkadapter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case VmwarePackage.WINDOWS: {
 				Windows windows = (Windows)theEObject;
 				T result = caseWindows(windows);
+				if (result == null) result = caseOs_tpl_vmware(windows);
 				if (result == null) result = caseOs_tpl(windows);
 				if (result == null) result = caseMixinBase(windows);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case VmwarePackage.VMADDON: {
-				Vmaddon vmaddon = (Vmaddon)theEObject;
-				T result = caseVmaddon(vmaddon);
-				if (result == null) result = caseVmimage(vmaddon);
-				if (result == null) result = caseMixinBase(vmaddon);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case VmwarePackage.VMIMAGE: {
-				Vmimage vmimage = (Vmimage)theEObject;
-				T result = caseVmimage(vmimage);
-				if (result == null) result = caseMixinBase(vmimage);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case VmwarePackage.LINUX: {
 				Linux linux = (Linux)theEObject;
 				T result = caseLinux(linux);
+				if (result == null) result = caseOs_tpl_vmware(linux);
 				if (result == null) result = caseOs_tpl(linux);
 				if (result == null) result = caseMixinBase(linux);
 				if (result == null) result = defaultCase(theEObject);
@@ -114,6 +155,7 @@ public class VmwareSwitch<T> extends Switch<T> {
 			case VmwarePackage.MACOSX: {
 				Macosx macosx = (Macosx)theEObject;
 				T result = caseMacosx(macosx);
+				if (result == null) result = caseOs_tpl_vmware(macosx);
 				if (result == null) result = caseOs_tpl(macosx);
 				if (result == null) result = caseMixinBase(macosx);
 				if (result == null) result = defaultCase(theEObject);
@@ -126,22 +168,99 @@ public class VmwareSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case VmwarePackage.VSWITCHINFOS: {
-				Vswitchinfos vswitchinfos = (Vswitchinfos)theEObject;
-				T result = caseVswitchinfos(vswitchinfos);
-				if (result == null) result = caseMixinBase(vswitchinfos);
+			case VmwarePackage.OS_TPL_VMWARE: {
+				Os_tpl_vmware os_tpl_vmware = (Os_tpl_vmware)theEObject;
+				T result = caseOs_tpl_vmware(os_tpl_vmware);
+				if (result == null) result = caseOs_tpl(os_tpl_vmware);
+				if (result == null) result = caseMixinBase(os_tpl_vmware);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case VmwarePackage.CREDENTIAL: {
-				Credential credential = (Credential)theEObject;
-				T result = caseCredential(credential);
-				if (result == null) result = caseMixinBase(credential);
+			case VmwarePackage.SSH_USER_DATA: {
+				Ssh_user_data ssh_user_data = (Ssh_user_data)theEObject;
+				T result = caseSsh_user_data(ssh_user_data);
+				if (result == null) result = caseUser_data(ssh_user_data);
+				if (result == null) result = caseMixinBase(ssh_user_data);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			default: return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Instancevmware</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Instancevmware</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInstancevmware(Instancevmware object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Storagevmware</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Storagevmware</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStoragevmware(Storagevmware object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Storagelinkvmware</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Storagelinkvmware</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStoragelinkvmware(Storagelinkvmware object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Vswitch</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Vswitch</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseVswitch(Vswitch object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Networkadapter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Networkadapter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNetworkadapter(Networkadapter object) {
+		return null;
 	}
 
 	/**
@@ -156,36 +275,6 @@ public class VmwareSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseWindows(Windows object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Vmaddon</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Vmaddon</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseVmaddon(Vmaddon object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Vmimage</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Vmimage</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseVmimage(Vmimage object) {
 		return null;
 	}
 
@@ -235,32 +324,152 @@ public class VmwareSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Vswitchinfos</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Os tpl vmware</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Vswitchinfos</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Os tpl vmware</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseVswitchinfos(Vswitchinfos object) {
+	public T caseOs_tpl_vmware(Os_tpl_vmware object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Credential</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Ssh user data</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Credential</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Ssh user data</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCredential(Credential object) {
+	public T caseSsh_user_data(Ssh_user_data object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Entity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Entity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEntity(Entity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Resource</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Resource</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseResource(Resource object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Compute</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Compute</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCompute(Compute object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Storage</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Storage</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStorage(Storage object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Link</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Link</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLink(Link object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Storagelink</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Storagelink</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStoragelink(Storagelink object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Network</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Network</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNetwork(Network object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Networkinterface</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Networkinterface</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNetworkinterface(Networkinterface object) {
 		return null;
 	}
 
@@ -291,6 +500,21 @@ public class VmwareSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseOs_tpl(Os_tpl object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>User data</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>User data</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseUser_data(User_data object) {
 		return null;
 	}
 

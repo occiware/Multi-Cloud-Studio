@@ -14,6 +14,8 @@ package org.eclipse.cmf.occi.multicloud.vmware.util;
 
 import java.util.Map;
 
+import org.eclipse.cmf.occi.core.util.OCCIValidator;
+
 import org.eclipse.cmf.occi.infrastructure.util.InfrastructureValidator;
 
 import org.eclipse.cmf.occi.multicloud.vmware.*;
@@ -52,28 +54,28 @@ public class VmwareValidator extends EObjectValidator {
 	public static final String DIAGNOSTIC_SOURCE = "org.eclipse.cmf.occi.multicloud.vmware";
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Target Constraint' of 'Storagelinkvmware'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int STORAGELINKVMWARE__TARGET_CONSTRAINT = 1;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Target Constraint' of 'Networkadapter'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int NETWORKADAPTER__TARGET_CONSTRAINT = 2;
+
+	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Windows'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int WINDOWS__APPLIES_CONSTRAINT = 1;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Vmaddon'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int VMADDON__APPLIES_CONSTRAINT = 2;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Vmimage'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int VMIMAGE__APPLIES_CONSTRAINT = 3;
+	public static final int WINDOWS__APPLIES_CONSTRAINT = 3;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Linux'.
@@ -100,20 +102,20 @@ public class VmwareValidator extends EObjectValidator {
 	public static final int VMWAREFOLDERS__APPLIES_CONSTRAINT = 6;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Vswitchinfos'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Os tpl vmware'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int VSWITCHINFOS__APPLIES_CONSTRAINT = 7;
+	public static final int OS_TPL_VMWARE__APPLIES_CONSTRAINT = 7;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Credential'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Ssh user data'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CREDENTIAL__APPLIES_CONSTRAINT = 8;
+	public static final int SSH_USER_DATA__APPLIES_CONSTRAINT = 8;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -137,6 +139,14 @@ public class VmwareValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	protected OCCIValidator occiValidator;
+
+	/**
+	 * The cached base package validator.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	protected InfrastructureValidator infrastructureValidator;
 
 	/**
@@ -147,6 +157,7 @@ public class VmwareValidator extends EObjectValidator {
 	 */
 	public VmwareValidator() {
 		super();
+		occiValidator = OCCIValidator.INSTANCE;
 		infrastructureValidator = InfrastructureValidator.INSTANCE;
 	}
 
@@ -170,27 +181,170 @@ public class VmwareValidator extends EObjectValidator {
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		switch (classifierID) {
+			case VmwarePackage.INSTANCEVMWARE:
+				return validateInstancevmware((Instancevmware)value, diagnostics, context);
+			case VmwarePackage.STORAGEVMWARE:
+				return validateStoragevmware((Storagevmware)value, diagnostics, context);
+			case VmwarePackage.STORAGELINKVMWARE:
+				return validateStoragelinkvmware((Storagelinkvmware)value, diagnostics, context);
+			case VmwarePackage.VSWITCH:
+				return validateVswitch((Vswitch)value, diagnostics, context);
+			case VmwarePackage.NETWORKADAPTER:
+				return validateNetworkadapter((Networkadapter)value, diagnostics, context);
 			case VmwarePackage.WINDOWS:
 				return validateWindows((Windows)value, diagnostics, context);
-			case VmwarePackage.VMADDON:
-				return validateVmaddon((Vmaddon)value, diagnostics, context);
-			case VmwarePackage.VMIMAGE:
-				return validateVmimage((Vmimage)value, diagnostics, context);
 			case VmwarePackage.LINUX:
 				return validateLinux((Linux)value, diagnostics, context);
 			case VmwarePackage.MACOSX:
 				return validateMacosx((Macosx)value, diagnostics, context);
 			case VmwarePackage.VMWAREFOLDERS:
 				return validateVmwarefolders((Vmwarefolders)value, diagnostics, context);
-			case VmwarePackage.VSWITCHINFOS:
-				return validateVswitchinfos((Vswitchinfos)value, diagnostics, context);
-			case VmwarePackage.CREDENTIAL:
-				return validateCredential((Credential)value, diagnostics, context);
+			case VmwarePackage.OS_TPL_VMWARE:
+				return validateOs_tpl_vmware((Os_tpl_vmware)value, diagnostics, context);
+			case VmwarePackage.SSH_USER_DATA:
+				return validateSsh_user_data((Ssh_user_data)value, diagnostics, context);
 			case VmwarePackage.GUEST_OS_IDENTIFIERS:
 				return validateGuestOsIdentifiers((GuestOsIdentifiers)value, diagnostics, context);
 			default:
 				return true;
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateInstancevmware(Instancevmware instancevmware, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(instancevmware, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(instancevmware, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(instancevmware, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(instancevmware, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(instancevmware, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(instancevmware, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(instancevmware, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(instancevmware, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(instancevmware, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(instancevmware, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(instancevmware, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(instancevmware, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateResource_ResourceKindIsInParent(instancevmware, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateStoragevmware(Storagevmware storagevmware, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(storagevmware, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(storagevmware, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(storagevmware, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(storagevmware, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(storagevmware, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(storagevmware, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(storagevmware, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(storagevmware, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(storagevmware, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(storagevmware, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(storagevmware, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(storagevmware, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateResource_ResourceKindIsInParent(storagevmware, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateStoragelinkvmware(Storagelinkvmware storagelinkvmware, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(storagelinkvmware, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(storagelinkvmware, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(storagelinkvmware, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(storagelinkvmware, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(storagelinkvmware, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(storagelinkvmware, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(storagelinkvmware, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(storagelinkvmware, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(storagelinkvmware, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(storagelinkvmware, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(storagelinkvmware, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(storagelinkvmware, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateLink_LinkKindIsInParent(storagelinkvmware, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateLink_sourceReferenceInvariant(storagelinkvmware, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateLink_targetReferenceInvariant(storagelinkvmware, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStoragelinkvmware_targetConstraint(storagelinkvmware, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the targetConstraint constraint of '<em>Storagelinkvmware</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateStoragelinkvmware_targetConstraint(Storagelinkvmware storagelinkvmware, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return storagelinkvmware.targetConstraint(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateVswitch(Vswitch vswitch, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(vswitch, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(vswitch, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(vswitch, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(vswitch, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(vswitch, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(vswitch, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(vswitch, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(vswitch, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(vswitch, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(vswitch, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(vswitch, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(vswitch, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateResource_ResourceKindIsInParent(vswitch, diagnostics, context);
+		if (result || diagnostics != null) result &= infrastructureValidator.validateNetwork_UniqueVlan(vswitch, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateNetworkadapter(Networkadapter networkadapter, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(networkadapter, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(networkadapter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(networkadapter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(networkadapter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(networkadapter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(networkadapter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(networkadapter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(networkadapter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(networkadapter, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(networkadapter, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(networkadapter, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(networkadapter, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateLink_LinkKindIsInParent(networkadapter, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateLink_sourceReferenceInvariant(networkadapter, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateLink_targetReferenceInvariant(networkadapter, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNetworkadapter_targetConstraint(networkadapter, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the targetConstraint constraint of '<em>Networkadapter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateNetworkadapter_targetConstraint(Networkadapter networkadapter, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return networkadapter.targetConstraint(diagnostics, context);
 	}
 
 	/**
@@ -220,64 +374,6 @@ public class VmwareValidator extends EObjectValidator {
 	 */
 	public boolean validateWindows_appliesConstraint(Windows windows, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return windows.appliesConstraint(diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateVmaddon(Vmaddon vmaddon, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(vmaddon, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(vmaddon, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(vmaddon, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(vmaddon, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(vmaddon, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(vmaddon, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(vmaddon, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(vmaddon, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(vmaddon, diagnostics, context);
-		if (result || diagnostics != null) result &= validateVmaddon_appliesConstraint(vmaddon, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * Validates the appliesConstraint constraint of '<em>Vmaddon</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateVmaddon_appliesConstraint(Vmaddon vmaddon, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return vmaddon.appliesConstraint(diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateVmimage(Vmimage vmimage, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(vmimage, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(vmimage, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(vmimage, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(vmimage, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(vmimage, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(vmimage, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(vmimage, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(vmimage, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(vmimage, diagnostics, context);
-		if (result || diagnostics != null) result &= validateVmimage_appliesConstraint(vmimage, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * Validates the appliesConstraint constraint of '<em>Vmimage</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateVmimage_appliesConstraint(Vmimage vmimage, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return vmimage.appliesConstraint(diagnostics, context);
 	}
 
 	/**
@@ -372,28 +468,28 @@ public class VmwareValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateVswitchinfos(Vswitchinfos vswitchinfos, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(vswitchinfos, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(vswitchinfos, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(vswitchinfos, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(vswitchinfos, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(vswitchinfos, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(vswitchinfos, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(vswitchinfos, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(vswitchinfos, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(vswitchinfos, diagnostics, context);
-		if (result || diagnostics != null) result &= validateVswitchinfos_appliesConstraint(vswitchinfos, diagnostics, context);
+	public boolean validateOs_tpl_vmware(Os_tpl_vmware os_tpl_vmware, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(os_tpl_vmware, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(os_tpl_vmware, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(os_tpl_vmware, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(os_tpl_vmware, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(os_tpl_vmware, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(os_tpl_vmware, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(os_tpl_vmware, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(os_tpl_vmware, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(os_tpl_vmware, diagnostics, context);
+		if (result || diagnostics != null) result &= validateOs_tpl_vmware_appliesConstraint(os_tpl_vmware, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the appliesConstraint constraint of '<em>Vswitchinfos</em>'.
+	 * Validates the appliesConstraint constraint of '<em>Os tpl vmware</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateVswitchinfos_appliesConstraint(Vswitchinfos vswitchinfos, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return vswitchinfos.appliesConstraint(diagnostics, context);
+	public boolean validateOs_tpl_vmware_appliesConstraint(Os_tpl_vmware os_tpl_vmware, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return os_tpl_vmware.appliesConstraint(diagnostics, context);
 	}
 
 	/**
@@ -401,28 +497,28 @@ public class VmwareValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateCredential(Credential credential, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(credential, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(credential, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(credential, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(credential, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(credential, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(credential, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(credential, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(credential, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(credential, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCredential_appliesConstraint(credential, diagnostics, context);
+	public boolean validateSsh_user_data(Ssh_user_data ssh_user_data, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(ssh_user_data, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(ssh_user_data, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(ssh_user_data, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(ssh_user_data, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(ssh_user_data, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(ssh_user_data, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(ssh_user_data, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(ssh_user_data, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(ssh_user_data, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSsh_user_data_appliesConstraint(ssh_user_data, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the appliesConstraint constraint of '<em>Credential</em>'.
+	 * Validates the appliesConstraint constraint of '<em>Ssh user data</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateCredential_appliesConstraint(Credential credential, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return credential.appliesConstraint(diagnostics, context);
+	public boolean validateSsh_user_data_appliesConstraint(Ssh_user_data ssh_user_data, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return ssh_user_data.appliesConstraint(diagnostics, context);
 	}
 
 	/**

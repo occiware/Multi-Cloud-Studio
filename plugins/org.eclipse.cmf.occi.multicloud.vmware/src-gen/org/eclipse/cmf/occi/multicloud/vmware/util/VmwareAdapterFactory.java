@@ -12,9 +12,18 @@
  */
 package org.eclipse.cmf.occi.multicloud.vmware.util;
 
+import org.eclipse.cmf.occi.core.Entity;
+import org.eclipse.cmf.occi.core.Link;
 import org.eclipse.cmf.occi.core.MixinBase;
+import org.eclipse.cmf.occi.core.Resource;
 
+import org.eclipse.cmf.occi.infrastructure.Compute;
+import org.eclipse.cmf.occi.infrastructure.Network;
+import org.eclipse.cmf.occi.infrastructure.Networkinterface;
 import org.eclipse.cmf.occi.infrastructure.Os_tpl;
+import org.eclipse.cmf.occi.infrastructure.Storage;
+import org.eclipse.cmf.occi.infrastructure.Storagelink;
+import org.eclipse.cmf.occi.infrastructure.User_data;
 
 import org.eclipse.cmf.occi.multicloud.vmware.*;
 
@@ -82,16 +91,28 @@ public class VmwareAdapterFactory extends AdapterFactoryImpl {
 	protected VmwareSwitch<Adapter> modelSwitch =
 		new VmwareSwitch<Adapter>() {
 			@Override
+			public Adapter caseInstancevmware(Instancevmware object) {
+				return createInstancevmwareAdapter();
+			}
+			@Override
+			public Adapter caseStoragevmware(Storagevmware object) {
+				return createStoragevmwareAdapter();
+			}
+			@Override
+			public Adapter caseStoragelinkvmware(Storagelinkvmware object) {
+				return createStoragelinkvmwareAdapter();
+			}
+			@Override
+			public Adapter caseVswitch(Vswitch object) {
+				return createVswitchAdapter();
+			}
+			@Override
+			public Adapter caseNetworkadapter(Networkadapter object) {
+				return createNetworkadapterAdapter();
+			}
+			@Override
 			public Adapter caseWindows(Windows object) {
 				return createWindowsAdapter();
-			}
-			@Override
-			public Adapter caseVmaddon(Vmaddon object) {
-				return createVmaddonAdapter();
-			}
-			@Override
-			public Adapter caseVmimage(Vmimage object) {
-				return createVmimageAdapter();
 			}
 			@Override
 			public Adapter caseLinux(Linux object) {
@@ -106,12 +127,44 @@ public class VmwareAdapterFactory extends AdapterFactoryImpl {
 				return createVmwarefoldersAdapter();
 			}
 			@Override
-			public Adapter caseVswitchinfos(Vswitchinfos object) {
-				return createVswitchinfosAdapter();
+			public Adapter caseOs_tpl_vmware(Os_tpl_vmware object) {
+				return createOs_tpl_vmwareAdapter();
 			}
 			@Override
-			public Adapter caseCredential(Credential object) {
-				return createCredentialAdapter();
+			public Adapter caseSsh_user_data(Ssh_user_data object) {
+				return createSsh_user_dataAdapter();
+			}
+			@Override
+			public Adapter caseEntity(Entity object) {
+				return createEntityAdapter();
+			}
+			@Override
+			public Adapter caseResource(Resource object) {
+				return createResourceAdapter();
+			}
+			@Override
+			public Adapter caseCompute(Compute object) {
+				return createComputeAdapter();
+			}
+			@Override
+			public Adapter caseStorage(Storage object) {
+				return createStorageAdapter();
+			}
+			@Override
+			public Adapter caseLink(Link object) {
+				return createLinkAdapter();
+			}
+			@Override
+			public Adapter caseStoragelink(Storagelink object) {
+				return createStoragelinkAdapter();
+			}
+			@Override
+			public Adapter caseNetwork(Network object) {
+				return createNetworkAdapter();
+			}
+			@Override
+			public Adapter caseNetworkinterface(Networkinterface object) {
+				return createNetworkinterfaceAdapter();
 			}
 			@Override
 			public Adapter caseMixinBase(MixinBase object) {
@@ -120,6 +173,10 @@ public class VmwareAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseOs_tpl(Os_tpl object) {
 				return createOs_tplAdapter();
+			}
+			@Override
+			public Adapter caseUser_data(User_data object) {
+				return createUser_dataAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -142,6 +199,76 @@ public class VmwareAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.vmware.Instancevmware <em>Instancevmware</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.vmware.Instancevmware
+	 * @generated
+	 */
+	public Adapter createInstancevmwareAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.vmware.Storagevmware <em>Storagevmware</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.vmware.Storagevmware
+	 * @generated
+	 */
+	public Adapter createStoragevmwareAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.vmware.Storagelinkvmware <em>Storagelinkvmware</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.vmware.Storagelinkvmware
+	 * @generated
+	 */
+	public Adapter createStoragelinkvmwareAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.vmware.Vswitch <em>Vswitch</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.vmware.Vswitch
+	 * @generated
+	 */
+	public Adapter createVswitchAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.vmware.Networkadapter <em>Networkadapter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.vmware.Networkadapter
+	 * @generated
+	 */
+	public Adapter createNetworkadapterAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.vmware.Windows <em>Windows</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -152,34 +279,6 @@ public class VmwareAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createWindowsAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.vmware.Vmaddon <em>Vmaddon</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.vmware.Vmaddon
-	 * @generated
-	 */
-	public Adapter createVmaddonAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.vmware.Vmimage <em>Vmimage</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.vmware.Vmimage
-	 * @generated
-	 */
-	public Adapter createVmimageAdapter() {
 		return null;
 	}
 
@@ -226,30 +325,142 @@ public class VmwareAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.vmware.Vswitchinfos <em>Vswitchinfos</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.vmware.Os_tpl_vmware <em>Os tpl vmware</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.vmware.Vswitchinfos
+	 * @see org.eclipse.cmf.occi.multicloud.vmware.Os_tpl_vmware
 	 * @generated
 	 */
-	public Adapter createVswitchinfosAdapter() {
+	public Adapter createOs_tpl_vmwareAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.vmware.Credential <em>Credential</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.vmware.Ssh_user_data <em>Ssh user data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.vmware.Credential
+	 * @see org.eclipse.cmf.occi.multicloud.vmware.Ssh_user_data
 	 * @generated
 	 */
-	public Adapter createCredentialAdapter() {
+	public Adapter createSsh_user_dataAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.Entity <em>Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.core.Entity
+	 * @generated
+	 */
+	public Adapter createEntityAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.Resource <em>Resource</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.core.Resource
+	 * @generated
+	 */
+	public Adapter createResourceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.infrastructure.Compute <em>Compute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.infrastructure.Compute
+	 * @generated
+	 */
+	public Adapter createComputeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.infrastructure.Storage <em>Storage</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.infrastructure.Storage
+	 * @generated
+	 */
+	public Adapter createStorageAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.Link <em>Link</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.core.Link
+	 * @generated
+	 */
+	public Adapter createLinkAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.infrastructure.Storagelink <em>Storagelink</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.infrastructure.Storagelink
+	 * @generated
+	 */
+	public Adapter createStoragelinkAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.infrastructure.Network <em>Network</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.infrastructure.Network
+	 * @generated
+	 */
+	public Adapter createNetworkAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.infrastructure.Networkinterface <em>Networkinterface</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.infrastructure.Networkinterface
+	 * @generated
+	 */
+	public Adapter createNetworkinterfaceAdapter() {
 		return null;
 	}
 
@@ -278,6 +489,20 @@ public class VmwareAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createOs_tplAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.infrastructure.User_data <em>User data</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.infrastructure.User_data
+	 * @generated
+	 */
+	public Adapter createUser_dataAdapter() {
 		return null;
 	}
 

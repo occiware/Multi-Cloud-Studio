@@ -32,6 +32,51 @@ public interface VmwareFactory extends EFactory {
 	VmwareFactory eINSTANCE = org.eclipse.cmf.occi.multicloud.vmware.impl.VmwareFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Instancevmware</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Instancevmware</em>'.
+	 * @generated
+	 */
+	Instancevmware createInstancevmware();
+
+	/**
+	 * Returns a new object of class '<em>Storagevmware</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Storagevmware</em>'.
+	 * @generated
+	 */
+	Storagevmware createStoragevmware();
+
+	/**
+	 * Returns a new object of class '<em>Storagelinkvmware</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Storagelinkvmware</em>'.
+	 * @generated
+	 */
+	Storagelinkvmware createStoragelinkvmware();
+
+	/**
+	 * Returns a new object of class '<em>Vswitch</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Vswitch</em>'.
+	 * @generated
+	 */
+	Vswitch createVswitch();
+
+	/**
+	 * Returns a new object of class '<em>Networkadapter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Networkadapter</em>'.
+	 * @generated
+	 */
+	Networkadapter createNetworkadapter();
+
+	/**
 	 * Returns a new object of class '<em>Windows</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -39,24 +84,6 @@ public interface VmwareFactory extends EFactory {
 	 * @generated
 	 */
 	Windows createWindows();
-
-	/**
-	 * Returns a new object of class '<em>Vmaddon</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Vmaddon</em>'.
-	 * @generated
-	 */
-	Vmaddon createVmaddon();
-
-	/**
-	 * Returns a new object of class '<em>Vmimage</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Vmimage</em>'.
-	 * @generated
-	 */
-	Vmimage createVmimage();
 
 	/**
 	 * Returns a new object of class '<em>Linux</em>'.
@@ -86,22 +113,22 @@ public interface VmwareFactory extends EFactory {
 	Vmwarefolders createVmwarefolders();
 
 	/**
-	 * Returns a new object of class '<em>Vswitchinfos</em>'.
+	 * Returns a new object of class '<em>Os tpl vmware</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Vswitchinfos</em>'.
+	 * @return a new object of class '<em>Os tpl vmware</em>'.
 	 * @generated
 	 */
-	Vswitchinfos createVswitchinfos();
+	Os_tpl_vmware createOs_tpl_vmware();
 
 	/**
-	 * Returns a new object of class '<em>Credential</em>'.
+	 * Returns a new object of class '<em>Ssh user data</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Credential</em>'.
+	 * @return a new object of class '<em>Ssh user data</em>'.
 	 * @generated
 	 */
-	Credential createCredential();
+	Ssh_user_data createSsh_user_data();
 
 	/**
 	 * Returns the package supported by this factory.

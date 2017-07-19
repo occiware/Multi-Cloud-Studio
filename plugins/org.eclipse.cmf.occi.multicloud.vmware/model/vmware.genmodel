@@ -403,52 +403,49 @@
       </genEnumLiterals>
     </genEnums>
     <genClasses>
+      <ecoreClass href="vmware.ecore#//Instancevmware"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Instancevmware/imagename"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Instancevmware/markedastemplate"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Instancevmware/gueststate"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Instancevmware/guestosid"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Instancevmware/vcpu"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Instancevmware/instanceId"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="vmware.ecore#//Storagevmware"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="vmware.ecore#//Storagelinkvmware"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="vmware.ecore#//Vswitch"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Vswitch/nbport"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="vmware.ecore#//Networkadapter"/>
+    </genClasses>
+    <genClasses>
       <ecoreClass href="vmware.ecore#//Windows"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Windows/guestid"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Windows/datastoreisopath"/>
-      </genFeatures>
-    </genClasses>
-    <genClasses>
-      <ecoreClass href="vmware.ecore#//Vmaddon"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Vmaddon/vcpu"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Vmaddon/gueststate"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Vmaddon/guestosid"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Vmaddon/markedastemplate"/>
-      </genFeatures>
-    </genClasses>
-    <genClasses>
-      <ecoreClass href="vmware.ecore#//Vmimage"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Vmimage/imagename"/>
-      </genFeatures>
     </genClasses>
     <genClasses>
       <ecoreClass href="vmware.ecore#//Linux"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Linux/guestid"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Linux/datastoreisopath"/>
-      </genFeatures>
     </genClasses>
     <genClasses>
       <ecoreClass href="vmware.ecore#//Macosx"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Macosx/guestid"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Macosx/datastoreisopath"/>
-      </genFeatures>
     </genClasses>
     <genClasses>
       <ecoreClass href="vmware.ecore#//Vmwarefolders"/>
@@ -469,21 +466,24 @@
       </genFeatures>
     </genClasses>
     <genClasses>
-      <ecoreClass href="vmware.ecore#//Vswitchinfos"/>
+      <ecoreClass href="vmware.ecore#//Os_tpl_vmware"/>
       <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Vswitchinfos/nbport"/>
+        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Os_tpl_vmware/datastoreisopath"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Os_tpl_vmware/guestid"/>
       </genFeatures>
     </genClasses>
     <genClasses>
-      <ecoreClass href="vmware.ecore#//Credential"/>
+      <ecoreClass href="vmware.ecore#//Ssh_user_data"/>
       <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Credential/user"/>
+        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Ssh_user_data/password"/>
       </genFeatures>
       <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Credential/password"/>
+        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Ssh_user_data/occiComputeUserdataFile"/>
       </genFeatures>
       <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Credential/occiComputeUserdataFile"/>
+        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Ssh_user_data/user"/>
       </genFeatures>
     </genClasses>
   </genPackages>

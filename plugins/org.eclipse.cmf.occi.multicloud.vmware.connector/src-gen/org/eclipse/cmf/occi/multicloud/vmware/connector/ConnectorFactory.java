@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Wed Jul 19 10:52:32 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.vmware/model/vmware.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Wed Jul 19 15:09:17 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.vmware/model/vmware.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.vmware.connector;
 
@@ -24,34 +24,67 @@ public class ConnectorFactory extends org.eclipse.cmf.occi.multicloud.vmware.imp
 	/**
 	 * EFactory method for OCCI kind:
 	 * - scheme: http://occiware.org/occi/infrastructure/vmware#
+	 * - term: instancevmware
+	 * - title: 
+	 */
+	@Override
+	public org.eclipse.cmf.occi.multicloud.vmware.Instancevmware createInstancevmware() {
+		return new InstancevmwareConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://occiware.org/occi/infrastructure/vmware#
+	 * - term: storagevmware
+	 * - title: 
+	 */
+	@Override
+	public org.eclipse.cmf.occi.multicloud.vmware.Storagevmware createStoragevmware() {
+		return new StoragevmwareConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://occiware.org/occi/infrastructure/vmware#
+	 * - term: storagelinkvmware
+	 * - title: 
+	 */
+	@Override
+	public org.eclipse.cmf.occi.multicloud.vmware.Storagelinkvmware createStoragelinkvmware() {
+		return new StoragelinkvmwareConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://occiware.org/occi/infrastructure/vmware#
+	 * - term: vswitch
+	 * - title: 
+	 */
+	@Override
+	public org.eclipse.cmf.occi.multicloud.vmware.Vswitch createVswitch() {
+		return new VswitchConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://occiware.org/occi/infrastructure/vmware#
+	 * - term: networkadapter
+	 * - title: Network adapter interface
+	 */
+	@Override
+	public org.eclipse.cmf.occi.multicloud.vmware.Networkadapter createNetworkadapter() {
+		return new NetworkadapterConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://occiware.org/occi/infrastructure/vmware#
 	 * - term: windows
 	 * - title: Mixin os_tpl for Windows system
 	 */
 	@Override
 	public org.eclipse.cmf.occi.multicloud.vmware.Windows createWindows() {
 		return new WindowsConnector();
-	}
-
-	/**
-	 * EFactory method for OCCI kind:
-	 * - scheme: http://occiware.org/occi/infrastructure/vmware#
-	 * - term: vmaddon
-	 * - title: Addon attributes for virtual machine (vcpu, gueststate etc.)
-	 */
-	@Override
-	public org.eclipse.cmf.occi.multicloud.vmware.Vmaddon createVmaddon() {
-		return new VmaddonConnector();
-	}
-
-	/**
-	 * EFactory method for OCCI kind:
-	 * - scheme: http://occiware.org/occi/infrastructure/vmware#
-	 * - term: vmimage
-	 * - title: 
-	 */
-	@Override
-	public org.eclipse.cmf.occi.multicloud.vmware.Vmimage createVmimage() {
-		return new VmimageConnector();
 	}
 
 	/**
@@ -90,23 +123,23 @@ public class ConnectorFactory extends org.eclipse.cmf.occi.multicloud.vmware.imp
 	/**
 	 * EFactory method for OCCI kind:
 	 * - scheme: http://occiware.org/occi/infrastructure/vmware#
-	 * - term: vswitchinfos
-	 * - title: Givei informations about a vswitch
+	 * - term: os_tpl_vmware
+	 * - title: 
 	 */
 	@Override
-	public org.eclipse.cmf.occi.multicloud.vmware.Vswitchinfos createVswitchinfos() {
-		return new VswitchinfosConnector();
+	public org.eclipse.cmf.occi.multicloud.vmware.Os_tpl_vmware createOs_tpl_vmware() {
+		return new Os_tpl_vmwareConnector();
 	}
 
 	/**
 	 * EFactory method for OCCI kind:
 	 * - scheme: http://occiware.org/occi/infrastructure/vmware#
-	 * - term: credential
-	 * - title: Credential users information to access to ssh and userdata features
+	 * - term: ssh_user_data
+	 * - title: 
 	 */
 	@Override
-	public org.eclipse.cmf.occi.multicloud.vmware.Credential createCredential() {
-		return new CredentialConnector();
+	public org.eclipse.cmf.occi.multicloud.vmware.Ssh_user_data createSsh_user_data() {
+		return new Ssh_user_dataConnector();
 	}
 
 }

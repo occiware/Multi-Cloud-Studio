@@ -16,36 +16,36 @@ package org.eclipse.cmf.occi.multicloud.vmware.provider;
 import java.util.Collection;
 import java.util.List;
 
-import org.eclipse.cmf.occi.core.provider.MixinBaseItemProvider;
+import org.eclipse.cmf.occi.core.OCCIPackage;
 
-import org.eclipse.cmf.occi.multicloud.vmware.GuestOsIdentifiers;
-import org.eclipse.cmf.occi.multicloud.vmware.Macosx;
-import org.eclipse.cmf.occi.multicloud.vmware.VmwarePackage;
+import org.eclipse.cmf.occi.crtp.CrtpFactory;
+
+import org.eclipse.cmf.occi.infrastructure.provider.StoragelinkItemProvider;
+
+import org.eclipse.cmf.occi.multicloud.vmware.Storagelinkvmware;
+import org.eclipse.cmf.occi.multicloud.vmware.VmwareFactory;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.cmf.occi.multicloud.vmware.Macosx} object.
+ * This is the item provider adapter for a {@link org.eclipse.cmf.occi.multicloud.vmware.Storagelinkvmware} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class MacosxItemProvider extends MixinBaseItemProvider {
+public class StoragelinkvmwareItemProvider extends StoragelinkItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MacosxItemProvider(AdapterFactory adapterFactory) {
+	public StoragelinkvmwareItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -60,65 +60,19 @@ public class MacosxItemProvider extends MixinBaseItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addDatastoreisopathPropertyDescriptor(object);
-			addGuestidPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Guestid feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addGuestidPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Os_tpl_vmware_guestid_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Os_tpl_vmware_guestid_feature", "_UI_Os_tpl_vmware_type"),
-				 VmwarePackage.Literals.OS_TPL_VMWARE__GUESTID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Datastoreisopath feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDatastoreisopathPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Os_tpl_vmware_datastoreisopath_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Os_tpl_vmware_datastoreisopath_feature", "_UI_Os_tpl_vmware_type"),
-				 VmwarePackage.Literals.OS_TPL_VMWARE__DATASTOREISOPATH,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This returns Macosx.gif.
+	 * This returns Storagelinkvmware.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Macosx"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Storagelinkvmware"));
 	}
 
 	/**
@@ -129,10 +83,10 @@ public class MacosxItemProvider extends MixinBaseItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Macosx)object).getDatastoreisopath();
+		String label = ((Storagelinkvmware)object).getId();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Macosx_type") :
-			getString("_UI_Macosx_type") + " " + label;
+			getString("_UI_Storagelinkvmware_type") :
+			getString("_UI_Storagelinkvmware_type") + " " + label;
 	}
 	
 
@@ -146,13 +100,6 @@ public class MacosxItemProvider extends MixinBaseItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(Macosx.class)) {
-			case VmwarePackage.MACOSX__DATASTOREISOPATH:
-			case VmwarePackage.MACOSX__GUESTID:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 
@@ -166,6 +113,66 @@ public class MacosxItemProvider extends MixinBaseItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createWindows()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createLinux()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createMacosx()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createVmwarefolders()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createOs_tpl_vmware()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createSsh_user_data()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 CrtpFactory.eINSTANCE.createSmall()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 CrtpFactory.eINSTANCE.createMedium()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 CrtpFactory.eINSTANCE.createLarge()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 CrtpFactory.eINSTANCE.createMem_small()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 CrtpFactory.eINSTANCE.createMem_medium()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 CrtpFactory.eINSTANCE.createMem_large()));
 	}
 
 	/**

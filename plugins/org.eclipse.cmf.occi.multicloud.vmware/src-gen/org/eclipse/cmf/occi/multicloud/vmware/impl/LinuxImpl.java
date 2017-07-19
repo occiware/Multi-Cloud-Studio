@@ -20,8 +20,11 @@ import org.eclipse.cmf.occi.core.Entity;
 
 import org.eclipse.cmf.occi.core.impl.MixinBaseImpl;
 
+import org.eclipse.cmf.occi.infrastructure.Os_tpl;
+
 import org.eclipse.cmf.occi.multicloud.vmware.GuestOsIdentifiers;
 import org.eclipse.cmf.occi.multicloud.vmware.Linux;
+import org.eclipse.cmf.occi.multicloud.vmware.Os_tpl_vmware;
 import org.eclipse.cmf.occi.multicloud.vmware.VmwarePackage;
 import org.eclipse.cmf.occi.multicloud.vmware.VmwareTables;
 
@@ -59,33 +62,13 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.vmware.impl.LinuxImpl#getGuestid <em>Guestid</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.vmware.impl.LinuxImpl#getDatastoreisopath <em>Datastoreisopath</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.vmware.impl.LinuxImpl#getGuestid <em>Guestid</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class LinuxImpl extends MixinBaseImpl implements Linux {
-	/**
-	 * The default value of the '{@link #getGuestid() <em>Guestid</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGuestid()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final GuestOsIdentifiers GUESTID_EDEFAULT = GuestOsIdentifiers.DOS_GUEST;
-
-	/**
-	 * The cached value of the '{@link #getGuestid() <em>Guestid</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGuestid()
-	 * @generated
-	 * @ordered
-	 */
-	protected GuestOsIdentifiers guestid = GUESTID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getDatastoreisopath() <em>Datastoreisopath</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -107,6 +90,26 @@ public class LinuxImpl extends MixinBaseImpl implements Linux {
 	protected String datastoreisopath = DATASTOREISOPATH_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getGuestid() <em>Guestid</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGuestid()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final GuestOsIdentifiers GUESTID_EDEFAULT = GuestOsIdentifiers.DOS_GUEST;
+
+	/**
+	 * The cached value of the '{@link #getGuestid() <em>Guestid</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGuestid()
+	 * @generated
+	 * @ordered
+	 */
+	protected GuestOsIdentifiers guestid = GUESTID_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -123,27 +126,6 @@ public class LinuxImpl extends MixinBaseImpl implements Linux {
 	@Override
 	protected EClass eStaticClass() {
 		return VmwarePackage.Literals.LINUX;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public GuestOsIdentifiers getGuestid() {
-		return guestid;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setGuestid(GuestOsIdentifiers newGuestid) {
-		GuestOsIdentifiers oldGuestid = guestid;
-		guestid = newGuestid == null ? GUESTID_EDEFAULT : newGuestid;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VmwarePackage.LINUX__GUESTID, oldGuestid, guestid));
 	}
 
 	/**
@@ -172,6 +154,27 @@ public class LinuxImpl extends MixinBaseImpl implements Linux {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public GuestOsIdentifiers getGuestid() {
+		return guestid;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setGuestid(GuestOsIdentifiers newGuestid) {
+		GuestOsIdentifiers oldGuestid = guestid;
+		guestid = newGuestid == null ? GUESTID_EDEFAULT : newGuestid;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VmwarePackage.LINUX__GUESTID, oldGuestid, guestid));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean appliesConstraint(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
 		/**
 		 *
@@ -182,7 +185,7 @@ public class LinuxImpl extends MixinBaseImpl implements Linux {
 		 *     then true
 		 *     else
 		 *       let
-		 *         result : occi::Boolean[1] = self.entity.oclIsKindOf(infrastructure::Compute)
+		 *         result : occi::Boolean[1] = self.entity.oclIsKindOf(Instancevmware)
 		 *       in
 		 *         'Linux::appliesConstraint'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
 		 *     endif
@@ -196,9 +199,9 @@ public class LinuxImpl extends MixinBaseImpl implements Linux {
 			symbol_0 = ValueUtil.TRUE_VALUE;
 		}
 		else {
-			final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_infrastructure_c_c_Compute_0 = idResolver.getClass(VmwareTables.CLSSid_Compute, null);
+			final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_vmware_c_c_Instancevmware_0 = idResolver.getClass(VmwareTables.CLSSid_Instancevmware, null);
 			final /*@NonInvalid*/ Entity entity = this.getEntity();
-			final /*@NonInvalid*/ boolean result = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity, TYP_infrastructure_c_c_Compute_0).booleanValue();
+			final /*@NonInvalid*/ boolean result = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity, TYP_vmware_c_c_Instancevmware_0).booleanValue();
 			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, VmwareTables.STR_Linux_c_c_appliesConstraint, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, VmwareTables.INT_0).booleanValue();
 			symbol_0 = logDiagnostic;
 		}
@@ -213,10 +216,10 @@ public class LinuxImpl extends MixinBaseImpl implements Linux {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case VmwarePackage.LINUX__GUESTID:
-				return getGuestid();
 			case VmwarePackage.LINUX__DATASTOREISOPATH:
 				return getDatastoreisopath();
+			case VmwarePackage.LINUX__GUESTID:
+				return getGuestid();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -229,11 +232,11 @@ public class LinuxImpl extends MixinBaseImpl implements Linux {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case VmwarePackage.LINUX__GUESTID:
-				setGuestid((GuestOsIdentifiers)newValue);
-				return;
 			case VmwarePackage.LINUX__DATASTOREISOPATH:
 				setDatastoreisopath((String)newValue);
+				return;
+			case VmwarePackage.LINUX__GUESTID:
+				setGuestid((GuestOsIdentifiers)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -247,11 +250,11 @@ public class LinuxImpl extends MixinBaseImpl implements Linux {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case VmwarePackage.LINUX__GUESTID:
-				setGuestid(GUESTID_EDEFAULT);
-				return;
 			case VmwarePackage.LINUX__DATASTOREISOPATH:
 				setDatastoreisopath(DATASTOREISOPATH_EDEFAULT);
+				return;
+			case VmwarePackage.LINUX__GUESTID:
+				setGuestid(GUESTID_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -265,12 +268,77 @@ public class LinuxImpl extends MixinBaseImpl implements Linux {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case VmwarePackage.LINUX__GUESTID:
-				return guestid != GUESTID_EDEFAULT;
 			case VmwarePackage.LINUX__DATASTOREISOPATH:
 				return DATASTOREISOPATH_EDEFAULT == null ? datastoreisopath != null : !DATASTOREISOPATH_EDEFAULT.equals(datastoreisopath);
+			case VmwarePackage.LINUX__GUESTID:
+				return guestid != GUESTID_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == Os_tpl.class) {
+			switch (derivedFeatureID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == Os_tpl_vmware.class) {
+			switch (derivedFeatureID) {
+				case VmwarePackage.LINUX__DATASTOREISOPATH: return VmwarePackage.OS_TPL_VMWARE__DATASTOREISOPATH;
+				case VmwarePackage.LINUX__GUESTID: return VmwarePackage.OS_TPL_VMWARE__GUESTID;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == Os_tpl.class) {
+			switch (baseFeatureID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == Os_tpl_vmware.class) {
+			switch (baseFeatureID) {
+				case VmwarePackage.OS_TPL_VMWARE__DATASTOREISOPATH: return VmwarePackage.LINUX__DATASTOREISOPATH;
+				case VmwarePackage.OS_TPL_VMWARE__GUESTID: return VmwarePackage.LINUX__GUESTID;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == Os_tpl.class) {
+			switch (baseOperationID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == Os_tpl_vmware.class) {
+			switch (baseOperationID) {
+				case VmwarePackage.OS_TPL_VMWARE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP: return VmwarePackage.LINUX___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP;
+				default: return -1;
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
 	}
 
 	/**
@@ -298,10 +366,10 @@ public class LinuxImpl extends MixinBaseImpl implements Linux {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (guestid: ");
-		result.append(guestid);
-		result.append(", datastoreisopath: ");
+		result.append(" (datastoreisopath: ");
 		result.append(datastoreisopath);
+		result.append(", guestid: ");
+		result.append(guestid);
 		result.append(')');
 		return result.toString();
 	}

@@ -18,16 +18,19 @@ import org.eclipse.cmf.occi.crtp.CrtpPackage;
 
 import org.eclipse.cmf.occi.infrastructure.InfrastructurePackage;
 
-import org.eclipse.cmf.occi.multicloud.vmware.Credential;
 import org.eclipse.cmf.occi.multicloud.vmware.GuestOsIdentifiers;
+import org.eclipse.cmf.occi.multicloud.vmware.Instancevmware;
 import org.eclipse.cmf.occi.multicloud.vmware.Linux;
 import org.eclipse.cmf.occi.multicloud.vmware.Macosx;
-import org.eclipse.cmf.occi.multicloud.vmware.Vmaddon;
-import org.eclipse.cmf.occi.multicloud.vmware.Vmimage;
+import org.eclipse.cmf.occi.multicloud.vmware.Networkadapter;
+import org.eclipse.cmf.occi.multicloud.vmware.Os_tpl_vmware;
+import org.eclipse.cmf.occi.multicloud.vmware.Ssh_user_data;
+import org.eclipse.cmf.occi.multicloud.vmware.Storagelinkvmware;
+import org.eclipse.cmf.occi.multicloud.vmware.Storagevmware;
 import org.eclipse.cmf.occi.multicloud.vmware.VmwareFactory;
 import org.eclipse.cmf.occi.multicloud.vmware.VmwarePackage;
 import org.eclipse.cmf.occi.multicloud.vmware.Vmwarefolders;
-import org.eclipse.cmf.occi.multicloud.vmware.Vswitchinfos;
+import org.eclipse.cmf.occi.multicloud.vmware.Vswitch;
 import org.eclipse.cmf.occi.multicloud.vmware.Windows;
 
 import org.eclipse.cmf.occi.multicloud.vmware.util.VmwareValidator;
@@ -54,21 +57,42 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass instancevmwareEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass storagevmwareEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass storagelinkvmwareEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass vswitchEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass networkadapterEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass windowsEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass vmaddonEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass vmimageEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -96,14 +120,14 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass vswitchinfosEClass = null;
+	private EClass os_tpl_vmwareEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass credentialEClass = null;
+	private EClass ssh_user_dataEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -192,26 +216,134 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getInstancevmware() {
+		return instancevmwareEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getInstancevmware_Imagename() {
+		return (EAttribute)instancevmwareEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getInstancevmware_Markedastemplate() {
+		return (EAttribute)instancevmwareEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getInstancevmware_Gueststate() {
+		return (EAttribute)instancevmwareEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getInstancevmware_Guestosid() {
+		return (EAttribute)instancevmwareEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getInstancevmware_Vcpu() {
+		return (EAttribute)instancevmwareEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getInstancevmware_InstanceId() {
+		return (EAttribute)instancevmwareEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getStoragevmware() {
+		return storagevmwareEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getStoragelinkvmware() {
+		return storagelinkvmwareEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getStoragelinkvmware__TargetConstraint__DiagnosticChain_Map() {
+		return storagelinkvmwareEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getVswitch() {
+		return vswitchEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getVswitch_Nbport() {
+		return (EAttribute)vswitchEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getNetworkadapter() {
+		return networkadapterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getNetworkadapter__TargetConstraint__DiagnosticChain_Map() {
+		return networkadapterEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getWindows() {
 		return windowsEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getWindows_Guestid() {
-		return (EAttribute)windowsEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getWindows_Datastoreisopath() {
-		return (EAttribute)windowsEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -228,107 +360,8 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getVmaddon() {
-		return vmaddonEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getVmaddon_Vcpu() {
-		return (EAttribute)vmaddonEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getVmaddon_Gueststate() {
-		return (EAttribute)vmaddonEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getVmaddon_Guestosid() {
-		return (EAttribute)vmaddonEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getVmaddon_Markedastemplate() {
-		return (EAttribute)vmaddonEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getVmaddon__AppliesConstraint__DiagnosticChain_Map() {
-		return vmaddonEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getVmimage() {
-		return vmimageEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getVmimage_Imagename() {
-		return (EAttribute)vmimageEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getVmimage__AppliesConstraint__DiagnosticChain_Map() {
-		return vmimageEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getLinux() {
 		return linuxEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getLinux_Guestid() {
-		return (EAttribute)linuxEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getLinux_Datastoreisopath() {
-		return (EAttribute)linuxEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -347,24 +380,6 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 	 */
 	public EClass getMacosx() {
 		return macosxEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getMacosx_Guestid() {
-		return (EAttribute)macosxEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getMacosx_Datastoreisopath() {
-		return (EAttribute)macosxEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -444,8 +459,8 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getVswitchinfos() {
-		return vswitchinfosEClass;
+	public EClass getOs_tpl_vmware() {
+		return os_tpl_vmwareEClass;
 	}
 
 	/**
@@ -453,8 +468,8 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getVswitchinfos_Nbport() {
-		return (EAttribute)vswitchinfosEClass.getEStructuralFeatures().get(0);
+	public EAttribute getOs_tpl_vmware_Datastoreisopath() {
+		return (EAttribute)os_tpl_vmwareEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -462,8 +477,8 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getVswitchinfos__AppliesConstraint__DiagnosticChain_Map() {
-		return vswitchinfosEClass.getEOperations().get(0);
+	public EAttribute getOs_tpl_vmware_Guestid() {
+		return (EAttribute)os_tpl_vmwareEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -471,8 +486,8 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getCredential() {
-		return credentialEClass;
+	public EOperation getOs_tpl_vmware__AppliesConstraint__DiagnosticChain_Map() {
+		return os_tpl_vmwareEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -480,8 +495,8 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCredential_User() {
-		return (EAttribute)credentialEClass.getEStructuralFeatures().get(0);
+	public EClass getSsh_user_data() {
+		return ssh_user_dataEClass;
 	}
 
 	/**
@@ -489,8 +504,8 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCredential_Password() {
-		return (EAttribute)credentialEClass.getEStructuralFeatures().get(1);
+	public EAttribute getSsh_user_data_Password() {
+		return (EAttribute)ssh_user_dataEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -498,8 +513,8 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCredential_OcciComputeUserdataFile() {
-		return (EAttribute)credentialEClass.getEStructuralFeatures().get(2);
+	public EAttribute getSsh_user_data_OcciComputeUserdataFile() {
+		return (EAttribute)ssh_user_dataEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -507,8 +522,17 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getCredential__AppliesConstraint__DiagnosticChain_Map() {
-		return credentialEClass.getEOperations().get(0);
+	public EAttribute getSsh_user_data_User() {
+		return (EAttribute)ssh_user_dataEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getSsh_user_data__AppliesConstraint__DiagnosticChain_Map() {
+		return ssh_user_dataEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -548,30 +572,32 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 		isCreated = true;
 
 		// Create classes and their features
+		instancevmwareEClass = createEClass(INSTANCEVMWARE);
+		createEAttribute(instancevmwareEClass, INSTANCEVMWARE__IMAGENAME);
+		createEAttribute(instancevmwareEClass, INSTANCEVMWARE__MARKEDASTEMPLATE);
+		createEAttribute(instancevmwareEClass, INSTANCEVMWARE__GUESTSTATE);
+		createEAttribute(instancevmwareEClass, INSTANCEVMWARE__GUESTOSID);
+		createEAttribute(instancevmwareEClass, INSTANCEVMWARE__VCPU);
+		createEAttribute(instancevmwareEClass, INSTANCEVMWARE__INSTANCE_ID);
+
+		storagevmwareEClass = createEClass(STORAGEVMWARE);
+
+		storagelinkvmwareEClass = createEClass(STORAGELINKVMWARE);
+		createEOperation(storagelinkvmwareEClass, STORAGELINKVMWARE___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
+
+		vswitchEClass = createEClass(VSWITCH);
+		createEAttribute(vswitchEClass, VSWITCH__NBPORT);
+
+		networkadapterEClass = createEClass(NETWORKADAPTER);
+		createEOperation(networkadapterEClass, NETWORKADAPTER___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
+
 		windowsEClass = createEClass(WINDOWS);
-		createEAttribute(windowsEClass, WINDOWS__GUESTID);
-		createEAttribute(windowsEClass, WINDOWS__DATASTOREISOPATH);
 		createEOperation(windowsEClass, WINDOWS___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
-		vmaddonEClass = createEClass(VMADDON);
-		createEAttribute(vmaddonEClass, VMADDON__VCPU);
-		createEAttribute(vmaddonEClass, VMADDON__GUESTSTATE);
-		createEAttribute(vmaddonEClass, VMADDON__GUESTOSID);
-		createEAttribute(vmaddonEClass, VMADDON__MARKEDASTEMPLATE);
-		createEOperation(vmaddonEClass, VMADDON___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
-
-		vmimageEClass = createEClass(VMIMAGE);
-		createEAttribute(vmimageEClass, VMIMAGE__IMAGENAME);
-		createEOperation(vmimageEClass, VMIMAGE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
-
 		linuxEClass = createEClass(LINUX);
-		createEAttribute(linuxEClass, LINUX__GUESTID);
-		createEAttribute(linuxEClass, LINUX__DATASTOREISOPATH);
 		createEOperation(linuxEClass, LINUX___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
 		macosxEClass = createEClass(MACOSX);
-		createEAttribute(macosxEClass, MACOSX__GUESTID);
-		createEAttribute(macosxEClass, MACOSX__DATASTOREISOPATH);
 		createEOperation(macosxEClass, MACOSX___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
 		vmwarefoldersEClass = createEClass(VMWAREFOLDERS);
@@ -582,15 +608,16 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 		createEAttribute(vmwarefoldersEClass, VMWAREFOLDERS__INVENTORYPATH);
 		createEOperation(vmwarefoldersEClass, VMWAREFOLDERS___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
-		vswitchinfosEClass = createEClass(VSWITCHINFOS);
-		createEAttribute(vswitchinfosEClass, VSWITCHINFOS__NBPORT);
-		createEOperation(vswitchinfosEClass, VSWITCHINFOS___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
+		os_tpl_vmwareEClass = createEClass(OS_TPL_VMWARE);
+		createEAttribute(os_tpl_vmwareEClass, OS_TPL_VMWARE__DATASTOREISOPATH);
+		createEAttribute(os_tpl_vmwareEClass, OS_TPL_VMWARE__GUESTID);
+		createEOperation(os_tpl_vmwareEClass, OS_TPL_VMWARE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
-		credentialEClass = createEClass(CREDENTIAL);
-		createEAttribute(credentialEClass, CREDENTIAL__USER);
-		createEAttribute(credentialEClass, CREDENTIAL__PASSWORD);
-		createEAttribute(credentialEClass, CREDENTIAL__OCCI_COMPUTE_USERDATA_FILE);
-		createEOperation(credentialEClass, CREDENTIAL___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
+		ssh_user_dataEClass = createEClass(SSH_USER_DATA);
+		createEAttribute(ssh_user_dataEClass, SSH_USER_DATA__PASSWORD);
+		createEAttribute(ssh_user_dataEClass, SSH_USER_DATA__OCCI_COMPUTE_USERDATA_FILE);
+		createEAttribute(ssh_user_dataEClass, SSH_USER_DATA__USER);
+		createEOperation(ssh_user_dataEClass, SSH_USER_DATA___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
 		// Create enums
 		guestOsIdentifiersEEnum = createEEnum(GUEST_OS_IDENTIFIERS);
@@ -620,33 +647,45 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		OCCIPackage theOCCIPackage = (OCCIPackage)EPackage.Registry.INSTANCE.getEPackage(OCCIPackage.eNS_URI);
 		InfrastructurePackage theInfrastructurePackage = (InfrastructurePackage)EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI);
+		OCCIPackage theOCCIPackage = (OCCIPackage)EPackage.Registry.INSTANCE.getEPackage(OCCIPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		instancevmwareEClass.getESuperTypes().add(theInfrastructurePackage.getCompute());
+		storagevmwareEClass.getESuperTypes().add(theInfrastructurePackage.getStorage());
+		storagelinkvmwareEClass.getESuperTypes().add(theInfrastructurePackage.getStoragelink());
+		vswitchEClass.getESuperTypes().add(theInfrastructurePackage.getNetwork());
+		networkadapterEClass.getESuperTypes().add(theInfrastructurePackage.getNetworkinterface());
 		windowsEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
-		windowsEClass.getESuperTypes().add(theInfrastructurePackage.getOs_tpl());
-		vmaddonEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
-		vmaddonEClass.getESuperTypes().add(this.getVmimage());
-		vmimageEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		windowsEClass.getESuperTypes().add(this.getOs_tpl_vmware());
 		linuxEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
-		linuxEClass.getESuperTypes().add(theInfrastructurePackage.getOs_tpl());
+		linuxEClass.getESuperTypes().add(this.getOs_tpl_vmware());
 		macosxEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
-		macosxEClass.getESuperTypes().add(theInfrastructurePackage.getOs_tpl());
+		macosxEClass.getESuperTypes().add(this.getOs_tpl_vmware());
 		vmwarefoldersEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
-		vswitchinfosEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
-		credentialEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		os_tpl_vmwareEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		os_tpl_vmwareEClass.getESuperTypes().add(theInfrastructurePackage.getOs_tpl());
+		ssh_user_dataEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		ssh_user_dataEClass.getESuperTypes().add(theInfrastructurePackage.getUser_data());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(windowsEClass, Windows.class, "Windows", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getWindows_Guestid(), this.getGuestOsIdentifiers(), "guestid", null, 1, 1, Windows.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getWindows_Datastoreisopath(), theOCCIPackage.getString(), "datastoreisopath", null, 0, 1, Windows.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(instancevmwareEClass, Instancevmware.class, "Instancevmware", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getInstancevmware_Imagename(), theOCCIPackage.getString(), "imagename", null, 0, 1, Instancevmware.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInstancevmware_Markedastemplate(), theOCCIPackage.getString(), "markedastemplate", null, 0, 1, Instancevmware.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInstancevmware_Gueststate(), theOCCIPackage.getString(), "gueststate", null, 0, 1, Instancevmware.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInstancevmware_Guestosid(), theOCCIPackage.getString(), "guestosid", null, 0, 1, Instancevmware.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInstancevmware_Vcpu(), theOCCIPackage.getString(), "vcpu", null, 0, 1, Instancevmware.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInstancevmware_InstanceId(), theOCCIPackage.getString(), "instanceId", null, 0, 1, Instancevmware.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		EOperation op = initEOperation(getWindows__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEClass(storagevmwareEClass, Storagevmware.class, "Storagevmware", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(storagelinkvmwareEClass, Storagelinkvmware.class, "Storagelinkvmware", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		EOperation op = initEOperation(getStoragelinkvmware__TargetConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "targetConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
 		EGenericType g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -655,13 +694,12 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(vmaddonEClass, Vmaddon.class, "Vmaddon", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getVmaddon_Vcpu(), theOCCIPackage.getString(), "vcpu", null, 0, 1, Vmaddon.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVmaddon_Gueststate(), theOCCIPackage.getString(), "gueststate", null, 0, 1, Vmaddon.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVmaddon_Guestosid(), theOCCIPackage.getString(), "guestosid", null, 0, 1, Vmaddon.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVmaddon_Markedastemplate(), theOCCIPackage.getString(), "markedastemplate", null, 0, 1, Vmaddon.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(vswitchEClass, Vswitch.class, "Vswitch", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getVswitch_Nbport(), theOCCIPackage.getInteger(), "nbport", null, 0, 1, Vswitch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = initEOperation(getVmaddon__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEClass(networkadapterEClass, Networkadapter.class, "Networkadapter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = initEOperation(getNetworkadapter__TargetConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "targetConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -670,10 +708,9 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(vmimageEClass, Vmimage.class, "Vmimage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getVmimage_Imagename(), theOCCIPackage.getString(), "imagename", null, 0, 1, Vmimage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(windowsEClass, Windows.class, "Windows", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = initEOperation(getVmimage__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getWindows__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -683,8 +720,6 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(linuxEClass, Linux.class, "Linux", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getLinux_Guestid(), this.getGuestOsIdentifiers(), "guestid", null, 1, 1, Linux.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLinux_Datastoreisopath(), theOCCIPackage.getString(), "datastoreisopath", null, 0, 1, Linux.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = initEOperation(getLinux__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -696,8 +731,6 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(macosxEClass, Macosx.class, "Macosx", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMacosx_Guestid(), this.getGuestOsIdentifiers(), "guestid", null, 1, 1, Macosx.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMacosx_Datastoreisopath(), theOCCIPackage.getString(), "datastoreisopath", null, 0, 1, Macosx.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = initEOperation(getMacosx__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -724,10 +757,11 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(vswitchinfosEClass, Vswitchinfos.class, "Vswitchinfos", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getVswitchinfos_Nbport(), theOCCIPackage.getInteger(), "nbport", null, 0, 1, Vswitchinfos.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(os_tpl_vmwareEClass, Os_tpl_vmware.class, "Os_tpl_vmware", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getOs_tpl_vmware_Datastoreisopath(), theOCCIPackage.getString(), "datastoreisopath", null, 0, 1, Os_tpl_vmware.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOs_tpl_vmware_Guestid(), this.getGuestOsIdentifiers(), "guestid", null, 1, 1, Os_tpl_vmware.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = initEOperation(getVswitchinfos__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getOs_tpl_vmware__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -736,12 +770,12 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(credentialEClass, Credential.class, "Credential", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCredential_User(), theOCCIPackage.getString(), "user", null, 0, 1, Credential.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCredential_Password(), theOCCIPackage.getString(), "password", null, 0, 1, Credential.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCredential_OcciComputeUserdataFile(), theOCCIPackage.getString(), "occiComputeUserdataFile", null, 0, 1, Credential.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(ssh_user_dataEClass, Ssh_user_data.class, "Ssh_user_data", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSsh_user_data_Password(), theOCCIPackage.getString(), "password", null, 0, 1, Ssh_user_data.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSsh_user_data_OcciComputeUserdataFile(), theOCCIPackage.getString(), "occiComputeUserdataFile", null, 0, 1, Ssh_user_data.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSsh_user_data_User(), theOCCIPackage.getString(), "user", null, 0, 1, Ssh_user_data.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = initEOperation(getCredential__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getSsh_user_data__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -906,19 +940,19 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 		   new String[] {
 		   });	
 		addAnnotation
+		  (storagelinkvmwareEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "targetConstraint"
+		   });	
+		addAnnotation
+		  (networkadapterEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "targetConstraint"
+		   });	
+		addAnnotation
 		  (windowsEClass, 
-		   source, 
-		   new String[] {
-			 "constraints", "appliesConstraint"
-		   });	
-		addAnnotation
-		  (vmaddonEClass, 
-		   source, 
-		   new String[] {
-			 "constraints", "appliesConstraint"
-		   });	
-		addAnnotation
-		  (vmimageEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "appliesConstraint"
@@ -942,13 +976,13 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 			 "constraints", "appliesConstraint"
 		   });	
 		addAnnotation
-		  (vswitchinfosEClass, 
+		  (os_tpl_vmwareEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "appliesConstraint"
 		   });	
 		addAnnotation
-		  (credentialEClass, 
+		  (ssh_user_dataEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "appliesConstraint"

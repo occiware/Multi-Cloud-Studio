@@ -16,35 +16,36 @@ package org.eclipse.cmf.occi.multicloud.vmware.provider;
 import java.util.Collection;
 import java.util.List;
 
-import org.eclipse.cmf.occi.core.provider.MixinBaseItemProvider;
+import org.eclipse.cmf.occi.core.OCCIPackage;
 
-import org.eclipse.cmf.occi.multicloud.vmware.Vmimage;
-import org.eclipse.cmf.occi.multicloud.vmware.VmwarePackage;
+import org.eclipse.cmf.occi.crtp.CrtpFactory;
+
+import org.eclipse.cmf.occi.infrastructure.provider.StorageItemProvider;
+
+import org.eclipse.cmf.occi.multicloud.vmware.Storagevmware;
+import org.eclipse.cmf.occi.multicloud.vmware.VmwareFactory;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.cmf.occi.multicloud.vmware.Vmimage} object.
+ * This is the item provider adapter for a {@link org.eclipse.cmf.occi.multicloud.vmware.Storagevmware} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class VmimageItemProvider extends MixinBaseItemProvider {
+public class StoragevmwareItemProvider extends StorageItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public VmimageItemProvider(AdapterFactory adapterFactory) {
+	public StoragevmwareItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -59,42 +60,19 @@ public class VmimageItemProvider extends MixinBaseItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addImagenamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Imagename feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addImagenamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Vmimage_imagename_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Vmimage_imagename_feature", "_UI_Vmimage_type"),
-				 VmwarePackage.Literals.VMIMAGE__IMAGENAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This returns Vmimage.gif.
+	 * This returns Storagevmware.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Vmimage"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Storagevmware"));
 	}
 
 	/**
@@ -105,10 +83,10 @@ public class VmimageItemProvider extends MixinBaseItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Vmimage)object).getImagename();
+		String label = ((Storagevmware)object).getId();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Vmimage_type") :
-			getString("_UI_Vmimage_type") + " " + label;
+			getString("_UI_Storagevmware_type") :
+			getString("_UI_Storagevmware_type") + " " + label;
 	}
 	
 
@@ -122,12 +100,6 @@ public class VmimageItemProvider extends MixinBaseItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(Vmimage.class)) {
-			case VmwarePackage.VMIMAGE__IMAGENAME:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 
@@ -141,6 +113,76 @@ public class VmimageItemProvider extends MixinBaseItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createWindows()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createLinux()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createMacosx()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createVmwarefolders()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createOs_tpl_vmware()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createSsh_user_data()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 CrtpFactory.eINSTANCE.createSmall()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 CrtpFactory.eINSTANCE.createMedium()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 CrtpFactory.eINSTANCE.createLarge()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 CrtpFactory.eINSTANCE.createMem_small()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 CrtpFactory.eINSTANCE.createMem_medium()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 CrtpFactory.eINSTANCE.createMem_large()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.RESOURCE__LINKS,
+				 VmwareFactory.eINSTANCE.createStoragelinkvmware()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.RESOURCE__LINKS,
+				 VmwareFactory.eINSTANCE.createNetworkadapter()));
 	}
 
 	/**

@@ -3,16 +3,11 @@
   <import href="http://schemas.ogf.org/occi/core#/"/>
   <import href="http://schemas.ogf.org/occi/infrastructure/compute/template/1.1#/"/>
   <import href="http://schemas.ogf.org/occi/infrastructure#/"/>
-  <mixins name="windows" scheme="http://occiware.org/occi/infrastructure/vmware#" title="Mixin os_tpl for Windows system">
-    <attributes name="guestid" mutable="true" required="true" default="" type="//@types.0"/>
-    <attributes name="datastoreisopath" mutable="true">
+  <kinds name="InstanceVMware" scheme="http://occiware.org/occi/infrastructure/vmware#">
+    <attributes name="imagename" mutable="true" default="" description="Name of the template if this compute has a template or will be created with a template.">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <depends href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='os_tpl']"/>
-    <applies href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
-  </mixins>
-  <mixins name="vmaddon" scheme="http://occiware.org/occi/infrastructure/vmware#" title="Addon attributes for virtual machine (vcpu, gueststate etc.)" depends="//@mixins[term='vmimage']">
-    <attributes name="vcpu" mutable="true">
+    <attributes name="markedastemplate" mutable="true">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
     <attributes name="gueststate" mutable="true">
@@ -21,34 +16,33 @@
     <attributes name="guestosid" mutable="true">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="markedastemplate" mutable="true">
+    <attributes name="vcpu" mutable="true">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <applies href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
-  </mixins>
-  <mixins name="vmimage" scheme="http://occiware.org/occi/infrastructure/vmware#">
-    <attributes name="imagename" mutable="true" default="" description="Name of the template if this compute has a template or will be created with a template.">
+    <attributes name="instanceId" mutable="true" description="Unique Instance provider Id given by provider after creation">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <applies href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
-  </mixins>
-  <mixins name="linux" scheme="http://occiware.org/occi/infrastructure/vmware#" title="Mixin os_tpl for linux systems">
-    <attributes name="guestid" mutable="true" required="true" default="" type="//@types.0"/>
-    <attributes name="datastoreisopath" mutable="true">
-      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    <parent href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
+  </kinds>
+  <kinds name="StorageVMware" scheme="http://occiware.org/occi/infrastructure/vmware#">
+    <parent href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='storage']"/>
+  </kinds>
+  <kinds name="StorageLinkVMware" scheme="http://occiware.org/occi/infrastructure/vmware#" source="//@kinds[term='instancevmware']" target="//@kinds[term='storagevmware']">
+    <parent href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='storagelink']"/>
+  </kinds>
+  <kinds name="VSwitch" scheme="http://occiware.org/occi/infrastructure/vmware#">
+    <attributes name="nbport" mutable="true">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
     </attributes>
-    <depends href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='os_tpl']"/>
-    <applies href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
-  </mixins>
-  <mixins name="macosx" scheme="http://occiware.org/occi/infrastructure/vmware#" title="Mixin os_tpl for mac os x systems">
-    <attributes name="guestid" mutable="true" required="true" default="" type="//@types.0"/>
-    <attributes name="datastoreisopath" mutable="true">
-      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
-    </attributes>
-    <depends href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='os_tpl']"/>
-    <applies href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
-  </mixins>
-  <mixins name="vmwarefolders" scheme="http://occiware.org/occi/infrastructure/vmware#" title="This mixin add global attributes like datacentername, clustername, hostsystem name etc.">
+    <parent href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='network']"/>
+  </kinds>
+  <kinds name="NetworkAdapter" scheme="http://occiware.org/occi/infrastructure/vmware#" title="Network adapter interface" source="//@kinds[term='instancevmware']" target="//@kinds[term='vswitch']">
+    <parent href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='networkinterface']"/>
+  </kinds>
+  <mixins name="windows" scheme="http://occiware.org/occi/infrastructure/vmware#" title="Mixin os_tpl for Windows system" depends="//@mixins[term='os_tpl_vmware']" applies="//@kinds[term='instancevmware']"/>
+  <mixins name="linux" scheme="http://occiware.org/occi/infrastructure/vmware#" title="Mixin os_tpl for linux systems" depends="//@mixins[term='os_tpl_vmware']" applies="//@kinds[term='instancevmware']"/>
+  <mixins name="macosx" scheme="http://occiware.org/occi/infrastructure/vmware#" title="Mixin os_tpl for mac os x systems" depends="//@mixins[term='os_tpl_vmware']" applies="//@kinds[term='instancevmware']"/>
+  <mixins name="vmwarefolders" scheme="http://occiware.org/occi/infrastructure/vmware#" title="This mixin add global attributes like datacentername, clustername, hostsystem name etc." applies="//@kinds[term='instancevmware'] //@kinds[term='networkadapter'] //@kinds[term='storagelinkvmware'] //@kinds[term='storagevmware'] //@kinds[term='vswitch']">
     <attributes name="datacentername" mutable="true" description="Datacenter name identifier of the entity">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
@@ -62,29 +56,25 @@
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
     <attributes name="inventorypath" mutable="true"/>
-    <applies href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
-    <applies href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='network']"/>
-    <applies href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='networkinterface']"/>
-    <applies href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='storage']"/>
-    <applies href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='storagelink']"/>
   </mixins>
-  <mixins name="vswitchinfos" scheme="http://occiware.org/occi/infrastructure/vmware#" title="Givei informations about a vswitch">
-    <attributes name="nbport" mutable="true">
-      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
-    </attributes>
-    <applies href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='network']"/>
-  </mixins>
-  <mixins name="credential" scheme="http://occiware.org/occi/infrastructure/vmware#" title="Credential users information to access to ssh and userdata features">
-    <attributes name="user" mutable="true">
+  <mixins name="os_tpl_vmware" scheme="http://occiware.org/occi/infrastructure/vmware#" applies="//@kinds[term='instancevmware']">
+    <attributes name="datastoreisopath" mutable="true">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
+    <attributes name="guestid" mutable="true" required="true" default="" type="//@types.0"/>
+    <depends href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='os_tpl']"/>
+  </mixins>
+  <mixins name="SSH_User_Data" scheme="http://occiware.org/occi/infrastructure/vmware#" applies="//@kinds[term='instancevmware']">
     <attributes name="password" mutable="true">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
     <attributes name="occi.compute.userdata.file" mutable="true">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <applies href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
+    <attributes name="user" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <depends href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='user_data']"/>
   </mixins>
   <types xsi:type="occi:EnumerationType" name="GuestOsIdentifiers" documentation="Enumerate the guest os id used on vCenter VMware platform">
     <literals name="dosGuest"/>

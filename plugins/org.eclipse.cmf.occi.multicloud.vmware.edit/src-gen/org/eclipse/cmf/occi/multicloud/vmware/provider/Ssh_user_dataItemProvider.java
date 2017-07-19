@@ -18,8 +18,9 @@ import java.util.List;
 
 import org.eclipse.cmf.occi.core.provider.MixinBaseItemProvider;
 
-import org.eclipse.cmf.occi.multicloud.vmware.GuestOsIdentifiers;
-import org.eclipse.cmf.occi.multicloud.vmware.Macosx;
+import org.eclipse.cmf.occi.infrastructure.InfrastructurePackage;
+
+import org.eclipse.cmf.occi.multicloud.vmware.Ssh_user_data;
 import org.eclipse.cmf.occi.multicloud.vmware.VmwarePackage;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -33,19 +34,19 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.cmf.occi.multicloud.vmware.Macosx} object.
+ * This is the item provider adapter for a {@link org.eclipse.cmf.occi.multicloud.vmware.Ssh_user_data} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class MacosxItemProvider extends MixinBaseItemProvider {
+public class Ssh_user_dataItemProvider extends MixinBaseItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MacosxItemProvider(AdapterFactory adapterFactory) {
+	public Ssh_user_dataItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -60,26 +61,28 @@ public class MacosxItemProvider extends MixinBaseItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addDatastoreisopathPropertyDescriptor(object);
-			addGuestidPropertyDescriptor(object);
+			addOcciComputeUserdataPropertyDescriptor(object);
+			addPasswordPropertyDescriptor(object);
+			addOcciComputeUserdataFilePropertyDescriptor(object);
+			addUserPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Guestid feature.
+	 * This adds a property descriptor for the Occi Compute Userdata feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addGuestidPropertyDescriptor(Object object) {
+	protected void addOcciComputeUserdataPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Os_tpl_vmware_guestid_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Os_tpl_vmware_guestid_feature", "_UI_Os_tpl_vmware_type"),
-				 VmwarePackage.Literals.OS_TPL_VMWARE__GUESTID,
+				 getString("_UI_User_data_occiComputeUserdata_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_User_data_occiComputeUserdata_feature", "_UI_User_data_type"),
+				 InfrastructurePackage.Literals.USER_DATA__OCCI_COMPUTE_USERDATA,
 				 true,
 				 false,
 				 false,
@@ -89,19 +92,19 @@ public class MacosxItemProvider extends MixinBaseItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Datastoreisopath feature.
+	 * This adds a property descriptor for the Password feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDatastoreisopathPropertyDescriptor(Object object) {
+	protected void addPasswordPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Os_tpl_vmware_datastoreisopath_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Os_tpl_vmware_datastoreisopath_feature", "_UI_Os_tpl_vmware_type"),
-				 VmwarePackage.Literals.OS_TPL_VMWARE__DATASTOREISOPATH,
+				 getString("_UI_Ssh_user_data_password_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Ssh_user_data_password_feature", "_UI_Ssh_user_data_type"),
+				 VmwarePackage.Literals.SSH_USER_DATA__PASSWORD,
 				 true,
 				 false,
 				 false,
@@ -111,14 +114,58 @@ public class MacosxItemProvider extends MixinBaseItemProvider {
 	}
 
 	/**
-	 * This returns Macosx.gif.
+	 * This adds a property descriptor for the Occi Compute Userdata File feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOcciComputeUserdataFilePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Ssh_user_data_occiComputeUserdataFile_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Ssh_user_data_occiComputeUserdataFile_feature", "_UI_Ssh_user_data_type"),
+				 VmwarePackage.Literals.SSH_USER_DATA__OCCI_COMPUTE_USERDATA_FILE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the User feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUserPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Ssh_user_data_user_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Ssh_user_data_user_feature", "_UI_Ssh_user_data_type"),
+				 VmwarePackage.Literals.SSH_USER_DATA__USER,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This returns Ssh_user_data.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Macosx"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Ssh_user_data"));
 	}
 
 	/**
@@ -129,10 +176,10 @@ public class MacosxItemProvider extends MixinBaseItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Macosx)object).getDatastoreisopath();
+		String label = ((Ssh_user_data)object).getOcciComputeUserdata();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Macosx_type") :
-			getString("_UI_Macosx_type") + " " + label;
+			getString("_UI_Ssh_user_data_type") :
+			getString("_UI_Ssh_user_data_type") + " " + label;
 	}
 	
 
@@ -147,9 +194,11 @@ public class MacosxItemProvider extends MixinBaseItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Macosx.class)) {
-			case VmwarePackage.MACOSX__DATASTOREISOPATH:
-			case VmwarePackage.MACOSX__GUESTID:
+		switch (notification.getFeatureID(Ssh_user_data.class)) {
+			case VmwarePackage.SSH_USER_DATA__OCCI_COMPUTE_USERDATA:
+			case VmwarePackage.SSH_USER_DATA__PASSWORD:
+			case VmwarePackage.SSH_USER_DATA__OCCI_COMPUTE_USERDATA_FILE:
+			case VmwarePackage.SSH_USER_DATA__USER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

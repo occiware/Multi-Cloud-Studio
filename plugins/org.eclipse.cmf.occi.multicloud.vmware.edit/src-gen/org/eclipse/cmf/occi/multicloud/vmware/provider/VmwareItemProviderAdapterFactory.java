@@ -82,6 +82,121 @@ public class VmwareItemProviderAdapterFactory extends VmwareAdapterFactory imple
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.vmware.Instancevmware} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected InstancevmwareItemProvider instancevmwareItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.vmware.Instancevmware}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createInstancevmwareAdapter() {
+		if (instancevmwareItemProvider == null) {
+			instancevmwareItemProvider = new InstancevmwareItemProvider(this);
+		}
+
+		return instancevmwareItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.vmware.Storagevmware} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected StoragevmwareItemProvider storagevmwareItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.vmware.Storagevmware}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createStoragevmwareAdapter() {
+		if (storagevmwareItemProvider == null) {
+			storagevmwareItemProvider = new StoragevmwareItemProvider(this);
+		}
+
+		return storagevmwareItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.vmware.Storagelinkvmware} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected StoragelinkvmwareItemProvider storagelinkvmwareItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.vmware.Storagelinkvmware}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createStoragelinkvmwareAdapter() {
+		if (storagelinkvmwareItemProvider == null) {
+			storagelinkvmwareItemProvider = new StoragelinkvmwareItemProvider(this);
+		}
+
+		return storagelinkvmwareItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.vmware.Vswitch} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected VswitchItemProvider vswitchItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.vmware.Vswitch}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createVswitchAdapter() {
+		if (vswitchItemProvider == null) {
+			vswitchItemProvider = new VswitchItemProvider(this);
+		}
+
+		return vswitchItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.vmware.Networkadapter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected NetworkadapterItemProvider networkadapterItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.vmware.Networkadapter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createNetworkadapterAdapter() {
+		if (networkadapterItemProvider == null) {
+			networkadapterItemProvider = new NetworkadapterItemProvider(this);
+		}
+
+		return networkadapterItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.vmware.Windows} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -102,52 +217,6 @@ public class VmwareItemProviderAdapterFactory extends VmwareAdapterFactory imple
 		}
 
 		return windowsItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.vmware.Vmaddon} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected VmaddonItemProvider vmaddonItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.vmware.Vmaddon}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createVmaddonAdapter() {
-		if (vmaddonItemProvider == null) {
-			vmaddonItemProvider = new VmaddonItemProvider(this);
-		}
-
-		return vmaddonItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.vmware.Vmimage} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected VmimageItemProvider vmimageItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.vmware.Vmimage}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createVmimageAdapter() {
-		if (vmimageItemProvider == null) {
-			vmimageItemProvider = new VmimageItemProvider(this);
-		}
-
-		return vmimageItemProvider;
 	}
 
 	/**
@@ -220,49 +289,49 @@ public class VmwareItemProviderAdapterFactory extends VmwareAdapterFactory imple
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.vmware.Vswitchinfos} instances.
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.vmware.Os_tpl_vmware} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected VswitchinfosItemProvider vswitchinfosItemProvider;
+	protected Os_tpl_vmwareItemProvider os_tpl_vmwareItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.vmware.Vswitchinfos}.
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.vmware.Os_tpl_vmware}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createVswitchinfosAdapter() {
-		if (vswitchinfosItemProvider == null) {
-			vswitchinfosItemProvider = new VswitchinfosItemProvider(this);
+	public Adapter createOs_tpl_vmwareAdapter() {
+		if (os_tpl_vmwareItemProvider == null) {
+			os_tpl_vmwareItemProvider = new Os_tpl_vmwareItemProvider(this);
 		}
 
-		return vswitchinfosItemProvider;
+		return os_tpl_vmwareItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.vmware.Credential} instances.
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.vmware.Ssh_user_data} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CredentialItemProvider credentialItemProvider;
+	protected Ssh_user_dataItemProvider ssh_user_dataItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.vmware.Credential}.
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.vmware.Ssh_user_data}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createCredentialAdapter() {
-		if (credentialItemProvider == null) {
-			credentialItemProvider = new CredentialItemProvider(this);
+	public Adapter createSsh_user_dataAdapter() {
+		if (ssh_user_dataItemProvider == null) {
+			ssh_user_dataItemProvider = new Ssh_user_dataItemProvider(this);
 		}
 
-		return credentialItemProvider;
+		return ssh_user_dataItemProvider;
 	}
 
 	/**
@@ -364,14 +433,17 @@ public class VmwareItemProviderAdapterFactory extends VmwareAdapterFactory imple
 	 * @generated
 	 */
 	public void dispose() {
+		if (instancevmwareItemProvider != null) instancevmwareItemProvider.dispose();
+		if (storagevmwareItemProvider != null) storagevmwareItemProvider.dispose();
+		if (storagelinkvmwareItemProvider != null) storagelinkvmwareItemProvider.dispose();
+		if (vswitchItemProvider != null) vswitchItemProvider.dispose();
+		if (networkadapterItemProvider != null) networkadapterItemProvider.dispose();
 		if (windowsItemProvider != null) windowsItemProvider.dispose();
-		if (vmaddonItemProvider != null) vmaddonItemProvider.dispose();
-		if (vmimageItemProvider != null) vmimageItemProvider.dispose();
 		if (linuxItemProvider != null) linuxItemProvider.dispose();
 		if (macosxItemProvider != null) macosxItemProvider.dispose();
 		if (vmwarefoldersItemProvider != null) vmwarefoldersItemProvider.dispose();
-		if (vswitchinfosItemProvider != null) vswitchinfosItemProvider.dispose();
-		if (credentialItemProvider != null) credentialItemProvider.dispose();
+		if (os_tpl_vmwareItemProvider != null) os_tpl_vmwareItemProvider.dispose();
+		if (ssh_user_dataItemProvider != null) ssh_user_dataItemProvider.dispose();
 	}
 
 }

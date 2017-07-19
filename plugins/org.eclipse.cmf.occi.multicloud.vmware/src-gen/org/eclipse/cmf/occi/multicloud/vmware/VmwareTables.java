@@ -64,31 +64,29 @@ public class VmwareTables
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.RootPackageId PACKid_$metamodel$ = org.eclipse.ocl.pivot.ids.IdManager.getRootPackageId("$metamodel$");
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_occiware_org_s_occi_s_infrastructure_s_vmware_s_ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://occiware.org/occi/infrastructure/vmware/ecore", null, org.eclipse.cmf.occi.multicloud.vmware.VmwarePackage.eINSTANCE);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://schemas.ogf.org/occi/core/ecore", "occi", org.eclipse.cmf.occi.core.OCCIPackage.eINSTANCE);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_infrastructure_s_ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://schemas.ogf.org/occi/infrastructure/ecore", null, org.eclipse.cmf.occi.infrastructure.InfrastructurePackage.eINSTANCE);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Class = org.eclipse.cmf.occi.multicloud.vmware.VmwareTables.PACKid_$metamodel$.getClassId("Class", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Compute = org.eclipse.cmf.occi.multicloud.vmware.VmwareTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_infrastructure_s_ecore.getClassId("Compute", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Credential = org.eclipse.cmf.occi.multicloud.vmware.VmwareTables.PACKid_http_c_s_s_occiware_org_s_occi_s_infrastructure_s_vmware_s_ecore.getClassId("Credential", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Entity = org.eclipse.cmf.occi.multicloud.vmware.VmwareTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Entity", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Instancevmware = org.eclipse.cmf.occi.multicloud.vmware.VmwareTables.PACKid_http_c_s_s_occiware_org_s_occi_s_infrastructure_s_vmware_s_ecore.getClassId("Instancevmware", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Linux = org.eclipse.cmf.occi.multicloud.vmware.VmwareTables.PACKid_http_c_s_s_occiware_org_s_occi_s_infrastructure_s_vmware_s_ecore.getClassId("Linux", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Macosx = org.eclipse.cmf.occi.multicloud.vmware.VmwareTables.PACKid_http_c_s_s_occiware_org_s_occi_s_infrastructure_s_vmware_s_ecore.getClassId("Macosx", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Network = org.eclipse.cmf.occi.multicloud.vmware.VmwareTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_infrastructure_s_ecore.getClassId("Network", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Networkinterface = org.eclipse.cmf.occi.multicloud.vmware.VmwareTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_infrastructure_s_ecore.getClassId("Networkinterface", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Storage = org.eclipse.cmf.occi.multicloud.vmware.VmwareTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_infrastructure_s_ecore.getClassId("Storage", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Storagelink = org.eclipse.cmf.occi.multicloud.vmware.VmwareTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_infrastructure_s_ecore.getClassId("Storagelink", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Vmaddon = org.eclipse.cmf.occi.multicloud.vmware.VmwareTables.PACKid_http_c_s_s_occiware_org_s_occi_s_infrastructure_s_vmware_s_ecore.getClassId("Vmaddon", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Vmimage = org.eclipse.cmf.occi.multicloud.vmware.VmwareTables.PACKid_http_c_s_s_occiware_org_s_occi_s_infrastructure_s_vmware_s_ecore.getClassId("Vmimage", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Networkadapter = org.eclipse.cmf.occi.multicloud.vmware.VmwareTables.PACKid_http_c_s_s_occiware_org_s_occi_s_infrastructure_s_vmware_s_ecore.getClassId("Networkadapter", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Os_tpl_vmware = org.eclipse.cmf.occi.multicloud.vmware.VmwareTables.PACKid_http_c_s_s_occiware_org_s_occi_s_infrastructure_s_vmware_s_ecore.getClassId("Os_tpl_vmware", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Resource = org.eclipse.cmf.occi.multicloud.vmware.VmwareTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Resource", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Ssh_user_data = org.eclipse.cmf.occi.multicloud.vmware.VmwareTables.PACKid_http_c_s_s_occiware_org_s_occi_s_infrastructure_s_vmware_s_ecore.getClassId("Ssh_user_data", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Storagelinkvmware = org.eclipse.cmf.occi.multicloud.vmware.VmwareTables.PACKid_http_c_s_s_occiware_org_s_occi_s_infrastructure_s_vmware_s_ecore.getClassId("Storagelinkvmware", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Storagevmware = org.eclipse.cmf.occi.multicloud.vmware.VmwareTables.PACKid_http_c_s_s_occiware_org_s_occi_s_infrastructure_s_vmware_s_ecore.getClassId("Storagevmware", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Vmwarefolders = org.eclipse.cmf.occi.multicloud.vmware.VmwareTables.PACKid_http_c_s_s_occiware_org_s_occi_s_infrastructure_s_vmware_s_ecore.getClassId("Vmwarefolders", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Vswitchinfos = org.eclipse.cmf.occi.multicloud.vmware.VmwareTables.PACKid_http_c_s_s_occiware_org_s_occi_s_infrastructure_s_vmware_s_ecore.getClassId("Vswitchinfos", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Vswitch = org.eclipse.cmf.occi.multicloud.vmware.VmwareTables.PACKid_http_c_s_s_occiware_org_s_occi_s_infrastructure_s_vmware_s_ecore.getClassId("Vswitch", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Windows = org.eclipse.cmf.occi.multicloud.vmware.VmwareTables.PACKid_http_c_s_s_occiware_org_s_occi_s_infrastructure_s_vmware_s_ecore.getClassId("Windows", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.EnumerationId ENUMid_GuestOsIdentifiers = org.eclipse.cmf.occi.multicloud.vmware.VmwareTables.PACKid_http_c_s_s_occiware_org_s_occi_s_infrastructure_s_vmware_s_ecore.getEnumerationId("GuestOsIdentifiers");
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.values.IntegerValue INT_0 = org.eclipse.ocl.pivot.utilities.ValueUtil.integerValueOf("0");
-	public static final /*@NonInvalid*/ java.lang.String STR_Credential_c_c_appliesConstraint = "Credential::appliesConstraint";
 	public static final /*@NonInvalid*/ java.lang.String STR_Linux_c_c_appliesConstraint = "Linux::appliesConstraint";
 	public static final /*@NonInvalid*/ java.lang.String STR_Macosx_c_c_appliesConstraint = "Macosx::appliesConstraint";
-	public static final /*@NonInvalid*/ java.lang.String STR_Vmaddon_c_c_appliesConstraint = "Vmaddon::appliesConstraint";
-	public static final /*@NonInvalid*/ java.lang.String STR_Vmimage_c_c_appliesConstraint = "Vmimage::appliesConstraint";
+	public static final /*@NonInvalid*/ java.lang.String STR_Networkadapter_c_c_targetConstraint = "Networkadapter::targetConstraint";
+	public static final /*@NonInvalid*/ java.lang.String STR_Os_tpl_vmware_c_c_appliesConstraint = "Os_tpl_vmware::appliesConstraint";
+	public static final /*@NonInvalid*/ java.lang.String STR_Ssh_user_data_c_c_appliesConstraint = "Ssh_user_data::appliesConstraint";
+	public static final /*@NonInvalid*/ java.lang.String STR_Storagelinkvmware_c_c_targetConstraint = "Storagelinkvmware::targetConstraint";
 	public static final /*@NonInvalid*/ java.lang.String STR_Vmwarefolders_c_c_appliesConstraint = "Vmwarefolders::appliesConstraint";
-	public static final /*@NonInvalid*/ java.lang.String STR_Vswitchinfos_c_c_appliesConstraint = "Vswitchinfos::appliesConstraint";
 	public static final /*@NonInvalid*/ java.lang.String STR_Windows_c_c_appliesConstraint = "Windows::appliesConstraint";
 
 	/**
@@ -119,25 +117,31 @@ public class VmwareTables
 			TypeParameters.init();
 		}
 
-		public static final /*@NonNull*/ EcoreExecutorType _Credential = new EcoreExecutorType(VmwarePackage.Literals.CREDENTIAL, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorEnumeration _GuestOsIdentifiers = new EcoreExecutorEnumeration(VmwarePackage.Literals.GUEST_OS_IDENTIFIERS, PACKAGE, 0);
+		public static final /*@NonNull*/ EcoreExecutorType _Instancevmware = new EcoreExecutorType(VmwarePackage.Literals.INSTANCEVMWARE, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Linux = new EcoreExecutorType(VmwarePackage.Literals.LINUX, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Macosx = new EcoreExecutorType(VmwarePackage.Literals.MACOSX, PACKAGE, 0);
-		public static final /*@NonNull*/ EcoreExecutorType _Vmaddon = new EcoreExecutorType(VmwarePackage.Literals.VMADDON, PACKAGE, 0);
-		public static final /*@NonNull*/ EcoreExecutorType _Vmimage = new EcoreExecutorType(VmwarePackage.Literals.VMIMAGE, PACKAGE, 0);
+		public static final /*@NonNull*/ EcoreExecutorType _Networkadapter = new EcoreExecutorType(VmwarePackage.Literals.NETWORKADAPTER, PACKAGE, 0);
+		public static final /*@NonNull*/ EcoreExecutorType _Os_tpl_vmware = new EcoreExecutorType(VmwarePackage.Literals.OS_TPL_VMWARE, PACKAGE, 0);
+		public static final /*@NonNull*/ EcoreExecutorType _Ssh_user_data = new EcoreExecutorType(VmwarePackage.Literals.SSH_USER_DATA, PACKAGE, 0);
+		public static final /*@NonNull*/ EcoreExecutorType _Storagelinkvmware = new EcoreExecutorType(VmwarePackage.Literals.STORAGELINKVMWARE, PACKAGE, 0);
+		public static final /*@NonNull*/ EcoreExecutorType _Storagevmware = new EcoreExecutorType(VmwarePackage.Literals.STORAGEVMWARE, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Vmwarefolders = new EcoreExecutorType(VmwarePackage.Literals.VMWAREFOLDERS, PACKAGE, 0);
-		public static final /*@NonNull*/ EcoreExecutorType _Vswitchinfos = new EcoreExecutorType(VmwarePackage.Literals.VSWITCHINFOS, PACKAGE, 0);
+		public static final /*@NonNull*/ EcoreExecutorType _Vswitch = new EcoreExecutorType(VmwarePackage.Literals.VSWITCH, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Windows = new EcoreExecutorType(VmwarePackage.Literals.WINDOWS, PACKAGE, 0);
 
 		private static final /*@NonNull*/ EcoreExecutorType /*@NonNull*/ [] types = {
-			_Credential,
 			_GuestOsIdentifiers,
+			_Instancevmware,
 			_Linux,
 			_Macosx,
-			_Vmaddon,
-			_Vmimage,
+			_Networkadapter,
+			_Os_tpl_vmware,
+			_Ssh_user_data,
+			_Storagelinkvmware,
+			_Storagevmware,
 			_Vmwarefolders,
-			_Vswitchinfos,
+			_Vswitch,
 			_Windows
 		};
 
@@ -164,54 +168,83 @@ public class VmwareTables
 			Types.init();
 		}
 
-		private static final /*@NonNull*/ ExecutorFragment _Credential__Credential = new ExecutorFragment(Types._Credential, VmwareTables.Types._Credential);
-		private static final /*@NonNull*/ ExecutorFragment _Credential__MixinBase = new ExecutorFragment(Types._Credential, OCCITables.Types._MixinBase);
-		private static final /*@NonNull*/ ExecutorFragment _Credential__OclAny = new ExecutorFragment(Types._Credential, OCLstdlibTables.Types._OclAny);
-		private static final /*@NonNull*/ ExecutorFragment _Credential__OclElement = new ExecutorFragment(Types._Credential, OCLstdlibTables.Types._OclElement);
-
 		private static final /*@NonNull*/ ExecutorFragment _GuestOsIdentifiers__GuestOsIdentifiers = new ExecutorFragment(Types._GuestOsIdentifiers, VmwareTables.Types._GuestOsIdentifiers);
 		private static final /*@NonNull*/ ExecutorFragment _GuestOsIdentifiers__OclAny = new ExecutorFragment(Types._GuestOsIdentifiers, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _GuestOsIdentifiers__OclElement = new ExecutorFragment(Types._GuestOsIdentifiers, OCLstdlibTables.Types._OclElement);
 		private static final /*@NonNull*/ ExecutorFragment _GuestOsIdentifiers__OclEnumeration = new ExecutorFragment(Types._GuestOsIdentifiers, OCLstdlibTables.Types._OclEnumeration);
 		private static final /*@NonNull*/ ExecutorFragment _GuestOsIdentifiers__OclType = new ExecutorFragment(Types._GuestOsIdentifiers, OCLstdlibTables.Types._OclType);
 
+		private static final /*@NonNull*/ ExecutorFragment _Instancevmware__Compute = new ExecutorFragment(Types._Instancevmware, InfrastructureTables.Types._Compute);
+		private static final /*@NonNull*/ ExecutorFragment _Instancevmware__Entity = new ExecutorFragment(Types._Instancevmware, OCCITables.Types._Entity);
+		private static final /*@NonNull*/ ExecutorFragment _Instancevmware__Instancevmware = new ExecutorFragment(Types._Instancevmware, VmwareTables.Types._Instancevmware);
+		private static final /*@NonNull*/ ExecutorFragment _Instancevmware__OclAny = new ExecutorFragment(Types._Instancevmware, OCLstdlibTables.Types._OclAny);
+		private static final /*@NonNull*/ ExecutorFragment _Instancevmware__OclElement = new ExecutorFragment(Types._Instancevmware, OCLstdlibTables.Types._OclElement);
+		private static final /*@NonNull*/ ExecutorFragment _Instancevmware__Resource = new ExecutorFragment(Types._Instancevmware, OCCITables.Types._Resource);
+
 		private static final /*@NonNull*/ ExecutorFragment _Linux__Linux = new ExecutorFragment(Types._Linux, VmwareTables.Types._Linux);
 		private static final /*@NonNull*/ ExecutorFragment _Linux__MixinBase = new ExecutorFragment(Types._Linux, OCCITables.Types._MixinBase);
 		private static final /*@NonNull*/ ExecutorFragment _Linux__OclAny = new ExecutorFragment(Types._Linux, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _Linux__OclElement = new ExecutorFragment(Types._Linux, OCLstdlibTables.Types._OclElement);
 		private static final /*@NonNull*/ ExecutorFragment _Linux__Os_tpl = new ExecutorFragment(Types._Linux, InfrastructureTables.Types._Os_tpl);
+		private static final /*@NonNull*/ ExecutorFragment _Linux__Os_tpl_vmware = new ExecutorFragment(Types._Linux, VmwareTables.Types._Os_tpl_vmware);
 
 		private static final /*@NonNull*/ ExecutorFragment _Macosx__Macosx = new ExecutorFragment(Types._Macosx, VmwareTables.Types._Macosx);
 		private static final /*@NonNull*/ ExecutorFragment _Macosx__MixinBase = new ExecutorFragment(Types._Macosx, OCCITables.Types._MixinBase);
 		private static final /*@NonNull*/ ExecutorFragment _Macosx__OclAny = new ExecutorFragment(Types._Macosx, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _Macosx__OclElement = new ExecutorFragment(Types._Macosx, OCLstdlibTables.Types._OclElement);
 		private static final /*@NonNull*/ ExecutorFragment _Macosx__Os_tpl = new ExecutorFragment(Types._Macosx, InfrastructureTables.Types._Os_tpl);
+		private static final /*@NonNull*/ ExecutorFragment _Macosx__Os_tpl_vmware = new ExecutorFragment(Types._Macosx, VmwareTables.Types._Os_tpl_vmware);
 
-		private static final /*@NonNull*/ ExecutorFragment _Vmaddon__MixinBase = new ExecutorFragment(Types._Vmaddon, OCCITables.Types._MixinBase);
-		private static final /*@NonNull*/ ExecutorFragment _Vmaddon__OclAny = new ExecutorFragment(Types._Vmaddon, OCLstdlibTables.Types._OclAny);
-		private static final /*@NonNull*/ ExecutorFragment _Vmaddon__OclElement = new ExecutorFragment(Types._Vmaddon, OCLstdlibTables.Types._OclElement);
-		private static final /*@NonNull*/ ExecutorFragment _Vmaddon__Vmaddon = new ExecutorFragment(Types._Vmaddon, VmwareTables.Types._Vmaddon);
-		private static final /*@NonNull*/ ExecutorFragment _Vmaddon__Vmimage = new ExecutorFragment(Types._Vmaddon, VmwareTables.Types._Vmimage);
+		private static final /*@NonNull*/ ExecutorFragment _Networkadapter__Entity = new ExecutorFragment(Types._Networkadapter, OCCITables.Types._Entity);
+		private static final /*@NonNull*/ ExecutorFragment _Networkadapter__Link = new ExecutorFragment(Types._Networkadapter, OCCITables.Types._Link);
+		private static final /*@NonNull*/ ExecutorFragment _Networkadapter__Networkadapter = new ExecutorFragment(Types._Networkadapter, VmwareTables.Types._Networkadapter);
+		private static final /*@NonNull*/ ExecutorFragment _Networkadapter__Networkinterface = new ExecutorFragment(Types._Networkadapter, InfrastructureTables.Types._Networkinterface);
+		private static final /*@NonNull*/ ExecutorFragment _Networkadapter__OclAny = new ExecutorFragment(Types._Networkadapter, OCLstdlibTables.Types._OclAny);
+		private static final /*@NonNull*/ ExecutorFragment _Networkadapter__OclElement = new ExecutorFragment(Types._Networkadapter, OCLstdlibTables.Types._OclElement);
 
-		private static final /*@NonNull*/ ExecutorFragment _Vmimage__MixinBase = new ExecutorFragment(Types._Vmimage, OCCITables.Types._MixinBase);
-		private static final /*@NonNull*/ ExecutorFragment _Vmimage__OclAny = new ExecutorFragment(Types._Vmimage, OCLstdlibTables.Types._OclAny);
-		private static final /*@NonNull*/ ExecutorFragment _Vmimage__OclElement = new ExecutorFragment(Types._Vmimage, OCLstdlibTables.Types._OclElement);
-		private static final /*@NonNull*/ ExecutorFragment _Vmimage__Vmimage = new ExecutorFragment(Types._Vmimage, VmwareTables.Types._Vmimage);
+		private static final /*@NonNull*/ ExecutorFragment _Os_tpl_vmware__MixinBase = new ExecutorFragment(Types._Os_tpl_vmware, OCCITables.Types._MixinBase);
+		private static final /*@NonNull*/ ExecutorFragment _Os_tpl_vmware__OclAny = new ExecutorFragment(Types._Os_tpl_vmware, OCLstdlibTables.Types._OclAny);
+		private static final /*@NonNull*/ ExecutorFragment _Os_tpl_vmware__OclElement = new ExecutorFragment(Types._Os_tpl_vmware, OCLstdlibTables.Types._OclElement);
+		private static final /*@NonNull*/ ExecutorFragment _Os_tpl_vmware__Os_tpl = new ExecutorFragment(Types._Os_tpl_vmware, InfrastructureTables.Types._Os_tpl);
+		private static final /*@NonNull*/ ExecutorFragment _Os_tpl_vmware__Os_tpl_vmware = new ExecutorFragment(Types._Os_tpl_vmware, VmwareTables.Types._Os_tpl_vmware);
+
+		private static final /*@NonNull*/ ExecutorFragment _Ssh_user_data__MixinBase = new ExecutorFragment(Types._Ssh_user_data, OCCITables.Types._MixinBase);
+		private static final /*@NonNull*/ ExecutorFragment _Ssh_user_data__OclAny = new ExecutorFragment(Types._Ssh_user_data, OCLstdlibTables.Types._OclAny);
+		private static final /*@NonNull*/ ExecutorFragment _Ssh_user_data__OclElement = new ExecutorFragment(Types._Ssh_user_data, OCLstdlibTables.Types._OclElement);
+		private static final /*@NonNull*/ ExecutorFragment _Ssh_user_data__Ssh_user_data = new ExecutorFragment(Types._Ssh_user_data, VmwareTables.Types._Ssh_user_data);
+		private static final /*@NonNull*/ ExecutorFragment _Ssh_user_data__User_data = new ExecutorFragment(Types._Ssh_user_data, InfrastructureTables.Types._User_data);
+
+		private static final /*@NonNull*/ ExecutorFragment _Storagelinkvmware__Entity = new ExecutorFragment(Types._Storagelinkvmware, OCCITables.Types._Entity);
+		private static final /*@NonNull*/ ExecutorFragment _Storagelinkvmware__Link = new ExecutorFragment(Types._Storagelinkvmware, OCCITables.Types._Link);
+		private static final /*@NonNull*/ ExecutorFragment _Storagelinkvmware__OclAny = new ExecutorFragment(Types._Storagelinkvmware, OCLstdlibTables.Types._OclAny);
+		private static final /*@NonNull*/ ExecutorFragment _Storagelinkvmware__OclElement = new ExecutorFragment(Types._Storagelinkvmware, OCLstdlibTables.Types._OclElement);
+		private static final /*@NonNull*/ ExecutorFragment _Storagelinkvmware__Storagelink = new ExecutorFragment(Types._Storagelinkvmware, InfrastructureTables.Types._Storagelink);
+		private static final /*@NonNull*/ ExecutorFragment _Storagelinkvmware__Storagelinkvmware = new ExecutorFragment(Types._Storagelinkvmware, VmwareTables.Types._Storagelinkvmware);
+
+		private static final /*@NonNull*/ ExecutorFragment _Storagevmware__Entity = new ExecutorFragment(Types._Storagevmware, OCCITables.Types._Entity);
+		private static final /*@NonNull*/ ExecutorFragment _Storagevmware__OclAny = new ExecutorFragment(Types._Storagevmware, OCLstdlibTables.Types._OclAny);
+		private static final /*@NonNull*/ ExecutorFragment _Storagevmware__OclElement = new ExecutorFragment(Types._Storagevmware, OCLstdlibTables.Types._OclElement);
+		private static final /*@NonNull*/ ExecutorFragment _Storagevmware__Resource = new ExecutorFragment(Types._Storagevmware, OCCITables.Types._Resource);
+		private static final /*@NonNull*/ ExecutorFragment _Storagevmware__Storage = new ExecutorFragment(Types._Storagevmware, InfrastructureTables.Types._Storage);
+		private static final /*@NonNull*/ ExecutorFragment _Storagevmware__Storagevmware = new ExecutorFragment(Types._Storagevmware, VmwareTables.Types._Storagevmware);
 
 		private static final /*@NonNull*/ ExecutorFragment _Vmwarefolders__MixinBase = new ExecutorFragment(Types._Vmwarefolders, OCCITables.Types._MixinBase);
 		private static final /*@NonNull*/ ExecutorFragment _Vmwarefolders__OclAny = new ExecutorFragment(Types._Vmwarefolders, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _Vmwarefolders__OclElement = new ExecutorFragment(Types._Vmwarefolders, OCLstdlibTables.Types._OclElement);
 		private static final /*@NonNull*/ ExecutorFragment _Vmwarefolders__Vmwarefolders = new ExecutorFragment(Types._Vmwarefolders, VmwareTables.Types._Vmwarefolders);
 
-		private static final /*@NonNull*/ ExecutorFragment _Vswitchinfos__MixinBase = new ExecutorFragment(Types._Vswitchinfos, OCCITables.Types._MixinBase);
-		private static final /*@NonNull*/ ExecutorFragment _Vswitchinfos__OclAny = new ExecutorFragment(Types._Vswitchinfos, OCLstdlibTables.Types._OclAny);
-		private static final /*@NonNull*/ ExecutorFragment _Vswitchinfos__OclElement = new ExecutorFragment(Types._Vswitchinfos, OCLstdlibTables.Types._OclElement);
-		private static final /*@NonNull*/ ExecutorFragment _Vswitchinfos__Vswitchinfos = new ExecutorFragment(Types._Vswitchinfos, VmwareTables.Types._Vswitchinfos);
+		private static final /*@NonNull*/ ExecutorFragment _Vswitch__Entity = new ExecutorFragment(Types._Vswitch, OCCITables.Types._Entity);
+		private static final /*@NonNull*/ ExecutorFragment _Vswitch__Network = new ExecutorFragment(Types._Vswitch, InfrastructureTables.Types._Network);
+		private static final /*@NonNull*/ ExecutorFragment _Vswitch__OclAny = new ExecutorFragment(Types._Vswitch, OCLstdlibTables.Types._OclAny);
+		private static final /*@NonNull*/ ExecutorFragment _Vswitch__OclElement = new ExecutorFragment(Types._Vswitch, OCLstdlibTables.Types._OclElement);
+		private static final /*@NonNull*/ ExecutorFragment _Vswitch__Resource = new ExecutorFragment(Types._Vswitch, OCCITables.Types._Resource);
+		private static final /*@NonNull*/ ExecutorFragment _Vswitch__Vswitch = new ExecutorFragment(Types._Vswitch, VmwareTables.Types._Vswitch);
 
 		private static final /*@NonNull*/ ExecutorFragment _Windows__MixinBase = new ExecutorFragment(Types._Windows, OCCITables.Types._MixinBase);
 		private static final /*@NonNull*/ ExecutorFragment _Windows__OclAny = new ExecutorFragment(Types._Windows, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _Windows__OclElement = new ExecutorFragment(Types._Windows, OCLstdlibTables.Types._OclElement);
 		private static final /*@NonNull*/ ExecutorFragment _Windows__Os_tpl = new ExecutorFragment(Types._Windows, InfrastructureTables.Types._Os_tpl);
+		private static final /*@NonNull*/ ExecutorFragment _Windows__Os_tpl_vmware = new ExecutorFragment(Types._Windows, VmwareTables.Types._Os_tpl_vmware);
 		private static final /*@NonNull*/ ExecutorFragment _Windows__Windows = new ExecutorFragment(Types._Windows, VmwareTables.Types._Windows);
 
 		static {
@@ -284,22 +317,20 @@ public class VmwareTables
 			Operations.init();
 		}
 
-		public static final /*@NonNull*/ ExecutorProperty _Credential__occiComputeUserdataFile = new EcoreExecutorProperty(VmwarePackage.Literals.CREDENTIAL__OCCI_COMPUTE_USERDATA_FILE, Types._Credential, 0);
-		public static final /*@NonNull*/ ExecutorProperty _Credential__password = new EcoreExecutorProperty(VmwarePackage.Literals.CREDENTIAL__PASSWORD, Types._Credential, 1);
-		public static final /*@NonNull*/ ExecutorProperty _Credential__user = new EcoreExecutorProperty(VmwarePackage.Literals.CREDENTIAL__USER, Types._Credential, 2);
 
-		public static final /*@NonNull*/ ExecutorProperty _Linux__datastoreisopath = new EcoreExecutorProperty(VmwarePackage.Literals.LINUX__DATASTOREISOPATH, Types._Linux, 0);
-		public static final /*@NonNull*/ ExecutorProperty _Linux__guestid = new EcoreExecutorProperty(VmwarePackage.Literals.LINUX__GUESTID, Types._Linux, 1);
+		public static final /*@NonNull*/ ExecutorProperty _Instancevmware__guestosid = new EcoreExecutorProperty(VmwarePackage.Literals.INSTANCEVMWARE__GUESTOSID, Types._Instancevmware, 0);
+		public static final /*@NonNull*/ ExecutorProperty _Instancevmware__gueststate = new EcoreExecutorProperty(VmwarePackage.Literals.INSTANCEVMWARE__GUESTSTATE, Types._Instancevmware, 1);
+		public static final /*@NonNull*/ ExecutorProperty _Instancevmware__imagename = new EcoreExecutorProperty(VmwarePackage.Literals.INSTANCEVMWARE__IMAGENAME, Types._Instancevmware, 2);
+		public static final /*@NonNull*/ ExecutorProperty _Instancevmware__instanceId = new EcoreExecutorProperty(VmwarePackage.Literals.INSTANCEVMWARE__INSTANCE_ID, Types._Instancevmware, 3);
+		public static final /*@NonNull*/ ExecutorProperty _Instancevmware__markedastemplate = new EcoreExecutorProperty(VmwarePackage.Literals.INSTANCEVMWARE__MARKEDASTEMPLATE, Types._Instancevmware, 4);
+		public static final /*@NonNull*/ ExecutorProperty _Instancevmware__vcpu = new EcoreExecutorProperty(VmwarePackage.Literals.INSTANCEVMWARE__VCPU, Types._Instancevmware, 5);
 
-		public static final /*@NonNull*/ ExecutorProperty _Macosx__datastoreisopath = new EcoreExecutorProperty(VmwarePackage.Literals.MACOSX__DATASTOREISOPATH, Types._Macosx, 0);
-		public static final /*@NonNull*/ ExecutorProperty _Macosx__guestid = new EcoreExecutorProperty(VmwarePackage.Literals.MACOSX__GUESTID, Types._Macosx, 1);
+		public static final /*@NonNull*/ ExecutorProperty _Os_tpl_vmware__datastoreisopath = new EcoreExecutorProperty(VmwarePackage.Literals.OS_TPL_VMWARE__DATASTOREISOPATH, Types._Os_tpl_vmware, 0);
+		public static final /*@NonNull*/ ExecutorProperty _Os_tpl_vmware__guestid = new EcoreExecutorProperty(VmwarePackage.Literals.OS_TPL_VMWARE__GUESTID, Types._Os_tpl_vmware, 1);
 
-		public static final /*@NonNull*/ ExecutorProperty _Vmaddon__guestosid = new EcoreExecutorProperty(VmwarePackage.Literals.VMADDON__GUESTOSID, Types._Vmaddon, 0);
-		public static final /*@NonNull*/ ExecutorProperty _Vmaddon__gueststate = new EcoreExecutorProperty(VmwarePackage.Literals.VMADDON__GUESTSTATE, Types._Vmaddon, 1);
-		public static final /*@NonNull*/ ExecutorProperty _Vmaddon__markedastemplate = new EcoreExecutorProperty(VmwarePackage.Literals.VMADDON__MARKEDASTEMPLATE, Types._Vmaddon, 2);
-		public static final /*@NonNull*/ ExecutorProperty _Vmaddon__vcpu = new EcoreExecutorProperty(VmwarePackage.Literals.VMADDON__VCPU, Types._Vmaddon, 3);
-
-		public static final /*@NonNull*/ ExecutorProperty _Vmimage__imagename = new EcoreExecutorProperty(VmwarePackage.Literals.VMIMAGE__IMAGENAME, Types._Vmimage, 0);
+		public static final /*@NonNull*/ ExecutorProperty _Ssh_user_data__occiComputeUserdataFile = new EcoreExecutorProperty(VmwarePackage.Literals.SSH_USER_DATA__OCCI_COMPUTE_USERDATA_FILE, Types._Ssh_user_data, 0);
+		public static final /*@NonNull*/ ExecutorProperty _Ssh_user_data__password = new EcoreExecutorProperty(VmwarePackage.Literals.SSH_USER_DATA__PASSWORD, Types._Ssh_user_data, 1);
+		public static final /*@NonNull*/ ExecutorProperty _Ssh_user_data__user = new EcoreExecutorProperty(VmwarePackage.Literals.SSH_USER_DATA__USER, Types._Ssh_user_data, 2);
 
 		public static final /*@NonNull*/ ExecutorProperty _Vmwarefolders__clustername = new EcoreExecutorProperty(VmwarePackage.Literals.VMWAREFOLDERS__CLUSTERNAME, Types._Vmwarefolders, 0);
 		public static final /*@NonNull*/ ExecutorProperty _Vmwarefolders__datacentername = new EcoreExecutorProperty(VmwarePackage.Literals.VMWAREFOLDERS__DATACENTERNAME, Types._Vmwarefolders, 1);
@@ -307,10 +338,7 @@ public class VmwareTables
 		public static final /*@NonNull*/ ExecutorProperty _Vmwarefolders__hostsystemname = new EcoreExecutorProperty(VmwarePackage.Literals.VMWAREFOLDERS__HOSTSYSTEMNAME, Types._Vmwarefolders, 3);
 		public static final /*@NonNull*/ ExecutorProperty _Vmwarefolders__inventorypath = new EcoreExecutorProperty(VmwarePackage.Literals.VMWAREFOLDERS__INVENTORYPATH, Types._Vmwarefolders, 4);
 
-		public static final /*@NonNull*/ ExecutorProperty _Vswitchinfos__nbport = new EcoreExecutorProperty(VmwarePackage.Literals.VSWITCHINFOS__NBPORT, Types._Vswitchinfos, 0);
-
-		public static final /*@NonNull*/ ExecutorProperty _Windows__datastoreisopath = new EcoreExecutorProperty(VmwarePackage.Literals.WINDOWS__DATASTOREISOPATH, Types._Windows, 0);
-		public static final /*@NonNull*/ ExecutorProperty _Windows__guestid = new EcoreExecutorProperty(VmwarePackage.Literals.WINDOWS__GUESTID, Types._Windows, 1);
+		public static final /*@NonNull*/ ExecutorProperty _Vswitch__nbport = new EcoreExecutorProperty(VmwarePackage.Literals.VSWITCH__NBPORT, Types._Vswitch, 0);
 		static {
 			Init.initEnd();
 		}
@@ -330,15 +358,6 @@ public class VmwareTables
 			Properties.init();
 		}
 
-		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Credential =
-		{
-			Fragments._Credential__OclAny /* 0 */,
-			Fragments._Credential__OclElement /* 1 */,
-			Fragments._Credential__MixinBase /* 2 */,
-			Fragments._Credential__Credential /* 3 */
-		};
-		private static final int /*@NonNull*/ [] __Credential = { 1,1,1,1 };
-
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _GuestOsIdentifiers =
 		{
 			Fragments._GuestOsIdentifiers__OclAny /* 0 */,
@@ -349,15 +368,27 @@ public class VmwareTables
 		};
 		private static final int /*@NonNull*/ [] __GuestOsIdentifiers = { 1,1,1,1,1 };
 
+		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Instancevmware =
+		{
+			Fragments._Instancevmware__OclAny /* 0 */,
+			Fragments._Instancevmware__OclElement /* 1 */,
+			Fragments._Instancevmware__Entity /* 2 */,
+			Fragments._Instancevmware__Resource /* 3 */,
+			Fragments._Instancevmware__Compute /* 4 */,
+			Fragments._Instancevmware__Instancevmware /* 5 */
+		};
+		private static final int /*@NonNull*/ [] __Instancevmware = { 1,1,1,1,1,1 };
+
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Linux =
 		{
 			Fragments._Linux__OclAny /* 0 */,
 			Fragments._Linux__OclElement /* 1 */,
 			Fragments._Linux__MixinBase /* 2 */,
 			Fragments._Linux__Os_tpl /* 3 */,
-			Fragments._Linux__Linux /* 4 */
+			Fragments._Linux__Os_tpl_vmware /* 4 */,
+			Fragments._Linux__Linux /* 5 */
 		};
-		private static final int /*@NonNull*/ [] __Linux = { 1,1,1,1,1 };
+		private static final int /*@NonNull*/ [] __Linux = { 1,1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Macosx =
 		{
@@ -365,28 +396,63 @@ public class VmwareTables
 			Fragments._Macosx__OclElement /* 1 */,
 			Fragments._Macosx__MixinBase /* 2 */,
 			Fragments._Macosx__Os_tpl /* 3 */,
-			Fragments._Macosx__Macosx /* 4 */
+			Fragments._Macosx__Os_tpl_vmware /* 4 */,
+			Fragments._Macosx__Macosx /* 5 */
 		};
-		private static final int /*@NonNull*/ [] __Macosx = { 1,1,1,1,1 };
+		private static final int /*@NonNull*/ [] __Macosx = { 1,1,1,1,1,1 };
 
-		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Vmaddon =
+		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Networkadapter =
 		{
-			Fragments._Vmaddon__OclAny /* 0 */,
-			Fragments._Vmaddon__OclElement /* 1 */,
-			Fragments._Vmaddon__MixinBase /* 2 */,
-			Fragments._Vmaddon__Vmimage /* 3 */,
-			Fragments._Vmaddon__Vmaddon /* 4 */
+			Fragments._Networkadapter__OclAny /* 0 */,
+			Fragments._Networkadapter__OclElement /* 1 */,
+			Fragments._Networkadapter__Entity /* 2 */,
+			Fragments._Networkadapter__Link /* 3 */,
+			Fragments._Networkadapter__Networkinterface /* 4 */,
+			Fragments._Networkadapter__Networkadapter /* 5 */
 		};
-		private static final int /*@NonNull*/ [] __Vmaddon = { 1,1,1,1,1 };
+		private static final int /*@NonNull*/ [] __Networkadapter = { 1,1,1,1,1,1 };
 
-		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Vmimage =
+		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Os_tpl_vmware =
 		{
-			Fragments._Vmimage__OclAny /* 0 */,
-			Fragments._Vmimage__OclElement /* 1 */,
-			Fragments._Vmimage__MixinBase /* 2 */,
-			Fragments._Vmimage__Vmimage /* 3 */
+			Fragments._Os_tpl_vmware__OclAny /* 0 */,
+			Fragments._Os_tpl_vmware__OclElement /* 1 */,
+			Fragments._Os_tpl_vmware__MixinBase /* 2 */,
+			Fragments._Os_tpl_vmware__Os_tpl /* 3 */,
+			Fragments._Os_tpl_vmware__Os_tpl_vmware /* 4 */
 		};
-		private static final int /*@NonNull*/ [] __Vmimage = { 1,1,1,1 };
+		private static final int /*@NonNull*/ [] __Os_tpl_vmware = { 1,1,1,1,1 };
+
+		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Ssh_user_data =
+		{
+			Fragments._Ssh_user_data__OclAny /* 0 */,
+			Fragments._Ssh_user_data__OclElement /* 1 */,
+			Fragments._Ssh_user_data__MixinBase /* 2 */,
+			Fragments._Ssh_user_data__User_data /* 3 */,
+			Fragments._Ssh_user_data__Ssh_user_data /* 4 */
+		};
+		private static final int /*@NonNull*/ [] __Ssh_user_data = { 1,1,1,1,1 };
+
+		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Storagelinkvmware =
+		{
+			Fragments._Storagelinkvmware__OclAny /* 0 */,
+			Fragments._Storagelinkvmware__OclElement /* 1 */,
+			Fragments._Storagelinkvmware__Entity /* 2 */,
+			Fragments._Storagelinkvmware__Link /* 3 */,
+			Fragments._Storagelinkvmware__Storagelink /* 4 */,
+			Fragments._Storagelinkvmware__Storagelinkvmware /* 5 */
+		};
+		private static final int /*@NonNull*/ [] __Storagelinkvmware = { 1,1,1,1,1,1 };
+
+		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Storagevmware =
+		{
+			Fragments._Storagevmware__OclAny /* 0 */,
+			Fragments._Storagevmware__OclElement /* 1 */,
+			Fragments._Storagevmware__Entity /* 2 */,
+			Fragments._Storagevmware__Resource /* 3 */,
+			Fragments._Storagevmware__Storage /* 4 */,
+			Fragments._Storagevmware__Storagevmware /* 5 */
+		};
+		private static final int /*@NonNull*/ [] __Storagevmware = { 1,1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Vmwarefolders =
 		{
@@ -397,14 +463,16 @@ public class VmwareTables
 		};
 		private static final int /*@NonNull*/ [] __Vmwarefolders = { 1,1,1,1 };
 
-		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Vswitchinfos =
+		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Vswitch =
 		{
-			Fragments._Vswitchinfos__OclAny /* 0 */,
-			Fragments._Vswitchinfos__OclElement /* 1 */,
-			Fragments._Vswitchinfos__MixinBase /* 2 */,
-			Fragments._Vswitchinfos__Vswitchinfos /* 3 */
+			Fragments._Vswitch__OclAny /* 0 */,
+			Fragments._Vswitch__OclElement /* 1 */,
+			Fragments._Vswitch__Entity /* 2 */,
+			Fragments._Vswitch__Resource /* 3 */,
+			Fragments._Vswitch__Network /* 4 */,
+			Fragments._Vswitch__Vswitch /* 5 */
 		};
-		private static final int /*@NonNull*/ [] __Vswitchinfos = { 1,1,1,1 };
+		private static final int /*@NonNull*/ [] __Vswitch = { 1,1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Windows =
 		{
@@ -412,22 +480,26 @@ public class VmwareTables
 			Fragments._Windows__OclElement /* 1 */,
 			Fragments._Windows__MixinBase /* 2 */,
 			Fragments._Windows__Os_tpl /* 3 */,
-			Fragments._Windows__Windows /* 4 */
+			Fragments._Windows__Os_tpl_vmware /* 4 */,
+			Fragments._Windows__Windows /* 5 */
 		};
-		private static final int /*@NonNull*/ [] __Windows = { 1,1,1,1,1 };
+		private static final int /*@NonNull*/ [] __Windows = { 1,1,1,1,1,1 };
 
 		/**
 		 *	Install the fragment descriptors in the class descriptors.
 		 */
 		static {
-			Types._Credential.initFragments(_Credential, __Credential);
 			Types._GuestOsIdentifiers.initFragments(_GuestOsIdentifiers, __GuestOsIdentifiers);
+			Types._Instancevmware.initFragments(_Instancevmware, __Instancevmware);
 			Types._Linux.initFragments(_Linux, __Linux);
 			Types._Macosx.initFragments(_Macosx, __Macosx);
-			Types._Vmaddon.initFragments(_Vmaddon, __Vmaddon);
-			Types._Vmimage.initFragments(_Vmimage, __Vmimage);
+			Types._Networkadapter.initFragments(_Networkadapter, __Networkadapter);
+			Types._Os_tpl_vmware.initFragments(_Os_tpl_vmware, __Os_tpl_vmware);
+			Types._Ssh_user_data.initFragments(_Ssh_user_data, __Ssh_user_data);
+			Types._Storagelinkvmware.initFragments(_Storagelinkvmware, __Storagelinkvmware);
+			Types._Storagevmware.initFragments(_Storagevmware, __Storagevmware);
 			Types._Vmwarefolders.initFragments(_Vmwarefolders, __Vmwarefolders);
-			Types._Vswitchinfos.initFragments(_Vswitchinfos, __Vswitchinfos);
+			Types._Vswitch.initFragments(_Vswitch, __Vswitch);
 			Types._Windows.initFragments(_Windows, __Windows);
 
 			Init.initEnd();
@@ -447,35 +519,6 @@ public class VmwareTables
 			Init.initStart();
 			TypeFragments.init();
 		}
-
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Credential__Credential = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Credential__MixinBase = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Credential__OclAny = {
-			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
-			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
-			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
-			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
-			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
-			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
-			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
-			OCLstdlibTables.Operations._OclAny__toString /* toString() */
-		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Credential__OclElement = {
-			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
-			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
-			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
-			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
-			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
-		};
 
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _GuestOsIdentifiers__GuestOsIdentifiers = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _GuestOsIdentifiers__OclAny = {
@@ -511,6 +554,48 @@ public class VmwareTables
 			OCLstdlibTables.Operations._OclType__conformsTo /* conformsTo(OclType[?]) */
 		};
 
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Instancevmware__Instancevmware = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Instancevmware__Compute = {
+			InfrastructureTables.Operations._Compute__restart /* restart(RestartMethod[?]) */,
+			InfrastructureTables.Operations._Compute__save /* save(SaveMethod[?],String[?]) */,
+			InfrastructureTables.Operations._Compute__start /* start() */,
+			InfrastructureTables.Operations._Compute__stop /* stop(StopMethod[?]) */,
+			InfrastructureTables.Operations._Compute__suspend /* suspend(SuspendMethod[?]) */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Instancevmware__Entity = {
+			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
+			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
+			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
+			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Instancevmware__OclAny = {
+			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
+			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
+			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
+			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
+			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
+			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
+			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
+			OCLstdlibTables.Operations._OclAny__toString /* toString() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Instancevmware__OclElement = {
+			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
+			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
+			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
+			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
+			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Instancevmware__Resource = {};
+
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Linux__Linux = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Linux__MixinBase = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Linux__OclAny = {
@@ -540,6 +625,7 @@ public class VmwareTables
 			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Linux__Os_tpl = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Linux__Os_tpl_vmware = {};
 
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Macosx__Macosx = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Macosx__MixinBase = {};
@@ -570,10 +656,18 @@ public class VmwareTables
 			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Macosx__Os_tpl = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Macosx__Os_tpl_vmware = {};
 
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Vmaddon__Vmaddon = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Vmaddon__MixinBase = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Vmaddon__OclAny = {
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Networkadapter__Networkadapter = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Networkadapter__Entity = {
+			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
+			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
+			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
+			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Networkadapter__Link = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Networkadapter__Networkinterface = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Networkadapter__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
 			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
 			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
@@ -590,7 +684,7 @@ public class VmwareTables
 			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
 			OCLstdlibTables.Operations._OclAny__toString /* toString() */
 		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Vmaddon__OclElement = {
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Networkadapter__OclElement = {
 			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
 			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
 			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
@@ -599,11 +693,10 @@ public class VmwareTables
 			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
 			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
 		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Vmaddon__Vmimage = {};
 
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Vmimage__Vmimage = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Vmimage__MixinBase = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Vmimage__OclAny = {
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Os_tpl_vmware__Os_tpl_vmware = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Os_tpl_vmware__MixinBase = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Os_tpl_vmware__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
 			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
 			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
@@ -620,7 +713,7 @@ public class VmwareTables
 			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
 			OCLstdlibTables.Operations._OclAny__toString /* toString() */
 		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Vmimage__OclElement = {
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Os_tpl_vmware__OclElement = {
 			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
 			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
 			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
@@ -628,6 +721,112 @@ public class VmwareTables
 			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
 			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
 			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Os_tpl_vmware__Os_tpl = {};
+
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Ssh_user_data__Ssh_user_data = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Ssh_user_data__MixinBase = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Ssh_user_data__OclAny = {
+			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
+			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
+			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
+			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
+			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
+			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
+			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
+			OCLstdlibTables.Operations._OclAny__toString /* toString() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Ssh_user_data__OclElement = {
+			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
+			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
+			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
+			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
+			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Ssh_user_data__User_data = {};
+
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Storagelinkvmware__Storagelinkvmware = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Storagelinkvmware__Entity = {
+			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
+			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
+			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
+			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Storagelinkvmware__Link = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Storagelinkvmware__OclAny = {
+			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
+			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
+			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
+			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
+			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
+			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
+			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
+			OCLstdlibTables.Operations._OclAny__toString /* toString() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Storagelinkvmware__OclElement = {
+			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
+			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
+			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
+			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
+			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Storagelinkvmware__Storagelink = {};
+
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Storagevmware__Storagevmware = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Storagevmware__Entity = {
+			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
+			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
+			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
+			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Storagevmware__OclAny = {
+			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
+			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
+			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
+			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
+			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
+			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
+			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
+			OCLstdlibTables.Operations._OclAny__toString /* toString() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Storagevmware__OclElement = {
+			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
+			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
+			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
+			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
+			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Storagevmware__Resource = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Storagevmware__Storage = {
+			InfrastructureTables.Operations._Storage__offline /* offline() */,
+			InfrastructureTables.Operations._Storage__online /* online() */
 		};
 
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Vmwarefolders__Vmwarefolders = {};
@@ -659,9 +858,18 @@ public class VmwareTables
 			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
 		};
 
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Vswitchinfos__Vswitchinfos = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Vswitchinfos__MixinBase = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Vswitchinfos__OclAny = {
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Vswitch__Vswitch = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Vswitch__Entity = {
+			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
+			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
+			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
+			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Vswitch__Network = {
+			InfrastructureTables.Operations._Network__down /* down() */,
+			InfrastructureTables.Operations._Network__up /* up() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Vswitch__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
 			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
 			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
@@ -678,7 +886,7 @@ public class VmwareTables
 			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
 			OCLstdlibTables.Operations._OclAny__toString /* toString() */
 		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Vswitchinfos__OclElement = {
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Vswitch__OclElement = {
 			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
 			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
 			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
@@ -687,6 +895,7 @@ public class VmwareTables
 			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
 			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
 		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Vswitch__Resource = {};
 
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Windows__Windows = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Windows__MixinBase = {};
@@ -717,59 +926,89 @@ public class VmwareTables
 			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Windows__Os_tpl = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Windows__Os_tpl_vmware = {};
 
 		/*
 		 *	Install the operation descriptors in the fragment descriptors.
 		 */
 		static {
-			Fragments._Credential__Credential.initOperations(_Credential__Credential);
-			Fragments._Credential__MixinBase.initOperations(_Credential__MixinBase);
-			Fragments._Credential__OclAny.initOperations(_Credential__OclAny);
-			Fragments._Credential__OclElement.initOperations(_Credential__OclElement);
-
 			Fragments._GuestOsIdentifiers__GuestOsIdentifiers.initOperations(_GuestOsIdentifiers__GuestOsIdentifiers);
 			Fragments._GuestOsIdentifiers__OclAny.initOperations(_GuestOsIdentifiers__OclAny);
 			Fragments._GuestOsIdentifiers__OclElement.initOperations(_GuestOsIdentifiers__OclElement);
 			Fragments._GuestOsIdentifiers__OclEnumeration.initOperations(_GuestOsIdentifiers__OclEnumeration);
 			Fragments._GuestOsIdentifiers__OclType.initOperations(_GuestOsIdentifiers__OclType);
 
+			Fragments._Instancevmware__Compute.initOperations(_Instancevmware__Compute);
+			Fragments._Instancevmware__Entity.initOperations(_Instancevmware__Entity);
+			Fragments._Instancevmware__Instancevmware.initOperations(_Instancevmware__Instancevmware);
+			Fragments._Instancevmware__OclAny.initOperations(_Instancevmware__OclAny);
+			Fragments._Instancevmware__OclElement.initOperations(_Instancevmware__OclElement);
+			Fragments._Instancevmware__Resource.initOperations(_Instancevmware__Resource);
+
 			Fragments._Linux__Linux.initOperations(_Linux__Linux);
 			Fragments._Linux__MixinBase.initOperations(_Linux__MixinBase);
 			Fragments._Linux__OclAny.initOperations(_Linux__OclAny);
 			Fragments._Linux__OclElement.initOperations(_Linux__OclElement);
 			Fragments._Linux__Os_tpl.initOperations(_Linux__Os_tpl);
+			Fragments._Linux__Os_tpl_vmware.initOperations(_Linux__Os_tpl_vmware);
 
 			Fragments._Macosx__Macosx.initOperations(_Macosx__Macosx);
 			Fragments._Macosx__MixinBase.initOperations(_Macosx__MixinBase);
 			Fragments._Macosx__OclAny.initOperations(_Macosx__OclAny);
 			Fragments._Macosx__OclElement.initOperations(_Macosx__OclElement);
 			Fragments._Macosx__Os_tpl.initOperations(_Macosx__Os_tpl);
+			Fragments._Macosx__Os_tpl_vmware.initOperations(_Macosx__Os_tpl_vmware);
 
-			Fragments._Vmaddon__MixinBase.initOperations(_Vmaddon__MixinBase);
-			Fragments._Vmaddon__OclAny.initOperations(_Vmaddon__OclAny);
-			Fragments._Vmaddon__OclElement.initOperations(_Vmaddon__OclElement);
-			Fragments._Vmaddon__Vmaddon.initOperations(_Vmaddon__Vmaddon);
-			Fragments._Vmaddon__Vmimage.initOperations(_Vmaddon__Vmimage);
+			Fragments._Networkadapter__Entity.initOperations(_Networkadapter__Entity);
+			Fragments._Networkadapter__Link.initOperations(_Networkadapter__Link);
+			Fragments._Networkadapter__Networkadapter.initOperations(_Networkadapter__Networkadapter);
+			Fragments._Networkadapter__Networkinterface.initOperations(_Networkadapter__Networkinterface);
+			Fragments._Networkadapter__OclAny.initOperations(_Networkadapter__OclAny);
+			Fragments._Networkadapter__OclElement.initOperations(_Networkadapter__OclElement);
 
-			Fragments._Vmimage__MixinBase.initOperations(_Vmimage__MixinBase);
-			Fragments._Vmimage__OclAny.initOperations(_Vmimage__OclAny);
-			Fragments._Vmimage__OclElement.initOperations(_Vmimage__OclElement);
-			Fragments._Vmimage__Vmimage.initOperations(_Vmimage__Vmimage);
+			Fragments._Os_tpl_vmware__MixinBase.initOperations(_Os_tpl_vmware__MixinBase);
+			Fragments._Os_tpl_vmware__OclAny.initOperations(_Os_tpl_vmware__OclAny);
+			Fragments._Os_tpl_vmware__OclElement.initOperations(_Os_tpl_vmware__OclElement);
+			Fragments._Os_tpl_vmware__Os_tpl.initOperations(_Os_tpl_vmware__Os_tpl);
+			Fragments._Os_tpl_vmware__Os_tpl_vmware.initOperations(_Os_tpl_vmware__Os_tpl_vmware);
+
+			Fragments._Ssh_user_data__MixinBase.initOperations(_Ssh_user_data__MixinBase);
+			Fragments._Ssh_user_data__OclAny.initOperations(_Ssh_user_data__OclAny);
+			Fragments._Ssh_user_data__OclElement.initOperations(_Ssh_user_data__OclElement);
+			Fragments._Ssh_user_data__Ssh_user_data.initOperations(_Ssh_user_data__Ssh_user_data);
+			Fragments._Ssh_user_data__User_data.initOperations(_Ssh_user_data__User_data);
+
+			Fragments._Storagelinkvmware__Entity.initOperations(_Storagelinkvmware__Entity);
+			Fragments._Storagelinkvmware__Link.initOperations(_Storagelinkvmware__Link);
+			Fragments._Storagelinkvmware__OclAny.initOperations(_Storagelinkvmware__OclAny);
+			Fragments._Storagelinkvmware__OclElement.initOperations(_Storagelinkvmware__OclElement);
+			Fragments._Storagelinkvmware__Storagelink.initOperations(_Storagelinkvmware__Storagelink);
+			Fragments._Storagelinkvmware__Storagelinkvmware.initOperations(_Storagelinkvmware__Storagelinkvmware);
+
+			Fragments._Storagevmware__Entity.initOperations(_Storagevmware__Entity);
+			Fragments._Storagevmware__OclAny.initOperations(_Storagevmware__OclAny);
+			Fragments._Storagevmware__OclElement.initOperations(_Storagevmware__OclElement);
+			Fragments._Storagevmware__Resource.initOperations(_Storagevmware__Resource);
+			Fragments._Storagevmware__Storage.initOperations(_Storagevmware__Storage);
+			Fragments._Storagevmware__Storagevmware.initOperations(_Storagevmware__Storagevmware);
 
 			Fragments._Vmwarefolders__MixinBase.initOperations(_Vmwarefolders__MixinBase);
 			Fragments._Vmwarefolders__OclAny.initOperations(_Vmwarefolders__OclAny);
 			Fragments._Vmwarefolders__OclElement.initOperations(_Vmwarefolders__OclElement);
 			Fragments._Vmwarefolders__Vmwarefolders.initOperations(_Vmwarefolders__Vmwarefolders);
 
-			Fragments._Vswitchinfos__MixinBase.initOperations(_Vswitchinfos__MixinBase);
-			Fragments._Vswitchinfos__OclAny.initOperations(_Vswitchinfos__OclAny);
-			Fragments._Vswitchinfos__OclElement.initOperations(_Vswitchinfos__OclElement);
-			Fragments._Vswitchinfos__Vswitchinfos.initOperations(_Vswitchinfos__Vswitchinfos);
+			Fragments._Vswitch__Entity.initOperations(_Vswitch__Entity);
+			Fragments._Vswitch__Network.initOperations(_Vswitch__Network);
+			Fragments._Vswitch__OclAny.initOperations(_Vswitch__OclAny);
+			Fragments._Vswitch__OclElement.initOperations(_Vswitch__OclElement);
+			Fragments._Vswitch__Resource.initOperations(_Vswitch__Resource);
+			Fragments._Vswitch__Vswitch.initOperations(_Vswitch__Vswitch);
 
 			Fragments._Windows__MixinBase.initOperations(_Windows__MixinBase);
 			Fragments._Windows__OclAny.initOperations(_Windows__OclAny);
 			Fragments._Windows__OclElement.initOperations(_Windows__OclElement);
 			Fragments._Windows__Os_tpl.initOperations(_Windows__Os_tpl);
+			Fragments._Windows__Os_tpl_vmware.initOperations(_Windows__Os_tpl_vmware);
 			Fragments._Windows__Windows.initOperations(_Windows__Windows);
 
 			Init.initEnd();
@@ -790,35 +1029,43 @@ public class VmwareTables
 			FragmentOperations.init();
 		}
 
-		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Credential = {
-			VmwareTables.Properties._Credential__occiComputeUserdataFile,
-			VmwareTables.Properties._Credential__password,
-			VmwareTables.Properties._Credential__user
-		};
-
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _GuestOsIdentifiers = {};
 
+		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Instancevmware = {
+			VmwareTables.Properties._Instancevmware__guestosid,
+			VmwareTables.Properties._Instancevmware__gueststate,
+			VmwareTables.Properties._Instancevmware__imagename,
+			VmwareTables.Properties._Instancevmware__instanceId,
+			VmwareTables.Properties._Instancevmware__markedastemplate,
+			VmwareTables.Properties._Instancevmware__vcpu
+		};
+
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Linux = {
-			VmwareTables.Properties._Linux__datastoreisopath,
-			VmwareTables.Properties._Linux__guestid
+			VmwareTables.Properties._Os_tpl_vmware__datastoreisopath,
+			VmwareTables.Properties._Os_tpl_vmware__guestid
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Macosx = {
-			VmwareTables.Properties._Macosx__datastoreisopath,
-			VmwareTables.Properties._Macosx__guestid
+			VmwareTables.Properties._Os_tpl_vmware__datastoreisopath,
+			VmwareTables.Properties._Os_tpl_vmware__guestid
 		};
 
-		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Vmaddon = {
-			VmwareTables.Properties._Vmaddon__guestosid,
-			VmwareTables.Properties._Vmaddon__gueststate,
-			VmwareTables.Properties._Vmimage__imagename,
-			VmwareTables.Properties._Vmaddon__markedastemplate,
-			VmwareTables.Properties._Vmaddon__vcpu
+		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Networkadapter = {};
+
+		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Os_tpl_vmware = {
+			VmwareTables.Properties._Os_tpl_vmware__datastoreisopath,
+			VmwareTables.Properties._Os_tpl_vmware__guestid
 		};
 
-		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Vmimage = {
-			VmwareTables.Properties._Vmimage__imagename
+		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Ssh_user_data = {
+			VmwareTables.Properties._Ssh_user_data__occiComputeUserdataFile,
+			VmwareTables.Properties._Ssh_user_data__password,
+			VmwareTables.Properties._Ssh_user_data__user
 		};
+
+		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Storagelinkvmware = {};
+
+		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Storagevmware = {};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Vmwarefolders = {
 			VmwareTables.Properties._Vmwarefolders__clustername,
@@ -828,27 +1075,30 @@ public class VmwareTables
 			VmwareTables.Properties._Vmwarefolders__inventorypath
 		};
 
-		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Vswitchinfos = {
-			VmwareTables.Properties._Vswitchinfos__nbport
+		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Vswitch = {
+			VmwareTables.Properties._Vswitch__nbport
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Windows = {
-			VmwareTables.Properties._Windows__datastoreisopath,
-			VmwareTables.Properties._Windows__guestid
+			VmwareTables.Properties._Os_tpl_vmware__datastoreisopath,
+			VmwareTables.Properties._Os_tpl_vmware__guestid
 		};
 
 		/**
 		 *	Install the property descriptors in the fragment descriptors.
 		 */
 		static {
-			Fragments._Credential__Credential.initProperties(_Credential);
 			Fragments._GuestOsIdentifiers__GuestOsIdentifiers.initProperties(_GuestOsIdentifiers);
+			Fragments._Instancevmware__Instancevmware.initProperties(_Instancevmware);
 			Fragments._Linux__Linux.initProperties(_Linux);
 			Fragments._Macosx__Macosx.initProperties(_Macosx);
-			Fragments._Vmaddon__Vmaddon.initProperties(_Vmaddon);
-			Fragments._Vmimage__Vmimage.initProperties(_Vmimage);
+			Fragments._Networkadapter__Networkadapter.initProperties(_Networkadapter);
+			Fragments._Os_tpl_vmware__Os_tpl_vmware.initProperties(_Os_tpl_vmware);
+			Fragments._Ssh_user_data__Ssh_user_data.initProperties(_Ssh_user_data);
+			Fragments._Storagelinkvmware__Storagelinkvmware.initProperties(_Storagelinkvmware);
+			Fragments._Storagevmware__Storagevmware.initProperties(_Storagevmware);
 			Fragments._Vmwarefolders__Vmwarefolders.initProperties(_Vmwarefolders);
-			Fragments._Vswitchinfos__Vswitchinfos.initProperties(_Vswitchinfos);
+			Fragments._Vswitch__Vswitch.initProperties(_Vswitch);
 			Fragments._Windows__Windows.initProperties(_Windows);
 
 			Init.initEnd();

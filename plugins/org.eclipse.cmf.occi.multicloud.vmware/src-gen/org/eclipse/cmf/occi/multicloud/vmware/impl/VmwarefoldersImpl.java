@@ -307,11 +307,11 @@ public class VmwarefoldersImpl extends MixinBaseImpl implements Vmwarefolders {
 		 *     then true
 		 *     else
 		 *       let
-		 *         result : occi::Boolean[?] = self.entity.oclIsKindOf(infrastructure::Compute) or
-		 *         self.entity.oclIsKindOf(infrastructure::Network) or
-		 *         self.entity.oclIsKindOf(infrastructure::Networkinterface) or
-		 *         self.entity.oclIsKindOf(infrastructure::Storage) or
-		 *         self.entity.oclIsKindOf(infrastructure::Storagelink)
+		 *         result : occi::Boolean[?] = self.entity.oclIsKindOf(Instancevmware) or
+		 *         self.entity.oclIsKindOf(Networkadapter) or
+		 *         self.entity.oclIsKindOf(Storagelinkvmware) or
+		 *         self.entity.oclIsKindOf(Storagevmware) or
+		 *         self.entity.oclIsKindOf(Vswitch)
 		 *       in
 		 *         'Vmwarefolders::appliesConstraint'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
 		 *     endif
@@ -325,16 +325,16 @@ public class VmwarefoldersImpl extends MixinBaseImpl implements Vmwarefolders {
 			symbol_0 = ValueUtil.TRUE_VALUE;
 		}
 		else {
-			final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_infrastructure_c_c_Compute_0 = idResolver.getClass(VmwareTables.CLSSid_Compute, null);
+			final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_vmware_c_c_Instancevmware_0 = idResolver.getClass(VmwareTables.CLSSid_Instancevmware, null);
 			final /*@NonInvalid*/ Entity entity_3 = this.getEntity();
-			final /*@NonInvalid*/ boolean oclIsKindOf = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_3, TYP_infrastructure_c_c_Compute_0).booleanValue();
+			final /*@NonInvalid*/ boolean oclIsKindOf = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_3, TYP_vmware_c_c_Instancevmware_0).booleanValue();
 			/*@NonInvalid*/ boolean or;
 			if (oclIsKindOf) {
 				or = ValueUtil.TRUE_VALUE;
 			}
 			else {
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_infrastructure_c_c_Network = idResolver.getClass(VmwareTables.CLSSid_Network, null);
-				final /*@NonInvalid*/ boolean oclIsKindOf_0 = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_3, TYP_infrastructure_c_c_Network).booleanValue();
+				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_vmware_c_c_Networkadapter = idResolver.getClass(VmwareTables.CLSSid_Networkadapter, null);
+				final /*@NonInvalid*/ boolean oclIsKindOf_0 = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_3, TYP_vmware_c_c_Networkadapter).booleanValue();
 				or = oclIsKindOf_0;
 			}
 			/*@NonInvalid*/ boolean or_0;
@@ -342,8 +342,8 @@ public class VmwarefoldersImpl extends MixinBaseImpl implements Vmwarefolders {
 				or_0 = ValueUtil.TRUE_VALUE;
 			}
 			else {
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_infrastructure_c_c_Networkinterface = idResolver.getClass(VmwareTables.CLSSid_Networkinterface, null);
-				final /*@NonInvalid*/ boolean oclIsKindOf_1 = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_3, TYP_infrastructure_c_c_Networkinterface).booleanValue();
+				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_vmware_c_c_Storagelinkvmware = idResolver.getClass(VmwareTables.CLSSid_Storagelinkvmware, null);
+				final /*@NonInvalid*/ boolean oclIsKindOf_1 = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_3, TYP_vmware_c_c_Storagelinkvmware).booleanValue();
 				or_0 = oclIsKindOf_1;
 			}
 			/*@NonInvalid*/ boolean or_1;
@@ -351,8 +351,8 @@ public class VmwarefoldersImpl extends MixinBaseImpl implements Vmwarefolders {
 				or_1 = ValueUtil.TRUE_VALUE;
 			}
 			else {
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_infrastructure_c_c_Storage = idResolver.getClass(VmwareTables.CLSSid_Storage, null);
-				final /*@NonInvalid*/ boolean oclIsKindOf_2 = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_3, TYP_infrastructure_c_c_Storage).booleanValue();
+				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_vmware_c_c_Storagevmware_0 = idResolver.getClass(VmwareTables.CLSSid_Storagevmware, null);
+				final /*@NonInvalid*/ boolean oclIsKindOf_2 = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_3, TYP_vmware_c_c_Storagevmware_0).booleanValue();
 				or_1 = oclIsKindOf_2;
 			}
 			/*@NonInvalid*/ boolean result;
@@ -360,8 +360,8 @@ public class VmwarefoldersImpl extends MixinBaseImpl implements Vmwarefolders {
 				result = ValueUtil.TRUE_VALUE;
 			}
 			else {
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_infrastructure_c_c_Storagelink = idResolver.getClass(VmwareTables.CLSSid_Storagelink, null);
-				final /*@NonInvalid*/ boolean oclIsKindOf_3 = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_3, TYP_infrastructure_c_c_Storagelink).booleanValue();
+				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_vmware_c_c_Vswitch_0 = idResolver.getClass(VmwareTables.CLSSid_Vswitch, null);
+				final /*@NonInvalid*/ boolean oclIsKindOf_3 = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_3, TYP_vmware_c_c_Vswitch_0).booleanValue();
 				result = oclIsKindOf_3;
 			}
 			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, VmwareTables.STR_Vmwarefolders_c_c_appliesConstraint, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, VmwareTables.INT_0).booleanValue();

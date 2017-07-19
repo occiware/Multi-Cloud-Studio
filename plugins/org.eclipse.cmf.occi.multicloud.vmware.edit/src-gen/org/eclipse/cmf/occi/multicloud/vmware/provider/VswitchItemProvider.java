@@ -16,10 +16,15 @@ package org.eclipse.cmf.occi.multicloud.vmware.provider;
 import java.util.Collection;
 import java.util.List;
 
-import org.eclipse.cmf.occi.core.provider.MixinBaseItemProvider;
+import org.eclipse.cmf.occi.core.OCCIPackage;
 
+import org.eclipse.cmf.occi.crtp.CrtpFactory;
+
+import org.eclipse.cmf.occi.infrastructure.provider.NetworkItemProvider;
+
+import org.eclipse.cmf.occi.multicloud.vmware.VmwareFactory;
 import org.eclipse.cmf.occi.multicloud.vmware.VmwarePackage;
-import org.eclipse.cmf.occi.multicloud.vmware.Vswitchinfos;
+import org.eclipse.cmf.occi.multicloud.vmware.Vswitch;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
@@ -32,19 +37,19 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.cmf.occi.multicloud.vmware.Vswitchinfos} object.
+ * This is the item provider adapter for a {@link org.eclipse.cmf.occi.multicloud.vmware.Vswitch} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class VswitchinfosItemProvider extends MixinBaseItemProvider {
+public class VswitchItemProvider extends NetworkItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public VswitchinfosItemProvider(AdapterFactory adapterFactory) {
+	public VswitchItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -75,9 +80,9 @@ public class VswitchinfosItemProvider extends MixinBaseItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Vswitchinfos_nbport_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Vswitchinfos_nbport_feature", "_UI_Vswitchinfos_type"),
-				 VmwarePackage.Literals.VSWITCHINFOS__NBPORT,
+				 getString("_UI_Vswitch_nbport_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Vswitch_nbport_feature", "_UI_Vswitch_type"),
+				 VmwarePackage.Literals.VSWITCH__NBPORT,
 				 true,
 				 false,
 				 false,
@@ -87,14 +92,14 @@ public class VswitchinfosItemProvider extends MixinBaseItemProvider {
 	}
 
 	/**
-	 * This returns Vswitchinfos.gif.
+	 * This returns Vswitch.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Vswitchinfos"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Vswitch"));
 	}
 
 	/**
@@ -105,11 +110,10 @@ public class VswitchinfosItemProvider extends MixinBaseItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		Integer labelValue = ((Vswitchinfos)object).getNbport();
-		String label = labelValue == null ? null : labelValue.toString();
+		String label = ((Vswitch)object).getId();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Vswitchinfos_type") :
-			getString("_UI_Vswitchinfos_type") + " " + label;
+			getString("_UI_Vswitch_type") :
+			getString("_UI_Vswitch_type") + " " + label;
 	}
 	
 
@@ -124,8 +128,8 @@ public class VswitchinfosItemProvider extends MixinBaseItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Vswitchinfos.class)) {
-			case VmwarePackage.VSWITCHINFOS__NBPORT:
+		switch (notification.getFeatureID(Vswitch.class)) {
+			case VmwarePackage.VSWITCH__NBPORT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -142,6 +146,76 @@ public class VswitchinfosItemProvider extends MixinBaseItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createWindows()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createLinux()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createMacosx()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createVmwarefolders()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createOs_tpl_vmware()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createSsh_user_data()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 CrtpFactory.eINSTANCE.createSmall()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 CrtpFactory.eINSTANCE.createMedium()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 CrtpFactory.eINSTANCE.createLarge()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 CrtpFactory.eINSTANCE.createMem_small()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 CrtpFactory.eINSTANCE.createMem_medium()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 CrtpFactory.eINSTANCE.createMem_large()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.RESOURCE__LINKS,
+				 VmwareFactory.eINSTANCE.createStoragelinkvmware()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.RESOURCE__LINKS,
+				 VmwareFactory.eINSTANCE.createNetworkadapter()));
 	}
 
 	/**

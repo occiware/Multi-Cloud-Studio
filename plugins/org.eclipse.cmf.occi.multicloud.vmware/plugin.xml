@@ -53,8 +53,7 @@
       <!-- @generated vmware -->
       <package
             uri="http://occiware.org/occi/infrastructure/vmware/ecore"
-            class="org.eclipse.cmf.occi.multicloud.vmware.VmwarePackage"
-            genModel="model/vmware.genmodel"/>
+            class="org.eclipse.cmf.occi.multicloud.vmware.VmwarePackage"/>
    </extension>
 
 </plugin>

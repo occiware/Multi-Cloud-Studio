@@ -15,6 +15,7 @@ package org.eclipse.cmf.occi.multicloud.vmware.tests;
 import java.io.File;
 import java.io.IOException;
 
+import org.eclipse.cmf.occi.multicloud.vmware.Instancevmware;
 import org.eclipse.cmf.occi.multicloud.vmware.VmwareFactory;
 import org.eclipse.cmf.occi.multicloud.vmware.VmwarePackage;
 import org.eclipse.cmf.occi.multicloud.vmware.Windows;
@@ -70,7 +71,7 @@ public class VmwareExample {
 			System.out.println("Enter a list of file paths or URIs that have content like this:");
 			try {
 				Resource resource = resourceSet.createResource(URI.createURI("http:///My.vmware"));
-				Windows root = VmwareFactory.eINSTANCE.createWindows();
+				Instancevmware root = VmwareFactory.eINSTANCE.createInstancevmware();
 				resource.getContents().add(root);
 				resource.save(System.out, null);
 			}

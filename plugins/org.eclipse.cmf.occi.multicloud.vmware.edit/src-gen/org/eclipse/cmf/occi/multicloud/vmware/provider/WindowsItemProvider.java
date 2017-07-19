@@ -60,8 +60,8 @@ public class WindowsItemProvider extends MixinBaseItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addGuestidPropertyDescriptor(object);
 			addDatastoreisopathPropertyDescriptor(object);
+			addGuestidPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -77,9 +77,9 @@ public class WindowsItemProvider extends MixinBaseItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Windows_guestid_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Windows_guestid_feature", "_UI_Windows_type"),
-				 VmwarePackage.Literals.WINDOWS__GUESTID,
+				 getString("_UI_Os_tpl_vmware_guestid_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Os_tpl_vmware_guestid_feature", "_UI_Os_tpl_vmware_type"),
+				 VmwarePackage.Literals.OS_TPL_VMWARE__GUESTID,
 				 true,
 				 false,
 				 false,
@@ -99,9 +99,9 @@ public class WindowsItemProvider extends MixinBaseItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Windows_datastoreisopath_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Windows_datastoreisopath_feature", "_UI_Windows_type"),
-				 VmwarePackage.Literals.WINDOWS__DATASTOREISOPATH,
+				 getString("_UI_Os_tpl_vmware_datastoreisopath_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Os_tpl_vmware_datastoreisopath_feature", "_UI_Os_tpl_vmware_type"),
+				 VmwarePackage.Literals.OS_TPL_VMWARE__DATASTOREISOPATH,
 				 true,
 				 false,
 				 false,
@@ -129,8 +129,7 @@ public class WindowsItemProvider extends MixinBaseItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		GuestOsIdentifiers labelValue = ((Windows)object).getGuestid();
-		String label = labelValue == null ? null : labelValue.toString();
+		String label = ((Windows)object).getDatastoreisopath();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Windows_type") :
 			getString("_UI_Windows_type") + " " + label;
@@ -149,8 +148,8 @@ public class WindowsItemProvider extends MixinBaseItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Windows.class)) {
-			case VmwarePackage.WINDOWS__GUESTID:
 			case VmwarePackage.WINDOWS__DATASTOREISOPATH:
+			case VmwarePackage.WINDOWS__GUESTID:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

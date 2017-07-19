@@ -16,9 +16,14 @@ package org.eclipse.cmf.occi.multicloud.vmware.provider;
 import java.util.Collection;
 import java.util.List;
 
-import org.eclipse.cmf.occi.core.provider.MixinBaseItemProvider;
+import org.eclipse.cmf.occi.core.OCCIPackage;
 
-import org.eclipse.cmf.occi.multicloud.vmware.Vmaddon;
+import org.eclipse.cmf.occi.crtp.CrtpFactory;
+
+import org.eclipse.cmf.occi.infrastructure.provider.ComputeItemProvider;
+
+import org.eclipse.cmf.occi.multicloud.vmware.Instancevmware;
+import org.eclipse.cmf.occi.multicloud.vmware.VmwareFactory;
 import org.eclipse.cmf.occi.multicloud.vmware.VmwarePackage;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -32,19 +37,19 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.cmf.occi.multicloud.vmware.Vmaddon} object.
+ * This is the item provider adapter for a {@link org.eclipse.cmf.occi.multicloud.vmware.Instancevmware} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class VmaddonItemProvider extends MixinBaseItemProvider {
+public class InstancevmwareItemProvider extends ComputeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public VmaddonItemProvider(AdapterFactory adapterFactory) {
+	public InstancevmwareItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -60,10 +65,11 @@ public class VmaddonItemProvider extends MixinBaseItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addImagenamePropertyDescriptor(object);
-			addVcpuPropertyDescriptor(object);
+			addMarkedastemplatePropertyDescriptor(object);
 			addGueststatePropertyDescriptor(object);
 			addGuestosidPropertyDescriptor(object);
-			addMarkedastemplatePropertyDescriptor(object);
+			addVcpuPropertyDescriptor(object);
+			addInstanceIdPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -79,75 +85,9 @@ public class VmaddonItemProvider extends MixinBaseItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Vmimage_imagename_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Vmimage_imagename_feature", "_UI_Vmimage_type"),
-				 VmwarePackage.Literals.VMIMAGE__IMAGENAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Vcpu feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addVcpuPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Vmaddon_vcpu_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Vmaddon_vcpu_feature", "_UI_Vmaddon_type"),
-				 VmwarePackage.Literals.VMADDON__VCPU,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Gueststate feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addGueststatePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Vmaddon_gueststate_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Vmaddon_gueststate_feature", "_UI_Vmaddon_type"),
-				 VmwarePackage.Literals.VMADDON__GUESTSTATE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Guestosid feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addGuestosidPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Vmaddon_guestosid_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Vmaddon_guestosid_feature", "_UI_Vmaddon_type"),
-				 VmwarePackage.Literals.VMADDON__GUESTOSID,
+				 getString("_UI_Instancevmware_imagename_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Instancevmware_imagename_feature", "_UI_Instancevmware_type"),
+				 VmwarePackage.Literals.INSTANCEVMWARE__IMAGENAME,
 				 true,
 				 false,
 				 false,
@@ -167,9 +107,9 @@ public class VmaddonItemProvider extends MixinBaseItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Vmaddon_markedastemplate_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Vmaddon_markedastemplate_feature", "_UI_Vmaddon_type"),
-				 VmwarePackage.Literals.VMADDON__MARKEDASTEMPLATE,
+				 getString("_UI_Instancevmware_markedastemplate_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Instancevmware_markedastemplate_feature", "_UI_Instancevmware_type"),
+				 VmwarePackage.Literals.INSTANCEVMWARE__MARKEDASTEMPLATE,
 				 true,
 				 false,
 				 false,
@@ -179,14 +119,102 @@ public class VmaddonItemProvider extends MixinBaseItemProvider {
 	}
 
 	/**
-	 * This returns Vmaddon.gif.
+	 * This adds a property descriptor for the Gueststate feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addGueststatePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Instancevmware_gueststate_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Instancevmware_gueststate_feature", "_UI_Instancevmware_type"),
+				 VmwarePackage.Literals.INSTANCEVMWARE__GUESTSTATE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Guestosid feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addGuestosidPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Instancevmware_guestosid_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Instancevmware_guestosid_feature", "_UI_Instancevmware_type"),
+				 VmwarePackage.Literals.INSTANCEVMWARE__GUESTOSID,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Vcpu feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addVcpuPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Instancevmware_vcpu_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Instancevmware_vcpu_feature", "_UI_Instancevmware_type"),
+				 VmwarePackage.Literals.INSTANCEVMWARE__VCPU,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Instance Id feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInstanceIdPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Instancevmware_instanceId_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Instancevmware_instanceId_feature", "_UI_Instancevmware_type"),
+				 VmwarePackage.Literals.INSTANCEVMWARE__INSTANCE_ID,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This returns Instancevmware.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Vmaddon"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Instancevmware"));
 	}
 
 	/**
@@ -197,10 +225,10 @@ public class VmaddonItemProvider extends MixinBaseItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Vmaddon)object).getImagename();
+		String label = ((Instancevmware)object).getId();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Vmaddon_type") :
-			getString("_UI_Vmaddon_type") + " " + label;
+			getString("_UI_Instancevmware_type") :
+			getString("_UI_Instancevmware_type") + " " + label;
 	}
 	
 
@@ -215,12 +243,13 @@ public class VmaddonItemProvider extends MixinBaseItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Vmaddon.class)) {
-			case VmwarePackage.VMADDON__IMAGENAME:
-			case VmwarePackage.VMADDON__VCPU:
-			case VmwarePackage.VMADDON__GUESTSTATE:
-			case VmwarePackage.VMADDON__GUESTOSID:
-			case VmwarePackage.VMADDON__MARKEDASTEMPLATE:
+		switch (notification.getFeatureID(Instancevmware.class)) {
+			case VmwarePackage.INSTANCEVMWARE__IMAGENAME:
+			case VmwarePackage.INSTANCEVMWARE__MARKEDASTEMPLATE:
+			case VmwarePackage.INSTANCEVMWARE__GUESTSTATE:
+			case VmwarePackage.INSTANCEVMWARE__GUESTOSID:
+			case VmwarePackage.INSTANCEVMWARE__VCPU:
+			case VmwarePackage.INSTANCEVMWARE__INSTANCE_ID:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -237,6 +266,76 @@ public class VmaddonItemProvider extends MixinBaseItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createWindows()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createLinux()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createMacosx()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createVmwarefolders()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createOs_tpl_vmware()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createSsh_user_data()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 CrtpFactory.eINSTANCE.createSmall()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 CrtpFactory.eINSTANCE.createMedium()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 CrtpFactory.eINSTANCE.createLarge()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 CrtpFactory.eINSTANCE.createMem_small()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 CrtpFactory.eINSTANCE.createMem_medium()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 CrtpFactory.eINSTANCE.createMem_large()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.RESOURCE__LINKS,
+				 VmwareFactory.eINSTANCE.createStoragelinkvmware()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.RESOURCE__LINKS,
+				 VmwareFactory.eINSTANCE.createNetworkadapter()));
 	}
 
 	/**

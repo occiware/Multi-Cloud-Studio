@@ -18,7 +18,7 @@ import java.util.List;
 
 import org.eclipse.cmf.occi.core.provider.MixinBaseItemProvider;
 
-import org.eclipse.cmf.occi.multicloud.vmware.Credential;
+import org.eclipse.cmf.occi.multicloud.vmware.Os_tpl_vmware;
 import org.eclipse.cmf.occi.multicloud.vmware.VmwarePackage;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -32,19 +32,19 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.cmf.occi.multicloud.vmware.Credential} object.
+ * This is the item provider adapter for a {@link org.eclipse.cmf.occi.multicloud.vmware.Os_tpl_vmware} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class CredentialItemProvider extends MixinBaseItemProvider {
+public class Os_tpl_vmwareItemProvider extends MixinBaseItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CredentialItemProvider(AdapterFactory adapterFactory) {
+	public Os_tpl_vmwareItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -59,27 +59,26 @@ public class CredentialItemProvider extends MixinBaseItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addUserPropertyDescriptor(object);
-			addPasswordPropertyDescriptor(object);
-			addOcciComputeUserdataFilePropertyDescriptor(object);
+			addDatastoreisopathPropertyDescriptor(object);
+			addGuestidPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the User feature.
+	 * This adds a property descriptor for the Datastoreisopath feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addUserPropertyDescriptor(Object object) {
+	protected void addDatastoreisopathPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Credential_user_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Credential_user_feature", "_UI_Credential_type"),
-				 VmwarePackage.Literals.CREDENTIAL__USER,
+				 getString("_UI_Os_tpl_vmware_datastoreisopath_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Os_tpl_vmware_datastoreisopath_feature", "_UI_Os_tpl_vmware_type"),
+				 VmwarePackage.Literals.OS_TPL_VMWARE__DATASTOREISOPATH,
 				 true,
 				 false,
 				 false,
@@ -89,19 +88,19 @@ public class CredentialItemProvider extends MixinBaseItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Password feature.
+	 * This adds a property descriptor for the Guestid feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPasswordPropertyDescriptor(Object object) {
+	protected void addGuestidPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Credential_password_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Credential_password_feature", "_UI_Credential_type"),
-				 VmwarePackage.Literals.CREDENTIAL__PASSWORD,
+				 getString("_UI_Os_tpl_vmware_guestid_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Os_tpl_vmware_guestid_feature", "_UI_Os_tpl_vmware_type"),
+				 VmwarePackage.Literals.OS_TPL_VMWARE__GUESTID,
 				 true,
 				 false,
 				 false,
@@ -111,36 +110,14 @@ public class CredentialItemProvider extends MixinBaseItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Occi Compute Userdata File feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addOcciComputeUserdataFilePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Credential_occiComputeUserdataFile_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Credential_occiComputeUserdataFile_feature", "_UI_Credential_type"),
-				 VmwarePackage.Literals.CREDENTIAL__OCCI_COMPUTE_USERDATA_FILE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This returns Credential.gif.
+	 * This returns Os_tpl_vmware.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Credential"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Os_tpl_vmware"));
 	}
 
 	/**
@@ -151,10 +128,10 @@ public class CredentialItemProvider extends MixinBaseItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Credential)object).getUser();
+		String label = ((Os_tpl_vmware)object).getDatastoreisopath();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Credential_type") :
-			getString("_UI_Credential_type") + " " + label;
+			getString("_UI_Os_tpl_vmware_type") :
+			getString("_UI_Os_tpl_vmware_type") + " " + label;
 	}
 	
 
@@ -169,10 +146,9 @@ public class CredentialItemProvider extends MixinBaseItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Credential.class)) {
-			case VmwarePackage.CREDENTIAL__USER:
-			case VmwarePackage.CREDENTIAL__PASSWORD:
-			case VmwarePackage.CREDENTIAL__OCCI_COMPUTE_USERDATA_FILE:
+		switch (notification.getFeatureID(Os_tpl_vmware.class)) {
+			case VmwarePackage.OS_TPL_VMWARE__DATASTOREISOPATH:
+			case VmwarePackage.OS_TPL_VMWARE__GUESTID:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

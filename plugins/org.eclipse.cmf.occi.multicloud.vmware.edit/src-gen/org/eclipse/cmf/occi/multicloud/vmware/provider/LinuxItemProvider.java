@@ -60,8 +60,8 @@ public class LinuxItemProvider extends MixinBaseItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addGuestidPropertyDescriptor(object);
 			addDatastoreisopathPropertyDescriptor(object);
+			addGuestidPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -77,9 +77,9 @@ public class LinuxItemProvider extends MixinBaseItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Linux_guestid_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Linux_guestid_feature", "_UI_Linux_type"),
-				 VmwarePackage.Literals.LINUX__GUESTID,
+				 getString("_UI_Os_tpl_vmware_guestid_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Os_tpl_vmware_guestid_feature", "_UI_Os_tpl_vmware_type"),
+				 VmwarePackage.Literals.OS_TPL_VMWARE__GUESTID,
 				 true,
 				 false,
 				 false,
@@ -99,9 +99,9 @@ public class LinuxItemProvider extends MixinBaseItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Linux_datastoreisopath_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Linux_datastoreisopath_feature", "_UI_Linux_type"),
-				 VmwarePackage.Literals.LINUX__DATASTOREISOPATH,
+				 getString("_UI_Os_tpl_vmware_datastoreisopath_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Os_tpl_vmware_datastoreisopath_feature", "_UI_Os_tpl_vmware_type"),
+				 VmwarePackage.Literals.OS_TPL_VMWARE__DATASTOREISOPATH,
 				 true,
 				 false,
 				 false,
@@ -129,8 +129,7 @@ public class LinuxItemProvider extends MixinBaseItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		GuestOsIdentifiers labelValue = ((Linux)object).getGuestid();
-		String label = labelValue == null ? null : labelValue.toString();
+		String label = ((Linux)object).getDatastoreisopath();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Linux_type") :
 			getString("_UI_Linux_type") + " " + label;
@@ -149,8 +148,8 @@ public class LinuxItemProvider extends MixinBaseItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Linux.class)) {
-			case VmwarePackage.LINUX__GUESTID:
 			case VmwarePackage.LINUX__DATASTOREISOPATH:
+			case VmwarePackage.LINUX__GUESTID:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

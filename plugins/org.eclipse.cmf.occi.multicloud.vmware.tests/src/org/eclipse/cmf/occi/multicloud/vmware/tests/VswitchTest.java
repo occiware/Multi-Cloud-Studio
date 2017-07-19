@@ -16,30 +16,24 @@ import junit.framework.TestCase;
 
 import junit.textui.TestRunner;
 
-import org.eclipse.cmf.occi.multicloud.vmware.Vmaddon;
 import org.eclipse.cmf.occi.multicloud.vmware.VmwareFactory;
+import org.eclipse.cmf.occi.multicloud.vmware.Vswitch;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Vmaddon</b></em>'.
+ * A test case for the model object '<em><b>Vswitch</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * The following operations are tested:
- * <ul>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.vmware.Vmaddon#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}</li>
- * </ul>
- * </p>
  * @generated
  */
-public class VmaddonTest extends TestCase {
+public class VswitchTest extends TestCase {
 
 	/**
-	 * The fixture for this Vmaddon test case.
+	 * The fixture for this Vswitch test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Vmaddon fixture = null;
+	protected Vswitch fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -47,36 +41,36 @@ public class VmaddonTest extends TestCase {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(VmaddonTest.class);
+		TestRunner.run(VswitchTest.class);
 	}
 
 	/**
-	 * Constructs a new Vmaddon test case with the given name.
+	 * Constructs a new Vswitch test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public VmaddonTest(String name) {
+	public VswitchTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Sets the fixture for this Vmaddon test case.
+	 * Sets the fixture for this Vswitch test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(Vmaddon fixture) {
+	protected void setFixture(Vswitch fixture) {
 		this.fixture = fixture;
 	}
 
 	/**
-	 * Returns the fixture for this Vmaddon test case.
+	 * Returns the fixture for this Vswitch test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Vmaddon getFixture() {
+	protected Vswitch getFixture() {
 		return fixture;
 	}
 
@@ -88,7 +82,7 @@ public class VmaddonTest extends TestCase {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(VmwareFactory.eINSTANCE.createVmaddon());
+		setFixture(VmwareFactory.eINSTANCE.createVswitch());
 	}
 
 	/**
@@ -102,17 +96,4 @@ public class VmaddonTest extends TestCase {
 		setFixture(null);
 	}
 
-	/**
-	 * Tests the '{@link org.eclipse.cmf.occi.multicloud.vmware.Vmaddon#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.vmware.Vmaddon#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	public void testAppliesConstraint__DiagnosticChain_Map() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-} //VmaddonTest
+} //VswitchTest

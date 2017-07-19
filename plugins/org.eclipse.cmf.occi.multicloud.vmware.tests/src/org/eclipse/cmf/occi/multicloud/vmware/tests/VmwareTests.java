@@ -41,14 +41,16 @@ public class VmwareTests extends TestSuite {
 	 */
 	public static Test suite() {
 		TestSuite suite = new VmwareTests("vmware Tests");
+		suite.addTestSuite(InstancevmwareTest.class);
+		suite.addTestSuite(StoragevmwareTest.class);
+		suite.addTestSuite(StoragelinkvmwareTest.class);
+		suite.addTestSuite(VswitchTest.class);
+		suite.addTestSuite(NetworkadapterTest.class);
 		suite.addTestSuite(WindowsTest.class);
-		suite.addTestSuite(VmaddonTest.class);
-		suite.addTestSuite(VmimageTest.class);
 		suite.addTestSuite(LinuxTest.class);
 		suite.addTestSuite(MacosxTest.class);
 		suite.addTestSuite(VmwarefoldersTest.class);
-		suite.addTestSuite(VswitchinfosTest.class);
-		suite.addTestSuite(CredentialTest.class);
+		suite.addTestSuite(Os_tpl_vmwareTest.class);
 		return suite;
 	}
 

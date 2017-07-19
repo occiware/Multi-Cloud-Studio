@@ -67,14 +67,17 @@ public class VmwareFactoryImpl extends EFactoryImpl implements VmwareFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case VmwarePackage.INSTANCEVMWARE: return createInstancevmware();
+			case VmwarePackage.STORAGEVMWARE: return createStoragevmware();
+			case VmwarePackage.STORAGELINKVMWARE: return createStoragelinkvmware();
+			case VmwarePackage.VSWITCH: return createVswitch();
+			case VmwarePackage.NETWORKADAPTER: return createNetworkadapter();
 			case VmwarePackage.WINDOWS: return createWindows();
-			case VmwarePackage.VMADDON: return createVmaddon();
-			case VmwarePackage.VMIMAGE: return createVmimage();
 			case VmwarePackage.LINUX: return createLinux();
 			case VmwarePackage.MACOSX: return createMacosx();
 			case VmwarePackage.VMWAREFOLDERS: return createVmwarefolders();
-			case VmwarePackage.VSWITCHINFOS: return createVswitchinfos();
-			case VmwarePackage.CREDENTIAL: return createCredential();
+			case VmwarePackage.OS_TPL_VMWARE: return createOs_tpl_vmware();
+			case VmwarePackage.SSH_USER_DATA: return createSsh_user_data();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -115,29 +118,59 @@ public class VmwareFactoryImpl extends EFactoryImpl implements VmwareFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Instancevmware createInstancevmware() {
+		InstancevmwareImpl instancevmware = new InstancevmwareImpl();
+		return instancevmware;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Storagevmware createStoragevmware() {
+		StoragevmwareImpl storagevmware = new StoragevmwareImpl();
+		return storagevmware;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Storagelinkvmware createStoragelinkvmware() {
+		StoragelinkvmwareImpl storagelinkvmware = new StoragelinkvmwareImpl();
+		return storagelinkvmware;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Vswitch createVswitch() {
+		VswitchImpl vswitch = new VswitchImpl();
+		return vswitch;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Networkadapter createNetworkadapter() {
+		NetworkadapterImpl networkadapter = new NetworkadapterImpl();
+		return networkadapter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Windows createWindows() {
 		WindowsImpl windows = new WindowsImpl();
 		return windows;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Vmaddon createVmaddon() {
-		VmaddonImpl vmaddon = new VmaddonImpl();
-		return vmaddon;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Vmimage createVmimage() {
-		VmimageImpl vmimage = new VmimageImpl();
-		return vmimage;
 	}
 
 	/**
@@ -175,9 +208,9 @@ public class VmwareFactoryImpl extends EFactoryImpl implements VmwareFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Vswitchinfos createVswitchinfos() {
-		VswitchinfosImpl vswitchinfos = new VswitchinfosImpl();
-		return vswitchinfos;
+	public Os_tpl_vmware createOs_tpl_vmware() {
+		Os_tpl_vmwareImpl os_tpl_vmware = new Os_tpl_vmwareImpl();
+		return os_tpl_vmware;
 	}
 
 	/**
@@ -185,9 +218,9 @@ public class VmwareFactoryImpl extends EFactoryImpl implements VmwareFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Credential createCredential() {
-		CredentialImpl credential = new CredentialImpl();
-		return credential;
+	public Ssh_user_data createSsh_user_data() {
+		Ssh_user_dataImpl ssh_user_data = new Ssh_user_dataImpl();
+		return ssh_user_data;
 	}
 
 	/**

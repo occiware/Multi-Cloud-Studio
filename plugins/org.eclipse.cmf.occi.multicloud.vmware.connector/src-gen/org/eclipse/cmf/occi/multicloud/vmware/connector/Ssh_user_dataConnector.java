@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Wed Jul 19 10:52:32 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.vmware/model/vmware.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Wed Jul 19 15:09:17 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.vmware/model/vmware.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.vmware.connector;
 
@@ -20,21 +20,21 @@ import org.slf4j.LoggerFactory;
 /**
  * Connector implementation for the OCCI kind:
  * - scheme: http://occiware.org/occi/infrastructure/vmware#
- * - term: credential
- * - title: Credential users information to access to ssh and userdata features
+ * - term: ssh_user_data
+ * - title: 
  */
-public class CredentialConnector extends org.eclipse.cmf.occi.multicloud.vmware.impl.CredentialImpl
+public class Ssh_user_dataConnector extends org.eclipse.cmf.occi.multicloud.vmware.impl.Ssh_user_dataImpl
 {
 	/**
 	 * Initialize the logger.
 	 */
-	private static Logger LOGGER = LoggerFactory.getLogger(CredentialConnector.class);
+	private static Logger LOGGER = LoggerFactory.getLogger(Ssh_user_dataConnector.class);
 
-	// Start of user code Credentialconnector_constructor
+	// Start of user code Ssh_user_dataconnector_constructor
 	/**
-	 * Constructs a credential connector.
+	 * Constructs a ssh_user_data connector.
 	 */
-	CredentialConnector()
+	Ssh_user_dataConnector()
 	{
 		LOGGER.debug("Constructor called on " + this);
 		// TODO: Implement this constructor.

@@ -14,6 +14,10 @@
  */
 package org.eclipse.cmf.occi.multicloud.vmware.connector;
 
+import org.eclipse.cmf.occi.infrastructure.RestartMethod;
+import org.eclipse.cmf.occi.infrastructure.SaveMethod;
+import org.eclipse.cmf.occi.infrastructure.StopMethod;
+import org.eclipse.cmf.occi.infrastructure.SuspendMethod;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -91,8 +95,53 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		// TODO: Implement this callback or remove this method.
 	}
 	// End of user code
-
+	
 	//
 	// Instancevmware actions.
 	//
+	/* (non-Javadoc)
+	 * @see org.eclipse.cmf.occi.infrastructure.impl.ComputeImpl#start()
+	 */
+	@Override
+	public void start() {
+		
+		// TODO Auto-generated method stub
+		super.start();
+	}
+
+	/* (non-Javadoc)
+	 * @see org.eclipse.cmf.occi.infrastructure.impl.ComputeImpl#stop(org.eclipse.cmf.occi.infrastructure.StopMethod)
+	 */
+	@Override
+	public void stop(StopMethod method) {
+		// TODO Auto-generated method stub
+		super.stop(method);
+	}
+
+	/* (non-Javadoc)
+	 * @see org.eclipse.cmf.occi.infrastructure.impl.ComputeImpl#restart(org.eclipse.cmf.occi.infrastructure.RestartMethod)
+	 */
+	@Override
+	public void restart(RestartMethod method) {
+		// TODO Auto-generated method stub
+		super.restart(method);
+	}
+
+	/* (non-Javadoc)
+	 * @see org.eclipse.cmf.occi.infrastructure.impl.ComputeImpl#suspend(org.eclipse.cmf.occi.infrastructure.SuspendMethod)
+	 */
+	@Override
+	public void suspend(SuspendMethod method) {
+		// TODO Auto-generated method stub
+		super.suspend(method);
+	}
+
+	/* (non-Javadoc)
+	 * @see org.eclipse.cmf.occi.infrastructure.impl.ComputeImpl#save(org.eclipse.cmf.occi.infrastructure.SaveMethod, java.lang.String)
+	 */
+	@Override
+	public void save(SaveMethod method, String name) {
+		// TODO Auto-generated method stub
+		super.save(method, name);
+	}
 }	

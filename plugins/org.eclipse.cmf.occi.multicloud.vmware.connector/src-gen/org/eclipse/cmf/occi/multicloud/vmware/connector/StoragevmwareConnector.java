@@ -95,4 +95,23 @@ public class StoragevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmwa
 	//
 	// Storagevmware actions.
 	//
+	
+	/* (non-Javadoc)
+	 * @see org.eclipse.cmf.occi.infrastructure.impl.StorageImpl#online()
+	 */
+	@Override
+	public void online() {
+		// TODO Auto-generated method stub
+		super.online();
+	}
+
+	/* (non-Javadoc)
+	 * @see org.eclipse.cmf.occi.infrastructure.impl.StorageImpl#offline()
+	 */
+	@Override
+	public void offline() {
+		// TODO Auto-generated method stub
+		super.offline();
+	}
+
 }	

@@ -95,4 +95,22 @@ public class VswitchConnector extends org.eclipse.cmf.occi.multicloud.vmware.imp
 	//
 	// Vswitch actions.
 	//
+	/* (non-Javadoc)
+	 * @see org.eclipse.cmf.occi.infrastructure.impl.NetworkImpl#up()
+	 */
+	@Override
+	public void up() {
+		// TODO Auto-generated method stub
+		super.up();
+	}
+
+	/* (non-Javadoc)
+	 * @see org.eclipse.cmf.occi.infrastructure.impl.NetworkImpl#down()
+	 */
+	@Override
+	public void down() {
+		// TODO Auto-generated method stub
+		super.down();
+	}
+	
 }	

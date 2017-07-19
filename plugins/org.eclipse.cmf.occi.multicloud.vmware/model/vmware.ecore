@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="vmware" nsURI="http://occiware.org/occi/infrastructure/vmware/ecore"
+    nsPrefix="vmware">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EEnum" name="GuestOsIdentifiers">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Enumerate the guest os id used on vCenter VMware platform"/>
+    </eAnnotations>
+    <eLiterals name="dosGuest" literal="dosGuest"/>
+    <eLiterals name="win31Guest" value="1" literal="win31Guest"/>
+    <eLiterals name="win95Guest" value="2" literal="win95Guest"/>
+    <eLiterals name="win98Guest" value="3" literal="win98Guest"/>
+    <eLiterals name="winMeGuest" value="4" literal="winMeGuest"/>
+    <eLiterals name="winNTGuest" value="5" literal="winNTGuest"/>
+    <eLiterals name="win2000ProGuest" value="6" literal="win2000ProGuest"/>
+    <eLiterals name="win2000ServGuest" value="7" literal="win2000ServGuest"/>
+    <eLiterals name="win2000AdvServGuest" value="8" literal="win2000AdvServGuest"/>
+    <eLiterals name="winXPHomeGuest" value="9" literal="winXPHomeGuest"/>
+    <eLiterals name="winXPProGuest" value="10" literal="winXPProGuest"/>
+    <eLiterals name="winXPPro64Guest" value="11" literal="winXPPro64Guest"/>
+    <eLiterals name="winNetWebGuest" value="12" literal="winNetWebGuest"/>
+    <eLiterals name="winNetStandardGuest" value="13" literal="winNetStandardGuest"/>
+    <eLiterals name="winNetEnterpriseGuest" value="14" literal="winNetEnterpriseGuest"/>
+    <eLiterals name="winNetDatacenterGuest" value="15" literal="winNetDatacenterGuest"/>
+    <eLiterals name="winNetBusinessGuest" value="16" literal="winNetBusinessGuest"/>
+    <eLiterals name="winNetStandard64Guest" value="17" literal="winNetStandard64Guest"/>
+    <eLiterals name="winNetEnterprise64Guest" value="18" literal="winNetEnterprise64Guest"/>
+    <eLiterals name="winLonghornGuest" value="19" literal="winLonghornGuest"/>
+    <eLiterals name="winLonghorn64Guest" value="20" literal="winLonghorn64Guest"/>
+    <eLiterals name="winNetDatacenter64Guest" value="21" literal="winNetDatacenter64Guest"/>
+    <eLiterals name="winVistaGuest" value="22" literal="winVistaGuest"/>
+    <eLiterals name="winVista64Guest" value="23" literal="winVista64Guest"/>
+    <eLiterals name="windows7Guest" value="24" literal="windows7Guest"/>
+    <eLiterals name="windows7_64Guest" value="25" literal="windows7_64Guest"/>
+    <eLiterals name="windows7Server64Guest" value="26" literal="windows7Server64Guest"/>
+    <eLiterals name="windows8Guest" value="27" literal="windows8Guest"/>
+    <eLiterals name="windows8_64Guest" value="28" literal="windows8_64Guest"/>
+    <eLiterals name="windows8Server64Guest" value="29" literal="windows8Server64Guest"/>
+    <eLiterals name="windows9Guest" value="30" literal="windows9Guest"/>
+    <eLiterals name="windows9_64Guest" value="31" literal="windows9_64Guest"/>
+    <eLiterals name="windows9Server64Guest" value="32" literal="windows9Server64Guest"/>
+    <eLiterals name="windowsHyperVGuest" value="33" literal="windowsHyperVGuest"/>
+    <eLiterals name="freebsdGuest" value="34" literal="freebsdGuest"/>
+    <eLiterals name="freebsd64Guest" value="35" literal="freebsd64Guest"/>
+    <eLiterals name="redhatGuest" value="36" literal="redhatGuest"/>
+    <eLiterals name="rhel2Guest" value="37" literal="rhel2Guest"/>
+    <eLiterals name="rhel3Guest" value="38" literal="rhel3Guest"/>
+    <eLiterals name="rhel3_64Guest" value="39" literal="rhel3_64Guest"/>
+    <eLiterals name="rhel4Guest" value="40" literal="rhel4Guest"/>
+    <eLiterals name="rhel4_64Guest" value="41" literal="rhel4_64Guest"/>
+    <eLiterals name="rhel5Guest" value="42" literal="rhel5Guest"/>
+    <eLiterals name="rhel5_64Guest" value="43" literal="rhel5_64Guest"/>
+    <eLiterals name="rhel6Guest" value="44" literal="rhel6Guest"/>
+    <eLiterals name="rhel6_64Guest" value="45" literal="rhel6_64Guest"/>
+    <eLiterals name="rhel7Guest" value="46" literal="rhel7Guest"/>
+    <eLiterals name="rhel7_64Guest" value="47" literal="rhel7_64Guest"/>
+    <eLiterals name="centosGuest" value="48" literal="centosGuest"/>
+    <eLiterals name="centos64Guest" value="49" literal="centos64Guest"/>
+    <eLiterals name="oracleLinuxGuest" value="50" literal="oracleLinuxGuest"/>
+    <eLiterals name="oracleLinux64Guest" value="51" literal="oracleLinux64Guest"/>
+    <eLiterals name="suseGuest" value="52" literal="suseGuest"/>
+    <eLiterals name="suse64Guest" value="53" literal="suse64Guest"/>
+    <eLiterals name="slesGuest" value="54" literal="slesGuest"/>
+    <eLiterals name="sles64Guest" value="55" literal="sles64Guest"/>
+    <eLiterals name="sles10Guest" value="56" literal="sles10Guest"/>
+    <eLiterals name="sles10_64Guest" value="57" literal="sles10_64Guest"/>
+    <eLiterals name="sles11Guest" value="58" literal="sles11Guest"/>
+    <eLiterals name="sles11_64Guest" value="59" literal="sles11_64Guest"/>
+    <eLiterals name="sles12Guest" value="60" literal="sles12Guest"/>
+    <eLiterals name="sles12_64Guest" value="61" literal="sles12_64Guest"/>
+    <eLiterals name="nld9Guest" value="62" literal="nld9Guest"/>
+    <eLiterals name="oesGuest" value="63" literal="oesGuest"/>
+    <eLiterals name="sjdsGuest" value="64" literal="sjdsGuest"/>
+    <eLiterals name="mandrakeGuest" value="65" literal="mandrakeGuest"/>
+    <eLiterals name="mandrivaGuest" value="66" literal="mandrivaGuest"/>
+    <eLiterals name="mandriva64Guest" value="67" literal="mandriva64Guest"/>
+    <eLiterals name="turboLinuxGuest" value="68" literal="turboLinuxGuest"/>
+    <eLiterals name="turboLinux64Guest" value="69" literal="turboLinux64Guest"/>
+    <eLiterals name="ubuntuGuest" value="70" literal="ubuntuGuest"/>
+    <eLiterals name="ubuntu64Guest" value="71" literal="ubuntu64Guest"/>
+    <eLiterals name="debian4Guest" value="72" literal="debian4Guest"/>
+    <eLiterals name="debian4_64Guest" value="73" literal="debian4_64Guest"/>
+    <eLiterals name="debian5Guest" value="74" literal="debian5Guest"/>
+    <eLiterals name="debian5_64Guest" value="75" literal="debian5_64Guest"/>
+    <eLiterals name="debian6Guest" value="76" literal="debian6Guest"/>
+    <eLiterals name="debian6_64Guest" value="77" literal="debian6_64Guest"/>
+    <eLiterals name="debian7Guest" value="78" literal="debian7Guest"/>
+    <eLiterals name="debian7_64Guest" value="79" literal="debian7_64Guest"/>
+    <eLiterals name="debian8Guest" value="80" literal="debian8Guest"/>
+    <eLiterals name="debian8_64Guest" value="81" literal="debian8_64Guest"/>
+    <eLiterals name="asianux3Guest" value="82" literal="asianux3Guest"/>
+    <eLiterals name="asianux3_64Guest" value="83" literal="asianux3_64Guest"/>
+    <eLiterals name="asianux4Guest" value="84" literal="asianux4Guest"/>
+    <eLiterals name="asianux4_64Guest" value="85" literal="asianux4_64Guest"/>
+    <eLiterals name="asianux5_64Guest" value="86" literal="asianux5_64Guest"/>
+    <eLiterals name="opensuseGuest" value="87" literal="opensuseGuest"/>
+    <eLiterals name="opensuse64Guest" value="88" literal="opensuse64Guest"/>
+    <eLiterals name="fedoraGuest" value="89" literal="fedoraGuest"/>
+    <eLiterals name="fedora64Guest" value="90" literal="fedora64Guest"/>
+    <eLiterals name="coreos64Guest" value="91" literal="coreos64Guest"/>
+    <eLiterals name="other24xLinuxGuest" value="92" literal="other24xLinuxGuest"/>
+    <eLiterals name="other26xLinuxGuest" value="93" literal="other26xLinuxGuest"/>
+    <eLiterals name="otherLinuxGuest" value="94" literal="otherLinuxGuest"/>
+    <eLiterals name="other3xLinuxGuest" value="95" literal="other3xLinuxGuest"/>
+    <eLiterals name="genericLinuxGuest" value="96" literal="genericLinuxGuest"/>
+    <eLiterals name="other24xLinux64Guest" value="97" literal="other24xLinux64Guest"/>
+    <eLiterals name="other26xLinux64Guest" value="98" literal="other26xLinux64Guest"/>
+    <eLiterals name="other3xLinux64Guest" value="99" literal="other3xLinux64Guest"/>
+    <eLiterals name="otherLinux64Guest" value="100" literal="otherLinux64Guest"/>
+    <eLiterals name="solaris6Guest" value="101" literal="solaris6Guest"/>
+    <eLiterals name="solaris7Guest" value="102" literal="solaris7Guest"/>
+    <eLiterals name="solaris8Guest" value="103" literal="solaris8Guest"/>
+    <eLiterals name="solaris9Guest" value="104" literal="solaris9Guest"/>
+    <eLiterals name="solaris10Guest" value="105" literal="solaris10Guest"/>
+    <eLiterals name="solaris10_64Guest" value="106" literal="solaris10_64Guest"/>
+    <eLiterals name="solaris11_64Guest" value="107" literal="solaris11_64Guest"/>
+    <eLiterals name="os2Guest" value="108" literal="os2Guest"/>
+    <eLiterals name="eComStationGuest" value="109" literal="eComStationGuest"/>
+    <eLiterals name="eComStation2Guest" value="110" literal="eComStation2Guest"/>
+    <eLiterals name="netware4Guest" value="111" literal="netware4Guest"/>
+    <eLiterals name="netware5Guest" value="112" literal="netware5Guest"/>
+    <eLiterals name="netware6Guest" value="113" literal="netware6Guest"/>
+    <eLiterals name="openServer5Guest" value="114" literal="openServer5Guest"/>
+    <eLiterals name="openServer6Guest" value="115" literal="openServer6Guest"/>
+    <eLiterals name="unixWare7Guest" value="116" literal="unixWare7Guest"/>
+    <eLiterals name="darwinGuest" value="117" literal="darwinGuest"/>
+    <eLiterals name="darwin64Guest" value="118" literal="darwin64Guest"/>
+    <eLiterals name="darwin10Guest" value="119" literal="darwin10Guest"/>
+    <eLiterals name="darwin10_64Guest" value="120" literal="darwin10_64Guest"/>
+    <eLiterals name="darwin11Guest" value="121" literal="darwin11Guest"/>
+    <eLiterals name="darwin11_64Guest" value="122" literal="darwin11_64Guest"/>
+    <eLiterals name="darwin12_64Guest" value="123" literal="darwin12_64Guest"/>
+    <eLiterals name="darwin13_64Guest" value="124" literal="darwin13_64Guest"/>
+    <eLiterals name="darwin14_64Guest" value="125" literal="darwin14_64Guest"/>
+    <eLiterals name="vmkernelGuest" value="126" literal="vmkernelGuest"/>
+    <eLiterals name="vmkernel5Guest" value="127" literal="vmkernel5Guest"/>
+    <eLiterals name="vmkernel6Guest" value="128" literal="vmkernel6Guest"/>
+    <eLiterals name="otherGuest" value="129" literal="otherGuest"/>
+    <eLiterals name="otherGuest64" value="130" literal="otherGuest64"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Windows" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Os_tpl">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="appliesConstraint"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="appliesConstraint" value="self.entity.oclIsKindOf(infrastructure::Compute)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="guestid" lowerBound="1"
+        eType="#//GuestOsIdentifiers">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="datastoreisopath" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Vmaddon" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase #//Vmimage">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="appliesConstraint"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="appliesConstraint" value="self.entity.oclIsKindOf(infrastructure::Compute)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vcpu" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gueststate" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="guestosid" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="markedastemplate" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Vmimage" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="appliesConstraint"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="appliesConstraint" value="self.entity.oclIsKindOf(infrastructure::Compute)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="imagename" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Name of the template if this compute has a template or will be created with a template."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Linux" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Os_tpl">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="appliesConstraint"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="appliesConstraint" value="self.entity.oclIsKindOf(infrastructure::Compute)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="guestid" lowerBound="1"
+        eType="#//GuestOsIdentifiers">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="datastoreisopath" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Macosx" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Os_tpl">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="appliesConstraint"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="appliesConstraint" value="self.entity.oclIsKindOf(infrastructure::Compute)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="guestid" lowerBound="1"
+        eType="#//GuestOsIdentifiers">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="datastoreisopath" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Vmwarefolders" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="appliesConstraint"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="appliesConstraint" value="self.entity.oclIsKindOf(infrastructure::Compute) or self.entity.oclIsKindOf(infrastructure::Network) or self.entity.oclIsKindOf(infrastructure::Networkinterface) or self.entity.oclIsKindOf(infrastructure::Storage) or self.entity.oclIsKindOf(infrastructure::Storagelink)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="datacentername" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Datacenter name identifier of the entity"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="datastorename" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Datastore name"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="clustername" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostsystemname" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="inventorypath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Vswitchinfos" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="appliesConstraint"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="appliesConstraint" value="self.entity.oclIsKindOf(infrastructure::Network)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbport" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Credential" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="appliesConstraint"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="appliesConstraint" value="self.entity.oclIsKindOf(infrastructure::Compute)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="user" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="password" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeUserdataFile"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2015-2017 Obeo, Inria&#xA;All rights reserved. This program and the accompanying materials&#xA;are made available under the terms of the Eclipse Public License v1.0&#xA;which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v10.html&#xA;&#x9;&#xA;Contributors:&#xA;- William Piers &lt;william.piers@obeo.fr>&#xA;- Philippe Merle &lt;philippe.merle@inria.fr>&#xA;- Faiez Zalila &lt;faiez.zalila@inria.fr>" modelDirectory="/org.eclipse.cmf.occi.multicloud.vmware/src-gen" editDirectory="/org.eclipse.cmf.occi.multicloud.vmware.edit/src-gen" editorDirectory="/org.eclipse.cmf.occi.multicloud.vmware.editor/src-gen" modelPluginID="org.eclipse.cmf.occi.multicloud.vmware" modelName="Vmware" testsDirectory="/org.eclipse.cmf.occi.multicloud.vmware.tests/src" complianceLevel="8.0" copyrightFields="false" editPluginID="org.eclipse.cmf.occi.multicloud.vmware.edit" editorPluginID="org.eclipse.cmf.occi.multicloud.vmware.editor" testsPluginID="org.eclipse.cmf.occi.multicloud.vmware.tests" operationReflection="true">
+  <genAnnotations source="http://www.eclipse.org/OCL/GenModel">
+    <details key="Use Delegates" value="false"/>
+  </genAnnotations>
+  <foreignModel>vmware.ecore</foreignModel>
+  <genPackages prefix="Vmware" basePackage="org.eclipse.cmf.occi.multicloud" disposableProviderFactory="true">
+    <ecorePackage href="vmware.ecore#/"/>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="vmware.ecore#//GuestOsIdentifiers"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/dosGuest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/win31Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/win95Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/win98Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/winMeGuest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/winNTGuest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/win2000ProGuest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/win2000ServGuest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/win2000AdvServGuest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/winXPHomeGuest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/winXPProGuest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/winXPPro64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/winNetWebGuest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/winNetStandardGuest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/winNetEnterpriseGuest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/winNetDatacenterGuest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/winNetBusinessGuest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/winNetStandard64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/winNetEnterprise64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/winLonghornGuest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/winLonghorn64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/winNetDatacenter64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/winVistaGuest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/winVista64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/windows7Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/windows7_64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/windows7Server64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/windows8Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/windows8_64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/windows8Server64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/windows9Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/windows9_64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/windows9Server64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/windowsHyperVGuest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/freebsdGuest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/freebsd64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/redhatGuest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/rhel2Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/rhel3Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/rhel3_64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/rhel4Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/rhel4_64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/rhel5Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/rhel5_64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/rhel6Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/rhel6_64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/rhel7Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/rhel7_64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/centosGuest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/centos64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/oracleLinuxGuest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/oracleLinux64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/suseGuest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/suse64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/slesGuest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/sles64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/sles10Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/sles10_64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/sles11Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/sles11_64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/sles12Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/sles12_64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/nld9Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/oesGuest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/sjdsGuest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/mandrakeGuest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/mandrivaGuest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/mandriva64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/turboLinuxGuest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/turboLinux64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/ubuntuGuest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/ubuntu64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/debian4Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/debian4_64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/debian5Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/debian5_64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/debian6Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/debian6_64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/debian7Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/debian7_64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/debian8Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/debian8_64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/asianux3Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/asianux3_64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/asianux4Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/asianux4_64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/asianux5_64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/opensuseGuest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/opensuse64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/fedoraGuest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/fedora64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/coreos64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/other24xLinuxGuest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/other26xLinuxGuest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/otherLinuxGuest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/other3xLinuxGuest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/genericLinuxGuest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/other24xLinux64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/other26xLinux64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/other3xLinux64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/otherLinux64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/solaris6Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/solaris7Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/solaris8Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/solaris9Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/solaris10Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/solaris10_64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/solaris11_64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/os2Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/eComStationGuest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/eComStation2Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/netware4Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/netware5Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/netware6Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/openServer5Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/openServer6Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/unixWare7Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/darwinGuest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/darwin64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/darwin10Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/darwin10_64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/darwin11Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/darwin11_64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/darwin12_64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/darwin13_64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/darwin14_64Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/vmkernelGuest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/vmkernel5Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/vmkernel6Guest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/otherGuest"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="vmware.ecore#//GuestOsIdentifiers/otherGuest64"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genClasses>
+      <ecoreClass href="vmware.ecore#//Windows"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Windows/guestid"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Windows/datastoreisopath"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="vmware.ecore#//Vmaddon"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Vmaddon/vcpu"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Vmaddon/gueststate"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Vmaddon/guestosid"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Vmaddon/markedastemplate"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="vmware.ecore#//Vmimage"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Vmimage/imagename"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="vmware.ecore#//Linux"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Linux/guestid"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Linux/datastoreisopath"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="vmware.ecore#//Macosx"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Macosx/guestid"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Macosx/datastoreisopath"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="vmware.ecore#//Vmwarefolders"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Vmwarefolders/datacentername"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Vmwarefolders/datastorename"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Vmwarefolders/clustername"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Vmwarefolders/hostsystemname"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Vmwarefolders/inventorypath"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="vmware.ecore#//Vswitchinfos"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Vswitchinfos/nbport"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="vmware.ecore#//Credential"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Credential/user"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Credential/password"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Credential/occiComputeUserdataFile"/>
+      </genFeatures>
+    </genClasses>
+  </genPackages>
+  <usedGenPackages href="platform:/plugin/org.eclipse.cmf.occi.crtp/model/crtp.genmodel#//crtp"/>
+  <usedGenPackages href="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.genmodel#//infrastructure"/>
+  <usedGenPackages href="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.genmodel#//occi"/>
+</genmodel:GenModel>

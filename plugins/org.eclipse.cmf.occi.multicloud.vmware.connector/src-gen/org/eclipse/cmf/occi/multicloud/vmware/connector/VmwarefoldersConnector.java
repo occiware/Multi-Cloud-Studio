@@ -40,4 +40,5 @@ public class VmwarefoldersConnector extends org.eclipse.cmf.occi.multicloud.vmwa
 		// TODO: Implement this constructor.
 	}
 	// End of user code
+	
 }	

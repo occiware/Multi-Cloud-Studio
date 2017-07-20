@@ -25,5 +25,8 @@ Require-Bundle: org.slf4j.api,
  org.eclipse.emf.transaction;bundle-version="1.9.0",
  org.eclipse.jface
 Export-Package: org.eclipse.cmf.occi.multicloud.vmware.connector,
+ org.eclipse.cmf.occi.multicloud.vmware.connector.driver.exceptions,
  org.eclipse.cmf.occi.multicloud.vmware.connector.utils,
+ org.eclipse.cmf.occi.multicloud.vmware.connector.utils.allocator,
+ org.eclipse.cmf.occi.multicloud.vmware.connector.utils.thread,
  org.ecplise.cmf.occi.multicloud.vmware.connector.driver

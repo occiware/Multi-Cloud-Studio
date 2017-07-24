@@ -678,7 +678,7 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 		initEAttribute(getInstancevmware_Markedastemplate(), theOCCIPackage.getString(), "markedastemplate", null, 0, 1, Instancevmware.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInstancevmware_Gueststate(), theOCCIPackage.getString(), "gueststate", null, 0, 1, Instancevmware.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInstancevmware_Guestosid(), theOCCIPackage.getString(), "guestosid", null, 0, 1, Instancevmware.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getInstancevmware_Vcpu(), theOCCIPackage.getString(), "vcpu", null, 0, 1, Instancevmware.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInstancevmware_Vcpu(), theOCCIPackage.getInteger(), "vcpu", null, 0, 1, Instancevmware.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInstancevmware_InstanceId(), theOCCIPackage.getString(), "instanceId", null, 0, 1, Instancevmware.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(storagevmwareEClass, Storagevmware.class, "Storagevmware", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -746,7 +746,7 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 		initEAttribute(getVmwarefolders_Datastorename(), theOCCIPackage.getString(), "datastorename", null, 0, 1, Vmwarefolders.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVmwarefolders_Clustername(), theOCCIPackage.getString(), "clustername", null, 0, 1, Vmwarefolders.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVmwarefolders_Hostsystemname(), theOCCIPackage.getString(), "hostsystemname", null, 0, 1, Vmwarefolders.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVmwarefolders_Inventorypath(), ecorePackage.getEString(), "inventorypath", null, 0, 1, Vmwarefolders.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVmwarefolders_Inventorypath(), theOCCIPackage.getString(), "inventorypath", null, 0, 1, Vmwarefolders.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = initEOperation(getVmwarefolders__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);

@@ -1871,7 +1871,7 @@
             <styles xmi:type="notation:FilteringStyle" xmi:id="_arIkEmyBEeel_Mg3P10acA"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_arH9AWyBEeel_Mg3P10acA" fontName=".SF NS Text" fontHeight="12" bold="true"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_arH9AmyBEeel_Mg3P10acA" x="2760" y="1480" width="227" height="100"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_arH9AmyBEeel_Mg3P10acA" x="2844" y="1480" width="227" height="100"/>
         </children>
         <styles xmi:type="notation:DiagramStyle" xmi:id="_oVR8kmuUEee-_K0Z20tIpQ"/>
         <edges xmi:type="notation:Edge" xmi:id="_oXHvoGuUEee-_K0Z20tIpQ" type="4001" element="_oUt8emuUEee-_K0Z20tIpQ" source="_oVtaYGuUEee-_K0Z20tIpQ" target="_oVsMQGuUEee-_K0Z20tIpQ">
@@ -3348,33 +3348,33 @@
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_pE9JUGyBEeel_Mg3P10acA" type="4001" element="_pEJ4EGyBEeel_Mg3P10acA" source="_arH9AGyBEeel_Mg3P10acA" target="_4IMjMGx6Eeel_Mg3P10acA">
           <children xmi:type="notation:Node" xmi:id="_pE9wYGyBEeel_Mg3P10acA" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pE9wYWyBEeel_Mg3P10acA" y="-10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pE9wYWyBEeel_Mg3P10acA" x="-1" y="-8"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_pE9wYmyBEeel_Mg3P10acA" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pE9wY2yBEeel_Mg3P10acA" y="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pE9wY2yBEeel_Mg3P10acA" x="3" y="11"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_pE9wZGyBEeel_Mg3P10acA" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pE9wZWyBEeel_Mg3P10acA" y="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pE9wZWyBEeel_Mg3P10acA" x="2" y="12"/>
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_pE9JUWyBEeel_Mg3P10acA"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_pE9JUmyBEeel_Mg3P10acA" fontName=".SF NS Text" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_pE9JU2yBEeel_Mg3P10acA" points="[2760, 1480, 2760, 1480]$[2208, 1631, 2208, 1631]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_pE9JU2yBEeel_Mg3P10acA" points="[-112, 29, 538, -135]$[-551, 144, 99, -20]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_pE9wZmyBEeel_Mg3P10acA" id="(0.5,0.5)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_pE9wZ2yBEeel_Mg3P10acA" id="(0.5,0.5)"/>
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_soEDsGyBEeel_Mg3P10acA" type="4001" element="_snI2oGyBEeel_Mg3P10acA" source="_arH9AGyBEeel_Mg3P10acA" target="_oWA8Y2uUEee-_K0Z20tIpQ">
           <children xmi:type="notation:Node" xmi:id="_soEqwGyBEeel_Mg3P10acA" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_soEqwWyBEeel_Mg3P10acA" y="-10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_soEqwWyBEeel_Mg3P10acA" x="-1" y="-12"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_soEqwmyBEeel_Mg3P10acA" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_soEqw2yBEeel_Mg3P10acA" y="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_soEqw2yBEeel_Mg3P10acA" x="1" y="8"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_soEqxGyBEeel_Mg3P10acA" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_soEqxWyBEeel_Mg3P10acA" y="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_soEqxWyBEeel_Mg3P10acA" x="-2" y="8"/>
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_soEDsWyBEeel_Mg3P10acA"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_soEDsmyBEeel_Mg3P10acA" fontName=".SF NS Text" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_soEDs2yBEeel_Mg3P10acA" points="[2760, 1480, 2760, 1480]$[3563, 1178, 3563, 1178]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_soEDs2yBEeel_Mg3P10acA" points="[107, -49, -596, 274]$[661, -301, -42, 22]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_soEqxmyBEeel_Mg3P10acA" id="(0.5,0.5)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_soEqx2yBEeel_Mg3P10acA" id="(0.5,0.5)"/>
         </edges>
@@ -5365,7 +5365,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='MixinContainer']/@subNodeMappings[name='MixinAttribute']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_0NNM0GuUEee-_K0Z20tIpQ" name="inventorypath">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_0NNM0GuUEee-_K0Z20tIpQ" name="inventorypath: String">
         <target xmi:type="occi:Attribute" href="model/vmware.occie#//@mixins[term='vmwarefolders']/@attributes.4"/>
         <semanticElements xmi:type="occi:Attribute" href="model/vmware.occie#//@mixins[term='vmwarefolders']/@attributes.4"/>
         <ownedStyle xmi:type="diagram:Square" xmi:id="_0NNM0WuUEee-_K0Z20tIpQ" labelSize="10" labelAlignment="LEFT" labelPosition="node">
@@ -6811,7 +6811,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='KindContainer']/@subNodeMappings[name='KindAttribute']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_J1GtAGx_Eeel_Mg3P10acA" name="vcpu: String">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_J1GtAGx_Eeel_Mg3P10acA" name="vcpu: Integer">
         <target xmi:type="occi:Attribute" href="model/vmware.occie#//@kinds[term='instancevmware']/@attributes.4"/>
         <semanticElements xmi:type="occi:Attribute" href="model/vmware.occie#//@kinds[term='instancevmware']/@attributes.4"/>
         <ownedStyle xmi:type="diagram:Square" xmi:id="_J1GtAWx_Eeel_Mg3P10acA" labelSize="10" labelAlignment="LEFT" labelPosition="node">

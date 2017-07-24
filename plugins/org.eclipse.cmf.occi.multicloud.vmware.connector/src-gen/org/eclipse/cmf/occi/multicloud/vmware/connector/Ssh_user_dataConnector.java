@@ -14,6 +14,8 @@
  */
 package org.eclipse.cmf.occi.multicloud.vmware.connector;
 
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.ecplise.cmf.occi.multicloud.vmware.connector.driver.UserDataHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -40,4 +42,41 @@ public class Ssh_user_dataConnector extends org.eclipse.cmf.occi.multicloud.vmwa
 		// TODO: Implement this constructor.
 	}
 	// End of user code
+
+	/**
+	 * Apply user data with thread management.
+	 * @param instanceId
+	 * @param vmName
+	 * @param monitor
+	 */
+	public void applyUserData(final String instanceId, final String vmName, IProgressMonitor monitor) {
+		
+		if (occiComputeUserdata != null && !occiComputeUserdata.trim().isEmpty()) {
+			LOGGER.info("applying user datas, to file : " + occiComputeUserdataFile + " in vm : " + vmName + " with content : "
+					+ occiComputeUserdata);
+			UserDataHelper userDataHelper = new UserDataHelper(instanceId, vmName, occiComputeUserdata, user,
+					password, getOcciComputeUserdataFile());
+			try {
+				if (monitor != null) {
+					// Run directly the operation within this eclipse thread.
+					userDataHelper.run(monitor);
+				} else {
+					// Create a new thread with simple runnable.
+					Thread thread = new Thread(userDataHelper);
+					thread.start();
+				}
+
+			} catch (Exception ex) {
+				ex.printStackTrace();
+				LOGGER.error("Exception thrown : " + ex.getClass().getName());
+				LOGGER.error("Message: " + ex.getMessage());
+			}
+		}
+		
+		
+	}
+	
+	
+	
+	
 }	

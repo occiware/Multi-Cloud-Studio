@@ -153,7 +153,8 @@ public interface Vmwarefolders extends MixinBase {
 	 * @return the value of the '<em>Inventorypath</em>' attribute.
 	 * @see #setInventorypath(String)
 	 * @see org.eclipse.cmf.occi.multicloud.vmware.VmwarePackage#getVmwarefolders_Inventorypath()
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/vmware/ecore!Vmwarefolders!inventorypath'"
+	 * @model dataType="org.eclipse.cmf.occi.core.String"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/vmware/ecore!Vmwarefolders!inventorypath'"
 	 * @generated
 	 */
 	String getInventorypath();

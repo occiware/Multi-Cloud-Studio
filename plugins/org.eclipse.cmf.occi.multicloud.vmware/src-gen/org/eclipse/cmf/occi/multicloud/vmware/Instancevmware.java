@@ -152,13 +152,13 @@ public interface Instancevmware extends Compute {
 	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Vcpu</em>' attribute.
-	 * @see #setVcpu(String)
+	 * @see #setVcpu(Integer)
 	 * @see org.eclipse.cmf.occi.multicloud.vmware.VmwarePackage#getInstancevmware_Vcpu()
-	 * @model dataType="org.eclipse.cmf.occi.core.String"
+	 * @model dataType="org.eclipse.cmf.occi.core.Integer"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/vmware/ecore!Instancevmware!vcpu'"
 	 * @generated
 	 */
-	String getVcpu();
+	Integer getVcpu();
 
 	/**
 	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.vmware.Instancevmware#getVcpu <em>Vcpu</em>}' attribute.
@@ -168,7 +168,7 @@ public interface Instancevmware extends Compute {
 	 * @see #getVcpu()
 	 * @generated
 	 */
-	void setVcpu(String value);
+	void setVcpu(Integer value);
 
 	/**
 	 * Returns the value of the '<em><b>Instance Id</b></em>' attribute.

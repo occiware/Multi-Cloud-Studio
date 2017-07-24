@@ -18,17 +18,21 @@ package org.eclipse.cmf.occi.multicloud.vmware.connector;
 import java.lang.reflect.InvocationTargetException;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.apache.log4j.Level;
 import org.eclipse.cmf.occi.core.AttributeState;
 import org.eclipse.cmf.occi.core.Configuration;
 import org.eclipse.cmf.occi.core.Link;
-import org.eclipse.cmf.occi.core.Mixin;
+import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.core.Resource;
 import org.eclipse.cmf.occi.core.util.OcciHelper;
+import org.eclipse.cmf.occi.crtp.Large;
+import org.eclipse.cmf.occi.crtp.Medium;
+import org.eclipse.cmf.occi.crtp.Mem_large;
+import org.eclipse.cmf.occi.crtp.Mem_medium;
+import org.eclipse.cmf.occi.crtp.Mem_small;
+import org.eclipse.cmf.occi.crtp.Small;
 import org.eclipse.cmf.occi.infrastructure.Architecture;
 import org.eclipse.cmf.occi.infrastructure.ComputeStatus;
 import org.eclipse.cmf.occi.infrastructure.RestartMethod;
@@ -37,8 +41,7 @@ import org.eclipse.cmf.occi.infrastructure.StopMethod;
 import org.eclipse.cmf.occi.infrastructure.SuspendMethod;
 import org.eclipse.cmf.occi.multicloud.vmware.connector.driver.exceptions.MountVMWareToolsDiskException;
 import org.eclipse.cmf.occi.multicloud.vmware.connector.utils.allocator.AllocatorImpl;
-import org.eclipse.cmf.occi.multicloud.vmware.connector.utils.thread.EntityUtils;
-import org.eclipse.cmf.occi.multicloud.vmware.connector.utils.thread.EntityUtilsHeadless;
+import org.eclipse.cmf.occi.multicloud.vmware.connector.utils.allocator.ResourceTPLContainer;
 import org.eclipse.cmf.occi.multicloud.vmware.connector.utils.thread.UIDialog;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.SubMonitor;
@@ -48,7 +51,6 @@ import org.ecplise.cmf.occi.multicloud.vmware.connector.driver.DatacenterHelper;
 import org.ecplise.cmf.occi.multicloud.vmware.connector.driver.DatastoreHelper;
 import org.ecplise.cmf.occi.multicloud.vmware.connector.driver.HostHelper;
 import org.ecplise.cmf.occi.multicloud.vmware.connector.driver.NetworkHelper;
-import org.ecplise.cmf.occi.multicloud.vmware.connector.driver.UserDataHelper;
 import org.ecplise.cmf.occi.multicloud.vmware.connector.driver.VCenterClient;
 import org.ecplise.cmf.occi.multicloud.vmware.connector.driver.VMHelper;
 import org.slf4j.Logger;
@@ -75,10 +77,9 @@ import com.vmware.vim25.mo.ServiceInstance;
 import com.vmware.vim25.mo.VirtualMachine;
 
 /**
- * Connector implementation for the OCCI kind:
- * - scheme: http://occiware.org/occi/infrastructure/vmware#
- * - term: instancevmware
- * - title: 
+ * Connector implementation for the OCCI kind: - scheme:
+ * http://occiware.org/occi/infrastructure/vmware# - term: instancevmware -
+ * title:
  */
 public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmware.impl.InstancevmwareImpl {
 	/**
@@ -86,95 +87,29 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 	 */
 	private static Logger LOGGER = LoggerFactory.getLogger(InstancevmwareConnector.class);
 
-	public static final String ATTR_HOSTSYSTEM_NAME = "hostsystemname";
-	public static final String ATTR_DATACENTER_NAME = "datacentername";
-	public static final String ATTR_DATASTORE_NAME = "datastorename";
-	public static final String ATTR_CLUSTER_NAME = "clustername";
-
-	public static final String ATTR_IMAGE_NAME = "imagename";
-	public static final String ATTR_VCPU_NUMBER = "vcpu";
-	public static final String ATTR_VM_GUEST_STATE = "gueststate";
-	public static final String ATTR_MARKED_AS_TEMPLATE = "markedastemplate";
-	public static final String ATTR_VM_GUEST_OS_ID = "guestosid";
-	public static final String ATTR_VM_EPHEMERAL_DISK_SIZE_GB = "occi.compute.ephemeral_storage.size";
-	public static final String ATTR_USER_DATA = "occi.compute.userdata";
-	public static final String ATTR_USERNAME = "user";
-	public static final String ATTR_PASSWORD = "password";
-	public static final String ATTR_USER_DATA_FILE = "occi.compute.userdata.file";
-	
-	
-	
-	/**
-	 * Path on inventory object. Format: /inria/tests/ (with slash on last character or without).
-	 */
-	public static final String ATTR_VM_INVENTORY_PATH = "inventorypath";
-	/**
-	 * Mixin terms addon from backend extension.
-	 */
-	public static final String VMWARE_MIXIN_FOLDERS_TERM = "vmwarefolders";
-	public static final String VMWARE_MIXIN_VM_ADDON_TERM = "vmaddon";
-	public static final String VMWARE_MIXIN_VM_IMAGE = "vmimage";
-	public static final String VMWARE_MIXIN_CREDENTIAL = "credential";
-	public static final String MIXIN_USERDATA = "user_data";
-	
-	
-	
-	/**
-	 * Managed object reference id. Unique reference for virtual machine.
-	 */
-	private String morId;
-
 	/**
 	 * Define VMWare specifications for this compute.
 	 */
 	protected VirtualMachineConfigSpec vmSpec = null;
 
-	private String datacenterName = null;
-	private String datastoreName = null;
-	private String clusterName = null;
-	/**
-	 * Represent the physical compute which be used for host this virtual
-	 * machine.
-	 */
-	private String hostSystemName = null;
-
 	private String vmOldName = null;
-	private String vmTemplateName = null;
-	private String vcpusStr = "0";
-	private Integer vcpus = 0;
-	private Integer numCores;
-	private Float memoryGB;
-	private String architecture;
-	private Float speed;
+
+	/**
+	 * VMware state of this instance.
+	 */
 	private String vmState = null;
-	private String hostname = null;
-	private String vmGuestState = null;
-	private String guestOsId = null;
-	private String markedAsTemplate = null;
 	private boolean vmExist = false;
-	// default to 15GB
-	private Float ephemeralDiskSizeGB = 15.0f;
-	
-	private String userData;
-	private String userDataFile;
-	private String username;
-	private String password;
-	
+
 	// Message to end users management.
 	private String titleMessage = "";
 	private String globalMessage = "";
 	private Level levelMessage = null;
-	
+
 	// Used to monitor the task in console mode. This will be used with message attribute state.
 	private String messageProgress = null;
-	
+
 	private boolean toCreateOnStartOperation = false;
-	/**
-	 * VM Path in inventory objects. format: /inria/tests/
-	 */
-	private String inventoryPath = "";
-	
-	
+
 	/**
 	 * First ipv4 address.
 	 */
@@ -183,21 +118,21 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 	 * First ipv6 address.
 	 */
 	private String ipv6Address = "";
-	
+
 	// Start of user code Instancevmwareconnector_constructor
 	/**
 	 * Constructs a instancevmware connector.
 	 */
 	InstancevmwareConnector() {
 		LOGGER.debug("Constructor called on " + this);
-		System.out.println("InstancevmwareConnector constructor called==>" + this);
+		System.out.println("InstancevmwareConnector constructor called ==> " + this);
 	}
 	// End of user code
 
 	//
 	// OCCI CRUD callback operations.
 	//
-	
+
 	// Start of user code InstancevmwareocciCreate
 	/**
 	 * Called when this Instancevmware instance is completely created.
@@ -230,7 +165,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 				occiRetrieve();
 			}
 		}
-		
+
 		globalMessage = "";
 		levelMessage = null;
 	}
@@ -250,10 +185,10 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		if (UIDialog.isStandAlone()) {
 			// Launching thread with business code.
 			LOGGER.debug("Console mode.");
-			
+
 			// Retrieve a compute without monitoring on the main thread.
 			retrieveCompute(null);
-			
+
 		} else {
 			// Launching IRunnableWithProgress UI thread with business code.
 			LOGGER.debug("UI mode.");
@@ -271,9 +206,10 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			if (!vmExist) {
 				vmState = VMHelper.POWER_OFF;
 			}
-			updateAttributesOnCompute();
+			// old update attributes on main eclipse thread when in designer :
+			// updateAttributesOnCompute();
 		}
-		
+
 		globalMessage = "";
 		levelMessage = null;
 	}
@@ -291,7 +227,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		if (UIDialog.isStandAlone()) {
 			// headless mode.
 			updateCompute(null);
-			
+
 		} else {
 
 			IRunnableWithProgress runnableWithProgress = new IRunnableWithProgress() {
@@ -326,7 +262,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 	 */
 	@Override
 	public void occiDelete() {
-		
+
 		titleMessage = "Delete a virtual machine : " + getTitle();
 		LOGGER.debug("occiDelete() called on " + this);
 
@@ -361,11 +297,13 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		levelMessage = null;
 	}
 	// End of user code
-	
+
 	//
 	// Instancevmware actions.
 	//
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.cmf.occi.infrastructure.impl.ComputeImpl#start()
 	 */
 	@Override
@@ -374,7 +312,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		LOGGER.debug("Action start() called on " + this);
 		if (UIDialog.isStandAlone()) {
 			startCompute(null);
-			
+
 		} else {
 			// Launching IRunnableWithProgress UI thread with business code.
 			IRunnableWithProgress runnableWithProgress = new IRunnableWithProgress() {
@@ -399,8 +337,12 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		levelMessage = null;
 	}
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.cmf.occi.infrastructure.impl.ComputeImpl#stop(org.eclipse.cmf.occi.infrastructure.StopMethod)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * org.eclipse.cmf.occi.infrastructure.impl.ComputeImpl#stop(org.eclipse.cmf.
+	 * occi.infrastructure.StopMethod)
 	 */
 	@Override
 	public void stop(StopMethod method) {
@@ -409,7 +351,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 
 		if (UIDialog.isStandAlone()) {
 			stopCompute(null, method);
-			
+
 		} else {
 			// Launching IRunnableWithProgress UI thread with business code.
 			IRunnableWithProgress runnableWithProgress = new IRunnableWithProgress() {
@@ -434,8 +376,12 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		levelMessage = null;
 	}
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.cmf.occi.infrastructure.impl.ComputeImpl#restart(org.eclipse.cmf.occi.infrastructure.RestartMethod)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * org.eclipse.cmf.occi.infrastructure.impl.ComputeImpl#restart(org.eclipse.cmf.
+	 * occi.infrastructure.RestartMethod)
 	 */
 	@Override
 	public void restart(RestartMethod method) {
@@ -469,8 +415,12 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		levelMessage = null;
 	}
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.cmf.occi.infrastructure.impl.ComputeImpl#suspend(org.eclipse.cmf.occi.infrastructure.SuspendMethod)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * org.eclipse.cmf.occi.infrastructure.impl.ComputeImpl#suspend(org.eclipse.cmf.
+	 * occi.infrastructure.SuspendMethod)
 	 */
 	@Override
 	public void suspend(SuspendMethod method) {
@@ -480,7 +430,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		if (UIDialog.isStandAlone()) {
 			// Headless mode.
 			suspendCompute(null, method);
-			
+
 		} else {
 			// Launching IRunnableWithProgress UI thread with business code.
 			IRunnableWithProgress runnableWithProgress = new IRunnableWithProgress() {
@@ -505,8 +455,12 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		levelMessage = null;
 	}
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.cmf.occi.infrastructure.impl.ComputeImpl#save(org.eclipse.cmf.occi.infrastructure.SaveMethod, java.lang.String)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * org.eclipse.cmf.occi.infrastructure.impl.ComputeImpl#save(org.eclipse.cmf.
+	 * occi.infrastructure.SaveMethod, java.lang.String)
 	 */
 	@Override
 	public void save(SaveMethod method, String name) {
@@ -516,7 +470,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		if (UIDialog.isStandAlone()) {
 			// Headless mode.
 			saveCompute(null, method, name);
-			
+
 		} else {
 			// Launching IRunnableWithProgress UI thread with business code.
 			IRunnableWithProgress runnableWithProgress = new IRunnableWithProgress() {
@@ -540,23 +494,81 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		globalMessage = "";
 		levelMessage = null;
 	}
-	
+
 	/**
-	 * Get the datacenter name.
+	 * Get the mixin base instance "vmwarefolders".
 	 * 
 	 * @return
 	 */
-	public String getDatacenterName() {
-		return datacenterName;
+	public VmwarefoldersConnector getMixinVmwarefolders() {
+		List<MixinBase> mixinsBase = this.getParts();
+		VmwarefoldersConnector vmfolders = null;
+		for (MixinBase mixinB : mixinsBase) {
+			if (mixinB instanceof VmwarefoldersConnector) {
+				vmfolders = (VmwarefoldersConnector) mixinB;
+				break;
+			}
+		}
+		return vmfolders;
 	}
 
 	/**
-	 * Usage with Mixin in future.
+	 * Get the mixin base instance "Ssh_user_dataConnector" for userdata to apply on
+	 * instance.
 	 * 
 	 * @return
 	 */
-	public void setDatacenterName(String datacenterName) {
-		this.datacenterName = datacenterName;
+	public Ssh_user_dataConnector getMixinSshUserData() {
+		List<MixinBase> mixinBase = this.getParts();
+		Ssh_user_dataConnector userData = null;
+		for (MixinBase mixinB : mixinBase) {
+			if (mixinB instanceof Ssh_user_dataConnector) {
+				userData = (Ssh_user_dataConnector) mixinB;
+				break;
+			}
+		}
+		return userData;
+	}
+
+	/**
+	 * Get the mixin instance for instance class CRTP (depends on resource_tpl).
+	 */
+	private MixinBase getMixinInstanceClass() {
+		List<MixinBase> mixinsBase = this.getParts();
+		MixinBase instanceClass = null;
+		for (MixinBase mixinB : mixinsBase) {
+			if (mixinB instanceof Small || mixinB instanceof Medium || mixinB instanceof Large
+					|| mixinB instanceof Mem_small || mixinB instanceof Mem_medium || mixinB instanceof Mem_large) {
+				instanceClass = mixinB;
+				break;
+			}
+		}
+		return instanceClass;
+	}
+
+	/**
+	 * Get the datacenter name.
+	 * 
+	 * @return may return null if no mixin vmwarefolders.
+	 */
+	public String getDatacenterName() {
+		VmwarefoldersConnector vmfolders = getMixinVmwarefolders();
+		if (vmfolders != null) {
+			return vmfolders.getDatacentername();
+		}
+		return null;
+	}
+
+	/**
+	 * Set in mixin instance vmwarefolders the datacentername.
+	 * 
+	 * @return
+	 */
+	public void setDatacenterName(final String datacenterName) {
+		VmwarefoldersConnector vmfolders = getMixinVmwarefolders();
+		if (vmfolders != null) {
+			vmfolders.setDatacentername(datacenterName);
+		}
 	}
 
 	/**
@@ -565,8 +577,11 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 	 * @return
 	 */
 	public String getDatastoreName() {
-
-		return datastoreName;
+		VmwarefoldersConnector vmfolders = getMixinVmwarefolders();
+		if (vmfolders != null) {
+			return vmfolders.getDatastorename();
+		}
+		return null;
 	}
 
 	/**
@@ -574,8 +589,11 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 	 * 
 	 * @return
 	 */
-	public void setDatastoreName(String datastoreName) {
-		this.datastoreName = datastoreName;
+	public void setDatastoreName(final String datastoreName) {
+		VmwarefoldersConnector vmfolders = getMixinVmwarefolders();
+		if (vmfolders != null) {
+			vmfolders.setDatastorename(datastoreName);
+		}
 	}
 
 	/**
@@ -584,7 +602,11 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 	 * @return
 	 */
 	public String getClusterName() {
-		return clusterName;
+		VmwarefoldersConnector vmfolders = getMixinVmwarefolders();
+		if (vmfolders != null) {
+			return vmfolders.getClustername();
+		}
+		return null;
 	}
 
 	/**
@@ -592,87 +614,35 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 	 * 
 	 * @return
 	 */
-	public void setClusterName(String clusterName) {
-		this.clusterName = clusterName;
+	public void setClusterName(final String clusterName) {
+		VmwarefoldersConnector vmfolders = getMixinVmwarefolders();
+		if (vmfolders != null) {
+			vmfolders.setClustername(clusterName);
+		}
 	}
 
 	public String getHostSystemName() {
-		return hostSystemName;
+		VmwarefoldersConnector vmfolders = getMixinVmwarefolders();
+		if (vmfolders != null) {
+			return vmfolders.getHostsystemname();
+		}
+		return null;
 	}
 
-	public void setHostSystemName(String hostSystemName) {
-		this.hostSystemName = hostSystemName;
-
+	public void setHostSystemName(final String hostSystemName) {
+		VmwarefoldersConnector vmfolders = getMixinVmwarefolders();
+		if (vmfolders != null) {
+			vmfolders.setHostsystemname(hostSystemName);
+		}
 	}
 
-	// /**
-	// * Get Main storage link (link on main disk).
-	// *
-	// * @return if a main storage is present return the main storagelink, if
-	// none
-	// * null value is returned.
-	// */
-	// private StoragelinkConnector getMainStorageLink() {
-	//
-	// List<StoragelinkConnector> storageLinks = getLinkedStorages();
-	// StoragelinkConnector mainStorageLink = null;
-	//
-	// int storageLinkSize = storageLinks.size();
-	// StorageConnector storageConnector;
-	// // Detect where's the main disk.
-	// for (StoragelinkConnector stLink : storageLinks) {
-	// if (storageLinkSize == 1) {
-	// mainStorageLink = stLink;
-	// break;
-	// } else if ((stLink.getMountpoint() != null &&
-	// (stLink.getMountpoint().equals("/")
-	// || stLink.getMountpoint().startsWith("C:") ||
-	// stLink.getMountpoint().startsWith("c:")))) {
-	// mainStorageLink = stLink;
-	// break;
-	// } else {
-	// // Detect if the storage name finished by _1. ex:
-	// // serverstorage_1.
-	// if (stLink.getTarget() != null && stLink.getTarget() instanceof
-	// StorageConnector) {
-	// storageConnector = (StorageConnector) stLink.getTarget();
-	// if (storageConnector.getTitle().endsWith("_1")) {
-	// mainStorageLink = stLink;
-	// break;
-	// }
-	// }
-	// }
-	// }
-	//
-	// return mainStorageLink;
-	// }
-
-	// /**
-	// * Get the other storageLinks, if none empty list is returned.
-	// *
-	// * @return a list of storageLinkConnector if other storagelink found (not
-	// * the main storageLink).
-	// */
-	// private List<StoragelinkConnector> getOtherStorageLink() {
-	//
-	// List<StoragelinkConnector> storageLinks = getLinkedStorages();
-	// List<StoragelinkConnector> stOthers = new
-	// ArrayList<StoragelinkConnector>();
-	// StoragelinkConnector stMain = getMainStorageLink();
-	// StoragelinkConnector stOther = null;
-	// for (StoragelinkConnector link : storageLinks) {
-	// if (stMain != null) {
-	// stOther = (StoragelinkConnector) link;
-	// if (!stOther.equals(stMain)) {
-	// stOthers.add(stOther);
-	// }
-	// } else {
-	// // St main is null, return all the storagelinks.
-	// stOthers.add(link);
-	// }
-	// }
-	// return storageLinks;
-	// }
+	public String getInventoryPath() {
+		VmwarefoldersConnector vmfolders = getMixinVmwarefolders();
+		if (vmfolders != null) {
+			return vmfolders.getInventorypath();
+		}
+		return null;
+	}
 
 	/**
 	 * Define the corresponding status from VMWare power state.
@@ -756,8 +726,8 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 	}
 
 	/**
-	 * get attribute value with his occi key, deserve when no property value
-	 * set, with Mixin attribute as it is defined by Cloud designer.
+	 * get attribute value with his occi key, deserve when no property value set,
+	 * with Mixin attribute as it is defined by Cloud designer.
 	 * 
 	 * @param key
 	 * @return an attribute value, null if no one is found.
@@ -783,20 +753,15 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 	/**
 	 * Allocate vcpus et nb core per socket.
 	 */
-	private void assignVCpuToVMSpec() {
-		int nbCore = this.getOcciComputeCores();
-		vcpus = 0;
-		vcpusStr = this.getAttributeValueByOcciKey(ATTR_VCPU_NUMBER);
-		if (vcpusStr != null && !vcpusStr.trim().isEmpty()) {
-			try {
-				vcpus = Integer.valueOf(vcpusStr);
-			} catch (NumberFormatException ex) {
-				LOGGER.error("Vcpu is not a number, please set the attribute to an integer value.");
-				vcpus = 1;
-			}
+	private void assignVCpuToVMSpec(final ResourceTPLContainer resourceTpl) {
+		int nbCore = resourceTpl.getCores();
+		Integer vcpus = 0;
+
+		if (vcpu != null && vcpu > 0) {
+			vcpus = vcpu;
 		}
 		if (vcpus == 0) {
-			vcpus = this.getOcciComputeCores();
+			vcpus = nbCore;
 		}
 
 		if (nbCore < 2) {
@@ -815,7 +780,6 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			vmSpec.setNumCPUs(vcpus);
 			vmSpec.setNumCoresPerSocket(vcpus / nbCore);
 		}
-
 	}
 
 	/**
@@ -862,30 +826,6 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		return netConn;
 	}
 
-	/**
-	 * Get an attribute state object for key parameter.
-	 * 
-	 * @param key
-	 *            ex: occi.core.title.
-	 * @return an AttributeState object, if attribute doesnt exist, null value
-	 *         is returned.
-	 */
-	public AttributeState getAttributeStateObject(final String key) {
-		AttributeState attr = null;
-		if (key == null) {
-			return attr;
-		}
-		// Load the corresponding attribute state.
-		for (AttributeState attrState : this.getAttributes()) {
-			if (attrState.getName().equals(key)) {
-				attr = attrState;
-				break;
-			}
-		}
-
-		return attr;
-	}
-
 	public String getVmOldName() {
 		return vmOldName;
 	}
@@ -894,254 +834,10 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		this.vmOldName = vmOldName;
 	}
 
-	public String getVmTemplateName() {
-		return vmTemplateName;
-	}
-
-	public void setVmTemplateName(String vmTemplateName) {
-		this.vmTemplateName = vmTemplateName;
-	}
-
-	public String getVcpusStr() {
-		return vcpusStr;
-	}
-
-	public void setVcpusStr(String vcpusStr) {
-		this.vcpusStr = vcpusStr;
-	}
-
-	public Integer getVcpus() {
-		return vcpus;
-	}
-
-	public void setVcpus(Integer vcpus) {
-		this.vcpus = vcpus;
-	}
-
 	/**
-	 * Check if a mixin name is in the scope of this compute.
-	 * @param mixinName the mixin term to check.
-	 * @return
-	 */
-	public boolean hasMixin(final String mixinName) {
-		boolean result = false;
-		String mixinTerm = null;
-		List<Mixin> mixins = this.getMixins();
-		for (Mixin mixin : mixins) {
-			mixinTerm = mixin.getTerm();
-			if (mixinTerm.equals(mixinName)) {
-				result = true;
-				break;
-			}
-		}
-		return result;
-	}
-	
-	/**
-	 * Check if this compute has mixin vmware ephemral addon (crtp).
-	 * 
-	 * @return
-	 */
-	public boolean hasMixinEphemeral() {
-		boolean result = false;
-		String mixinTerm = null;
-		List<Mixin> mixins = this.getMixins();
-		for (Mixin mixin : mixins) {
-			mixinTerm = mixin.getTerm();
-			// Linked to crtp extension of infrastructure extension.
-			if (mixinTerm.equals("small") || mixinTerm.equals("medium") || mixinTerm.equals("large")
-					|| mixinTerm.startsWith("mem_")) {
-				result = true;
-				break;
-			}
-		}
-		return result;
-	}
-
-	/**
-	 * Update this object attributes.
-	 */
-	public void updateAttributesOnCompute() {
-		Map<String, String> attrsToCreate = new HashMap<>();
-		Map<String, String> attrsToUpdate = new HashMap<>();
-		List<String> attrsToDelete = new ArrayList<>();
-
-		boolean hasMixinFoldersData = hasMixin(VMWARE_MIXIN_FOLDERS_TERM);
-		boolean hasMixinVMwareComputeAddOn = hasMixin(VMWARE_MIXIN_VM_ADDON_TERM);
-		// For disk ephemeral storage mandatory here to create a vm with a fixed
-		// system storage, elsewhere the ephemeral will be 15.0GB.
-		boolean hasMixinEphemeral = hasMixinEphemeral();
-		boolean hasMixinVMImage = hasMixin(VMWARE_MIXIN_VM_IMAGE);
-		boolean hasMixinUserData = hasMixin(MIXIN_USERDATA);
-		boolean hasMixinCredential = hasMixin(VMWARE_MIXIN_CREDENTIAL);
-		// ATTR_DATACENTER_NAME
-		if (datacenterName != null && hasMixinFoldersData) {
-			if (this.getAttributeStateObject(ATTR_DATACENTER_NAME) == null) {
-				attrsToCreate.put(ATTR_DATACENTER_NAME, datacenterName);
-			} else {
-				// update
-				attrsToUpdate.put(ATTR_DATACENTER_NAME, datacenterName);
-			}
-		}
-		if (datastoreName != null && hasMixinFoldersData) {
-			// ATTR_DATASTORE_NAME
-			if (this.getAttributeStateObject(ATTR_DATASTORE_NAME) == null) {
-				attrsToCreate.put(ATTR_DATASTORE_NAME, datastoreName);
-			} else {
-				attrsToUpdate.put(ATTR_DATASTORE_NAME, datastoreName);
-			}
-		}
-
-		// ATTR_CLUSTER_NAME
-		if (clusterName != null && hasMixinFoldersData) {
-			if (this.getAttributeStateObject(ATTR_CLUSTER_NAME) == null) {
-				attrsToCreate.put(ATTR_CLUSTER_NAME, clusterName);
-			} else {
-				attrsToUpdate.put(ATTR_CLUSTER_NAME, clusterName);
-			}
-		}
-		// ATTR_HOSTSYSTEM_NAME
-		if (hostSystemName != null && hasMixinFoldersData) {
-			if (this.getAttributeStateObject(ATTR_HOSTSYSTEM_NAME) == null) {
-				attrsToCreate.put(ATTR_HOSTSYSTEM_NAME, hostSystemName);
-			} else {
-				attrsToUpdate.put(ATTR_HOSTSYSTEM_NAME, hostSystemName);
-			}
-		}
-		
-		// Inventory path like /INRIA/tests/. This is the location folder where the vm has been created / moved etc.
-		if (inventoryPath != null && !inventoryPath.trim().isEmpty() && hasMixinFoldersData) {
-			if (this.getAttributeStateObject(ATTR_VM_INVENTORY_PATH) == null) {
-				attrsToCreate.put(ATTR_VM_INVENTORY_PATH, inventoryPath);
-			} else {
-				attrsToUpdate.put(ATTR_VM_INVENTORY_PATH, inventoryPath);
-			}
-			
-		}
-
-		// ATTR_IMAGE_NAME
-		if (vmTemplateName != null && hasMixinVMImage) {
-			if (this.getAttributeStateObject(ATTR_IMAGE_NAME) == null) {
-				attrsToCreate.put(ATTR_IMAGE_NAME, vmTemplateName);
-			} else {
-				attrsToUpdate.put(ATTR_IMAGE_NAME, vmTemplateName);
-			}
-		}
-
-		// ATTR_VCPU_NUMBER
-		if (vcpus != 0 && hasMixinVMwareComputeAddOn) {
-			if (this.getAttributeStateObject(ATTR_VCPU_NUMBER) == null) {
-				attrsToCreate.put(ATTR_VCPU_NUMBER, vcpus.toString());
-			} else {
-				attrsToUpdate.put(ATTR_VCPU_NUMBER, vcpus.toString());
-			}
-		}
-		// ATTR_VM_GUEST_STATE
-		if (vmGuestState != null && hasMixinVMwareComputeAddOn) {
-			if (this.getAttributeStateObject(ATTR_VM_GUEST_STATE) == null) {
-				attrsToCreate.put(ATTR_VM_GUEST_STATE, vmGuestState);
-			} else {
-				attrsToUpdate.put(ATTR_VM_GUEST_STATE, vmGuestState);
-			}
-		}
-		// ATTR_VM_GUEST_OS_ID
-		if (guestOsId != null && hasMixinVMwareComputeAddOn) {
-			if (this.getAttributeStateObject(ATTR_VM_GUEST_OS_ID) == null) {
-				attrsToCreate.put(ATTR_VM_GUEST_OS_ID, guestOsId);
-			} else {
-				attrsToUpdate.put(ATTR_VM_GUEST_OS_ID, guestOsId);
-			}
-		}
-
-		if (markedAsTemplate == null) {
-			markedAsTemplate = "false";
-		}
-		if (hasMixinVMwareComputeAddOn) {
-			if (this.getAttributeStateObject(ATTR_MARKED_AS_TEMPLATE) == null) {
-				attrsToCreate.put(ATTR_MARKED_AS_TEMPLATE, markedAsTemplate);
-			} else {
-				attrsToUpdate.put(ATTR_MARKED_AS_TEMPLATE, markedAsTemplate);
-			}
-		}
-
-		if (hasMixinEphemeral) {
-			if (this.getAttributeStateObject(ATTR_VM_EPHEMERAL_DISK_SIZE_GB) == null) {
-				attrsToCreate.put(ATTR_VM_EPHEMERAL_DISK_SIZE_GB, "" + ephemeralDiskSizeGB);
-			} else {
-				attrsToUpdate.put(ATTR_VM_EPHEMERAL_DISK_SIZE_GB, "" + ephemeralDiskSizeGB);
-			}
-		}
-		
-		if (hasMixinUserData) {
-			if (this.getAttributeStateObject(ATTR_USER_DATA) == null) {
-				attrsToCreate.put(ATTR_USER_DATA, userData);
-			} else {
-				attrsToUpdate.put(ATTR_USER_DATA, userData);
-			}
-		}
-		
-		if (hasMixinCredential && username != null) {
-			if (this.getAttributeStateObject(ATTR_USERNAME) == null) {
-				attrsToCreate.put(ATTR_USERNAME, username);
-			} else {
-				attrsToUpdate.put(ATTR_USERNAME, username);
-			}
-		}
-		if (hasMixinCredential && password != null) {
-			if (this.getAttributeStateObject(ATTR_PASSWORD) == null) {
-				attrsToCreate.put(ATTR_PASSWORD, password);
-			} else {
-				attrsToUpdate.put(ATTR_PASSWORD, password);
-			}
-		}
-		if (hasMixinCredential && userDataFile != null) {
-			if (this.getAttributeStateObject(ATTR_USER_DATA_FILE) == null) {
-				attrsToCreate.put(ATTR_USER_DATA_FILE, userDataFile);
-			} else {
-				attrsToUpdate.put(ATTR_USER_DATA_FILE, userDataFile);
-			}
-		}
-		
-		// Update the attributes via a transaction (or not if standalone).
-		if (UIDialog.isStandAlone()) {
-			// Headless environment.
-			EntityUtilsHeadless.updateAttributes(this, attrsToCreate, attrsToUpdate, attrsToDelete);
-		} else {
-			// Gui environment
-			EntityUtils.updateAttributes(this, attrsToCreate, attrsToUpdate, attrsToDelete);
-		}
-		
-		if (architecture != null) {
-			if (architecture.equals("x64")) {
-				setOcciComputeArchitecture(Architecture.X64);
-			} else {
-				setOcciComputeArchitecture(Architecture.X86);
-			}
-		}
-		if (numCores != null) {
-			setOcciComputeCores(numCores);
-		}
-		if (memoryGB != null) {
-			setOcciComputeMemory(memoryGB);
-		}
-		if (speed != null) {
-			setOcciComputeSpeed(speed);
-		}
-		if (vmState != null) {
-			setOcciComputeState(defineStatus(vmState));
-		}
-		if (hostname != null) {
-			setOcciComputeHostname(hostname);
-		}
-		if (messageProgress != null) {
-			setOcciComputeStateMessage(messageProgress);
-		}
-	}
-
-	/**
-	 * Get the storages resources without links and those have their title
-	 * equals to this compute title. Used only when no storage linked and
-	 * there's no main disk found when creating a new virtual machine.
+	 * Get the storages resources without links and those have their title equals to
+	 * this compute title. Used only when no storage linked and there's no main disk
+	 * found when creating a new virtual machine.
 	 * 
 	 * @return
 	 */
@@ -1175,7 +871,6 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			subMonitor = SubMonitor.convert(monitor, 100);
 			// consume..
 			subMonitor.worked(10);
-
 		}
 
 		if (!VCenterClient.checkConnection()) {
@@ -1195,6 +890,8 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		ClusterComputeResource cluster = null;
 
 		if (vmName == null) {
+			// TODO : Set a new attribute vmname in instancevmwareConnector and remove
+			// vmname management from title attribute.
 			globalMessage = "Cant create a new virtual machine, the vm name is not set (check title attribute). ";
 			levelMessage = Level.ERROR;
 			LOGGER.error(globalMessage);
@@ -1202,37 +899,38 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			return;
 		}
 
-		// Check if this vm already exist if this is the case, we
-		// retrieve his
-		// value but no other things to create.....
-
+		// Check if this vm already exist if this is the case, we retrieve his value but
+		// no other things to create.....
 		if (VMHelper.isVMExistForName(rootFolder, vmName)) {
 			globalMessage = "VM : " + vmName + " already exist. Cant create.";
 			levelMessage = Level.WARN;
 			LOGGER.warn(globalMessage);
 			return;
 		}
-		
-		
 
-		// Get the list of linked network adapters, by this we get the
-		// network
-		// vSwitch, if none declared we allocate an available network,
-		// if none
-		// we create the network.
+		// Check if this vm already exist for instanceId.
+		if (VMHelper.findVMForMorId(rootFolder, instanceId) != null) {
+			globalMessage = "VM : " + vmName + " already exist for instance id : " + instanceId + ". Cant create.";
+			levelMessage = Level.WARN;
+			LOGGER.warn(globalMessage);
+		}
+
+		// Get the list of linked network adapters, by this we get the network vSwitch
+		// If none declared we allocate an available network,
+		// If none we create the network.
 		List<NetworkadapterConnector> netInterfaceConn = getNetworkInterfaces();
 
 		// Same for storage we get the storage links.
 		List<StoragelinkvmwareConnector> storageLinks = getLinkedStorages();
-		
+
 		// Template or not ?
-		vmTemplateName = getAttributeValueByOcciKey(ATTR_IMAGE_NAME);
-		boolean hasTemplate = (vmTemplateName != null && !vmTemplateName.trim().isEmpty());
-		
+		boolean hasTemplate = (imagename != null && !imagename.trim().isEmpty());
+
 		// Check if we create the virtual machine on start operation.
-		
+
 		if (!toCreateOnStartOperation && !hasTemplate) {
-			// check if we have no networkinterface connected, if this is the case we check if a network is in the configuration space.
+			// check if we have no networkinterface connected, if this is the case we check
+			// if a network is in the configuration space.
 			if (netInterfaceConn.isEmpty()) {
 				// Check if network is on configuration object.
 				Configuration config = OcciHelper.getConfiguration(this);
@@ -1242,7 +940,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 						if (resource instanceof VswitchConnector) {
 							toCreateOnStartOperation = true;
 							globalMessage = "Network detected on this configuration, for creating this vm, you must use start operation, no network adapter found for this vm.";
-							levelMessage = Level.WARN; 
+							levelMessage = Level.WARN;
 							LOGGER.warn(globalMessage);
 							return;
 						}
@@ -1252,45 +950,19 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		} else {
 			toCreateOnStartOperation = false;
 		}
-
-		guestOsId = getAttributeValueByOcciKey(ATTR_VM_GUEST_OS_ID);
-		if (guestOsId != null && guestOsId.trim().isEmpty()) {
-			guestOsId = null;
+		// Set guestosid to null if its value is empty string.
+		if (guestosid != null && guestosid.trim().isEmpty()) {
+			guestosid = null;
 		}
 
-		// For now, we set manually attributes for datacenterName,
-		// datastoreName
-		// and clusterName.
-		for (AttributeState attrState : getAttributes()) {
-
-			String attrName = attrState.getName();
-			String attrValue = attrState.getValue();
-			if (attrValue != null && attrValue.trim().isEmpty()) {
-				attrValue = null;
-			}
-			if (attrName.equals(ATTR_DATACENTER_NAME)) {
-				setDatacenterName(attrValue);
-			}
-			if (attrName.equals(ATTR_CLUSTER_NAME)) {
-				setClusterName(attrValue);
-			}
-			if (attrName.equals(ATTR_HOSTSYSTEM_NAME)) {
-				setHostSystemName(attrValue);
-			}
-			if (attrName.equals(ATTR_DATASTORE_NAME)) {
-				setDatastoreName(attrValue);
-			}
-
-		}
 		if (toMonitor) {
 			subMonitor.worked(30);
 		}
+
 		// Datacenter part. first objects of the tree.
 		Datacenter datacenter = DatacenterHelper.findDatacenterForName(rootFolder, getDatacenterName());
 		if (datacenter == null) {
-			// Allocate automaticly the datacenter, if no datacenter
-			// found, a
-			// default datacenter will be created.
+			// Allocate automaticly the datacenter.
 			datacenter = allocator.allocateDatacenter();
 			if (datacenter == null) {
 				globalMessage = "Cant allocate a datacenter, cause : no available datacenter to allocate.";
@@ -1358,7 +1030,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		VirtualMachine vmTemplate = null;
 		if (hasTemplate) {
 			try {
-				vmTemplate = VMHelper.findVMForName(datacenter.getVmFolder(), vmTemplateName);
+				vmTemplate = VMHelper.findVMForName(datacenter.getVmFolder(), imagename);
 			} catch (RemoteException ex) {
 				globalMessage = "Error while searching the vm template folder. \n ";
 				globalMessage += "Message: " + ex.getMessage();
@@ -1370,36 +1042,36 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 
 		// Define guestOsId.
 		if (hasTemplate && vmTemplate == null) {
-			LOGGER.warn("No virtual machine template found for template: " + vmTemplateName);
-			globalMessage = "The template " + vmTemplateName + " doesnt exist ! \n ";
+			LOGGER.warn("No virtual machine template found for template: " + imagename);
+			globalMessage = "The template " + imagename + " doesnt exist ! \n ";
 			globalMessage += "Please define an existing template.";
 			levelMessage = Level.ERROR;
 			LOGGER.error(globalMessage);
 			return;
 		}
 
-		if (!hasTemplate && guestOsId == null) {
+		if (!hasTemplate && guestosid == null) {
 			// Get the architecture to define the good default guestos.
 			if (this.getOcciComputeArchitecture().equals("x86")) {
 				LOGGER.warn("Guest OS Id is unknown, assign other 32 bits guest os by default.");
 				// No VM template found, retrograde to guestOSId.
 				// Get the corresponding value from api :
-				guestOsId = VirtualMachineGuestOsIdentifier.otherGuest.toString();
+				guestosid = VirtualMachineGuestOsIdentifier.otherGuest.toString();
 			} else {
 				LOGGER.warn("Guest OS Id is unknown, assign other 64 bits guest os by default.");
-				guestOsId = VirtualMachineGuestOsIdentifier.otherGuest64.toString();
+				guestosid = VirtualMachineGuestOsIdentifier.otherGuest64.toString();
 			}
-			
+
 		}
 		if (hasTemplate) {
 			// Get the guestOsId from template (not the attribute of this
 			// compute).
 			if (vmTemplate.getConfig().isTemplate()) {
-				LOGGER.info("Template : " + vmTemplateName + " is used for building the virtual machine.");
-				guestOsId = vmTemplate.getConfig().getGuestId();
+				LOGGER.info("Template : " + imagename + " is used for building the virtual machine.");
+				guestosid = vmTemplate.getConfig().getGuestId();
 			} else {
-				LOGGER.warn("The virtual machine : " + vmTemplateName + " is not a template vm.");
-				globalMessage = "The virtual machine : " + vmTemplateName + " is not a template vm. \n";
+				LOGGER.warn("The virtual machine : " + imagename + " is not a template vm.");
+				globalMessage = "The virtual machine : " + imagename + " is not a template vm. \n";
 				globalMessage += "Please mark as a template this virtual machine or use another one. And retry after.";
 				levelMessage = Level.ERROR;
 				LOGGER.error(globalMessage);
@@ -1409,8 +1081,8 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 
 		// Check if guestOsId string is found on
 		// VirtualMachineGuestOsIdentifier.
-		if (VirtualMachineGuestOsIdentifier.valueOf(guestOsId) == null) {
-			LOGGER.error("Guest OS Id : " + guestOsId + " not found !");
+		if (VirtualMachineGuestOsIdentifier.valueOf(guestosid) == null) {
+			LOGGER.error("Guest OS Id : " + guestosid + " not found !");
 			globalMessage = "Valid values are : \n";
 			int i = 0;
 			for (VirtualMachineGuestOsIdentifier guestVal : VirtualMachineGuestOsIdentifier.values()) {
@@ -1435,11 +1107,13 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		List<StoragelinkvmwareConnector> stLinks = getLinkedStorages(); // For additionnal disks.
 
 		// Get the datastore vmware object.
-		if (datastoreName != null) {
+		if (getDatastoreName() != null) {
 			datastore = DatastoreHelper.findDatastoreForName(datacenter, getDatastoreName());
 		}
 
 		// Datastore automatic allocation if none found.
+		// TODO : Define the datastore if there is one referenced on StorageConnector
+		// and none on VMware compute.
 		if (datastore == null) {
 			// Allocate a datastore automaticly.
 			datastore = allocator.allocateDatastore();
@@ -1453,32 +1127,38 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			}
 		}
 		setDatastoreName(datastore.getName());
-		// For V2, folder is on an attribute with vmware light extension.
 		Folder vmFolder = null;
-		inventoryPath = getAttributeValueByOcciKey(ATTR_VM_INVENTORY_PATH);
+		String inventoryPath = getInventoryPath();
 		if (inventoryPath == null || inventoryPath.trim().isEmpty()) {
 			inventoryPath = "";
-		} 
+		}
 		try {
-			vmFolder = VMHelper.getInventoryFolderFromPath((Folder)datacenter.getVmFolder(), inventoryPath);
+			vmFolder = VMHelper.getInventoryFolderFromPath((Folder) datacenter.getVmFolder(), inventoryPath);
 		} catch (RemoteException ex) {
 			try {
 				vmFolder = (Folder) datacenter.getVmFolder();
 			} catch (RemoteException ey) { // fail silently.
 			}
 		}
-		
-		username = getAttributeValueByOcciKey(ATTR_USERNAME);
-		password = getAttributeValueByOcciKey(ATTR_PASSWORD);
-		userData = getAttributeValueByOcciKey(ATTR_USER_DATA);
-		userDataFile = getAttributeValueByOcciKey(ATTR_USER_DATA_FILE);
-		
+
 		// Get the first adapter (eth0 or name Network adapter 1 or
 		// Adaptateur réseau 1).
 		VswitchConnector firstConnector = getFirstAdapterNetwork(netInterfaceConn);
 		if (toMonitor) {
 			subMonitor.worked(50);
 		}
+		// Disk size in kiloBytes in VMware sdk.
+		// Set the ephemeral disk size, if the add one crtp mixin is set.
+		ResourceTPLContainer resourceTpl = null;
+		MixinBase instanceClass = getMixinInstanceClass();
+		Float ephemeralDefaultGB = 15.0f;
+		if (instanceClass != null) {
+			// A mixin OS TPL from CRTP is applied, override attribute cores and mem.
+			resourceTpl = new ResourceTPLContainer(instanceClass);
+		} else {
+			resourceTpl = new ResourceTPLContainer(getOcciComputeCores(), getOcciComputeMemory(), ephemeralDefaultGB);
+		}
+
 		// Creation part.
 		if (vmTemplate != null) {
 			// We clone the vm.
@@ -1486,7 +1166,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 				if (vmFolder == null) {
 					vmFolder = (Folder) datacenter.getVmFolder();
 				}
-				
+
 				ResourcePool rp = (ResourcePool) new InventoryNavigator(datacenter)
 						.searchManagedEntities("ResourcePool")[0];
 				VirtualMachineCloneSpec cloneSpec = new VirtualMachineCloneSpec();
@@ -1502,60 +1182,13 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 				} else {
 					cloneSpec.setPowerOn(false);
 				}
-				
+
 				if (vmTemplate.getCurrentSnapShot() != null) {
 					cloneSpec.snapshot = vmTemplate.getCurrentSnapShot().getMOR();
 				}
 
 				LOGGER.info(
 						"Creating the Virtual Machine >> " + getTitle() + " << from template: " + vmTemplate.getName());
-
-				// // TODO : guest hostname (lvl OS), when set, create a
-				// // customizationSpec.setDomain(hostname) for the
-				// // corresponding operating system. It is not implemented
-				// // for
-				// // now.
-				// // On linux or windows ?
-				// boolean onWindows = false;
-				// boolean onLinux = false;
-				// if (guestOsId != null) {
-				// if (guestOsId.toLowerCase().contains("linux") ||
-				// guestOsId.contains("ubuntu")
-				// || guestOsId.contains("debian") ||
-				// guestOsId.contains("fedora")
-				// || guestOsId.contains("redhat")) {
-				// onLinux = true;
-				// }
-				// if (guestOsId.toLowerCase().contains("windows") ||
-				// guestOsId.contains("win")) {
-				// onWindows = true;
-				// }
-				// if (guestOsId.toLowerCase().contains("other")) {
-				// // default on linux.
-				// onLinux = true;
-				// }
-				// }
-				//
-				// // Customize
-				//
-				// CustomizationSpec customSpec = new CustomizationSpec();
-				// String ipAddress = null;
-				// String gateway = null;
-				// if (firstConnector != null) {
-				// ipAddress =
-				// firstConnector.getAttributeValueByOcciKey("occi.networkinterface.address");
-				// gateway =
-				// firstConnector.getAttributeValueByOcciKey("occi.networkinterface.gateway");
-				// }
-				//
-				// if (onLinux) {
-				// customSpec = createLinuxCustomization(ipAddress, gateway,
-				// host);
-				// }
-				// if (onWindows) {
-				// // customSpec = createWindowsCustomization();
-				// }
-				// cloneSpec.setCustomization(customSpec);
 
 				vmSpec = new VirtualMachineConfigSpec();
 				vmSpec.setName(vmName);
@@ -1565,13 +1198,11 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 				} else {
 					vmSpec.setAnnotation("Virtual Machine Annotation");
 				}
-				Float memSizeGB = getOcciComputeMemory();
 
-				Long memSizeGBLng = memSizeGB.longValue();
-				Long memSizeMB = memSizeGBLng * 1024;
+				Long memSizeMB = resourceTpl.getMemoryMB();
 
-				if (memSizeGBLng == 0L || getOcciComputeCores() == 0) {
-					globalMessage = "You must set the memory size (in GB) and the number of cores.";
+				if (memSizeMB == 0L || resourceTpl.getCores() == 0) {
+					globalMessage = "You must set the memory size (in GB) and the number of cores or use CRTP resource templates instance class mixin.";
 					levelMessage = Level.ERROR;
 					LOGGER.error(globalMessage);
 					VCenterClient.disconnect();
@@ -1580,102 +1211,18 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 
 				vmSpec.setMemoryMB(memSizeMB);
 
-				// If attribute vcpu is setted, we
-				// calculate the nb
-				// cores per socket.
-				assignVCpuToVMSpec();
-				
-				vmSpec.setGuestId(guestOsId);
+				assignVCpuToVMSpec(resourceTpl);
+
+				vmSpec.setGuestId(guestosid);
+				// TODO : Add to model the cpuHot and memoryHot boolean to
+				// instanceVmwareConnector resource.
 				vmSpec.setCpuHotAddEnabled(true);
 				// vmSpec.setCpuHotRemoveEnabled(true);
 				vmSpec.setMemoryHotAddEnabled(true);
-				// TODO : Check why it is not working network allocation
-				// clone
-				// customize....
-
-				// // Rebuild the networks allocation.
-				// String networkName = null;
-				// List<VirtualDeviceConfigSpec> nicSpecs = new
-				// LinkedList<>();
-				// // Load each network interfaces and their network and
-				// nic
-				// names,
-				// // add to device change.
-				// if (!netInterfaceConn.isEmpty()) {
-				//
-				// // Get the network name.
-				// for (NetworkinterfaceConnector netInt :
-				// netInterfaceConn) {
-				// NetworkConnector networkConn = (NetworkConnector)
-				// netInt.getTarget();
-				// if (networkConn != null) {
-				// networkName = ((NetworkConnector)
-				// netInt.getTarget()).getLabel();
-				// }
-				// if (networkConn == null || networkName == null ||
-				// networkName.trim().isEmpty()) {
-				//
-				// Network network = allocator.allocateNetwork();
-				// if (network == null) {
-				// LOGGER.error(
-				// "No virtual networks is available for this virtual
-				// machine,
-				// please setup a new network in vcenter.");
-				// VCenterClient.disconnect();
-				// return;
-				// }
-				// networkName = network.getName();
-				// } else {
-				// // Check if this network exist.
-				// if (!NetworkHelper.isHostNetworkExist(networkName,
-				// host)) {
-				// // We create the vSwitch and port group.
-				// String vSwitchName = networkConn.getTitle();
-				// String macAddress = null;
-				// // TODO : ipAddress CIDR and subnetmask
-				// // association with vswitch ??? No informations
-				// // about that. Searching....
-				// String dhcp =
-				// networkConn.getAttributeValueByOcciKey("occi.network.allocation");
-				// boolean dhcpMode = true;
-				// if (dhcp != null) {
-				// if (dhcp.equals("static")) {
-				// dhcpMode = false;
-				// }
-				// }
-				// // TODO : To replace when a solution is found
-				// // for cidr addresses with network.
-				// dhcpMode = true;
-				// NetworkHelper.createVSwitch(vSwitchName, networkName,
-				// 8,
-				// networkConn.getVlan(), host,
-				// macAddress, null, null, dhcpMode);
-				// }
-				// }
-				//
-				// VirtualDeviceConfigSpec deviceConf =
-				// NetworkHelper.createNicSpec(networkName,
-				// netInt.getTitle(),
-				// "generated",
-				// netInt.getAttributeValueByOcciKey("occi.networkinterface.address"));
-				// nicSpecs.add(deviceConf);
-				// VirtualDeviceConfigSpec[] vDevices = new
-				// VirtualDeviceConfigSpec[nicSpecs.size()];
-				//
-				// int i = 0;
-				// for (VirtualDeviceConfigSpec nicSpec : nicSpecs) {
-				// vDevices[i] = nicSpec;
-				// i++;
-				// }
-				//
-				// // Add networks specs to device change.
-				// vmSpec.setDeviceChange(vDevices);
-				// }
-				// }
 
 				// Create vm file info for vmx file.
 				VirtualMachineFileInfo vmfi = new VirtualMachineFileInfo();
-				vmfi.setVmPathName("[" + datastoreName + "]");
+				vmfi.setVmPathName("[" + datastore.getName() + "]");
 				vmSpec.setFiles(vmfi);
 
 				cloneSpec.setConfig(vmSpec);
@@ -1684,9 +1231,9 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 				// ref on
 				// designer when vm is created.
 				com.vmware.vim25.mo.Task taskVm = vmTemplate.cloneVM_Task(vmFolder, vmName, cloneSpec);
-				
+
 				if (!UIDialog.isStandAlone()) {
-					
+
 					String result = taskVm.waitForTask();
 					if (toMonitor) {
 						subMonitor.worked(80);
@@ -1704,14 +1251,14 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 					}
 				} else {
 					// in headless mode (console), we don't need to wait the task completion.
-					// This is to user to poll the service it's done. This is a long long task, here it made in 13 mins for 20 Go to clone.
+					// This is to user to poll the service it's done. This is a long long task, here
+					// it made in 13 mins for 20 Go to clone.
 					globalMessage = "The clone task is launched, vm name: " + vmName + " from template: "
 							+ vmTemplate.getName();
 					levelMessage = Level.INFO;
 					LOGGER.info(globalMessage);
 				}
-				
-				
+
 			} catch (RemoteException | InterruptedException ex) {
 
 				globalMessage = "VM was not created or has errors, please check your vcenter and your configuration \n "
@@ -1739,22 +1286,12 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 				// independent_nonpersistent
 				LOGGER.warn("Default diskmode setted to persistent");
 				diskMode = "persistent";
-				
+
 				// "occi.compute.ephemeral.diskmode", "persistent");
 				// }
 
-				// Disk size in kiloBytes.
-				// Set the ephemeral disk size, if the add one crtp mixin is set.
-				if (hasMixinEphemeral()) {
-					// read the ephemeral size attribute before creating.
-					Float ephemeralTmp = Float.valueOf(getAttributeValueByOcciKey(ATTR_VM_EPHEMERAL_DISK_SIZE_GB));
-					if (ephemeralTmp != null && ephemeralTmp > 0) {
-						ephemeralDiskSizeGB = ephemeralTmp;
-					}
-				}
-				
-				Long diskSizeGB = ephemeralDiskSizeGB.longValue();
-				if (diskSizeGB == 0L) {
+				Long diskSizeKB = resourceTpl.getEphemeralDiskSizeKB();
+				if (diskSizeKB == 0L) {
 					globalMessage = "The main disk size must be > 0 in GigaBytes";
 					levelMessage = Level.ERROR;
 					LOGGER.error(globalMessage);
@@ -1762,12 +1299,10 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 					return;
 				}
 
-				Long diskSizeKB = diskSizeGB * 1024 * 1024;
 				VirtualDeviceConfigSpec scsiSpec = VMHelper.createScsiSpec(cKey);
-				// Define the datastore if there is one referenced on
-				// StorageConnector.
-				String storageDatastoreName =  getDatastoreName();
-				
+
+				String storageDatastoreName = datastore.getName();
+
 				VirtualDeviceConfigSpec diskSpec = VMHelper.createDiskSpec(storageDatastoreName, cKey, diskSizeKB,
 						diskMode);
 
@@ -1811,7 +1346,6 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 						break;
 					}
 				}
-				
 
 				// Get the virtual adapter network name.
 				if (nicName == null) {
@@ -1842,13 +1376,10 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 					vmSpec.setAnnotation("Virtual Machine Annotation");
 				}
 
-				Float memSizeGB = getOcciComputeMemory();
+				Long memSizeMB = resourceTpl.getMemoryMB();
 
-				Long memSizeGBLng = memSizeGB.longValue();
-				Long memSizeMB = memSizeGBLng * 1024;
-
-				if (memSizeGBLng == 0L || getOcciComputeCores() == 0) {
-					globalMessage = "You must set the memory size (in GB) and the number of cores.";
+				if (memSizeMB == 0L || resourceTpl.getCores() == 0) {
+					globalMessage = "You must set the memory size (in GB) and the number of cores, or use a predefined templates from CRTP extension mixin instance class";
 					levelMessage = Level.ERROR;
 					LOGGER.error(globalMessage);
 					VCenterClient.disconnect();
@@ -1860,9 +1391,9 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 				// If attribute occi.compute.vcpu is setted, we
 				// calculate the nb
 				// cores per socket.
-				assignVCpuToVMSpec();
+				assignVCpuToVMSpec(resourceTpl);
 
-				vmSpec.setGuestId(guestOsId);
+				vmSpec.setGuestId(guestosid);
 				vmSpec.setCpuHotAddEnabled(true);
 				// vmSpec.setCpuHotRemoveEnabled(true);
 				vmSpec.setMemoryHotAddEnabled(true);
@@ -1870,17 +1401,17 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 				vmSpec.setDeviceChange(new VirtualDeviceConfigSpec[] { scsiSpec, diskSpec, nicSpec });
 				// Create vm file info for vmx file.
 				VirtualMachineFileInfo vmfi = new VirtualMachineFileInfo();
-				vmfi.setVmPathName("[" + datastoreName + "]");
+				vmfi.setVmPathName("[" + datastore.getName() + "]");
 				vmSpec.setFiles(vmfi);
-				
+
 				ResourcePool rp = (ResourcePool) new InventoryNavigator(datacenter)
 						.searchManagedEntities("ResourcePool")[0];
-				
+
 				if (vmFolder == null) {
 					// Back to the main datacenter vm folder.
 					vmFolder = datacenter.getVmFolder();
 				}
-				
+
 				// Create effectively the vm on folder.
 				com.vmware.vim25.mo.Task taskVm = vmFolder.createVM_Task(vmSpec, rp, host);
 				// TODO : Monitoring task object in other thread. See :
@@ -1893,16 +1424,16 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 					globalMessage = "Virtual Machine successfully created !";
 					levelMessage = Level.INFO;
 					vmExist = true;
-					// if state is active on create, power on the instance. 
+					// if state is active on create, power on the instance.
 					if (getOcciComputeState() != null && getOcciComputeState().equals(ComputeStatus.ACTIVE)) {
 						VirtualMachine vm = VMHelper.loadVirtualMachine(vmName);
 						boolean poweredOn = VMHelper.powerOn(vm);
 						if (poweredOn) {
 							globalMessage += " \n virtual machine is powered on.";
 						}
-					} 
+					}
 					LOGGER.info(globalMessage);
-					
+
 				} else {
 					globalMessage = "VM couldn't be created, result: " + result;
 					levelMessage = Level.ERROR;
@@ -1910,8 +1441,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 				}
 
 				// Create vm terminated
-				
-				
+
 			} catch (RemoteException | InterruptedException ex) {
 				globalMessage = "Cannot create the virtual machine : " + ex.getMessage();
 				levelMessage = Level.ERROR;
@@ -1922,20 +1452,20 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			}
 
 		} // endif vmTemplate exist.
-		
+
 		if (getOcciComputeState() != null && getOcciComputeState().equals(ComputeStatus.ACTIVE)) {
 			VirtualMachine vm = VMHelper.loadVirtualMachine(vmName);
 			ipv4Address = NetworkHelper.getIpv4Address(vm);
 			ipv6Address = NetworkHelper.getIpv6Address(vm);
 		}
-		
+
 		// In all case invoke a disconnect from vcenter.
 		VCenterClient.disconnect();
+
 		if (vmTemplate != null) {
-			// applyUserData(monitor, vmFolder, vmName);
 			applyUserData(monitor, vmName);
 		}
-		
+
 		if (toMonitor) {
 			subMonitor.worked(100);
 		}
@@ -1988,9 +1518,9 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 					setTitle(vmOldName);
 					vmName = vmOldName;
 				} else {
-					// Find vm by morId
-					if (morId != null) {
-						vm = VMHelper.findVMForMorId(rootFolder, morId);
+					// Find vm by instanceId
+					if (instanceId != null) {
+						vm = VMHelper.findVMForMorId(rootFolder, instanceId);
 					}
 					if (vm == null) {
 						// no vm exist with this name.
@@ -2003,8 +1533,8 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 					}
 				}
 			} else {
-				if (morId != null) {
-					vm = VMHelper.findVMForMorId(rootFolder, morId);
+				if (instanceId != null && !instanceId.trim().isEmpty()) {
+					vm = VMHelper.findVMForMorId(rootFolder, instanceId);
 				}
 				if (vm == null) {
 					// no vm exist with this name.
@@ -2018,7 +1548,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 
 			}
 		}
-		morId = vm.getMOR().getVal();
+		instanceId = vm.getMOR().getVal();
 		vmName = vm.getName();
 		if (toMonitor) {
 			subMonitor.worked(30);
@@ -2032,7 +1562,10 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			vmExist = false;
 			return;
 		} else {
-			if (hostSystemName == null || !hostSystemName.equals(host.getName())) {
+			String hostSystemName = getHostSystemName();
+			if (hostSystemName != null && !hostSystemName.equals(host.getName())) {
+				LOGGER.warn("The virtual machine has been moved on another host, from : " + hostSystemName
+						+ " to host: " + host.getName());
 				setHostSystemName(host.getName());
 			}
 		}
@@ -2066,6 +1599,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		if (dc == null) {
 			LOGGER.warn("No datacenter found for this virtual machine: " + vm.getName());
 		} else {
+			String datacenterName = getDatacenterName();
 			if (datacenterName == null) {
 				setDatacenterName(dc.getName());
 			}
@@ -2073,6 +1607,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		if (cluster == null) {
 			LOGGER.warn("No cluster found for this virtual machine: " + vm.getName());
 		} else {
+			String clusterName = getClusterName();
 			if (clusterName == null) {
 				setClusterName(cluster.getName());
 			}
@@ -2085,6 +1620,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 					ds = dss[0];
 				}
 				if (ds != null) {
+					String datastoreName = getDatastoreName();
 					if (datastoreName == null) {
 						setDatastoreName(ds.getName());
 					}
@@ -2102,6 +1638,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			}
 
 		} else {
+			String datastoreName = getDatastoreName();
 			if (datastoreName == null) {
 				setDatastoreName(ds.getName());
 			}
@@ -2111,12 +1648,14 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		}
 		messageProgress = null;
 		if (vm.getConfig() == null) {
-			// The instance may be in clone mode or other task that impact the vm configurartion.
-			LOGGER.warn("VM configuration is not accessible, this may be caused by a task that updating the vm configuration.");
+			// The instance may be in clone mode or other task that impact the vm
+			// configurartion.
+			LOGGER.warn(
+					"VM configuration is not accessible, this may be caused by a task that updating the vm configuration.");
 			// Get the progression task in %.
 			TaskInfo taskInfo = VMHelper.getTaskInfo(vm);
 			if (taskInfo != null) {
-				
+
 				TaskInfoState taskState = taskInfo.getState();
 				if (taskState != null && taskState.equals(TaskInfoState.success)) {
 					messageProgress = "100%";
@@ -2125,13 +1664,15 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 				} else if (taskState != null && taskState.equals(TaskInfoState.running)) {
 					messageProgress = taskInfo.getProgress() + "%";
 				} else if (taskState != null && taskState.equals(TaskInfoState.error)) {
-					messageProgress = "Error on task " + taskInfo.getName() + " on entity : " + taskInfo.getEntityName();
+					messageProgress = "Error on task " + taskInfo.getName() + " on entity : "
+							+ taskInfo.getEntityName();
 					messageProgress += " \n message: " + taskInfo.getError().getLocalizedMessage();
 				}
 			} else {
-				if (vmTemplateName != null) {
+				if (imagename != null) {
 					// Check if a clone task is active.
-					taskInfo = VMHelper.getTaskInfo(VMHelper.findVMForName(VCenterClient.getServiceInstance().getRootFolder(), vmTemplateName));
+					taskInfo = VMHelper.getTaskInfo(
+							VMHelper.findVMForName(VCenterClient.getServiceInstance().getRootFolder(), imagename));
 					if (taskInfo != null) {
 						TaskInfoState taskState = taskInfo.getState();
 						if (taskState != null && taskState.equals(TaskInfoState.success)) {
@@ -2141,70 +1682,116 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 						} else if (taskState != null && taskState.equals(TaskInfoState.running)) {
 							messageProgress = taskInfo.getProgress() + "%";
 						} else if (taskState != null && taskState.equals(TaskInfoState.error)) {
-							messageProgress = "Error on task " + taskInfo.getName() + " on entity : " + taskInfo.getEntityName();
+							messageProgress = "Error on task " + taskInfo.getName() + " on entity : "
+									+ taskInfo.getEntityName();
 							messageProgress += " \n message: " + taskInfo.getError().getLocalizedMessage();
 						}
 					}
 				}
-				
-				
-				
 			}
-			
+
 		} else {
+
 			// Load the compute information from vCenter.
-			numCores = VMHelper.getNumSockets(vm);
-			vcpus = VMHelper.getNumCPU(vm);
-			memoryGB = VMHelper.getMemoryGB(vm);
-			architecture = VMHelper.getArchitecture(vm);
-			speed = VMHelper.getCPUSpeed(vm);
+			Integer numCores = VMHelper.getNumSockets(vm);
+			Float memoryGB = VMHelper.getMemoryGB(vm);
+			String architecture = VMHelper.getArchitecture(vm);
+			Float speed = VMHelper.getCPUSpeed(vm);
 			// Define the states of this vm.
 			vmState = VMHelper.getPowerState(vm);
-			hostname = VMHelper.getGuestHostname(vm);
-			vmGuestState = VMHelper.getGuestState(vm);
-			guestOsId = vm.getConfig().getGuestId();
-			summary = vm.getConfig().getAnnotation();
-			ephemeralDiskSizeGB = VMHelper.getEphemalDiskSize(vm);
+			String hostname = VMHelper.getGuestHostname(vm);
+			String vmGuestState = VMHelper.getGuestState(vm);
+			String guestOsId = vm.getConfig().getGuestId();
+			Float ephemeralDiskSizeGB = VMHelper.getEphemalDiskSize(vm);
+			String inventoryPath = VMHelper.getVMFolderPath(vm);
+			String instanceProviderId = vm.getMOR().getVal();
+			Integer vcpus = VMHelper.getNumCPU(vm);
+			// Update entity attributes.
+			setSummary(vm.getConfig().getAnnotation());
+			if (architecture != null) {
+				if (architecture.equals("x64")) {
+					setOcciComputeArchitecture(Architecture.X64);
+				} else {
+					setOcciComputeArchitecture(Architecture.X86);
+				}
+			}
+			if (numCores != null) {
+				setOcciComputeCores(numCores);
+			}
+			if (memoryGB != null) {
+				setOcciComputeMemory(memoryGB);
+			}
+			if (speed != null) {
+				setOcciComputeSpeed(speed);
+			}
+			if (vmState != null) {
+				setOcciComputeState(defineStatus(vmState));
+			}
+			if (hostname != null) {
+				setOcciComputeHostname(hostname);
+			}
+			if (messageProgress != null) {
+				setOcciComputeStateMessage(messageProgress);
+			}
 			// Determine if this vm is marked as template also an image..
 			if (vm.getConfig().isTemplate()) {
-				markedAsTemplate = "true";
+				setMarkedastemplate("true");
 			} else {
-				markedAsTemplate = "false";
+				setMarkedastemplate("false");
 			}
-			inventoryPath = VMHelper.getVMFolderPath(vm);
+			if (instanceProviderId != null) {
+				setInstanceId(instanceProviderId);
+			}
+			if (vcpus != null) {
+				setVcpu(vcpus);
+			}
+			if (guestOsId != null) {
+				setGuestosid(guestOsId);
+			}
+			if (vmGuestState != null) {
+				setGueststate(vmGuestState);
+			}
+
+			// TODO : How to get image name used to clone the virtual machine ?
+
+			// Update Mixins.
+			VmwarefoldersConnector vmFoldersMixin = getMixinVmwarefolders();
+
+			if (inventoryPath != null && vmFoldersMixin != null) {
+				vmFoldersMixin.setInventorypath(inventoryPath);
+			}
+			// Datastore, datacenter, cluster and hostsystemname are already updated upper.
+			if (ephemeralDiskSizeGB != null && ephemeralDiskSizeGB > 0) {
+				// If there is mixin instance class set update ephemeral disk size attribute.
+				MixinBase mixinTpl = getMixinInstanceClass();
+				if (mixinTpl != null) {
+					ResourceTPLContainer resourceTpl = new ResourceTPLContainer(mixinTpl);
+					// Update the value and mixin tpl used.
+					resourceTpl.setEphemeralDiskSizeGB(ephemeralDiskSizeGB);
+				}
+			} // no else, value will not be rendered.
+
 			if (toMonitor) {
 				subMonitor.worked(70);
 			}
 		}
-		if (hasMixin(VMWARE_MIXIN_CREDENTIAL)) {
-			username = getAttributeValueByOcciKey(ATTR_USERNAME);
-			password = getAttributeValueByOcciKey(ATTR_PASSWORD);
-			userDataFile = getAttributeValueByOcciKey(ATTR_USER_DATA_FILE);
-		}
-		if (hasMixin(MIXIN_USERDATA)) {
-			userData = getAttributeValueByOcciKey(ATTR_USER_DATA);
-		}
-		
+
 		vmExist = true;
 		if (toMonitor) {
 			subMonitor.worked(80);
 		}
-		
+
 		ipv4Address = NetworkHelper.getIpv4Address(vm);
 		ipv6Address = NetworkHelper.getIpv6Address(vm);
-		
+
 		globalMessage = "The virtual machine informations has been retrieved and are updated.";
 		levelMessage = Level.INFO;
+
 		// In the end we disconnect.
 		VCenterClient.disconnect();
 		if (toMonitor) {
 			subMonitor.worked(100);
 		}
-		
-		if (UIDialog.isStandAlone()) {
-			updateAttributesOnCompute();
-		}
-		
 	}
 
 	/**
@@ -2253,10 +1840,10 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		if (toMonitor) {
 			subMonitor.worked(30);
 		}
-		
+
 		// Check the other way with old vm name if set..
 		if (vm == null) {
-			
+
 			// The title may has been changed.
 			if (!vmOldName.equals(vmName)) {
 				// The title have been changed.
@@ -2280,25 +1867,24 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 						ex.printStackTrace();
 					}
 					vmOldName = vmName;
-				} 
+				}
 			}
 
 		}
-		
-		
-		// Check first if morId is set if no vm found with the name.
-		if (morId != null && vm == null) {
-			vm = VMHelper.findVMForMorId(VCenterClient.getServiceInstance().getRootFolder(), morId);
+
+		// Check first if instanceId is set if no vm found with the name.
+		if (instanceId != null && vm == null) {
+			vm = VMHelper.findVMForMorId(VCenterClient.getServiceInstance().getRootFolder(), instanceId);
 		}
-		
+
 		if (vm == null) {
-			globalMessage = "Unable to load vm informations : " + vmName + " for morId : " + morId;
+			globalMessage = "Unable to load vm informations : " + vmName + " for morId : " + instanceId;
 			levelMessage = Level.ERROR;
 			LOGGER.error(globalMessage);
 			VCenterClient.disconnect();
 			return;
 		}
-		
+
 		// Update config.
 		try {
 
@@ -2308,9 +1894,18 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			if (summary != null && !summary.trim().isEmpty()) {
 				vmSpec.setAnnotation(summary);
 			}
-			assignVCpuToVMSpec();
-			
-			VMHelper.reconfigureVm(vm, vcpus, getOcciComputeMemory(), summary);
+
+			// First check the compute attribute.
+			MixinBase resourceTpl = getMixinInstanceClass();
+			ResourceTPLContainer resTpl = null;
+			if (resourceTpl != null) {
+				resTpl = new ResourceTPLContainer(resourceTpl);
+			} else {
+				resTpl = new ResourceTPLContainer(getOcciComputeCores(), getOcciComputeMemory(), 0f);
+			}
+			assignVCpuToVMSpec(resTpl);
+
+			VMHelper.reconfigureVm(vm, vcpu, resTpl.getMem(), summary);
 		} catch (RemoteException ex) {
 			globalMessage = "Error while updating the virtual machine configuration : " + vmName + " \n message: "
 					+ ex.getMessage();
@@ -2321,24 +1916,23 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		if (toMonitor) {
 			subMonitor.worked(50);
 		}
+
 		// Reading template attribute for detecting if it may be updated
 		// or not.
-		markedAsTemplate = getAttributeValueByOcciKey(ATTR_MARKED_AS_TEMPLATE);
-		if (markedAsTemplate == null) {
+		if (markedastemplate == null && vm.getConfig() != null) {
 			if (vm.getConfig().isTemplate()) {
-				markedAsTemplate = "true";
+				setMarkedastemplate("true");
 			} else {
-				markedAsTemplate = "false";
+				setMarkedastemplate("false");
 			}
 		}
 		if (toMonitor) {
 			subMonitor.worked(60);
 		}
 		// Check if transform vm to vmTemplate.
-		if (!vm.getConfig().isTemplate() && "true".equals(markedAsTemplate)) {
+		if (vm.getConfig() != null && !vm.getConfig().isTemplate() && "true".equals(markedastemplate)) {
 			// Mark the vm as a template.
 			try {
-
 				if (VMHelper.markAsTemplate(vm)) {
 					globalMessage += "The virtual machine " + vmName + " has been marked as template.";
 					levelMessage = Level.INFO;
@@ -2359,16 +1953,34 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			subMonitor.worked(70);
 		}
 		// Check if transform template to VM.
-		if (vm.getConfig().isTemplate() && "false".equals(markedAsTemplate)) {
+		if (vm.getConfig() != null && vm.getConfig().isTemplate() && "false".equals(markedastemplate)) {
 
 			ServiceInstance si = VCenterClient.getServiceInstance();
 			Folder rootFolder = si.getRootFolder();
+			VmwarefoldersConnector vmfoldersMixin = getMixinVmwarefolders();
+			Datacenter datacenter;
+			ClusterComputeResource cluster;
+			HostSystem host;
+			ResourcePool pool;
 			AllocatorImpl allocator = new AllocatorImpl(rootFolder);
-			// Search a cluster.
-			Datacenter datacenter = allocator.allocateDatacenter();
-			ClusterComputeResource cluster = allocator.allocateCluster();
-			HostSystem host = allocator.allocateHostSystem();
-			ResourcePool pool = allocator.allocateResourcePool();
+			if (vmfoldersMixin != null) {
+				// Load datacenter etc. from attributes.
+				String hostSystemName = vmfoldersMixin.getHostsystemname();
+				host = HostHelper.findHostSystemForName(rootFolder, hostSystemName);
+				if (host == null) {
+					LOGGER.warn("Host system doesnt exist anymore on your Vcenter : " + hostSystemName);
+					datacenter = allocator.allocateDatacenter();
+					cluster = allocator.allocateCluster();
+					host = allocator.allocateHostSystem();
+					LOGGER.warn("Allocating the virtual machine " + vm.getName() + " to this host: " + host.getName());
+				}
+			} else {
+				datacenter = allocator.allocateDatacenter();
+				cluster = allocator.allocateCluster();
+				host = allocator.allocateHostSystem();
+			}
+
+			pool = allocator.allocateResourcePool();
 			try {
 				if (VMHelper.markAsVirtualMachine(vm, host, pool)) {
 					globalMessage += "The template machine " + vmName + " has been marked as a virtual machine.";
@@ -2387,24 +1999,12 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 				ex.printStackTrace();
 			}
 		}
-		
+
 		ipv4Address = NetworkHelper.getIpv4Address(vm);
 		ipv6Address = NetworkHelper.getIpv6Address(vm);
-		
-		if (hasMixin(VMWARE_MIXIN_CREDENTIAL)) {
-			username = getAttributeValueByOcciKey(ATTR_USERNAME);
-			password = getAttributeValueByOcciKey(ATTR_PASSWORD);
-			userDataFile = getAttributeValueByOcciKey(ATTR_USER_DATA_FILE);
-		}
-		if (hasMixin(MIXIN_USERDATA)) {
-			userData = getAttributeValueByOcciKey(ATTR_USER_DATA);
-			LOGGER.info("User data : " + userData);
-		}
-		
-		if (userData != null && !userData.isEmpty()) {
-			applyUserData(monitor, vmName);
-		}
-		
+
+		applyUserData(monitor, vmName);
+
 		if (toMonitor) {
 			subMonitor.worked(100);
 		}
@@ -2439,30 +2039,31 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			return;
 		}
 		String vmName = getTitle();
-		if (vmName == null) {
+		if (vmName == null && (instanceId == null || instanceId.trim().isEmpty())) {
 			globalMessage = "The title must be set, as it is used as the VM name.";
-			levelMessage = Level.ERROR;
+			levelMessage = Level.WARN;
 			LOGGER.error(globalMessage);
 			VCenterClient.disconnect();
 			return;
 		}
 		VirtualMachine vm = VMHelper.loadVirtualMachine(vmName);
+
+		if (vm == null) {
+			// Try with instance provider id.
+			vm = VMHelper.findVMForMorId(VCenterClient.getServiceInstance().getRootFolder(), instanceId);
+		}
+
 		if (toMonitor) {
 			subMonitor.worked(40);
 		}
-		if (vm == null) {
-			// Check if an old name exist.
-			if (vmOldName != null && !vmOldName.equals(vmName)) {
-				vm = VMHelper.loadVirtualMachine(vmOldName);
-				if (vm == null) {
-					VCenterClient.disconnect();
-					return;
-				}
-			} else {
-				VCenterClient.disconnect();
-				return;
-			}
 
+		if (vm == null) {
+			globalMessage = "The virtual machine : " + vmName
+					+ " doesnt exist or has been deleted by a previous operation.";
+			levelMessage = Level.WARN;
+			LOGGER.warn(globalMessage);
+			VCenterClient.disconnect();
+			return;
 		}
 
 		// Check if vm state is inactive, if vm is started, powered it off.
@@ -2512,7 +2113,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			subMonitor.worked(10);
 
 		}
-		
+
 		if (toCreateOnStartOperation) {
 			LOGGER.info("Creating the virtual machine and start after.");
 			this.createCompute(monitor);
@@ -2520,7 +2121,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 				subMonitor.worked(10);
 			}
 		}
-		
+
 		LOGGER.debug("Action start() called on " + this);
 		if (!VCenterClient.checkConnection()) {
 			// Must return true if connection is established.
@@ -2532,15 +2133,23 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		if (toMonitor) {
 			subMonitor.worked(30);
 		}
+
 		String vmName = getTitle();
-		if (vmName == null) {
+
+		if (vmName == null && (instanceId == null || instanceId.trim().isEmpty())) {
 			globalMessage = "The title must be set, as it is used as the VM name.";
-			levelMessage = Level.ERROR;
+			levelMessage = Level.WARN;
 			LOGGER.error(globalMessage);
 			VCenterClient.disconnect();
 			return;
 		}
 		VirtualMachine vm = VMHelper.loadVirtualMachine(vmName);
+
+		if (vm == null) {
+			// Try with instance provider id.
+			vm = VMHelper.findVMForMorId(VCenterClient.getServiceInstance().getRootFolder(), instanceId);
+		}
+
 		if (vm == null) {
 			globalMessage = "This virtual machine doesnt exist anymore.";
 			levelMessage = Level.WARN;
@@ -2580,6 +2189,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		if (toMonitor) {
 			subMonitor.worked(80);
 		}
+
 		// Is vmware tools is installed ? if not mount the vmware guest
 		// tools disk for installation.
 		if (!VMHelper.isToolsInstalled(vm)) {
@@ -2607,8 +2217,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 	 * @param monitor
 	 * @param method
 	 */
-	public void stopCompute(IProgressMonitor monitor,
-			StopMethod method) {
+	public void stopCompute(IProgressMonitor monitor, StopMethod method) {
 		SubMonitor subMonitor = null;
 		boolean toMonitor = false;
 		if (monitor != null) {
@@ -2633,7 +2242,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			subMonitor.worked(20);
 		}
 		String vmName = getTitle();
-		if (vmName == null) {
+		if (vmName == null && (instanceId == null || instanceId.trim().isEmpty())) {
 			globalMessage = "The title must be set, as it is used as the VM name.";
 			levelMessage = Level.WARN;
 			LOGGER.error(globalMessage);
@@ -2641,6 +2250,11 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			return;
 		}
 		VirtualMachine vm = VMHelper.loadVirtualMachine(vmName);
+
+		if (vm == null) {
+			// Try with instance provider id.
+			vm = VMHelper.findVMForMorId(VCenterClient.getServiceInstance().getRootFolder(), instanceId);
+		}
 		if (vm == null) {
 			globalMessage = "This virtual machine doesnt exist anymore.";
 			levelMessage = Level.WARN;
@@ -2712,8 +2326,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 	 * @param monitor
 	 * @param method
 	 */
-	public void restartCompute(IProgressMonitor monitor,
-			final RestartMethod method) {
+	public void restartCompute(IProgressMonitor monitor, final RestartMethod method) {
 		SubMonitor subMonitor = null;
 		boolean toMonitor = false;
 		if (monitor != null) {
@@ -2738,7 +2351,8 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			subMonitor.worked(20);
 		}
 		String vmName = getTitle();
-		if (vmName == null) {
+
+		if (vmName == null && (instanceId == null || instanceId.trim().isEmpty())) {
 			globalMessage = "The title must be set, as it is used as the VM name.";
 			levelMessage = Level.WARN;
 			LOGGER.error(globalMessage);
@@ -2746,6 +2360,12 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			return;
 		}
 		VirtualMachine vm = VMHelper.loadVirtualMachine(vmName);
+
+		if (vm == null) {
+			// Try with instance provider id.
+			vm = VMHelper.findVMForMorId(VCenterClient.getServiceInstance().getRootFolder(), instanceId);
+		}
+
 		if (toMonitor) {
 			subMonitor.worked(30);
 		}
@@ -2850,8 +2470,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 	 * @param monitor
 	 * @param method
 	 */
-	public void suspendCompute(IProgressMonitor monitor,
-			final SuspendMethod method) {
+	public void suspendCompute(IProgressMonitor monitor, final SuspendMethod method) {
 		SubMonitor subMonitor = null;
 		boolean toMonitor = false;
 		if (monitor != null) {
@@ -2876,12 +2495,20 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			subMonitor.worked(20);
 		}
 		String vmName = getTitle();
-		if (vmName == null) {
-			LOGGER.error("The title must be set, as it is used as the VM name (unique).");
+
+		if (vmName == null && (instanceId == null || instanceId.trim().isEmpty())) {
+			globalMessage = "The title must be set, as it is used as the VM name.";
+			levelMessage = Level.WARN;
+			LOGGER.error(globalMessage);
 			VCenterClient.disconnect();
 			return;
 		}
 		VirtualMachine vm = VMHelper.loadVirtualMachine(vmName);
+
+		if (vm == null) {
+			// Try with instance provider id.
+			vm = VMHelper.findVMForMorId(VCenterClient.getServiceInstance().getRootFolder(), instanceId);
+		}
 		if (vm == null) {
 			globalMessage = "This virtual machine doesnt exist anymore.";
 			levelMessage = Level.WARN;
@@ -2956,8 +2583,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 	 * @param method
 	 * @param name
 	 */
-	public void saveCompute(IProgressMonitor monitor,
-			final SaveMethod method, final String name) {
+	public void saveCompute(IProgressMonitor monitor, final SaveMethod method, final String name) {
 		SubMonitor subMonitor = null;
 		boolean toMonitor = false;
 		if (monitor != null) {
@@ -2979,12 +2605,20 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			return;
 		}
 		String vmName = getTitle();
-		if (vmName == null) {
-			LOGGER.error("The title must be set, as it is used as the VM name (unique).");
+
+		if (vmName == null && (instanceId == null || instanceId.trim().isEmpty())) {
+			globalMessage = "The title must be set, as it is used as the VM name.";
+			levelMessage = Level.WARN;
+			LOGGER.error(globalMessage);
 			VCenterClient.disconnect();
 			return;
 		}
 		VirtualMachine vm = VMHelper.loadVirtualMachine(vmName);
+
+		if (vm == null) {
+			// Try with instance provider id.
+			vm = VMHelper.findVMForMorId(VCenterClient.getServiceInstance().getRootFolder(), instanceId);
+		}
 		if (toMonitor) {
 			subMonitor.worked(20);
 		}
@@ -3006,7 +2640,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 				LOGGER.info(globalMessage);
 			}
 
-			markedAsTemplate = "true";
+			setMarkedastemplate("true");
 
 		} catch (RemoteException ex) {
 			globalMessage = "Error while marking the virtual machine as a template: " + vm.getName();
@@ -3028,40 +2662,26 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 
 	/**
 	 * Apply user data on the instance.
+	 * 
 	 * @param monitor
 	 * @param vmName
 	 */
 	private void applyUserData(IProgressMonitor monitor, String vmName) {
-		// There is an os so --< User data part is possible.
-		if (hasMixin(MIXIN_USERDATA) && hasMixin(VMWARE_MIXIN_CREDENTIAL)) {
-			LOGGER.info("applying user datas...");
-			UserDataHelper userDataHelper = new UserDataHelper(morId, vmName, userData, username, password, userDataFile);
-			try {
-				if (monitor != null) {
-					// Run directly the operation within this eclipse thread.
-					userDataHelper.run(monitor);
-				} else {
-					// Create a new thread with simple runnable.
-					Thread thread = new Thread(userDataHelper);
-					thread.start(); 
-				}
-				
-			} catch (Exception ex) {
-				ex.printStackTrace();
-				LOGGER.error("Exception thrown : " + ex.getClass().getName());
-				LOGGER.error("Message: "+ ex.getMessage());
-			}
+		Ssh_user_dataConnector userDataSshMixin = getMixinSshUserData();
+
+		if (userDataSshMixin != null) {
+			userDataSshMixin.applyUserData(instanceId, vmName, monitor);
 		}
 	}
 
 	public String getIpv4Address() {
 		return ipv4Address;
 	}
-	
+
 	public String getIpv6Address() {
 		return ipv6Address;
 	}
-	
+
 	public void setIpv4Address(String ipv4Address) {
 		this.ipv4Address = ipv4Address;
 	}
@@ -3069,7 +2689,5 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 	public void setIpv6Address(String ipv6Address) {
 		this.ipv6Address = ipv6Address;
 	}
-	
-	
-	
-}	
+
+}

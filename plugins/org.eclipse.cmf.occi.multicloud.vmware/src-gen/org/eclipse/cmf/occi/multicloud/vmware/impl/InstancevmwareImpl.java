@@ -130,7 +130,7 @@ public class InstancevmwareImpl extends ComputeImpl implements Instancevmware {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VCPU_EDEFAULT = null;
+	protected static final Integer VCPU_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getVcpu() <em>Vcpu</em>}' attribute.
@@ -140,7 +140,7 @@ public class InstancevmwareImpl extends ComputeImpl implements Instancevmware {
 	 * @generated
 	 * @ordered
 	 */
-	protected String vcpu = VCPU_EDEFAULT;
+	protected Integer vcpu = VCPU_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getInstanceId() <em>Instance Id</em>}' attribute.
@@ -270,7 +270,7 @@ public class InstancevmwareImpl extends ComputeImpl implements Instancevmware {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getVcpu() {
+	public Integer getVcpu() {
 		return vcpu;
 	}
 
@@ -279,8 +279,8 @@ public class InstancevmwareImpl extends ComputeImpl implements Instancevmware {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setVcpu(String newVcpu) {
-		String oldVcpu = vcpu;
+	public void setVcpu(Integer newVcpu) {
+		Integer oldVcpu = vcpu;
 		vcpu = newVcpu;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VmwarePackage.INSTANCEVMWARE__VCPU, oldVcpu, vcpu));
@@ -352,7 +352,7 @@ public class InstancevmwareImpl extends ComputeImpl implements Instancevmware {
 				setGuestosid((String)newValue);
 				return;
 			case VmwarePackage.INSTANCEVMWARE__VCPU:
-				setVcpu((String)newValue);
+				setVcpu((Integer)newValue);
 				return;
 			case VmwarePackage.INSTANCEVMWARE__INSTANCE_ID:
 				setInstanceId((String)newValue);

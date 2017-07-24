@@ -33,6 +33,7 @@ import org.eclipse.cmf.occi.core.AttributeState;
 import org.eclipse.cmf.occi.core.Configuration;
 import org.eclipse.cmf.occi.core.Link;
 import org.eclipse.cmf.occi.core.Mixin;
+import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.core.OCCIFactory;
 import org.eclipse.cmf.occi.core.Resource;
 import org.eclipse.cmf.occi.core.util.OcciHelper;
@@ -75,30 +76,16 @@ public class VswitchConnector extends org.eclipse.cmf.occi.multicloud.vmware.imp
 	 * Initialize the logger.
 	 */
 	private static Logger LOGGER = LoggerFactory.getLogger(VswitchConnector.class);
-
-	private static final String ATTR_HOSTSYSTEM_NAME = "hostsystemname";
-	private static final String ATTR_DATACENTER_NAME = "datacentername";
-	private static final String ATTR_DATASTORE_NAME = "datastorename";
-	private static final String ATTR_CLUSTER_NAME = "clustername";
-	
-	private static final String ATTR_VSWITCH_NBPORT = "nbport";
-	private static final String VMWARE_MIXIN_FOLDERS_TERM = "vmwarefolders";
-	private static final String VMWARE_MIXIN_VSWITCH_INFOS_TERM = "vswitchinfos";
 	
 	// Message to end users management.
 	private String titleMessage = "";
 	private String globalMessage = "";
 	private Level levelMessage = null;
 	
-	private String nbPortStr = null;
+	private Integer nbPortTmp = 0;
 	private String vSwitchName = null;
 	private String portGroupName = null;
 	private int vlanId = 0;
-	
-	/**
-	 * Managed object reference id. Unique reference for virtual machine.
-	 */
-	private String morId;
 	
 	/**
 	 * Represent the physical compute which be used for this standard switch.
@@ -431,68 +418,6 @@ public class VswitchConnector extends org.eclipse.cmf.occi.multicloud.vmware.imp
 		}
 
 	}
-	/**
-	 * get attribute value with his occi key, deserve when no property value
-	 * set, with Mixin attribute as it is defined by Cloud designer.
-	 * 
-	 * @param key
-	 * @return an attribute value, null if no one is found.
-	 */
-	public String getAttributeValueByOcciKey(String key) {
-		String value = null;
-		if (key == null) {
-			return value;
-		}
-
-		List<AttributeState> attrs = this.getAttributes();
-		for (AttributeState attr : attrs) {
-			if (attr.getName().equals(key)) {
-				value = attr.getValue();
-				break;
-			}
-		}
-
-		return value;
-
-	}
-
-	/**
-	 * Create an attribute without add this to the current connector object.
-	 * 
-	 * @param name
-	 * @param value
-	 * @return AttributeState object.
-	 */
-	public AttributeState createAttribute(final String name, final String value) {
-		AttributeState attr = OCCIFactory.eINSTANCE.createAttributeState();
-		attr.setName(name);
-		attr.setValue(value);
-		return attr;
-	}
-
-	/**
-	 * Get an attribute state object for key parameter.
-	 * 
-	 * @param key
-	 *            ex: occi.core.title.
-	 * @return an AttributeState object, if attribute doesnt exist, null value
-	 *         is returned.
-	 */
-	private AttributeState getAttributeStateObject(final String key) {
-		AttributeState attr = null;
-		if (key == null) {
-			return attr;
-		}
-		// Load the corresponding attribute state.
-		for (AttributeState attrState : this.getAttributes()) {
-			if (attrState.getName().equals(key)) {
-				attr = attrState;
-				break;
-			}
-		}
-
-		return attr;
-	}
 
 	public String getHostSystemName() {
 		return hostSystemName;
@@ -500,47 +425,6 @@ public class VswitchConnector extends org.eclipse.cmf.occi.multicloud.vmware.imp
 
 	public void setHostSystemName(String hostSystemName) {
 		this.hostSystemName = hostSystemName;
-		
-	}
-
-	/**
-	 * Check if this compute has mixin vmware folder addon.
-	 * 
-	 * @return
-	 */
-	public boolean hasMixinVMwareFolders() {
-		boolean result = false;
-		String mixinTerm = null;
-		List<Mixin> mixins = this.getMixins();
-		for (Mixin mixin : mixins) {
-			mixinTerm = mixin.getTerm();
-			// This mixin contains attributes for datacenter, datastore, cluster
-			// and others goodies on folders.
-			if (mixinTerm.equals(VMWARE_MIXIN_FOLDERS_TERM)) {
-				result = true;
-				break;
-			}
-		}
-		return result;
-	}
-	/**
-	 * Has vswitch infos folders.
-	 * @return
-	 */
-	public boolean hasMixinVSwitchInfos() {
-		boolean result = false;
-		String mixinTerm = null;
-		List<Mixin> mixins = this.getMixins();
-		for (Mixin mixin : mixins) {
-			mixinTerm = mixin.getTerm();
-			// This mixin contains attributes for datacenter, datastore, cluster
-			// and others goodies on folders.
-			if (mixinTerm.equals(VMWARE_MIXIN_VSWITCH_INFOS_TERM)) {
-				result = true;
-				break;
-			}
-		}
-		return result;
 	}
 	
 	/**
@@ -548,66 +432,17 @@ public class VswitchConnector extends org.eclipse.cmf.occi.multicloud.vmware.imp
 	 */
 	public void updateAttributesOnNetwork() {
 		
-		Map<String, String> attrsToCreate = new HashMap<>();
-		Map<String, String> attrsToUpdate = new HashMap<>();
-		List<String> attrsToDelete = new ArrayList<>();
-
-//		// ATTR_DATACENTER_NAME
-//		if (datacenterName != null) {
-//			if (this.getAttributeValueByOcciKey(ATTR_DATACENTER_NAME) == null) {
-//				attrsToCreate.put(ATTR_DATACENTER_NAME, datacenterName);
-//			} else {
-//				// update
-//				attrsToUpdate.put(ATTR_DATACENTER_NAME, datacenterName);
-//			}
-//		}
-//		if (datastoreName != null) {
-//			// ATTR_DATASTORE_NAME
-//			if (this.getAttributeValueByOcciKey(ATTR_DATASTORE_NAME) == null) {
-//				attrsToCreate.put(ATTR_DATASTORE_NAME, datastoreName);
-//			} else {
-//				attrsToUpdate.put(ATTR_DATASTORE_NAME, datastoreName);
-//			}
-//		}
-//
-//		// ATTR_CLUSTER_NAME
-//		if (clusterName != null) {
-//			if (this.getAttributeValueByOcciKey(ATTR_CLUSTER_NAME) == null) {
-//				attrsToCreate.put(ATTR_CLUSTER_NAME, clusterName);
-//			} else {
-//				attrsToUpdate.put(ATTR_CLUSTER_NAME, clusterName);
-//			}
-//		}
-		boolean hasMixinVMwareFolders = hasMixinVMwareFolders();
-		boolean hasMixinVswitchInfos = hasMixinVSwitchInfos();
-		// ATTR_HOSTSYSTEM_NAME
-		if (hostSystemName != null && hasMixinVMwareFolders) {
-			if (this.getAttributeStateObject(ATTR_HOSTSYSTEM_NAME) == null) {
-				attrsToCreate.put(ATTR_HOSTSYSTEM_NAME, hostSystemName);
-			} else {
-				attrsToUpdate.put(ATTR_HOSTSYSTEM_NAME, hostSystemName);
-			}
-		}
-
+		// Get vmfolders mixin.
+		VmwarefoldersConnector vmFolders = getMixinVmwarefolders();
 		
-		// ATTR_VSWITCH_NBPORT.
-		if (nbPortStr != null && hasMixinVswitchInfos) {
-			if (this.getAttributeStateObject(ATTR_VSWITCH_NBPORT) == null) {
-				attrsToCreate.put(ATTR_VSWITCH_NBPORT, nbPortStr);
-			} else {
-				attrsToUpdate.put(ATTR_VSWITCH_NBPORT, nbPortStr);
-			}
+		this.setNbport(nbPortTmp);
+		
+		if (vmFolders != null && hostSystemName != null && hostSystemName.isEmpty()) {
+			vmFolders.setHostsystemname(hostSystemName);
 		}
-		if (UIDialog.isStandAlone()) {
-			// Headless environment.
-			EntityUtilsHeadless.updateAttributes(this, attrsToCreate, attrsToUpdate, attrsToDelete);
-			
-		} else {
-			// Gui environment
-			EntityUtils.updateAttributes(this, attrsToCreate, attrsToUpdate, attrsToDelete);
-		}
-
+		
 		if (vSwitchName != null && !vSwitchName.isEmpty()) {
+			// TODO : add the vswitch name to a new attribute other than title.
 			this.setTitle(vSwitchName);
 			this.setOcciNetworkState(NetworkStatus.ACTIVE);
 		}
@@ -666,7 +501,7 @@ public class VswitchConnector extends org.eclipse.cmf.occi.multicloud.vmware.imp
 		hostSystemName = host.getName();
 		try {
 			HostVirtualSwitch hostVswitch = NetworkHelper.findVSwitch(host, vSwitchName);
-			nbPortStr = "" + hostVswitch.getNumPorts();
+			nbPortTmp = hostVswitch.getNumPorts();
 		} catch (VirtualSwitchNotFoundException ex) {
 			globalMessage = "The vswitch : " + vSwitchName + " is not found, please check your configuration.";
 			levelMessage = Level.WARN;
@@ -679,6 +514,23 @@ public class VswitchConnector extends org.eclipse.cmf.occi.multicloud.vmware.imp
 		if (UIDialog.isStandAlone()) {
 			updateAttributesOnNetwork();
 		}
+	}
+	
+	/**
+	 * Get the mixin base instance "vmwarefolders".
+	 * 
+	 * @return
+	 */
+	public VmwarefoldersConnector getMixinVmwarefolders() {
+		List<MixinBase> mixinsBase = this.getParts();
+		VmwarefoldersConnector vmfolders = null;
+		for (MixinBase mixinB : mixinsBase) {
+			if (mixinB instanceof VmwarefoldersConnector) {
+				vmfolders = (VmwarefoldersConnector) mixinB;
+				break;
+			}
+		}
+		return vmfolders;
 	}
 	
 }	

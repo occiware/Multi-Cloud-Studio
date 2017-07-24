@@ -13,8 +13,6 @@
  */
 package org.eclipse.cmf.occi.multicloud.vmware.connector;
 
-import org.eclipse.cmf.occi.core.AttributeState;
-import org.eclipse.cmf.occi.core.OCCIFactory;
 import org.eclipse.cmf.occi.core.Resource;
 import org.eclipse.cmf.occi.infrastructure.ComputeStatus;
 import org.eclipse.cmf.occi.infrastructure.StorageLinkStatus;
@@ -28,7 +26,6 @@ import com.vmware.vim25.mo.Folder;
 import com.vmware.vim25.mo.VirtualMachine;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.List;
 
 import org.apache.log4j.Level;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -145,68 +142,6 @@ public class StoragelinkvmwareConnector extends org.eclipse.cmf.occi.multicloud.
 	//
 	// Storagelinkvmware actions.
 	//
-	/**
-	 * get attribute value with his occi key, deserve when no property value
-	 * set, with Mixin attribute as it is defined by Cloud designer.
-	 * 
-	 * @param key
-	 * @return an attribute value, null if no one is found.
-	 */
-	public String getAttributeValueByOcciKey(String key) {
-		String value = null;
-		if (key == null) {
-			return value;
-		}
-
-		List<AttributeState> attrs = this.getAttributes();
-		for (AttributeState attr : attrs) {
-			if (attr.getName().equals(key)) {
-				value = attr.getValue();
-				break;
-			}
-		}
-
-		return value;
-
-	}
-
-	/**
-	 * Create an attribute without add this to the current connector object.
-	 * 
-	 * @param name
-	 * @param value
-	 * @return AttributeState object.
-	 */
-	public AttributeState createAttribute(final String name, final String value) {
-		AttributeState attr = OCCIFactory.eINSTANCE.createAttributeState();
-		attr.setName(name);
-		attr.setValue(value);
-		return attr;
-	}
-
-	/**
-	 * Get an attribute state object for key parameter.
-	 * 
-	 * @param key
-	 *            ex: occi.core.title.
-	 * @return an AttributeState object, if attribute doesnt exist, null value
-	 *         is returned.
-	 */
-	private AttributeState getAttributeStateObject(final String key) {
-		AttributeState attr = null;
-		if (key == null) {
-			return attr;
-		}
-		// Load the corresponding attribute state.
-		for (AttributeState attrState : this.getAttributes()) {
-			if (attrState.getName().equals(key)) {
-				attr = attrState;
-				break;
-			}
-		}
-
-		return attr;
-	}
 
 	public String getVmName() {
 		return vmName;
@@ -214,22 +149,6 @@ public class StoragelinkvmwareConnector extends org.eclipse.cmf.occi.multicloud.
 
 	public void setVmName(String vmName) {
 		this.vmName = vmName;
-	}
-
-	/**
-	 * Assign logical disk information to deviceId to be done in StorageLink.
-	 */
-	public void assignDeviceIdStorageToStorageLink(final String volumeName) {
-		VirtualMachine vm = null;
-		if (vmName != null) {
-			// Load the vm information.
-			vm = VMHelper.loadVirtualMachine(vmName);
-			if (vm != null && VMHelper.isToolsInstalled(vm) && VMHelper.isToolsRunning(vm)) {
-				// ??? no information via tools. Maybe via an agent or a ssh connection !
-			}
-		}
-		
-//     TODO : Assign logical disk like /dev/sda (or /dev/hda), c: , ssh command ? 		
 	}
 	
 	/**
@@ -311,7 +230,7 @@ public class StoragelinkvmwareConnector extends org.eclipse.cmf.occi.multicloud.
 		}
 		
 		if (datastoreName == null) {
-			globalMessage = "The datastore name is not setted, please set the attribute " + StoragevmwareConnector.ATTR_DATASTORE_NAME + " on Storage entity. \n Cant retrieve datastore.";
+			globalMessage = "The datastore name is not setted, please apply mixin vmwarefolders on Storage entity, it is mandated for researching correct datastore. \n Cant retrieve datastore.";
 			levelMessage = Level.ERROR;
 			LOGGER.error(globalMessage);
 			tmpStatus = StorageLinkStatus.ERROR;
@@ -353,15 +272,6 @@ public class StoragelinkvmwareConnector extends org.eclipse.cmf.occi.multicloud.
 		if (toMonitor) {
 			subMonitor.worked(70);
 		}
-		// Refresh the storage part.
-		// if (target != null && target instanceof StorageConnector) {
-		// StorageConnector storage = (StorageConnector) target;
-		// if (vmName != null) {
-		// storage.setVmName(vmName);
-		// }
-		// storage.retrieve();
-		//
-		// } // if no target, no more retrieve.
 		
 		if (UIDialog.isStandAlone()) {
 			updateAttributesOnSystemStorage();

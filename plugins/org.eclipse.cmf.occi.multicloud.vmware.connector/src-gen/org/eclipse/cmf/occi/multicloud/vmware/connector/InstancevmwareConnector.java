@@ -1131,7 +1131,11 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		String inventoryPath = getInventoryPath();
 		if (inventoryPath == null || inventoryPath.trim().isEmpty()) {
 			inventoryPath = "";
+			LOGGER.info("No inventory path found.");
+		} else {
+			LOGGER.info("inventory path for instance : " + vmName + " is : " + inventoryPath);
 		}
+		
 		try {
 			vmFolder = VMHelper.getInventoryFolderFromPath((Folder) datacenter.getVmFolder(), inventoryPath);
 		} catch (RemoteException ex) {

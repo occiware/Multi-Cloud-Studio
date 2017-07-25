@@ -10,9 +10,9 @@ import org.eclipse.cmf.occi.crtp.Small;
 
 public class ResourceTPLContainer {
 	
-	private Integer cores;
-	private Float mem;
-	private Float ephemeralDiskSizeGB;
+	private Integer cores = 0;
+	private Float mem = 0.0f;
+	private Float ephemeralDiskSizeGB = 0.0f;
 	
 	private boolean small = false;
 	private boolean medium = false;
@@ -120,6 +120,10 @@ public class ResourceTPLContainer {
 	 * @param ephemeralDiskSizeGB the ephemeralDiskSizeGB to set
 	 */
 	public void setEphemeralDiskSizeGB(Float ephemeralDiskSizeGB) {
+		if (ephemeralDiskSizeGB == null) {
+			ephemeralDiskSizeGB = 0.0f;
+		}
+		
 		this.ephemeralDiskSizeGB = ephemeralDiskSizeGB;
 		if (isMixin()) {
 			// Update the mixin aswell.
@@ -149,6 +153,9 @@ public class ResourceTPLContainer {
 	 * @return
 	 */
 	public Long getEphemeralDiskSizeKB() {
+		if (ephemeralDiskSizeGB == null) {
+			ephemeralDiskSizeGB = 15.0f;
+		}
 		Long diskSizeGB = ephemeralDiskSizeGB.longValue();
 		Long diskSizeKB = diskSizeGB * 1024 * 1024;
 		return diskSizeKB;
@@ -159,6 +166,9 @@ public class ResourceTPLContainer {
 	 * @return
 	 */
 	public Long getMemoryMB() {
+		if (mem == null) {
+			mem = 0.0f;
+		}
 		Long memSizeGBLng = mem.longValue();
 		Long memSizeMB = memSizeGBLng * 1024;
 		return memSizeMB;

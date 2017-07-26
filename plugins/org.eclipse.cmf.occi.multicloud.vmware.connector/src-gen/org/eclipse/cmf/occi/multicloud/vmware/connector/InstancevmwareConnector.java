@@ -504,10 +504,18 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		List<MixinBase> mixinsBase = this.getParts();
 		VmwarefoldersConnector vmfolders = null;
 		for (MixinBase mixinB : mixinsBase) {
+			LOGGER.debug("Mixin found : " + mixinB.getMixin().getTerm() + " --> class: " + mixinB.getClass().getName());
+			
 			if (mixinB instanceof VmwarefoldersConnector) {
 				vmfolders = (VmwarefoldersConnector) mixinB;
 				break;
 			}
+		}
+		if (vmfolders == null) {
+			// No vmfolders mixin
+			LOGGER.debug("No mixin vmwarefolders has been applied");
+		} else {
+			LOGGER.debug("Mixin vmwarefolders has been applied to this instance.");
 		}
 		return vmfolders;
 	}
@@ -1204,33 +1212,36 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 				}
 
 				Long memSizeMB = resourceTpl.getMemoryMB();
-
+				boolean withCustomVmSpec = true;
 				if (memSizeMB == 0L || resourceTpl.getCores() == 0) {
-					globalMessage = "You must set the memory size (in GB) and the number of cores or use CRTP resource templates instance class mixin.";
-					levelMessage = Level.ERROR;
-					LOGGER.error(globalMessage);
-					VCenterClient.disconnect();
-					return;
+				   
+					// No cores and memory, we dont use based vmSpec for cloning.
+					withCustomVmSpec = false;
+					
+					// globalMessage = "You must set the memory size (in GB) and the number of cores or use CRTP resource templates instance class mixin.";
+				   // levelMessage = Level.ERROR;
+				//	LOGGER.error(globalMessage);
+				//	VCenterClient.disconnect();
 				}
+				if (withCustomVmSpec) {
+					vmSpec.setMemoryMB(memSizeMB);
 
-				vmSpec.setMemoryMB(memSizeMB);
+					assignVCpuToVMSpec(resourceTpl);
 
-				assignVCpuToVMSpec(resourceTpl);
+					vmSpec.setGuestId(guestosid);
+					// TODO : Add to model the cpuHot and memoryHot boolean to
+					// instanceVmwareConnector resource.
+					vmSpec.setCpuHotAddEnabled(true);
+					// vmSpec.setCpuHotRemoveEnabled(true);
+					vmSpec.setMemoryHotAddEnabled(true);
 
-				vmSpec.setGuestId(guestosid);
-				// TODO : Add to model the cpuHot and memoryHot boolean to
-				// instanceVmwareConnector resource.
-				vmSpec.setCpuHotAddEnabled(true);
-				// vmSpec.setCpuHotRemoveEnabled(true);
-				vmSpec.setMemoryHotAddEnabled(true);
+					// Create vm file info for vmx file.
+					VirtualMachineFileInfo vmfi = new VirtualMachineFileInfo();
+					vmfi.setVmPathName("[" + datastore.getName() + "]");
+					vmSpec.setFiles(vmfi);
 
-				// Create vm file info for vmx file.
-				VirtualMachineFileInfo vmfi = new VirtualMachineFileInfo();
-				vmfi.setVmPathName("[" + datastore.getName() + "]");
-				vmSpec.setFiles(vmfi);
-
-				cloneSpec.setConfig(vmSpec);
-
+					cloneSpec.setConfig(vmSpec);
+				}
 				// TODO : Other Network and other storages allocation
 				// ref on
 				// designer when vm is created.
@@ -1672,6 +1683,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 							+ taskInfo.getEntityName();
 					messageProgress += " \n message: " + taskInfo.getError().getLocalizedMessage();
 				}
+				
 			} else {
 				if (imagename != null) {
 					// Check if a clone task is active.
@@ -1734,9 +1746,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			if (hostname != null) {
 				setOcciComputeHostname(hostname);
 			}
-			if (messageProgress != null) {
-				setOcciComputeStateMessage(messageProgress);
-			}
+			
 			// Determine if this vm is marked as template also an image..
 			if (vm.getConfig().isTemplate()) {
 				setMarkedastemplate("true");
@@ -1779,12 +1789,16 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 				subMonitor.worked(70);
 			}
 		}
-
+		
+		if (messageProgress != null) {
+			setOcciComputeStateMessage(messageProgress);
+		}
+		
 		vmExist = true;
 		if (toMonitor) {
 			subMonitor.worked(80);
 		}
-
+		
 		ipv4Address = NetworkHelper.getIpv4Address(vm);
 		ipv6Address = NetworkHelper.getIpv6Address(vm);
 

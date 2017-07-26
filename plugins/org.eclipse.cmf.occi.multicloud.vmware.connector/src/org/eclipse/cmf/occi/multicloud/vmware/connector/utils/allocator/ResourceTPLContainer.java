@@ -80,6 +80,15 @@ public class ResourceTPLContainer {
 	}
 	
 	public ResourceTPLContainer(Integer cores, Float mem, Float ephemeralDiskSizeGB) {
+		if (cores == null) {
+			cores = 1;
+		}
+		if (mem == null) {
+			mem = 1.0f;
+		}
+		if (ephemeralDiskSizeGB == null) {
+			ephemeralDiskSizeGB = 15.0f;
+		}
 		this.cores = cores;
 		this.ephemeralDiskSizeGB = ephemeralDiskSizeGB;
 		this.mem = mem;

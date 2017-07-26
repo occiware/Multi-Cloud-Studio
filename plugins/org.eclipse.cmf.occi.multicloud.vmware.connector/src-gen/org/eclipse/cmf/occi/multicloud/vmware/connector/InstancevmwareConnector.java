@@ -87,6 +87,20 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 	 */
 	private static Logger LOGGER = LoggerFactory.getLogger(InstancevmwareConnector.class);
 
+	public static final String ATTR_HOSTSYSTEM_NAME = "hostsystemname";
+	public static final String ATTR_DATACENTER_NAME = "datacentername";
+	public static final String ATTR_DATASTORE_NAME = "datastorename";
+	public static final String ATTR_CLUSTER_NAME = "clustername";
+	public static final String ATTR_VM_EPHEMERAL_DISK_SIZE_GB = "occi.compute.ephemeral_storage.size";
+	public static final String ATTR_USER_DATA = "occi.compute.userdata";
+	public static final String ATTR_USERNAME = "user";
+	public static final String ATTR_PASSWORD = "password";
+	public static final String ATTR_USER_DATA_FILE = "occi.compute.userdata.file";
+	/**
+	 * Path on inventory object. Format: /inria/tests/ (with slash on last character or without).
+	 */
+	public static final String ATTR_VM_INVENTORY_PATH = "inventorypath";
+	
 	/**
 	 * Define VMWare specifications for this compute.
 	 */
@@ -99,7 +113,27 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 	 */
 	private String vmState = null;
 	private boolean vmExist = false;
+	
+	private String datacenterName = null;
+	private String datastoreName = null;
+	private String clusterName = null;
+	/**
+	 * Represent the physical compute which be used for host this virtual
+	 * machine.
+	 */
+	private String hostSystemName = null;
 
+	/**
+	 * VM Path in inventory objects. format: /inria/tests/
+	 */
+	private String inventoryPath = "";
+	
+	private String userData;
+	private String userDataFile;
+	private String username;
+	private String password;
+	
+	
 	// Message to end users management.
 	private String titleMessage = "";
 	private String globalMessage = "";
@@ -110,6 +144,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 
 	private boolean toCreateOnStartOperation = false;
 
+		
 	/**
 	 * First ipv4 address.
 	 */
@@ -564,7 +599,8 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		if (vmfolders != null) {
 			return vmfolders.getDatacentername();
 		}
-		return null;
+		
+		return this.datacenterName;
 	}
 
 	/**
@@ -573,6 +609,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 	 * @return
 	 */
 	public void setDatacenterName(final String datacenterName) {
+		this.datacenterName = datacenterName;
 		VmwarefoldersConnector vmfolders = getMixinVmwarefolders();
 		if (vmfolders != null) {
 			vmfolders.setDatacentername(datacenterName);
@@ -589,7 +626,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		if (vmfolders != null) {
 			return vmfolders.getDatastorename();
 		}
-		return null;
+		return this.datastoreName;
 	}
 
 	/**
@@ -598,6 +635,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 	 * @return
 	 */
 	public void setDatastoreName(final String datastoreName) {
+		this.datastoreName = datastoreName;
 		VmwarefoldersConnector vmfolders = getMixinVmwarefolders();
 		if (vmfolders != null) {
 			vmfolders.setDatastorename(datastoreName);
@@ -614,7 +652,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		if (vmfolders != null) {
 			return vmfolders.getClustername();
 		}
-		return null;
+		return this.clusterName;
 	}
 
 	/**
@@ -623,6 +661,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 	 * @return
 	 */
 	public void setClusterName(final String clusterName) {
+		this.clusterName = clusterName;
 		VmwarefoldersConnector vmfolders = getMixinVmwarefolders();
 		if (vmfolders != null) {
 			vmfolders.setClustername(clusterName);
@@ -634,10 +673,11 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		if (vmfolders != null) {
 			return vmfolders.getHostsystemname();
 		}
-		return null;
+		return this.hostSystemName;
 	}
 
 	public void setHostSystemName(final String hostSystemName) {
+		this.hostSystemName = hostSystemName;
 		VmwarefoldersConnector vmfolders = getMixinVmwarefolders();
 		if (vmfolders != null) {
 			vmfolders.setHostsystemname(hostSystemName);
@@ -649,7 +689,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		if (vmfolders != null) {
 			return vmfolders.getInventorypath();
 		}
-		return null;
+		return this.inventoryPath;
 	}
 
 	/**
@@ -1115,7 +1155,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		List<StoragelinkvmwareConnector> stLinks = getLinkedStorages(); // For additionnal disks.
 
 		// Get the datastore vmware object.
-		if (getDatastoreName() != null) {
+		if (datastoreName != null) {
 			datastore = DatastoreHelper.findDatastoreForName(datacenter, getDatastoreName());
 		}
 
@@ -1136,7 +1176,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		}
 		setDatastoreName(datastore.getName());
 		Folder vmFolder = null;
-		String inventoryPath = getInventoryPath();
+		inventoryPath = getInventoryPath();
 		if (inventoryPath == null || inventoryPath.trim().isEmpty()) {
 			inventoryPath = "";
 			LOGGER.info("No inventory path found.");
@@ -1577,7 +1617,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			vmExist = false;
 			return;
 		} else {
-			String hostSystemName = getHostSystemName();
+			hostSystemName = getHostSystemName();
 			if (hostSystemName != null && !hostSystemName.equals(host.getName())) {
 				LOGGER.warn("The virtual machine has been moved on another host, from : " + hostSystemName
 						+ " to host: " + host.getName());
@@ -1614,7 +1654,6 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		if (dc == null) {
 			LOGGER.warn("No datacenter found for this virtual machine: " + vm.getName());
 		} else {
-			String datacenterName = getDatacenterName();
 			if (datacenterName == null) {
 				setDatacenterName(dc.getName());
 			}
@@ -1622,7 +1661,6 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		if (cluster == null) {
 			LOGGER.warn("No cluster found for this virtual machine: " + vm.getName());
 		} else {
-			String clusterName = getClusterName();
 			if (clusterName == null) {
 				setClusterName(cluster.getName());
 			}
@@ -1635,7 +1673,6 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 					ds = dss[0];
 				}
 				if (ds != null) {
-					String datastoreName = getDatastoreName();
 					if (datastoreName == null) {
 						setDatastoreName(ds.getName());
 					}
@@ -1653,7 +1690,6 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			}
 
 		} else {
-			String datastoreName = getDatastoreName();
 			if (datastoreName == null) {
 				setDatastoreName(ds.getName());
 			}
@@ -1719,7 +1755,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			String vmGuestState = VMHelper.getGuestState(vm);
 			String guestOsId = vm.getConfig().getGuestId();
 			Float ephemeralDiskSizeGB = VMHelper.getEphemalDiskSize(vm);
-			String inventoryPath = VMHelper.getVMFolderPath(vm);
+			inventoryPath = VMHelper.getVMFolderPath(vm);
 			String instanceProviderId = vm.getMOR().getVal();
 			Integer vcpus = VMHelper.getNumCPU(vm);
 			// Update entity attributes.
@@ -1771,8 +1807,45 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			// Update Mixins.
 			VmwarefoldersConnector vmFoldersMixin = getMixinVmwarefolders();
 
-			if (inventoryPath != null && vmFoldersMixin != null) {
-				vmFoldersMixin.setInventorypath(inventoryPath);
+			if (vmFoldersMixin != null) {
+				LOGGER.warn("vmwarefolders mixin instance on connector : " + vmFoldersMixin.toString());
+				
+				List<AttributeState> attrStates = vmFoldersMixin.getAttributes();
+				LOGGER.warn("Mixin vmwarefolders attribute states : " + attrStates.toString());
+				
+				LOGGER.warn("Mixin vmwarefolders include attribute old value: ");
+				LOGGER.warn("datacentername: old value: " + vmFoldersMixin.getDatacentername());
+				LOGGER.warn("datastorename: old value: " + vmFoldersMixin.getDatastorename());
+				LOGGER.warn("clustername: old value: " + vmFoldersMixin.getClustername());
+				LOGGER.warn("hostsystemname: old value: " + vmFoldersMixin.getHostsystemname());
+				LOGGER.warn("inventorypath: old value: " + vmFoldersMixin.getInventorypath());
+				
+				if (attrStates.isEmpty()) {
+					LOGGER.warn("Mixin vmware folders has no attribute states...");
+				}
+				for (AttributeState attrState : attrStates) {
+					LOGGER.info("Attributes found on connector mixin vmwarefolders : " + attrState.getName() + " --> " + attrState.getValue());
+				}
+				if (inventoryPath != null) {
+					vmFoldersMixin.setInventorypath(inventoryPath);
+				}
+				if (dc != null && vmFoldersMixin != null) {
+					LOGGER.info("Datacenter name : " + dc.getName());
+					vmFoldersMixin.setDatacentername(dc.getName());
+				}
+			
+				if (ds != null && vmFoldersMixin != null) {
+					LOGGER.info("Datastore name : " + ds.getName());
+					vmFoldersMixin.setDatastorename(ds.getName());
+				}
+				if (cluster != null && vmFoldersMixin != null) {
+					LOGGER.info("Cluster name : " + cluster.getName());
+					vmFoldersMixin.setClustername(cluster.getName());
+				}
+				if (host != null && vmFoldersMixin != null) {
+					LOGGER.info("HostSystem name : " + host.getName());
+					vmFoldersMixin.setHostsystemname(host.getName());
+				}
 			}
 			// Datastore, datacenter, cluster and hostsystemname are already updated upper.
 			if (ephemeralDiskSizeGB != null && ephemeralDiskSizeGB > 0) {
@@ -1794,6 +1867,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			setOcciComputeStateMessage(messageProgress);
 		}
 		
+		
 		vmExist = true;
 		if (toMonitor) {
 			subMonitor.worked(80);
@@ -1810,6 +1884,11 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		if (toMonitor) {
 			subMonitor.worked(100);
 		}
+		
+		// TODO : if (UIDialog.isStandAlone()) {
+		//	updateAttributesOnCompute();
+		// }
+		
 	}
 
 	/**

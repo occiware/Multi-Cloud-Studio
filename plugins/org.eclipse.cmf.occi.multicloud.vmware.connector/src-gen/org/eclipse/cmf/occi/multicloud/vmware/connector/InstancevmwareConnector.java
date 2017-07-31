@@ -632,12 +632,8 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 	 */
 	public void setDatacenterName(final String datacenterName) {
 		this.datacenterName = datacenterName;
-		VmwarefoldersConnector vmfolders = getMixinVmwarefolders();
-		if (vmfolders != null) {
-			vmfolders.setDatacentername(datacenterName);
-		}
 	}
-
+	
 	/**
 	 * Get the datastore name.
 	 * 
@@ -658,11 +654,8 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 	 */
 	public void setDatastoreName(final String datastoreName) {
 		this.datastoreName = datastoreName;
-		VmwarefoldersConnector vmfolders = getMixinVmwarefolders();
-		if (vmfolders != null) {
-			vmfolders.setDatastorename(datastoreName);
-		}
 	}
+	
 
 	/**
 	 * get cluster name.
@@ -684,10 +677,6 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 	 */
 	public void setClusterName(final String clusterName) {
 		this.clusterName = clusterName;
-		VmwarefoldersConnector vmfolders = getMixinVmwarefolders();
-		if (vmfolders != null) {
-			vmfolders.setClustername(clusterName);
-		}
 	}
 
 	public String getHostSystemName() {
@@ -700,10 +689,6 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 
 	public void setHostSystemName(final String hostSystemName) {
 		this.hostSystemName = hostSystemName;
-		VmwarefoldersConnector vmfolders = getMixinVmwarefolders();
-		if (vmfolders != null) {
-			vmfolders.setHostsystemname(hostSystemName);
-		}
 	}
 
 	public String getInventoryPath() {
@@ -1011,6 +996,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 					// update
 					attrsToUpdate.put(ATTR_DATACENTER_NAME, datacenterName);
 				}
+				vmwareFolders.setDatacentername(datacenterName);
 			}
 			if (datastoreName != null) {
 				// ATTR_DATASTORE_NAME
@@ -1019,6 +1005,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 				} else {
 					attrsToUpdate.put(ATTR_DATASTORE_NAME, datastoreName);
 				}
+				vmwareFolders.setDatastorename(datastoreName);
 			}
 
 			// ATTR_CLUSTER_NAME
@@ -1028,6 +1015,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 				} else {
 					attrsToUpdate.put(ATTR_CLUSTER_NAME, clusterName);
 				}
+				vmwareFolders.setClustername(clusterName);
 			}
 			// ATTR_HOSTSYSTEM_NAME
 			if (hostSystemName != null && hasMixinFoldersData) {
@@ -1036,6 +1024,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 				} else {
 					attrsToUpdate.put(ATTR_HOSTSYSTEM_NAME, hostSystemName);
 				}
+				vmwareFolders.setHostsystemname(hostSystemName);
 			}
 		
 			// Inventory path like /INRIA/tests/. This is the location folder where the vm has been created / moved etc.
@@ -1044,7 +1033,8 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 					attrsToCreate.put(ATTR_VM_INVENTORY_PATH, inventoryPath);
 				} else {
 					attrsToUpdate.put(ATTR_VM_INVENTORY_PATH, inventoryPath);
-				}	
+				}
+				vmwareFolders.setInventorypath(inventoryPath);
 			}
 			
 			
@@ -1126,6 +1116,11 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 				// Gui environment
 				MixinBaseUtils.updateAttributes(sshUserData, attrsToCreate, attrsToUpdate, attrsToDelete);
 			}
+			sshUserData.setUser(username);
+			sshUserData.setPassword(password);
+			sshUserData.setOcciComputeUserdata(userData);
+			sshUserData.setOcciComputeUserdataFile(userDataFile);
+		
 			attrsToCreate.clear();
 			attrsToUpdate.clear();
 			attrsToDelete.clear();
@@ -1177,6 +1172,9 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		if (messageProgress != null) {
 			setOcciComputeStateMessage(messageProgress);
 		}
+		
+		
+		
 		
 	}
 	
@@ -1948,7 +1946,6 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		} else {
 			String oldHostSystemName = getHostSystemName();
 			setHostSystemName(host.getName());
-			hostSystemName = getHostSystemName();
 			if (oldHostSystemName != null && !oldHostSystemName.trim().isEmpty() && !oldHostSystemName.equals(host.getName())) {
 				LOGGER.warn("The virtual machine has been moved on another host, from : " + oldHostSystemName
 						+ " to host: " + host.getName());

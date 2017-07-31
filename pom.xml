@@ -40,6 +40,23 @@
             <artifactId>org.eclipse.cmf.occi.core.design</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
+        <!-- xtext dependencies plugin -->
+        <dependency>
+            <groupId>org.occiware</groupId>
+            <artifactId>org.eclipse.cmf.occi.core.xtext</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.occiware</groupId>
+            <artifactId>org.eclipse.cmf.occi.core.xtext.ide</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.occiware</groupId>
+            <artifactId>org.eclipse.cmf.occi.core.xtext.ui</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <!-- generator core plugins -->
         <dependency>
             <groupId>org.occiware</groupId>
             <artifactId>org.eclipse.cmf.occi.core.gen.emf</artifactId>
@@ -70,6 +87,7 @@
             <artifactId>org.eclipse.cmf.occi.core.gen.connector.ui</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
+        <!-- infrastructure, monitoring and other extensions plugins dependencies -->
         <dependency>
             <groupId>org.occiware</groupId>
             <artifactId>org.eclipse.cmf.occi.infrastructure</artifactId>
@@ -130,7 +148,6 @@
             <artifactId>org.eclipse.cmf.occi.monitoring.design</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
-        
     </dependencies>
     <modules>
         <!-- VMware modules -->
@@ -140,80 +157,7 @@
         <module>plugins/org.eclipse.cmf.occi.multicloud.vmware.tests</module>
         <module>plugins/org.eclipse.cmf.occi.multicloud.vmware.connector</module>
         <module>plugins/org.eclipse.cmf.occi.multicloud.vmware.design</module>
-        
-        <!-- OCCI Core -->
-        <!--
-        <module>plugins/org.eclipse.cmf.occi.core</module>
-        <module>plugins/org.eclipse.cmf.occi.core.edit</module>
-        <module>plugins/org.eclipse.cmf.occi.core.editor</module>
-        <module>plugins/org.eclipse.cmf.occi.core.tests</module>
-        <module>plugins/org.eclipse.cmf.occi.core.design</module>
-         <module>plugins/org.eclipse.cmf.occi.core.xtext</module>
-         <module>plugins/org.eclipse.cmf.occi.core.xtext.ide</module>
-         <module>plugins/org.eclipse.cmf.occi.core.xtext.tests</module>
-         <module>plugins/org.eclipse.cmf.occi.core.xtext.ui</module>
-         <module>plugins/org.eclipse.cmf.occi.core.xtext.ui.tests</module>
-         -->
-        <!-- OCCI EMF Generator -->
-        <!-- <module>plugins/org.eclipse.cmf.occi.core.gen.emf</module>
-        <module>plugins/org.eclipse.cmf.occi.core.gen.emf.ui</module>
-        -->
-        <!-- OCCI Designer Generator -->
-        <!--
-        <module>plugins/org.eclipse.cmf.occi.core.gen.design</module>
-        <module>plugins/org.eclipse.cmf.occi.core.gen.design.ui</module>
-        -->
-        <!-- Connector Generator -->
-        <!--
-        <module>plugins/org.eclipse.cmf.occi.core.gen.connector</module>
-        <module>plugins/org.eclipse.cmf.occi.core.gen.connector.ui</module>
-        -->
-        <!-- OCCI Utilities -->
-        <!--
-        <module>plugins/org.eclipse.cmf.occi.core.ui</module>
-        -->
-        <!-- OCCI Infrastructure extension -->
-        <!-- <module>plugins/org.eclipse.cmf.occi.infrastructure</module>
-        <module>plugins/org.eclipse.cmf.occi.infrastructure.edit</module>
-        <module>plugins/org.eclipse.cmf.occi.infrastructure.editor</module>
-        <module>plugins/org.eclipse.cmf.occi.infrastructure.tests</module>
-        <module>plugins/org.eclipse.cmf.occi.infrastructure.design</module>
-        <module>plugins/org.eclipse.cmf.occi.infrastructure.connector.dummy</module>
-        -->
-        
-        <!-- OCCI crtp extension -->
-        
-        <!-- <module>plugins/org.eclipse.cmf.occi.crtp</module>
-        <module>plugins/org.eclipse.cmf.occi.crtp.edit</module>
-        <module>plugins/org.eclipse.cmf.occi.crtp.editor</module>
-        <module>plugins/org.eclipse.cmf.occi.crtp.tests</module>
-        <module>plugins/org.eclipse.cmf.occi.crtp.design</module>
-        <module>plugins/org.eclipse.cmf.occi.crtp.connector.dummy</module>
-        -->
-        <!-- OCCI platform extension -->
-        <!-- <module>plugins/org.eclipse.cmf.occi.platform</module>
-        <module>plugins/org.eclipse.cmf.occi.platform.edit</module>
-        <module>plugins/org.eclipse.cmf.occi.platform.editor</module>
-        <module>plugins/org.eclipse.cmf.occi.platform.tests</module>
-        <module>plugins/org.eclipse.cmf.occi.platform.design</module>
-        <module>plugins/org.eclipse.cmf.occi.platform.connector.dummy</module>
-        -->
-        <!-- OCCI sla extension -->
-        <!-- <module>plugins/org.eclipse.cmf.occi.sla</module>
-        <module>plugins/org.eclipse.cmf.occi.sla.edit</module>
-        <module>plugins/org.eclipse.cmf.occi.sla.editor</module>
-        <module>plugins/org.eclipse.cmf.occi.sla.tests</module>
-        <module>plugins/org.eclipse.cmf.occi.sla.design</module>
-        <module>plugins/org.eclipse.cmf.occi.sla.connector.dummy</module>
-        -->
-        <!-- OCCI monitoring extension -->
-        <!-- <module>plugins/org.eclipse.cmf.occi.monitoring</module>
-        <module>plugins/org.eclipse.cmf.occi.monitoring.edit</module>
-        <module>plugins/org.eclipse.cmf.occi.monitoring.editor</module>
-        <module>plugins/org.eclipse.cmf.occi.monitoring.tests</module>
-        <module>plugins/org.eclipse.cmf.occi.monitoring.design</module>
-        <module>plugins/org.eclipse.cmf.occi.monitoring.connector.dummy</module>
-        -->
+
         <!-- Releng -->
         <module>features/org.eclipse.cmf.occi.multicloud</module>
     </modules>

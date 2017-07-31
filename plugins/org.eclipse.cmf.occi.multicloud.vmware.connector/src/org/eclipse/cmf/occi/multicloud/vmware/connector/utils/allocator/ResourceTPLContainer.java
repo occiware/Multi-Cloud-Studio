@@ -81,10 +81,10 @@ public class ResourceTPLContainer {
 	
 	public ResourceTPLContainer(Integer cores, Float mem, Float ephemeralDiskSizeGB) {
 		if (cores == null) {
-			cores = 1;
+			cores = 0;
 		}
 		if (mem == null) {
-			mem = 1.0f;
+			mem = 0f;
 		}
 		if (ephemeralDiskSizeGB == null) {
 			ephemeralDiskSizeGB = 15.0f;

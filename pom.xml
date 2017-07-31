@@ -139,7 +139,7 @@
         <module>plugins/org.eclipse.cmf.occi.multicloud.vmware.editor</module>
         <module>plugins/org.eclipse.cmf.occi.multicloud.vmware.tests</module>
         <module>plugins/org.eclipse.cmf.occi.multicloud.vmware.connector</module>
-        <!-- <module>plugins/org.eclipse.cmf.occi.multicloud.vmware.design</module> -->
+        <module>plugins/org.eclipse.cmf.occi.multicloud.vmware.design</module>
         
         <!-- OCCI Core -->
         <!--

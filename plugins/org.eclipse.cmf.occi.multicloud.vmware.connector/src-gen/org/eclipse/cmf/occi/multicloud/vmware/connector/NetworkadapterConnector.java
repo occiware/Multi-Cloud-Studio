@@ -37,6 +37,8 @@ import org.eclipse.cmf.occi.multicloud.vmware.connector.utils.allocator.Allocato
 import org.eclipse.cmf.occi.multicloud.vmware.connector.utils.allocator.AllocatorImpl;
 import org.eclipse.cmf.occi.multicloud.vmware.connector.utils.thread.EntityUtils;
 import org.eclipse.cmf.occi.multicloud.vmware.connector.utils.thread.EntityUtilsHeadless;
+import org.eclipse.cmf.occi.multicloud.vmware.connector.utils.thread.MixinBaseUtils;
+import org.eclipse.cmf.occi.multicloud.vmware.connector.utils.thread.MixinBaseUtilsHeadless;
 import org.eclipse.cmf.occi.multicloud.vmware.connector.utils.thread.UIDialog;
 
 import com.vmware.vim25.Description;
@@ -71,7 +73,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 	 * Initialize the logger.
 	 */
 	private static Logger LOGGER = LoggerFactory.getLogger(NetworkadapterConnector.class);
-	
+	private static final String ATTR_NETWORK_INTERFACE_IP_ADDRESS = "occi.networkinterface.address"; 
 	private String vmName = null;
 	private String networkAdapterName = null;
 
@@ -1373,7 +1375,9 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 	public void updateNetworkInterfaceAttributes() {
 		
 		Ipnetworkinterface mixinIpNetworkInterface = getIpNetworkInterface();
-		
+		Map<String, String> attrsToCreate = new HashMap<>();
+		Map<String, String> attrsToUpdate = new HashMap<>();
+		List<String> attrsToDelete = new ArrayList<>();
 		// TODO : wakeon lan : add attr to extension vmwarecrtp and update this code...
 		
 		// String wakeOnLanStr = wakeOnLan.toString();
@@ -1390,7 +1394,19 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		
 		if (mixinIpNetworkInterface != null && ipAddressPlainLocal != null && !ipAddressPlainLocal.isEmpty()) {
 			mixinIpNetworkInterface.setOcciNetworkinterfaceAddress(ipAddressPlainLocal);
-			
+			if (this.getAttributeStateObjectFromMixinBase(mixinIpNetworkInterface, ATTR_NETWORK_INTERFACE_IP_ADDRESS) == null) {
+				attrsToCreate.put(ATTR_NETWORK_INTERFACE_IP_ADDRESS, ipAddressPlainLocal);
+			} else {
+				attrsToUpdate.put(ATTR_NETWORK_INTERFACE_IP_ADDRESS, ipAddressPlainLocal);
+			}
+			if (UIDialog.isStandAlone()) {
+				// Headless environment.
+				MixinBaseUtilsHeadless.updateAttributes(mixinIpNetworkInterface, attrsToCreate, attrsToUpdate, attrsToDelete);
+				
+			} else {
+				// Gui environment
+				MixinBaseUtils.updateAttributes(mixinIpNetworkInterface, attrsToCreate, attrsToUpdate, attrsToDelete);
+			}
 		} else if (ipAddressPlainLocal != null && !ipAddressPlainLocal.isEmpty()) {
 			this.setOcciNetworkinterfaceStateMessage("ip address setup: " + ipAddressPlainLocal);
 		} else {
@@ -1404,6 +1420,31 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			this.setOcciNetworkinterfaceMac(macAddress);
 		}
 		
+	}
+	
+	/**
+	 * Get an attribute state object for key parameter.
+	 * 
+	 * @param key
+	 *            ex: occi.core.title.
+	 * @return an AttributeState object, if attribute doesnt exist, null value
+	 *         is returned.
+	 */
+	public AttributeState getAttributeStateObjectFromMixinBase(MixinBase mixinB, final String key) {
+		
+		AttributeState attr = null;
+		if (key == null) {
+			return attr;
+		}
+		// Load the corresponding attribute state.
+		for (AttributeState attrState : mixinB.getAttributes()) {
+			if (attrState.getName().equals(key)) {
+				attr = attrState;
+				break;
+			}
+		}
+
+		return attr;
 	}
 	
 	/**

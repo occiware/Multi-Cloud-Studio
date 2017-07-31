@@ -355,12 +355,12 @@ litigation.
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-   <plugin
+   <!-- <plugin
          id="org.eclipse.cmf.occi.infrastructure.connector.dummy"
          download-size="0"
          install-size="0"
          version="0.0.0"
-         unpack="false"/>
+         unpack="false"/> -->
    <plugin
          id="org.eclipse.cmf.occi.crtp"
          download-size="0"
@@ -391,12 +391,12 @@ litigation.
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-   <plugin
+   <!-- <plugin
          id="org.eclipse.cmf.occi.crtp.connector.dummy"
          download-size="0"
          install-size="0"
          version="0.0.0"
-         unpack="false"/>
+         unpack="false"/> -->
    <plugin
          id="org.eclipse.cmf.occi.monitoring"
          download-size="0"
@@ -427,12 +427,12 @@ litigation.
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-   <plugin
+   <!-- <plugin
          id="org.eclipse.cmf.occi.monitoring.connector.dummy"
          download-size="0"
          install-size="0"
          version="0.0.0"
-         unpack="false"/>
+         unpack="false"/> -->
     <!-- VMware part -->
     <plugin
         id="org.eclipse.cmf.occi.multicloud.vmware"
@@ -452,18 +452,18 @@ litigation.
         install-size="0"
         version="0.0.0"
         unpack="false"/>
-    <plugin
+    <!-- <plugin
         id="org.eclipse.cmf.occi.multicloud.vmware.tests"
         download-size="0"
         install-size="0"
         version="0.0.0"
-        unpack="false"/>
-    <!-- <plugin
+        unpack="false"/> -->
+    <plugin
         id="org.eclipse.cmf.occi.multicloud.vmware.design"
         download-size="0"
         install-size="0"
         version="0.0.0"
-        unpack="false"/> -->
+        unpack="false"/>
     <plugin
         id="org.eclipse.cmf.occi.multicloud.vmware.connector"
         download-size="0"

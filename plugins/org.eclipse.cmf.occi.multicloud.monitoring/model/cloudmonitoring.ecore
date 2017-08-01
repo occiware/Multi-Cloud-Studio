@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="cloudmonitoring" nsURI="http://occiware.org/occi/multicloud/monitoring/ecore"
+    nsPrefix="cloudmonitoring">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EEnum" name="IOUnit">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Units for IO metrics (network / storage)"/>
+    </eAnnotations>
+    <eLiterals name="bytePerSec" literal="bytePerSec">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Nb of bytes per seconds type"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="kiloBytePerSec" value="1" literal="kiloBytePerSec">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Number of kilo bytes per seconds type"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="megaBytePerSec" value="2" literal="megaBytePerSec">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Nb of megabytes per seconds type"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="gigaBytePerSec" value="3" literal="gigaBytePerSec">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Number of giga bytes per seconds type"/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Percent" instanceClassName="java.lang.Double">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="MinInclusive" value="0.0"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Average" instanceClassName="java.lang.Double">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="MinInclusive" value="0.0"/>
+      <details key="MinExclusive" value=""/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="PerSec" instanceClassName="java.lang.Double">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="MinInclusive" value="0.0"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MonitorState">
+    <eLiterals name="on" literal="on"/>
+    <eLiterals name="off" value="1" literal="off"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Temperature" instanceClassName="java.lang.Double"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Sshcollector" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.monitoring/model/monitoring.ecore#//Collector">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Collector data metrics with an ssh script"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Zabbixcollector" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.monitoring/model/monitoring.ecore#//Collector">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Collector from zabbix monitoring software using zabbix api"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="username" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="password" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="httpApiAddress" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Http api address like : http://ipaddress/zabbix/api_jsonrpc.php"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Cpu" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase #//Mainmetric">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="appliesConstraint"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="appliesConstraint" value="self.entity.oclIsKindOf(monitoring::Collector)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="loadAvg" eType="#//Average">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Diskio" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase #//Inputoutput">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="appliesConstraint"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="appliesConstraint" value="self.entity.oclIsKindOf(monitoring::Collector)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="diskWrite" eType="#//PerSec">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="diskRead" eType="#//PerSec">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Ram" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase #//Mainmetric">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="appliesConstraint"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="appliesConstraint" value="self.entity.oclIsKindOf(monitoring::Collector)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="free" eType="#//Percent">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="swap" eType="#//Percent">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Networkio" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase #//Inputoutput">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="appliesConstraint"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="appliesConstraint" value="self.entity.oclIsKindOf(monitoring::Collector)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="networkIn" eType="#//PerSec">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="networkOut" eType="#//PerSec">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Inputoutput" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase platform:/plugin/org.eclipse.cmf.occi.monitoring/model/monitoring.ecore#//Metric">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="appliesConstraint"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="appliesConstraint" value="self.entity.oclIsKindOf(monitoring::Collector)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="#//IOUnit">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Sensorcontrol" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="appliesConstraint"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="appliesConstraint" value="self.entity.oclIsKindOf(monitoring::Sensor)"/>
+    </eAnnotations>
+    <eOperations name="startmonitoring">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Start the monitoring system for this sensor"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="stopmonitoring">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Stop monitoring for this sensor"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="monitorState" eType="#//MonitorState"
+        defaultValueLiteral="off">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Monitoring is active if monitorState is on, inactive if monitorState is off."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Emfpublisher" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase #//Publishercontrol">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="appliesConstraint"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="appliesConstraint" value="self.entity.oclIsKindOf(monitoring::Sensor)"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Systemoutpublisher" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase #//Publishercontrol">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="appliesConstraint"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="appliesConstraint" value="self.entity.oclIsKindOf(monitoring::Sensor)"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Publishercontrol" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase platform:/plugin/org.eclipse.cmf.occi.monitoring/model/monitoring.ecore#//Publisher">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="appliesConstraint"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="appliesConstraint" value="self.entity.oclIsKindOf(monitoring::Sensor)"/>
+    </eAnnotations>
+    <eOperations name="enable">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Enable the p"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="disable">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="publisherState" eType="#//MonitorState"
+        defaultValueLiteral="on">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Disk" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase #//Mainmetric">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="appliesConstraint"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="appliesConstraint" value="self.entity.oclIsKindOf(monitoring::Collector)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="swap" eType="#//Percent">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="free" eType="#//Percent">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="volumeName" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Mailpublisher" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase #//Publishercontrol">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="appliesConstraint"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="appliesConstraint" value="self.entity.oclIsKindOf(monitoring::Sensor)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mailAddress" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="postOnCpuAlert" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Boolean"
+        defaultValueLiteral="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="postOnRamAlert" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Boolean"
+        defaultValueLiteral="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="postOnNetworkIOAlert" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Boolean"
+        defaultValueLiteral="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="postOnDiskIOAlert" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Boolean"
+        defaultValueLiteral="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbEmail" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer"
+        defaultValueLiteral="2">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Number of emails to send after a threshold is reach"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Mainmetric" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase platform:/plugin/org.eclipse.cmf.occi.monitoring/model/monitoring.ecore#//Metric">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="appliesConstraint"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="appliesConstraint" value="self.entity.oclIsKindOf(monitoring::Collector)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="thresholdUsage" eType="#//Percent"
+        defaultValueLiteral="80.0">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="utilization" eType="#//Percent"
+        defaultValueLiteral="0.0">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Percent usage of a main component metric like ram, disk and cpu"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="temperature" eType="#//Temperature">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="thresholdTemperature" eType="#//Temperature"
+        defaultValueLiteral="80.0">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Threshold for temperature in degree celcius"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+</ecore:EPackage>

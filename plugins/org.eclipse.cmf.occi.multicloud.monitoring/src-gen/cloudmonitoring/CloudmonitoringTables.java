@@ -82,6 +82,7 @@ public class CloudmonitoringTables
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Ram = cloudmonitoring.CloudmonitoringTables.PACKid_http_c_s_s_occiware_org_s_occi_s_multicloud_s_monitoring_s_ecore.getClassId("Ram", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Sensor = cloudmonitoring.CloudmonitoringTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_monitoring_s_ecore.getClassId("Sensor", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Sensorcontrol = cloudmonitoring.CloudmonitoringTables.PACKid_http_c_s_s_occiware_org_s_occi_s_multicloud_s_monitoring_s_ecore.getClassId("Sensorcontrol", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Supervisorapiconnect = cloudmonitoring.CloudmonitoringTables.PACKid_http_c_s_s_occiware_org_s_occi_s_multicloud_s_monitoring_s_ecore.getClassId("Supervisorapiconnect", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Systemoutpublisher = cloudmonitoring.CloudmonitoringTables.PACKid_http_c_s_s_occiware_org_s_occi_s_multicloud_s_monitoring_s_ecore.getClassId("Systemoutpublisher", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_Average = cloudmonitoring.CloudmonitoringTables.PACKid_http_c_s_s_occiware_org_s_occi_s_multicloud_s_monitoring_s_ecore.getDataTypeId("Average", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_PerSec = cloudmonitoring.CloudmonitoringTables.PACKid_http_c_s_s_occiware_org_s_occi_s_multicloud_s_monitoring_s_ecore.getDataTypeId("PerSec", 0);
@@ -101,6 +102,7 @@ public class CloudmonitoringTables
 	public static final /*@NonInvalid*/ java.lang.String STR_Publishercontrol_c_c_appliesConstraint = "Publishercontrol::appliesConstraint";
 	public static final /*@NonInvalid*/ java.lang.String STR_Ram_c_c_appliesConstraint = "Ram::appliesConstraint";
 	public static final /*@NonInvalid*/ java.lang.String STR_Sensorcontrol_c_c_appliesConstraint = "Sensorcontrol::appliesConstraint";
+	public static final /*@NonInvalid*/ java.lang.String STR_Supervisorapiconnect_c_c_appliesConstraint = "Supervisorapiconnect::appliesConstraint";
 	public static final /*@NonInvalid*/ java.lang.String STR_Systemoutpublisher_c_c_appliesConstraint = "Systemoutpublisher::appliesConstraint";
 
 	/**
@@ -147,10 +149,9 @@ public class CloudmonitoringTables
 		public static final /*@NonNull*/ EcoreExecutorType _Publishercontrol = new EcoreExecutorType(CloudmonitoringPackage.Literals.PUBLISHERCONTROL, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Ram = new EcoreExecutorType(CloudmonitoringPackage.Literals.RAM, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Sensorcontrol = new EcoreExecutorType(CloudmonitoringPackage.Literals.SENSORCONTROL, PACKAGE, 0);
-		public static final /*@NonNull*/ EcoreExecutorType _Sshcollector = new EcoreExecutorType(CloudmonitoringPackage.Literals.SSHCOLLECTOR, PACKAGE, 0);
+		public static final /*@NonNull*/ EcoreExecutorType _Supervisorapiconnect = new EcoreExecutorType(CloudmonitoringPackage.Literals.SUPERVISORAPICONNECT, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Systemoutpublisher = new EcoreExecutorType(CloudmonitoringPackage.Literals.SYSTEMOUTPUBLISHER, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Temperature = new EcoreExecutorType("Temperature", PACKAGE, 0);
-		public static final /*@NonNull*/ EcoreExecutorType _Zabbixcollector = new EcoreExecutorType(CloudmonitoringPackage.Literals.ZABBIXCOLLECTOR, PACKAGE, 0);
 
 		private static final /*@NonNull*/ EcoreExecutorType /*@NonNull*/ [] types = {
 			_Average,
@@ -169,10 +170,9 @@ public class CloudmonitoringTables
 			_Publishercontrol,
 			_Ram,
 			_Sensorcontrol,
-			_Sshcollector,
+			_Supervisorapiconnect,
 			_Systemoutpublisher,
-			_Temperature,
-			_Zabbixcollector
+			_Temperature
 		};
 
 		/*
@@ -291,12 +291,10 @@ public class CloudmonitoringTables
 		private static final /*@NonNull*/ ExecutorFragment _Sensorcontrol__OclElement = new ExecutorFragment(Types._Sensorcontrol, OCLstdlibTables.Types._OclElement);
 		private static final /*@NonNull*/ ExecutorFragment _Sensorcontrol__Sensorcontrol = new ExecutorFragment(Types._Sensorcontrol, CloudmonitoringTables.Types._Sensorcontrol);
 
-		private static final /*@NonNull*/ ExecutorFragment _Sshcollector__Collector = new ExecutorFragment(Types._Sshcollector, MonitoringTables.Types._Collector);
-		private static final /*@NonNull*/ ExecutorFragment _Sshcollector__Entity = new ExecutorFragment(Types._Sshcollector, OCCITables.Types._Entity);
-		private static final /*@NonNull*/ ExecutorFragment _Sshcollector__Link = new ExecutorFragment(Types._Sshcollector, OCCITables.Types._Link);
-		private static final /*@NonNull*/ ExecutorFragment _Sshcollector__OclAny = new ExecutorFragment(Types._Sshcollector, OCLstdlibTables.Types._OclAny);
-		private static final /*@NonNull*/ ExecutorFragment _Sshcollector__OclElement = new ExecutorFragment(Types._Sshcollector, OCLstdlibTables.Types._OclElement);
-		private static final /*@NonNull*/ ExecutorFragment _Sshcollector__Sshcollector = new ExecutorFragment(Types._Sshcollector, CloudmonitoringTables.Types._Sshcollector);
+		private static final /*@NonNull*/ ExecutorFragment _Supervisorapiconnect__MixinBase = new ExecutorFragment(Types._Supervisorapiconnect, OCCITables.Types._MixinBase);
+		private static final /*@NonNull*/ ExecutorFragment _Supervisorapiconnect__OclAny = new ExecutorFragment(Types._Supervisorapiconnect, OCLstdlibTables.Types._OclAny);
+		private static final /*@NonNull*/ ExecutorFragment _Supervisorapiconnect__OclElement = new ExecutorFragment(Types._Supervisorapiconnect, OCLstdlibTables.Types._OclElement);
+		private static final /*@NonNull*/ ExecutorFragment _Supervisorapiconnect__Supervisorapiconnect = new ExecutorFragment(Types._Supervisorapiconnect, CloudmonitoringTables.Types._Supervisorapiconnect);
 
 		private static final /*@NonNull*/ ExecutorFragment _Systemoutpublisher__MixinBase = new ExecutorFragment(Types._Systemoutpublisher, OCCITables.Types._MixinBase);
 		private static final /*@NonNull*/ ExecutorFragment _Systemoutpublisher__OclAny = new ExecutorFragment(Types._Systemoutpublisher, OCLstdlibTables.Types._OclAny);
@@ -307,13 +305,6 @@ public class CloudmonitoringTables
 
 		private static final /*@NonNull*/ ExecutorFragment _Temperature__OclAny = new ExecutorFragment(Types._Temperature, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _Temperature__Temperature = new ExecutorFragment(Types._Temperature, CloudmonitoringTables.Types._Temperature);
-
-		private static final /*@NonNull*/ ExecutorFragment _Zabbixcollector__Collector = new ExecutorFragment(Types._Zabbixcollector, MonitoringTables.Types._Collector);
-		private static final /*@NonNull*/ ExecutorFragment _Zabbixcollector__Entity = new ExecutorFragment(Types._Zabbixcollector, OCCITables.Types._Entity);
-		private static final /*@NonNull*/ ExecutorFragment _Zabbixcollector__Link = new ExecutorFragment(Types._Zabbixcollector, OCCITables.Types._Link);
-		private static final /*@NonNull*/ ExecutorFragment _Zabbixcollector__OclAny = new ExecutorFragment(Types._Zabbixcollector, OCLstdlibTables.Types._OclAny);
-		private static final /*@NonNull*/ ExecutorFragment _Zabbixcollector__OclElement = new ExecutorFragment(Types._Zabbixcollector, OCLstdlibTables.Types._OclElement);
-		private static final /*@NonNull*/ ExecutorFragment _Zabbixcollector__Zabbixcollector = new ExecutorFragment(Types._Zabbixcollector, CloudmonitoringTables.Types._Zabbixcollector);
 
 		static {
 			Init.initEnd();
@@ -429,11 +420,9 @@ public class CloudmonitoringTables
 
 		public static final /*@NonNull*/ ExecutorProperty _Sensorcontrol__monitorState = new EcoreExecutorProperty(CloudmonitoringPackage.Literals.SENSORCONTROL__MONITOR_STATE, Types._Sensorcontrol, 0);
 
-		public static final /*@NonNull*/ ExecutorProperty _Sshcollector__label = new EcoreExecutorProperty(CloudmonitoringPackage.Literals.SSHCOLLECTOR__LABEL, Types._Sshcollector, 0);
-
-		public static final /*@NonNull*/ ExecutorProperty _Zabbixcollector__httpApiAddress = new EcoreExecutorProperty(CloudmonitoringPackage.Literals.ZABBIXCOLLECTOR__HTTP_API_ADDRESS, Types._Zabbixcollector, 0);
-		public static final /*@NonNull*/ ExecutorProperty _Zabbixcollector__password = new EcoreExecutorProperty(CloudmonitoringPackage.Literals.ZABBIXCOLLECTOR__PASSWORD, Types._Zabbixcollector, 1);
-		public static final /*@NonNull*/ ExecutorProperty _Zabbixcollector__username = new EcoreExecutorProperty(CloudmonitoringPackage.Literals.ZABBIXCOLLECTOR__USERNAME, Types._Zabbixcollector, 2);
+		public static final /*@NonNull*/ ExecutorProperty _Supervisorapiconnect__httpApiAddress = new EcoreExecutorProperty(CloudmonitoringPackage.Literals.SUPERVISORAPICONNECT__HTTP_API_ADDRESS, Types._Supervisorapiconnect, 0);
+		public static final /*@NonNull*/ ExecutorProperty _Supervisorapiconnect__password = new EcoreExecutorProperty(CloudmonitoringPackage.Literals.SUPERVISORAPICONNECT__PASSWORD, Types._Supervisorapiconnect, 1);
+		public static final /*@NonNull*/ ExecutorProperty _Supervisorapiconnect__username = new EcoreExecutorProperty(CloudmonitoringPackage.Literals.SUPERVISORAPICONNECT__USERNAME, Types._Supervisorapiconnect, 2);
 		static {
 			Init.initEnd();
 		}
@@ -610,16 +599,14 @@ public class CloudmonitoringTables
 		};
 		private static final int /*@NonNull*/ [] __Sensorcontrol = { 1,1,1,1 };
 
-		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Sshcollector =
+		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Supervisorapiconnect =
 		{
-			Fragments._Sshcollector__OclAny /* 0 */,
-			Fragments._Sshcollector__OclElement /* 1 */,
-			Fragments._Sshcollector__Entity /* 2 */,
-			Fragments._Sshcollector__Link /* 3 */,
-			Fragments._Sshcollector__Collector /* 4 */,
-			Fragments._Sshcollector__Sshcollector /* 5 */
+			Fragments._Supervisorapiconnect__OclAny /* 0 */,
+			Fragments._Supervisorapiconnect__OclElement /* 1 */,
+			Fragments._Supervisorapiconnect__MixinBase /* 2 */,
+			Fragments._Supervisorapiconnect__Supervisorapiconnect /* 3 */
 		};
-		private static final int /*@NonNull*/ [] __Sshcollector = { 1,1,1,1,1,1 };
+		private static final int /*@NonNull*/ [] __Supervisorapiconnect = { 1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Systemoutpublisher =
 		{
@@ -638,17 +625,6 @@ public class CloudmonitoringTables
 			Fragments._Temperature__Temperature /* 1 */
 		};
 		private static final int /*@NonNull*/ [] __Temperature = { 1,1 };
-
-		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Zabbixcollector =
-		{
-			Fragments._Zabbixcollector__OclAny /* 0 */,
-			Fragments._Zabbixcollector__OclElement /* 1 */,
-			Fragments._Zabbixcollector__Entity /* 2 */,
-			Fragments._Zabbixcollector__Link /* 3 */,
-			Fragments._Zabbixcollector__Collector /* 4 */,
-			Fragments._Zabbixcollector__Zabbixcollector /* 5 */
-		};
-		private static final int /*@NonNull*/ [] __Zabbixcollector = { 1,1,1,1,1,1 };
 
 		/**
 		 *	Install the fragment descriptors in the class descriptors.
@@ -670,10 +646,9 @@ public class CloudmonitoringTables
 			Types._Publishercontrol.initFragments(_Publishercontrol, __Publishercontrol);
 			Types._Ram.initFragments(_Ram, __Ram);
 			Types._Sensorcontrol.initFragments(_Sensorcontrol, __Sensorcontrol);
-			Types._Sshcollector.initFragments(_Sshcollector, __Sshcollector);
+			Types._Supervisorapiconnect.initFragments(_Supervisorapiconnect, __Supervisorapiconnect);
 			Types._Systemoutpublisher.initFragments(_Systemoutpublisher, __Systemoutpublisher);
 			Types._Temperature.initFragments(_Temperature, __Temperature);
-			Types._Zabbixcollector.initFragments(_Zabbixcollector, __Zabbixcollector);
 
 			Init.initEnd();
 		}
@@ -1166,16 +1141,9 @@ public class CloudmonitoringTables
 			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
 		};
 
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Sshcollector__Sshcollector = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Sshcollector__Collector = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Sshcollector__Entity = {
-			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
-			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
-		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Sshcollector__Link = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Sshcollector__OclAny = {
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Supervisorapiconnect__Supervisorapiconnect = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Supervisorapiconnect__MixinBase = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Supervisorapiconnect__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
 			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
 			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
@@ -1192,7 +1160,7 @@ public class CloudmonitoringTables
 			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
 			OCLstdlibTables.Operations._OclAny__toString /* toString() */
 		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Sshcollector__OclElement = {
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Supervisorapiconnect__OclElement = {
 			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
 			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
 			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
@@ -1253,42 +1221,6 @@ public class CloudmonitoringTables
 			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
 			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
 			OCLstdlibTables.Operations._OclAny__toString /* toString() */
-		};
-
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Zabbixcollector__Zabbixcollector = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Zabbixcollector__Collector = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Zabbixcollector__Entity = {
-			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
-			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
-		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Zabbixcollector__Link = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Zabbixcollector__OclAny = {
-			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
-			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
-			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
-			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
-			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
-			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
-			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
-			OCLstdlibTables.Operations._OclAny__toString /* toString() */
-		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Zabbixcollector__OclElement = {
-			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
-			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
-			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
-			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
-			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
 		};
 
 		/*
@@ -1388,12 +1320,10 @@ public class CloudmonitoringTables
 			Fragments._Sensorcontrol__OclElement.initOperations(_Sensorcontrol__OclElement);
 			Fragments._Sensorcontrol__Sensorcontrol.initOperations(_Sensorcontrol__Sensorcontrol);
 
-			Fragments._Sshcollector__Collector.initOperations(_Sshcollector__Collector);
-			Fragments._Sshcollector__Entity.initOperations(_Sshcollector__Entity);
-			Fragments._Sshcollector__Link.initOperations(_Sshcollector__Link);
-			Fragments._Sshcollector__OclAny.initOperations(_Sshcollector__OclAny);
-			Fragments._Sshcollector__OclElement.initOperations(_Sshcollector__OclElement);
-			Fragments._Sshcollector__Sshcollector.initOperations(_Sshcollector__Sshcollector);
+			Fragments._Supervisorapiconnect__MixinBase.initOperations(_Supervisorapiconnect__MixinBase);
+			Fragments._Supervisorapiconnect__OclAny.initOperations(_Supervisorapiconnect__OclAny);
+			Fragments._Supervisorapiconnect__OclElement.initOperations(_Supervisorapiconnect__OclElement);
+			Fragments._Supervisorapiconnect__Supervisorapiconnect.initOperations(_Supervisorapiconnect__Supervisorapiconnect);
 
 			Fragments._Systemoutpublisher__MixinBase.initOperations(_Systemoutpublisher__MixinBase);
 			Fragments._Systemoutpublisher__OclAny.initOperations(_Systemoutpublisher__OclAny);
@@ -1404,13 +1334,6 @@ public class CloudmonitoringTables
 
 			Fragments._Temperature__OclAny.initOperations(_Temperature__OclAny);
 			Fragments._Temperature__Temperature.initOperations(_Temperature__Temperature);
-
-			Fragments._Zabbixcollector__Collector.initOperations(_Zabbixcollector__Collector);
-			Fragments._Zabbixcollector__Entity.initOperations(_Zabbixcollector__Entity);
-			Fragments._Zabbixcollector__Link.initOperations(_Zabbixcollector__Link);
-			Fragments._Zabbixcollector__OclAny.initOperations(_Zabbixcollector__OclAny);
-			Fragments._Zabbixcollector__OclElement.initOperations(_Zabbixcollector__OclElement);
-			Fragments._Zabbixcollector__Zabbixcollector.initOperations(_Zabbixcollector__Zabbixcollector);
 
 			Init.initEnd();
 		}
@@ -1512,8 +1435,10 @@ public class CloudmonitoringTables
 			CloudmonitoringTables.Properties._Sensorcontrol__monitorState
 		};
 
-		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Sshcollector = {
-			CloudmonitoringTables.Properties._Sshcollector__label
+		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Supervisorapiconnect = {
+			CloudmonitoringTables.Properties._Supervisorapiconnect__httpApiAddress,
+			CloudmonitoringTables.Properties._Supervisorapiconnect__password,
+			CloudmonitoringTables.Properties._Supervisorapiconnect__username
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Systemoutpublisher = {
@@ -1521,12 +1446,6 @@ public class CloudmonitoringTables
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Temperature = {};
-
-		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Zabbixcollector = {
-			CloudmonitoringTables.Properties._Zabbixcollector__httpApiAddress,
-			CloudmonitoringTables.Properties._Zabbixcollector__password,
-			CloudmonitoringTables.Properties._Zabbixcollector__username
-		};
 
 		/**
 		 *	Install the property descriptors in the fragment descriptors.
@@ -1548,10 +1467,9 @@ public class CloudmonitoringTables
 			Fragments._Publishercontrol__Publishercontrol.initProperties(_Publishercontrol);
 			Fragments._Ram__Ram.initProperties(_Ram);
 			Fragments._Sensorcontrol__Sensorcontrol.initProperties(_Sensorcontrol);
-			Fragments._Sshcollector__Sshcollector.initProperties(_Sshcollector);
+			Fragments._Supervisorapiconnect__Supervisorapiconnect.initProperties(_Supervisorapiconnect);
 			Fragments._Systemoutpublisher__Systemoutpublisher.initProperties(_Systemoutpublisher);
 			Fragments._Temperature__Temperature.initProperties(_Temperature);
-			Fragments._Zabbixcollector__Zabbixcollector.initProperties(_Zabbixcollector);
 
 			Init.initEnd();
 		}

@@ -33,6 +33,8 @@ import org.eclipse.cmf.occi.infrastructure.Compute;
  *   <li>{@link org.eclipse.cmf.occi.multicloud.vmware.Instancevmware#getGuestosid <em>Guestosid</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.vmware.Instancevmware#getVcpu <em>Vcpu</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.vmware.Instancevmware#getInstanceId <em>Instance Id</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.vmware.Instancevmware#getGuestIpv4Address <em>Guest Ipv4 Address</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.vmware.Instancevmware#getGuestIpv6Address <em>Guest Ipv6 Address</em>}</li>
  * </ul>
  *
  * @see org.eclipse.cmf.occi.multicloud.vmware.VmwarePackage#getInstancevmware()
@@ -195,5 +197,57 @@ public interface Instancevmware extends Compute {
 	 * @generated
 	 */
 	void setInstanceId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Guest Ipv4 Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Ipv4 address from guest tools.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Guest Ipv4 Address</em>' attribute.
+	 * @see #setGuestIpv4Address(String)
+	 * @see org.eclipse.cmf.occi.multicloud.vmware.VmwarePackage#getInstancevmware_GuestIpv4Address()
+	 * @model dataType="org.eclipse.cmf.occi.core.String"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/vmware/ecore!Instancevmware!guestIpv4Address'"
+	 * @generated
+	 */
+	String getGuestIpv4Address();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.vmware.Instancevmware#getGuestIpv4Address <em>Guest Ipv4 Address</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Guest Ipv4 Address</em>' attribute.
+	 * @see #getGuestIpv4Address()
+	 * @generated
+	 */
+	void setGuestIpv4Address(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Guest Ipv6 Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Guest Ipv6 Address</em>' attribute.
+	 * @see #setGuestIpv6Address(String)
+	 * @see org.eclipse.cmf.occi.multicloud.vmware.VmwarePackage#getInstancevmware_GuestIpv6Address()
+	 * @model dataType="org.eclipse.cmf.occi.core.String"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/vmware/ecore!Instancevmware!guestIpv6Address'"
+	 * @generated
+	 */
+	String getGuestIpv6Address();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.vmware.Instancevmware#getGuestIpv6Address <em>Guest Ipv6 Address</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Guest Ipv6 Address</em>' attribute.
+	 * @see #getGuestIpv6Address()
+	 * @generated
+	 */
+	void setGuestIpv6Address(String value);
 
 } // Instancevmware

@@ -32,24 +32,6 @@ public interface CloudmonitoringFactory extends EFactory {
 	CloudmonitoringFactory eINSTANCE = cloudmonitoring.impl.CloudmonitoringFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Sshcollector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Sshcollector</em>'.
-	 * @generated
-	 */
-	Sshcollector createSshcollector();
-
-	/**
-	 * Returns a new object of class '<em>Zabbixcollector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Zabbixcollector</em>'.
-	 * @generated
-	 */
-	Zabbixcollector createZabbixcollector();
-
-	/**
 	 * Returns a new object of class '<em>Cpu</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -156,6 +138,15 @@ public interface CloudmonitoringFactory extends EFactory {
 	 * @generated
 	 */
 	Mainmetric createMainmetric();
+
+	/**
+	 * Returns a new object of class '<em>Supervisorapiconnect</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Supervisorapiconnect</em>'.
+	 * @generated
+	 */
+	Supervisorapiconnect createSupervisorapiconnect();
 
 	/**
 	 * Returns the package supported by this factory.

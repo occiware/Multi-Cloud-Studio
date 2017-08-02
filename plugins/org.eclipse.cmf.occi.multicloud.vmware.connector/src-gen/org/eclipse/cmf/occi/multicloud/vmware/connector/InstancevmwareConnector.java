@@ -101,6 +101,8 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 	public static final String ATTR_PASSWORD = "password";
 	public static final String ATTR_USER_DATA_FILE = "occi.compute.userdata.file";
 	public static final String ATTR_VCPU_NUMBER = "vcpu";
+	public static final String ATTR_GUEST_IPV4_ADDRESS = "guestIpv4Address";
+	public static final String ATTR_GUEST_IPV6_ADDRESS = "guestIpv6Address";
 	
 	/**
 	 * Path on inventory object. Format: /inria/tests/ (with slash on last character or without).
@@ -1168,14 +1170,23 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			this.setGuestosid(guestOsId);
 		}
 		
+		if (ipv4Address == null) {
+			ipv4Address = "";
+		}
+		if (!ipv4Address.equals(this.getGuestIpv4Address())) {
+			this.setGuestIpv4Address(ipv4Address);
+		}
+		if (ipv6Address == null) {
+			ipv6Address = "";
+		}
+		if (!ipv6Address.equals(this.getGuestIpv6Address())) {
+			this.setGuestIpv4Address(ipv6Address);
+		}
 		
 		if (messageProgress != null) {
 			setOcciComputeStateMessage(messageProgress);
 		}
-		
-		
-		
-		
+
 	}
 	
 	

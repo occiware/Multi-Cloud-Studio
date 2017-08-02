@@ -27,9 +27,8 @@ import cloudmonitoring.Networkio;
 import cloudmonitoring.Publishercontrol;
 import cloudmonitoring.Ram;
 import cloudmonitoring.Sensorcontrol;
-import cloudmonitoring.Sshcollector;
+import cloudmonitoring.Supervisorapiconnect;
 import cloudmonitoring.Systemoutpublisher;
-import cloudmonitoring.Zabbixcollector;
 
 import cloudmonitoring.util.CloudmonitoringValidator;
 
@@ -55,20 +54,6 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * @generated
  */
 public class CloudmonitoringPackageImpl extends EPackageImpl implements CloudmonitoringPackage {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass sshcollectorEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass zabbixcollectorEClass = null;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -152,6 +137,13 @@ public class CloudmonitoringPackageImpl extends EPackageImpl implements Cloudmon
 	 * @generated
 	 */
 	private EClass mainmetricEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass supervisorapiconnectEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -267,60 +259,6 @@ public class CloudmonitoringPackageImpl extends EPackageImpl implements Cloudmon
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(CloudmonitoringPackage.eNS_URI, theCloudmonitoringPackage);
 		return theCloudmonitoringPackage;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getSshcollector() {
-		return sshcollectorEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getSshcollector_Label() {
-		return (EAttribute)sshcollectorEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getZabbixcollector() {
-		return zabbixcollectorEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getZabbixcollector_Username() {
-		return (EAttribute)zabbixcollectorEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getZabbixcollector_Password() {
-		return (EAttribute)zabbixcollectorEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getZabbixcollector_HttpApiAddress() {
-		return (EAttribute)zabbixcollectorEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -787,6 +725,51 @@ public class CloudmonitoringPackageImpl extends EPackageImpl implements Cloudmon
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getSupervisorapiconnect() {
+		return supervisorapiconnectEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSupervisorapiconnect_Username() {
+		return (EAttribute)supervisorapiconnectEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSupervisorapiconnect_Password() {
+		return (EAttribute)supervisorapiconnectEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSupervisorapiconnect_HttpApiAddress() {
+		return (EAttribute)supervisorapiconnectEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getSupervisorapiconnect__AppliesConstraint__DiagnosticChain_Map() {
+		return supervisorapiconnectEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getIOUnit() {
 		return ioUnitEEnum;
 	}
@@ -864,14 +847,6 @@ public class CloudmonitoringPackageImpl extends EPackageImpl implements Cloudmon
 		isCreated = true;
 
 		// Create classes and their features
-		sshcollectorEClass = createEClass(SSHCOLLECTOR);
-		createEAttribute(sshcollectorEClass, SSHCOLLECTOR__LABEL);
-
-		zabbixcollectorEClass = createEClass(ZABBIXCOLLECTOR);
-		createEAttribute(zabbixcollectorEClass, ZABBIXCOLLECTOR__USERNAME);
-		createEAttribute(zabbixcollectorEClass, ZABBIXCOLLECTOR__PASSWORD);
-		createEAttribute(zabbixcollectorEClass, ZABBIXCOLLECTOR__HTTP_API_ADDRESS);
-
 		cpuEClass = createEClass(CPU);
 		createEAttribute(cpuEClass, CPU__LOAD_AVG);
 		createEOperation(cpuEClass, CPU___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
@@ -935,6 +910,12 @@ public class CloudmonitoringPackageImpl extends EPackageImpl implements Cloudmon
 		createEAttribute(mainmetricEClass, MAINMETRIC__THRESHOLD_TEMPERATURE);
 		createEOperation(mainmetricEClass, MAINMETRIC___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
+		supervisorapiconnectEClass = createEClass(SUPERVISORAPICONNECT);
+		createEAttribute(supervisorapiconnectEClass, SUPERVISORAPICONNECT__USERNAME);
+		createEAttribute(supervisorapiconnectEClass, SUPERVISORAPICONNECT__PASSWORD);
+		createEAttribute(supervisorapiconnectEClass, SUPERVISORAPICONNECT__HTTP_API_ADDRESS);
+		createEOperation(supervisorapiconnectEClass, SUPERVISORAPICONNECT___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
+
 		// Create enums
 		ioUnitEEnum = createEEnum(IO_UNIT);
 		monitorStateEEnum = createEEnum(MONITOR_STATE);
@@ -970,16 +951,14 @@ public class CloudmonitoringPackageImpl extends EPackageImpl implements Cloudmon
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		MonitoringPackage theMonitoringPackage = (MonitoringPackage)EPackage.Registry.INSTANCE.getEPackage(MonitoringPackage.eNS_URI);
 		OCCIPackage theOCCIPackage = (OCCIPackage)EPackage.Registry.INSTANCE.getEPackage(OCCIPackage.eNS_URI);
+		MonitoringPackage theMonitoringPackage = (MonitoringPackage)EPackage.Registry.INSTANCE.getEPackage(MonitoringPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		sshcollectorEClass.getESuperTypes().add(theMonitoringPackage.getCollector());
-		zabbixcollectorEClass.getESuperTypes().add(theMonitoringPackage.getCollector());
 		cpuEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		cpuEClass.getESuperTypes().add(this.getMainmetric());
 		diskioEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
@@ -1003,16 +982,9 @@ public class CloudmonitoringPackageImpl extends EPackageImpl implements Cloudmon
 		mailpublisherEClass.getESuperTypes().add(this.getPublishercontrol());
 		mainmetricEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		mainmetricEClass.getESuperTypes().add(theMonitoringPackage.getMetric());
+		supervisorapiconnectEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(sshcollectorEClass, Sshcollector.class, "Sshcollector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSshcollector_Label(), theOCCIPackage.getString(), "label", null, 0, 1, Sshcollector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(zabbixcollectorEClass, Zabbixcollector.class, "Zabbixcollector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getZabbixcollector_Username(), theOCCIPackage.getString(), "username", null, 0, 1, Zabbixcollector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getZabbixcollector_Password(), theOCCIPackage.getString(), "password", null, 0, 1, Zabbixcollector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getZabbixcollector_HttpApiAddress(), theOCCIPackage.getString(), "httpApiAddress", null, 0, 1, Zabbixcollector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(cpuEClass, Cpu.class, "Cpu", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCpu_LoadAvg(), this.getAverage(), "loadAvg", null, 0, 1, Cpu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1176,6 +1148,20 @@ public class CloudmonitoringPackageImpl extends EPackageImpl implements Cloudmon
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		initEClass(supervisorapiconnectEClass, Supervisorapiconnect.class, "Supervisorapiconnect", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSupervisorapiconnect_Username(), theOCCIPackage.getString(), "username", null, 0, 1, Supervisorapiconnect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSupervisorapiconnect_Password(), theOCCIPackage.getString(), "password", null, 0, 1, Supervisorapiconnect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSupervisorapiconnect_HttpApiAddress(), theOCCIPackage.getString(), "httpApiAddress", null, 0, 1, Supervisorapiconnect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		op = initEOperation(getSupervisorapiconnect__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(ioUnitEEnum, IOUnit.class, "IOUnit");
 		addEEnumLiteral(ioUnitEEnum, IOUnit.BYTE_PER_SEC);
@@ -1284,6 +1270,12 @@ public class CloudmonitoringPackageImpl extends EPackageImpl implements Cloudmon
 		   });	
 		addAnnotation
 		  (mainmetricEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (supervisorapiconnectEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "appliesConstraint"

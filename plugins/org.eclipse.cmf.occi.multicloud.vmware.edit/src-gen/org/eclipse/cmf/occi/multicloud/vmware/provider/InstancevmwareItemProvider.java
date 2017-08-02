@@ -70,6 +70,8 @@ public class InstancevmwareItemProvider extends ComputeItemProvider {
 			addGuestosidPropertyDescriptor(object);
 			addVcpuPropertyDescriptor(object);
 			addInstanceIdPropertyDescriptor(object);
+			addGuestIpv4AddressPropertyDescriptor(object);
+			addGuestIpv6AddressPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -207,6 +209,50 @@ public class InstancevmwareItemProvider extends ComputeItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Guest Ipv4 Address feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addGuestIpv4AddressPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Instancevmware_guestIpv4Address_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Instancevmware_guestIpv4Address_feature", "_UI_Instancevmware_type"),
+				 VmwarePackage.Literals.INSTANCEVMWARE__GUEST_IPV4_ADDRESS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Guest Ipv6 Address feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addGuestIpv6AddressPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Instancevmware_guestIpv6Address_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Instancevmware_guestIpv6Address_feature", "_UI_Instancevmware_type"),
+				 VmwarePackage.Literals.INSTANCEVMWARE__GUEST_IPV6_ADDRESS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Instancevmware.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -250,6 +296,8 @@ public class InstancevmwareItemProvider extends ComputeItemProvider {
 			case VmwarePackage.INSTANCEVMWARE__GUESTOSID:
 			case VmwarePackage.INSTANCEVMWARE__VCPU:
 			case VmwarePackage.INSTANCEVMWARE__INSTANCE_ID:
+			case VmwarePackage.INSTANCEVMWARE__GUEST_IPV4_ADDRESS:
+			case VmwarePackage.INSTANCEVMWARE__GUEST_IPV6_ADDRESS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

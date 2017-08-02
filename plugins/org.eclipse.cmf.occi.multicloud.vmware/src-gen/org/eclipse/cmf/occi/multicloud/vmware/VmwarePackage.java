@@ -298,13 +298,31 @@ public interface VmwarePackage extends EPackage {
 	int INSTANCEVMWARE__INSTANCE_ID = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Guest Ipv4 Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTANCEVMWARE__GUEST_IPV4_ADDRESS = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Guest Ipv6 Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTANCEVMWARE__GUEST_IPV6_ADDRESS = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 7;
+
+	/**
 	 * The number of structural features of the '<em>Instancevmware</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INSTANCEVMWARE_FEATURE_COUNT = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 6;
+	int INSTANCEVMWARE_FEATURE_COUNT = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 8;
 
 	/**
 	 * The operation id for the '<em>Occi Create</em>' operation.
@@ -1817,6 +1835,28 @@ public interface VmwarePackage extends EPackage {
 	EAttribute getInstancevmware_InstanceId();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.vmware.Instancevmware#getGuestIpv4Address <em>Guest Ipv4 Address</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Guest Ipv4 Address</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.vmware.Instancevmware#getGuestIpv4Address()
+	 * @see #getInstancevmware()
+	 * @generated
+	 */
+	EAttribute getInstancevmware_GuestIpv4Address();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.vmware.Instancevmware#getGuestIpv6Address <em>Guest Ipv6 Address</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Guest Ipv6 Address</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.vmware.Instancevmware#getGuestIpv6Address()
+	 * @see #getInstancevmware()
+	 * @generated
+	 */
+	EAttribute getInstancevmware_GuestIpv6Address();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.vmware.Storagevmware <em>Storagevmware</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2207,6 +2247,22 @@ public interface VmwarePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute INSTANCEVMWARE__INSTANCE_ID = eINSTANCE.getInstancevmware_InstanceId();
+
+		/**
+		 * The meta object literal for the '<em><b>Guest Ipv4 Address</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INSTANCEVMWARE__GUEST_IPV4_ADDRESS = eINSTANCE.getInstancevmware_GuestIpv4Address();
+
+		/**
+		 * The meta object literal for the '<em><b>Guest Ipv6 Address</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INSTANCEVMWARE__GUEST_IPV6_ADDRESS = eINSTANCE.getInstancevmware_GuestIpv6Address();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.vmware.impl.StoragevmwareImpl <em>Storagevmware</em>}' class.

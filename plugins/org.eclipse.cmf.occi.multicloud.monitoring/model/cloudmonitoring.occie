@@ -2,24 +2,6 @@
 <occi:Extension xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:occi="http://schemas.ogf.org/occi/core/ecore" name="cloudmonitoring" scheme="http://occiware.org/occi/multicloud/monitoring#">
   <import href="http://schemas.ogf.org/occi/core#/"/>
   <import href="http://schemas.ogf.org/occi/monitoring#/"/>
-  <kinds name="SshCollector" scheme="http://occiware.org/occi/multicloud/monitoring#" title="Collector data metrics with an ssh script">
-    <attributes name="label" mutable="true">
-      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
-    </attributes>
-    <parent href="http://schemas.ogf.org/occi/monitoring#//@kinds[term='collector']"/>
-  </kinds>
-  <kinds name="ZabbixCollector" scheme="http://occiware.org/occi/multicloud/monitoring#" title="Collector from zabbix monitoring software using zabbix api">
-    <attributes name="username" mutable="true">
-      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
-    </attributes>
-    <attributes name="password" mutable="true">
-      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
-    </attributes>
-    <attributes name="httpApiAddress" mutable="true" description="Http api address like : http://ipaddress/zabbix/api_jsonrpc.php">
-      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
-    </attributes>
-    <parent href="http://schemas.ogf.org/occi/monitoring#//@kinds[term='collector']"/>
-  </kinds>
   <mixins name="cpu" scheme="http://occiware.org/occi/multicloud/monitoring#" depends="//@mixins[term='mainmetric']">
     <attributes name="loadAvg" mutable="true" type="//@types.2"/>
     <applies href="http://schemas.ogf.org/occi/monitoring#//@kinds[term='collector']"/>
@@ -98,6 +80,18 @@
     <attributes name="temperature" mutable="true" type="//@types.5"/>
     <attributes name="thresholdTemperature" mutable="true" default="80.0" description="Threshold for temperature in degree celcius" type="//@types.5"/>
     <depends href="http://schemas.ogf.org/occi/monitoring#//@mixins[term='metric']"/>
+    <applies href="http://schemas.ogf.org/occi/monitoring#//@kinds[term='collector']"/>
+  </mixins>
+  <mixins name="SupervisorApiConnect" scheme="http://occiware.org/occi/multicloud/monitoring#">
+    <attributes name="username" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="password" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="httpApiAddress" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
     <applies href="http://schemas.ogf.org/occi/monitoring#//@kinds[term='collector']"/>
   </mixins>
   <types xsi:type="occi:EnumerationType" name="IOUnit" documentation="Units for IO metrics (network / storage)">

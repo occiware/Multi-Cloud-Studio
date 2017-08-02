@@ -422,6 +422,12 @@
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Instancevmware/instanceId"/>
       </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Instancevmware/guestIpv4Address"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Instancevmware/guestIpv6Address"/>
+      </genFeatures>
     </genClasses>
     <genClasses>
       <ecoreClass href="vmware.ecore#//Storagevmware"/>

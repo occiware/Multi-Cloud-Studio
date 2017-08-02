@@ -14,11 +14,8 @@ package cloudmonitoring.util;
 
 import cloudmonitoring.*;
 
-import org.eclipse.cmf.occi.core.Entity;
-import org.eclipse.cmf.occi.core.Link;
 import org.eclipse.cmf.occi.core.MixinBase;
 
-import org.eclipse.cmf.occi.monitoring.Collector;
 import org.eclipse.cmf.occi.monitoring.Metric;
 import org.eclipse.cmf.occi.monitoring.Publisher;
 
@@ -86,14 +83,6 @@ public class CloudmonitoringAdapterFactory extends AdapterFactoryImpl {
 	protected CloudmonitoringSwitch<Adapter> modelSwitch =
 		new CloudmonitoringSwitch<Adapter>() {
 			@Override
-			public Adapter caseSshcollector(Sshcollector object) {
-				return createSshcollectorAdapter();
-			}
-			@Override
-			public Adapter caseZabbixcollector(Zabbixcollector object) {
-				return createZabbixcollectorAdapter();
-			}
-			@Override
 			public Adapter caseCpu(Cpu object) {
 				return createCpuAdapter();
 			}
@@ -142,16 +131,8 @@ public class CloudmonitoringAdapterFactory extends AdapterFactoryImpl {
 				return createMainmetricAdapter();
 			}
 			@Override
-			public Adapter caseEntity(Entity object) {
-				return createEntityAdapter();
-			}
-			@Override
-			public Adapter caseLink(Link object) {
-				return createLinkAdapter();
-			}
-			@Override
-			public Adapter caseCollector(Collector object) {
-				return createCollectorAdapter();
+			public Adapter caseSupervisorapiconnect(Supervisorapiconnect object) {
+				return createSupervisorapiconnectAdapter();
 			}
 			@Override
 			public Adapter caseMixinBase(MixinBase object) {
@@ -184,34 +165,6 @@ public class CloudmonitoringAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
-
-	/**
-	 * Creates a new adapter for an object of class '{@link cloudmonitoring.Sshcollector <em>Sshcollector</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see cloudmonitoring.Sshcollector
-	 * @generated
-	 */
-	public Adapter createSshcollectorAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link cloudmonitoring.Zabbixcollector <em>Zabbixcollector</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see cloudmonitoring.Zabbixcollector
-	 * @generated
-	 */
-	public Adapter createZabbixcollectorAdapter() {
-		return null;
-	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link cloudmonitoring.Cpu <em>Cpu</em>}'.
@@ -382,44 +335,16 @@ public class CloudmonitoringAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.Entity <em>Entity</em>}'.
+	 * Creates a new adapter for an object of class '{@link cloudmonitoring.Supervisorapiconnect <em>Supervisorapiconnect</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.core.Entity
+	 * @see cloudmonitoring.Supervisorapiconnect
 	 * @generated
 	 */
-	public Adapter createEntityAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.Link <em>Link</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.core.Link
-	 * @generated
-	 */
-	public Adapter createLinkAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.monitoring.Collector <em>Collector</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.monitoring.Collector
-	 * @generated
-	 */
-	public Adapter createCollectorAdapter() {
+	public Adapter createSupervisorapiconnectAdapter() {
 		return null;
 	}
 

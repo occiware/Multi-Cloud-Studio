@@ -16,8 +16,6 @@ import cloudmonitoring.*;
 
 import java.util.Map;
 
-import org.eclipse.cmf.occi.core.util.OCCIValidator;
-
 import org.eclipse.cmf.occi.monitoring.util.MonitoringValidator;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
@@ -150,12 +148,20 @@ public class CloudmonitoringValidator extends EObjectValidator {
 	public static final int MAINMETRIC__APPLIES_CONSTRAINT = 12;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Supervisorapiconnect'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int SUPERVISORAPICONNECT__APPLIES_CONSTRAINT = 13;
+
+	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 12;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 13;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -164,14 +170,6 @@ public class CloudmonitoringValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final int DIAGNOSTIC_CODE_COUNT = GENERATED_DIAGNOSTIC_CODE_COUNT;
-
-	/**
-	 * The cached base package validator.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected OCCIValidator occiValidator;
 
 	/**
 	 * The cached base package validator.
@@ -189,7 +187,6 @@ public class CloudmonitoringValidator extends EObjectValidator {
 	 */
 	public CloudmonitoringValidator() {
 		super();
-		occiValidator = OCCIValidator.INSTANCE;
 		monitoringValidator = MonitoringValidator.INSTANCE;
 	}
 
@@ -213,10 +210,6 @@ public class CloudmonitoringValidator extends EObjectValidator {
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		switch (classifierID) {
-			case CloudmonitoringPackage.SSHCOLLECTOR:
-				return validateSshcollector((Sshcollector)value, diagnostics, context);
-			case CloudmonitoringPackage.ZABBIXCOLLECTOR:
-				return validateZabbixcollector((Zabbixcollector)value, diagnostics, context);
 			case CloudmonitoringPackage.CPU:
 				return validateCpu((Cpu)value, diagnostics, context);
 			case CloudmonitoringPackage.DISKIO:
@@ -241,6 +234,8 @@ public class CloudmonitoringValidator extends EObjectValidator {
 				return validateMailpublisher((Mailpublisher)value, diagnostics, context);
 			case CloudmonitoringPackage.MAINMETRIC:
 				return validateMainmetric((Mainmetric)value, diagnostics, context);
+			case CloudmonitoringPackage.SUPERVISORAPICONNECT:
+				return validateSupervisorapiconnect((Supervisorapiconnect)value, diagnostics, context);
 			case CloudmonitoringPackage.IO_UNIT:
 				return validateIOUnit((IOUnit)value, diagnostics, context);
 			case CloudmonitoringPackage.MONITOR_STATE:
@@ -256,54 +251,6 @@ public class CloudmonitoringValidator extends EObjectValidator {
 			default:
 				return true;
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateSshcollector(Sshcollector sshcollector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(sshcollector, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(sshcollector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(sshcollector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(sshcollector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(sshcollector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(sshcollector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(sshcollector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(sshcollector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(sshcollector, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(sshcollector, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(sshcollector, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(sshcollector, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateLink_LinkKindIsInParent(sshcollector, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateLink_sourceReferenceInvariant(sshcollector, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateLink_targetReferenceInvariant(sshcollector, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateZabbixcollector(Zabbixcollector zabbixcollector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(zabbixcollector, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(zabbixcollector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(zabbixcollector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(zabbixcollector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(zabbixcollector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(zabbixcollector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(zabbixcollector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(zabbixcollector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(zabbixcollector, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(zabbixcollector, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(zabbixcollector, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(zabbixcollector, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateLink_LinkKindIsInParent(zabbixcollector, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateLink_sourceReferenceInvariant(zabbixcollector, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateLink_targetReferenceInvariant(zabbixcollector, diagnostics, context);
-		return result;
 	}
 
 	/**
@@ -652,6 +599,35 @@ public class CloudmonitoringValidator extends EObjectValidator {
 	 */
 	public boolean validateMainmetric_appliesConstraint(Mainmetric mainmetric, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return mainmetric.appliesConstraint(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSupervisorapiconnect(Supervisorapiconnect supervisorapiconnect, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(supervisorapiconnect, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(supervisorapiconnect, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(supervisorapiconnect, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(supervisorapiconnect, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(supervisorapiconnect, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(supervisorapiconnect, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(supervisorapiconnect, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(supervisorapiconnect, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(supervisorapiconnect, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSupervisorapiconnect_appliesConstraint(supervisorapiconnect, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>Supervisorapiconnect</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSupervisorapiconnect_appliesConstraint(Supervisorapiconnect supervisorapiconnect, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return supervisorapiconnect.appliesConstraint(diagnostics, context);
 	}
 
 	/**

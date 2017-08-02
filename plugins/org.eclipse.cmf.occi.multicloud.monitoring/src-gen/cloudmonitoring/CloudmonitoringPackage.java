@@ -14,8 +14,6 @@ package cloudmonitoring;
 
 import org.eclipse.cmf.occi.core.OCCIPackage;
 
-import org.eclipse.cmf.occi.monitoring.MonitoringPackage;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -73,386 +71,6 @@ public interface CloudmonitoringPackage extends EPackage {
 	CloudmonitoringPackage eINSTANCE = cloudmonitoring.impl.CloudmonitoringPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link cloudmonitoring.impl.SshcollectorImpl <em>Sshcollector</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see cloudmonitoring.impl.SshcollectorImpl
-	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getSshcollector()
-	 * @generated
-	 */
-	int SSHCOLLECTOR = 0;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SSHCOLLECTOR__ID = MonitoringPackage.COLLECTOR__ID;
-
-	/**
-	 * The feature id for the '<em><b>Title</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SSHCOLLECTOR__TITLE = MonitoringPackage.COLLECTOR__TITLE;
-
-	/**
-	 * The feature id for the '<em><b>Kind</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SSHCOLLECTOR__KIND = MonitoringPackage.COLLECTOR__KIND;
-
-	/**
-	 * The feature id for the '<em><b>Location</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SSHCOLLECTOR__LOCATION = MonitoringPackage.COLLECTOR__LOCATION;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SSHCOLLECTOR__ATTRIBUTES = MonitoringPackage.COLLECTOR__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Mixins</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SSHCOLLECTOR__MIXINS = MonitoringPackage.COLLECTOR__MIXINS;
-
-	/**
-	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SSHCOLLECTOR__PARTS = MonitoringPackage.COLLECTOR__PARTS;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SSHCOLLECTOR__SOURCE = MonitoringPackage.COLLECTOR__SOURCE;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SSHCOLLECTOR__TARGET = MonitoringPackage.COLLECTOR__TARGET;
-
-	/**
-	 * The feature id for the '<em><b>Occi Collector Period</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SSHCOLLECTOR__OCCI_COLLECTOR_PERIOD = MonitoringPackage.COLLECTOR__OCCI_COLLECTOR_PERIOD;
-
-	/**
-	 * The feature id for the '<em><b>Occi Sensor Accuracy</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SSHCOLLECTOR__OCCI_SENSOR_ACCURACY = MonitoringPackage.COLLECTOR__OCCI_SENSOR_ACCURACY;
-
-	/**
-	 * The feature id for the '<em><b>Occi Sensor Granularity</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SSHCOLLECTOR__OCCI_SENSOR_GRANULARITY = MonitoringPackage.COLLECTOR__OCCI_SENSOR_GRANULARITY;
-
-	/**
-	 * The feature id for the '<em><b>Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SSHCOLLECTOR__LABEL = MonitoringPackage.COLLECTOR_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Sshcollector</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SSHCOLLECTOR_FEATURE_COUNT = MonitoringPackage.COLLECTOR_FEATURE_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Occi Create</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SSHCOLLECTOR___OCCI_CREATE = MonitoringPackage.COLLECTOR___OCCI_CREATE;
-
-	/**
-	 * The operation id for the '<em>Occi Retrieve</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SSHCOLLECTOR___OCCI_RETRIEVE = MonitoringPackage.COLLECTOR___OCCI_RETRIEVE;
-
-	/**
-	 * The operation id for the '<em>Occi Update</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SSHCOLLECTOR___OCCI_UPDATE = MonitoringPackage.COLLECTOR___OCCI_UPDATE;
-
-	/**
-	 * The operation id for the '<em>Occi Delete</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SSHCOLLECTOR___OCCI_DELETE = MonitoringPackage.COLLECTOR___OCCI_DELETE;
-
-	/**
-	 * The number of operations of the '<em>Sshcollector</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SSHCOLLECTOR_OPERATION_COUNT = MonitoringPackage.COLLECTOR_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link cloudmonitoring.impl.ZabbixcollectorImpl <em>Zabbixcollector</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see cloudmonitoring.impl.ZabbixcollectorImpl
-	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getZabbixcollector()
-	 * @generated
-	 */
-	int ZABBIXCOLLECTOR = 1;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ZABBIXCOLLECTOR__ID = MonitoringPackage.COLLECTOR__ID;
-
-	/**
-	 * The feature id for the '<em><b>Title</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ZABBIXCOLLECTOR__TITLE = MonitoringPackage.COLLECTOR__TITLE;
-
-	/**
-	 * The feature id for the '<em><b>Kind</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ZABBIXCOLLECTOR__KIND = MonitoringPackage.COLLECTOR__KIND;
-
-	/**
-	 * The feature id for the '<em><b>Location</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ZABBIXCOLLECTOR__LOCATION = MonitoringPackage.COLLECTOR__LOCATION;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ZABBIXCOLLECTOR__ATTRIBUTES = MonitoringPackage.COLLECTOR__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Mixins</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ZABBIXCOLLECTOR__MIXINS = MonitoringPackage.COLLECTOR__MIXINS;
-
-	/**
-	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ZABBIXCOLLECTOR__PARTS = MonitoringPackage.COLLECTOR__PARTS;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ZABBIXCOLLECTOR__SOURCE = MonitoringPackage.COLLECTOR__SOURCE;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ZABBIXCOLLECTOR__TARGET = MonitoringPackage.COLLECTOR__TARGET;
-
-	/**
-	 * The feature id for the '<em><b>Occi Collector Period</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ZABBIXCOLLECTOR__OCCI_COLLECTOR_PERIOD = MonitoringPackage.COLLECTOR__OCCI_COLLECTOR_PERIOD;
-
-	/**
-	 * The feature id for the '<em><b>Occi Sensor Accuracy</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ZABBIXCOLLECTOR__OCCI_SENSOR_ACCURACY = MonitoringPackage.COLLECTOR__OCCI_SENSOR_ACCURACY;
-
-	/**
-	 * The feature id for the '<em><b>Occi Sensor Granularity</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ZABBIXCOLLECTOR__OCCI_SENSOR_GRANULARITY = MonitoringPackage.COLLECTOR__OCCI_SENSOR_GRANULARITY;
-
-	/**
-	 * The feature id for the '<em><b>Username</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ZABBIXCOLLECTOR__USERNAME = MonitoringPackage.COLLECTOR_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Password</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ZABBIXCOLLECTOR__PASSWORD = MonitoringPackage.COLLECTOR_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Http Api Address</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ZABBIXCOLLECTOR__HTTP_API_ADDRESS = MonitoringPackage.COLLECTOR_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Zabbixcollector</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ZABBIXCOLLECTOR_FEATURE_COUNT = MonitoringPackage.COLLECTOR_FEATURE_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Occi Create</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ZABBIXCOLLECTOR___OCCI_CREATE = MonitoringPackage.COLLECTOR___OCCI_CREATE;
-
-	/**
-	 * The operation id for the '<em>Occi Retrieve</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ZABBIXCOLLECTOR___OCCI_RETRIEVE = MonitoringPackage.COLLECTOR___OCCI_RETRIEVE;
-
-	/**
-	 * The operation id for the '<em>Occi Update</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ZABBIXCOLLECTOR___OCCI_UPDATE = MonitoringPackage.COLLECTOR___OCCI_UPDATE;
-
-	/**
-	 * The operation id for the '<em>Occi Delete</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ZABBIXCOLLECTOR___OCCI_DELETE = MonitoringPackage.COLLECTOR___OCCI_DELETE;
-
-	/**
-	 * The number of operations of the '<em>Zabbixcollector</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ZABBIXCOLLECTOR_OPERATION_COUNT = MonitoringPackage.COLLECTOR_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link cloudmonitoring.impl.CpuImpl <em>Cpu</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -460,7 +78,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getCpu()
 	 * @generated
 	 */
-	int CPU = 2;
+	int CPU = 0;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -569,7 +187,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getDiskio()
 	 * @generated
 	 */
-	int DISKIO = 3;
+	int DISKIO = 1;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -660,7 +278,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getRam()
 	 * @generated
 	 */
-	int RAM = 4;
+	int RAM = 2;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -778,7 +396,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getNetworkio()
 	 * @generated
 	 */
-	int NETWORKIO = 5;
+	int NETWORKIO = 3;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -869,7 +487,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getInputoutput()
 	 * @generated
 	 */
-	int INPUTOUTPUT = 6;
+	int INPUTOUTPUT = 4;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -942,7 +560,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getSensorcontrol()
 	 * @generated
 	 */
-	int SENSORCONTROL = 7;
+	int SENSORCONTROL = 5;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -1033,7 +651,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getEmfpublisher()
 	 * @generated
 	 */
-	int EMFPUBLISHER = 8;
+	int EMFPUBLISHER = 6;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -1124,7 +742,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getSystemoutpublisher()
 	 * @generated
 	 */
-	int SYSTEMOUTPUBLISHER = 9;
+	int SYSTEMOUTPUBLISHER = 7;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -1215,7 +833,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getPublishercontrol()
 	 * @generated
 	 */
-	int PUBLISHERCONTROL = 10;
+	int PUBLISHERCONTROL = 8;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -1306,7 +924,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getDisk()
 	 * @generated
 	 */
-	int DISK = 11;
+	int DISK = 9;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -1433,7 +1051,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getMailpublisher()
 	 * @generated
 	 */
-	int MAILPUBLISHER = 12;
+	int MAILPUBLISHER = 10;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -1578,7 +1196,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getMainmetric()
 	 * @generated
 	 */
-	int MAINMETRIC = 13;
+	int MAINMETRIC = 11;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -1671,6 +1289,97 @@ public interface CloudmonitoringPackage extends EPackage {
 	int MAINMETRIC_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link cloudmonitoring.impl.SupervisorapiconnectImpl <em>Supervisorapiconnect</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see cloudmonitoring.impl.SupervisorapiconnectImpl
+	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getSupervisorapiconnect()
+	 * @generated
+	 */
+	int SUPERVISORAPICONNECT = 12;
+
+	/**
+	 * The feature id for the '<em><b>Mixin</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPERVISORAPICONNECT__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPERVISORAPICONNECT__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPERVISORAPICONNECT__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Username</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPERVISORAPICONNECT__USERNAME = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Password</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPERVISORAPICONNECT__PASSWORD = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Http Api Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPERVISORAPICONNECT__HTTP_API_ADDRESS = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Supervisorapiconnect</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPERVISORAPICONNECT_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Applies Constraint</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPERVISORAPICONNECT___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Supervisorapiconnect</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPERVISORAPICONNECT_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link cloudmonitoring.IOUnit <em>IO Unit</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1678,7 +1387,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getIOUnit()
 	 * @generated
 	 */
-	int IO_UNIT = 14;
+	int IO_UNIT = 13;
 
 	/**
 	 * The meta object id for the '{@link cloudmonitoring.MonitorState <em>Monitor State</em>}' enum.
@@ -1688,7 +1397,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getMonitorState()
 	 * @generated
 	 */
-	int MONITOR_STATE = 15;
+	int MONITOR_STATE = 14;
 
 	/**
 	 * The meta object id for the '<em>Percent</em>' data type.
@@ -1698,7 +1407,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getPercent()
 	 * @generated
 	 */
-	int PERCENT = 16;
+	int PERCENT = 15;
 
 	/**
 	 * The meta object id for the '<em>Average</em>' data type.
@@ -1708,7 +1417,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getAverage()
 	 * @generated
 	 */
-	int AVERAGE = 17;
+	int AVERAGE = 16;
 
 	/**
 	 * The meta object id for the '<em>Per Sec</em>' data type.
@@ -1718,7 +1427,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getPerSec()
 	 * @generated
 	 */
-	int PER_SEC = 18;
+	int PER_SEC = 17;
 
 	/**
 	 * The meta object id for the '<em>Temperature</em>' data type.
@@ -1728,72 +1437,8 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getTemperature()
 	 * @generated
 	 */
-	int TEMPERATURE = 19;
+	int TEMPERATURE = 18;
 
-
-	/**
-	 * Returns the meta object for class '{@link cloudmonitoring.Sshcollector <em>Sshcollector</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Sshcollector</em>'.
-	 * @see cloudmonitoring.Sshcollector
-	 * @generated
-	 */
-	EClass getSshcollector();
-
-	/**
-	 * Returns the meta object for the attribute '{@link cloudmonitoring.Sshcollector#getLabel <em>Label</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Label</em>'.
-	 * @see cloudmonitoring.Sshcollector#getLabel()
-	 * @see #getSshcollector()
-	 * @generated
-	 */
-	EAttribute getSshcollector_Label();
-
-	/**
-	 * Returns the meta object for class '{@link cloudmonitoring.Zabbixcollector <em>Zabbixcollector</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Zabbixcollector</em>'.
-	 * @see cloudmonitoring.Zabbixcollector
-	 * @generated
-	 */
-	EClass getZabbixcollector();
-
-	/**
-	 * Returns the meta object for the attribute '{@link cloudmonitoring.Zabbixcollector#getUsername <em>Username</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Username</em>'.
-	 * @see cloudmonitoring.Zabbixcollector#getUsername()
-	 * @see #getZabbixcollector()
-	 * @generated
-	 */
-	EAttribute getZabbixcollector_Username();
-
-	/**
-	 * Returns the meta object for the attribute '{@link cloudmonitoring.Zabbixcollector#getPassword <em>Password</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Password</em>'.
-	 * @see cloudmonitoring.Zabbixcollector#getPassword()
-	 * @see #getZabbixcollector()
-	 * @generated
-	 */
-	EAttribute getZabbixcollector_Password();
-
-	/**
-	 * Returns the meta object for the attribute '{@link cloudmonitoring.Zabbixcollector#getHttpApiAddress <em>Http Api Address</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Http Api Address</em>'.
-	 * @see cloudmonitoring.Zabbixcollector#getHttpApiAddress()
-	 * @see #getZabbixcollector()
-	 * @generated
-	 */
-	EAttribute getZabbixcollector_HttpApiAddress();
 
 	/**
 	 * Returns the meta object for class '{@link cloudmonitoring.Cpu <em>Cpu</em>}'.
@@ -2329,6 +1974,59 @@ public interface CloudmonitoringPackage extends EPackage {
 	EOperation getMainmetric__AppliesConstraint__DiagnosticChain_Map();
 
 	/**
+	 * Returns the meta object for class '{@link cloudmonitoring.Supervisorapiconnect <em>Supervisorapiconnect</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Supervisorapiconnect</em>'.
+	 * @see cloudmonitoring.Supervisorapiconnect
+	 * @generated
+	 */
+	EClass getSupervisorapiconnect();
+
+	/**
+	 * Returns the meta object for the attribute '{@link cloudmonitoring.Supervisorapiconnect#getUsername <em>Username</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Username</em>'.
+	 * @see cloudmonitoring.Supervisorapiconnect#getUsername()
+	 * @see #getSupervisorapiconnect()
+	 * @generated
+	 */
+	EAttribute getSupervisorapiconnect_Username();
+
+	/**
+	 * Returns the meta object for the attribute '{@link cloudmonitoring.Supervisorapiconnect#getPassword <em>Password</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Password</em>'.
+	 * @see cloudmonitoring.Supervisorapiconnect#getPassword()
+	 * @see #getSupervisorapiconnect()
+	 * @generated
+	 */
+	EAttribute getSupervisorapiconnect_Password();
+
+	/**
+	 * Returns the meta object for the attribute '{@link cloudmonitoring.Supervisorapiconnect#getHttpApiAddress <em>Http Api Address</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Http Api Address</em>'.
+	 * @see cloudmonitoring.Supervisorapiconnect#getHttpApiAddress()
+	 * @see #getSupervisorapiconnect()
+	 * @generated
+	 */
+	EAttribute getSupervisorapiconnect_HttpApiAddress();
+
+	/**
+	 * Returns the meta object for the '{@link cloudmonitoring.Supervisorapiconnect#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
+	 * @see cloudmonitoring.Supervisorapiconnect#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getSupervisorapiconnect__AppliesConstraint__DiagnosticChain_Map();
+
+	/**
 	 * Returns the meta object for enum '{@link cloudmonitoring.IOUnit <em>IO Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2418,58 +2116,6 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
-		/**
-		 * The meta object literal for the '{@link cloudmonitoring.impl.SshcollectorImpl <em>Sshcollector</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see cloudmonitoring.impl.SshcollectorImpl
-		 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getSshcollector()
-		 * @generated
-		 */
-		EClass SSHCOLLECTOR = eINSTANCE.getSshcollector();
-
-		/**
-		 * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SSHCOLLECTOR__LABEL = eINSTANCE.getSshcollector_Label();
-
-		/**
-		 * The meta object literal for the '{@link cloudmonitoring.impl.ZabbixcollectorImpl <em>Zabbixcollector</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see cloudmonitoring.impl.ZabbixcollectorImpl
-		 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getZabbixcollector()
-		 * @generated
-		 */
-		EClass ZABBIXCOLLECTOR = eINSTANCE.getZabbixcollector();
-
-		/**
-		 * The meta object literal for the '<em><b>Username</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ZABBIXCOLLECTOR__USERNAME = eINSTANCE.getZabbixcollector_Username();
-
-		/**
-		 * The meta object literal for the '<em><b>Password</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ZABBIXCOLLECTOR__PASSWORD = eINSTANCE.getZabbixcollector_Password();
-
-		/**
-		 * The meta object literal for the '<em><b>Http Api Address</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ZABBIXCOLLECTOR__HTTP_API_ADDRESS = eINSTANCE.getZabbixcollector_HttpApiAddress();
-
 		/**
 		 * The meta object literal for the '{@link cloudmonitoring.impl.CpuImpl <em>Cpu</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -2901,6 +2547,48 @@ public interface CloudmonitoringPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation MAINMETRIC___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getMainmetric__AppliesConstraint__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '{@link cloudmonitoring.impl.SupervisorapiconnectImpl <em>Supervisorapiconnect</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see cloudmonitoring.impl.SupervisorapiconnectImpl
+		 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getSupervisorapiconnect()
+		 * @generated
+		 */
+		EClass SUPERVISORAPICONNECT = eINSTANCE.getSupervisorapiconnect();
+
+		/**
+		 * The meta object literal for the '<em><b>Username</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SUPERVISORAPICONNECT__USERNAME = eINSTANCE.getSupervisorapiconnect_Username();
+
+		/**
+		 * The meta object literal for the '<em><b>Password</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SUPERVISORAPICONNECT__PASSWORD = eINSTANCE.getSupervisorapiconnect_Password();
+
+		/**
+		 * The meta object literal for the '<em><b>Http Api Address</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SUPERVISORAPICONNECT__HTTP_API_ADDRESS = eINSTANCE.getSupervisorapiconnect_HttpApiAddress();
+
+		/**
+		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SUPERVISORAPICONNECT___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getSupervisorapiconnect__AppliesConstraint__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link cloudmonitoring.IOUnit <em>IO Unit</em>}' enum.

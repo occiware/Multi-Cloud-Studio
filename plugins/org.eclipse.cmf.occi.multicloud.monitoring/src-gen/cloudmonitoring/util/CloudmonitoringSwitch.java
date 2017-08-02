@@ -14,11 +14,8 @@ package cloudmonitoring.util;
 
 import cloudmonitoring.*;
 
-import org.eclipse.cmf.occi.core.Entity;
-import org.eclipse.cmf.occi.core.Link;
 import org.eclipse.cmf.occi.core.MixinBase;
 
-import org.eclipse.cmf.occi.monitoring.Collector;
 import org.eclipse.cmf.occi.monitoring.Metric;
 import org.eclipse.cmf.occi.monitoring.Publisher;
 
@@ -84,24 +81,6 @@ public class CloudmonitoringSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case CloudmonitoringPackage.SSHCOLLECTOR: {
-				Sshcollector sshcollector = (Sshcollector)theEObject;
-				T result = caseSshcollector(sshcollector);
-				if (result == null) result = caseCollector(sshcollector);
-				if (result == null) result = caseLink(sshcollector);
-				if (result == null) result = caseEntity(sshcollector);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CloudmonitoringPackage.ZABBIXCOLLECTOR: {
-				Zabbixcollector zabbixcollector = (Zabbixcollector)theEObject;
-				T result = caseZabbixcollector(zabbixcollector);
-				if (result == null) result = caseCollector(zabbixcollector);
-				if (result == null) result = caseLink(zabbixcollector);
-				if (result == null) result = caseEntity(zabbixcollector);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case CloudmonitoringPackage.CPU: {
 				Cpu cpu = (Cpu)theEObject;
 				T result = caseCpu(cpu);
@@ -205,38 +184,15 @@ public class CloudmonitoringSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case CloudmonitoringPackage.SUPERVISORAPICONNECT: {
+				Supervisorapiconnect supervisorapiconnect = (Supervisorapiconnect)theEObject;
+				T result = caseSupervisorapiconnect(supervisorapiconnect);
+				if (result == null) result = caseMixinBase(supervisorapiconnect);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Sshcollector</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Sshcollector</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSshcollector(Sshcollector object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Zabbixcollector</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Zabbixcollector</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseZabbixcollector(Zabbixcollector object) {
-		return null;
 	}
 
 	/**
@@ -420,47 +376,17 @@ public class CloudmonitoringSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Entity</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Supervisorapiconnect</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Entity</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Supervisorapiconnect</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseEntity(Entity object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Link</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Link</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseLink(Link object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Collector</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Collector</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCollector(Collector object) {
+	public T caseSupervisorapiconnect(Supervisorapiconnect object) {
 		return null;
 	}
 

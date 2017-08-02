@@ -318,12 +318,14 @@ public class VmwareTables
 		}
 
 
-		public static final /*@NonNull*/ ExecutorProperty _Instancevmware__guestosid = new EcoreExecutorProperty(VmwarePackage.Literals.INSTANCEVMWARE__GUESTOSID, Types._Instancevmware, 0);
-		public static final /*@NonNull*/ ExecutorProperty _Instancevmware__gueststate = new EcoreExecutorProperty(VmwarePackage.Literals.INSTANCEVMWARE__GUESTSTATE, Types._Instancevmware, 1);
-		public static final /*@NonNull*/ ExecutorProperty _Instancevmware__imagename = new EcoreExecutorProperty(VmwarePackage.Literals.INSTANCEVMWARE__IMAGENAME, Types._Instancevmware, 2);
-		public static final /*@NonNull*/ ExecutorProperty _Instancevmware__instanceId = new EcoreExecutorProperty(VmwarePackage.Literals.INSTANCEVMWARE__INSTANCE_ID, Types._Instancevmware, 3);
-		public static final /*@NonNull*/ ExecutorProperty _Instancevmware__markedastemplate = new EcoreExecutorProperty(VmwarePackage.Literals.INSTANCEVMWARE__MARKEDASTEMPLATE, Types._Instancevmware, 4);
-		public static final /*@NonNull*/ ExecutorProperty _Instancevmware__vcpu = new EcoreExecutorProperty(VmwarePackage.Literals.INSTANCEVMWARE__VCPU, Types._Instancevmware, 5);
+		public static final /*@NonNull*/ ExecutorProperty _Instancevmware__guestIpv4Address = new EcoreExecutorProperty(VmwarePackage.Literals.INSTANCEVMWARE__GUEST_IPV4_ADDRESS, Types._Instancevmware, 0);
+		public static final /*@NonNull*/ ExecutorProperty _Instancevmware__guestIpv6Address = new EcoreExecutorProperty(VmwarePackage.Literals.INSTANCEVMWARE__GUEST_IPV6_ADDRESS, Types._Instancevmware, 1);
+		public static final /*@NonNull*/ ExecutorProperty _Instancevmware__guestosid = new EcoreExecutorProperty(VmwarePackage.Literals.INSTANCEVMWARE__GUESTOSID, Types._Instancevmware, 2);
+		public static final /*@NonNull*/ ExecutorProperty _Instancevmware__gueststate = new EcoreExecutorProperty(VmwarePackage.Literals.INSTANCEVMWARE__GUESTSTATE, Types._Instancevmware, 3);
+		public static final /*@NonNull*/ ExecutorProperty _Instancevmware__imagename = new EcoreExecutorProperty(VmwarePackage.Literals.INSTANCEVMWARE__IMAGENAME, Types._Instancevmware, 4);
+		public static final /*@NonNull*/ ExecutorProperty _Instancevmware__instanceId = new EcoreExecutorProperty(VmwarePackage.Literals.INSTANCEVMWARE__INSTANCE_ID, Types._Instancevmware, 5);
+		public static final /*@NonNull*/ ExecutorProperty _Instancevmware__markedastemplate = new EcoreExecutorProperty(VmwarePackage.Literals.INSTANCEVMWARE__MARKEDASTEMPLATE, Types._Instancevmware, 6);
+		public static final /*@NonNull*/ ExecutorProperty _Instancevmware__vcpu = new EcoreExecutorProperty(VmwarePackage.Literals.INSTANCEVMWARE__VCPU, Types._Instancevmware, 7);
 
 		public static final /*@NonNull*/ ExecutorProperty _Os_tpl_vmware__datastoreisopath = new EcoreExecutorProperty(VmwarePackage.Literals.OS_TPL_VMWARE__DATASTOREISOPATH, Types._Os_tpl_vmware, 0);
 		public static final /*@NonNull*/ ExecutorProperty _Os_tpl_vmware__guestid = new EcoreExecutorProperty(VmwarePackage.Literals.OS_TPL_VMWARE__GUESTID, Types._Os_tpl_vmware, 1);
@@ -1032,6 +1034,8 @@ public class VmwareTables
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _GuestOsIdentifiers = {};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Instancevmware = {
+			VmwareTables.Properties._Instancevmware__guestIpv4Address,
+			VmwareTables.Properties._Instancevmware__guestIpv6Address,
 			VmwareTables.Properties._Instancevmware__guestosid,
 			VmwareTables.Properties._Instancevmware__gueststate,
 			VmwareTables.Properties._Instancevmware__imagename,

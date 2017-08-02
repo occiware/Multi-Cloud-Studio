@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<occi:Extension xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:occi="http://schemas.ogf.org/occi/core/ecore" name="zabbix" scheme="http://occiware.org/occi/multicloud/monitoring/zabbix#">
+  <import href="http://schemas.ogf.org/occi/core#/"/>
+  <import href="http://schemas.ogf.org/occi/monitoring#/"/>
+  <import href="http://occiware.org/occi/multicloud/monitoring#/"/>
+  <kinds name="ZabbixCollector" scheme="http://occiware.org/occi/multicloud/monitoring/zabbix#">
+    <parent href="http://schemas.ogf.org/occi/monitoring#//@kinds[term='collector']"/>
+  </kinds>
+  <kinds name="ZabbixSensor" scheme="http://occiware.org/occi/multicloud/monitoring/zabbix#">
+    <parent href="http://schemas.ogf.org/occi/monitoring#//@kinds[term='sensor']"/>
+  </kinds>
+</occi:Extension>

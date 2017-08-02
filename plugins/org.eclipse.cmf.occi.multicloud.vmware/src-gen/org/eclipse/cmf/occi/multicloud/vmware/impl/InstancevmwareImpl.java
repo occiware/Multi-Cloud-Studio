@@ -37,6 +37,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.eclipse.cmf.occi.multicloud.vmware.impl.InstancevmwareImpl#getGuestosid <em>Guestosid</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.vmware.impl.InstancevmwareImpl#getVcpu <em>Vcpu</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.vmware.impl.InstancevmwareImpl#getInstanceId <em>Instance Id</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.vmware.impl.InstancevmwareImpl#getGuestIpv4Address <em>Guest Ipv4 Address</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.vmware.impl.InstancevmwareImpl#getGuestIpv6Address <em>Guest Ipv6 Address</em>}</li>
  * </ul>
  *
  * @generated
@@ -161,6 +163,46 @@ public class InstancevmwareImpl extends ComputeImpl implements Instancevmware {
 	 * @ordered
 	 */
 	protected String instanceId = INSTANCE_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getGuestIpv4Address() <em>Guest Ipv4 Address</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGuestIpv4Address()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String GUEST_IPV4_ADDRESS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getGuestIpv4Address() <em>Guest Ipv4 Address</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGuestIpv4Address()
+	 * @generated
+	 * @ordered
+	 */
+	protected String guestIpv4Address = GUEST_IPV4_ADDRESS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getGuestIpv6Address() <em>Guest Ipv6 Address</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGuestIpv6Address()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String GUEST_IPV6_ADDRESS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getGuestIpv6Address() <em>Guest Ipv6 Address</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGuestIpv6Address()
+	 * @generated
+	 * @ordered
+	 */
+	protected String guestIpv6Address = GUEST_IPV6_ADDRESS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -312,6 +354,48 @@ public class InstancevmwareImpl extends ComputeImpl implements Instancevmware {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getGuestIpv4Address() {
+		return guestIpv4Address;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setGuestIpv4Address(String newGuestIpv4Address) {
+		String oldGuestIpv4Address = guestIpv4Address;
+		guestIpv4Address = newGuestIpv4Address;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VmwarePackage.INSTANCEVMWARE__GUEST_IPV4_ADDRESS, oldGuestIpv4Address, guestIpv4Address));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getGuestIpv6Address() {
+		return guestIpv6Address;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setGuestIpv6Address(String newGuestIpv6Address) {
+		String oldGuestIpv6Address = guestIpv6Address;
+		guestIpv6Address = newGuestIpv6Address;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VmwarePackage.INSTANCEVMWARE__GUEST_IPV6_ADDRESS, oldGuestIpv6Address, guestIpv6Address));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -327,6 +411,10 @@ public class InstancevmwareImpl extends ComputeImpl implements Instancevmware {
 				return getVcpu();
 			case VmwarePackage.INSTANCEVMWARE__INSTANCE_ID:
 				return getInstanceId();
+			case VmwarePackage.INSTANCEVMWARE__GUEST_IPV4_ADDRESS:
+				return getGuestIpv4Address();
+			case VmwarePackage.INSTANCEVMWARE__GUEST_IPV6_ADDRESS:
+				return getGuestIpv6Address();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -356,6 +444,12 @@ public class InstancevmwareImpl extends ComputeImpl implements Instancevmware {
 				return;
 			case VmwarePackage.INSTANCEVMWARE__INSTANCE_ID:
 				setInstanceId((String)newValue);
+				return;
+			case VmwarePackage.INSTANCEVMWARE__GUEST_IPV4_ADDRESS:
+				setGuestIpv4Address((String)newValue);
+				return;
+			case VmwarePackage.INSTANCEVMWARE__GUEST_IPV6_ADDRESS:
+				setGuestIpv6Address((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -387,6 +481,12 @@ public class InstancevmwareImpl extends ComputeImpl implements Instancevmware {
 			case VmwarePackage.INSTANCEVMWARE__INSTANCE_ID:
 				setInstanceId(INSTANCE_ID_EDEFAULT);
 				return;
+			case VmwarePackage.INSTANCEVMWARE__GUEST_IPV4_ADDRESS:
+				setGuestIpv4Address(GUEST_IPV4_ADDRESS_EDEFAULT);
+				return;
+			case VmwarePackage.INSTANCEVMWARE__GUEST_IPV6_ADDRESS:
+				setGuestIpv6Address(GUEST_IPV6_ADDRESS_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -411,6 +511,10 @@ public class InstancevmwareImpl extends ComputeImpl implements Instancevmware {
 				return VCPU_EDEFAULT == null ? vcpu != null : !VCPU_EDEFAULT.equals(vcpu);
 			case VmwarePackage.INSTANCEVMWARE__INSTANCE_ID:
 				return INSTANCE_ID_EDEFAULT == null ? instanceId != null : !INSTANCE_ID_EDEFAULT.equals(instanceId);
+			case VmwarePackage.INSTANCEVMWARE__GUEST_IPV4_ADDRESS:
+				return GUEST_IPV4_ADDRESS_EDEFAULT == null ? guestIpv4Address != null : !GUEST_IPV4_ADDRESS_EDEFAULT.equals(guestIpv4Address);
+			case VmwarePackage.INSTANCEVMWARE__GUEST_IPV6_ADDRESS:
+				return GUEST_IPV6_ADDRESS_EDEFAULT == null ? guestIpv6Address != null : !GUEST_IPV6_ADDRESS_EDEFAULT.equals(guestIpv6Address);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -437,6 +541,10 @@ public class InstancevmwareImpl extends ComputeImpl implements Instancevmware {
 		result.append(vcpu);
 		result.append(", instanceId: ");
 		result.append(instanceId);
+		result.append(", guestIpv4Address: ");
+		result.append(guestIpv4Address);
+		result.append(", guestIpv6Address: ");
+		result.append(guestIpv6Address);
 		result.append(')');
 		return result.toString();
 	}

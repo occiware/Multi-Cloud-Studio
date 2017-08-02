@@ -51,6 +51,7 @@ public class VmwareTests extends TestSuite {
 		suite.addTestSuite(MacosxTest.class);
 		suite.addTestSuite(VmwarefoldersTest.class);
 		suite.addTestSuite(Os_tpl_vmwareTest.class);
+		suite.addTestSuite(Ssh_user_dataTest.class);
 		return suite;
 	}
 

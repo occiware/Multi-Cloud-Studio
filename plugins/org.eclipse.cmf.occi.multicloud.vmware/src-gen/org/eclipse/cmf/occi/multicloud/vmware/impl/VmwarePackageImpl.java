@@ -279,6 +279,24 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getInstancevmware_GuestIpv4Address() {
+		return (EAttribute)instancevmwareEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getInstancevmware_GuestIpv6Address() {
+		return (EAttribute)instancevmwareEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getStoragevmware() {
 		return storagevmwareEClass;
 	}
@@ -579,6 +597,8 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 		createEAttribute(instancevmwareEClass, INSTANCEVMWARE__GUESTOSID);
 		createEAttribute(instancevmwareEClass, INSTANCEVMWARE__VCPU);
 		createEAttribute(instancevmwareEClass, INSTANCEVMWARE__INSTANCE_ID);
+		createEAttribute(instancevmwareEClass, INSTANCEVMWARE__GUEST_IPV4_ADDRESS);
+		createEAttribute(instancevmwareEClass, INSTANCEVMWARE__GUEST_IPV6_ADDRESS);
 
 		storagevmwareEClass = createEClass(STORAGEVMWARE);
 
@@ -680,6 +700,8 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 		initEAttribute(getInstancevmware_Guestosid(), theOCCIPackage.getString(), "guestosid", null, 0, 1, Instancevmware.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInstancevmware_Vcpu(), theOCCIPackage.getInteger(), "vcpu", null, 0, 1, Instancevmware.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInstancevmware_InstanceId(), theOCCIPackage.getString(), "instanceId", null, 0, 1, Instancevmware.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInstancevmware_GuestIpv4Address(), theOCCIPackage.getString(), "guestIpv4Address", null, 0, 1, Instancevmware.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInstancevmware_GuestIpv6Address(), theOCCIPackage.getString(), "guestIpv6Address", null, 0, 1, Instancevmware.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(storagevmwareEClass, Storagevmware.class, "Storagevmware", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

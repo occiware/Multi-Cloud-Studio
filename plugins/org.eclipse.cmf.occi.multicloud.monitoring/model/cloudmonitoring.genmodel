@@ -43,24 +43,6 @@
       <ecoreDataType href="cloudmonitoring.ecore#//Temperature"/>
     </genDataTypes>
     <genClasses>
-      <ecoreClass href="cloudmonitoring.ecore#//Sshcollector"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="cloudmonitoring.ecore#//Sshcollector/label"/>
-      </genFeatures>
-    </genClasses>
-    <genClasses>
-      <ecoreClass href="cloudmonitoring.ecore#//Zabbixcollector"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="cloudmonitoring.ecore#//Zabbixcollector/username"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="cloudmonitoring.ecore#//Zabbixcollector/password"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="cloudmonitoring.ecore#//Zabbixcollector/httpApiAddress"/>
-      </genFeatures>
-    </genClasses>
-    <genClasses>
       <ecoreClass href="cloudmonitoring.ecore#//Cpu"/>
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="cloudmonitoring.ecore#//Cpu/loadAvg"/>
@@ -175,6 +157,18 @@
       </genFeatures>
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="cloudmonitoring.ecore#//Mainmetric/thresholdTemperature"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="cloudmonitoring.ecore#//Supervisorapiconnect"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="cloudmonitoring.ecore#//Supervisorapiconnect/username"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="cloudmonitoring.ecore#//Supervisorapiconnect/password"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="cloudmonitoring.ecore#//Supervisorapiconnect/httpApiAddress"/>
       </genFeatures>
     </genClasses>
   </genPackages>

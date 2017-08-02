@@ -54,7 +54,8 @@
       <!-- @generated cloudmonitoring -->
       <package
             uri="http://occiware.org/occi/multicloud/monitoring/ecore"
-            class="cloudmonitoring.CloudmonitoringPackage"/>
+            class="cloudmonitoring.CloudmonitoringPackage"
+            genModel="model/cloudmonitoring.genmodel"/>
    </extension>
 
 </plugin>

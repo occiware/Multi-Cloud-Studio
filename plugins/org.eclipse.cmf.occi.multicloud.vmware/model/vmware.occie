@@ -22,6 +22,12 @@
     <attributes name="instanceId" mutable="true" description="Unique Instance provider Id given by provider after creation">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
+    <attributes name="guestIpv4Address" mutable="true" description="Ipv4 address from guest tools.">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="guestIpv6Address" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
     <parent href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
   </kinds>
   <kinds name="StorageVMware" scheme="http://occiware.org/occi/infrastructure/vmware#">

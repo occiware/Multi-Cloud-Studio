@@ -159,6 +159,13 @@
         <module>plugins/org.eclipse.cmf.occi.multicloud.vmware.design</module>
         <!-- multicloud monitoring modules -->
         <module>plugins/org.eclipse.cmf.occi.multicloud.monitoring</module>
+        <module>plugins/org.eclipse.cmf.occi.multicloud.monitoring.edit</module>
+        <module>plugins/org.eclipse.cmf.occi.multicloud.monitoring.editor</module>
+        <module>plugins/org.eclipse.cmf.occi.multicloud.monitoring.tests</module>
+        
+        <!-- multicloud zabbix monitoring modules -->
+        <module>plugins/org.eclipse.cmf.occi.multicloud.monitoring.zabbix</module>
+        
         
         <!-- Releng -->
         <module>features/org.eclipse.cmf.occi.multicloud</module>

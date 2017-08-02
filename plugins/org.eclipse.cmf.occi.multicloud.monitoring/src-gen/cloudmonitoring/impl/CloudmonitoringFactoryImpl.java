@@ -67,8 +67,6 @@ public class CloudmonitoringFactoryImpl extends EFactoryImpl implements Cloudmon
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case CloudmonitoringPackage.SSHCOLLECTOR: return createSshcollector();
-			case CloudmonitoringPackage.ZABBIXCOLLECTOR: return createZabbixcollector();
 			case CloudmonitoringPackage.CPU: return createCpu();
 			case CloudmonitoringPackage.DISKIO: return createDiskio();
 			case CloudmonitoringPackage.RAM: return createRam();
@@ -81,6 +79,7 @@ public class CloudmonitoringFactoryImpl extends EFactoryImpl implements Cloudmon
 			case CloudmonitoringPackage.DISK: return createDisk();
 			case CloudmonitoringPackage.MAILPUBLISHER: return createMailpublisher();
 			case CloudmonitoringPackage.MAINMETRIC: return createMainmetric();
+			case CloudmonitoringPackage.SUPERVISORAPICONNECT: return createSupervisorapiconnect();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -134,26 +133,6 @@ public class CloudmonitoringFactoryImpl extends EFactoryImpl implements Cloudmon
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Sshcollector createSshcollector() {
-		SshcollectorImpl sshcollector = new SshcollectorImpl();
-		return sshcollector;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Zabbixcollector createZabbixcollector() {
-		ZabbixcollectorImpl zabbixcollector = new ZabbixcollectorImpl();
-		return zabbixcollector;
 	}
 
 	/**
@@ -274,6 +253,16 @@ public class CloudmonitoringFactoryImpl extends EFactoryImpl implements Cloudmon
 	public Mainmetric createMainmetric() {
 		MainmetricImpl mainmetric = new MainmetricImpl();
 		return mainmetric;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Supervisorapiconnect createSupervisorapiconnect() {
+		SupervisorapiconnectImpl supervisorapiconnect = new SupervisorapiconnectImpl();
+		return supervisorapiconnect;
 	}
 
 	/**

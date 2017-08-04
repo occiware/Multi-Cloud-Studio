@@ -1180,7 +1180,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			ipv6Address = "";
 		}
 		if (!ipv6Address.equals(this.getGuestIpv6Address())) {
-			this.setGuestIpv4Address(ipv6Address);
+			this.setGuestIpv6Address(ipv6Address);
 		}
 		
 		if (messageProgress != null) {
@@ -1842,11 +1842,11 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 
 		} // endif vmTemplate exist.
 
-		if (getOcciComputeState() != null && getOcciComputeState().equals(ComputeStatus.ACTIVE)) {
+		/*if (getOcciComputeState() != null && getOcciComputeState().equals(ComputeStatus.ACTIVE) && vmGuestState != null && vmGuestState.equals("running")) {
 			VirtualMachine vm = VMHelper.loadVirtualMachine(vmName);
 			ipv4Address = NetworkHelper.getIpv4Address(vm);
 			ipv6Address = NetworkHelper.getIpv6Address(vm);
-		}
+		}*/
 
 		// In all case invoke a disconnect from vcenter.
 		VCenterClient.disconnect();
@@ -2103,7 +2103,29 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 				markedAsTemplate = "false";
 			}
 			inventoryPath = VMHelper.getVMFolderPath(vm);
-			
+			if (vmGuestState != null && !vmGuestState.trim().isEmpty() && vmGuestState.equals("running")) {
+				if (vmTemplateName != null) {
+					// Check if a clone task is active.
+					TaskInfo taskInfo = VMHelper.getTaskInfo(
+							VMHelper.findVMForName(VCenterClient.getServiceInstance().getRootFolder(), vmTemplateName));
+					if (taskInfo != null) {
+						TaskInfoState taskState = taskInfo.getState();
+						if (taskState != null && taskState.equals(TaskInfoState.success)) {
+							messageProgress = "100%";
+						} else if (taskState != null && taskState.equals(TaskInfoState.queued)) {
+							messageProgress = "0%";
+						} else if (taskState != null && taskState.equals(TaskInfoState.running)) {
+							messageProgress = taskInfo.getProgress() + "%";
+						} else if (taskState != null && taskState.equals(TaskInfoState.error)) {
+							messageProgress = "Error on task " + taskInfo.getName() + " on entity : "
+									+ taskInfo.getEntityName();
+							messageProgress += " \n message: " + taskInfo.getError().getLocalizedMessage();
+						}
+					}
+				} else {
+					messageProgress = null;
+				}
+			}
 		}
 		morId = vm.getMOR().getVal();
 		

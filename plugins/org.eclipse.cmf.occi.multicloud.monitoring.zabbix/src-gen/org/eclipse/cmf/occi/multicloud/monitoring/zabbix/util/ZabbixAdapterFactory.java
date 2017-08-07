@@ -14,10 +14,8 @@ package org.eclipse.cmf.occi.multicloud.monitoring.zabbix.util;
 
 import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.core.Link;
-import org.eclipse.cmf.occi.core.Resource;
 
 import org.eclipse.cmf.occi.monitoring.Collector;
-import org.eclipse.cmf.occi.monitoring.Sensor;
 
 import org.eclipse.cmf.occi.multicloud.monitoring.zabbix.*;
 
@@ -89,10 +87,6 @@ public class ZabbixAdapterFactory extends AdapterFactoryImpl {
 				return createZabbixcollectorAdapter();
 			}
 			@Override
-			public Adapter caseZabbixsensor(Zabbixsensor object) {
-				return createZabbixsensorAdapter();
-			}
-			@Override
 			public Adapter caseEntity(Entity object) {
 				return createEntityAdapter();
 			}
@@ -103,14 +97,6 @@ public class ZabbixAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseCollector(Collector object) {
 				return createCollectorAdapter();
-			}
-			@Override
-			public Adapter caseResource(Resource object) {
-				return createResourceAdapter();
-			}
-			@Override
-			public Adapter caseSensor(Sensor object) {
-				return createSensorAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -143,20 +129,6 @@ public class ZabbixAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createZabbixcollectorAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.monitoring.zabbix.Zabbixsensor <em>Zabbixsensor</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.monitoring.zabbix.Zabbixsensor
-	 * @generated
-	 */
-	public Adapter createZabbixsensorAdapter() {
 		return null;
 	}
 
@@ -199,34 +171,6 @@ public class ZabbixAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCollectorAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.Resource <em>Resource</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.core.Resource
-	 * @generated
-	 */
-	public Adapter createResourceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.monitoring.Sensor <em>Sensor</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.monitoring.Sensor
-	 * @generated
-	 */
-	public Adapter createSensorAdapter() {
 		return null;
 	}
 

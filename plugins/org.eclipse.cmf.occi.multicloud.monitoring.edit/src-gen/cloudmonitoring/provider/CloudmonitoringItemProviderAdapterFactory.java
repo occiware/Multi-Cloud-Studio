@@ -82,6 +82,29 @@ public class CloudmonitoringItemProviderAdapterFactory extends CloudmonitoringAd
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link cloudmonitoring.Cloudsensor} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CloudsensorItemProvider cloudsensorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link cloudmonitoring.Cloudsensor}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCloudsensorAdapter() {
+		if (cloudsensorItemProvider == null) {
+			cloudsensorItemProvider = new CloudsensorItemProvider(this);
+		}
+
+		return cloudsensorItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link cloudmonitoring.Cpu} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -479,6 +502,7 @@ public class CloudmonitoringItemProviderAdapterFactory extends CloudmonitoringAd
 	 * @generated
 	 */
 	public void dispose() {
+		if (cloudsensorItemProvider != null) cloudsensorItemProvider.dispose();
 		if (cpuItemProvider != null) cpuItemProvider.dispose();
 		if (diskioItemProvider != null) diskioItemProvider.dispose();
 		if (ramItemProvider != null) ramItemProvider.dispose();

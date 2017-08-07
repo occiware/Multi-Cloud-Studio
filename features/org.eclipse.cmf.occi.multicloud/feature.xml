@@ -427,12 +427,6 @@ litigation.
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-   <!-- <plugin
-         id="org.eclipse.cmf.occi.monitoring.connector.dummy"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/> -->
     <!-- VMware part -->
     <plugin
         id="org.eclipse.cmf.occi.multicloud.vmware"
@@ -483,6 +477,18 @@ litigation.
         install-size="0"
         version="0.0.0"
         unpack="false"/>
+    <plugin
+        id="org.eclipse.cmf.occi.multicloud.monitoring.design"
+        download-size="0"
+        install-size="0"
+        version="0.0.0"
+        unpack="false"/>
+    <plugin
+        id="org.eclipse.cmf.occi.multicloud.monitoring.connector"
+        download-size="0"
+        install-size="0"
+        version="0.0.0"
+        unpack="false"/>
     <!-- multicloud zabbix monitoring part -->
     <plugin
         id="org.eclipse.cmf.occi.multicloud.monitoring.zabbix"
@@ -490,6 +496,30 @@ litigation.
         install-size="0"
         version="0.0.0"
         unpack="false"/>
+   <!-- <plugin
+        id="org.eclipse.cmf.occi.multicloud.monitoring.zabbix.edit"
+        download-size="0"
+        install-size="0"
+        version="0.0.0"
+        unpack="false"/>
+    <plugin
+        id="org.eclipse.cmf.occi.multicloud.monitoring.zabbix.editor"
+        download-size="0"
+        install-size="0"
+        version="0.0.0"
+        unpack="false"/>
+    <plugin
+        id="org.eclipse.cmf.occi.multicloud.monitoring.zabbix.design"
+        download-size="0"
+        install-size="0"
+        version="0.0.0"
+        unpack="false"/>
+    <plugin
+        id="org.eclipse.cmf.occi.multicloud.monitoring.zabbix.connector"
+        download-size="0"
+        install-size="0"
+        version="0.0.0"
+        unpack="false"/> -->
   <requires>
     <!-- Eclipse Modeling Framework and tools. -->
     <import feature="org.eclipse.emf" version="2.12.0.v20160526-0356"/>

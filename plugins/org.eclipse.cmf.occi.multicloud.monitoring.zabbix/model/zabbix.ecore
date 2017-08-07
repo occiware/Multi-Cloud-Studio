@@ -12,9 +12,4 @@
       <details key="documentation" value=""/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Zabbixsensor" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.monitoring/model/monitoring.ecore#//Sensor">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value=""/>
-    </eAnnotations>
-  </eClassifiers>
 </ecore:EPackage>

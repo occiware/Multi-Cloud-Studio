@@ -67,6 +67,7 @@ public class CloudmonitoringFactoryImpl extends EFactoryImpl implements Cloudmon
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case CloudmonitoringPackage.CLOUDSENSOR: return createCloudsensor();
 			case CloudmonitoringPackage.CPU: return createCpu();
 			case CloudmonitoringPackage.DISKIO: return createDiskio();
 			case CloudmonitoringPackage.RAM: return createRam();
@@ -133,6 +134,16 @@ public class CloudmonitoringFactoryImpl extends EFactoryImpl implements Cloudmon
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Cloudsensor createCloudsensor() {
+		CloudsensorImpl cloudsensor = new CloudsensorImpl();
+		return cloudsensor;
 	}
 
 	/**

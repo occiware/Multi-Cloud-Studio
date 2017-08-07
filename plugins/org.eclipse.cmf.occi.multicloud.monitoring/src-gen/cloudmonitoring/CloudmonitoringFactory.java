@@ -32,6 +32,15 @@ public interface CloudmonitoringFactory extends EFactory {
 	CloudmonitoringFactory eINSTANCE = cloudmonitoring.impl.CloudmonitoringFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Cloudsensor</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Cloudsensor</em>'.
+	 * @generated
+	 */
+	Cloudsensor createCloudsensor();
+
+	/**
 	 * Returns a new object of class '<em>Cpu</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

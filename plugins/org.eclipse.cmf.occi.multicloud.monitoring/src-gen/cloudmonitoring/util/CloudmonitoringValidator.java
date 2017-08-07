@@ -16,6 +16,8 @@ import cloudmonitoring.*;
 
 import java.util.Map;
 
+import org.eclipse.cmf.occi.core.util.OCCIValidator;
+
 import org.eclipse.cmf.occi.monitoring.util.MonitoringValidator;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
@@ -177,6 +179,14 @@ public class CloudmonitoringValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	protected OCCIValidator occiValidator;
+
+	/**
+	 * The cached base package validator.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	protected MonitoringValidator monitoringValidator;
 
 	/**
@@ -187,6 +197,7 @@ public class CloudmonitoringValidator extends EObjectValidator {
 	 */
 	public CloudmonitoringValidator() {
 		super();
+		occiValidator = OCCIValidator.INSTANCE;
 		monitoringValidator = MonitoringValidator.INSTANCE;
 	}
 
@@ -210,6 +221,8 @@ public class CloudmonitoringValidator extends EObjectValidator {
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		switch (classifierID) {
+			case CloudmonitoringPackage.CLOUDSENSOR:
+				return validateCloudsensor((Cloudsensor)value, diagnostics, context);
 			case CloudmonitoringPackage.CPU:
 				return validateCpu((Cpu)value, diagnostics, context);
 			case CloudmonitoringPackage.DISKIO:
@@ -251,6 +264,28 @@ public class CloudmonitoringValidator extends EObjectValidator {
 			default:
 				return true;
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCloudsensor(Cloudsensor cloudsensor, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(cloudsensor, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(cloudsensor, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(cloudsensor, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(cloudsensor, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(cloudsensor, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(cloudsensor, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(cloudsensor, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(cloudsensor, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(cloudsensor, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(cloudsensor, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(cloudsensor, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(cloudsensor, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateResource_ResourceKindIsInParent(cloudsensor, diagnostics, context);
+		return result;
 	}
 
 	/**

@@ -14,10 +14,13 @@ package cloudmonitoring.util;
 
 import cloudmonitoring.*;
 
+import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.core.MixinBase;
+import org.eclipse.cmf.occi.core.Resource;
 
 import org.eclipse.cmf.occi.monitoring.Metric;
 import org.eclipse.cmf.occi.monitoring.Publisher;
+import org.eclipse.cmf.occi.monitoring.Sensor;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -81,6 +84,15 @@ public class CloudmonitoringSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+			case CloudmonitoringPackage.CLOUDSENSOR: {
+				Cloudsensor cloudsensor = (Cloudsensor)theEObject;
+				T result = caseCloudsensor(cloudsensor);
+				if (result == null) result = caseSensor(cloudsensor);
+				if (result == null) result = caseResource(cloudsensor);
+				if (result == null) result = caseEntity(cloudsensor);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case CloudmonitoringPackage.CPU: {
 				Cpu cpu = (Cpu)theEObject;
 				T result = caseCpu(cpu);
@@ -193,6 +205,21 @@ public class CloudmonitoringSwitch<T> extends Switch<T> {
 			}
 			default: return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Cloudsensor</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Cloudsensor</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCloudsensor(Cloudsensor object) {
+		return null;
 	}
 
 	/**
@@ -387,6 +414,51 @@ public class CloudmonitoringSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSupervisorapiconnect(Supervisorapiconnect object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Entity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Entity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEntity(Entity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Resource</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Resource</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseResource(Resource object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Sensor</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Sensor</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSensor(Sensor object) {
 		return null;
 	}
 

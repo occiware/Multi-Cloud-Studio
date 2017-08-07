@@ -14,10 +14,13 @@ package cloudmonitoring.util;
 
 import cloudmonitoring.*;
 
+import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.core.MixinBase;
+import org.eclipse.cmf.occi.core.Resource;
 
 import org.eclipse.cmf.occi.monitoring.Metric;
 import org.eclipse.cmf.occi.monitoring.Publisher;
+import org.eclipse.cmf.occi.monitoring.Sensor;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -83,6 +86,10 @@ public class CloudmonitoringAdapterFactory extends AdapterFactoryImpl {
 	protected CloudmonitoringSwitch<Adapter> modelSwitch =
 		new CloudmonitoringSwitch<Adapter>() {
 			@Override
+			public Adapter caseCloudsensor(Cloudsensor object) {
+				return createCloudsensorAdapter();
+			}
+			@Override
 			public Adapter caseCpu(Cpu object) {
 				return createCpuAdapter();
 			}
@@ -135,6 +142,18 @@ public class CloudmonitoringAdapterFactory extends AdapterFactoryImpl {
 				return createSupervisorapiconnectAdapter();
 			}
 			@Override
+			public Adapter caseEntity(Entity object) {
+				return createEntityAdapter();
+			}
+			@Override
+			public Adapter caseResource(Resource object) {
+				return createResourceAdapter();
+			}
+			@Override
+			public Adapter caseSensor(Sensor object) {
+				return createSensorAdapter();
+			}
+			@Override
 			public Adapter caseMixinBase(MixinBase object) {
 				return createMixinBaseAdapter();
 			}
@@ -165,6 +184,20 @@ public class CloudmonitoringAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
+
+	/**
+	 * Creates a new adapter for an object of class '{@link cloudmonitoring.Cloudsensor <em>Cloudsensor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see cloudmonitoring.Cloudsensor
+	 * @generated
+	 */
+	public Adapter createCloudsensorAdapter() {
+		return null;
+	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link cloudmonitoring.Cpu <em>Cpu</em>}'.
@@ -345,6 +378,48 @@ public class CloudmonitoringAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSupervisorapiconnectAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.Entity <em>Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.core.Entity
+	 * @generated
+	 */
+	public Adapter createEntityAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.Resource <em>Resource</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.core.Resource
+	 * @generated
+	 */
+	public Adapter createResourceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.monitoring.Sensor <em>Sensor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.monitoring.Sensor
+	 * @generated
+	 */
+	public Adapter createSensorAdapter() {
 		return null;
 	}
 

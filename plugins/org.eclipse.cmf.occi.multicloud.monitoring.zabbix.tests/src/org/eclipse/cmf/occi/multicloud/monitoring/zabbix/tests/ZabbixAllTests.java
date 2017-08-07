@@ -10,30 +10,28 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  */
-package org.eclipse.cmf.occi.multicloud.monitoring.zabbix.impl;
+package org.eclipse.cmf.occi.multicloud.monitoring.zabbix.tests;
 
-import org.eclipse.cmf.occi.monitoring.impl.SensorImpl;
+import junit.framework.Test;
+import junit.framework.TestSuite;
 
-import org.eclipse.cmf.occi.multicloud.monitoring.zabbix.ZabbixPackage;
-import org.eclipse.cmf.occi.multicloud.monitoring.zabbix.Zabbixsensor;
-
-import org.eclipse.emf.ecore.EClass;
+import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Zabbixsensor</b></em>'.
+ * A test suite for the '<em><b>Zabbix</b></em>' model.
  * <!-- end-user-doc -->
- *
  * @generated
  */
-public class ZabbixsensorImpl extends SensorImpl implements Zabbixsensor {
+public class ZabbixAllTests extends TestSuite {
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ZabbixsensorImpl() {
-		super();
+	public static void main(String[] args) {
+		TestRunner.run(suite());
 	}
 
 	/**
@@ -41,9 +39,19 @@ public class ZabbixsensorImpl extends SensorImpl implements Zabbixsensor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	protected EClass eStaticClass() {
-		return ZabbixPackage.Literals.ZABBIXSENSOR;
+	public static Test suite() {
+		TestSuite suite = new ZabbixAllTests("Zabbix Tests");
+		suite.addTest(ZabbixTests.suite());
+		return suite;
 	}
 
-} //ZabbixsensorImpl
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ZabbixAllTests(String name) {
+		super(name);
+	}
+
+} //ZabbixAllTests

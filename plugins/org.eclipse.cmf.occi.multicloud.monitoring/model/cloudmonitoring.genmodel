@@ -43,6 +43,9 @@
       <ecoreDataType href="cloudmonitoring.ecore#//Temperature"/>
     </genDataTypes>
     <genClasses>
+      <ecoreClass href="cloudmonitoring.ecore#//Cloudsensor"/>
+    </genClasses>
+    <genClasses>
       <ecoreClass href="cloudmonitoring.ecore#//Cpu"/>
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="cloudmonitoring.ecore#//Cpu/loadAvg"/>

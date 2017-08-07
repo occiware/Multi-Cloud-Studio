@@ -6,7 +6,4 @@
   <kinds name="ZabbixCollector" scheme="http://occiware.org/occi/multicloud/monitoring/zabbix#">
     <parent href="http://schemas.ogf.org/occi/monitoring#//@kinds[term='collector']"/>
   </kinds>
-  <kinds name="ZabbixSensor" scheme="http://occiware.org/occi/multicloud/monitoring/zabbix#">
-    <parent href="http://schemas.ogf.org/occi/monitoring#//@kinds[term='sensor']"/>
-  </kinds>
 </occi:Extension>

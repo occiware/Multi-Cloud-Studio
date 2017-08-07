@@ -143,7 +143,8 @@ public class EmfpublisherImpl extends MixinBaseImpl implements Emfpublisher {
 		 *     then true
 		 *     else
 		 *       let
-		 *         result : occi::Boolean[1] = self.entity.oclIsKindOf(monitoring::Sensor)
+		 *         result : occi::Boolean[?] = self.entity.oclIsKindOf(monitoring::Sensor) or
+		 *         self.entity.oclIsKindOf(Cloudsensor)
 		 *       in
 		 *         'Emfpublisher::appliesConstraint'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
 		 *     endif
@@ -158,8 +159,17 @@ public class EmfpublisherImpl extends MixinBaseImpl implements Emfpublisher {
 		}
 		else {
 			final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_monitoring_c_c_Sensor_0 = idResolver.getClass(CloudmonitoringTables.CLSSid_Sensor, null);
-			final /*@NonInvalid*/ Entity entity = this.getEntity();
-			final /*@NonInvalid*/ boolean result = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity, TYP_monitoring_c_c_Sensor_0).booleanValue();
+			final /*@NonInvalid*/ Entity entity_0 = this.getEntity();
+			final /*@NonInvalid*/ boolean oclIsKindOf = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_0, TYP_monitoring_c_c_Sensor_0).booleanValue();
+			/*@NonInvalid*/ boolean result;
+			if (oclIsKindOf) {
+				result = ValueUtil.TRUE_VALUE;
+			}
+			else {
+				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_cloudmonitoring_c_c_Cloudsensor_0 = idResolver.getClass(CloudmonitoringTables.CLSSid_Cloudsensor, null);
+				final /*@NonInvalid*/ boolean oclIsKindOf_0 = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_0, TYP_cloudmonitoring_c_c_Cloudsensor_0).booleanValue();
+				result = oclIsKindOf_0;
+			}
 			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, CloudmonitoringTables.STR_Emfpublisher_c_c_appliesConstraint, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, CloudmonitoringTables.INT_0).booleanValue();
 			symbol_0 = logDiagnostic;
 		}

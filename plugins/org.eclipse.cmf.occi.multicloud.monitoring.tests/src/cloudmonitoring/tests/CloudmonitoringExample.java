@@ -14,6 +14,7 @@ package cloudmonitoring.tests;
 
 import cloudmonitoring.CloudmonitoringFactory;
 import cloudmonitoring.CloudmonitoringPackage;
+import cloudmonitoring.Cloudsensor;
 import cloudmonitoring.Cpu;
 
 import java.io.File;
@@ -70,7 +71,7 @@ public class CloudmonitoringExample {
 			System.out.println("Enter a list of file paths or URIs that have content like this:");
 			try {
 				Resource resource = resourceSet.createResource(URI.createURI("http:///My.cloudmonitoring"));
-				Cpu root = CloudmonitoringFactory.eINSTANCE.createCpu();
+				Cloudsensor root = CloudmonitoringFactory.eINSTANCE.createCloudsensor();
 				resource.getContents().add(root);
 				resource.save(System.out, null);
 			}

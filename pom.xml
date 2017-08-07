@@ -162,11 +162,17 @@
         <module>plugins/org.eclipse.cmf.occi.multicloud.monitoring.edit</module>
         <module>plugins/org.eclipse.cmf.occi.multicloud.monitoring.editor</module>
         <module>plugins/org.eclipse.cmf.occi.multicloud.monitoring.tests</module>
+        <module>plugins/org.eclipse.cmf.occi.multicloud.monitoring.connector</module>
+        <module>plugins/org.eclipse.cmf.occi.multicloud.monitoring.design</module>
         
         <!-- multicloud zabbix monitoring modules -->
         <module>plugins/org.eclipse.cmf.occi.multicloud.monitoring.zabbix</module>
-        
-        
+        <!-- <module>plugins/org.eclipse.cmf.occi.multicloud.monitoring.zabbix.edit</module>
+        <module>plugins/org.eclipse.cmf.occi.multicloud.monitoring.zabbix.editor</module>
+        <module>plugins/org.eclipse.cmf.occi.multicloud.monitoring.zabbix.tests</module>
+        <module>plugins/org.eclipse.cmf.occi.multicloud.monitoring.zabbix.connector</module>
+        <module>plugins/org.eclipse.cmf.occi.multicloud.monitoring.zabbix.design</module>
+        -->
         <!-- Releng -->
         <module>features/org.eclipse.cmf.occi.multicloud</module>
     </modules>

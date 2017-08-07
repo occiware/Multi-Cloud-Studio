@@ -41,15 +41,6 @@ public interface ZabbixFactory extends EFactory {
 	Zabbixcollector createZabbixcollector();
 
 	/**
-	 * Returns a new object of class '<em>Zabbixsensor</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Zabbixsensor</em>'.
-	 * @generated
-	 */
-	Zabbixsensor createZabbixsensor();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

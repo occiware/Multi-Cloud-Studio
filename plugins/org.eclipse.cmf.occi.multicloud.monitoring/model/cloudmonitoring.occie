@@ -2,6 +2,9 @@
 <occi:Extension xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:occi="http://schemas.ogf.org/occi/core/ecore" name="cloudmonitoring" scheme="http://occiware.org/occi/multicloud/monitoring#">
   <import href="http://schemas.ogf.org/occi/core#/"/>
   <import href="http://schemas.ogf.org/occi/monitoring#/"/>
+  <kinds name="CloudSensor" scheme="http://occiware.org/occi/multicloud/monitoring#">
+    <parent href="http://schemas.ogf.org/occi/monitoring#//@kinds[term='sensor']"/>
+  </kinds>
   <mixins name="cpu" scheme="http://occiware.org/occi/multicloud/monitoring#" depends="//@mixins[term='mainmetric']">
     <attributes name="loadAvg" mutable="true" type="//@types.2"/>
     <applies href="http://schemas.ogf.org/occi/monitoring#//@kinds[term='collector']"/>
@@ -31,12 +34,15 @@
     <actions name="startMonitoring" scheme="http://occiware.org/occi/multicloud/monitoring/sensorcontrol/action#" title="Start the monitoring system for this sensor"/>
     <actions name="stopMonitoring" scheme="http://occiware.org/occi/multicloud/monitoring/sensorcontrol/action#" title="Stop monitoring for this sensor"/>
     <applies href="http://schemas.ogf.org/occi/monitoring#//@kinds[term='sensor']"/>
+    <applies href="#//@kinds[term='cloudsensor']"/>
   </mixins>
   <mixins name="EmfPublisher" scheme="http://occiware.org/occi/multicloud/monitoring#" depends="//@mixins[term='publishercontrol']">
     <applies href="http://schemas.ogf.org/occi/monitoring#//@kinds[term='sensor']"/>
+    <applies href="#//@kinds[term='cloudsensor']"/>
   </mixins>
   <mixins name="SystemOutPublisher" scheme="http://occiware.org/occi/multicloud/monitoring#" title="System out publisher (console etc)" depends="//@mixins[term='publishercontrol']">
     <applies href="http://schemas.ogf.org/occi/monitoring#//@kinds[term='sensor']"/>
+    <applies href="#//@kinds[term='cloudsensor']"/>
   </mixins>
   <mixins name="PublisherControl" scheme="http://occiware.org/occi/multicloud/monitoring#">
     <attributes name="publisherState" mutable="true" default="on" type="//@types.4"/>
@@ -44,6 +50,7 @@
     <actions name="disable" scheme="http://occiware.org/occi/multicloud/monitoring/publishercontrol/action#"/>
     <depends href="http://schemas.ogf.org/occi/monitoring#//@mixins[term='publisher']"/>
     <applies href="http://schemas.ogf.org/occi/monitoring#//@kinds[term='sensor']"/>
+    <applies href="#//@kinds[term='cloudsensor']"/>
   </mixins>
   <mixins name="disk" scheme="http://occiware.org/occi/multicloud/monitoring#" depends="//@mixins[term='mainmetric']">
     <attributes name="swap" mutable="true" type="//@types.1"/>
@@ -73,6 +80,7 @@
       <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
     </attributes>
     <applies href="http://schemas.ogf.org/occi/monitoring#//@kinds[term='sensor']"/>
+    <applies href="#//@kinds[term='cloudsensor']"/>
   </mixins>
   <mixins name="MainMetric" scheme="http://occiware.org/occi/multicloud/monitoring#">
     <attributes name="thresholdUsage" mutable="true" default="80.0" type="//@types.1"/>

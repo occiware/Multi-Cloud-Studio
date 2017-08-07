@@ -54,7 +54,8 @@
       <!-- @generated zabbix -->
       <package
             uri="http://occiware.org/occi/multicloud/monitoring/zabbix/ecore"
-            class="org.eclipse.cmf.occi.multicloud.monitoring.zabbix.ZabbixPackage"/>
+            class="org.eclipse.cmf.occi.multicloud.monitoring.zabbix.ZabbixPackage"
+            genModel="model/zabbix.genmodel"/>
    </extension>
 
 </plugin>

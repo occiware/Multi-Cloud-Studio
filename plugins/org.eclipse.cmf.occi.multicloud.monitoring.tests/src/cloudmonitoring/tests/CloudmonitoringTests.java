@@ -41,6 +41,7 @@ public class CloudmonitoringTests extends TestSuite {
 	 */
 	public static Test suite() {
 		TestSuite suite = new CloudmonitoringTests("cloudmonitoring Tests");
+		suite.addTestSuite(CloudsensorTest.class);
 		suite.addTestSuite(CpuTest.class);
 		suite.addTestSuite(DiskioTest.class);
 		suite.addTestSuite(RamTest.class);

@@ -14,6 +14,7 @@ package cloudmonitoring.impl;
 
 import cloudmonitoring.CloudmonitoringFactory;
 import cloudmonitoring.CloudmonitoringPackage;
+import cloudmonitoring.Cloudsensor;
 import cloudmonitoring.Cpu;
 import cloudmonitoring.Disk;
 import cloudmonitoring.Diskio;
@@ -54,6 +55,13 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * @generated
  */
 public class CloudmonitoringPackageImpl extends EPackageImpl implements CloudmonitoringPackage {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass cloudsensorEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -259,6 +267,15 @@ public class CloudmonitoringPackageImpl extends EPackageImpl implements Cloudmon
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(CloudmonitoringPackage.eNS_URI, theCloudmonitoringPackage);
 		return theCloudmonitoringPackage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCloudsensor() {
+		return cloudsensorEClass;
 	}
 
 	/**
@@ -847,6 +864,8 @@ public class CloudmonitoringPackageImpl extends EPackageImpl implements Cloudmon
 		isCreated = true;
 
 		// Create classes and their features
+		cloudsensorEClass = createEClass(CLOUDSENSOR);
+
 		cpuEClass = createEClass(CPU);
 		createEAttribute(cpuEClass, CPU__LOAD_AVG);
 		createEOperation(cpuEClass, CPU___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
@@ -951,14 +970,15 @@ public class CloudmonitoringPackageImpl extends EPackageImpl implements Cloudmon
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		OCCIPackage theOCCIPackage = (OCCIPackage)EPackage.Registry.INSTANCE.getEPackage(OCCIPackage.eNS_URI);
 		MonitoringPackage theMonitoringPackage = (MonitoringPackage)EPackage.Registry.INSTANCE.getEPackage(MonitoringPackage.eNS_URI);
+		OCCIPackage theOCCIPackage = (OCCIPackage)EPackage.Registry.INSTANCE.getEPackage(OCCIPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		cloudsensorEClass.getESuperTypes().add(theMonitoringPackage.getSensor());
 		cpuEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		cpuEClass.getESuperTypes().add(this.getMainmetric());
 		diskioEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
@@ -985,6 +1005,8 @@ public class CloudmonitoringPackageImpl extends EPackageImpl implements Cloudmon
 		supervisorapiconnectEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 
 		// Initialize classes, features, and operations; add parameters
+		initEClass(cloudsensorEClass, Cloudsensor.class, "Cloudsensor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(cpuEClass, Cpu.class, "Cpu", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCpu_LoadAvg(), this.getAverage(), "loadAvg", null, 0, 1, Cpu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

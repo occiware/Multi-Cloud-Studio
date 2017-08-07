@@ -10,13 +10,13 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  */
-package org.eclipse.cmf.occi.multicloud.monitoring.zabbix;
+package cloudmonitoring;
 
 import org.eclipse.cmf.occi.monitoring.Sensor;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Zabbixsensor</b></em>'.
+ * A representation of the model object '<em><b>Cloudsensor</b></em>'.
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
@@ -24,9 +24,9 @@ import org.eclipse.cmf.occi.monitoring.Sensor;
  * <!-- end-model-doc -->
  *
  *
- * @see org.eclipse.cmf.occi.multicloud.monitoring.zabbix.ZabbixPackage#getZabbixsensor()
+ * @see cloudmonitoring.CloudmonitoringPackage#getCloudsensor()
  * @model
  * @generated
  */
-public interface Zabbixsensor extends Sensor {
-} // Zabbixsensor
+public interface Cloudsensor extends Sensor {
+} // Cloudsensor

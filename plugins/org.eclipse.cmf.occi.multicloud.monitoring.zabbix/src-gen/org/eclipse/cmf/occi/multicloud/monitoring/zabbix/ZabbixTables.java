@@ -88,11 +88,9 @@ public class ZabbixTables
 		}
 
 		public static final /*@NonNull*/ EcoreExecutorType _Zabbixcollector = new EcoreExecutorType(ZabbixPackage.Literals.ZABBIXCOLLECTOR, PACKAGE, 0);
-		public static final /*@NonNull*/ EcoreExecutorType _Zabbixsensor = new EcoreExecutorType(ZabbixPackage.Literals.ZABBIXSENSOR, PACKAGE, 0);
 
 		private static final /*@NonNull*/ EcoreExecutorType /*@NonNull*/ [] types = {
-			_Zabbixcollector,
-			_Zabbixsensor
+			_Zabbixcollector
 		};
 
 		/*
@@ -124,13 +122,6 @@ public class ZabbixTables
 		private static final /*@NonNull*/ ExecutorFragment _Zabbixcollector__OclAny = new ExecutorFragment(Types._Zabbixcollector, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _Zabbixcollector__OclElement = new ExecutorFragment(Types._Zabbixcollector, OCLstdlibTables.Types._OclElement);
 		private static final /*@NonNull*/ ExecutorFragment _Zabbixcollector__Zabbixcollector = new ExecutorFragment(Types._Zabbixcollector, ZabbixTables.Types._Zabbixcollector);
-
-		private static final /*@NonNull*/ ExecutorFragment _Zabbixsensor__Entity = new ExecutorFragment(Types._Zabbixsensor, OCCITables.Types._Entity);
-		private static final /*@NonNull*/ ExecutorFragment _Zabbixsensor__OclAny = new ExecutorFragment(Types._Zabbixsensor, OCLstdlibTables.Types._OclAny);
-		private static final /*@NonNull*/ ExecutorFragment _Zabbixsensor__OclElement = new ExecutorFragment(Types._Zabbixsensor, OCLstdlibTables.Types._OclElement);
-		private static final /*@NonNull*/ ExecutorFragment _Zabbixsensor__Resource = new ExecutorFragment(Types._Zabbixsensor, OCCITables.Types._Resource);
-		private static final /*@NonNull*/ ExecutorFragment _Zabbixsensor__Sensor = new ExecutorFragment(Types._Zabbixsensor, MonitoringTables.Types._Sensor);
-		private static final /*@NonNull*/ ExecutorFragment _Zabbixsensor__Zabbixsensor = new ExecutorFragment(Types._Zabbixsensor, ZabbixTables.Types._Zabbixsensor);
 
 		static {
 			Init.initEnd();
@@ -232,23 +223,11 @@ public class ZabbixTables
 		};
 		private static final int /*@NonNull*/ [] __Zabbixcollector = { 1,1,1,1,1,1 };
 
-		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Zabbixsensor =
-		{
-			Fragments._Zabbixsensor__OclAny /* 0 */,
-			Fragments._Zabbixsensor__OclElement /* 1 */,
-			Fragments._Zabbixsensor__Entity /* 2 */,
-			Fragments._Zabbixsensor__Resource /* 3 */,
-			Fragments._Zabbixsensor__Sensor /* 4 */,
-			Fragments._Zabbixsensor__Zabbixsensor /* 5 */
-		};
-		private static final int /*@NonNull*/ [] __Zabbixsensor = { 1,1,1,1,1,1 };
-
 		/**
 		 *	Install the fragment descriptors in the class descriptors.
 		 */
 		static {
 			Types._Zabbixcollector.initFragments(_Zabbixcollector, __Zabbixcollector);
-			Types._Zabbixsensor.initFragments(_Zabbixsensor, __Zabbixsensor);
 
 			Init.initEnd();
 		}
@@ -304,42 +283,6 @@ public class ZabbixTables
 			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
 		};
 
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Zabbixsensor__Zabbixsensor = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Zabbixsensor__Entity = {
-			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
-			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
-		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Zabbixsensor__OclAny = {
-			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
-			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
-			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
-			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
-			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
-			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
-			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
-			OCLstdlibTables.Operations._OclAny__toString /* toString() */
-		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Zabbixsensor__OclElement = {
-			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
-			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
-			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
-			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
-			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
-		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Zabbixsensor__Resource = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Zabbixsensor__Sensor = {};
-
 		/*
 		 *	Install the operation descriptors in the fragment descriptors.
 		 */
@@ -350,13 +293,6 @@ public class ZabbixTables
 			Fragments._Zabbixcollector__OclAny.initOperations(_Zabbixcollector__OclAny);
 			Fragments._Zabbixcollector__OclElement.initOperations(_Zabbixcollector__OclElement);
 			Fragments._Zabbixcollector__Zabbixcollector.initOperations(_Zabbixcollector__Zabbixcollector);
-
-			Fragments._Zabbixsensor__Entity.initOperations(_Zabbixsensor__Entity);
-			Fragments._Zabbixsensor__OclAny.initOperations(_Zabbixsensor__OclAny);
-			Fragments._Zabbixsensor__OclElement.initOperations(_Zabbixsensor__OclElement);
-			Fragments._Zabbixsensor__Resource.initOperations(_Zabbixsensor__Resource);
-			Fragments._Zabbixsensor__Sensor.initOperations(_Zabbixsensor__Sensor);
-			Fragments._Zabbixsensor__Zabbixsensor.initOperations(_Zabbixsensor__Zabbixsensor);
 
 			Init.initEnd();
 		}
@@ -378,14 +314,11 @@ public class ZabbixTables
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Zabbixcollector = {};
 
-		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Zabbixsensor = {};
-
 		/**
 		 *	Install the property descriptors in the fragment descriptors.
 		 */
 		static {
 			Fragments._Zabbixcollector__Zabbixcollector.initProperties(_Zabbixcollector);
-			Fragments._Zabbixsensor__Zabbixsensor.initProperties(_Zabbixsensor);
 
 			Init.initEnd();
 		}

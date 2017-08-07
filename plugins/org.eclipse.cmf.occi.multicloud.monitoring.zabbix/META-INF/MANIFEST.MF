@@ -15,8 +15,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.ocl.pivot;visibility:=reexport,
  org.eclipse.ocl.examples.codegen;visibility:=reexport,
- org.eclipse.cmf.occi.monitoring;visibility:=reexport,
- org.eclipse.cmf.occi.multicloud.monitoring;visibility:=reexport,
  org.eclipse.cmf.occi.core;visibility:=reexport,
  org.eclipse.cmf.occi.core.ui,
- org.eclipse.cmf.occi.core.gen.emf.ui
+ org.eclipse.cmf.occi.core.gen.emf.ui,
+ org.eclipse.cmf.occi.monitoring;visibility:=reexport,
+ org.eclipse.cmf.occi.multicloud.monitoring;visibility:=reexport

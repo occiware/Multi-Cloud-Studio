@@ -14,6 +14,8 @@ package cloudmonitoring;
 
 import org.eclipse.cmf.occi.core.OCCIPackage;
 
+import org.eclipse.cmf.occi.monitoring.MonitoringPackage;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -71,6 +73,214 @@ public interface CloudmonitoringPackage extends EPackage {
 	CloudmonitoringPackage eINSTANCE = cloudmonitoring.impl.CloudmonitoringPackageImpl.init();
 
 	/**
+	 * The meta object id for the '{@link cloudmonitoring.impl.CloudsensorImpl <em>Cloudsensor</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see cloudmonitoring.impl.CloudsensorImpl
+	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getCloudsensor()
+	 * @generated
+	 */
+	int CLOUDSENSOR = 0;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOUDSENSOR__ID = MonitoringPackage.SENSOR__ID;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOUDSENSOR__TITLE = MonitoringPackage.SENSOR__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOUDSENSOR__KIND = MonitoringPackage.SENSOR__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Location</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOUDSENSOR__LOCATION = MonitoringPackage.SENSOR__LOCATION;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOUDSENSOR__ATTRIBUTES = MonitoringPackage.SENSOR__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Mixins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOUDSENSOR__MIXINS = MonitoringPackage.SENSOR__MIXINS;
+
+	/**
+	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOUDSENSOR__PARTS = MonitoringPackage.SENSOR__PARTS;
+
+	/**
+	 * The feature id for the '<em><b>Summary</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOUDSENSOR__SUMMARY = MonitoringPackage.SENSOR__SUMMARY;
+
+	/**
+	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOUDSENSOR__LINKS = MonitoringPackage.SENSOR__LINKS;
+
+	/**
+	 * The feature id for the '<em><b>Rlinks</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOUDSENSOR__RLINKS = MonitoringPackage.SENSOR__RLINKS;
+
+	/**
+	 * The feature id for the '<em><b>Occi Sensor Timebase</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOUDSENSOR__OCCI_SENSOR_TIMEBASE = MonitoringPackage.SENSOR__OCCI_SENSOR_TIMEBASE;
+
+	/**
+	 * The feature id for the '<em><b>Occi Sensor Timestart</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOUDSENSOR__OCCI_SENSOR_TIMESTART = MonitoringPackage.SENSOR__OCCI_SENSOR_TIMESTART;
+
+	/**
+	 * The feature id for the '<em><b>Occi Sensor Timestop</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOUDSENSOR__OCCI_SENSOR_TIMESTOP = MonitoringPackage.SENSOR__OCCI_SENSOR_TIMESTOP;
+
+	/**
+	 * The feature id for the '<em><b>Occi Sensor Period</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOUDSENSOR__OCCI_SENSOR_PERIOD = MonitoringPackage.SENSOR__OCCI_SENSOR_PERIOD;
+
+	/**
+	 * The feature id for the '<em><b>Occi Sensor Granularity</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOUDSENSOR__OCCI_SENSOR_GRANULARITY = MonitoringPackage.SENSOR__OCCI_SENSOR_GRANULARITY;
+
+	/**
+	 * The feature id for the '<em><b>Occi Sensor Accuracy</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOUDSENSOR__OCCI_SENSOR_ACCURACY = MonitoringPackage.SENSOR__OCCI_SENSOR_ACCURACY;
+
+	/**
+	 * The number of structural features of the '<em>Cloudsensor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOUDSENSOR_FEATURE_COUNT = MonitoringPackage.SENSOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Occi Create</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOUDSENSOR___OCCI_CREATE = MonitoringPackage.SENSOR___OCCI_CREATE;
+
+	/**
+	 * The operation id for the '<em>Occi Retrieve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOUDSENSOR___OCCI_RETRIEVE = MonitoringPackage.SENSOR___OCCI_RETRIEVE;
+
+	/**
+	 * The operation id for the '<em>Occi Update</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOUDSENSOR___OCCI_UPDATE = MonitoringPackage.SENSOR___OCCI_UPDATE;
+
+	/**
+	 * The operation id for the '<em>Occi Delete</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOUDSENSOR___OCCI_DELETE = MonitoringPackage.SENSOR___OCCI_DELETE;
+
+	/**
+	 * The number of operations of the '<em>Cloudsensor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOUDSENSOR_OPERATION_COUNT = MonitoringPackage.SENSOR_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link cloudmonitoring.impl.CpuImpl <em>Cpu</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -78,7 +288,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getCpu()
 	 * @generated
 	 */
-	int CPU = 0;
+	int CPU = 1;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -187,7 +397,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getDiskio()
 	 * @generated
 	 */
-	int DISKIO = 1;
+	int DISKIO = 2;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -278,7 +488,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getRam()
 	 * @generated
 	 */
-	int RAM = 2;
+	int RAM = 3;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -396,7 +606,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getNetworkio()
 	 * @generated
 	 */
-	int NETWORKIO = 3;
+	int NETWORKIO = 4;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -487,7 +697,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getInputoutput()
 	 * @generated
 	 */
-	int INPUTOUTPUT = 4;
+	int INPUTOUTPUT = 5;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -560,7 +770,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getSensorcontrol()
 	 * @generated
 	 */
-	int SENSORCONTROL = 5;
+	int SENSORCONTROL = 6;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -651,7 +861,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getEmfpublisher()
 	 * @generated
 	 */
-	int EMFPUBLISHER = 6;
+	int EMFPUBLISHER = 7;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -742,7 +952,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getSystemoutpublisher()
 	 * @generated
 	 */
-	int SYSTEMOUTPUBLISHER = 7;
+	int SYSTEMOUTPUBLISHER = 8;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -833,7 +1043,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getPublishercontrol()
 	 * @generated
 	 */
-	int PUBLISHERCONTROL = 8;
+	int PUBLISHERCONTROL = 9;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -924,7 +1134,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getDisk()
 	 * @generated
 	 */
-	int DISK = 9;
+	int DISK = 10;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -1051,7 +1261,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getMailpublisher()
 	 * @generated
 	 */
-	int MAILPUBLISHER = 10;
+	int MAILPUBLISHER = 11;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -1196,7 +1406,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getMainmetric()
 	 * @generated
 	 */
-	int MAINMETRIC = 11;
+	int MAINMETRIC = 12;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -1296,7 +1506,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getSupervisorapiconnect()
 	 * @generated
 	 */
-	int SUPERVISORAPICONNECT = 12;
+	int SUPERVISORAPICONNECT = 13;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -1387,7 +1597,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getIOUnit()
 	 * @generated
 	 */
-	int IO_UNIT = 13;
+	int IO_UNIT = 14;
 
 	/**
 	 * The meta object id for the '{@link cloudmonitoring.MonitorState <em>Monitor State</em>}' enum.
@@ -1397,7 +1607,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getMonitorState()
 	 * @generated
 	 */
-	int MONITOR_STATE = 14;
+	int MONITOR_STATE = 15;
 
 	/**
 	 * The meta object id for the '<em>Percent</em>' data type.
@@ -1407,7 +1617,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getPercent()
 	 * @generated
 	 */
-	int PERCENT = 15;
+	int PERCENT = 16;
 
 	/**
 	 * The meta object id for the '<em>Average</em>' data type.
@@ -1417,7 +1627,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getAverage()
 	 * @generated
 	 */
-	int AVERAGE = 16;
+	int AVERAGE = 17;
 
 	/**
 	 * The meta object id for the '<em>Per Sec</em>' data type.
@@ -1427,7 +1637,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getPerSec()
 	 * @generated
 	 */
-	int PER_SEC = 17;
+	int PER_SEC = 18;
 
 	/**
 	 * The meta object id for the '<em>Temperature</em>' data type.
@@ -1437,8 +1647,18 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getTemperature()
 	 * @generated
 	 */
-	int TEMPERATURE = 18;
+	int TEMPERATURE = 19;
 
+
+	/**
+	 * Returns the meta object for class '{@link cloudmonitoring.Cloudsensor <em>Cloudsensor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Cloudsensor</em>'.
+	 * @see cloudmonitoring.Cloudsensor
+	 * @generated
+	 */
+	EClass getCloudsensor();
 
 	/**
 	 * Returns the meta object for class '{@link cloudmonitoring.Cpu <em>Cpu</em>}'.
@@ -2116,6 +2336,16 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
+		/**
+		 * The meta object literal for the '{@link cloudmonitoring.impl.CloudsensorImpl <em>Cloudsensor</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see cloudmonitoring.impl.CloudsensorImpl
+		 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getCloudsensor()
+		 * @generated
+		 */
+		EClass CLOUDSENSOR = eINSTANCE.getCloudsensor();
+
 		/**
 		 * The meta object literal for the '{@link cloudmonitoring.impl.CpuImpl <em>Cpu</em>}' class.
 		 * <!-- begin-user-doc -->

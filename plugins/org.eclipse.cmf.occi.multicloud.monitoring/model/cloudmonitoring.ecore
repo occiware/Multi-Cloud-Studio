@@ -53,6 +53,11 @@
     <eLiterals name="off" value="1" literal="off"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="Temperature" instanceClassName="java.lang.Double"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Cloudsensor" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.monitoring/model/monitoring.ecore#//Sensor">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value=""/>
+    </eAnnotations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Cpu" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase #//Mainmetric">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="appliesConstraint"/>
@@ -138,7 +143,7 @@
       <details key="constraints" value="appliesConstraint"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="appliesConstraint" value="self.entity.oclIsKindOf(monitoring::Sensor)"/>
+      <details key="appliesConstraint" value="self.entity.oclIsKindOf(monitoring::Sensor) or self.entity.oclIsKindOf(cloudmonitoring::Cloudsensor)"/>
     </eAnnotations>
     <eOperations name="startmonitoring">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -162,7 +167,7 @@
       <details key="constraints" value="appliesConstraint"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="appliesConstraint" value="self.entity.oclIsKindOf(monitoring::Sensor)"/>
+      <details key="appliesConstraint" value="self.entity.oclIsKindOf(monitoring::Sensor) or self.entity.oclIsKindOf(cloudmonitoring::Cloudsensor)"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Systemoutpublisher" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase #//Publishercontrol">
@@ -170,7 +175,7 @@
       <details key="constraints" value="appliesConstraint"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="appliesConstraint" value="self.entity.oclIsKindOf(monitoring::Sensor)"/>
+      <details key="appliesConstraint" value="self.entity.oclIsKindOf(monitoring::Sensor) or self.entity.oclIsKindOf(cloudmonitoring::Cloudsensor)"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Publishercontrol" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase platform:/plugin/org.eclipse.cmf.occi.monitoring/model/monitoring.ecore#//Publisher">
@@ -178,7 +183,7 @@
       <details key="constraints" value="appliesConstraint"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="appliesConstraint" value="self.entity.oclIsKindOf(monitoring::Sensor)"/>
+      <details key="appliesConstraint" value="self.entity.oclIsKindOf(monitoring::Sensor) or self.entity.oclIsKindOf(cloudmonitoring::Cloudsensor)"/>
     </eAnnotations>
     <eOperations name="enable">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -225,7 +230,7 @@
       <details key="constraints" value="appliesConstraint"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="appliesConstraint" value="self.entity.oclIsKindOf(monitoring::Sensor)"/>
+      <details key="appliesConstraint" value="self.entity.oclIsKindOf(monitoring::Sensor) or self.entity.oclIsKindOf(cloudmonitoring::Cloudsensor)"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mailAddress" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

@@ -21,7 +21,6 @@ import org.eclipse.cmf.occi.monitoring.MonitoringPackage;
 import org.eclipse.cmf.occi.multicloud.monitoring.zabbix.ZabbixFactory;
 import org.eclipse.cmf.occi.multicloud.monitoring.zabbix.ZabbixPackage;
 import org.eclipse.cmf.occi.multicloud.monitoring.zabbix.Zabbixcollector;
-import org.eclipse.cmf.occi.multicloud.monitoring.zabbix.Zabbixsensor;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -41,13 +40,6 @@ public class ZabbixPackageImpl extends EPackageImpl implements ZabbixPackage {
 	 * @generated
 	 */
 	private EClass zabbixcollectorEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass zabbixsensorEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -129,15 +121,6 @@ public class ZabbixPackageImpl extends EPackageImpl implements ZabbixPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getZabbixsensor() {
-		return zabbixsensorEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public ZabbixFactory getZabbixFactory() {
 		return (ZabbixFactory)getEFactoryInstance();
 	}
@@ -162,8 +145,6 @@ public class ZabbixPackageImpl extends EPackageImpl implements ZabbixPackage {
 
 		// Create classes and their features
 		zabbixcollectorEClass = createEClass(ZABBIXCOLLECTOR);
-
-		zabbixsensorEClass = createEClass(ZABBIXSENSOR);
 	}
 
 	/**
@@ -198,12 +179,9 @@ public class ZabbixPackageImpl extends EPackageImpl implements ZabbixPackage {
 
 		// Add supertypes to classes
 		zabbixcollectorEClass.getESuperTypes().add(theMonitoringPackage.getCollector());
-		zabbixsensorEClass.getESuperTypes().add(theMonitoringPackage.getSensor());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(zabbixcollectorEClass, Zabbixcollector.class, "Zabbixcollector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(zabbixsensorEClass, Zabbixsensor.class, "Zabbixsensor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

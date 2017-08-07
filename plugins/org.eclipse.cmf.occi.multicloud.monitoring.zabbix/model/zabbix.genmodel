@@ -9,9 +9,6 @@
     <genClasses>
       <ecoreClass href="zabbix.ecore#//Zabbixcollector"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="zabbix.ecore#//Zabbixsensor"/>
-    </genClasses>
   </genPackages>
   <usedGenPackages href="platform:/plugin/org.eclipse.cmf.occi.monitoring/model/monitoring.genmodel#//monitoring"/>
   <usedGenPackages href="platform:/resource/org.eclipse.cmf.occi.multicloud.monitoring/model/cloudmonitoring.genmodel#//cloudmonitoring"/>

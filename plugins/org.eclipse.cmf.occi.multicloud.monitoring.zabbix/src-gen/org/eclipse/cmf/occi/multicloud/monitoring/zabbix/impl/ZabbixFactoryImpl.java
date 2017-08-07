@@ -67,7 +67,6 @@ public class ZabbixFactoryImpl extends EFactoryImpl implements ZabbixFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case ZabbixPackage.ZABBIXCOLLECTOR: return createZabbixcollector();
-			case ZabbixPackage.ZABBIXSENSOR: return createZabbixsensor();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -81,16 +80,6 @@ public class ZabbixFactoryImpl extends EFactoryImpl implements ZabbixFactory {
 	public Zabbixcollector createZabbixcollector() {
 		ZabbixcollectorImpl zabbixcollector = new ZabbixcollectorImpl();
 		return zabbixcollector;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Zabbixsensor createZabbixsensor() {
-		ZabbixsensorImpl zabbixsensor = new ZabbixsensorImpl();
-		return zabbixsensor;
 	}
 
 	/**

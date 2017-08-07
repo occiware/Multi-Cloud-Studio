@@ -68,6 +68,7 @@ public class CloudmonitoringTables
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://schemas.ogf.org/occi/core/ecore", "occi", org.eclipse.cmf.occi.core.OCCIPackage.eINSTANCE);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_monitoring_s_ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://schemas.ogf.org/occi/monitoring/ecore", null, org.eclipse.cmf.occi.monitoring.MonitoringPackage.eINSTANCE);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Class = cloudmonitoring.CloudmonitoringTables.PACKid_$metamodel$.getClassId("Class", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Cloudsensor = cloudmonitoring.CloudmonitoringTables.PACKid_http_c_s_s_occiware_org_s_occi_s_multicloud_s_monitoring_s_ecore.getClassId("Cloudsensor", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Collector = cloudmonitoring.CloudmonitoringTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_monitoring_s_ecore.getClassId("Collector", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Cpu = cloudmonitoring.CloudmonitoringTables.PACKid_http_c_s_s_occiware_org_s_occi_s_multicloud_s_monitoring_s_ecore.getClassId("Cpu", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Disk = cloudmonitoring.CloudmonitoringTables.PACKid_http_c_s_s_occiware_org_s_occi_s_multicloud_s_monitoring_s_ecore.getClassId("Disk", 0);
@@ -134,6 +135,7 @@ public class CloudmonitoringTables
 		}
 
 		public static final /*@NonNull*/ EcoreExecutorType _Average = new EcoreExecutorType("Average", PACKAGE, 0);
+		public static final /*@NonNull*/ EcoreExecutorType _Cloudsensor = new EcoreExecutorType(CloudmonitoringPackage.Literals.CLOUDSENSOR, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Cpu = new EcoreExecutorType(CloudmonitoringPackage.Literals.CPU, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Disk = new EcoreExecutorType(CloudmonitoringPackage.Literals.DISK, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Diskio = new EcoreExecutorType(CloudmonitoringPackage.Literals.DISKIO, PACKAGE, 0);
@@ -155,6 +157,7 @@ public class CloudmonitoringTables
 
 		private static final /*@NonNull*/ EcoreExecutorType /*@NonNull*/ [] types = {
 			_Average,
+			_Cloudsensor,
 			_Cpu,
 			_Disk,
 			_Diskio,
@@ -200,6 +203,13 @@ public class CloudmonitoringTables
 
 		private static final /*@NonNull*/ ExecutorFragment _Average__Average = new ExecutorFragment(Types._Average, CloudmonitoringTables.Types._Average);
 		private static final /*@NonNull*/ ExecutorFragment _Average__OclAny = new ExecutorFragment(Types._Average, OCLstdlibTables.Types._OclAny);
+
+		private static final /*@NonNull*/ ExecutorFragment _Cloudsensor__Cloudsensor = new ExecutorFragment(Types._Cloudsensor, CloudmonitoringTables.Types._Cloudsensor);
+		private static final /*@NonNull*/ ExecutorFragment _Cloudsensor__Entity = new ExecutorFragment(Types._Cloudsensor, OCCITables.Types._Entity);
+		private static final /*@NonNull*/ ExecutorFragment _Cloudsensor__OclAny = new ExecutorFragment(Types._Cloudsensor, OCLstdlibTables.Types._OclAny);
+		private static final /*@NonNull*/ ExecutorFragment _Cloudsensor__OclElement = new ExecutorFragment(Types._Cloudsensor, OCLstdlibTables.Types._OclElement);
+		private static final /*@NonNull*/ ExecutorFragment _Cloudsensor__Resource = new ExecutorFragment(Types._Cloudsensor, OCCITables.Types._Resource);
+		private static final /*@NonNull*/ ExecutorFragment _Cloudsensor__Sensor = new ExecutorFragment(Types._Cloudsensor, MonitoringTables.Types._Sensor);
 
 		private static final /*@NonNull*/ ExecutorFragment _Cpu__Cpu = new ExecutorFragment(Types._Cpu, CloudmonitoringTables.Types._Cpu);
 		private static final /*@NonNull*/ ExecutorFragment _Cpu__Mainmetric = new ExecutorFragment(Types._Cpu, CloudmonitoringTables.Types._Mainmetric);
@@ -449,6 +459,17 @@ public class CloudmonitoringTables
 		};
 		private static final int /*@NonNull*/ [] __Average = { 1,1 };
 
+		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Cloudsensor =
+		{
+			Fragments._Cloudsensor__OclAny /* 0 */,
+			Fragments._Cloudsensor__OclElement /* 1 */,
+			Fragments._Cloudsensor__Entity /* 2 */,
+			Fragments._Cloudsensor__Resource /* 3 */,
+			Fragments._Cloudsensor__Sensor /* 4 */,
+			Fragments._Cloudsensor__Cloudsensor /* 5 */
+		};
+		private static final int /*@NonNull*/ [] __Cloudsensor = { 1,1,1,1,1,1 };
+
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Cpu =
 		{
 			Fragments._Cpu__OclAny /* 0 */,
@@ -631,6 +652,7 @@ public class CloudmonitoringTables
 		 */
 		static {
 			Types._Average.initFragments(_Average, __Average);
+			Types._Cloudsensor.initFragments(_Cloudsensor, __Cloudsensor);
 			Types._Cpu.initFragments(_Cpu, __Cpu);
 			Types._Disk.initFragments(_Disk, __Disk);
 			Types._Diskio.initFragments(_Diskio, __Diskio);
@@ -686,6 +708,42 @@ public class CloudmonitoringTables
 			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
 			OCLstdlibTables.Operations._OclAny__toString /* toString() */
 		};
+
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cloudsensor__Cloudsensor = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cloudsensor__Entity = {
+			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
+			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
+			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
+			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cloudsensor__OclAny = {
+			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
+			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
+			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
+			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
+			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
+			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
+			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
+			OCLstdlibTables.Operations._OclAny__toString /* toString() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cloudsensor__OclElement = {
+			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
+			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
+			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
+			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
+			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cloudsensor__Resource = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cloudsensor__Sensor = {};
 
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cpu__Cpu = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cpu__Mainmetric = {};
@@ -1230,6 +1288,13 @@ public class CloudmonitoringTables
 			Fragments._Average__Average.initOperations(_Average__Average);
 			Fragments._Average__OclAny.initOperations(_Average__OclAny);
 
+			Fragments._Cloudsensor__Cloudsensor.initOperations(_Cloudsensor__Cloudsensor);
+			Fragments._Cloudsensor__Entity.initOperations(_Cloudsensor__Entity);
+			Fragments._Cloudsensor__OclAny.initOperations(_Cloudsensor__OclAny);
+			Fragments._Cloudsensor__OclElement.initOperations(_Cloudsensor__OclElement);
+			Fragments._Cloudsensor__Resource.initOperations(_Cloudsensor__Resource);
+			Fragments._Cloudsensor__Sensor.initOperations(_Cloudsensor__Sensor);
+
 			Fragments._Cpu__Cpu.initOperations(_Cpu__Cpu);
 			Fragments._Cpu__Mainmetric.initOperations(_Cpu__Mainmetric);
 			Fragments._Cpu__Metric.initOperations(_Cpu__Metric);
@@ -1355,6 +1420,8 @@ public class CloudmonitoringTables
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Average = {};
 
+		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Cloudsensor = {};
+
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Cpu = {
 			CloudmonitoringTables.Properties._Cpu__loadAvg,
 			CloudmonitoringTables.Properties._Mainmetric__temperature,
@@ -1452,6 +1519,7 @@ public class CloudmonitoringTables
 		 */
 		static {
 			Fragments._Average__Average.initProperties(_Average);
+			Fragments._Cloudsensor__Cloudsensor.initProperties(_Cloudsensor);
 			Fragments._Cpu__Cpu.initProperties(_Cpu);
 			Fragments._Disk__Disk.initProperties(_Disk);
 			Fragments._Diskio__Diskio.initProperties(_Diskio);

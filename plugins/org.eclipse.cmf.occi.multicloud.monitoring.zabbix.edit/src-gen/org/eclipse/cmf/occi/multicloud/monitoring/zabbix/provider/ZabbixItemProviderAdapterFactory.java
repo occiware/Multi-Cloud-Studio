@@ -105,29 +105,6 @@ public class ZabbixItemProviderAdapterFactory extends ZabbixAdapterFactory imple
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.monitoring.zabbix.Zabbixsensor} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ZabbixsensorItemProvider zabbixsensorItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.monitoring.zabbix.Zabbixsensor}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createZabbixsensorAdapter() {
-		if (zabbixsensorItemProvider == null) {
-			zabbixsensorItemProvider = new ZabbixsensorItemProvider(this);
-		}
-
-		return zabbixsensorItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -227,7 +204,6 @@ public class ZabbixItemProviderAdapterFactory extends ZabbixAdapterFactory imple
 	 */
 	public void dispose() {
 		if (zabbixcollectorItemProvider != null) zabbixcollectorItemProvider.dispose();
-		if (zabbixsensorItemProvider != null) zabbixsensorItemProvider.dispose();
 	}
 
 }

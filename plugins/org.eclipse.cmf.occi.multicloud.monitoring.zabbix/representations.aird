@@ -10,10 +10,10 @@
     <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
     <semanticResources>platform:/plugin/org.eclipse.cmf.occi.monitoring/model/monitoring.genmodel</semanticResources>
     <semanticResources>platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.genmodel</semanticResources>
-    <semanticResources>model/zabbix.ecore</semanticResources>
-    <semanticResources>model/zabbix.genmodel</semanticResources>
     <semanticResources>platform:/resource/org.eclipse.cmf.occi.multicloud.monitoring/model/cloudmonitoring.genmodel</semanticResources>
     <semanticResources>platform:/resource/org.eclipse.cmf.occi.multicloud.monitoring/model/cloudmonitoring.ecore</semanticResources>
+    <semanticResources>model/zabbix.ecore</semanticResources>
+    <semanticResources>model/zabbix.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_tDwdgHd_Eeel8dnl9hOpkw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_tGiEsHd_Eeel8dnl9hOpkw" name="zabbix" repPath="#_tGfocHd_Eeel8dnl9hOpkw">

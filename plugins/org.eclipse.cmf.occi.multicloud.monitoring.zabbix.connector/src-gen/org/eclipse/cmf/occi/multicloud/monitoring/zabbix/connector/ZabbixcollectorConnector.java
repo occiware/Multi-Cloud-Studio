@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Tue Aug 08 09:04:10 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.monitoring.zabbix/model/zabbix.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Tue Aug 08 09:43:36 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.monitoring.zabbix/model/zabbix.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.monitoring.zabbix.connector;
 
@@ -95,13 +95,11 @@ public class ZabbixcollectorConnector extends org.eclipse.cmf.occi.multicloud.mo
 		// TODO: Implement this callback or remove this method.
 	}
 	// End of user code
-	
 	@Override
 	public Collector buildTinomCollector() throws MonitorException {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
 	@Override
 	public String[] getMetricsChannelToPublish() {
 		// TODO Auto-generated method stub

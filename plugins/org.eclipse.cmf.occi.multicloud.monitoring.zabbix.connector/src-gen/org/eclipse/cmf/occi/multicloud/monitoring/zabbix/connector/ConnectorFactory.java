@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Tue Aug 08 09:04:10 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.monitoring.zabbix/model/zabbix.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Tue Aug 08 09:43:36 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.monitoring.zabbix/model/zabbix.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.monitoring.zabbix.connector;
 
@@ -30,6 +30,17 @@ public class ConnectorFactory extends org.eclipse.cmf.occi.multicloud.monitoring
 	@Override
 	public org.eclipse.cmf.occi.multicloud.monitoring.zabbix.Zabbixcollector createZabbixcollector() {
 		return new ZabbixcollectorConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://occiware.org/occi/multicloud/monitoring/zabbix#
+	 * - term: zabbixapiconnect
+	 * - title: Zabbix connection to the request api
+	 */
+	@Override
+	public org.eclipse.cmf.occi.multicloud.monitoring.zabbix.Zabbixapiconnect createZabbixapiconnect() {
+		return new ZabbixapiconnectConnector();
 	}
 
 }

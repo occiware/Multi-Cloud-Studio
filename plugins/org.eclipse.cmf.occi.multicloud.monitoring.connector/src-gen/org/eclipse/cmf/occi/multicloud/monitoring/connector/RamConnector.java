@@ -14,6 +14,7 @@
  */
 package org.eclipse.cmf.occi.multicloud.monitoring.connector;
 
+import org.occiware.tinom.model.Metric;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -32,6 +33,8 @@ public class RamConnector extends RamImpl
 	 */
 	private static Logger LOGGER = LoggerFactory.getLogger(RamConnector.class);
 
+	private Metric ramTinomMetric;
+	
 	// Start of user code Ramconnector_constructor
 	/**
 	 * Constructs a ram connector.
@@ -42,4 +45,15 @@ public class RamConnector extends RamImpl
 		// TODO: Implement this constructor.
 	}
 	// End of user code
+
+	public Metric getRamTinomMetric() {
+		return ramTinomMetric;
+	}
+
+	public void setRamTinomMetric(Metric ramTinomMetric) {
+		this.ramTinomMetric = ramTinomMetric;
+	}
+	
+	
+	
 }	

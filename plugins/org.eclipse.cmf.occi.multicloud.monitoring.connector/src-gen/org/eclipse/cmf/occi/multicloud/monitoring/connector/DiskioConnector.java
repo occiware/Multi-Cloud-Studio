@@ -14,6 +14,7 @@
  */
 package org.eclipse.cmf.occi.multicloud.monitoring.connector;
 
+import org.occiware.tinom.model.Metric;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -32,6 +33,8 @@ public class DiskioConnector extends DiskioImpl
 	 */
 	private static Logger LOGGER = LoggerFactory.getLogger(DiskioConnector.class);
 
+	private Metric diskIoTinomMetric;
+	
 	// Start of user code Diskioconnector_constructor
 	/**
 	 * Constructs a diskio connector.
@@ -42,4 +45,13 @@ public class DiskioConnector extends DiskioImpl
 		// TODO: Implement this constructor.
 	}
 	// End of user code
+
+	public Metric getDiskIoTinomMetric() {
+		return diskIoTinomMetric;
+	}
+
+	public void setDiskIoTinomMetric(Metric diskIoTinomMetric) {
+		this.diskIoTinomMetric = diskIoTinomMetric;
+	}
+	
 }	

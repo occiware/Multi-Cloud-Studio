@@ -14,6 +14,7 @@
  */
 package org.eclipse.cmf.occi.multicloud.monitoring.connector;
 
+import org.occiware.tinom.model.Metric;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -32,6 +33,8 @@ public class NetworkioConnector extends NetworkioImpl
 	 */
 	private static Logger LOGGER = LoggerFactory.getLogger(NetworkioConnector.class);
 
+	private Metric networkIoTinomMetric;
+	
 	// Start of user code Networkioconnector_constructor
 	/**
 	 * Constructs a networkio connector.
@@ -42,4 +45,15 @@ public class NetworkioConnector extends NetworkioImpl
 		// TODO: Implement this constructor.
 	}
 	// End of user code
+
+	public Metric getNetworkIoTinomMetric() {
+		return networkIoTinomMetric;
+	}
+
+	public void setNetworkIoTinomMetric(Metric networkIoTinomMetric) {
+		this.networkIoTinomMetric = networkIoTinomMetric;
+	}
+	
+	
+	
 }	

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<occi:Extension xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:occi="http://schemas.ogf.org/occi/core/ecore" name="zabbix" scheme="http://occiware.org/occi/multicloud/monitoring/zabbix#">
+<occi:Extension xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:occi="http://schemas.ogf.org/occi/core/ecore" name="zabbix" scheme="http://occiware.org/occi/multicloud/monitoring/zabbix#">
   <import href="http://schemas.ogf.org/occi/core#/"/>
   <import href="http://schemas.ogf.org/occi/monitoring#/"/>
   <import href="http://occiware.org/occi/multicloud/monitoring#/"/>
@@ -7,6 +7,12 @@
     <parent href="http://schemas.ogf.org/occi/monitoring#//@kinds[term='collector']"/>
   </kinds>
   <mixins name="ZabbixApiConnect" scheme="http://occiware.org/occi/multicloud/monitoring/zabbix#" title="Zabbix connection to the request api" applies="//@kinds[term='zabbixcollector']">
+    <attributes name="templateName" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="hostGroupName" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
     <depends href="http://occiware.org/occi/multicloud/monitoring#//@mixins[term='supervisorapiconnect']"/>
   </mixins>
 </occi:Extension>

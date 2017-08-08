@@ -14,6 +14,7 @@
  */
 package org.eclipse.cmf.occi.multicloud.monitoring.connector;
 
+import org.occiware.tinom.model.Metric;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -32,6 +33,9 @@ public class CpuConnector extends CpuImpl
 	 */
 	private static Logger LOGGER = LoggerFactory.getLogger(CpuConnector.class);
 
+	private Metric cpuTinomMetric;
+	
+	
 	// Start of user code Cpuconnector_constructor
 	/**
 	 * Constructs a cpu connector.
@@ -42,4 +46,15 @@ public class CpuConnector extends CpuImpl
 		// TODO: Implement this constructor.
 	}
 	// End of user code
+
+
+	public Metric getCpuTinomMetric() {
+		return cpuTinomMetric;
+	}
+
+	public void setCpuTinomMetric(Metric tinomCpuMetric) {
+		this.cpuTinomMetric = tinomCpuMetric;
+	}
+	
+	
 }	

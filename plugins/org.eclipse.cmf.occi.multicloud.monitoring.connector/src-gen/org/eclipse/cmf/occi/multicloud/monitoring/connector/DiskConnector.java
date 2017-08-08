@@ -14,6 +14,7 @@
  */
 package org.eclipse.cmf.occi.multicloud.monitoring.connector;
 
+import org.occiware.tinom.model.Metric;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -32,6 +33,8 @@ public class DiskConnector extends DiskImpl
 	 */
 	private static Logger LOGGER = LoggerFactory.getLogger(DiskConnector.class);
 
+	private Metric diskTinomMetric;
+	
 	// Start of user code Diskconnector_constructor
 	/**
 	 * Constructs a disk connector.
@@ -42,4 +45,15 @@ public class DiskConnector extends DiskImpl
 		// TODO: Implement this constructor.
 	}
 	// End of user code
+
+	public Metric getDiskTinomMetric() {
+		return diskTinomMetric;
+	}
+
+	public void setDiskTinomMetric(Metric diskTinomMetric) {
+		this.diskTinomMetric = diskTinomMetric;
+	}
+	
+	
+	
 }	

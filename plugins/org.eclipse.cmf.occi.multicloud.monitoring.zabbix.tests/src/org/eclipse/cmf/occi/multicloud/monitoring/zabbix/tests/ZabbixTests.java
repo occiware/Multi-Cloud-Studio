@@ -42,6 +42,7 @@ public class ZabbixTests extends TestSuite {
 	public static Test suite() {
 		TestSuite suite = new ZabbixTests("zabbix Tests");
 		suite.addTestSuite(ZabbixcollectorTest.class);
+		suite.addTestSuite(ZabbixapiconnectTest.class);
 		return suite;
 	}
 

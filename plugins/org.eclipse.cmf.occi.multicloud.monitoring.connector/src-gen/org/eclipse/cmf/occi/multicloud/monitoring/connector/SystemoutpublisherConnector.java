@@ -14,6 +14,9 @@
  */
 package org.eclipse.cmf.occi.multicloud.monitoring.connector;
 
+import java.util.UUID;
+
+import org.eclipse.cmf.occi.multicloud.monitoring.connector.tinom.SystemOutTinomPublisher;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -32,6 +35,9 @@ public class SystemoutpublisherConnector extends SystemoutpublisherImpl
 	 */
 	private static Logger LOGGER = LoggerFactory.getLogger(SystemoutpublisherConnector.class);
 
+	private SystemOutTinomPublisher outPublisher = null;
+	private String uuid = UUID.randomUUID().toString();
+	
 	// Start of user code Systemoutpublisherconnector_constructor
 	/**
 	 * Constructs a systemoutpublisher connector.
@@ -42,4 +48,10 @@ public class SystemoutpublisherConnector extends SystemoutpublisherImpl
 		// TODO: Implement this constructor.
 	}
 	// End of user code
+
+	public SystemOutTinomPublisher buildTinomPublisher() {
+		outPublisher = new SystemOutTinomPublisher("console" + uuid);
+		return outPublisher;
+	}
+	
 }	

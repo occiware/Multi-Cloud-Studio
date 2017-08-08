@@ -14,6 +14,9 @@
  */
 package org.eclipse.cmf.occi.multicloud.monitoring.connector;
 
+import java.util.UUID;
+
+import org.eclipse.cmf.occi.multicloud.monitoring.connector.tinom.EMFTinomPublisher;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -32,14 +35,24 @@ public class EmfpublisherConnector extends EmfpublisherImpl
 	 */
 	private static Logger LOGGER = LoggerFactory.getLogger(EmfpublisherConnector.class);
 
+	private EMFTinomPublisher emfTinomPublisher = null;
+	private String uuid = UUID.randomUUID().toString();
+	
 	// Start of user code Emfpublisherconnector_constructor
 	/**
 	 * Constructs a emfpublisher connector.
 	 */
-	EmfpublisherConnector()
-	{
+	EmfpublisherConnector() {
 		LOGGER.debug("Constructor called on " + this);
-		// TODO: Implement this constructor.
 	}
 	// End of user code
+	
+	// Start of user code Emfpublisherconnector_constructor
+	public EMFTinomPublisher buildTinomPublisher() {
+		LOGGER.info("Build sensor with publisher : EMFTinomPublisher");
+		emfTinomPublisher = new EMFTinomPublisher("emf" + uuid, this);
+		return emfTinomPublisher;
+	}
+	// End of user code
+	
 }	

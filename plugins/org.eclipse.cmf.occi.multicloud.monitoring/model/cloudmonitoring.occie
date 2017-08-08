@@ -6,31 +6,31 @@
     <parent href="http://schemas.ogf.org/occi/monitoring#//@kinds[term='sensor']"/>
   </kinds>
   <mixins name="cpu" scheme="http://occiware.org/occi/multicloud/monitoring#" depends="//@mixins[term='mainmetric']">
-    <attributes name="loadAvg" mutable="true" type="//@types.2"/>
+    <attributes name="loadAvg" type="//@types.2"/>
     <applies href="http://schemas.ogf.org/occi/monitoring#//@kinds[term='collector']"/>
   </mixins>
   <mixins name="DiskIO" scheme="http://occiware.org/occi/multicloud/monitoring#" depends="//@mixins[term='inputoutput']">
-    <attributes name="diskWrite" mutable="true" type="//@types.3"/>
-    <attributes name="diskRead" mutable="true" type="//@types.3"/>
+    <attributes name="diskWrite" type="//@types.3"/>
+    <attributes name="diskRead" type="//@types.3"/>
     <applies href="http://schemas.ogf.org/occi/monitoring#//@kinds[term='collector']"/>
   </mixins>
   <mixins name="ram" scheme="http://occiware.org/occi/multicloud/monitoring#" depends="//@mixins[term='mainmetric']">
-    <attributes name="free" mutable="true" type="//@types.1"/>
-    <attributes name="swap" mutable="true" type="//@types.1"/>
+    <attributes name="free" type="//@types.1"/>
+    <attributes name="swap" type="//@types.1"/>
     <applies href="http://schemas.ogf.org/occi/monitoring#//@kinds[term='collector']"/>
   </mixins>
   <mixins name="networkIO" scheme="http://occiware.org/occi/multicloud/monitoring#" depends="//@mixins[term='inputoutput']">
-    <attributes name="networkIn" mutable="true" type="//@types.3"/>
-    <attributes name="networkOut" mutable="true" type="//@types.3"/>
+    <attributes name="networkIn" type="//@types.3"/>
+    <attributes name="networkOut" type="//@types.3"/>
     <applies href="http://schemas.ogf.org/occi/monitoring#//@kinds[term='collector']"/>
   </mixins>
   <mixins name="InputOutput" scheme="http://occiware.org/occi/multicloud/monitoring#">
-    <attributes name="unit" mutable="true" type="//@types.0"/>
+    <attributes name="unit" type="//@types.0"/>
     <depends href="http://schemas.ogf.org/occi/monitoring#//@mixins[term='metric']"/>
     <applies href="http://schemas.ogf.org/occi/monitoring#//@kinds[term='collector']"/>
   </mixins>
   <mixins name="SensorControl" scheme="http://occiware.org/occi/multicloud/monitoring#">
-    <attributes name="monitorState" mutable="true" default="off" description="Monitoring is active if monitorState is on, inactive if monitorState is off." type="//@types.4"/>
+    <attributes name="monitorState" default="off" description="Monitoring is active if monitorState is on, inactive if monitorState is off." type="//@types.4"/>
     <actions name="startMonitoring" scheme="http://occiware.org/occi/multicloud/monitoring/sensorcontrol/action#" title="Start the monitoring system for this sensor"/>
     <actions name="stopMonitoring" scheme="http://occiware.org/occi/multicloud/monitoring/sensorcontrol/action#" title="Stop monitoring for this sensor"/>
     <applies href="http://schemas.ogf.org/occi/monitoring#//@kinds[term='sensor']"/>
@@ -45,7 +45,7 @@
     <applies href="#//@kinds[term='cloudsensor']"/>
   </mixins>
   <mixins name="PublisherControl" scheme="http://occiware.org/occi/multicloud/monitoring#">
-    <attributes name="publisherState" mutable="true" default="on" type="//@types.4"/>
+    <attributes name="publisherState" default="on" type="//@types.4"/>
     <actions name="enable" scheme="http://occiware.org/occi/multicloud/monitoring/publishercontrol/action#" title="Enable the p"/>
     <actions name="disable" scheme="http://occiware.org/occi/multicloud/monitoring/publishercontrol/action#"/>
     <depends href="http://schemas.ogf.org/occi/monitoring#//@mixins[term='publisher']"/>
@@ -53,51 +53,51 @@
     <applies href="#//@kinds[term='cloudsensor']"/>
   </mixins>
   <mixins name="disk" scheme="http://occiware.org/occi/multicloud/monitoring#" depends="//@mixins[term='mainmetric']">
-    <attributes name="swap" mutable="true" type="//@types.1"/>
-    <attributes name="free" mutable="true" type="//@types.1"/>
-    <attributes name="volumeName" mutable="true">
+    <attributes name="swap" type="//@types.1"/>
+    <attributes name="free" type="//@types.1"/>
+    <attributes name="volumeName">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
     <applies href="http://schemas.ogf.org/occi/monitoring#//@kinds[term='collector']"/>
   </mixins>
   <mixins name="MailPublisher" scheme="http://occiware.org/occi/multicloud/monitoring#" title="A mailing publisher to post alerts" depends="//@mixins[term='publishercontrol']">
-    <attributes name="mailAddress" mutable="true">
+    <attributes name="mailAddress">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="postOnCpuAlert" mutable="true" default="false">
+    <attributes name="postOnCpuAlert" default="false">
       <type xsi:type="occi:BooleanType" href="http://schemas.ogf.org/occi/core#//@types.1"/>
     </attributes>
-    <attributes name="postOnRamAlert" mutable="true" default="false">
+    <attributes name="postOnRamAlert" default="false">
       <type xsi:type="occi:BooleanType" href="http://schemas.ogf.org/occi/core#//@types.1"/>
     </attributes>
-    <attributes name="postOnNetworkIOAlert" mutable="true" default="false">
+    <attributes name="postOnNetworkIOAlert" default="false">
       <type xsi:type="occi:BooleanType" href="http://schemas.ogf.org/occi/core#//@types.1"/>
     </attributes>
-    <attributes name="postOnDiskIOAlert" mutable="true" default="false">
+    <attributes name="postOnDiskIOAlert" default="false">
       <type xsi:type="occi:BooleanType" href="http://schemas.ogf.org/occi/core#//@types.1"/>
     </attributes>
-    <attributes name="nbEmail" mutable="true" default="2" description="Number of emails to send after a threshold is reach">
+    <attributes name="nbEmail" default="2" description="Number of emails to send after a threshold is reach">
       <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
     </attributes>
     <applies href="http://schemas.ogf.org/occi/monitoring#//@kinds[term='sensor']"/>
     <applies href="#//@kinds[term='cloudsensor']"/>
   </mixins>
   <mixins name="MainMetric" scheme="http://occiware.org/occi/multicloud/monitoring#">
-    <attributes name="thresholdUsage" mutable="true" default="80.0" type="//@types.1"/>
-    <attributes name="utilization" mutable="true" default="0.0" description="Percent usage of a main component metric like ram, disk and cpu" type="//@types.1"/>
-    <attributes name="temperature" mutable="true" type="//@types.5"/>
-    <attributes name="thresholdTemperature" mutable="true" default="80.0" description="Threshold for temperature in degree celcius" type="//@types.5"/>
+    <attributes name="thresholdUsage" default="80.0" type="//@types.1"/>
+    <attributes name="utilization" default="0.0" description="Percent usage of a main component metric like ram, disk and cpu" type="//@types.1"/>
+    <attributes name="temperature" type="//@types.5"/>
+    <attributes name="thresholdTemperature" default="80.0" description="Threshold for temperature in degree celcius" type="//@types.5"/>
     <depends href="http://schemas.ogf.org/occi/monitoring#//@mixins[term='metric']"/>
     <applies href="http://schemas.ogf.org/occi/monitoring#//@kinds[term='collector']"/>
   </mixins>
   <mixins name="SupervisorApiConnect" scheme="http://occiware.org/occi/multicloud/monitoring#">
-    <attributes name="username" mutable="true">
+    <attributes name="username">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="password" mutable="true">
+    <attributes name="password">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="httpApiAddress" mutable="true">
+    <attributes name="httpApiAddress">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
     <applies href="http://schemas.ogf.org/occi/monitoring#//@kinds[term='collector']"/>

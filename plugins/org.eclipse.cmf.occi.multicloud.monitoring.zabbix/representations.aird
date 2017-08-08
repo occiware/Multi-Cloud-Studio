@@ -1132,7 +1132,7 @@
           <styles xmi:type="notation:FontStyle" xmi:id="_tHRrlnd_Eeel8dnl9hOpkw" fontName=".SF NS Text" fontHeight="8"/>
           <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_tHRrl3d_Eeel8dnl9hOpkw" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tHSSpnd_Eeel8dnl9hOpkw" id="(0.49929478138222855,0.0)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tHSSp3d_Eeel8dnl9hOpkw" id="(0.4992319508448542,1.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tHSSp3d_Eeel8dnl9hOpkw" id="(0.4992319508448543,1.0)"/>
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_tHSSqHd_Eeel8dnl9hOpkw" type="4001" element="_tGfpknd_Eeel8dnl9hOpkw" source="_tGtD0Hd_Eeel8dnl9hOpkw" target="_tGscwHd_Eeel8dnl9hOpkw">
           <children xmi:type="notation:Node" xmi:id="_tHSSrHd_Eeel8dnl9hOpkw" type="6001">

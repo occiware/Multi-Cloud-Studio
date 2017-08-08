@@ -12,8 +12,11 @@
  */
 package org.eclipse.cmf.occi.multicloud.monitoring.zabbix.util;
 
+import cloudmonitoring.Supervisorapiconnect;
+
 import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.core.Link;
+import org.eclipse.cmf.occi.core.MixinBase;
 
 import org.eclipse.cmf.occi.monitoring.Collector;
 
@@ -90,6 +93,14 @@ public class ZabbixSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ZabbixPackage.ZABBIXAPICONNECT: {
+				Zabbixapiconnect zabbixapiconnect = (Zabbixapiconnect)theEObject;
+				T result = caseZabbixapiconnect(zabbixapiconnect);
+				if (result == null) result = caseSupervisorapiconnect(zabbixapiconnect);
+				if (result == null) result = caseMixinBase(zabbixapiconnect);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -106,6 +117,21 @@ public class ZabbixSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseZabbixcollector(Zabbixcollector object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Zabbixapiconnect</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Zabbixapiconnect</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseZabbixapiconnect(Zabbixapiconnect object) {
 		return null;
 	}
 
@@ -151,6 +177,36 @@ public class ZabbixSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCollector(Collector object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Mixin Base</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Mixin Base</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMixinBase(MixinBase object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Supervisorapiconnect</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Supervisorapiconnect</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSupervisorapiconnect(Supervisorapiconnect object) {
 		return null;
 	}
 

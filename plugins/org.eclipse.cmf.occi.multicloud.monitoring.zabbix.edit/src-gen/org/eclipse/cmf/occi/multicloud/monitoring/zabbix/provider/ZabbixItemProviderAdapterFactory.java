@@ -105,6 +105,29 @@ public class ZabbixItemProviderAdapterFactory extends ZabbixAdapterFactory imple
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.monitoring.zabbix.Zabbixapiconnect} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ZabbixapiconnectItemProvider zabbixapiconnectItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.monitoring.zabbix.Zabbixapiconnect}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createZabbixapiconnectAdapter() {
+		if (zabbixapiconnectItemProvider == null) {
+			zabbixapiconnectItemProvider = new ZabbixapiconnectItemProvider(this);
+		}
+
+		return zabbixapiconnectItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -204,6 +227,7 @@ public class ZabbixItemProviderAdapterFactory extends ZabbixAdapterFactory imple
 	 */
 	public void dispose() {
 		if (zabbixcollectorItemProvider != null) zabbixcollectorItemProvider.dispose();
+		if (zabbixapiconnectItemProvider != null) zabbixapiconnectItemProvider.dispose();
 	}
 
 }

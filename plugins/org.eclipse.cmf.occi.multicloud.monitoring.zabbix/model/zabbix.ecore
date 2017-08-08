@@ -12,4 +12,12 @@
       <details key="documentation" value=""/>
     </eAnnotations>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Zabbixapiconnect" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase platform:/resource/org.eclipse.cmf.occi.multicloud.monitoring/model/cloudmonitoring.ecore#//Supervisorapiconnect">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="appliesConstraint"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="appliesConstraint" value="self.entity.oclIsKindOf(zabbix::Zabbixcollector)"/>
+    </eAnnotations>
+  </eClassifiers>
 </ecore:EPackage>

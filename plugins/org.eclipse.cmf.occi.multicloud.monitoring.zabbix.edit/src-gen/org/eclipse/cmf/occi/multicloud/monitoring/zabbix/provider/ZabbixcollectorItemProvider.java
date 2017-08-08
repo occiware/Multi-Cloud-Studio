@@ -22,6 +22,7 @@ import org.eclipse.cmf.occi.core.OCCIPackage;
 
 import org.eclipse.cmf.occi.monitoring.provider.CollectorItemProvider;
 
+import org.eclipse.cmf.occi.multicloud.monitoring.zabbix.ZabbixFactory;
 import org.eclipse.cmf.occi.multicloud.monitoring.zabbix.Zabbixcollector;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -112,6 +113,11 @@ public class ZabbixcollectorItemProvider extends CollectorItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 ZabbixFactory.eINSTANCE.createZabbixapiconnect()));
 
 		newChildDescriptors.add
 			(createChildParameter

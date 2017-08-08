@@ -12,9 +12,12 @@
  */
 package org.eclipse.cmf.occi.multicloud.monitoring.zabbix;
 
+import org.eclipse.cmf.occi.core.OCCIPackage;
+
 import org.eclipse.cmf.occi.monitoring.MonitoringPackage;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 /**
@@ -238,6 +241,97 @@ public interface ZabbixPackage extends EPackage {
 	 */
 	int ZABBIXCOLLECTOR_OPERATION_COUNT = MonitoringPackage.COLLECTOR_OPERATION_COUNT + 0;
 
+	/**
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.monitoring.zabbix.impl.ZabbixapiconnectImpl <em>Zabbixapiconnect</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.multicloud.monitoring.zabbix.impl.ZabbixapiconnectImpl
+	 * @see org.eclipse.cmf.occi.multicloud.monitoring.zabbix.impl.ZabbixPackageImpl#getZabbixapiconnect()
+	 * @generated
+	 */
+	int ZABBIXAPICONNECT = 1;
+
+	/**
+	 * The feature id for the '<em><b>Mixin</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ZABBIXAPICONNECT__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ZABBIXAPICONNECT__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ZABBIXAPICONNECT__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Username</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ZABBIXAPICONNECT__USERNAME = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Password</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ZABBIXAPICONNECT__PASSWORD = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Http Api Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ZABBIXAPICONNECT__HTTP_API_ADDRESS = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Zabbixapiconnect</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ZABBIXAPICONNECT_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Applies Constraint</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ZABBIXAPICONNECT___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Zabbixapiconnect</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ZABBIXAPICONNECT_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
+
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.monitoring.zabbix.Zabbixcollector <em>Zabbixcollector</em>}'.
@@ -248,6 +342,26 @@ public interface ZabbixPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getZabbixcollector();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.monitoring.zabbix.Zabbixapiconnect <em>Zabbixapiconnect</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Zabbixapiconnect</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.monitoring.zabbix.Zabbixapiconnect
+	 * @generated
+	 */
+	EClass getZabbixapiconnect();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.monitoring.zabbix.Zabbixapiconnect#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
+	 * @see org.eclipse.cmf.occi.multicloud.monitoring.zabbix.Zabbixapiconnect#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getZabbixapiconnect__AppliesConstraint__DiagnosticChain_Map();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -281,6 +395,24 @@ public interface ZabbixPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ZABBIXCOLLECTOR = eINSTANCE.getZabbixcollector();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.monitoring.zabbix.impl.ZabbixapiconnectImpl <em>Zabbixapiconnect</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.cmf.occi.multicloud.monitoring.zabbix.impl.ZabbixapiconnectImpl
+		 * @see org.eclipse.cmf.occi.multicloud.monitoring.zabbix.impl.ZabbixPackageImpl#getZabbixapiconnect()
+		 * @generated
+		 */
+		EClass ZABBIXAPICONNECT = eINSTANCE.getZabbixapiconnect();
+
+		/**
+		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ZABBIXAPICONNECT___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getZabbixapiconnect__AppliesConstraint__DiagnosticChain_Map();
 
 	}
 

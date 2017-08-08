@@ -5,7 +5,7 @@
       <metamodel href="http://schemas.ogf.org/occi/core/ecore#/"/>
       <metamodel href="http://occiware.org/occi/multicloud/monitoring/zabbix/ecore#/"/>
       <defaultLayer name="Default">
-        <edgeMappings name="ZabbixsensorLinksEdge" sourceMapping="//@ownedViewpoints[name='ZabbixConfiguration']/@ownedRepresentations[name='ZabbixConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ZabbixsensorContainer']" targetMapping="//@ownedViewpoints[name='ZabbixConfiguration']/@ownedRepresentations[name='ZabbixConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ZabbixcollectorContainer']" targetFinderExpression="feature:links">
+        <edgeMappings name="ZabbixcollectorTargetEdge" sourceMapping="//@ownedViewpoints[name='ZabbixConfiguration']/@ownedRepresentations[name='ZabbixConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ZabbixcollectorContainer']" targetMapping="" targetFinderExpression="feature:target">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription>
@@ -13,7 +13,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="ZabbixcollectorTargetEdge" sourceMapping="//@ownedViewpoints[name='ZabbixConfiguration']/@ownedRepresentations[name='ZabbixConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ZabbixcollectorContainer']" targetMapping="//@ownedViewpoints[name='ZabbixConfiguration']/@ownedRepresentations[name='ZabbixConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ZabbixsensorContainer']" targetFinderExpression="feature:target">
+        <edgeMappings name="ZabbixcollectorEdge" sourceMapping="" targetMapping="" domainClass="Zabbixcollector" useDomainElement="true">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription>
@@ -21,124 +21,6 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="ZabbixcollectorEdge" sourceMapping="//@ownedViewpoints[name='ZabbixConfiguration']/@ownedRepresentations[name='ZabbixConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ZabbixsensorContainer']" targetMapping="//@ownedViewpoints[name='ZabbixConfiguration']/@ownedRepresentations[name='ZabbixConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ZabbixsensorContainer']" domainClass="Zabbixcollector" useDomainElement="true">
-          <style sizeComputationExpression="2">
-            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-            <centerLabelStyleDescription>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            </centerLabelStyleDescription>
-          </style>
-        </edgeMappings>
-        <containerMappings name="ZabbixsensorContainer"
-            labelDirectEdit="//@ownedViewpoints[name='ZabbixConfiguration']/@ownedRepresentations[name='ZabbixConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditEntityTitle']"
-			semanticCandidatesExpression="feature:resources" 
-			domainClass="Zabbixsensor">
-<subContainerMappings name="SubZabbixsensorContainer" semanticCandidatesExpression="[self/]" domainClass="Zabbixsensor" childrenPresentation="List">
-          <subNodeMappings name="ZabbixsensorId"
-                labelDirectEdit="//@ownedViewpoints[name='ZabbixConfiguration']/@ownedRepresentations[name='ZabbixConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditZabbixsensorId']"
-                semanticCandidatesExpression="[self/]" domainClass="Zabbixsensor">
-            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['id = ' + self.id.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            </style>
-          </subNodeMappings>
-          <subNodeMappings name="ZabbixsensorTitle"
-                labelDirectEdit="//@ownedViewpoints[name='ZabbixConfiguration']/@ownedRepresentations[name='ZabbixConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditZabbixsensorTitle']"
-                semanticCandidatesExpression="[self/]" domainClass="Zabbixsensor">
-            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['title = ' + self.title.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            </style>
-          </subNodeMappings>
-          <subNodeMappings name="ZabbixsensorLocation"
-                labelDirectEdit="//@ownedViewpoints[name='ZabbixConfiguration']/@ownedRepresentations[name='ZabbixConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditZabbixsensorLocation']"
-                semanticCandidatesExpression="[self/]" domainClass="Zabbixsensor">
-            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['location = ' + self.location.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            </style>
-          </subNodeMappings>
-          <subNodeMappings name="ZabbixsensorSummary"
-                labelDirectEdit="//@ownedViewpoints[name='ZabbixConfiguration']/@ownedRepresentations[name='ZabbixConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditZabbixsensorSummary']"
-                semanticCandidatesExpression="[self/]" domainClass="Zabbixsensor">
-            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['summary = ' + self.summary.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            </style>
-          </subNodeMappings>
-          <subNodeMappings name="ZabbixsensorOcciSensorTimebase"
-                labelDirectEdit="//@ownedViewpoints[name='ZabbixConfiguration']/@ownedRepresentations[name='ZabbixConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditZabbixsensorOcciSensorTimebase']"
-                semanticCandidatesExpression="[self/]" domainClass="Zabbixsensor">
-            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiSensorTimebase = ' + self.occiSensorTimebase.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            </style>
-          </subNodeMappings>
-          <subNodeMappings name="ZabbixsensorOcciSensorTimestart"
-                labelDirectEdit="//@ownedViewpoints[name='ZabbixConfiguration']/@ownedRepresentations[name='ZabbixConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditZabbixsensorOcciSensorTimestart']"
-                semanticCandidatesExpression="[self/]" domainClass="Zabbixsensor">
-            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiSensorTimestart = ' + self.occiSensorTimestart.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            </style>
-          </subNodeMappings>
-          <subNodeMappings name="ZabbixsensorOcciSensorTimestop"
-                labelDirectEdit="//@ownedViewpoints[name='ZabbixConfiguration']/@ownedRepresentations[name='ZabbixConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditZabbixsensorOcciSensorTimestop']"
-                semanticCandidatesExpression="[self/]" domainClass="Zabbixsensor">
-            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiSensorTimestop = ' + self.occiSensorTimestop.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            </style>
-          </subNodeMappings>
-          <subNodeMappings name="ZabbixsensorOcciSensorPeriod"
-                labelDirectEdit="//@ownedViewpoints[name='ZabbixConfiguration']/@ownedRepresentations[name='ZabbixConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditZabbixsensorOcciSensorPeriod']"
-                semanticCandidatesExpression="[self/]" domainClass="Zabbixsensor">
-            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiSensorPeriod = ' + self.occiSensorPeriod.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            </style>
-          </subNodeMappings>
-          <subNodeMappings name="ZabbixsensorOcciSensorGranularity"
-                labelDirectEdit="//@ownedViewpoints[name='ZabbixConfiguration']/@ownedRepresentations[name='ZabbixConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditZabbixsensorOcciSensorGranularity']"
-                semanticCandidatesExpression="[self/]" domainClass="Zabbixsensor">
-            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiSensorGranularity = ' + self.occiSensorGranularity.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            </style>
-          </subNodeMappings>
-          <subNodeMappings name="ZabbixsensorOcciSensorAccuracy"
-                labelDirectEdit="//@ownedViewpoints[name='ZabbixConfiguration']/@ownedRepresentations[name='ZabbixConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditZabbixsensorOcciSensorAccuracy']"
-                semanticCandidatesExpression="[self/]" domainClass="Zabbixsensor">
-            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiSensorAccuracy = ' + self.occiSensorAccuracy.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            </style>
-          </subNodeMappings>
-			<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.kind.scheme+self.kind.term/]">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
-            </style>
-</subContainerMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="[self.title + ': Zabbixsensor'/]" roundedCorner="true">
-            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
-          </style> 
-
-        </containerMappings>
         <containerMappings name="ZabbixcollectorContainer"
             labelDirectEdit="//@ownedViewpoints[name='ZabbixConfiguration']/@ownedRepresentations[name='ZabbixConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditEntityTitle']"
 			semanticCandidatesExpression="[resources.links->filter(Zabbixcollector)/]" 
@@ -205,6 +87,35 @@
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
             </style>
 </subContainerMappings>
+<subContainerMappings name="ZabbixApiConnectMixin" preconditionExpression="[self.oclIsTypeOf(Zabbixapiconnect)/]" semanticCandidatesExpression="feature:parts" domainClass="Zabbixapiconnect" childrenPresentation="List">
+<subNodeMappings name="Zabbixapiconnectusername" semanticCandidatesExpression="[self/]" domainClass="Zabbixapiconnect">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['username = ' + self.username.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="Zabbixapiconnectpassword" semanticCandidatesExpression="[self/]" domainClass="Zabbixapiconnect">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['password = ' + self.password.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="ZabbixapiconnecthttpApiAddress" semanticCandidatesExpression="[self/]" domainClass="Zabbixapiconnect">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['httpApiAddress = ' + self.httpApiAddress.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
           <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="[self.title + ': Zabbixcollector'/]" roundedCorner="true">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -214,17 +125,6 @@
 
         </containerMappings>
         <toolSections name="Zabbix resources">
-          <ownedTools xsi:type="tool:ContainerCreationDescription" 
-			name="Create Zabbixsensor"
-			containerMappings="//@ownedViewpoints[name='ZabbixConfiguration']/@ownedRepresentations[name='ZabbixConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ZabbixsensorContainer']"> 
-            <variable name="container"/>
-            <viewVariable name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="Zabbixsensor" referenceName="resources">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="['zabbixsensor' + container.oclAsType(Configuration).resources->size().toString()/]"/>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
 </toolSections>
  <toolSections name="Zabbix links">
           <ownedTools xsi:type="tool:EdgeCreationDescription"
@@ -244,6 +144,17 @@
           </ownedTools>
    </toolSections>   
  <toolSections name="Zabbix mixins">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create ZabbixApiConnect" containerMappings="
+//@ownedViewpoints[name='ZabbixConfiguration']/@ownedRepresentations[name='ZabbixConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ZabbixcollectorContainer']/@subContainerMappings[name='ZabbixApiConnectMixin']
+">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Zabbixapiconnect" referenceName="parts"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
    </toolSections>    
         <toolSections name="Tools">
           <ownedTools xsi:type="tool:DirectEditLabel" name="EditEntityTitle" inputLabelExpression="feature:title">
@@ -288,64 +199,22 @@
               <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiSensorGranularity" valueExpression="var:arg0"/>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:DirectEditLabel" name="EditZabbixsensorId" inputLabelExpression="feature:id">
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditZabbixapiconnectUsername" inputLabelExpression="feature:username">
             <mask mask="{0}"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="var:arg0"/>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="username" valueExpression="var:arg0"/>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:DirectEditLabel" name="EditZabbixsensorTitle" inputLabelExpression="feature:title">
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditZabbixapiconnectPassword" inputLabelExpression="feature:password">
             <mask mask="{0}"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="var:arg0"/>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="password" valueExpression="var:arg0"/>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:DirectEditLabel" name="EditZabbixsensorLocation" inputLabelExpression="feature:location">
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditZabbixapiconnectHttpApiAddress" inputLabelExpression="feature:httpApiAddress">
             <mask mask="{0}"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:SetValue" featureName="location" valueExpression="var:arg0"/>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool:DirectEditLabel" name="EditZabbixsensorSummary" inputLabelExpression="feature:summary">
-            <mask mask="{0}"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:SetValue" featureName="summary" valueExpression="var:arg0"/>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool:DirectEditLabel" name="EditZabbixsensorOcciSensorTimebase" inputLabelExpression="feature:occiSensorTimebase">
-            <mask mask="{0}"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiSensorTimebase" valueExpression="var:arg0"/>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool:DirectEditLabel" name="EditZabbixsensorOcciSensorTimestart" inputLabelExpression="feature:occiSensorTimestart">
-            <mask mask="{0}"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiSensorTimestart" valueExpression="var:arg0"/>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool:DirectEditLabel" name="EditZabbixsensorOcciSensorTimestop" inputLabelExpression="feature:occiSensorTimestop">
-            <mask mask="{0}"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiSensorTimestop" valueExpression="var:arg0"/>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool:DirectEditLabel" name="EditZabbixsensorOcciSensorPeriod" inputLabelExpression="feature:occiSensorPeriod">
-            <mask mask="{0}"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiSensorPeriod" valueExpression="var:arg0"/>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool:DirectEditLabel" name="EditZabbixsensorOcciSensorGranularity" inputLabelExpression="feature:occiSensorGranularity">
-            <mask mask="{0}"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiSensorGranularity" valueExpression="var:arg0"/>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool:DirectEditLabel" name="EditZabbixsensorOcciSensorAccuracy" inputLabelExpression="feature:occiSensorAccuracy">
-            <mask mask="{0}"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiSensorAccuracy" valueExpression="var:arg0"/>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="httpApiAddress" valueExpression="var:arg0"/>
             </initialOperation>
           </ownedTools>
           <ownedTools xsi:type="tool_1:PopupMenu" name="CRUD operations" precondition="[self.oclIsKindOf(Entity)/]">

@@ -6,4 +6,7 @@
   <kinds name="ZabbixCollector" scheme="http://occiware.org/occi/multicloud/monitoring/zabbix#">
     <parent href="http://schemas.ogf.org/occi/monitoring#//@kinds[term='collector']"/>
   </kinds>
+  <mixins name="ZabbixApiConnect" scheme="http://occiware.org/occi/multicloud/monitoring/zabbix#" title="Zabbix connection to the request api" applies="//@kinds[term='zabbixcollector']">
+    <depends href="http://occiware.org/occi/multicloud/monitoring#//@mixins[term='supervisorapiconnect']"/>
+  </mixins>
 </occi:Extension>

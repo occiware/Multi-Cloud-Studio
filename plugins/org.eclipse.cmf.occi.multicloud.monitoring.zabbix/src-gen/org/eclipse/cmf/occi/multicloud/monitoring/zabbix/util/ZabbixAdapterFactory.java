@@ -12,8 +12,11 @@
  */
 package org.eclipse.cmf.occi.multicloud.monitoring.zabbix.util;
 
+import cloudmonitoring.Supervisorapiconnect;
+
 import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.core.Link;
+import org.eclipse.cmf.occi.core.MixinBase;
 
 import org.eclipse.cmf.occi.monitoring.Collector;
 
@@ -87,6 +90,10 @@ public class ZabbixAdapterFactory extends AdapterFactoryImpl {
 				return createZabbixcollectorAdapter();
 			}
 			@Override
+			public Adapter caseZabbixapiconnect(Zabbixapiconnect object) {
+				return createZabbixapiconnectAdapter();
+			}
+			@Override
 			public Adapter caseEntity(Entity object) {
 				return createEntityAdapter();
 			}
@@ -97,6 +104,14 @@ public class ZabbixAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseCollector(Collector object) {
 				return createCollectorAdapter();
+			}
+			@Override
+			public Adapter caseMixinBase(MixinBase object) {
+				return createMixinBaseAdapter();
+			}
+			@Override
+			public Adapter caseSupervisorapiconnect(Supervisorapiconnect object) {
+				return createSupervisorapiconnectAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -129,6 +144,20 @@ public class ZabbixAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createZabbixcollectorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.monitoring.zabbix.Zabbixapiconnect <em>Zabbixapiconnect</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.monitoring.zabbix.Zabbixapiconnect
+	 * @generated
+	 */
+	public Adapter createZabbixapiconnectAdapter() {
 		return null;
 	}
 
@@ -171,6 +200,34 @@ public class ZabbixAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCollectorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.MixinBase <em>Mixin Base</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.core.MixinBase
+	 * @generated
+	 */
+	public Adapter createMixinBaseAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link cloudmonitoring.Supervisorapiconnect <em>Supervisorapiconnect</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see cloudmonitoring.Supervisorapiconnect
+	 * @generated
+	 */
+	public Adapter createSupervisorapiconnectAdapter() {
 		return null;
 	}
 

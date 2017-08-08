@@ -20,10 +20,16 @@ import org.eclipse.cmf.occi.monitoring.MonitoringPackage;
 
 import org.eclipse.cmf.occi.multicloud.monitoring.zabbix.ZabbixFactory;
 import org.eclipse.cmf.occi.multicloud.monitoring.zabbix.ZabbixPackage;
+import org.eclipse.cmf.occi.multicloud.monitoring.zabbix.Zabbixapiconnect;
 import org.eclipse.cmf.occi.multicloud.monitoring.zabbix.Zabbixcollector;
 
+import org.eclipse.cmf.occi.multicloud.monitoring.zabbix.util.ZabbixValidator;
+
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EValidator;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
@@ -40,6 +46,13 @@ public class ZabbixPackageImpl extends EPackageImpl implements ZabbixPackage {
 	 * @generated
 	 */
 	private EClass zabbixcollectorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass zabbixapiconnectEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -98,6 +111,15 @@ public class ZabbixPackageImpl extends EPackageImpl implements ZabbixPackage {
 		// Initialize created meta-data
 		theZabbixPackage.initializePackageContents();
 
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theZabbixPackage, 
+			 new EValidator.Descriptor() {
+				 public EValidator getEValidator() {
+					 return ZabbixValidator.INSTANCE;
+				 }
+			 });
+
 		// Mark meta-data to indicate it can't be changed
 		theZabbixPackage.freeze();
 
@@ -114,6 +136,24 @@ public class ZabbixPackageImpl extends EPackageImpl implements ZabbixPackage {
 	 */
 	public EClass getZabbixcollector() {
 		return zabbixcollectorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getZabbixapiconnect() {
+		return zabbixapiconnectEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getZabbixapiconnect__AppliesConstraint__DiagnosticChain_Map() {
+		return zabbixapiconnectEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -145,6 +185,9 @@ public class ZabbixPackageImpl extends EPackageImpl implements ZabbixPackage {
 
 		// Create classes and their features
 		zabbixcollectorEClass = createEClass(ZABBIXCOLLECTOR);
+
+		zabbixapiconnectEClass = createEClass(ZABBIXAPICONNECT);
+		createEOperation(zabbixapiconnectEClass, ZABBIXAPICONNECT___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 	}
 
 	/**
@@ -172,6 +215,8 @@ public class ZabbixPackageImpl extends EPackageImpl implements ZabbixPackage {
 
 		// Obtain other dependent packages
 		MonitoringPackage theMonitoringPackage = (MonitoringPackage)EPackage.Registry.INSTANCE.getEPackage(MonitoringPackage.eNS_URI);
+		OCCIPackage theOCCIPackage = (OCCIPackage)EPackage.Registry.INSTANCE.getEPackage(OCCIPackage.eNS_URI);
+		CloudmonitoringPackage theCloudmonitoringPackage = (CloudmonitoringPackage)EPackage.Registry.INSTANCE.getEPackage(CloudmonitoringPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -179,9 +224,22 @@ public class ZabbixPackageImpl extends EPackageImpl implements ZabbixPackage {
 
 		// Add supertypes to classes
 		zabbixcollectorEClass.getESuperTypes().add(theMonitoringPackage.getCollector());
+		zabbixapiconnectEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		zabbixapiconnectEClass.getESuperTypes().add(theCloudmonitoringPackage.getSupervisorapiconnect());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(zabbixcollectorEClass, Zabbixcollector.class, "Zabbixcollector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(zabbixapiconnectEClass, Zabbixapiconnect.class, "Zabbixapiconnect", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		EOperation op = initEOperation(getZabbixapiconnect__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
+		EGenericType g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -203,6 +261,12 @@ public class ZabbixPackageImpl extends EPackageImpl implements ZabbixPackage {
 		  (this, 
 		   source, 
 		   new String[] {
+		   });	
+		addAnnotation
+		  (zabbixapiconnectEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
 		   });
 	}
 

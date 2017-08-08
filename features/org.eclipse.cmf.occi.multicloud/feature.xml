@@ -355,12 +355,6 @@ litigation.
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-   <!-- <plugin
-         id="org.eclipse.cmf.occi.infrastructure.connector.dummy"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/> -->
    <plugin
          id="org.eclipse.cmf.occi.crtp"
          download-size="0"
@@ -391,12 +385,6 @@ litigation.
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-   <!-- <plugin
-         id="org.eclipse.cmf.occi.crtp.connector.dummy"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/> -->
    <plugin
          id="org.eclipse.cmf.occi.monitoring"
          download-size="0"
@@ -496,7 +484,7 @@ litigation.
         install-size="0"
         version="0.0.0"
         unpack="false"/>
-   <!-- <plugin
+    <plugin
         id="org.eclipse.cmf.occi.multicloud.monitoring.zabbix.edit"
         download-size="0"
         install-size="0"
@@ -519,7 +507,7 @@ litigation.
         download-size="0"
         install-size="0"
         version="0.0.0"
-        unpack="false"/> -->
+        unpack="false"/>
   <requires>
     <!-- Eclipse Modeling Framework and tools. -->
     <import feature="org.eclipse.emf" version="2.12.0.v20160526-0356"/>

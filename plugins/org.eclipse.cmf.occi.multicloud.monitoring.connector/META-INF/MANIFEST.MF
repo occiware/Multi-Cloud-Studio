@@ -14,7 +14,11 @@ Bundle-Vendor: OCCIware
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.slf4j.api,
+ org.eclipse.emf.edit.ui;bundle-version="2.13.0",
  org.eclipse.cmf.occi.core,
- org.eclipse.cmf.occi.multicloud.monitoring
+ org.eclipse.cmf.occi.multicloud.monitoring,
+ org.eclipse.emf.transaction;bundle-version="1.9.0"
 Export-Package: org.eclipse.cmf.occi.multicloud.monitoring.connector,
- org.eclipse.cmf.occi.multicloud.monitoring.connector.exception
+ org.eclipse.cmf.occi.multicloud.monitoring.connector.exception,
+ org.eclipse.cmf.occi.multicloud.monitoring.connector.tinom,
+ org.eclipse.cmf.occi.multicloud.monitoring.connector.utils

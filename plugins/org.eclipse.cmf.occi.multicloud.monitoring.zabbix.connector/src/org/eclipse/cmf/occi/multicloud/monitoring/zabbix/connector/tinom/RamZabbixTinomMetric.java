@@ -1,19 +1,20 @@
 package org.eclipse.cmf.occi.multicloud.monitoring.zabbix.connector.tinom;
 
-import org.occiware.tinom.model.Metric;
+import org.eclipse.cmf.occi.multicloud.monitoring.connector.utils.Constants;
 
-public class RamZabbixTinomMetric extends Metric {
+public class RamZabbixTinomMetric extends ZabbixMetric {
 	
-	public static final String METRIC_NAME = "CpuPercent";
+	public static final String METRIC_NAME = "RamPercent";
 	
 	public RamZabbixTinomMetric(String name) {
 		super(name);
-		// TODO Auto-generated constructor stub
+		// Define channels.
+		setOutputNames(new String[] { Constants.CHANNEL_CPU_USED, Constants.CHANNEL_CPU_AVG });
 	}
 
 	@Override
 	public String get(String channelName) throws NoSuchFieldException {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 

@@ -205,8 +205,11 @@ public class ZabbixcollectorConnector extends org.eclipse.cmf.occi.multicloud.mo
 
 				ZabbixapiconnectConnector zabbixApiConnectMixin = getZabbixApiConnectMixin();
 				
-				if (computeIpAddress == null || computeIpAddress.trim().isEmpty()) {
-					throw new MonitorException("Ip address is not retrieved on compute, please check your compute configuration model.");
+				// Get the vmname via title attribute of the compute.
+				String vmname = compute.getTitle();
+				
+				if (computeIpAddress == null || computeIpAddress.trim().isEmpty() && (vmname == null || vmname.trim().isEmpty())) {
+					throw new MonitorException("Ip address AND vmname  is not retrieved on compute (vmname taken from compute title attribute), please check your compute configuration model.");
 				}
 				if (zabbixApiConnectMixin == null) {
 					throw new MonitorException("You must apply the mixin ZabbixApiConnect to use zabbix collector !");
@@ -214,6 +217,7 @@ public class ZabbixcollectorConnector extends org.eclipse.cmf.occi.multicloud.mo
 				
 				collector.setComputeToMonitorIpAddress(computeIpAddress);
 				collector.setZabbixApiMixin(zabbixApiConnectMixin);
+				collector.setVmname(vmname);
 				
 				// Build tinom metrics object belonging to applied metric mixins.
 				List<MixinBase> metricMixins = getMetricMixins(); 
@@ -282,14 +286,22 @@ public class ZabbixcollectorConnector extends org.eclipse.cmf.occi.multicloud.mo
 		return collector;
 	}
 
-	
-	
 	@Override
 	public String[] getMetricsChannelToPublish() {
-		
-		
-		// TODO Auto-generated method stub
-		return null;
+		String metricName;
+		String collectorName;
+		String[] channelNames = null;
+		if (zabbixTinomCollector != null) {
+			collectorName = zabbixTinomCollector.getName();
+			List<org.occiware.tinom.model.Metric> metrics = zabbixTinomCollector.getMetrics();
+			channelNames = new String[metrics.size()];
+			int index = 0;
+			for (org.occiware.tinom.model.Metric metric : metrics) {
+				metricName = metric.getName();
+				channelNames[index] = collectorName + "." + metricName;	
+			}
+		}
+		return channelNames;
 	}
 
 	//

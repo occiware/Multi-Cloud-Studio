@@ -2,7 +2,7 @@ package org.eclipse.cmf.occi.multicloud.monitoring.zabbix.connector.tinom;
 
 import org.occiware.tinom.model.Metric;
 
-public class NetworkIoZabbixTinomMetric extends Metric {
+public class NetworkIoZabbixTinomMetric extends ZabbixMetric {
 
 	public static final String METRIC_NAME = "NetworkIO";
 	

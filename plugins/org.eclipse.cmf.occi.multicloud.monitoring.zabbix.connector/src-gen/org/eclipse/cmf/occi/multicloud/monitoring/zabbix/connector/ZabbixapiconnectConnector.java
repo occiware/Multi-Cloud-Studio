@@ -38,7 +38,7 @@ public class ZabbixapiconnectConnector
 	 * Initialize the logger.
 	 */
 	private static Logger LOGGER = LoggerFactory.getLogger(ZabbixapiconnectConnector.class);
-
+	
 	// Start of user code Zabbixapiconnectconnector_constructor
 	/**
 	 * Constructs a zabbixapiconnect connector.
@@ -375,7 +375,7 @@ public class ZabbixapiconnectConnector
 
 	// cpu usage
 	/**
-	 * Used cpu.
+	 * Used cpu (idle value).
 	 * @param authToken
 	 * @param hostid
 	 * @return
@@ -384,20 +384,8 @@ public class ZabbixapiconnectConnector
 	public Double cpuIdle(String authToken, int hostid) throws MonitorException {
 		Double value = 0.0;
 		try {
-			JSONObject mainJObj = new JSONObject();
-			JSONObject paramJObj = new JSONObject();
-			JSONObject subparamJObj = new JSONObject();
-
-			mainJObj.put("jsonrpc", "2.0");
-			mainJObj.put("method", "item.get");
-			paramJObj.put("output", "extend");
-			paramJObj.put("hostids", hostid); // 10155
-			subparamJObj.put("key_", "system.cpu.util[,idle]");
-			paramJObj.put("search", subparamJObj);
-			mainJObj.put("params", paramJObj);
-			mainJObj.put("auth", authToken);
-			mainJObj.put("id", "1");
-			
+			JSONObject mainJObj = buildMainObjGetItem(authToken, hostid, "system.cpu.util[,idle]"); // hostId: 10155
+		
 			System.out.println("Data to send: " + mainJObj.toString());
 
 			JSONObject result = executePostQuery(mainJObj);
@@ -412,6 +400,20 @@ public class ZabbixapiconnectConnector
 	}
 	
 	/**
+	 * Cpu utilization is calculated from cpuIdle value.
+	 * @param authToken
+	 * @param hostid
+	 * @return
+	 * @throws MonitorException
+	 */
+	public Double cpuUtilization(String authToken, int hostid) throws MonitorException{
+		Double value = 0.0;
+		Double idle = cpuIdle(authToken, hostid);
+		value = 100 - idle;
+		return value;
+	}
+	
+	/**
 	 * Total size of memory.
 	 * @param authToken
 	 * @param hostid
@@ -421,19 +423,7 @@ public class ZabbixapiconnectConnector
 	public int totalMemory(String authToken, int hostid) throws MonitorException {
 		int value = 0;
 		try {
-			JSONObject mainJObj = new JSONObject();
-			JSONObject paramJObj = new JSONObject();
-			JSONObject subparamJObj = new JSONObject();
-
-			mainJObj.put("jsonrpc", "2.0");
-			mainJObj.put("method", "item.get");
-			paramJObj.put("output", "extend");
-			paramJObj.put("hostids", hostid); // 10155
-			subparamJObj.put("key_", "vm.memory.size[total]");
-			paramJObj.put("search", subparamJObj);
-			mainJObj.put("params", paramJObj);
-			mainJObj.put("auth", authToken);
-			mainJObj.put("id", "1");
+			JSONObject mainJObj = buildMainObjGetItem(authToken, hostid, "vm.memory.size[total]"); // hostId: 10155
 			
 			System.out.println("Data to send: " + mainJObj.toString());
 
@@ -460,19 +450,8 @@ public class ZabbixapiconnectConnector
 	public int availableMemory(String authToken, int hostid) throws MonitorException {
 		int value = 0;
 		try {
-			JSONObject mainJObj = new JSONObject();
-			JSONObject paramJObj = new JSONObject();
-			JSONObject subparamJObj = new JSONObject();
-
-			mainJObj.put("jsonrpc", "2.0");
-			mainJObj.put("method", "item.get");
-			paramJObj.put("output", "extend");
-			paramJObj.put("hostids", hostid); // 10155
-			subparamJObj.put("key_", "vm.memory.size[available]");
-			paramJObj.put("search", subparamJObj);
-			mainJObj.put("params", paramJObj);
-			mainJObj.put("auth", authToken);
-			mainJObj.put("id", "1");
+			
+			JSONObject mainJObj = buildMainObjGetItem(authToken, hostid, "vm.memory.size[available]"); // hostId: 10155
 			
 			System.out.println("Data to send: " + mainJObj.toString());
 
@@ -499,19 +478,7 @@ public class ZabbixapiconnectConnector
 	public int totalCPUs(final String authToken, final int hostid) throws MonitorException {
 		int value = 0;
 		try {
-			JSONObject mainJObj = new JSONObject();
-			JSONObject paramJObj = new JSONObject();
-			JSONObject subparamJObj = new JSONObject();
-
-			mainJObj.put("jsonrpc", "2.0");
-			mainJObj.put("method", "item.get");
-			paramJObj.put("output", "extend");
-			paramJObj.put("hostids", hostid); // 10155
-			subparamJObj.put("key_", "system.cpu.num");
-			paramJObj.put("search", subparamJObj);
-			mainJObj.put("params", paramJObj);
-			mainJObj.put("auth", authToken);
-			mainJObj.put("id", "1");
+			JSONObject mainJObj = buildMainObjGetItem(authToken, hostid, "system.cpu.num"); // hostId: 10155
 			
 			System.out.println("Data to send: " + mainJObj.toString());
 
@@ -542,21 +509,8 @@ public class ZabbixapiconnectConnector
 			// System.out.println(arr.get(n));
 			int hostidd = arr.get(n);
 			try {
-				JSONObject mainJObj = new JSONObject();
-				JSONObject paramJObj = new JSONObject();
-				JSONObject subparamJObj = new JSONObject();
-
-				mainJObj.put("jsonrpc", "2.0");
-				mainJObj.put("method", "item.get");
-				paramJObj.put("output", "extend");
-				paramJObj.put("hostids", hostidd);
-				subparamJObj.put("key_", "system.cpu.util[,idle]");
-				paramJObj.put("search", subparamJObj);
-				mainJObj.put("params", paramJObj);
-				mainJObj.put("auth", authToken);
-				mainJObj.put("id", "1");
-			
-				// System.out.println("Data to send: " + mainJObj.toString());
+				
+				JSONObject mainJObj = buildMainObjGetItem(authToken, hostidd, "system.cpu.util[,idle]");
 
 				JSONObject result = executePostQuery(mainJObj);
 
@@ -587,6 +541,107 @@ public class ZabbixapiconnectConnector
 		return cpu_usage;
 	}
 	
+	/**
+	 * 
+	 * @param authToken
+	 * @param hostid
+	 * @return
+	 */
+	public Double cpuLoad(String authToken, int hostid) throws MonitorException {
+        Double  value = 0.0;
+        try {
+        		JSONObject mainJObj = buildMainObjGetItem(authToken, hostid, "system.cpu.load[percpu,avg1]");
+        		System.out.println("Data to send: " + mainJObj.toString());
+
+            JSONObject result = executePostQuery(mainJObj);
+            
+            JSONArray output = result.getJSONArray("result");
+            value = output.getJSONObject(0).getDouble("lastvalue");
+            System.out.println("cpu load " + value);
+        }catch (JSONException je) {
+            System.out.println("Error creating JSON request to Zabbix API..." + je.getMessage());
+            throw new MonitorException("Error creating JSON request to Zabbix API..." + je.getMessage());
+        }
+        return value;
+    }
+	
+	/**
+	 * Get host id from its name in order to delete it in the the function delete host.
+	 * @param authToken
+	 * @param vmname
+	 * @return 
+	 */
+	public int  getHostByName(final String authToken, final String vmname) throws MonitorException { 
+        int id = 0;
+        
+        try {
+        	    JSONObject mainJObj = new JSONObject();
+            JSONObject paramJObj = new JSONObject();
+            JSONObject subparamJObj = new JSONObject();
+            //int template_id = get_template(zabi, template);
+
+            mainJObj.put("jsonrpc", "2.0");
+            mainJObj.put("method", "host.get");
+            paramJObj.put("output", "extend");
+            paramJObj.put("filter", subparamJObj);
+            subparamJObj.put("host", new JSONArray(new Object[] {vmname}));
+            //paramJObj.put("sortfield", "interfaceid");
+            mainJObj.put("params", paramJObj);
+            mainJObj.put("auth", authToken);
+            mainJObj.put("id", "1");
+            
+            System.out.println("Data to send: " + mainJObj.toString());
+            
+            JSONObject result = executePostQuery(mainJObj);
+
+           //System.out.println("output   " + result) ;
+            JSONArray output = result.getJSONArray("result");
+            //System.out.println("output" + output);
+            for (int i = 0; i < output.length(); ++i) {
+                JSONObject obj = output.getJSONObject(i);
+                //System.out.println("input ip" + ip);
+                //String host_ip  = obj.getString("ip");
+                //if ((host_ip).equals (ip)) {
+                //    int host_id = obj.getInt("hostid");
+                //    id = host_id;
+                id = obj.getInt("hostid");    
+                   //System.out.println(" the ip of this host is  " + host_id);
+                //}
+            }
+
+       } catch (JSONException je) {
+            System.out.println("Error creating JSON request to Zabbix API..." + je.getMessage());
+            throw new MonitorException("Error creating JSON request to Zabbix API..." + je.getMessage());
+        }
+        return id;
+    }
+	
+	/**
+	 * Build a json object for getting item (only item)..
+	 * @param authToken
+	 * @param hostId
+	 * @param itemKey
+	 * @return a new JsonObject to use for query the zabbix server.
+	 * @throws JSONException
+	 */
+	private JSONObject buildMainObjGetItem(final String authToken, final int hostId, final String itemKey) throws JSONException {
+		JSONObject mainJObj = new JSONObject();
+		JSONObject paramJObj = new JSONObject();
+		JSONObject subparamJObj = new JSONObject();
+
+		mainJObj.put("jsonrpc", "2.0");
+		mainJObj.put("method", "item.get");
+		paramJObj.put("output", "extend");
+		paramJObj.put("hostids", hostId);
+		subparamJObj.put("key_", itemKey);
+		paramJObj.put("search", subparamJObj);
+		mainJObj.put("params", paramJObj);
+		mainJObj.put("auth", authToken);
+		mainJObj.put("id", "1");
+		return mainJObj;
+		
+	}
+
 	/*public static void main(String[] args) {
 		ZabbixDriver zabbix_obj = new ZabbixDriver();
 		String zabi = zabbix_obj.getAuthToken();

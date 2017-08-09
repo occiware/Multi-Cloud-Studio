@@ -2,7 +2,7 @@ package org.eclipse.cmf.occi.multicloud.monitoring.zabbix.connector.tinom;
 
 import org.occiware.tinom.model.Metric;
 
-public class DiskIoZabbixTinomMetric extends Metric {
+public class DiskIoZabbixTinomMetric extends ZabbixMetric {
 	public static final String METRIC_NAME = "DiskIO";
 	public DiskIoZabbixTinomMetric(String name) {
 		super(name);

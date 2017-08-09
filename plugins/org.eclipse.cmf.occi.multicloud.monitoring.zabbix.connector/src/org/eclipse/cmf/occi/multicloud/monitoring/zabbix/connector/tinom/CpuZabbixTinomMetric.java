@@ -9,7 +9,6 @@ import org.slf4j.LoggerFactory;
 
 public class CpuZabbixTinomMetric extends ZabbixMetric {
 	
-	private ZabbixapiconnectConnector zabbixApiConnect;
 	private static Logger LOGGER = LoggerFactory.getLogger(CpuZabbixTinomMetric.class);
 	public static final String METRIC_NAME = "CpuPercent";
 	// public static final String CHANNEL_CPU_IDLE = "system.cpu.util[,idle]";
@@ -44,19 +43,19 @@ public class CpuZabbixTinomMetric extends ZabbixMetric {
 			LOGGER.error("zabbix host id is not set on cpu metric.");
 			return value.toString();
 		}
-		if (zabbixApiConnect != null) {
+		if (getZabbixApiMixin() != null) {
 			// Get the value of the channel.
 			switch (channelName) {
 			case Constants.CHANNEL_CPU_USED:
 				try {
-					value = zabbixApiConnect.cpuUtilization(getAuthToken(), getHostId());
+					value = getZabbixApiMixin().cpuUtilization(getAuthToken(), getHostId());
 				} catch (MonitorException ex) {
 					throw new NoSuchFieldException(ex.getMessage());
 				}
 				break;
 			case Constants.CHANNEL_CPU_AVG:
 				try {
-					value = zabbixApiConnect.cpuLoad(authToken, getHostId());
+					value = getZabbixApiMixin().cpuLoad(authToken, getHostId());
 				} catch (MonitorException ex) {
 					throw new NoSuchFieldException(ex.getMessage());
 				}

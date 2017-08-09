@@ -28,6 +28,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * </p>
  * <ul>
  *   <li>{@link cloudmonitoring.Cpu#getLoadAvg <em>Load Avg</em>}</li>
+ *   <li>{@link cloudmonitoring.Cpu#getCpuUsed <em>Cpu Used</em>}</li>
  * </ul>
  *
  * @see cloudmonitoring.CloudmonitoringPackage#getCpu()
@@ -60,6 +61,32 @@ public interface Cpu extends MixinBase, Mainmetric {
 	 * @generated
 	 */
 	void setLoadAvg(Double value);
+
+	/**
+	 * Returns the value of the '<em><b>Cpu Used</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Cpu Used</em>' attribute.
+	 * @see #setCpuUsed(Double)
+	 * @see cloudmonitoring.CloudmonitoringPackage#getCpu_CpuUsed()
+	 * @model dataType="cloudmonitoring.Percent"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/monitoring/ecore!Cpu!cpuUsed'"
+	 * @generated
+	 */
+	Double getCpuUsed();
+
+	/**
+	 * Sets the value of the '{@link cloudmonitoring.Cpu#getCpuUsed <em>Cpu Used</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Cpu Used</em>' attribute.
+	 * @see #getCpuUsed()
+	 * @generated
+	 */
+	void setCpuUsed(Double value);
 
 	/**
 	 * <!-- begin-user-doc -->

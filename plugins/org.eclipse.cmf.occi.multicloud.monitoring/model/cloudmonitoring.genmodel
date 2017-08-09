@@ -50,6 +50,9 @@
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="cloudmonitoring.ecore#//Cpu/loadAvg"/>
       </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="cloudmonitoring.ecore#//Cpu/cpuUsed"/>
+      </genFeatures>
     </genClasses>
     <genClasses>
       <ecoreClass href="cloudmonitoring.ecore#//Diskio"/>
@@ -67,6 +70,9 @@
       </genFeatures>
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="cloudmonitoring.ecore#//Ram/swap"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="cloudmonitoring.ecore#//Ram/ramUsed"/>
       </genFeatures>
     </genClasses>
     <genClasses>
@@ -125,6 +131,9 @@
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="cloudmonitoring.ecore#//Disk/volumeName"/>
       </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="cloudmonitoring.ecore#//Disk/diskUsed"/>
+      </genFeatures>
     </genClasses>
     <genClasses>
       <ecoreClass href="cloudmonitoring.ecore#//Mailpublisher"/>
@@ -151,9 +160,6 @@
       <ecoreClass href="cloudmonitoring.ecore#//Mainmetric"/>
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="cloudmonitoring.ecore#//Mainmetric/thresholdUsage"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="cloudmonitoring.ecore#//Mainmetric/utilization"/>
       </genFeatures>
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="cloudmonitoring.ecore#//Mainmetric/temperature"/>

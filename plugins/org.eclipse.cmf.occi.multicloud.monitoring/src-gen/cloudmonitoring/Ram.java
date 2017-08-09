@@ -29,6 +29,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * <ul>
  *   <li>{@link cloudmonitoring.Ram#getFree <em>Free</em>}</li>
  *   <li>{@link cloudmonitoring.Ram#getSwap <em>Swap</em>}</li>
+ *   <li>{@link cloudmonitoring.Ram#getRamUsed <em>Ram Used</em>}</li>
  * </ul>
  *
  * @see cloudmonitoring.CloudmonitoringPackage#getRam()
@@ -87,6 +88,32 @@ public interface Ram extends MixinBase, Mainmetric {
 	 * @generated
 	 */
 	void setSwap(Double value);
+
+	/**
+	 * Returns the value of the '<em><b>Ram Used</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Ram Used</em>' attribute.
+	 * @see #setRamUsed(Double)
+	 * @see cloudmonitoring.CloudmonitoringPackage#getRam_RamUsed()
+	 * @model dataType="cloudmonitoring.Percent"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/monitoring/ecore!Ram!ramUsed'"
+	 * @generated
+	 */
+	Double getRamUsed();
+
+	/**
+	 * Sets the value of the '{@link cloudmonitoring.Ram#getRamUsed <em>Ram Used</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Ram Used</em>' attribute.
+	 * @see #getRamUsed()
+	 * @generated
+	 */
+	void setRamUsed(Double value);
 
 	/**
 	 * <!-- begin-user-doc -->

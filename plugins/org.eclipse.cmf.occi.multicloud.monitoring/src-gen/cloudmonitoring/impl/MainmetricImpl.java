@@ -59,7 +59,6 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  * </p>
  * <ul>
  *   <li>{@link cloudmonitoring.impl.MainmetricImpl#getThresholdUsage <em>Threshold Usage</em>}</li>
- *   <li>{@link cloudmonitoring.impl.MainmetricImpl#getUtilization <em>Utilization</em>}</li>
  *   <li>{@link cloudmonitoring.impl.MainmetricImpl#getTemperature <em>Temperature</em>}</li>
  *   <li>{@link cloudmonitoring.impl.MainmetricImpl#getThresholdTemperature <em>Threshold Temperature</em>}</li>
  * </ul>
@@ -86,26 +85,6 @@ public class MainmetricImpl extends MixinBaseImpl implements Mainmetric {
 	 * @ordered
 	 */
 	protected Double thresholdUsage = THRESHOLD_USAGE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getUtilization() <em>Utilization</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUtilization()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Double UTILIZATION_EDEFAULT = new Double(0.0);
-
-	/**
-	 * The cached value of the '{@link #getUtilization() <em>Utilization</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUtilization()
-	 * @generated
-	 * @ordered
-	 */
-	protected Double utilization = UTILIZATION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getTemperature() <em>Temperature</em>}' attribute.
@@ -185,27 +164,6 @@ public class MainmetricImpl extends MixinBaseImpl implements Mainmetric {
 		thresholdUsage = newThresholdUsage;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CloudmonitoringPackage.MAINMETRIC__THRESHOLD_USAGE, oldThresholdUsage, thresholdUsage));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Double getUtilization() {
-		return utilization;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setUtilization(Double newUtilization) {
-		Double oldUtilization = utilization;
-		utilization = newUtilization;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CloudmonitoringPackage.MAINMETRIC__UTILIZATION, oldUtilization, utilization));
 	}
 
 	/**
@@ -298,8 +256,6 @@ public class MainmetricImpl extends MixinBaseImpl implements Mainmetric {
 		switch (featureID) {
 			case CloudmonitoringPackage.MAINMETRIC__THRESHOLD_USAGE:
 				return getThresholdUsage();
-			case CloudmonitoringPackage.MAINMETRIC__UTILIZATION:
-				return getUtilization();
 			case CloudmonitoringPackage.MAINMETRIC__TEMPERATURE:
 				return getTemperature();
 			case CloudmonitoringPackage.MAINMETRIC__THRESHOLD_TEMPERATURE:
@@ -318,9 +274,6 @@ public class MainmetricImpl extends MixinBaseImpl implements Mainmetric {
 		switch (featureID) {
 			case CloudmonitoringPackage.MAINMETRIC__THRESHOLD_USAGE:
 				setThresholdUsage((Double)newValue);
-				return;
-			case CloudmonitoringPackage.MAINMETRIC__UTILIZATION:
-				setUtilization((Double)newValue);
 				return;
 			case CloudmonitoringPackage.MAINMETRIC__TEMPERATURE:
 				setTemperature((Double)newValue);
@@ -343,9 +296,6 @@ public class MainmetricImpl extends MixinBaseImpl implements Mainmetric {
 			case CloudmonitoringPackage.MAINMETRIC__THRESHOLD_USAGE:
 				setThresholdUsage(THRESHOLD_USAGE_EDEFAULT);
 				return;
-			case CloudmonitoringPackage.MAINMETRIC__UTILIZATION:
-				setUtilization(UTILIZATION_EDEFAULT);
-				return;
 			case CloudmonitoringPackage.MAINMETRIC__TEMPERATURE:
 				setTemperature(TEMPERATURE_EDEFAULT);
 				return;
@@ -366,8 +316,6 @@ public class MainmetricImpl extends MixinBaseImpl implements Mainmetric {
 		switch (featureID) {
 			case CloudmonitoringPackage.MAINMETRIC__THRESHOLD_USAGE:
 				return THRESHOLD_USAGE_EDEFAULT == null ? thresholdUsage != null : !THRESHOLD_USAGE_EDEFAULT.equals(thresholdUsage);
-			case CloudmonitoringPackage.MAINMETRIC__UTILIZATION:
-				return UTILIZATION_EDEFAULT == null ? utilization != null : !UTILIZATION_EDEFAULT.equals(utilization);
 			case CloudmonitoringPackage.MAINMETRIC__TEMPERATURE:
 				return TEMPERATURE_EDEFAULT == null ? temperature != null : !TEMPERATURE_EDEFAULT.equals(temperature);
 			case CloudmonitoringPackage.MAINMETRIC__THRESHOLD_TEMPERATURE:
@@ -403,8 +351,6 @@ public class MainmetricImpl extends MixinBaseImpl implements Mainmetric {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (thresholdUsage: ");
 		result.append(thresholdUsage);
-		result.append(", utilization: ");
-		result.append(utilization);
 		result.append(", temperature: ");
 		result.append(temperature);
 		result.append(", thresholdTemperature: ");

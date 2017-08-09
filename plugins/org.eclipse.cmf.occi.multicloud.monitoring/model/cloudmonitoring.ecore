@@ -70,6 +70,11 @@
         <details key="documentation" value=""/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cpuUsed" eType="#//Percent">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Diskio" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase #//Inputoutput">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -102,6 +107,11 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="swap" eType="#//Percent">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ramUsed" eType="#//Percent">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value=""/>
       </eAnnotations>
@@ -224,6 +234,11 @@
         <details key="documentation" value=""/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="diskUsed" eType="#//Percent">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Mailpublisher" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase #//Publishercontrol">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -279,12 +294,6 @@
         defaultValueLiteral="80.0">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value=""/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="utilization" eType="#//Percent"
-        defaultValueLiteral="0.0">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Percent usage of a main component metric like ram, disk and cpu"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="temperature" eType="#//Temperature">

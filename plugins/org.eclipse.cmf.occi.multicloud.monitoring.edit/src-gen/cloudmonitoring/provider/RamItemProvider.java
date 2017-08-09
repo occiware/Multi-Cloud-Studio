@@ -60,11 +60,11 @@ public class RamItemProvider extends MixinBaseItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addThresholdUsagePropertyDescriptor(object);
-			addUtilizationPropertyDescriptor(object);
 			addTemperaturePropertyDescriptor(object);
 			addThresholdTemperaturePropertyDescriptor(object);
 			addFreePropertyDescriptor(object);
 			addSwapPropertyDescriptor(object);
+			addRamUsedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -83,28 +83,6 @@ public class RamItemProvider extends MixinBaseItemProvider {
 				 getString("_UI_Mainmetric_thresholdUsage_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Mainmetric_thresholdUsage_feature", "_UI_Mainmetric_type"),
 				 CloudmonitoringPackage.Literals.MAINMETRIC__THRESHOLD_USAGE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Utilization feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUtilizationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Mainmetric_utilization_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Mainmetric_utilization_feature", "_UI_Mainmetric_type"),
-				 CloudmonitoringPackage.Literals.MAINMETRIC__UTILIZATION,
 				 true,
 				 false,
 				 false,
@@ -202,6 +180,28 @@ public class RamItemProvider extends MixinBaseItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Ram Used feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRamUsedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Ram_ramUsed_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Ram_ramUsed_feature", "_UI_Ram_type"),
+				 CloudmonitoringPackage.Literals.RAM__RAM_USED,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Ram.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -241,11 +241,11 @@ public class RamItemProvider extends MixinBaseItemProvider {
 
 		switch (notification.getFeatureID(Ram.class)) {
 			case CloudmonitoringPackage.RAM__THRESHOLD_USAGE:
-			case CloudmonitoringPackage.RAM__UTILIZATION:
 			case CloudmonitoringPackage.RAM__TEMPERATURE:
 			case CloudmonitoringPackage.RAM__THRESHOLD_TEMPERATURE:
 			case CloudmonitoringPackage.RAM__FREE:
 			case CloudmonitoringPackage.RAM__SWAP:
+			case CloudmonitoringPackage.RAM__RAM_USED:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

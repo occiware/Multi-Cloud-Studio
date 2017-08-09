@@ -327,22 +327,13 @@ public interface CloudmonitoringPackage extends EPackage {
 	int CPU__THRESHOLD_USAGE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Utilization</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CPU__UTILIZATION = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Temperature</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CPU__TEMPERATURE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
+	int CPU__TEMPERATURE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Threshold Temperature</b></em>' attribute.
@@ -351,7 +342,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CPU__THRESHOLD_TEMPERATURE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
+	int CPU__THRESHOLD_TEMPERATURE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Load Avg</b></em>' attribute.
@@ -360,7 +351,16 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CPU__LOAD_AVG = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 4;
+	int CPU__LOAD_AVG = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Cpu Used</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CPU__CPU_USED = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Cpu</em>' class.
@@ -527,22 +527,13 @@ public interface CloudmonitoringPackage extends EPackage {
 	int RAM__THRESHOLD_USAGE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Utilization</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RAM__UTILIZATION = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Temperature</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RAM__TEMPERATURE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
+	int RAM__TEMPERATURE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Threshold Temperature</b></em>' attribute.
@@ -551,7 +542,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RAM__THRESHOLD_TEMPERATURE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
+	int RAM__THRESHOLD_TEMPERATURE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Free</b></em>' attribute.
@@ -560,7 +551,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RAM__FREE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 4;
+	int RAM__FREE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Swap</b></em>' attribute.
@@ -569,7 +560,16 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RAM__SWAP = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 5;
+	int RAM__SWAP = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Ram Used</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RAM__RAM_USED = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Ram</em>' class.
@@ -1173,22 +1173,13 @@ public interface CloudmonitoringPackage extends EPackage {
 	int DISK__THRESHOLD_USAGE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Utilization</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISK__UTILIZATION = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Temperature</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISK__TEMPERATURE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
+	int DISK__TEMPERATURE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Threshold Temperature</b></em>' attribute.
@@ -1197,7 +1188,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISK__THRESHOLD_TEMPERATURE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
+	int DISK__THRESHOLD_TEMPERATURE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Swap</b></em>' attribute.
@@ -1206,7 +1197,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISK__SWAP = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 4;
+	int DISK__SWAP = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Free</b></em>' attribute.
@@ -1215,7 +1206,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISK__FREE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 5;
+	int DISK__FREE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Volume Name</b></em>' attribute.
@@ -1224,7 +1215,16 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISK__VOLUME_NAME = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 6;
+	int DISK__VOLUME_NAME = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Disk Used</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISK__DISK_USED = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Disk</em>' class.
@@ -1445,22 +1445,13 @@ public interface CloudmonitoringPackage extends EPackage {
 	int MAINMETRIC__THRESHOLD_USAGE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Utilization</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAINMETRIC__UTILIZATION = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Temperature</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAINMETRIC__TEMPERATURE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
+	int MAINMETRIC__TEMPERATURE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Threshold Temperature</b></em>' attribute.
@@ -1469,7 +1460,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAINMETRIC__THRESHOLD_TEMPERATURE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
+	int MAINMETRIC__THRESHOLD_TEMPERATURE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Mainmetric</em>' class.
@@ -1478,7 +1469,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAINMETRIC_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 4;
+	int MAINMETRIC_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Applies Constraint</em>' operation.
@@ -1682,6 +1673,17 @@ public interface CloudmonitoringPackage extends EPackage {
 	EAttribute getCpu_LoadAvg();
 
 	/**
+	 * Returns the meta object for the attribute '{@link cloudmonitoring.Cpu#getCpuUsed <em>Cpu Used</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Cpu Used</em>'.
+	 * @see cloudmonitoring.Cpu#getCpuUsed()
+	 * @see #getCpu()
+	 * @generated
+	 */
+	EAttribute getCpu_CpuUsed();
+
+	/**
 	 * Returns the meta object for the '{@link cloudmonitoring.Cpu#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1764,6 +1766,17 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRam_Swap();
+
+	/**
+	 * Returns the meta object for the attribute '{@link cloudmonitoring.Ram#getRamUsed <em>Ram Used</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ram Used</em>'.
+	 * @see cloudmonitoring.Ram#getRamUsed()
+	 * @see #getRam()
+	 * @generated
+	 */
+	EAttribute getRam_RamUsed();
 
 	/**
 	 * Returns the meta object for the '{@link cloudmonitoring.Ram#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
@@ -2034,6 +2047,17 @@ public interface CloudmonitoringPackage extends EPackage {
 	EAttribute getDisk_VolumeName();
 
 	/**
+	 * Returns the meta object for the attribute '{@link cloudmonitoring.Disk#getDiskUsed <em>Disk Used</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Disk Used</em>'.
+	 * @see cloudmonitoring.Disk#getDiskUsed()
+	 * @see #getDisk()
+	 * @generated
+	 */
+	EAttribute getDisk_DiskUsed();
+
+	/**
 	 * Returns the meta object for the '{@link cloudmonitoring.Disk#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2149,17 +2173,6 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getMainmetric_ThresholdUsage();
-
-	/**
-	 * Returns the meta object for the attribute '{@link cloudmonitoring.Mainmetric#getUtilization <em>Utilization</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Utilization</em>'.
-	 * @see cloudmonitoring.Mainmetric#getUtilization()
-	 * @see #getMainmetric()
-	 * @generated
-	 */
-	EAttribute getMainmetric_Utilization();
 
 	/**
 	 * Returns the meta object for the attribute '{@link cloudmonitoring.Mainmetric#getTemperature <em>Temperature</em>}'.
@@ -2365,6 +2378,14 @@ public interface CloudmonitoringPackage extends EPackage {
 		EAttribute CPU__LOAD_AVG = eINSTANCE.getCpu_LoadAvg();
 
 		/**
+		 * The meta object literal for the '<em><b>Cpu Used</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CPU__CPU_USED = eINSTANCE.getCpu_CpuUsed();
+
+		/**
 		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2431,6 +2452,14 @@ public interface CloudmonitoringPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute RAM__SWAP = eINSTANCE.getRam_Swap();
+
+		/**
+		 * The meta object literal for the '<em><b>Ram Used</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RAM__RAM_USED = eINSTANCE.getRam_RamUsed();
 
 		/**
 		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
@@ -2655,6 +2684,14 @@ public interface CloudmonitoringPackage extends EPackage {
 		EAttribute DISK__VOLUME_NAME = eINSTANCE.getDisk_VolumeName();
 
 		/**
+		 * The meta object literal for the '<em><b>Disk Used</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DISK__DISK_USED = eINSTANCE.getDisk_DiskUsed();
+
+		/**
 		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2745,14 +2782,6 @@ public interface CloudmonitoringPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MAINMETRIC__THRESHOLD_USAGE = eINSTANCE.getMainmetric_ThresholdUsage();
-
-		/**
-		 * The meta object literal for the '<em><b>Utilization</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MAINMETRIC__UTILIZATION = eINSTANCE.getMainmetric_Utilization();
 
 		/**
 		 * The meta object literal for the '<em><b>Temperature</b></em>' attribute feature.

@@ -30,6 +30,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *   <li>{@link cloudmonitoring.Disk#getSwap <em>Swap</em>}</li>
  *   <li>{@link cloudmonitoring.Disk#getFree <em>Free</em>}</li>
  *   <li>{@link cloudmonitoring.Disk#getVolumeName <em>Volume Name</em>}</li>
+ *   <li>{@link cloudmonitoring.Disk#getDiskUsed <em>Disk Used</em>}</li>
  * </ul>
  *
  * @see cloudmonitoring.CloudmonitoringPackage#getDisk()
@@ -114,6 +115,32 @@ public interface Disk extends MixinBase, Mainmetric {
 	 * @generated
 	 */
 	void setVolumeName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Disk Used</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Disk Used</em>' attribute.
+	 * @see #setDiskUsed(Double)
+	 * @see cloudmonitoring.CloudmonitoringPackage#getDisk_DiskUsed()
+	 * @model dataType="cloudmonitoring.Percent"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/monitoring/ecore!Disk!diskUsed'"
+	 * @generated
+	 */
+	Double getDiskUsed();
+
+	/**
+	 * Sets the value of the '{@link cloudmonitoring.Disk#getDiskUsed <em>Disk Used</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Disk Used</em>' attribute.
+	 * @see #getDiskUsed()
+	 * @generated
+	 */
+	void setDiskUsed(Double value);
 
 	/**
 	 * <!-- begin-user-doc -->

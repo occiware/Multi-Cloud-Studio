@@ -30,7 +30,6 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * </p>
  * <ul>
  *   <li>{@link cloudmonitoring.Mainmetric#getThresholdUsage <em>Threshold Usage</em>}</li>
- *   <li>{@link cloudmonitoring.Mainmetric#getUtilization <em>Utilization</em>}</li>
  *   <li>{@link cloudmonitoring.Mainmetric#getTemperature <em>Temperature</em>}</li>
  *   <li>{@link cloudmonitoring.Mainmetric#getThresholdTemperature <em>Threshold Temperature</em>}</li>
  * </ul>
@@ -66,33 +65,6 @@ public interface Mainmetric extends MixinBase, Metric {
 	 * @generated
 	 */
 	void setThresholdUsage(Double value);
-
-	/**
-	 * Returns the value of the '<em><b>Utilization</b></em>' attribute.
-	 * The default value is <code>"0.0"</code>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Percent usage of a main component metric like ram, disk and cpu
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Utilization</em>' attribute.
-	 * @see #setUtilization(Double)
-	 * @see cloudmonitoring.CloudmonitoringPackage#getMainmetric_Utilization()
-	 * @model default="0.0" dataType="cloudmonitoring.Percent"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/monitoring/ecore!Mainmetric!utilization'"
-	 * @generated
-	 */
-	Double getUtilization();
-
-	/**
-	 * Sets the value of the '{@link cloudmonitoring.Mainmetric#getUtilization <em>Utilization</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Utilization</em>' attribute.
-	 * @see #getUtilization()
-	 * @generated
-	 */
-	void setUtilization(Double value);
 
 	/**
 	 * Returns the value of the '<em><b>Temperature</b></em>' attribute.

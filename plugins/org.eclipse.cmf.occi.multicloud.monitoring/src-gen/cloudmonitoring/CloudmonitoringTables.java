@@ -397,11 +397,13 @@ public class CloudmonitoringTables
 		}
 
 
-		public static final /*@NonNull*/ ExecutorProperty _Cpu__loadAvg = new EcoreExecutorProperty(CloudmonitoringPackage.Literals.CPU__LOAD_AVG, Types._Cpu, 0);
+		public static final /*@NonNull*/ ExecutorProperty _Cpu__cpuUsed = new EcoreExecutorProperty(CloudmonitoringPackage.Literals.CPU__CPU_USED, Types._Cpu, 0);
+		public static final /*@NonNull*/ ExecutorProperty _Cpu__loadAvg = new EcoreExecutorProperty(CloudmonitoringPackage.Literals.CPU__LOAD_AVG, Types._Cpu, 1);
 
-		public static final /*@NonNull*/ ExecutorProperty _Disk__free = new EcoreExecutorProperty(CloudmonitoringPackage.Literals.DISK__FREE, Types._Disk, 0);
-		public static final /*@NonNull*/ ExecutorProperty _Disk__swap = new EcoreExecutorProperty(CloudmonitoringPackage.Literals.DISK__SWAP, Types._Disk, 1);
-		public static final /*@NonNull*/ ExecutorProperty _Disk__volumeName = new EcoreExecutorProperty(CloudmonitoringPackage.Literals.DISK__VOLUME_NAME, Types._Disk, 2);
+		public static final /*@NonNull*/ ExecutorProperty _Disk__diskUsed = new EcoreExecutorProperty(CloudmonitoringPackage.Literals.DISK__DISK_USED, Types._Disk, 0);
+		public static final /*@NonNull*/ ExecutorProperty _Disk__free = new EcoreExecutorProperty(CloudmonitoringPackage.Literals.DISK__FREE, Types._Disk, 1);
+		public static final /*@NonNull*/ ExecutorProperty _Disk__swap = new EcoreExecutorProperty(CloudmonitoringPackage.Literals.DISK__SWAP, Types._Disk, 2);
+		public static final /*@NonNull*/ ExecutorProperty _Disk__volumeName = new EcoreExecutorProperty(CloudmonitoringPackage.Literals.DISK__VOLUME_NAME, Types._Disk, 3);
 
 		public static final /*@NonNull*/ ExecutorProperty _Diskio__diskRead = new EcoreExecutorProperty(CloudmonitoringPackage.Literals.DISKIO__DISK_READ, Types._Diskio, 0);
 		public static final /*@NonNull*/ ExecutorProperty _Diskio__diskWrite = new EcoreExecutorProperty(CloudmonitoringPackage.Literals.DISKIO__DISK_WRITE, Types._Diskio, 1);
@@ -418,7 +420,6 @@ public class CloudmonitoringTables
 		public static final /*@NonNull*/ ExecutorProperty _Mainmetric__temperature = new EcoreExecutorProperty(CloudmonitoringPackage.Literals.MAINMETRIC__TEMPERATURE, Types._Mainmetric, 0);
 		public static final /*@NonNull*/ ExecutorProperty _Mainmetric__thresholdTemperature = new EcoreExecutorProperty(CloudmonitoringPackage.Literals.MAINMETRIC__THRESHOLD_TEMPERATURE, Types._Mainmetric, 1);
 		public static final /*@NonNull*/ ExecutorProperty _Mainmetric__thresholdUsage = new EcoreExecutorProperty(CloudmonitoringPackage.Literals.MAINMETRIC__THRESHOLD_USAGE, Types._Mainmetric, 2);
-		public static final /*@NonNull*/ ExecutorProperty _Mainmetric__utilization = new EcoreExecutorProperty(CloudmonitoringPackage.Literals.MAINMETRIC__UTILIZATION, Types._Mainmetric, 3);
 
 		public static final /*@NonNull*/ ExecutorProperty _Networkio__networkIn = new EcoreExecutorProperty(CloudmonitoringPackage.Literals.NETWORKIO__NETWORK_IN, Types._Networkio, 0);
 		public static final /*@NonNull*/ ExecutorProperty _Networkio__networkOut = new EcoreExecutorProperty(CloudmonitoringPackage.Literals.NETWORKIO__NETWORK_OUT, Types._Networkio, 1);
@@ -426,7 +427,8 @@ public class CloudmonitoringTables
 		public static final /*@NonNull*/ ExecutorProperty _Publishercontrol__publisherState = new EcoreExecutorProperty(CloudmonitoringPackage.Literals.PUBLISHERCONTROL__PUBLISHER_STATE, Types._Publishercontrol, 0);
 
 		public static final /*@NonNull*/ ExecutorProperty _Ram__free = new EcoreExecutorProperty(CloudmonitoringPackage.Literals.RAM__FREE, Types._Ram, 0);
-		public static final /*@NonNull*/ ExecutorProperty _Ram__swap = new EcoreExecutorProperty(CloudmonitoringPackage.Literals.RAM__SWAP, Types._Ram, 1);
+		public static final /*@NonNull*/ ExecutorProperty _Ram__ramUsed = new EcoreExecutorProperty(CloudmonitoringPackage.Literals.RAM__RAM_USED, Types._Ram, 1);
+		public static final /*@NonNull*/ ExecutorProperty _Ram__swap = new EcoreExecutorProperty(CloudmonitoringPackage.Literals.RAM__SWAP, Types._Ram, 2);
 
 		public static final /*@NonNull*/ ExecutorProperty _Sensorcontrol__monitorState = new EcoreExecutorProperty(CloudmonitoringPackage.Literals.SENSORCONTROL__MONITOR_STATE, Types._Sensorcontrol, 0);
 
@@ -1423,20 +1425,20 @@ public class CloudmonitoringTables
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Cloudsensor = {};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Cpu = {
+			CloudmonitoringTables.Properties._Cpu__cpuUsed,
 			CloudmonitoringTables.Properties._Cpu__loadAvg,
 			CloudmonitoringTables.Properties._Mainmetric__temperature,
 			CloudmonitoringTables.Properties._Mainmetric__thresholdTemperature,
-			CloudmonitoringTables.Properties._Mainmetric__thresholdUsage,
-			CloudmonitoringTables.Properties._Mainmetric__utilization
+			CloudmonitoringTables.Properties._Mainmetric__thresholdUsage
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Disk = {
+			CloudmonitoringTables.Properties._Disk__diskUsed,
 			CloudmonitoringTables.Properties._Disk__free,
 			CloudmonitoringTables.Properties._Disk__swap,
 			CloudmonitoringTables.Properties._Mainmetric__temperature,
 			CloudmonitoringTables.Properties._Mainmetric__thresholdTemperature,
 			CloudmonitoringTables.Properties._Mainmetric__thresholdUsage,
-			CloudmonitoringTables.Properties._Mainmetric__utilization,
 			CloudmonitoringTables.Properties._Disk__volumeName
 		};
 
@@ -1469,8 +1471,7 @@ public class CloudmonitoringTables
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Mainmetric = {
 			CloudmonitoringTables.Properties._Mainmetric__temperature,
 			CloudmonitoringTables.Properties._Mainmetric__thresholdTemperature,
-			CloudmonitoringTables.Properties._Mainmetric__thresholdUsage,
-			CloudmonitoringTables.Properties._Mainmetric__utilization
+			CloudmonitoringTables.Properties._Mainmetric__thresholdUsage
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _MonitorState = {};
@@ -1491,11 +1492,11 @@ public class CloudmonitoringTables
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Ram = {
 			CloudmonitoringTables.Properties._Ram__free,
+			CloudmonitoringTables.Properties._Ram__ramUsed,
 			CloudmonitoringTables.Properties._Ram__swap,
 			CloudmonitoringTables.Properties._Mainmetric__temperature,
 			CloudmonitoringTables.Properties._Mainmetric__thresholdTemperature,
-			CloudmonitoringTables.Properties._Mainmetric__thresholdUsage,
-			CloudmonitoringTables.Properties._Mainmetric__utilization
+			CloudmonitoringTables.Properties._Mainmetric__thresholdUsage
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Sensorcontrol = {

@@ -60,10 +60,10 @@ public class CpuItemProvider extends MixinBaseItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addThresholdUsagePropertyDescriptor(object);
-			addUtilizationPropertyDescriptor(object);
 			addTemperaturePropertyDescriptor(object);
 			addThresholdTemperaturePropertyDescriptor(object);
 			addLoadAvgPropertyDescriptor(object);
+			addCpuUsedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -82,28 +82,6 @@ public class CpuItemProvider extends MixinBaseItemProvider {
 				 getString("_UI_Mainmetric_thresholdUsage_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Mainmetric_thresholdUsage_feature", "_UI_Mainmetric_type"),
 				 CloudmonitoringPackage.Literals.MAINMETRIC__THRESHOLD_USAGE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Utilization feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUtilizationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Mainmetric_utilization_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Mainmetric_utilization_feature", "_UI_Mainmetric_type"),
-				 CloudmonitoringPackage.Literals.MAINMETRIC__UTILIZATION,
 				 true,
 				 false,
 				 false,
@@ -179,6 +157,28 @@ public class CpuItemProvider extends MixinBaseItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Cpu Used feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCpuUsedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Cpu_cpuUsed_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Cpu_cpuUsed_feature", "_UI_Cpu_type"),
+				 CloudmonitoringPackage.Literals.CPU__CPU_USED,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Cpu.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -218,10 +218,10 @@ public class CpuItemProvider extends MixinBaseItemProvider {
 
 		switch (notification.getFeatureID(Cpu.class)) {
 			case CloudmonitoringPackage.CPU__THRESHOLD_USAGE:
-			case CloudmonitoringPackage.CPU__UTILIZATION:
 			case CloudmonitoringPackage.CPU__TEMPERATURE:
 			case CloudmonitoringPackage.CPU__THRESHOLD_TEMPERATURE:
 			case CloudmonitoringPackage.CPU__LOAD_AVG:
+			case CloudmonitoringPackage.CPU__CPU_USED:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

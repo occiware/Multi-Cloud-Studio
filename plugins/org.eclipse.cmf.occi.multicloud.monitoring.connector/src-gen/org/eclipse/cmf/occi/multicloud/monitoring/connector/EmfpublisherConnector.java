@@ -14,8 +14,11 @@
  */
 package org.eclipse.cmf.occi.multicloud.monitoring.connector;
 
+import java.util.List;
 import java.util.UUID;
 
+import org.eclipse.cmf.occi.core.Entity;
+import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.multicloud.monitoring.connector.tinom.EMFTinomPublisher;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -50,7 +53,23 @@ public class EmfpublisherConnector extends EmfpublisherImpl
 	// Start of user code Emfpublisherconnector_constructor
 	public EMFTinomPublisher buildTinomPublisher() {
 		LOGGER.info("Build sensor with publisher : EMFTinomPublisher");
-		emfTinomPublisher = new EMFTinomPublisher("emf" + uuid, this);
+		
+		
+		// Research for mixin cpu metric et ram metric (to update their field via the emf tinom publisher).
+		Entity entity = this.getEntity();
+		List<MixinBase> bases = entity.getParts();
+		CpuConnector mixinCpuMetric = null;
+		RamConnector mixinRamMetric = null;
+		
+		for (MixinBase mixin : bases) {
+			if (mixin instanceof CpuConnector) {
+				mixinCpuMetric = (CpuConnector) mixin;
+			}
+			if (mixin instanceof RamConnector) {
+				mixinRamMetric = (RamConnector) mixin;
+			}
+		}
+		emfTinomPublisher = new EMFTinomPublisher("emf" + uuid, mixinCpuMetric, mixinRamMetric);
 		return emfTinomPublisher;
 	}
 	// End of user code

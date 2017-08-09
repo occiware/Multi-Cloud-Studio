@@ -301,6 +301,15 @@ public class CloudmonitoringPackageImpl extends EPackageImpl implements Cloudmon
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getCpu_CpuUsed() {
+		return (EAttribute)cpuEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EOperation getCpu__AppliesConstraint__DiagnosticChain_Map() {
 		return cpuEClass.getEOperations().get(0);
 	}
@@ -366,6 +375,15 @@ public class CloudmonitoringPackageImpl extends EPackageImpl implements Cloudmon
 	 */
 	public EAttribute getRam_Swap() {
 		return (EAttribute)ramEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRam_RamUsed() {
+		return (EAttribute)ramEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -607,6 +625,15 @@ public class CloudmonitoringPackageImpl extends EPackageImpl implements Cloudmon
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getDisk_DiskUsed() {
+		return (EAttribute)diskEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EOperation getDisk__AppliesConstraint__DiagnosticChain_Map() {
 		return diskEClass.getEOperations().get(0);
 	}
@@ -706,7 +733,7 @@ public class CloudmonitoringPackageImpl extends EPackageImpl implements Cloudmon
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getMainmetric_Utilization() {
+	public EAttribute getMainmetric_Temperature() {
 		return (EAttribute)mainmetricEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -715,17 +742,8 @@ public class CloudmonitoringPackageImpl extends EPackageImpl implements Cloudmon
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getMainmetric_Temperature() {
-		return (EAttribute)mainmetricEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getMainmetric_ThresholdTemperature() {
-		return (EAttribute)mainmetricEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)mainmetricEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -868,6 +886,7 @@ public class CloudmonitoringPackageImpl extends EPackageImpl implements Cloudmon
 
 		cpuEClass = createEClass(CPU);
 		createEAttribute(cpuEClass, CPU__LOAD_AVG);
+		createEAttribute(cpuEClass, CPU__CPU_USED);
 		createEOperation(cpuEClass, CPU___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
 		diskioEClass = createEClass(DISKIO);
@@ -878,6 +897,7 @@ public class CloudmonitoringPackageImpl extends EPackageImpl implements Cloudmon
 		ramEClass = createEClass(RAM);
 		createEAttribute(ramEClass, RAM__FREE);
 		createEAttribute(ramEClass, RAM__SWAP);
+		createEAttribute(ramEClass, RAM__RAM_USED);
 		createEOperation(ramEClass, RAM___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
 		networkioEClass = createEClass(NETWORKIO);
@@ -911,6 +931,7 @@ public class CloudmonitoringPackageImpl extends EPackageImpl implements Cloudmon
 		createEAttribute(diskEClass, DISK__SWAP);
 		createEAttribute(diskEClass, DISK__FREE);
 		createEAttribute(diskEClass, DISK__VOLUME_NAME);
+		createEAttribute(diskEClass, DISK__DISK_USED);
 		createEOperation(diskEClass, DISK___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
 		mailpublisherEClass = createEClass(MAILPUBLISHER);
@@ -924,7 +945,6 @@ public class CloudmonitoringPackageImpl extends EPackageImpl implements Cloudmon
 
 		mainmetricEClass = createEClass(MAINMETRIC);
 		createEAttribute(mainmetricEClass, MAINMETRIC__THRESHOLD_USAGE);
-		createEAttribute(mainmetricEClass, MAINMETRIC__UTILIZATION);
 		createEAttribute(mainmetricEClass, MAINMETRIC__TEMPERATURE);
 		createEAttribute(mainmetricEClass, MAINMETRIC__THRESHOLD_TEMPERATURE);
 		createEOperation(mainmetricEClass, MAINMETRIC___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
@@ -1009,6 +1029,7 @@ public class CloudmonitoringPackageImpl extends EPackageImpl implements Cloudmon
 
 		initEClass(cpuEClass, Cpu.class, "Cpu", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCpu_LoadAvg(), this.getAverage(), "loadAvg", null, 0, 1, Cpu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCpu_CpuUsed(), this.getPercent(), "cpuUsed", null, 0, 1, Cpu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = initEOperation(getCpu__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1035,6 +1056,7 @@ public class CloudmonitoringPackageImpl extends EPackageImpl implements Cloudmon
 		initEClass(ramEClass, Ram.class, "Ram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRam_Free(), this.getPercent(), "free", null, 0, 1, Ram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRam_Swap(), this.getPercent(), "swap", null, 0, 1, Ram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRam_RamUsed(), this.getPercent(), "ramUsed", null, 0, 1, Ram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = initEOperation(getRam__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1128,6 +1150,7 @@ public class CloudmonitoringPackageImpl extends EPackageImpl implements Cloudmon
 		initEAttribute(getDisk_Swap(), this.getPercent(), "swap", null, 0, 1, Disk.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDisk_Free(), this.getPercent(), "free", null, 0, 1, Disk.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDisk_VolumeName(), theOCCIPackage.getString(), "volumeName", null, 0, 1, Disk.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDisk_DiskUsed(), this.getPercent(), "diskUsed", null, 0, 1, Disk.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = initEOperation(getDisk__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1157,7 +1180,6 @@ public class CloudmonitoringPackageImpl extends EPackageImpl implements Cloudmon
 
 		initEClass(mainmetricEClass, Mainmetric.class, "Mainmetric", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMainmetric_ThresholdUsage(), this.getPercent(), "thresholdUsage", "80.0", 0, 1, Mainmetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMainmetric_Utilization(), this.getPercent(), "utilization", "0.0", 0, 1, Mainmetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMainmetric_Temperature(), this.getTemperature(), "temperature", null, 0, 1, Mainmetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMainmetric_ThresholdTemperature(), this.getTemperature(), "thresholdTemperature", "80.0", 0, 1, Mainmetric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

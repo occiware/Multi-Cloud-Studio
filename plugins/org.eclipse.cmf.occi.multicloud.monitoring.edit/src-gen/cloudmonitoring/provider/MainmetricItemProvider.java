@@ -60,7 +60,6 @@ public class MainmetricItemProvider extends MixinBaseItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addThresholdUsagePropertyDescriptor(object);
-			addUtilizationPropertyDescriptor(object);
 			addTemperaturePropertyDescriptor(object);
 			addThresholdTemperaturePropertyDescriptor(object);
 		}
@@ -81,28 +80,6 @@ public class MainmetricItemProvider extends MixinBaseItemProvider {
 				 getString("_UI_Mainmetric_thresholdUsage_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Mainmetric_thresholdUsage_feature", "_UI_Mainmetric_type"),
 				 CloudmonitoringPackage.Literals.MAINMETRIC__THRESHOLD_USAGE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Utilization feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUtilizationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Mainmetric_utilization_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Mainmetric_utilization_feature", "_UI_Mainmetric_type"),
-				 CloudmonitoringPackage.Literals.MAINMETRIC__UTILIZATION,
 				 true,
 				 false,
 				 false,
@@ -195,7 +172,6 @@ public class MainmetricItemProvider extends MixinBaseItemProvider {
 
 		switch (notification.getFeatureID(Mainmetric.class)) {
 			case CloudmonitoringPackage.MAINMETRIC__THRESHOLD_USAGE:
-			case CloudmonitoringPackage.MAINMETRIC__UTILIZATION:
 			case CloudmonitoringPackage.MAINMETRIC__TEMPERATURE:
 			case CloudmonitoringPackage.MAINMETRIC__THRESHOLD_TEMPERATURE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

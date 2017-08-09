@@ -10,8 +10,6 @@
     <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
     <semanticResources>platform:/plugin/org.eclipse.cmf.occi.monitoring/model/monitoring.genmodel</semanticResources>
     <semanticResources>platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.genmodel</semanticResources>
-    <semanticResources>platform:/resource/org.eclipse.cmf.occi.multicloud.monitoring/model/cloudmonitoring.genmodel</semanticResources>
-    <semanticResources>platform:/resource/org.eclipse.cmf.occi.multicloud.monitoring/model/cloudmonitoring.ecore</semanticResources>
     <semanticResources>model/zabbix.ecore</semanticResources>
     <semanticResources>model/zabbix.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_tDwdgHd_Eeel8dnl9hOpkw">
@@ -125,6 +123,10 @@
                   <styles xmi:type="notation:FontStyle" xmi:id="_tG2NxHd_Eeel8dnl9hOpkw" fontName=".SF NS Text" fontHeight="10"/>
                   <layoutConstraint xmi:type="notation:Location" xmi:id="_tG2NxXd_Eeel8dnl9hOpkw"/>
                 </children>
+                <children xmi:type="notation:Node" xmi:id="_RVXBkH0WEeekHPYWYG6JCQ" type="3010" element="_RVBDUH0WEeekHPYWYG6JCQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_RVXBkX0WEeekHPYWYG6JCQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_RVXBkn0WEeekHPYWYG6JCQ"/>
+                </children>
                 <styles xmi:type="notation:SortingStyle" xmi:id="_tGwuMXd_Eeel8dnl9hOpkw"/>
                 <styles xmi:type="notation:FilteringStyle" xmi:id="_tGwuMnd_Eeel8dnl9hOpkw"/>
               </children>
@@ -158,6 +160,10 @@
                 <children xmi:type="notation:Node" xmi:id="_tG200Hd_Eeel8dnl9hOpkw" type="3010" element="_tGfonnd_Eeel8dnl9hOpkw">
                   <styles xmi:type="notation:FontStyle" xmi:id="_tG200Xd_Eeel8dnl9hOpkw" fontName=".SF NS Text" fontHeight="10"/>
                   <layoutConstraint xmi:type="notation:Location" xmi:id="_tG200nd_Eeel8dnl9hOpkw"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_RVXooH0WEeekHPYWYG6JCQ" type="3010" element="_RVCRcH0WEeekHPYWYG6JCQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_RVXooX0WEeekHPYWYG6JCQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_RVXoon0WEeekHPYWYG6JCQ"/>
                 </children>
                 <styles xmi:type="notation:SortingStyle" xmi:id="_tGwuP3d_Eeel8dnl9hOpkw"/>
                 <styles xmi:type="notation:FilteringStyle" xmi:id="_tGwuQHd_Eeel8dnl9hOpkw"/>
@@ -270,6 +276,10 @@
                   <styles xmi:type="notation:FontStyle" xmi:id="_tG4qBHd_Eeel8dnl9hOpkw" fontName=".SF NS Text" fontHeight="10"/>
                   <layoutConstraint xmi:type="notation:Location" xmi:id="_tG4qBXd_Eeel8dnl9hOpkw"/>
                 </children>
+                <children xmi:type="notation:Node" xmi:id="_RVXoo30WEeekHPYWYG6JCQ" type="3010" element="_RVEtsH0WEeekHPYWYG6JCQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_RVXopH0WEeekHPYWYG6JCQ" fontName=".SF NS Text" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_RVXopX0WEeekHPYWYG6JCQ"/>
+                </children>
                 <styles xmi:type="notation:SortingStyle" xmi:id="_tGzKeHd_Eeel8dnl9hOpkw"/>
                 <styles xmi:type="notation:FilteringStyle" xmi:id="_tGzKeXd_Eeel8dnl9hOpkw"/>
               </children>
@@ -323,10 +333,6 @@
                 <children xmi:type="notation:Node" xmi:id="_tG54IHd_Eeel8dnl9hOpkw" type="3010" element="_tGfo2nd_Eeel8dnl9hOpkw">
                   <styles xmi:type="notation:FontStyle" xmi:id="_tG54IXd_Eeel8dnl9hOpkw" fontName=".SF NS Text" fontHeight="10"/>
                   <layoutConstraint xmi:type="notation:Location" xmi:id="_tG54Ind_Eeel8dnl9hOpkw"/>
-                </children>
-                <children xmi:type="notation:Node" xmi:id="_tG54I3d_Eeel8dnl9hOpkw" type="3010" element="_tGfo3Hd_Eeel8dnl9hOpkw">
-                  <styles xmi:type="notation:FontStyle" xmi:id="_tG54JHd_Eeel8dnl9hOpkw" fontName=".SF NS Text" fontHeight="10"/>
-                  <layoutConstraint xmi:type="notation:Location" xmi:id="_tG54JXd_Eeel8dnl9hOpkw"/>
                 </children>
                 <styles xmi:type="notation:SortingStyle" xmi:id="_tGzxjHd_Eeel8dnl9hOpkw"/>
                 <styles xmi:type="notation:FilteringStyle" xmi:id="_tGzxjXd_Eeel8dnl9hOpkw"/>
@@ -1469,6 +1475,14 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='MixinContainer']/@subNodeMappings[name='MixinAttribute']"/>
         </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_RVBDUH0WEeekHPYWYG6JCQ" name="cpuUsed: Percent">
+          <target xmi:type="occi:Attribute" href="http://occiware.org/occi/multicloud/monitoring#//@mixins[term='cpu']/@attributes.1"/>
+          <semanticElements xmi:type="occi:Attribute" href="http://occiware.org/occi/multicloud/monitoring#//@mixins[term='cpu']/@attributes.1"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_RVBDUX0WEeekHPYWYG6JCQ" labelSize="10" labelAlignment="LEFT" labelPosition="node">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='MixinContainer']/@subNodeMappings[name='MixinAttribute']/@conditionnalStyles.2/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='MixinContainer']/@subNodeMappings[name='MixinAttribute']"/>
+        </ownedElements>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_tGfolHd_Eeel8dnl9hOpkw" name="DiskIO" outgoingEdges="_tGfpO3d_Eeel8dnl9hOpkw _tGfpXHd_Eeel8dnl9hOpkw">
         <target xmi:type="occi:Mixin" href="http://occiware.org/occi/multicloud/monitoring#//@mixins[term='diskio']"/>
@@ -1515,6 +1529,14 @@
           <target xmi:type="occi:Attribute" href="http://occiware.org/occi/multicloud/monitoring#//@mixins[term='ram']/@attributes.1"/>
           <semanticElements xmi:type="occi:Attribute" href="http://occiware.org/occi/multicloud/monitoring#//@mixins[term='ram']/@attributes.1"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_tGfon3d_Eeel8dnl9hOpkw" labelSize="10" labelAlignment="LEFT" labelPosition="node">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='MixinContainer']/@subNodeMappings[name='MixinAttribute']/@conditionnalStyles.2/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='MixinContainer']/@subNodeMappings[name='MixinAttribute']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_RVCRcH0WEeekHPYWYG6JCQ" name="ramUsed: Percent">
+          <target xmi:type="occi:Attribute" href="http://occiware.org/occi/multicloud/monitoring#//@mixins[term='ram']/@attributes.2"/>
+          <semanticElements xmi:type="occi:Attribute" href="http://occiware.org/occi/multicloud/monitoring#//@mixins[term='ram']/@attributes.2"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_RVCRcX0WEeekHPYWYG6JCQ" labelSize="10" labelAlignment="LEFT" labelPosition="node">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='MixinContainer']/@subNodeMappings[name='MixinAttribute']/@conditionnalStyles.2/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='MixinContainer']/@subNodeMappings[name='MixinAttribute']"/>
@@ -1678,6 +1700,14 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='MixinContainer']/@subNodeMappings[name='MixinAttribute']"/>
         </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_RVEtsH0WEeekHPYWYG6JCQ" name="diskUsed: Percent">
+          <target xmi:type="occi:Attribute" href="http://occiware.org/occi/multicloud/monitoring#//@mixins[term='disk']/@attributes.3"/>
+          <semanticElements xmi:type="occi:Attribute" href="http://occiware.org/occi/multicloud/monitoring#//@mixins[term='disk']/@attributes.3"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_RVEtsX0WEeekHPYWYG6JCQ" labelSize="10" labelAlignment="LEFT" labelPosition="node">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='MixinContainer']/@subNodeMappings[name='MixinAttribute']/@conditionnalStyles.2/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='MixinContainer']/@subNodeMappings[name='MixinAttribute']"/>
+        </ownedElements>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_tGfoxnd_Eeel8dnl9hOpkw" name="MailPublisher" outgoingEdges="_tGfpU3d_Eeel8dnl9hOpkw _tGfpd3d_Eeel8dnl9hOpkw _IHLds3tIEeeSq_zrjj99lQ">
         <target xmi:type="occi:Mixin" href="http://occiware.org/occi/multicloud/monitoring#//@mixins[term='mailpublisher']"/>
@@ -1752,7 +1782,7 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='MixinContainer']/@subNodeMappings[name='MixinAttribute']"/>
         </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_tGfo2Hd_Eeel8dnl9hOpkw" name="utilization: Percent=0.0">
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_tGfo2Hd_Eeel8dnl9hOpkw" name="temperature: Temperature">
           <target xmi:type="occi:Attribute" href="http://occiware.org/occi/multicloud/monitoring#//@mixins[term='mainmetric']/@attributes.1"/>
           <semanticElements xmi:type="occi:Attribute" href="http://occiware.org/occi/multicloud/monitoring#//@mixins[term='mainmetric']/@attributes.1"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_tGfo2Xd_Eeel8dnl9hOpkw" labelSize="10" labelAlignment="LEFT" labelPosition="node">
@@ -1760,18 +1790,10 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='MixinContainer']/@subNodeMappings[name='MixinAttribute']"/>
         </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_tGfo2nd_Eeel8dnl9hOpkw" name="temperature: Temperature">
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_tGfo2nd_Eeel8dnl9hOpkw" name="thresholdTemperature: Temperature=80.0">
           <target xmi:type="occi:Attribute" href="http://occiware.org/occi/multicloud/monitoring#//@mixins[term='mainmetric']/@attributes.2"/>
           <semanticElements xmi:type="occi:Attribute" href="http://occiware.org/occi/multicloud/monitoring#//@mixins[term='mainmetric']/@attributes.2"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_tGfo23d_Eeel8dnl9hOpkw" labelSize="10" labelAlignment="LEFT" labelPosition="node">
-            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='MixinContainer']/@subNodeMappings[name='MixinAttribute']/@conditionnalStyles.2/@style"/>
-          </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='MixinContainer']/@subNodeMappings[name='MixinAttribute']"/>
-        </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_tGfo3Hd_Eeel8dnl9hOpkw" name="thresholdTemperature: Temperature=80.0">
-          <target xmi:type="occi:Attribute" href="http://occiware.org/occi/multicloud/monitoring#//@mixins[term='mainmetric']/@attributes.3"/>
-          <semanticElements xmi:type="occi:Attribute" href="http://occiware.org/occi/multicloud/monitoring#//@mixins[term='mainmetric']/@attributes.3"/>
-          <ownedStyle xmi:type="diagram:Square" xmi:id="_tGfo3Xd_Eeel8dnl9hOpkw" labelSize="10" labelAlignment="LEFT" labelPosition="node">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='MixinContainer']/@subNodeMappings[name='MixinAttribute']/@conditionnalStyles.2/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='MixinContainer']/@subNodeMappings[name='MixinAttribute']"/>
@@ -1818,7 +1840,7 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='NumericTypeContainer']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='NumericTypeContainer']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_tGfo6Hd_Eeel8dnl9hOpkw" name="Double" tooltipText="org.eclipse.cmf.occi.core.impl.NumericTypeImpl@29dd5d15 (name: Percent, documentation: null) (type: Double, totalDigits: &lt;unset>, minExclusive: &lt;unset>, maxExclusive: &lt;unset>, minInclusive: 0.0, maxInclusive: &lt;unset>)">
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_tGfo6Hd_Eeel8dnl9hOpkw" name="Double" tooltipText="org.eclipse.cmf.occi.core.impl.NumericTypeImpl@14999531 (name: Percent, documentation: null) (type: Double, totalDigits: &lt;unset>, minExclusive: &lt;unset>, maxExclusive: &lt;unset>, minInclusive: 0.0, maxInclusive: &lt;unset>)">
           <target xmi:type="occi:NumericType" href="http://occiware.org/occi/multicloud/monitoring#//@types.1"/>
           <semanticElements xmi:type="occi:NumericType" href="http://occiware.org/occi/multicloud/monitoring#//@types.1"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_tGfo6Xd_Eeel8dnl9hOpkw" showIcon="false">
@@ -1836,7 +1858,7 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='NumericTypeContainer']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='NumericTypeContainer']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_tGfo7Hd_Eeel8dnl9hOpkw" name="Double" tooltipText="org.eclipse.cmf.occi.core.impl.NumericTypeImpl@2b1dce68 (name: Average, documentation: null) (type: Double, totalDigits: &lt;unset>, minExclusive: , maxExclusive: &lt;unset>, minInclusive: 0.0, maxInclusive: &lt;unset>)">
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_tGfo7Hd_Eeel8dnl9hOpkw" name="Double" tooltipText="org.eclipse.cmf.occi.core.impl.NumericTypeImpl@55defc82 (name: Average, documentation: null) (type: Double, totalDigits: &lt;unset>, minExclusive: , maxExclusive: &lt;unset>, minInclusive: 0.0, maxInclusive: &lt;unset>)">
           <target xmi:type="occi:NumericType" href="http://occiware.org/occi/multicloud/monitoring#//@types.2"/>
           <semanticElements xmi:type="occi:NumericType" href="http://occiware.org/occi/multicloud/monitoring#//@types.2"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_tGfo7Xd_Eeel8dnl9hOpkw" showIcon="false">
@@ -1854,7 +1876,7 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='NumericTypeContainer']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='NumericTypeContainer']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_tGfo8Hd_Eeel8dnl9hOpkw" name="Double" tooltipText="org.eclipse.cmf.occi.core.impl.NumericTypeImpl@731a5321 (name: PerSec, documentation: null) (type: Double, totalDigits: &lt;unset>, minExclusive: &lt;unset>, maxExclusive: &lt;unset>, minInclusive: 0.0, maxInclusive: &lt;unset>)">
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_tGfo8Hd_Eeel8dnl9hOpkw" name="Double" tooltipText="org.eclipse.cmf.occi.core.impl.NumericTypeImpl@753e6b4c (name: PerSec, documentation: null) (type: Double, totalDigits: &lt;unset>, minExclusive: &lt;unset>, maxExclusive: &lt;unset>, minInclusive: 0.0, maxInclusive: &lt;unset>)">
           <target xmi:type="occi:NumericType" href="http://occiware.org/occi/multicloud/monitoring#//@types.3"/>
           <semanticElements xmi:type="occi:NumericType" href="http://occiware.org/occi/multicloud/monitoring#//@types.3"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_tGfo8Xd_Eeel8dnl9hOpkw" showIcon="false">
@@ -1872,7 +1894,7 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='NumericTypeContainer']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='NumericTypeContainer']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_tGfo9Hd_Eeel8dnl9hOpkw" name="Double" tooltipText="org.eclipse.cmf.occi.core.impl.NumericTypeImpl@3f26637b (name: Temperature, documentation: null) (type: Double, totalDigits: &lt;unset>, minExclusive: &lt;unset>, maxExclusive: &lt;unset>, minInclusive: &lt;unset>, maxInclusive: &lt;unset>)">
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_tGfo9Hd_Eeel8dnl9hOpkw" name="Double" tooltipText="org.eclipse.cmf.occi.core.impl.NumericTypeImpl@6da0a284 (name: Temperature, documentation: null) (type: Double, totalDigits: &lt;unset>, minExclusive: &lt;unset>, maxExclusive: &lt;unset>, minInclusive: &lt;unset>, maxInclusive: &lt;unset>)">
           <target xmi:type="occi:NumericType" href="http://occiware.org/occi/multicloud/monitoring#//@types.5"/>
           <semanticElements xmi:type="occi:NumericType" href="http://occiware.org/occi/multicloud/monitoring#//@types.5"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_tGfo9Xd_Eeel8dnl9hOpkw" showIcon="false">

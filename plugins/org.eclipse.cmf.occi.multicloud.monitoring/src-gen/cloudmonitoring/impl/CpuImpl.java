@@ -62,10 +62,10 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  * </p>
  * <ul>
  *   <li>{@link cloudmonitoring.impl.CpuImpl#getThresholdUsage <em>Threshold Usage</em>}</li>
- *   <li>{@link cloudmonitoring.impl.CpuImpl#getUtilization <em>Utilization</em>}</li>
  *   <li>{@link cloudmonitoring.impl.CpuImpl#getTemperature <em>Temperature</em>}</li>
  *   <li>{@link cloudmonitoring.impl.CpuImpl#getThresholdTemperature <em>Threshold Temperature</em>}</li>
  *   <li>{@link cloudmonitoring.impl.CpuImpl#getLoadAvg <em>Load Avg</em>}</li>
+ *   <li>{@link cloudmonitoring.impl.CpuImpl#getCpuUsed <em>Cpu Used</em>}</li>
  * </ul>
  *
  * @generated
@@ -90,26 +90,6 @@ public class CpuImpl extends MixinBaseImpl implements Cpu {
 	 * @ordered
 	 */
 	protected Double thresholdUsage = THRESHOLD_USAGE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getUtilization() <em>Utilization</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUtilization()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Double UTILIZATION_EDEFAULT = new Double(0.0);
-
-	/**
-	 * The cached value of the '{@link #getUtilization() <em>Utilization</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUtilization()
-	 * @generated
-	 * @ordered
-	 */
-	protected Double utilization = UTILIZATION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getTemperature() <em>Temperature</em>}' attribute.
@@ -172,6 +152,26 @@ public class CpuImpl extends MixinBaseImpl implements Cpu {
 	protected Double loadAvg = LOAD_AVG_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getCpuUsed() <em>Cpu Used</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCpuUsed()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Double CPU_USED_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getCpuUsed() <em>Cpu Used</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCpuUsed()
+	 * @generated
+	 * @ordered
+	 */
+	protected Double cpuUsed = CPU_USED_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -209,27 +209,6 @@ public class CpuImpl extends MixinBaseImpl implements Cpu {
 		thresholdUsage = newThresholdUsage;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CloudmonitoringPackage.CPU__THRESHOLD_USAGE, oldThresholdUsage, thresholdUsage));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Double getUtilization() {
-		return utilization;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setUtilization(Double newUtilization) {
-		Double oldUtilization = utilization;
-		utilization = newUtilization;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CloudmonitoringPackage.CPU__UTILIZATION, oldUtilization, utilization));
 	}
 
 	/**
@@ -300,6 +279,27 @@ public class CpuImpl extends MixinBaseImpl implements Cpu {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Double getCpuUsed() {
+		return cpuUsed;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCpuUsed(Double newCpuUsed) {
+		Double oldCpuUsed = cpuUsed;
+		cpuUsed = newCpuUsed;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CloudmonitoringPackage.CPU__CPU_USED, oldCpuUsed, cpuUsed));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean appliesConstraint(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
 		/**
 		 *
@@ -343,14 +343,14 @@ public class CpuImpl extends MixinBaseImpl implements Cpu {
 		switch (featureID) {
 			case CloudmonitoringPackage.CPU__THRESHOLD_USAGE:
 				return getThresholdUsage();
-			case CloudmonitoringPackage.CPU__UTILIZATION:
-				return getUtilization();
 			case CloudmonitoringPackage.CPU__TEMPERATURE:
 				return getTemperature();
 			case CloudmonitoringPackage.CPU__THRESHOLD_TEMPERATURE:
 				return getThresholdTemperature();
 			case CloudmonitoringPackage.CPU__LOAD_AVG:
 				return getLoadAvg();
+			case CloudmonitoringPackage.CPU__CPU_USED:
+				return getCpuUsed();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -366,9 +366,6 @@ public class CpuImpl extends MixinBaseImpl implements Cpu {
 			case CloudmonitoringPackage.CPU__THRESHOLD_USAGE:
 				setThresholdUsage((Double)newValue);
 				return;
-			case CloudmonitoringPackage.CPU__UTILIZATION:
-				setUtilization((Double)newValue);
-				return;
 			case CloudmonitoringPackage.CPU__TEMPERATURE:
 				setTemperature((Double)newValue);
 				return;
@@ -377,6 +374,9 @@ public class CpuImpl extends MixinBaseImpl implements Cpu {
 				return;
 			case CloudmonitoringPackage.CPU__LOAD_AVG:
 				setLoadAvg((Double)newValue);
+				return;
+			case CloudmonitoringPackage.CPU__CPU_USED:
+				setCpuUsed((Double)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -393,9 +393,6 @@ public class CpuImpl extends MixinBaseImpl implements Cpu {
 			case CloudmonitoringPackage.CPU__THRESHOLD_USAGE:
 				setThresholdUsage(THRESHOLD_USAGE_EDEFAULT);
 				return;
-			case CloudmonitoringPackage.CPU__UTILIZATION:
-				setUtilization(UTILIZATION_EDEFAULT);
-				return;
 			case CloudmonitoringPackage.CPU__TEMPERATURE:
 				setTemperature(TEMPERATURE_EDEFAULT);
 				return;
@@ -404,6 +401,9 @@ public class CpuImpl extends MixinBaseImpl implements Cpu {
 				return;
 			case CloudmonitoringPackage.CPU__LOAD_AVG:
 				setLoadAvg(LOAD_AVG_EDEFAULT);
+				return;
+			case CloudmonitoringPackage.CPU__CPU_USED:
+				setCpuUsed(CPU_USED_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -419,14 +419,14 @@ public class CpuImpl extends MixinBaseImpl implements Cpu {
 		switch (featureID) {
 			case CloudmonitoringPackage.CPU__THRESHOLD_USAGE:
 				return THRESHOLD_USAGE_EDEFAULT == null ? thresholdUsage != null : !THRESHOLD_USAGE_EDEFAULT.equals(thresholdUsage);
-			case CloudmonitoringPackage.CPU__UTILIZATION:
-				return UTILIZATION_EDEFAULT == null ? utilization != null : !UTILIZATION_EDEFAULT.equals(utilization);
 			case CloudmonitoringPackage.CPU__TEMPERATURE:
 				return TEMPERATURE_EDEFAULT == null ? temperature != null : !TEMPERATURE_EDEFAULT.equals(temperature);
 			case CloudmonitoringPackage.CPU__THRESHOLD_TEMPERATURE:
 				return THRESHOLD_TEMPERATURE_EDEFAULT == null ? thresholdTemperature != null : !THRESHOLD_TEMPERATURE_EDEFAULT.equals(thresholdTemperature);
 			case CloudmonitoringPackage.CPU__LOAD_AVG:
 				return LOAD_AVG_EDEFAULT == null ? loadAvg != null : !LOAD_AVG_EDEFAULT.equals(loadAvg);
+			case CloudmonitoringPackage.CPU__CPU_USED:
+				return CPU_USED_EDEFAULT == null ? cpuUsed != null : !CPU_USED_EDEFAULT.equals(cpuUsed);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -446,7 +446,6 @@ public class CpuImpl extends MixinBaseImpl implements Cpu {
 		if (baseClass == Mainmetric.class) {
 			switch (derivedFeatureID) {
 				case CloudmonitoringPackage.CPU__THRESHOLD_USAGE: return CloudmonitoringPackage.MAINMETRIC__THRESHOLD_USAGE;
-				case CloudmonitoringPackage.CPU__UTILIZATION: return CloudmonitoringPackage.MAINMETRIC__UTILIZATION;
 				case CloudmonitoringPackage.CPU__TEMPERATURE: return CloudmonitoringPackage.MAINMETRIC__TEMPERATURE;
 				case CloudmonitoringPackage.CPU__THRESHOLD_TEMPERATURE: return CloudmonitoringPackage.MAINMETRIC__THRESHOLD_TEMPERATURE;
 				default: return -1;
@@ -470,7 +469,6 @@ public class CpuImpl extends MixinBaseImpl implements Cpu {
 		if (baseClass == Mainmetric.class) {
 			switch (baseFeatureID) {
 				case CloudmonitoringPackage.MAINMETRIC__THRESHOLD_USAGE: return CloudmonitoringPackage.CPU__THRESHOLD_USAGE;
-				case CloudmonitoringPackage.MAINMETRIC__UTILIZATION: return CloudmonitoringPackage.CPU__UTILIZATION;
 				case CloudmonitoringPackage.MAINMETRIC__TEMPERATURE: return CloudmonitoringPackage.CPU__TEMPERATURE;
 				case CloudmonitoringPackage.MAINMETRIC__THRESHOLD_TEMPERATURE: return CloudmonitoringPackage.CPU__THRESHOLD_TEMPERATURE;
 				default: return -1;
@@ -527,14 +525,14 @@ public class CpuImpl extends MixinBaseImpl implements Cpu {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (thresholdUsage: ");
 		result.append(thresholdUsage);
-		result.append(", utilization: ");
-		result.append(utilization);
 		result.append(", temperature: ");
 		result.append(temperature);
 		result.append(", thresholdTemperature: ");
 		result.append(thresholdTemperature);
 		result.append(", loadAvg: ");
 		result.append(loadAvg);
+		result.append(", cpuUsed: ");
+		result.append(cpuUsed);
 		result.append(')');
 		return result.toString();
 	}

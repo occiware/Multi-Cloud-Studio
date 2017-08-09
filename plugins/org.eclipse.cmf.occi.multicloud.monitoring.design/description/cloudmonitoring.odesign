@@ -5,7 +5,370 @@
       <metamodel href="http://schemas.ogf.org/occi/core/ecore#/"/>
       <metamodel href="http://occiware.org/occi/multicloud/monitoring/ecore#/"/>
       <defaultLayer name="Default">
+        <edgeMappings name="CloudsensorLinksEdge" sourceMapping="//@ownedViewpoints[name='CloudmonitoringConfiguration']/@ownedRepresentations[name='CloudmonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='CloudsensorContainer']" targetMapping="" targetFinderExpression="feature:links">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="CloudsensorContainer"
+            labelDirectEdit="//@ownedViewpoints[name='CloudmonitoringConfiguration']/@ownedRepresentations[name='CloudmonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditEntityTitle']"
+			semanticCandidatesExpression="feature:resources" 
+			domainClass="Cloudsensor">
+<subContainerMappings name="SubCloudsensorContainer" semanticCandidatesExpression="[self/]" domainClass="Cloudsensor" childrenPresentation="List">
+          <subNodeMappings name="CloudsensorId"
+                labelDirectEdit="//@ownedViewpoints[name='CloudmonitoringConfiguration']/@ownedRepresentations[name='CloudmonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditCloudsensorId']"
+                semanticCandidatesExpression="[self/]" domainClass="Cloudsensor">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['id = ' + self.id.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="CloudsensorTitle"
+                labelDirectEdit="//@ownedViewpoints[name='CloudmonitoringConfiguration']/@ownedRepresentations[name='CloudmonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditCloudsensorTitle']"
+                semanticCandidatesExpression="[self/]" domainClass="Cloudsensor">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['title = ' + self.title.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="CloudsensorLocation"
+                labelDirectEdit="//@ownedViewpoints[name='CloudmonitoringConfiguration']/@ownedRepresentations[name='CloudmonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditCloudsensorLocation']"
+                semanticCandidatesExpression="[self/]" domainClass="Cloudsensor">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['location = ' + self.location.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="CloudsensorSummary"
+                labelDirectEdit="//@ownedViewpoints[name='CloudmonitoringConfiguration']/@ownedRepresentations[name='CloudmonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditCloudsensorSummary']"
+                semanticCandidatesExpression="[self/]" domainClass="Cloudsensor">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['summary = ' + self.summary.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="CloudsensorOcciSensorTimebase"
+                labelDirectEdit="//@ownedViewpoints[name='CloudmonitoringConfiguration']/@ownedRepresentations[name='CloudmonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditCloudsensorOcciSensorTimebase']"
+                semanticCandidatesExpression="[self/]" domainClass="Cloudsensor">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiSensorTimebase = ' + self.occiSensorTimebase.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="CloudsensorOcciSensorTimestart"
+                labelDirectEdit="//@ownedViewpoints[name='CloudmonitoringConfiguration']/@ownedRepresentations[name='CloudmonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditCloudsensorOcciSensorTimestart']"
+                semanticCandidatesExpression="[self/]" domainClass="Cloudsensor">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiSensorTimestart = ' + self.occiSensorTimestart.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="CloudsensorOcciSensorTimestop"
+                labelDirectEdit="//@ownedViewpoints[name='CloudmonitoringConfiguration']/@ownedRepresentations[name='CloudmonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditCloudsensorOcciSensorTimestop']"
+                semanticCandidatesExpression="[self/]" domainClass="Cloudsensor">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiSensorTimestop = ' + self.occiSensorTimestop.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="CloudsensorOcciSensorPeriod"
+                labelDirectEdit="//@ownedViewpoints[name='CloudmonitoringConfiguration']/@ownedRepresentations[name='CloudmonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditCloudsensorOcciSensorPeriod']"
+                semanticCandidatesExpression="[self/]" domainClass="Cloudsensor">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiSensorPeriod = ' + self.occiSensorPeriod.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="CloudsensorOcciSensorGranularity"
+                labelDirectEdit="//@ownedViewpoints[name='CloudmonitoringConfiguration']/@ownedRepresentations[name='CloudmonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditCloudsensorOcciSensorGranularity']"
+                semanticCandidatesExpression="[self/]" domainClass="Cloudsensor">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiSensorGranularity = ' + self.occiSensorGranularity.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="CloudsensorOcciSensorAccuracy"
+                labelDirectEdit="//@ownedViewpoints[name='CloudmonitoringConfiguration']/@ownedRepresentations[name='CloudmonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditCloudsensorOcciSensorAccuracy']"
+                semanticCandidatesExpression="[self/]" domainClass="Cloudsensor">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiSensorAccuracy = ' + self.occiSensorAccuracy.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+			<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.kind.scheme+self.kind.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+</subContainerMappings>
+<subContainerMappings name="SensorControlMixin" preconditionExpression="[self.oclIsTypeOf(Sensorcontrol)/]" semanticCandidatesExpression="feature:parts" domainClass="Sensorcontrol" childrenPresentation="List">
+<subNodeMappings name="SensorcontrolmonitorState" semanticCandidatesExpression="[self/]" domainClass="Sensorcontrol">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['monitorState = ' + self.monitorState.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+<subContainerMappings name="EmfPublisherMixin" preconditionExpression="[self.oclIsTypeOf(Emfpublisher)/]" semanticCandidatesExpression="feature:parts" domainClass="Emfpublisher" childrenPresentation="List">
+<subNodeMappings name="EmfpublisherpublisherState" semanticCandidatesExpression="[self/]" domainClass="Emfpublisher">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['publisherState = ' + self.publisherState.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+<subContainerMappings name="SystemOutPublisherMixin" preconditionExpression="[self.oclIsTypeOf(Systemoutpublisher)/]" semanticCandidatesExpression="feature:parts" domainClass="Systemoutpublisher" childrenPresentation="List">
+<subNodeMappings name="SystemoutpublisherpublisherState" semanticCandidatesExpression="[self/]" domainClass="Systemoutpublisher">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['publisherState = ' + self.publisherState.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+<subContainerMappings name="PublisherControlMixin" preconditionExpression="[self.oclIsTypeOf(Publishercontrol)/]" semanticCandidatesExpression="feature:parts" domainClass="Publishercontrol" childrenPresentation="List">
+<subNodeMappings name="PublishercontrolpublisherState" semanticCandidatesExpression="[self/]" domainClass="Publishercontrol">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['publisherState = ' + self.publisherState.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+<subContainerMappings name="MailPublisherMixin" preconditionExpression="[self.oclIsTypeOf(Mailpublisher)/]" semanticCandidatesExpression="feature:parts" domainClass="Mailpublisher" childrenPresentation="List">
+<subNodeMappings name="MailpublisherpublisherState" semanticCandidatesExpression="[self/]" domainClass="Mailpublisher">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['publisherState = ' + self.publisherState.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="MailpublishermailAddress" semanticCandidatesExpression="[self/]" domainClass="Mailpublisher">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['mailAddress = ' + self.mailAddress.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="MailpublisherpostOnCpuAlert" semanticCandidatesExpression="[self/]" domainClass="Mailpublisher">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['postOnCpuAlert = ' + self.postOnCpuAlert.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="MailpublisherpostOnRamAlert" semanticCandidatesExpression="[self/]" domainClass="Mailpublisher">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['postOnRamAlert = ' + self.postOnRamAlert.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="MailpublisherpostOnNetworkIOAlert" semanticCandidatesExpression="[self/]" domainClass="Mailpublisher">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['postOnNetworkIOAlert = ' + self.postOnNetworkIOAlert.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="MailpublisherpostOnDiskIOAlert" semanticCandidatesExpression="[self/]" domainClass="Mailpublisher">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['postOnDiskIOAlert = ' + self.postOnDiskIOAlert.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="MailpublishernbEmail" semanticCandidatesExpression="[self/]" domainClass="Mailpublisher">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['nbEmail = ' + self.nbEmail.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+<subContainerMappings name="SensorControlMixin" preconditionExpression="[self.oclIsTypeOf(Sensorcontrol)/]" semanticCandidatesExpression="feature:parts" domainClass="Sensorcontrol" childrenPresentation="List">
+<subNodeMappings name="SensorcontrolmonitorState" semanticCandidatesExpression="[self/]" domainClass="Sensorcontrol">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['monitorState = ' + self.monitorState.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+<subContainerMappings name="EmfPublisherMixin" preconditionExpression="[self.oclIsTypeOf(Emfpublisher)/]" semanticCandidatesExpression="feature:parts" domainClass="Emfpublisher" childrenPresentation="List">
+<subNodeMappings name="EmfpublisherpublisherState" semanticCandidatesExpression="[self/]" domainClass="Emfpublisher">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['publisherState = ' + self.publisherState.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+<subContainerMappings name="SystemOutPublisherMixin" preconditionExpression="[self.oclIsTypeOf(Systemoutpublisher)/]" semanticCandidatesExpression="feature:parts" domainClass="Systemoutpublisher" childrenPresentation="List">
+<subNodeMappings name="SystemoutpublisherpublisherState" semanticCandidatesExpression="[self/]" domainClass="Systemoutpublisher">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['publisherState = ' + self.publisherState.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+<subContainerMappings name="PublisherControlMixin" preconditionExpression="[self.oclIsTypeOf(Publishercontrol)/]" semanticCandidatesExpression="feature:parts" domainClass="Publishercontrol" childrenPresentation="List">
+<subNodeMappings name="PublishercontrolpublisherState" semanticCandidatesExpression="[self/]" domainClass="Publishercontrol">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['publisherState = ' + self.publisherState.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+<subContainerMappings name="MailPublisherMixin" preconditionExpression="[self.oclIsTypeOf(Mailpublisher)/]" semanticCandidatesExpression="feature:parts" domainClass="Mailpublisher" childrenPresentation="List">
+<subNodeMappings name="MailpublisherpublisherState" semanticCandidatesExpression="[self/]" domainClass="Mailpublisher">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['publisherState = ' + self.publisherState.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="MailpublishermailAddress" semanticCandidatesExpression="[self/]" domainClass="Mailpublisher">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['mailAddress = ' + self.mailAddress.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="MailpublisherpostOnCpuAlert" semanticCandidatesExpression="[self/]" domainClass="Mailpublisher">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['postOnCpuAlert = ' + self.postOnCpuAlert.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="MailpublisherpostOnRamAlert" semanticCandidatesExpression="[self/]" domainClass="Mailpublisher">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['postOnRamAlert = ' + self.postOnRamAlert.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="MailpublisherpostOnNetworkIOAlert" semanticCandidatesExpression="[self/]" domainClass="Mailpublisher">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['postOnNetworkIOAlert = ' + self.postOnNetworkIOAlert.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="MailpublisherpostOnDiskIOAlert" semanticCandidatesExpression="[self/]" domainClass="Mailpublisher">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['postOnDiskIOAlert = ' + self.postOnDiskIOAlert.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="MailpublishernbEmail" semanticCandidatesExpression="[self/]" domainClass="Mailpublisher">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['nbEmail = ' + self.nbEmail.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="[self.title + ': Cloudsensor'/]" roundedCorner="true">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style> 
+
+        </containerMappings>
         <toolSections name="Cloudmonitoring resources">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" 
+			name="Create Cloudsensor"
+			containerMappings="//@ownedViewpoints[name='CloudmonitoringConfiguration']/@ownedRepresentations[name='CloudmonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='CloudsensorContainer']"> 
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="Cloudsensor" referenceName="resources">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="['cloudsensor' + container.oclAsType(Configuration).resources->size().toString()/]"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
 </toolSections>
  <toolSections name="Cloudmonitoring links">
    </toolSections>   
@@ -61,6 +424,7 @@
             </initialOperation>
           </ownedTools>
           <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create SensorControl" containerMappings="
+ //@ownedViewpoints[name='CloudmonitoringConfiguration']/@ownedRepresentations[name='CloudmonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='CloudsensorContainer']/@subContainerMappings[name='SensorControlMixin']
 ">
             <variable name="container"/>
             <viewVariable name="containerView"/>
@@ -71,6 +435,7 @@
             </initialOperation>
           </ownedTools>
           <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create EmfPublisher" containerMappings="
+ //@ownedViewpoints[name='CloudmonitoringConfiguration']/@ownedRepresentations[name='CloudmonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='CloudsensorContainer']/@subContainerMappings[name='EmfPublisherMixin']
 ">
             <variable name="container"/>
             <viewVariable name="containerView"/>
@@ -81,6 +446,7 @@
             </initialOperation>
           </ownedTools>
           <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create SystemOutPublisher" containerMappings="
+ //@ownedViewpoints[name='CloudmonitoringConfiguration']/@ownedRepresentations[name='CloudmonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='CloudsensorContainer']/@subContainerMappings[name='SystemOutPublisherMixin']
 ">
             <variable name="container"/>
             <viewVariable name="containerView"/>
@@ -91,6 +457,7 @@
             </initialOperation>
           </ownedTools>
           <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create PublisherControl" containerMappings="
+ //@ownedViewpoints[name='CloudmonitoringConfiguration']/@ownedRepresentations[name='CloudmonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='CloudsensorContainer']/@subContainerMappings[name='PublisherControlMixin']
 ">
             <variable name="container"/>
             <viewVariable name="containerView"/>
@@ -111,6 +478,7 @@
             </initialOperation>
           </ownedTools>
           <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create MailPublisher" containerMappings="
+ //@ownedViewpoints[name='CloudmonitoringConfiguration']/@ownedRepresentations[name='CloudmonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='CloudsensorContainer']/@subContainerMappings[name='MailPublisherMixin']
 ">
             <variable name="container"/>
             <viewVariable name="containerView"/>
@@ -148,16 +516,70 @@
               <firstModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="var:arg0"/>
             </initialOperation>
           </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditCloudsensorId" inputLabelExpression="feature:id">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditCloudsensorTitle" inputLabelExpression="feature:title">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditCloudsensorLocation" inputLabelExpression="feature:location">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="location" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditCloudsensorSummary" inputLabelExpression="feature:summary">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="summary" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditCloudsensorOcciSensorTimebase" inputLabelExpression="feature:occiSensorTimebase">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiSensorTimebase" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditCloudsensorOcciSensorTimestart" inputLabelExpression="feature:occiSensorTimestart">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiSensorTimestart" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditCloudsensorOcciSensorTimestop" inputLabelExpression="feature:occiSensorTimestop">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiSensorTimestop" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditCloudsensorOcciSensorPeriod" inputLabelExpression="feature:occiSensorPeriod">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiSensorPeriod" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditCloudsensorOcciSensorGranularity" inputLabelExpression="feature:occiSensorGranularity">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiSensorGranularity" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditCloudsensorOcciSensorAccuracy" inputLabelExpression="feature:occiSensorAccuracy">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiSensorAccuracy" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
           <ownedTools xsi:type="tool:DirectEditLabel" name="EditCpuThresholdUsage" inputLabelExpression="feature:thresholdUsage">
             <mask mask="{0}"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:SetValue" featureName="thresholdUsage" valueExpression="var:arg0"/>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool:DirectEditLabel" name="EditCpuUtilization" inputLabelExpression="feature:utilization">
-            <mask mask="{0}"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:SetValue" featureName="utilization" valueExpression="var:arg0"/>
             </initialOperation>
           </ownedTools>
           <ownedTools xsi:type="tool:DirectEditLabel" name="EditCpuTemperature" inputLabelExpression="feature:temperature">
@@ -176,6 +598,12 @@
             <mask mask="{0}"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:SetValue" featureName="loadAvg" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditCpuCpuUsed" inputLabelExpression="feature:cpuUsed">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="cpuUsed" valueExpression="var:arg0"/>
             </initialOperation>
           </ownedTools>
           <ownedTools xsi:type="tool:DirectEditLabel" name="EditDiskioUnit" inputLabelExpression="feature:unit">
@@ -202,12 +630,6 @@
               <firstModelOperations xsi:type="tool_1:SetValue" featureName="thresholdUsage" valueExpression="var:arg0"/>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:DirectEditLabel" name="EditRamUtilization" inputLabelExpression="feature:utilization">
-            <mask mask="{0}"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:SetValue" featureName="utilization" valueExpression="var:arg0"/>
-            </initialOperation>
-          </ownedTools>
           <ownedTools xsi:type="tool:DirectEditLabel" name="EditRamTemperature" inputLabelExpression="feature:temperature">
             <mask mask="{0}"/>
             <initialOperation>
@@ -230,6 +652,12 @@
             <mask mask="{0}"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:SetValue" featureName="swap" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditRamRamUsed" inputLabelExpression="feature:ramUsed">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="ramUsed" valueExpression="var:arg0"/>
             </initialOperation>
           </ownedTools>
           <ownedTools xsi:type="tool:DirectEditLabel" name="EditNetworkioUnit" inputLabelExpression="feature:unit">
@@ -334,12 +762,6 @@
               <firstModelOperations xsi:type="tool_1:SetValue" featureName="thresholdUsage" valueExpression="var:arg0"/>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:DirectEditLabel" name="EditDiskUtilization" inputLabelExpression="feature:utilization">
-            <mask mask="{0}"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:SetValue" featureName="utilization" valueExpression="var:arg0"/>
-            </initialOperation>
-          </ownedTools>
           <ownedTools xsi:type="tool:DirectEditLabel" name="EditDiskTemperature" inputLabelExpression="feature:temperature">
             <mask mask="{0}"/>
             <initialOperation>
@@ -368,6 +790,12 @@
             <mask mask="{0}"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:SetValue" featureName="volumeName" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditDiskDiskUsed" inputLabelExpression="feature:diskUsed">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="diskUsed" valueExpression="var:arg0"/>
             </initialOperation>
           </ownedTools>
           <ownedTools xsi:type="tool:DirectEditLabel" name="EditMailpublisherPublisherState" inputLabelExpression="feature:publisherState">
@@ -428,12 +856,6 @@
             <mask mask="{0}"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:SetValue" featureName="thresholdUsage" valueExpression="var:arg0"/>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool:DirectEditLabel" name="EditMainmetricUtilization" inputLabelExpression="feature:utilization">
-            <mask mask="{0}"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:SetValue" featureName="utilization" valueExpression="var:arg0"/>
             </initialOperation>
           </ownedTools>
           <ownedTools xsi:type="tool:DirectEditLabel" name="EditMainmetricTemperature" inputLabelExpression="feature:temperature">

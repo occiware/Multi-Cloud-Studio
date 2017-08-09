@@ -62,12 +62,12 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  * </p>
  * <ul>
  *   <li>{@link cloudmonitoring.impl.DiskImpl#getThresholdUsage <em>Threshold Usage</em>}</li>
- *   <li>{@link cloudmonitoring.impl.DiskImpl#getUtilization <em>Utilization</em>}</li>
  *   <li>{@link cloudmonitoring.impl.DiskImpl#getTemperature <em>Temperature</em>}</li>
  *   <li>{@link cloudmonitoring.impl.DiskImpl#getThresholdTemperature <em>Threshold Temperature</em>}</li>
  *   <li>{@link cloudmonitoring.impl.DiskImpl#getSwap <em>Swap</em>}</li>
  *   <li>{@link cloudmonitoring.impl.DiskImpl#getFree <em>Free</em>}</li>
  *   <li>{@link cloudmonitoring.impl.DiskImpl#getVolumeName <em>Volume Name</em>}</li>
+ *   <li>{@link cloudmonitoring.impl.DiskImpl#getDiskUsed <em>Disk Used</em>}</li>
  * </ul>
  *
  * @generated
@@ -92,26 +92,6 @@ public class DiskImpl extends MixinBaseImpl implements Disk {
 	 * @ordered
 	 */
 	protected Double thresholdUsage = THRESHOLD_USAGE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getUtilization() <em>Utilization</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUtilization()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Double UTILIZATION_EDEFAULT = new Double(0.0);
-
-	/**
-	 * The cached value of the '{@link #getUtilization() <em>Utilization</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUtilization()
-	 * @generated
-	 * @ordered
-	 */
-	protected Double utilization = UTILIZATION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getTemperature() <em>Temperature</em>}' attribute.
@@ -214,6 +194,26 @@ public class DiskImpl extends MixinBaseImpl implements Disk {
 	protected String volumeName = VOLUME_NAME_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getDiskUsed() <em>Disk Used</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDiskUsed()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Double DISK_USED_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDiskUsed() <em>Disk Used</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDiskUsed()
+	 * @generated
+	 * @ordered
+	 */
+	protected Double diskUsed = DISK_USED_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -251,27 +251,6 @@ public class DiskImpl extends MixinBaseImpl implements Disk {
 		thresholdUsage = newThresholdUsage;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CloudmonitoringPackage.DISK__THRESHOLD_USAGE, oldThresholdUsage, thresholdUsage));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Double getUtilization() {
-		return utilization;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setUtilization(Double newUtilization) {
-		Double oldUtilization = utilization;
-		utilization = newUtilization;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CloudmonitoringPackage.DISK__UTILIZATION, oldUtilization, utilization));
 	}
 
 	/**
@@ -384,6 +363,27 @@ public class DiskImpl extends MixinBaseImpl implements Disk {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Double getDiskUsed() {
+		return diskUsed;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDiskUsed(Double newDiskUsed) {
+		Double oldDiskUsed = diskUsed;
+		diskUsed = newDiskUsed;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CloudmonitoringPackage.DISK__DISK_USED, oldDiskUsed, diskUsed));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean appliesConstraint(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
 		/**
 		 *
@@ -427,8 +427,6 @@ public class DiskImpl extends MixinBaseImpl implements Disk {
 		switch (featureID) {
 			case CloudmonitoringPackage.DISK__THRESHOLD_USAGE:
 				return getThresholdUsage();
-			case CloudmonitoringPackage.DISK__UTILIZATION:
-				return getUtilization();
 			case CloudmonitoringPackage.DISK__TEMPERATURE:
 				return getTemperature();
 			case CloudmonitoringPackage.DISK__THRESHOLD_TEMPERATURE:
@@ -439,6 +437,8 @@ public class DiskImpl extends MixinBaseImpl implements Disk {
 				return getFree();
 			case CloudmonitoringPackage.DISK__VOLUME_NAME:
 				return getVolumeName();
+			case CloudmonitoringPackage.DISK__DISK_USED:
+				return getDiskUsed();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -453,9 +453,6 @@ public class DiskImpl extends MixinBaseImpl implements Disk {
 		switch (featureID) {
 			case CloudmonitoringPackage.DISK__THRESHOLD_USAGE:
 				setThresholdUsage((Double)newValue);
-				return;
-			case CloudmonitoringPackage.DISK__UTILIZATION:
-				setUtilization((Double)newValue);
 				return;
 			case CloudmonitoringPackage.DISK__TEMPERATURE:
 				setTemperature((Double)newValue);
@@ -472,6 +469,9 @@ public class DiskImpl extends MixinBaseImpl implements Disk {
 			case CloudmonitoringPackage.DISK__VOLUME_NAME:
 				setVolumeName((String)newValue);
 				return;
+			case CloudmonitoringPackage.DISK__DISK_USED:
+				setDiskUsed((Double)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -486,9 +486,6 @@ public class DiskImpl extends MixinBaseImpl implements Disk {
 		switch (featureID) {
 			case CloudmonitoringPackage.DISK__THRESHOLD_USAGE:
 				setThresholdUsage(THRESHOLD_USAGE_EDEFAULT);
-				return;
-			case CloudmonitoringPackage.DISK__UTILIZATION:
-				setUtilization(UTILIZATION_EDEFAULT);
 				return;
 			case CloudmonitoringPackage.DISK__TEMPERATURE:
 				setTemperature(TEMPERATURE_EDEFAULT);
@@ -505,6 +502,9 @@ public class DiskImpl extends MixinBaseImpl implements Disk {
 			case CloudmonitoringPackage.DISK__VOLUME_NAME:
 				setVolumeName(VOLUME_NAME_EDEFAULT);
 				return;
+			case CloudmonitoringPackage.DISK__DISK_USED:
+				setDiskUsed(DISK_USED_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -519,8 +519,6 @@ public class DiskImpl extends MixinBaseImpl implements Disk {
 		switch (featureID) {
 			case CloudmonitoringPackage.DISK__THRESHOLD_USAGE:
 				return THRESHOLD_USAGE_EDEFAULT == null ? thresholdUsage != null : !THRESHOLD_USAGE_EDEFAULT.equals(thresholdUsage);
-			case CloudmonitoringPackage.DISK__UTILIZATION:
-				return UTILIZATION_EDEFAULT == null ? utilization != null : !UTILIZATION_EDEFAULT.equals(utilization);
 			case CloudmonitoringPackage.DISK__TEMPERATURE:
 				return TEMPERATURE_EDEFAULT == null ? temperature != null : !TEMPERATURE_EDEFAULT.equals(temperature);
 			case CloudmonitoringPackage.DISK__THRESHOLD_TEMPERATURE:
@@ -531,6 +529,8 @@ public class DiskImpl extends MixinBaseImpl implements Disk {
 				return FREE_EDEFAULT == null ? free != null : !FREE_EDEFAULT.equals(free);
 			case CloudmonitoringPackage.DISK__VOLUME_NAME:
 				return VOLUME_NAME_EDEFAULT == null ? volumeName != null : !VOLUME_NAME_EDEFAULT.equals(volumeName);
+			case CloudmonitoringPackage.DISK__DISK_USED:
+				return DISK_USED_EDEFAULT == null ? diskUsed != null : !DISK_USED_EDEFAULT.equals(diskUsed);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -550,7 +550,6 @@ public class DiskImpl extends MixinBaseImpl implements Disk {
 		if (baseClass == Mainmetric.class) {
 			switch (derivedFeatureID) {
 				case CloudmonitoringPackage.DISK__THRESHOLD_USAGE: return CloudmonitoringPackage.MAINMETRIC__THRESHOLD_USAGE;
-				case CloudmonitoringPackage.DISK__UTILIZATION: return CloudmonitoringPackage.MAINMETRIC__UTILIZATION;
 				case CloudmonitoringPackage.DISK__TEMPERATURE: return CloudmonitoringPackage.MAINMETRIC__TEMPERATURE;
 				case CloudmonitoringPackage.DISK__THRESHOLD_TEMPERATURE: return CloudmonitoringPackage.MAINMETRIC__THRESHOLD_TEMPERATURE;
 				default: return -1;
@@ -574,7 +573,6 @@ public class DiskImpl extends MixinBaseImpl implements Disk {
 		if (baseClass == Mainmetric.class) {
 			switch (baseFeatureID) {
 				case CloudmonitoringPackage.MAINMETRIC__THRESHOLD_USAGE: return CloudmonitoringPackage.DISK__THRESHOLD_USAGE;
-				case CloudmonitoringPackage.MAINMETRIC__UTILIZATION: return CloudmonitoringPackage.DISK__UTILIZATION;
 				case CloudmonitoringPackage.MAINMETRIC__TEMPERATURE: return CloudmonitoringPackage.DISK__TEMPERATURE;
 				case CloudmonitoringPackage.MAINMETRIC__THRESHOLD_TEMPERATURE: return CloudmonitoringPackage.DISK__THRESHOLD_TEMPERATURE;
 				default: return -1;
@@ -631,8 +629,6 @@ public class DiskImpl extends MixinBaseImpl implements Disk {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (thresholdUsage: ");
 		result.append(thresholdUsage);
-		result.append(", utilization: ");
-		result.append(utilization);
 		result.append(", temperature: ");
 		result.append(temperature);
 		result.append(", thresholdTemperature: ");
@@ -643,6 +639,8 @@ public class DiskImpl extends MixinBaseImpl implements Disk {
 		result.append(free);
 		result.append(", volumeName: ");
 		result.append(volumeName);
+		result.append(", diskUsed: ");
+		result.append(diskUsed);
 		result.append(')');
 		return result.toString();
 	}

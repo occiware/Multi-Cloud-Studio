@@ -38,7 +38,7 @@ public class ZabbixapiconnectConnector
 	 * Initialize the logger.
 	 */
 	private static Logger LOGGER = LoggerFactory.getLogger(ZabbixapiconnectConnector.class);
-	
+
 	// Start of user code Zabbixapiconnectconnector_constructor
 	/**
 	 * Constructs a zabbixapiconnect connector.
@@ -83,7 +83,7 @@ public class ZabbixapiconnectConnector
 		if (httpApiAddress == null || httpApiAddress.trim().isEmpty()) {
 			throw new MonitorException("Cant connect to zabbix server without an http api address.");
 		}
-		
+
 		String token;
 		try {
 			JSONObject mainJObj = new JSONObject();
@@ -109,9 +109,10 @@ public class ZabbixapiconnectConnector
 
 	// ex: zabbix_obj.host_create(zabi, vm_name, ip, 10050, hostgroup, "Scalair
 	// Template OS Linux");
-	
+
 	/**
 	 * Assign host to host group with a template of metrics.
+	 * 
 	 * @param authToken
 	 * @param host_name
 	 * @param host_ip
@@ -163,6 +164,7 @@ public class ZabbixapiconnectConnector
 
 	/**
 	 * get host group id by name
+	 * 
 	 * @param authToken
 	 * @param hg_name
 	 * @return
@@ -211,6 +213,7 @@ public class ZabbixapiconnectConnector
 
 	/**
 	 * Get template id by template name.
+	 * 
 	 * @param authToken
 	 * @param byname
 	 * @return
@@ -254,6 +257,7 @@ public class ZabbixapiconnectConnector
 
 	/**
 	 * Remove host from its host groups and desactive monitoring.
+	 * 
 	 * @param authToken
 	 * @param ip
 	 * @throws MonitorException
@@ -278,13 +282,15 @@ public class ZabbixapiconnectConnector
 	}
 
 	/**
-	 * Get host id from its ip, or name in order to delete it in the function delethost.
+	 * Get host id from its ip, or name in order to delete it in the function
+	 * delethost.
+	 * 
 	 * @param authToken
 	 * @param ip
 	 * @return
 	 * @throws MonitorException
 	 */
-	public int getHostByIp(String authToken, String ip) throws MonitorException { 
+	public int getHostByIp(String authToken, String ip) throws MonitorException {
 		int id = 0;
 		try {
 			JSONObject mainJObj = new JSONObject();
@@ -298,7 +304,7 @@ public class ZabbixapiconnectConnector
 			mainJObj.put("params", paramJObj);
 			mainJObj.put("auth", authToken);
 			mainJObj.put("id", "1");
-			
+
 			System.out.println("Data to send: " + mainJObj.toString());
 
 			JSONObject result = executePostQuery(mainJObj);
@@ -326,14 +332,15 @@ public class ZabbixapiconnectConnector
 
 	/**
 	 * give the hosts ids (list of hosts) in a specific host group.
+	 * 
 	 * @param authToken
 	 * @param hg_name
 	 * @return
 	 * @throws MonitorException
 	 */
-	public List<Integer> getHostListByHostGroupName(String authToken, String hg_name) throws MonitorException { 
+	public List<Integer> getHostListByHostGroupName(String authToken, String hg_name) throws MonitorException {
 		List<Integer> arr = new ArrayList<Integer>();
-		
+
 		try {
 			JSONObject mainJObj = new JSONObject();
 			JSONObject paramJObj = new JSONObject();
@@ -350,7 +357,7 @@ public class ZabbixapiconnectConnector
 			mainJObj.put("params", paramJObj);
 			mainJObj.put("auth", authToken);
 			mainJObj.put("id", "1");
-			
+
 			System.out.println("Data to send: " + mainJObj.toString());
 
 			JSONObject result = executePostQuery(mainJObj);
@@ -376,6 +383,7 @@ public class ZabbixapiconnectConnector
 	// cpu usage
 	/**
 	 * Used cpu (idle value).
+	 * 
 	 * @param authToken
 	 * @param hostid
 	 * @return
@@ -385,7 +393,7 @@ public class ZabbixapiconnectConnector
 		Double value = 0.0;
 		try {
 			JSONObject mainJObj = buildMainObjGetItem(authToken, hostid, "system.cpu.util[,idle]"); // hostId: 10155
-		
+
 			System.out.println("Data to send: " + mainJObj.toString());
 
 			JSONObject result = executePostQuery(mainJObj);
@@ -398,23 +406,25 @@ public class ZabbixapiconnectConnector
 		}
 		return value;
 	}
-	
+
 	/**
 	 * Cpu utilization is calculated from cpuIdle value.
+	 * 
 	 * @param authToken
 	 * @param hostid
 	 * @return
 	 * @throws MonitorException
 	 */
-	public Double cpuUtilization(String authToken, int hostid) throws MonitorException{
+	public Double cpuUtilization(String authToken, int hostid) throws MonitorException {
 		Double value = 0.0;
 		Double idle = cpuIdle(authToken, hostid);
 		value = 100 - idle;
 		return value;
 	}
-	
+
 	/**
 	 * Total size of memory.
+	 * 
 	 * @param authToken
 	 * @param hostid
 	 * @return
@@ -424,7 +434,7 @@ public class ZabbixapiconnectConnector
 		int value = 0;
 		try {
 			JSONObject mainJObj = buildMainObjGetItem(authToken, hostid, "vm.memory.size[total]"); // hostId: 10155
-			
+
 			System.out.println("Data to send: " + mainJObj.toString());
 
 			JSONObject result = executePostQuery(mainJObj);
@@ -442,6 +452,7 @@ public class ZabbixapiconnectConnector
 
 	/**
 	 * Used memory.
+	 * 
 	 * @param authToken
 	 * @param hostid
 	 * @return
@@ -450,9 +461,9 @@ public class ZabbixapiconnectConnector
 	public int availableMemory(String authToken, int hostid) throws MonitorException {
 		int value = 0;
 		try {
-			
+
 			JSONObject mainJObj = buildMainObjGetItem(authToken, hostid, "vm.memory.size[available]"); // hostId: 10155
-			
+
 			System.out.println("Data to send: " + mainJObj.toString());
 
 			JSONObject result = executePostQuery(mainJObj);
@@ -469,7 +480,9 @@ public class ZabbixapiconnectConnector
 	}
 
 	/**
-	 * to get cpu numbers on the machine, note that you you can use one generic function for all items (the only thing that will be changed is the key).
+	 * to get cpu numbers on the machine, note that you you can use one generic
+	 * function for all items (the only thing that will be changed is the key).
+	 * 
 	 * @param authToken
 	 * @param hostid
 	 * @return
@@ -479,7 +492,7 @@ public class ZabbixapiconnectConnector
 		int value = 0;
 		try {
 			JSONObject mainJObj = buildMainObjGetItem(authToken, hostid, "system.cpu.num"); // hostId: 10155
-			
+
 			System.out.println("Data to send: " + mainJObj.toString());
 
 			JSONObject result = executePostQuery(mainJObj);
@@ -494,7 +507,7 @@ public class ZabbixapiconnectConnector
 		}
 		return value;
 	}
-	
+
 	// you do not need to use this function, instead, you will use the generic
 	// function metrics, each metric with a key.
 
@@ -509,7 +522,7 @@ public class ZabbixapiconnectConnector
 			// System.out.println(arr.get(n));
 			int hostidd = arr.get(n);
 			try {
-				
+
 				JSONObject mainJObj = buildMainObjGetItem(authToken, hostidd, "system.cpu.util[,idle]");
 
 				JSONObject result = executePostQuery(mainJObj);
@@ -540,7 +553,7 @@ public class ZabbixapiconnectConnector
 		System.out.println("cpu_usage = " + cpu_usage);
 		return cpu_usage;
 	}
-	
+
 	/**
 	 * 
 	 * @param authToken
@@ -548,83 +561,114 @@ public class ZabbixapiconnectConnector
 	 * @return
 	 */
 	public Double cpuLoad(String authToken, int hostid) throws MonitorException {
-        Double  value = 0.0;
-        try {
-        		JSONObject mainJObj = buildMainObjGetItem(authToken, hostid, "system.cpu.load[percpu,avg1]");
-        		System.out.println("Data to send: " + mainJObj.toString());
+		Double value = 0.0;
+		try {
+			JSONObject mainJObj = buildMainObjGetItem(authToken, hostid, "system.cpu.load[percpu,avg1]");
+			System.out.println("Data to send: " + mainJObj.toString());
 
-            JSONObject result = executePostQuery(mainJObj);
-            
-            JSONArray output = result.getJSONArray("result");
-            value = output.getJSONObject(0).getDouble("lastvalue");
-            System.out.println("cpu load " + value);
-        }catch (JSONException je) {
-            System.out.println("Error creating JSON request to Zabbix API..." + je.getMessage());
-            throw new MonitorException("Error creating JSON request to Zabbix API..." + je.getMessage());
-        }
-        return value;
-    }
-	
+			JSONObject result = executePostQuery(mainJObj);
+
+			JSONArray output = result.getJSONArray("result");
+			value = output.getJSONObject(0).getDouble("lastvalue");
+			System.out.println("cpu load " + value);
+		} catch (JSONException je) {
+			System.out.println("Error creating JSON request to Zabbix API..." + je.getMessage());
+			throw new MonitorException("Error creating JSON request to Zabbix API..." + je.getMessage());
+		}
+		return value;
+	}
+
 	/**
-	 * Get host id from its name in order to delete it in the the function delete host.
+	 * Get host id from its name in order to delete it in the the function delete
+	 * host.
+	 * 
 	 * @param authToken
 	 * @param vmname
-	 * @return 
+	 * @return
 	 */
-	public int  getHostByName(final String authToken, final String vmname) throws MonitorException { 
-        int id = 0;
-        
-        try {
-        	    JSONObject mainJObj = new JSONObject();
-            JSONObject paramJObj = new JSONObject();
-            JSONObject subparamJObj = new JSONObject();
-            //int template_id = get_template(zabi, template);
+	public int getHostByName(final String authToken, final String vmname) throws MonitorException {
+		int id = 0;
 
-            mainJObj.put("jsonrpc", "2.0");
-            mainJObj.put("method", "host.get");
-            paramJObj.put("output", "extend");
-            paramJObj.put("filter", subparamJObj);
-            subparamJObj.put("host", new JSONArray(new Object[] {vmname}));
-            //paramJObj.put("sortfield", "interfaceid");
-            mainJObj.put("params", paramJObj);
-            mainJObj.put("auth", authToken);
-            mainJObj.put("id", "1");
-            
-            System.out.println("Data to send: " + mainJObj.toString());
-            
-            JSONObject result = executePostQuery(mainJObj);
+		try {
+			JSONObject mainJObj = new JSONObject();
+			JSONObject paramJObj = new JSONObject();
+			JSONObject subparamJObj = new JSONObject();
+			// int template_id = get_template(zabi, template);
 
-           //System.out.println("output   " + result) ;
-            JSONArray output = result.getJSONArray("result");
-            //System.out.println("output" + output);
-            for (int i = 0; i < output.length(); ++i) {
-                JSONObject obj = output.getJSONObject(i);
-                //System.out.println("input ip" + ip);
-                //String host_ip  = obj.getString("ip");
-                //if ((host_ip).equals (ip)) {
-                //    int host_id = obj.getInt("hostid");
-                //    id = host_id;
-                id = obj.getInt("hostid");    
-                   //System.out.println(" the ip of this host is  " + host_id);
-                //}
-            }
+			mainJObj.put("jsonrpc", "2.0");
+			mainJObj.put("method", "host.get");
+			paramJObj.put("output", "extend");
+			paramJObj.put("filter", subparamJObj);
+			subparamJObj.put("host", new JSONArray(new Object[] { vmname }));
+			// paramJObj.put("sortfield", "interfaceid");
+			mainJObj.put("params", paramJObj);
+			mainJObj.put("auth", authToken);
+			mainJObj.put("id", "1");
 
-       } catch (JSONException je) {
-            System.out.println("Error creating JSON request to Zabbix API..." + je.getMessage());
-            throw new MonitorException("Error creating JSON request to Zabbix API..." + je.getMessage());
-        }
-        return id;
-    }
-	
+			System.out.println("Data to send: " + mainJObj.toString());
+
+			JSONObject result = executePostQuery(mainJObj);
+
+			// System.out.println("output " + result) ;
+			JSONArray output = result.getJSONArray("result");
+			// System.out.println("output" + output);
+			for (int i = 0; i < output.length(); ++i) {
+				JSONObject obj = output.getJSONObject(i);
+				// System.out.println("input ip" + ip);
+				// String host_ip = obj.getString("ip");
+				// if ((host_ip).equals (ip)) {
+				// int host_id = obj.getInt("hostid");
+				// id = host_id;
+				id = obj.getInt("hostid");
+				// System.out.println(" the ip of this host is " + host_id);
+				// }
+			}
+
+		} catch (JSONException je) {
+			System.out.println("Error creating JSON request to Zabbix API..." + je.getMessage());
+			throw new MonitorException("Error creating JSON request to Zabbix API..." + je.getMessage());
+		}
+		return id;
+	}
+
+	/**
+	 * Loggout and invalidate the authToken.
+	 * @param authToken
+	 */
+	public void LogoutZabbixAPI(String authToken) {
+		Boolean resultB = false;
+		try {
+			JSONObject mainJObj = new JSONObject();
+			JSONObject paramJObj = new JSONObject();
+			mainJObj.put("jsonrpc", "2.0");
+			mainJObj.put("method", "user.logout");
+			mainJObj.put("params", new JSONArray(new Object[] {}));
+			mainJObj.put("id", "1");
+			mainJObj.put("auth", authToken);
+			System.out.println(mainJObj);
+
+			JSONObject result = executePostQuery(mainJObj);
+
+			resultB = result.getBoolean("result");
+			if (resultB) {
+				System.out.println("Zabbix API logged out: " + resultB);
+			}
+		} catch (JSONException je) {
+			System.out.println("Error logging out from Zabbix API, the token does not expire..." + je.getMessage());
+		}
+	}
+
 	/**
 	 * Build a json object for getting item (only item)..
+	 * 
 	 * @param authToken
 	 * @param hostId
 	 * @param itemKey
 	 * @return a new JsonObject to use for query the zabbix server.
 	 * @throws JSONException
 	 */
-	private JSONObject buildMainObjGetItem(final String authToken, final int hostId, final String itemKey) throws JSONException {
+	private JSONObject buildMainObjGetItem(final String authToken, final int hostId, final String itemKey)
+			throws JSONException {
 		JSONObject mainJObj = new JSONObject();
 		JSONObject paramJObj = new JSONObject();
 		JSONObject subparamJObj = new JSONObject();
@@ -639,36 +683,33 @@ public class ZabbixapiconnectConnector
 		mainJObj.put("auth", authToken);
 		mainJObj.put("id", "1");
 		return mainJObj;
-		
+
 	}
 
-	/*public static void main(String[] args) {
-		ZabbixDriver zabbix_obj = new ZabbixDriver();
-		String zabi = zabbix_obj.getAuthToken();
-		//System.out.println(zabi);
-		//zabbix_obj.hostgroups_list(zabi);
-	    //int hg_id = zabbix_obj.hostgroups_list(zabi, "Scalair scaling group");	
-		//System.out.println("hg_id  " + hg_id);
-
-		//zabbix_obj.hosts_list(zabi, "Scalair scaling group");
-		////int arr[] = zabbix_obj.hosts_list(zabi);
-		//ArrayList<Integer> arr = zabbix_obj.hosts_list(zabi, "Scalair scaling group");
-		//for(int i=0;i<arr.size();i++) {//length is the property of array, size of arraylist  
-		//System.out.println(arr.get(i));  }
-		
-		//zabbix_obj.item_cpu_idle(zabi);
-		//zabbix_obj.item(zabi, 10155, "vm.memory.size[available]");
-		//zabbix_obj.totalMemory(zabi, 10155);
-		//zabbix_obj.availableMemory(zabi, 10155); 
-		zabbix_obj.totalCPUs(zabi, 10155); 
-		//Double xy = zabbix_obj.item_cpu_idle(zabi, "Scalair scaling group");
-		//System.out.println("ouput " + xy);
-
-		//zabbix_obj.host_create(zabi, "node1", "172.16.225.76", 10050, "Scalair scaling group", "Scalair Template OS Linux");
-		//int x = zabbix_obj.get_template(zabi, "Scalair Template OS Linux");
-		//zabbix_obj.host_delete(zabi, "172.16.225.76");
-		//int y = zabbix_obj.get_host_by_ip(zabi, "172.16.225.76");
-		//System.out.println(y);
-	}*/
+	/*
+	 * public static void main(String[] args) { ZabbixDriver zabbix_obj = new
+	 * ZabbixDriver(); String zabi = zabbix_obj.getAuthToken();
+	 * //System.out.println(zabi); //zabbix_obj.hostgroups_list(zabi); //int hg_id =
+	 * zabbix_obj.hostgroups_list(zabi, "Scalair scaling group");
+	 * //System.out.println("hg_id  " + hg_id);
+	 * 
+	 * //zabbix_obj.hosts_list(zabi, "Scalair scaling group"); ////int arr[] =
+	 * zabbix_obj.hosts_list(zabi); //ArrayList<Integer> arr =
+	 * zabbix_obj.hosts_list(zabi, "Scalair scaling group"); //for(int
+	 * i=0;i<arr.size();i++) {//length is the property of array, size of arraylist
+	 * //System.out.println(arr.get(i)); }
+	 * 
+	 * //zabbix_obj.item_cpu_idle(zabi); //zabbix_obj.item(zabi, 10155,
+	 * "vm.memory.size[available]"); //zabbix_obj.totalMemory(zabi, 10155);
+	 * //zabbix_obj.availableMemory(zabi, 10155); zabbix_obj.totalCPUs(zabi, 10155);
+	 * //Double xy = zabbix_obj.item_cpu_idle(zabi, "Scalair scaling group");
+	 * //System.out.println("ouput " + xy);
+	 * 
+	 * //zabbix_obj.host_create(zabi, "node1", "172.16.225.76", 10050,
+	 * "Scalair scaling group", "Scalair Template OS Linux"); //int x =
+	 * zabbix_obj.get_template(zabi, "Scalair Template OS Linux");
+	 * //zabbix_obj.host_delete(zabi, "172.16.225.76"); //int y =
+	 * zabbix_obj.get_host_by_ip(zabi, "172.16.225.76"); //System.out.println(y); }
+	 */
 
 }

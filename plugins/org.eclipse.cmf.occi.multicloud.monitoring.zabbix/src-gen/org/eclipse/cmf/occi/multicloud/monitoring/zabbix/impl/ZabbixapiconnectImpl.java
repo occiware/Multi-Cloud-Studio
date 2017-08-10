@@ -64,6 +64,9 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  *   <li>{@link org.eclipse.cmf.occi.multicloud.monitoring.zabbix.impl.ZabbixapiconnectImpl#getUsername <em>Username</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.monitoring.zabbix.impl.ZabbixapiconnectImpl#getPassword <em>Password</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.monitoring.zabbix.impl.ZabbixapiconnectImpl#getHttpApiAddress <em>Http Api Address</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.monitoring.zabbix.impl.ZabbixapiconnectImpl#getTemplateName <em>Template Name</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.monitoring.zabbix.impl.ZabbixapiconnectImpl#getHostGroupName <em>Host Group Name</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.monitoring.zabbix.impl.ZabbixapiconnectImpl#getPort <em>Port</em>}</li>
  * </ul>
  *
  * @generated
@@ -128,6 +131,66 @@ public class ZabbixapiconnectImpl extends MixinBaseImpl implements Zabbixapiconn
 	 * @ordered
 	 */
 	protected String httpApiAddress = HTTP_API_ADDRESS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTemplateName() <em>Template Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTemplateName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TEMPLATE_NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTemplateName() <em>Template Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTemplateName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String templateName = TEMPLATE_NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getHostGroupName() <em>Host Group Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHostGroupName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String HOST_GROUP_NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getHostGroupName() <em>Host Group Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHostGroupName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String hostGroupName = HOST_GROUP_NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPort() <em>Port</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPort()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Integer PORT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPort() <em>Port</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPort()
+	 * @generated
+	 * @ordered
+	 */
+	protected Integer port = PORT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -216,6 +279,69 @@ public class ZabbixapiconnectImpl extends MixinBaseImpl implements Zabbixapiconn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getTemplateName() {
+		return templateName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTemplateName(String newTemplateName) {
+		String oldTemplateName = templateName;
+		templateName = newTemplateName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ZabbixPackage.ZABBIXAPICONNECT__TEMPLATE_NAME, oldTemplateName, templateName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getHostGroupName() {
+		return hostGroupName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setHostGroupName(String newHostGroupName) {
+		String oldHostGroupName = hostGroupName;
+		hostGroupName = newHostGroupName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ZabbixPackage.ZABBIXAPICONNECT__HOST_GROUP_NAME, oldHostGroupName, hostGroupName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Integer getPort() {
+		return port;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPort(Integer newPort) {
+		Integer oldPort = port;
+		port = newPort;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ZabbixPackage.ZABBIXAPICONNECT__PORT, oldPort, port));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean appliesConstraint(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
 		/**
 		 *
@@ -264,6 +390,12 @@ public class ZabbixapiconnectImpl extends MixinBaseImpl implements Zabbixapiconn
 				return getPassword();
 			case ZabbixPackage.ZABBIXAPICONNECT__HTTP_API_ADDRESS:
 				return getHttpApiAddress();
+			case ZabbixPackage.ZABBIXAPICONNECT__TEMPLATE_NAME:
+				return getTemplateName();
+			case ZabbixPackage.ZABBIXAPICONNECT__HOST_GROUP_NAME:
+				return getHostGroupName();
+			case ZabbixPackage.ZABBIXAPICONNECT__PORT:
+				return getPort();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -284,6 +416,15 @@ public class ZabbixapiconnectImpl extends MixinBaseImpl implements Zabbixapiconn
 				return;
 			case ZabbixPackage.ZABBIXAPICONNECT__HTTP_API_ADDRESS:
 				setHttpApiAddress((String)newValue);
+				return;
+			case ZabbixPackage.ZABBIXAPICONNECT__TEMPLATE_NAME:
+				setTemplateName((String)newValue);
+				return;
+			case ZabbixPackage.ZABBIXAPICONNECT__HOST_GROUP_NAME:
+				setHostGroupName((String)newValue);
+				return;
+			case ZabbixPackage.ZABBIXAPICONNECT__PORT:
+				setPort((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -306,6 +447,15 @@ public class ZabbixapiconnectImpl extends MixinBaseImpl implements Zabbixapiconn
 			case ZabbixPackage.ZABBIXAPICONNECT__HTTP_API_ADDRESS:
 				setHttpApiAddress(HTTP_API_ADDRESS_EDEFAULT);
 				return;
+			case ZabbixPackage.ZABBIXAPICONNECT__TEMPLATE_NAME:
+				setTemplateName(TEMPLATE_NAME_EDEFAULT);
+				return;
+			case ZabbixPackage.ZABBIXAPICONNECT__HOST_GROUP_NAME:
+				setHostGroupName(HOST_GROUP_NAME_EDEFAULT);
+				return;
+			case ZabbixPackage.ZABBIXAPICONNECT__PORT:
+				setPort(PORT_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -324,6 +474,12 @@ public class ZabbixapiconnectImpl extends MixinBaseImpl implements Zabbixapiconn
 				return PASSWORD_EDEFAULT == null ? password != null : !PASSWORD_EDEFAULT.equals(password);
 			case ZabbixPackage.ZABBIXAPICONNECT__HTTP_API_ADDRESS:
 				return HTTP_API_ADDRESS_EDEFAULT == null ? httpApiAddress != null : !HTTP_API_ADDRESS_EDEFAULT.equals(httpApiAddress);
+			case ZabbixPackage.ZABBIXAPICONNECT__TEMPLATE_NAME:
+				return TEMPLATE_NAME_EDEFAULT == null ? templateName != null : !TEMPLATE_NAME_EDEFAULT.equals(templateName);
+			case ZabbixPackage.ZABBIXAPICONNECT__HOST_GROUP_NAME:
+				return HOST_GROUP_NAME_EDEFAULT == null ? hostGroupName != null : !HOST_GROUP_NAME_EDEFAULT.equals(hostGroupName);
+			case ZabbixPackage.ZABBIXAPICONNECT__PORT:
+				return PORT_EDEFAULT == null ? port != null : !PORT_EDEFAULT.equals(port);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -395,6 +551,12 @@ public class ZabbixapiconnectImpl extends MixinBaseImpl implements Zabbixapiconn
 		result.append(password);
 		result.append(", httpApiAddress: ");
 		result.append(httpApiAddress);
+		result.append(", templateName: ");
+		result.append(templateName);
+		result.append(", hostGroupName: ");
+		result.append(hostGroupName);
+		result.append(", port: ");
+		result.append(port);
 		result.append(')');
 		return result.toString();
 	}

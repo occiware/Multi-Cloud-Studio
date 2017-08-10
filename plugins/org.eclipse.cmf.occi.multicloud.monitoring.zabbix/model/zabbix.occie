@@ -13,6 +13,9 @@
     <attributes name="hostGroupName" mutable="true">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
+    <attributes name="port" mutable="true">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
+    </attributes>
     <depends href="http://occiware.org/occi/multicloud/monitoring#//@mixins[term='supervisorapiconnect']"/>
   </mixins>
 </occi:Extension>

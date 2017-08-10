@@ -26,6 +26,7 @@ import org.eclipse.cmf.occi.core.OCCITables;
 import org.eclipse.cmf.occi.monitoring.MonitoringTables;
 import org.eclipse.cmf.occi.multicloud.monitoring.zabbix.ZabbixTables;
 import org.eclipse.ocl.pivot.internal.library.ecore.EcoreExecutorPackage;
+import org.eclipse.ocl.pivot.internal.library.ecore.EcoreExecutorProperty;
 import org.eclipse.ocl.pivot.internal.library.ecore.EcoreExecutorType;
 import org.eclipse.ocl.pivot.internal.library.executor.ExecutorFragment;
 import org.eclipse.ocl.pivot.internal.library.executor.ExecutorOperation;
@@ -211,6 +212,9 @@ public class ZabbixTables
 			Operations.init();
 		}
 
+		public static final /*@NonNull*/ ExecutorProperty _Zabbixapiconnect__hostGroupName = new EcoreExecutorProperty(ZabbixPackage.Literals.ZABBIXAPICONNECT__HOST_GROUP_NAME, Types._Zabbixapiconnect, 0);
+		public static final /*@NonNull*/ ExecutorProperty _Zabbixapiconnect__port = new EcoreExecutorProperty(ZabbixPackage.Literals.ZABBIXAPICONNECT__PORT, Types._Zabbixapiconnect, 1);
+		public static final /*@NonNull*/ ExecutorProperty _Zabbixapiconnect__templateName = new EcoreExecutorProperty(ZabbixPackage.Literals.ZABBIXAPICONNECT__TEMPLATE_NAME, Types._Zabbixapiconnect, 2);
 		static {
 			Init.initEnd();
 		}
@@ -377,7 +381,11 @@ public class ZabbixTables
 			FragmentOperations.init();
 		}
 
-		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Zabbixapiconnect = {};
+		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Zabbixapiconnect = {
+			ZabbixTables.Properties._Zabbixapiconnect__hostGroupName,
+			ZabbixTables.Properties._Zabbixapiconnect__port,
+			ZabbixTables.Properties._Zabbixapiconnect__templateName
+		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Zabbixcollector = {};
 

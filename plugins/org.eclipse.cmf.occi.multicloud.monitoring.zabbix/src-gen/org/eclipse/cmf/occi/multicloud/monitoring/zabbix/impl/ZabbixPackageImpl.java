@@ -25,6 +25,7 @@ import org.eclipse.cmf.occi.multicloud.monitoring.zabbix.Zabbixcollector;
 
 import org.eclipse.cmf.occi.multicloud.monitoring.zabbix.util.ZabbixValidator;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
@@ -152,6 +153,33 @@ public class ZabbixPackageImpl extends EPackageImpl implements ZabbixPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getZabbixapiconnect_TemplateName() {
+		return (EAttribute)zabbixapiconnectEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getZabbixapiconnect_HostGroupName() {
+		return (EAttribute)zabbixapiconnectEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getZabbixapiconnect_Port() {
+		return (EAttribute)zabbixapiconnectEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EOperation getZabbixapiconnect__AppliesConstraint__DiagnosticChain_Map() {
 		return zabbixapiconnectEClass.getEOperations().get(0);
 	}
@@ -187,6 +215,9 @@ public class ZabbixPackageImpl extends EPackageImpl implements ZabbixPackage {
 		zabbixcollectorEClass = createEClass(ZABBIXCOLLECTOR);
 
 		zabbixapiconnectEClass = createEClass(ZABBIXAPICONNECT);
+		createEAttribute(zabbixapiconnectEClass, ZABBIXAPICONNECT__TEMPLATE_NAME);
+		createEAttribute(zabbixapiconnectEClass, ZABBIXAPICONNECT__HOST_GROUP_NAME);
+		createEAttribute(zabbixapiconnectEClass, ZABBIXAPICONNECT__PORT);
 		createEOperation(zabbixapiconnectEClass, ZABBIXAPICONNECT___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 	}
 
@@ -231,6 +262,9 @@ public class ZabbixPackageImpl extends EPackageImpl implements ZabbixPackage {
 		initEClass(zabbixcollectorEClass, Zabbixcollector.class, "Zabbixcollector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(zabbixapiconnectEClass, Zabbixapiconnect.class, "Zabbixapiconnect", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getZabbixapiconnect_TemplateName(), theOCCIPackage.getString(), "templateName", null, 0, 1, Zabbixapiconnect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getZabbixapiconnect_HostGroupName(), theOCCIPackage.getString(), "hostGroupName", null, 0, 1, Zabbixapiconnect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getZabbixapiconnect_Port(), theOCCIPackage.getInteger(), "port", null, 0, 1, Zabbixapiconnect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = initEOperation(getZabbixapiconnect__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);

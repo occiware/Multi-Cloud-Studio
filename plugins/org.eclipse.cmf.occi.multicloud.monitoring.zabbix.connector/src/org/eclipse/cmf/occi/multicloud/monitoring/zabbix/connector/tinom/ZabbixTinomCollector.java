@@ -69,6 +69,29 @@ public class ZabbixTinomCollector extends Collector {
 					return;
 				}
 			}
+			
+			if (zabbixHostId == 0) {
+				// add the instance to zabbix monitoring system.
+				LOGGER.info("Add instance: " + vmname + " to zabbix server : " + zabbixApiMixin.getHttpApiAddress());
+				String hostGroupName = zabbixApiMixin.getHostGroupName();
+				String templateName = zabbixApiMixin.getTemplateName();
+				int port = zabbixApiMixin.getPort();
+				try {
+					zabbixApiMixin.assignHostToHostgroup(authToken, vmname, computeToMonitorIpAddress, port, hostGroupName, templateName);
+					zabbixHostId = zabbixApiMixin.getHostByIp(authToken, computeToMonitorIpAddress);
+					if (zabbixHostId == 0) {
+						zabbixHostId = zabbixApiMixin.getHostByName(authToken, vmname);
+						if (zabbixHostId == 0) {
+							throw new MonitorException("Instance : " + vmname + " has not been added to zabbix monitoring server : " + zabbixApiMixin.getHttpApiAddress());
+						}
+					}
+					LOGGER.info("Instance : " + vmname + " has been added to hostgroup : " + hostGroupName + " with template: " + templateName + " on zabbix server: " + zabbixApiMixin.getHttpApiAddress());
+				} catch (MonitorException ex) {
+					LOGGER.error("Error while assigning instance to zabbix monitoring system : " + ex.getMessage());
+					this.stop();
+					return;
+				}
+			}
 		}
 		
 		// Assign token to referenced metrics...
@@ -81,7 +104,7 @@ public class ZabbixTinomCollector extends Collector {
 			}
 		}
 	}
-
+	
 	public ZabbixapiconnectConnector getZabbixApiMixin() {
 		return zabbixApiMixin;
 	}

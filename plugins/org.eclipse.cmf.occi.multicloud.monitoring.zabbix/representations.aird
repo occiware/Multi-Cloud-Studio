@@ -10,6 +10,8 @@
     <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
     <semanticResources>platform:/plugin/org.eclipse.cmf.occi.monitoring/model/monitoring.genmodel</semanticResources>
     <semanticResources>platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.genmodel</semanticResources>
+    <semanticResources>platform:/resource/org.eclipse.cmf.occi.multicloud.monitoring/model/cloudmonitoring.ecore</semanticResources>
+    <semanticResources>platform:/resource/org.eclipse.cmf.occi.multicloud.monitoring/model/cloudmonitoring.genmodel</semanticResources>
     <semanticResources>model/zabbix.ecore</semanticResources>
     <semanticResources>model/zabbix.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_tDwdgHd_Eeel8dnl9hOpkw">
@@ -605,6 +607,10 @@
             <children xmi:type="notation:Node" xmi:id="_TfBz8Hw-EeekHPYWYG6JCQ" type="3010" element="_TeY6wHw-EeekHPYWYG6JCQ">
               <styles xmi:type="notation:FontStyle" xmi:id="_TfBz8Xw-EeekHPYWYG6JCQ" fontName=".SF NS Text" fontHeight="10"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_TfBz8nw-EeekHPYWYG6JCQ"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_80edYH2XEeekHPYWYG6JCQ" type="3010" element="_8zx50H2XEeekHPYWYG6JCQ">
+              <styles xmi:type="notation:FontStyle" xmi:id="_80edYX2XEeekHPYWYG6JCQ" fontName=".SF NS Text" fontHeight="10"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_80edYn2XEeekHPYWYG6JCQ"/>
             </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_DvGGQXwQEeekHPYWYG6JCQ"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_DvGGQnwQEeekHPYWYG6JCQ"/>
@@ -2527,6 +2533,14 @@
         <target xmi:type="occi:Attribute" href="model/zabbix.occie#//@mixins[term='zabbixapiconnect']/@attributes.1"/>
         <semanticElements xmi:type="occi:Attribute" href="model/zabbix.occie#//@mixins[term='zabbixapiconnect']/@attributes.1"/>
         <ownedStyle xmi:type="diagram:Square" xmi:id="_TeZh0Hw-EeekHPYWYG6JCQ" labelSize="10" labelAlignment="LEFT" labelPosition="node">
+          <description xmi:type="style:SquareDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='MixinContainer']/@subNodeMappings[name='MixinAttribute']/@conditionnalStyles.2/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='MixinContainer']/@subNodeMappings[name='MixinAttribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_8zx50H2XEeekHPYWYG6JCQ" name="port: Integer">
+        <target xmi:type="occi:Attribute" href="model/zabbix.occie#//@mixins[term='zabbixapiconnect']/@attributes.2"/>
+        <semanticElements xmi:type="occi:Attribute" href="model/zabbix.occie#//@mixins[term='zabbixapiconnect']/@attributes.2"/>
+        <ownedStyle xmi:type="diagram:Square" xmi:id="_8z7DwH2XEeekHPYWYG6JCQ" labelSize="10" labelAlignment="LEFT" labelPosition="node">
           <description xmi:type="style:SquareDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='MixinContainer']/@subNodeMappings[name='MixinAttribute']/@conditionnalStyles.2/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='MixinContainer']/@subNodeMappings[name='MixinAttribute']"/>

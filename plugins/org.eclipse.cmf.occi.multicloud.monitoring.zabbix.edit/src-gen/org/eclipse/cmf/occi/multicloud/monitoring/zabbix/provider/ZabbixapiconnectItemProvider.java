@@ -64,6 +64,9 @@ public class ZabbixapiconnectItemProvider extends MixinBaseItemProvider {
 			addUsernamePropertyDescriptor(object);
 			addPasswordPropertyDescriptor(object);
 			addHttpApiAddressPropertyDescriptor(object);
+			addTemplateNamePropertyDescriptor(object);
+			addHostGroupNamePropertyDescriptor(object);
+			addPortPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -135,6 +138,72 @@ public class ZabbixapiconnectItemProvider extends MixinBaseItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Template Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTemplateNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Zabbixapiconnect_templateName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Zabbixapiconnect_templateName_feature", "_UI_Zabbixapiconnect_type"),
+				 ZabbixPackage.Literals.ZABBIXAPICONNECT__TEMPLATE_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Host Group Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHostGroupNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Zabbixapiconnect_hostGroupName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Zabbixapiconnect_hostGroupName_feature", "_UI_Zabbixapiconnect_type"),
+				 ZabbixPackage.Literals.ZABBIXAPICONNECT__HOST_GROUP_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Port feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPortPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Zabbixapiconnect_port_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Zabbixapiconnect_port_feature", "_UI_Zabbixapiconnect_type"),
+				 ZabbixPackage.Literals.ZABBIXAPICONNECT__PORT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Zabbixapiconnect.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -175,6 +244,9 @@ public class ZabbixapiconnectItemProvider extends MixinBaseItemProvider {
 			case ZabbixPackage.ZABBIXAPICONNECT__USERNAME:
 			case ZabbixPackage.ZABBIXAPICONNECT__PASSWORD:
 			case ZabbixPackage.ZABBIXAPICONNECT__HTTP_API_ADDRESS:
+			case ZabbixPackage.ZABBIXAPICONNECT__TEMPLATE_NAME:
+			case ZabbixPackage.ZABBIXAPICONNECT__HOST_GROUP_NAME:
+			case ZabbixPackage.ZABBIXAPICONNECT__PORT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

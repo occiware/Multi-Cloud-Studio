@@ -125,6 +125,70 @@ public class ZabbixcollectorConnector extends org.eclipse.cmf.occi.multicloud.mo
 		LOGGER.debug("occiDelete() called on " + this);
 		if (zabbixTinomCollector != null) {
 			zabbixTinomCollector.stop();
+			// Remove the compute from zabbix server.
+			ZabbixapiconnectConnector zabbixApiMixin = getZabbixApiConnectMixin();
+			Resource res = this.getTarget();
+			Compute compute = null;
+
+			if (res != null && res instanceof Compute) {
+				String computeIpAddress = null;
+				try {
+					compute = (Compute) res;
+
+					if (compute.getOcciComputeState().equals(ComputeStatus.ACTIVE)) {
+						// Retrieve ip address.
+						computeIpAddress = null;
+
+						// Detect if this is a vmware compute, if this is the cas an attribute exist
+						// with guest tools activation (or setted manually).
+						if (compute instanceof Instancevmware) {
+							computeIpAddress = ((Instancevmware) compute).getGuestIpv4Address();
+
+						} else {
+
+							// find the connected network interface and get ipAdress value.
+							Networkinterface networkInt = null;
+							EList<Link> links = compute.getLinks();
+
+							if (links == null || links.isEmpty()) {
+								throw new MonitorException(
+										"Cant retrieve ipAddress of the compute, there is no NetworkInterface defined in the scope of this compute : "
+												+ compute);
+							}
+							for (Link link : links) {
+								if (link instanceof Networkinterface) {
+									networkInt = (Networkinterface) link;
+									if (networkInt.getOcciNetworkinterfaceState()
+											.equals(NetworkInterfaceStatus.ACTIVE)) {
+
+										// Search on mixin ipNetworkInterface.
+										EList<MixinBase> mixinBases = networkInt.getParts();
+										for (MixinBase mixinBase : mixinBases) {
+											if (mixinBase instanceof Ipnetworkinterface) {
+												computeIpAddress = ((Ipnetworkinterface) mixinBase)
+														.getOcciNetworkinterfaceAddress();
+												break;
+											}
+										}
+									}
+								}
+								if (computeIpAddress != null) {
+									break;
+								}
+							}
+						}
+						if (computeIpAddress == null || computeIpAddress.trim().isEmpty()) {
+							throw new MonitorException(
+									"Cant retrieve ipAddress of the compute, there is no IpAddress attribute defined on NetworkInterface in the scope of this compute : "
+											+ compute);
+						}
+						String authToken = zabbixApiMixin.getAuthToken();
+						zabbixApiMixin.deleteHost(authToken, computeIpAddress);
+					}
+				} catch (MonitorException ex) {
+					LOGGER.error("Error while removing an instance from zabbix server: " + ex.getMessage());
+				}
+			}
 		}
 	}
 	// End of user code
@@ -143,7 +207,7 @@ public class ZabbixcollectorConnector extends org.eclipse.cmf.occi.multicloud.mo
 		return zabbixTinomCollector;
 	}
 	// End of user code
-	
+
 	/**
 	 * Retrieve values from linked resources target and build collector
 	 * consequently.
@@ -165,7 +229,7 @@ public class ZabbixcollectorConnector extends org.eclipse.cmf.occi.multicloud.mo
 				// with guest tools activation (or setted manually).
 				if (compute instanceof Instancevmware) {
 					computeIpAddress = ((Instancevmware) compute).getGuestIpv4Address();
-					
+
 				} else {
 
 					// find the connected network interface and get ipAdress value.
@@ -181,12 +245,13 @@ public class ZabbixcollectorConnector extends org.eclipse.cmf.occi.multicloud.mo
 						if (link instanceof Networkinterface) {
 							networkInt = (Networkinterface) link;
 							if (networkInt.getOcciNetworkinterfaceState().equals(NetworkInterfaceStatus.ACTIVE)) {
-								
+
 								// Search on mixin ipNetworkInterface.
 								EList<MixinBase> mixinBases = networkInt.getParts();
 								for (MixinBase mixinBase : mixinBases) {
 									if (mixinBase instanceof Ipnetworkinterface) {
-										computeIpAddress = ((Ipnetworkinterface) mixinBase).getOcciNetworkinterfaceAddress();
+										computeIpAddress = ((Ipnetworkinterface) mixinBase)
+												.getOcciNetworkinterfaceAddress();
 										break;
 									}
 								}
@@ -204,69 +269,81 @@ public class ZabbixcollectorConnector extends org.eclipse.cmf.occi.multicloud.mo
 				}
 
 				ZabbixapiconnectConnector zabbixApiConnectMixin = getZabbixApiConnectMixin();
-				
+
 				// Get the vmname via title attribute of the compute.
 				String vmname = compute.getTitle();
-				
-				if (computeIpAddress == null || computeIpAddress.trim().isEmpty() && (vmname == null || vmname.trim().isEmpty())) {
-					throw new MonitorException("Ip address AND vmname  is not retrieved on compute (vmname taken from compute title attribute), please check your compute configuration model.");
+
+				if (computeIpAddress == null
+						|| computeIpAddress.trim().isEmpty() && (vmname == null || vmname.trim().isEmpty())) {
+					throw new MonitorException(
+							"Ip address AND vmname  is not retrieved on compute (vmname taken from compute title attribute), please check your compute configuration model.");
 				}
 				if (zabbixApiConnectMixin == null) {
 					throw new MonitorException("You must apply the mixin ZabbixApiConnect to use zabbix collector !");
 				}
-				
+
 				collector.setComputeToMonitorIpAddress(computeIpAddress);
 				collector.setZabbixApiMixin(zabbixApiConnectMixin);
 				collector.setVmname(vmname);
-				
+
 				// Build tinom metrics object belonging to applied metric mixins.
-				List<MixinBase> metricMixins = getMetricMixins(); 
+				List<MixinBase> metricMixins = getMetricMixins();
 				if (metricMixins.isEmpty()) {
 					throw new MonitorException("You must apply at least one mixin metric to use this collector.");
 				}
-				
+
 				for (MixinBase mixinBase : metricMixins) {
 					if (mixinBase instanceof CpuConnector) {
-						CpuConnector cpuConnector = (CpuConnector)mixinBase;
-						org.occiware.tinom.model.Metric cpuTinomMetric = new CpuZabbixTinomMetric(CpuZabbixTinomMetric.METRIC_NAME); 
+						CpuConnector cpuConnector = (CpuConnector) mixinBase;
+						org.occiware.tinom.model.Metric cpuTinomMetric = new CpuZabbixTinomMetric(
+								CpuZabbixTinomMetric.METRIC_NAME);
 						cpuConnector.setCpuTinomMetric(cpuTinomMetric);
 						collector.withMetric(cpuTinomMetric);
 					}
 					if (mixinBase instanceof RamConnector) {
-						RamConnector ramConnector = (RamConnector)mixinBase;
-						org.occiware.tinom.model.Metric ramTinomMetric = new RamZabbixTinomMetric(RamZabbixTinomMetric.METRIC_NAME);
+						RamConnector ramConnector = (RamConnector) mixinBase;
+						org.occiware.tinom.model.Metric ramTinomMetric = new RamZabbixTinomMetric(
+								RamZabbixTinomMetric.METRIC_NAME);
 						ramConnector.setRamTinomMetric(ramTinomMetric);
 						collector.withMetric(ramTinomMetric);
 					}
 					if (mixinBase instanceof DiskConnector) {
-						DiskConnector diskConnector = (DiskConnector)mixinBase;
-						org.occiware.tinom.model.Metric diskTinomMetric = new DiskZabbixTinomMetric(DiskZabbixTinomMetric.METRIC_NAME);
+						DiskConnector diskConnector = (DiskConnector) mixinBase;
+						org.occiware.tinom.model.Metric diskTinomMetric = new DiskZabbixTinomMetric(
+								DiskZabbixTinomMetric.METRIC_NAME);
 						diskConnector.setDiskTinomMetric(diskTinomMetric);
 						collector.withMetric(diskTinomMetric);
 					}
 					if (mixinBase instanceof DiskioConnector) {
-						DiskioConnector diskIoConnector = (DiskioConnector)mixinBase;
-						org.occiware.tinom.model.Metric diskIoTinomMetric = new DiskIoZabbixTinomMetric(DiskIoZabbixTinomMetric.METRIC_NAME);
+						DiskioConnector diskIoConnector = (DiskioConnector) mixinBase;
+						org.occiware.tinom.model.Metric diskIoTinomMetric = new DiskIoZabbixTinomMetric(
+								DiskIoZabbixTinomMetric.METRIC_NAME);
 						diskIoConnector.setDiskIoTinomMetric(diskIoTinomMetric);
 						collector.withMetric(diskIoTinomMetric);
 					}
 					if (mixinBase instanceof NetworkioConnector) {
-						NetworkioConnector networkIoConnector = (NetworkioConnector)mixinBase;
-						org.occiware.tinom.model.Metric networkIoTinomMetric = new NetworkIoZabbixTinomMetric(NetworkIoZabbixTinomMetric.METRIC_NAME);
+						NetworkioConnector networkIoConnector = (NetworkioConnector) mixinBase;
+						org.occiware.tinom.model.Metric networkIoTinomMetric = new NetworkIoZabbixTinomMetric(
+								NetworkIoZabbixTinomMetric.METRIC_NAME);
 						networkIoConnector.setNetworkIoTinomMetric(networkIoTinomMetric);
 						collector.withMetric(networkIoTinomMetric);
 					}
-					
+
 				}
-				
-				/*if (collector.getMetrics() == null || collector.getMetrics().isEmpty()) {
-					LOGGER.warn("No metrics assigned to this collector : " + this.getId()
-							+ " --> Default to cpu, ram and loadavg metrics value.");
-					collector.withMetric(new CPUPercentMetric(CollectorType.MIXIN_METRIC_CPU_PERCENT));
-					collector.withMetric(new RAMPercentMetric(CollectorType.MIXIN_METRIC_RAM_PERCENT));
-					collector.withMetric(new LoadAverageMetric(CollectorType.MIXIN_METRIC_LOAD_AVG));
-					collector.withMetric(new LoadAverageMetric(CollectorType.MIXIN_METRIC_DISK_USED));
-				}*/
+
+				/*
+				 * if (collector.getMetrics() == null || collector.getMetrics().isEmpty()) {
+				 * LOGGER.warn("No metrics assigned to this collector : " + this.getId() +
+				 * " --> Default to cpu, ram and loadavg metrics value.");
+				 * collector.withMetric(new
+				 * CPUPercentMetric(CollectorType.MIXIN_METRIC_CPU_PERCENT));
+				 * collector.withMetric(new
+				 * RAMPercentMetric(CollectorType.MIXIN_METRIC_RAM_PERCENT));
+				 * collector.withMetric(new
+				 * LoadAverageMetric(CollectorType.MIXIN_METRIC_LOAD_AVG));
+				 * collector.withMetric(new
+				 * LoadAverageMetric(CollectorType.MIXIN_METRIC_DISK_USED)); }
+				 */
 
 				if (occiCollectorPeriod == 0) {
 					// Minimal period is 0 but for Tinom the period -1 is one shot.
@@ -277,7 +354,8 @@ public class ZabbixcollectorConnector extends org.eclipse.cmf.occi.multicloud.mo
 			// TODO : If link is on network or storage. Build collector consequently.
 			if (res != null) {
 				LOGGER.warn("Collector not implemented for storage and network link, this will be on future release..");
-				throw new MonitorException("Collector not implemented for storage and network link, this will be on future release..");
+				throw new MonitorException(
+						"Collector not implemented for storage and network link, this will be on future release..");
 			} else {
 				LOGGER.error("No linked compute to monitor");
 				throw new MonitorException("No linked compute to monitor");
@@ -298,7 +376,7 @@ public class ZabbixcollectorConnector extends org.eclipse.cmf.occi.multicloud.mo
 			int index = 0;
 			for (org.occiware.tinom.model.Metric metric : metrics) {
 				metricName = metric.getName();
-				channelNames[index] = collectorName + "." + metricName;	
+				channelNames[index] = collectorName + "." + metricName;
 			}
 		}
 		return channelNames;
@@ -307,7 +385,7 @@ public class ZabbixcollectorConnector extends org.eclipse.cmf.occi.multicloud.mo
 	//
 	// Zabbixcollector actions.
 	//
-	
+
 	/**
 	 * Get the MixinBase instance "ZabbixapiconnectConnector".
 	 * 
@@ -324,9 +402,10 @@ public class ZabbixcollectorConnector extends org.eclipse.cmf.occi.multicloud.mo
 		}
 		return apiConnector;
 	}
-	
+
 	/**
 	 * Get all Metric mixinbase.
+	 * 
 	 * @return
 	 */
 	private List<MixinBase> getMetricMixins() {
@@ -339,7 +418,5 @@ public class ZabbixcollectorConnector extends org.eclipse.cmf.occi.multicloud.mo
 		}
 		return result;
 	}
-	
-	
-	
+
 }

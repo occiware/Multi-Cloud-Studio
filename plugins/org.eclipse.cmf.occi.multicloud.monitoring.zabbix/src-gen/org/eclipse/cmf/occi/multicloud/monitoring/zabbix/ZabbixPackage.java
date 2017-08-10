@@ -16,6 +16,7 @@ import org.eclipse.cmf.occi.core.OCCIPackage;
 
 import org.eclipse.cmf.occi.monitoring.MonitoringPackage;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
@@ -306,13 +307,40 @@ public interface ZabbixPackage extends EPackage {
 	int ZABBIXAPICONNECT__HTTP_API_ADDRESS = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Template Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ZABBIXAPICONNECT__TEMPLATE_NAME = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Host Group Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ZABBIXAPICONNECT__HOST_GROUP_NAME = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ZABBIXAPICONNECT__PORT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Zabbixapiconnect</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ZABBIXAPICONNECT_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
+	int ZABBIXAPICONNECT_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>Applies Constraint</em>' operation.
@@ -352,6 +380,39 @@ public interface ZabbixPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getZabbixapiconnect();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.monitoring.zabbix.Zabbixapiconnect#getTemplateName <em>Template Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Template Name</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.monitoring.zabbix.Zabbixapiconnect#getTemplateName()
+	 * @see #getZabbixapiconnect()
+	 * @generated
+	 */
+	EAttribute getZabbixapiconnect_TemplateName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.monitoring.zabbix.Zabbixapiconnect#getHostGroupName <em>Host Group Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Host Group Name</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.monitoring.zabbix.Zabbixapiconnect#getHostGroupName()
+	 * @see #getZabbixapiconnect()
+	 * @generated
+	 */
+	EAttribute getZabbixapiconnect_HostGroupName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.monitoring.zabbix.Zabbixapiconnect#getPort <em>Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Port</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.monitoring.zabbix.Zabbixapiconnect#getPort()
+	 * @see #getZabbixapiconnect()
+	 * @generated
+	 */
+	EAttribute getZabbixapiconnect_Port();
 
 	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.monitoring.zabbix.Zabbixapiconnect#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
@@ -405,6 +466,30 @@ public interface ZabbixPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ZABBIXAPICONNECT = eINSTANCE.getZabbixapiconnect();
+
+		/**
+		 * The meta object literal for the '<em><b>Template Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ZABBIXAPICONNECT__TEMPLATE_NAME = eINSTANCE.getZabbixapiconnect_TemplateName();
+
+		/**
+		 * The meta object literal for the '<em><b>Host Group Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ZABBIXAPICONNECT__HOST_GROUP_NAME = eINSTANCE.getZabbixapiconnect_HostGroupName();
+
+		/**
+		 * The meta object literal for the '<em><b>Port</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ZABBIXAPICONNECT__PORT = eINSTANCE.getZabbixapiconnect_Port();
 
 		/**
 		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.

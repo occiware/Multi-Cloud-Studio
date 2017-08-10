@@ -25,12 +25,98 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * A representation of the model object '<em><b>Zabbixapiconnect</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.monitoring.zabbix.Zabbixapiconnect#getTemplateName <em>Template Name</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.monitoring.zabbix.Zabbixapiconnect#getHostGroupName <em>Host Group Name</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.monitoring.zabbix.Zabbixapiconnect#getPort <em>Port</em>}</li>
+ * </ul>
  *
  * @see org.eclipse.cmf.occi.multicloud.monitoring.zabbix.ZabbixPackage#getZabbixapiconnect()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='appliesConstraint'"
  * @generated
  */
 public interface Zabbixapiconnect extends MixinBase, Supervisorapiconnect {
+	/**
+	 * Returns the value of the '<em><b>Template Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Template Name</em>' attribute.
+	 * @see #setTemplateName(String)
+	 * @see org.eclipse.cmf.occi.multicloud.monitoring.zabbix.ZabbixPackage#getZabbixapiconnect_TemplateName()
+	 * @model dataType="org.eclipse.cmf.occi.core.String"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/monitoring/zabbix/ecore!Zabbixapiconnect!templateName'"
+	 * @generated
+	 */
+	String getTemplateName();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.monitoring.zabbix.Zabbixapiconnect#getTemplateName <em>Template Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Template Name</em>' attribute.
+	 * @see #getTemplateName()
+	 * @generated
+	 */
+	void setTemplateName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Host Group Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Host Group Name</em>' attribute.
+	 * @see #setHostGroupName(String)
+	 * @see org.eclipse.cmf.occi.multicloud.monitoring.zabbix.ZabbixPackage#getZabbixapiconnect_HostGroupName()
+	 * @model dataType="org.eclipse.cmf.occi.core.String"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/monitoring/zabbix/ecore!Zabbixapiconnect!hostGroupName'"
+	 * @generated
+	 */
+	String getHostGroupName();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.monitoring.zabbix.Zabbixapiconnect#getHostGroupName <em>Host Group Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Host Group Name</em>' attribute.
+	 * @see #getHostGroupName()
+	 * @generated
+	 */
+	void setHostGroupName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Port</em>' attribute.
+	 * @see #setPort(Integer)
+	 * @see org.eclipse.cmf.occi.multicloud.monitoring.zabbix.ZabbixPackage#getZabbixapiconnect_Port()
+	 * @model dataType="org.eclipse.cmf.occi.core.Integer"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/monitoring/zabbix/ecore!Zabbixapiconnect!port'"
+	 * @generated
+	 */
+	Integer getPort();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.monitoring.zabbix.Zabbixapiconnect#getPort <em>Port</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Port</em>' attribute.
+	 * @see #getPort()
+	 * @generated
+	 */
+	void setPort(Integer value);
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

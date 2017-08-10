@@ -1,0 +1,1588 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="vmware" version="10.0.0.201505222000">
+  <ownedViewpoints name="VmwareConfiguration" label="Vmware Configuration">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="VmwareConfiguration Diagram" domainClass="Configuration">
+      <metamodel href="http://schemas.ogf.org/occi/core/ecore#/"/>
+      <metamodel href="http://occiware.org/occi/infrastructure/vmware/ecore#/"/>
+      <defaultLayer name="Default">
+        <edgeMappings name="InstancevmwareLinksEdge" sourceMapping="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='InstancevmwareContainer']" targetMapping="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StoragelinkvmwareContainer'] //@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkadapterContainer']" targetFinderExpression="feature:links">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="StoragevmwareLinksEdge" sourceMapping="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StoragevmwareContainer']" targetMapping="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StoragelinkvmwareContainer'] //@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkadapterContainer']" targetFinderExpression="feature:links">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="VswitchLinksEdge" sourceMapping="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='VswitchContainer']" targetMapping="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StoragelinkvmwareContainer'] //@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkadapterContainer']" targetFinderExpression="feature:links">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="StoragelinkvmwareTargetEdge" sourceMapping="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StoragelinkvmwareContainer']" targetMapping="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='InstancevmwareContainer'] //@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StoragevmwareContainer'] //@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='VswitchContainer']" targetFinderExpression="feature:target">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="StoragelinkvmwareEdge" sourceMapping="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='InstancevmwareContainer'] //@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StoragevmwareContainer'] //@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='VswitchContainer']" targetMapping="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='InstancevmwareContainer'] //@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StoragevmwareContainer'] //@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='VswitchContainer']" domainClass="Storagelinkvmware" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="NetworkadapterTargetEdge" sourceMapping="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkadapterContainer']" targetMapping="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='InstancevmwareContainer'] //@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StoragevmwareContainer'] //@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='VswitchContainer']" targetFinderExpression="feature:target">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="NetworkadapterEdge" sourceMapping="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='InstancevmwareContainer'] //@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StoragevmwareContainer'] //@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='VswitchContainer']" targetMapping="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='InstancevmwareContainer'] //@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StoragevmwareContainer'] //@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='VswitchContainer']" domainClass="Networkadapter" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="InstancevmwareContainer"
+            labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditEntityTitle']"
+			semanticCandidatesExpression="feature:resources" 
+			domainClass="Instancevmware">
+<subContainerMappings name="SubInstancevmwareContainer" semanticCandidatesExpression="[self/]" domainClass="Instancevmware" childrenPresentation="List">
+          <subNodeMappings name="InstancevmwareId"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditInstancevmwareId']"
+                semanticCandidatesExpression="[self/]" domainClass="Instancevmware">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['id = ' + self.id.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="InstancevmwareTitle"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditInstancevmwareTitle']"
+                semanticCandidatesExpression="[self/]" domainClass="Instancevmware">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['title = ' + self.title.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="InstancevmwareLocation"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditInstancevmwareLocation']"
+                semanticCandidatesExpression="[self/]" domainClass="Instancevmware">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['location = ' + self.location.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="InstancevmwareSummary"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditInstancevmwareSummary']"
+                semanticCandidatesExpression="[self/]" domainClass="Instancevmware">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['summary = ' + self.summary.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="InstancevmwareOcciComputeArchitecture"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditInstancevmwareOcciComputeArchitecture']"
+                semanticCandidatesExpression="[self/]" domainClass="Instancevmware">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiComputeArchitecture = ' + self.occiComputeArchitecture.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="InstancevmwareOcciComputeCores"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditInstancevmwareOcciComputeCores']"
+                semanticCandidatesExpression="[self/]" domainClass="Instancevmware">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiComputeCores = ' + self.occiComputeCores.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="InstancevmwareOcciComputeHostname"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditInstancevmwareOcciComputeHostname']"
+                semanticCandidatesExpression="[self/]" domainClass="Instancevmware">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiComputeHostname = ' + self.occiComputeHostname.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="InstancevmwareOcciComputeShare"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditInstancevmwareOcciComputeShare']"
+                semanticCandidatesExpression="[self/]" domainClass="Instancevmware">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiComputeShare = ' + self.occiComputeShare.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="InstancevmwareOcciComputeSpeed"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditInstancevmwareOcciComputeSpeed']"
+                semanticCandidatesExpression="[self/]" domainClass="Instancevmware">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiComputeSpeed = ' + self.occiComputeSpeed.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="InstancevmwareOcciComputeMemory"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditInstancevmwareOcciComputeMemory']"
+                semanticCandidatesExpression="[self/]" domainClass="Instancevmware">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiComputeMemory = ' + self.occiComputeMemory.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="InstancevmwareOcciComputeState"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditInstancevmwareOcciComputeState']"
+                semanticCandidatesExpression="[self/]" domainClass="Instancevmware">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiComputeState = ' + self.occiComputeState.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="InstancevmwareOcciComputeStateMessage"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditInstancevmwareOcciComputeStateMessage']"
+                semanticCandidatesExpression="[self/]" domainClass="Instancevmware">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiComputeStateMessage = ' + self.occiComputeStateMessage.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="InstancevmwareImagename"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditInstancevmwareImagename']"
+                semanticCandidatesExpression="[self/]" domainClass="Instancevmware">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['imagename = ' + self.imagename.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="InstancevmwareMarkedastemplate"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditInstancevmwareMarkedastemplate']"
+                semanticCandidatesExpression="[self/]" domainClass="Instancevmware">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['markedastemplate = ' + self.markedastemplate.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="InstancevmwareGueststate"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditInstancevmwareGueststate']"
+                semanticCandidatesExpression="[self/]" domainClass="Instancevmware">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['gueststate = ' + self.gueststate.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="InstancevmwareGuestosid"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditInstancevmwareGuestosid']"
+                semanticCandidatesExpression="[self/]" domainClass="Instancevmware">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['guestosid = ' + self.guestosid.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="InstancevmwareVcpu"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditInstancevmwareVcpu']"
+                semanticCandidatesExpression="[self/]" domainClass="Instancevmware">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['vcpu = ' + self.vcpu.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="InstancevmwareInstanceId"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditInstancevmwareInstanceId']"
+                semanticCandidatesExpression="[self/]" domainClass="Instancevmware">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['instanceId = ' + self.instanceId.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+			<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.kind.scheme+self.kind.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+</subContainerMappings>
+<subContainerMappings name="windowsMixin" preconditionExpression="[self.oclIsTypeOf(Windows)/]" semanticCandidatesExpression="feature:parts" domainClass="Windows" childrenPresentation="List">
+<subNodeMappings name="Windowsdatastoreisopath" semanticCandidatesExpression="[self/]" domainClass="Windows">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['datastoreisopath = ' + self.datastoreisopath.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="Windowsguestid" semanticCandidatesExpression="[self/]" domainClass="Windows">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['guestid = ' + self.guestid.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+<subContainerMappings name="linuxMixin" preconditionExpression="[self.oclIsTypeOf(Linux)/]" semanticCandidatesExpression="feature:parts" domainClass="Linux" childrenPresentation="List">
+<subNodeMappings name="Linuxdatastoreisopath" semanticCandidatesExpression="[self/]" domainClass="Linux">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['datastoreisopath = ' + self.datastoreisopath.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="Linuxguestid" semanticCandidatesExpression="[self/]" domainClass="Linux">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['guestid = ' + self.guestid.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+<subContainerMappings name="macosxMixin" preconditionExpression="[self.oclIsTypeOf(Macosx)/]" semanticCandidatesExpression="feature:parts" domainClass="Macosx" childrenPresentation="List">
+<subNodeMappings name="Macosxdatastoreisopath" semanticCandidatesExpression="[self/]" domainClass="Macosx">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['datastoreisopath = ' + self.datastoreisopath.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="Macosxguestid" semanticCandidatesExpression="[self/]" domainClass="Macosx">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['guestid = ' + self.guestid.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+<subContainerMappings name="vmwarefoldersMixin" preconditionExpression="[self.oclIsTypeOf(Vmwarefolders)/]" semanticCandidatesExpression="feature:parts" domainClass="Vmwarefolders" childrenPresentation="List">
+<subNodeMappings name="Vmwarefoldersdatacentername" semanticCandidatesExpression="[self/]" domainClass="Vmwarefolders">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['datacentername = ' + self.datacentername.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="Vmwarefoldersdatastorename" semanticCandidatesExpression="[self/]" domainClass="Vmwarefolders">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['datastorename = ' + self.datastorename.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="Vmwarefoldersclustername" semanticCandidatesExpression="[self/]" domainClass="Vmwarefolders">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['clustername = ' + self.clustername.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="Vmwarefoldershostsystemname" semanticCandidatesExpression="[self/]" domainClass="Vmwarefolders">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['hostsystemname = ' + self.hostsystemname.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="Vmwarefoldersinventorypath" semanticCandidatesExpression="[self/]" domainClass="Vmwarefolders">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['inventorypath = ' + self.inventorypath.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+<subContainerMappings name="os_tpl_vmwareMixin" preconditionExpression="[self.oclIsTypeOf(Os_tpl_vmware)/]" semanticCandidatesExpression="feature:parts" domainClass="Os_tpl_vmware" childrenPresentation="List">
+<subNodeMappings name="Os_tpl_vmwaredatastoreisopath" semanticCandidatesExpression="[self/]" domainClass="Os_tpl_vmware">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['datastoreisopath = ' + self.datastoreisopath.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="Os_tpl_vmwareguestid" semanticCandidatesExpression="[self/]" domainClass="Os_tpl_vmware">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['guestid = ' + self.guestid.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+<subContainerMappings name="SSH_User_DataMixin" preconditionExpression="[self.oclIsTypeOf(Ssh_user_data)/]" semanticCandidatesExpression="feature:parts" domainClass="Ssh_user_data" childrenPresentation="List">
+<subNodeMappings name="Ssh_user_dataocciComputeUserdata" semanticCandidatesExpression="[self/]" domainClass="Ssh_user_data">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiComputeUserdata = ' + self.occiComputeUserdata.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="Ssh_user_datapassword" semanticCandidatesExpression="[self/]" domainClass="Ssh_user_data">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['password = ' + self.password.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="Ssh_user_dataocciComputeUserdataFile" semanticCandidatesExpression="[self/]" domainClass="Ssh_user_data">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiComputeUserdataFile = ' + self.occiComputeUserdataFile.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="Ssh_user_datauser" semanticCandidatesExpression="[self/]" domainClass="Ssh_user_data">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['user = ' + self.user.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="[self.title + ': Instancevmware'/]" roundedCorner="true">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style> 
+
+        </containerMappings>
+        <containerMappings name="StoragevmwareContainer"
+            labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditEntityTitle']"
+			semanticCandidatesExpression="feature:resources" 
+			domainClass="Storagevmware">
+<subContainerMappings name="SubStoragevmwareContainer" semanticCandidatesExpression="[self/]" domainClass="Storagevmware" childrenPresentation="List">
+          <subNodeMappings name="StoragevmwareId"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditStoragevmwareId']"
+                semanticCandidatesExpression="[self/]" domainClass="Storagevmware">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['id = ' + self.id.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="StoragevmwareTitle"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditStoragevmwareTitle']"
+                semanticCandidatesExpression="[self/]" domainClass="Storagevmware">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['title = ' + self.title.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="StoragevmwareLocation"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditStoragevmwareLocation']"
+                semanticCandidatesExpression="[self/]" domainClass="Storagevmware">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['location = ' + self.location.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="StoragevmwareSummary"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditStoragevmwareSummary']"
+                semanticCandidatesExpression="[self/]" domainClass="Storagevmware">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['summary = ' + self.summary.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="StoragevmwareOcciStorageSize"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditStoragevmwareOcciStorageSize']"
+                semanticCandidatesExpression="[self/]" domainClass="Storagevmware">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiStorageSize = ' + self.occiStorageSize.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="StoragevmwareOcciStorageState"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditStoragevmwareOcciStorageState']"
+                semanticCandidatesExpression="[self/]" domainClass="Storagevmware">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiStorageState = ' + self.occiStorageState.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="StoragevmwareOcciStorageStateMessage"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditStoragevmwareOcciStorageStateMessage']"
+                semanticCandidatesExpression="[self/]" domainClass="Storagevmware">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiStorageStateMessage = ' + self.occiStorageStateMessage.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+			<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.kind.scheme+self.kind.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+</subContainerMappings>
+<subContainerMappings name="vmwarefoldersMixin" preconditionExpression="[self.oclIsTypeOf(Vmwarefolders)/]" semanticCandidatesExpression="feature:parts" domainClass="Vmwarefolders" childrenPresentation="List">
+<subNodeMappings name="Vmwarefoldersdatacentername" semanticCandidatesExpression="[self/]" domainClass="Vmwarefolders">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['datacentername = ' + self.datacentername.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="Vmwarefoldersdatastorename" semanticCandidatesExpression="[self/]" domainClass="Vmwarefolders">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['datastorename = ' + self.datastorename.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="Vmwarefoldersclustername" semanticCandidatesExpression="[self/]" domainClass="Vmwarefolders">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['clustername = ' + self.clustername.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="Vmwarefoldershostsystemname" semanticCandidatesExpression="[self/]" domainClass="Vmwarefolders">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['hostsystemname = ' + self.hostsystemname.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="Vmwarefoldersinventorypath" semanticCandidatesExpression="[self/]" domainClass="Vmwarefolders">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['inventorypath = ' + self.inventorypath.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="[self.title + ': Storagevmware'/]" roundedCorner="true">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style> 
+
+        </containerMappings>
+        <containerMappings name="VswitchContainer"
+            labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditEntityTitle']"
+			semanticCandidatesExpression="feature:resources" 
+			domainClass="Vswitch">
+<subContainerMappings name="SubVswitchContainer" semanticCandidatesExpression="[self/]" domainClass="Vswitch" childrenPresentation="List">
+          <subNodeMappings name="VswitchId"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditVswitchId']"
+                semanticCandidatesExpression="[self/]" domainClass="Vswitch">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['id = ' + self.id.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="VswitchTitle"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditVswitchTitle']"
+                semanticCandidatesExpression="[self/]" domainClass="Vswitch">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['title = ' + self.title.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="VswitchLocation"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditVswitchLocation']"
+                semanticCandidatesExpression="[self/]" domainClass="Vswitch">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['location = ' + self.location.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="VswitchSummary"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditVswitchSummary']"
+                semanticCandidatesExpression="[self/]" domainClass="Vswitch">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['summary = ' + self.summary.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="VswitchOcciNetworkVlan"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditVswitchOcciNetworkVlan']"
+                semanticCandidatesExpression="[self/]" domainClass="Vswitch">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiNetworkVlan = ' + self.occiNetworkVlan.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="VswitchOcciNetworkLabel"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditVswitchOcciNetworkLabel']"
+                semanticCandidatesExpression="[self/]" domainClass="Vswitch">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiNetworkLabel = ' + self.occiNetworkLabel.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="VswitchOcciNetworkState"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditVswitchOcciNetworkState']"
+                semanticCandidatesExpression="[self/]" domainClass="Vswitch">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiNetworkState = ' + self.occiNetworkState.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="VswitchOcciNetworkStateMessage"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditVswitchOcciNetworkStateMessage']"
+                semanticCandidatesExpression="[self/]" domainClass="Vswitch">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiNetworkStateMessage = ' + self.occiNetworkStateMessage.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="VswitchNbport"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditVswitchNbport']"
+                semanticCandidatesExpression="[self/]" domainClass="Vswitch">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['nbport = ' + self.nbport.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+			<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.kind.scheme+self.kind.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+</subContainerMappings>
+<subContainerMappings name="vmwarefoldersMixin" preconditionExpression="[self.oclIsTypeOf(Vmwarefolders)/]" semanticCandidatesExpression="feature:parts" domainClass="Vmwarefolders" childrenPresentation="List">
+<subNodeMappings name="Vmwarefoldersdatacentername" semanticCandidatesExpression="[self/]" domainClass="Vmwarefolders">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['datacentername = ' + self.datacentername.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="Vmwarefoldersdatastorename" semanticCandidatesExpression="[self/]" domainClass="Vmwarefolders">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['datastorename = ' + self.datastorename.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="Vmwarefoldersclustername" semanticCandidatesExpression="[self/]" domainClass="Vmwarefolders">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['clustername = ' + self.clustername.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="Vmwarefoldershostsystemname" semanticCandidatesExpression="[self/]" domainClass="Vmwarefolders">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['hostsystemname = ' + self.hostsystemname.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="Vmwarefoldersinventorypath" semanticCandidatesExpression="[self/]" domainClass="Vmwarefolders">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['inventorypath = ' + self.inventorypath.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="[self.title + ': Vswitch'/]" roundedCorner="true">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style> 
+
+        </containerMappings>
+        <containerMappings name="StoragelinkvmwareContainer"
+            labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditEntityTitle']"
+			semanticCandidatesExpression="[resources.links->filter(Storagelinkvmware)/]" 
+			domainClass="Storagelinkvmware">
+<subContainerMappings name="SubStoragelinkvmwareContainer" semanticCandidatesExpression="[self/]" domainClass="Storagelinkvmware" childrenPresentation="List">
+          <subNodeMappings name="StoragelinkvmwareId"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditStoragelinkvmwareId']"
+                semanticCandidatesExpression="[self/]" domainClass="Storagelinkvmware">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['id = ' + self.id.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="StoragelinkvmwareTitle"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditStoragelinkvmwareTitle']"
+                semanticCandidatesExpression="[self/]" domainClass="Storagelinkvmware">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['title = ' + self.title.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="StoragelinkvmwareLocation"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditStoragelinkvmwareLocation']"
+                semanticCandidatesExpression="[self/]" domainClass="Storagelinkvmware">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['location = ' + self.location.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="StoragelinkvmwareOcciStoragelinkDeviceid"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditStoragelinkvmwareOcciStoragelinkDeviceid']"
+                semanticCandidatesExpression="[self/]" domainClass="Storagelinkvmware">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiStoragelinkDeviceid = ' + self.occiStoragelinkDeviceid.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="StoragelinkvmwareOcciStoragelinkMountpoint"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditStoragelinkvmwareOcciStoragelinkMountpoint']"
+                semanticCandidatesExpression="[self/]" domainClass="Storagelinkvmware">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiStoragelinkMountpoint = ' + self.occiStoragelinkMountpoint.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="StoragelinkvmwareOcciStoragelinkState"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditStoragelinkvmwareOcciStoragelinkState']"
+                semanticCandidatesExpression="[self/]" domainClass="Storagelinkvmware">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiStoragelinkState = ' + self.occiStoragelinkState.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="StoragelinkvmwareOcciStoragelinkStateMessage"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditStoragelinkvmwareOcciStoragelinkStateMessage']"
+                semanticCandidatesExpression="[self/]" domainClass="Storagelinkvmware">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiStoragelinkStateMessage = ' + self.occiStoragelinkStateMessage.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+			<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.kind.scheme+self.kind.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+</subContainerMappings>
+<subContainerMappings name="vmwarefoldersMixin" preconditionExpression="[self.oclIsTypeOf(Vmwarefolders)/]" semanticCandidatesExpression="feature:parts" domainClass="Vmwarefolders" childrenPresentation="List">
+<subNodeMappings name="Vmwarefoldersdatacentername" semanticCandidatesExpression="[self/]" domainClass="Vmwarefolders">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['datacentername = ' + self.datacentername.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="Vmwarefoldersdatastorename" semanticCandidatesExpression="[self/]" domainClass="Vmwarefolders">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['datastorename = ' + self.datastorename.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="Vmwarefoldersclustername" semanticCandidatesExpression="[self/]" domainClass="Vmwarefolders">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['clustername = ' + self.clustername.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="Vmwarefoldershostsystemname" semanticCandidatesExpression="[self/]" domainClass="Vmwarefolders">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['hostsystemname = ' + self.hostsystemname.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="Vmwarefoldersinventorypath" semanticCandidatesExpression="[self/]" domainClass="Vmwarefolders">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['inventorypath = ' + self.inventorypath.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="[self.title + ': Storagelinkvmware'/]" roundedCorner="true">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style> 
+
+        </containerMappings>
+        <containerMappings name="NetworkadapterContainer"
+            labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditEntityTitle']"
+			semanticCandidatesExpression="[resources.links->filter(Networkadapter)/]" 
+			domainClass="Networkadapter">
+<subContainerMappings name="SubNetworkadapterContainer" semanticCandidatesExpression="[self/]" domainClass="Networkadapter" childrenPresentation="List">
+          <subNodeMappings name="NetworkadapterId"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditNetworkadapterId']"
+                semanticCandidatesExpression="[self/]" domainClass="Networkadapter">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['id = ' + self.id.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="NetworkadapterTitle"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditNetworkadapterTitle']"
+                semanticCandidatesExpression="[self/]" domainClass="Networkadapter">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['title = ' + self.title.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="NetworkadapterLocation"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditNetworkadapterLocation']"
+                semanticCandidatesExpression="[self/]" domainClass="Networkadapter">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['location = ' + self.location.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="NetworkadapterOcciNetworkinterfaceInterface"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditNetworkadapterOcciNetworkinterfaceInterface']"
+                semanticCandidatesExpression="[self/]" domainClass="Networkadapter">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiNetworkinterfaceInterface = ' + self.occiNetworkinterfaceInterface.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="NetworkadapterOcciNetworkinterfaceMac"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditNetworkadapterOcciNetworkinterfaceMac']"
+                semanticCandidatesExpression="[self/]" domainClass="Networkadapter">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiNetworkinterfaceMac = ' + self.occiNetworkinterfaceMac.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="NetworkadapterOcciNetworkinterfaceState"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditNetworkadapterOcciNetworkinterfaceState']"
+                semanticCandidatesExpression="[self/]" domainClass="Networkadapter">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiNetworkinterfaceState = ' + self.occiNetworkinterfaceState.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="NetworkadapterOcciNetworkinterfaceStateMessage"
+                labelDirectEdit="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditNetworkadapterOcciNetworkinterfaceStateMessage']"
+                semanticCandidatesExpression="[self/]" domainClass="Networkadapter">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['occiNetworkinterfaceStateMessage = ' + self.occiNetworkinterfaceStateMessage.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+			<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.kind.scheme+self.kind.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+</subContainerMappings>
+<subContainerMappings name="vmwarefoldersMixin" preconditionExpression="[self.oclIsTypeOf(Vmwarefolders)/]" semanticCandidatesExpression="feature:parts" domainClass="Vmwarefolders" childrenPresentation="List">
+<subNodeMappings name="Vmwarefoldersdatacentername" semanticCandidatesExpression="[self/]" domainClass="Vmwarefolders">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['datacentername = ' + self.datacentername.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="Vmwarefoldersdatastorename" semanticCandidatesExpression="[self/]" domainClass="Vmwarefolders">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['datastorename = ' + self.datastorename.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="Vmwarefoldersclustername" semanticCandidatesExpression="[self/]" domainClass="Vmwarefolders">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['clustername = ' + self.clustername.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="Vmwarefoldershostsystemname" semanticCandidatesExpression="[self/]" domainClass="Vmwarefolders">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['hostsystemname = ' + self.hostsystemname.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="Vmwarefoldersinventorypath" semanticCandidatesExpression="[self/]" domainClass="Vmwarefolders">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['inventorypath = ' + self.inventorypath.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="[self.title + ': Networkadapter'/]" roundedCorner="true">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style> 
+
+        </containerMappings>
+        <toolSections name="Vmware resources">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" 
+			name="Create Instancevmware"
+			containerMappings="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='InstancevmwareContainer']"> 
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="Instancevmware" referenceName="resources">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="['instancevmware' + container.oclAsType(Configuration).resources->size().toString()/]"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" 
+			name="Create Storagevmware"
+			containerMappings="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StoragevmwareContainer']"> 
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="Storagevmware" referenceName="resources">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="['storagevmware' + container.oclAsType(Configuration).resources->size().toString()/]"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" 
+			name="Create Vswitch"
+			containerMappings="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='VswitchContainer']"> 
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="Vswitch" referenceName="resources">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="['vswitch' + container.oclAsType(Configuration).resources->size().toString()/]"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+</toolSections>
+ <toolSections name="Vmware links">
+          <ownedTools xsi:type="tool:EdgeCreationDescription"
+			name="Create Storagelinkvmware"
+			edgeMappings="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@edgeMappings[name='StoragelinkvmwareEdge']"> 
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Storagelinkvmware" referenceName="links" variableName="link">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription"
+			name="Create Networkadapter"
+			edgeMappings="//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@edgeMappings[name='NetworkadapterEdge']"> 
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Networkadapter" referenceName="links" variableName="link">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+   </toolSections>   
+ <toolSections name="Vmware mixins">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create windows" containerMappings="
+//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='InstancevmwareContainer']/@subContainerMappings[name='windowsMixin']
+">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Windows" referenceName="parts"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create linux" containerMappings="
+//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='InstancevmwareContainer']/@subContainerMappings[name='linuxMixin']
+">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Linux" referenceName="parts"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create macosx" containerMappings="
+//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='InstancevmwareContainer']/@subContainerMappings[name='macosxMixin']
+">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Macosx" referenceName="parts"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create vmwarefolders" containerMappings="
+//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='InstancevmwareContainer']/@subContainerMappings[name='vmwarefoldersMixin']
+ //@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkadapterContainer']/@subContainerMappings[name='vmwarefoldersMixin']
+ //@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StoragelinkvmwareContainer']/@subContainerMappings[name='vmwarefoldersMixin']
+ //@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StoragevmwareContainer']/@subContainerMappings[name='vmwarefoldersMixin']
+ //@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='VswitchContainer']/@subContainerMappings[name='vmwarefoldersMixin']
+">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Vmwarefolders" referenceName="parts"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create os_tpl_vmware" containerMappings="
+//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='InstancevmwareContainer']/@subContainerMappings[name='os_tpl_vmwareMixin']
+">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Os_tpl_vmware" referenceName="parts"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create SSH_User_Data" containerMappings="
+//@ownedViewpoints[name='VmwareConfiguration']/@ownedRepresentations[name='VmwareConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='InstancevmwareContainer']/@subContainerMappings[name='SSH_User_DataMixin']
+">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Ssh_user_data" referenceName="parts"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+   </toolSections>    
+        <toolSections name="Tools">
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditEntityTitle" inputLabelExpression="feature:title">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditInstancevmwareId" inputLabelExpression="feature:id">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditInstancevmwareTitle" inputLabelExpression="feature:title">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditInstancevmwareLocation" inputLabelExpression="feature:location">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="location" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditInstancevmwareSummary" inputLabelExpression="feature:summary">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="summary" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditInstancevmwareOcciComputeArchitecture" inputLabelExpression="feature:occiComputeArchitecture">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiComputeArchitecture" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditInstancevmwareOcciComputeCores" inputLabelExpression="feature:occiComputeCores">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiComputeCores" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditInstancevmwareOcciComputeHostname" inputLabelExpression="feature:occiComputeHostname">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiComputeHostname" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditInstancevmwareOcciComputeShare" inputLabelExpression="feature:occiComputeShare">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiComputeShare" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditInstancevmwareOcciComputeSpeed" inputLabelExpression="feature:occiComputeSpeed">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiComputeSpeed" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditInstancevmwareOcciComputeMemory" inputLabelExpression="feature:occiComputeMemory">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiComputeMemory" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditInstancevmwareOcciComputeState" inputLabelExpression="feature:occiComputeState">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiComputeState" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditInstancevmwareOcciComputeStateMessage" inputLabelExpression="feature:occiComputeStateMessage">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiComputeStateMessage" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditInstancevmwareImagename" inputLabelExpression="feature:imagename">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="imagename" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditInstancevmwareMarkedastemplate" inputLabelExpression="feature:markedastemplate">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="markedastemplate" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditInstancevmwareGueststate" inputLabelExpression="feature:gueststate">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="gueststate" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditInstancevmwareGuestosid" inputLabelExpression="feature:guestosid">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="guestosid" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditInstancevmwareVcpu" inputLabelExpression="feature:vcpu">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="vcpu" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditInstancevmwareInstanceId" inputLabelExpression="feature:instanceId">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="instanceId" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:OperationAction" name="InstancevmwareStartAction" label="Start" precondition="[self.oclIsKindOf(Instancevmware)/]">
+            <view name="views"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Instancevmware).start()/]"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:PopupMenu" name="InstancevmwareStopAction" label="Stop" precondition="[self.oclIsKindOf(Instancevmware)/]">
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="StopMethodGraceful" label="Graceful">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Instancevmware).stop(StopMethod::graceful)/]"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="StopMethodAcpioff" label="Acpioff">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Instancevmware).stop(StopMethod::acpioff)/]"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="StopMethodPoweroff" label="Poweroff">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Instancevmware).stop(StopMethod::poweroff)/]"/>
+              </initialOperation>
+            </menuItemDescription>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:PopupMenu" name="InstancevmwareRestartAction" label="Restart" precondition="[self.oclIsKindOf(Instancevmware)/]">
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="RestartMethodGraceful" label="Graceful">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Instancevmware).restart(RestartMethod::graceful)/]"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="RestartMethodWarm" label="Warm">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Instancevmware).restart(RestartMethod::warm)/]"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="RestartMethodCold" label="Cold">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Instancevmware).restart(RestartMethod::cold)/]"/>
+              </initialOperation>
+            </menuItemDescription>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:PopupMenu" name="InstancevmwareSuspendAction" label="Suspend" precondition="[self.oclIsKindOf(Instancevmware)/]">
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="SuspendMethodHibernate" label="Hibernate">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Instancevmware).suspend(SuspendMethod::hibernate)/]"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="SuspendMethodSuspend" label="Suspend">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Instancevmware).suspend(SuspendMethod::suspend)/]"/>
+              </initialOperation>
+            </menuItemDescription>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditStoragevmwareId" inputLabelExpression="feature:id">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditStoragevmwareTitle" inputLabelExpression="feature:title">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditStoragevmwareLocation" inputLabelExpression="feature:location">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="location" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditStoragevmwareSummary" inputLabelExpression="feature:summary">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="summary" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditStoragevmwareOcciStorageSize" inputLabelExpression="feature:occiStorageSize">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiStorageSize" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditStoragevmwareOcciStorageState" inputLabelExpression="feature:occiStorageState">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiStorageState" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditStoragevmwareOcciStorageStateMessage" inputLabelExpression="feature:occiStorageStateMessage">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiStorageStateMessage" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:OperationAction" name="StoragevmwareOnlineAction" label="Online" precondition="[self.oclIsKindOf(Storagevmware)/]">
+            <view name="views"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Storagevmware).online()/]"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:OperationAction" name="StoragevmwareOfflineAction" label="Offline" precondition="[self.oclIsKindOf(Storagevmware)/]">
+            <view name="views"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Storagevmware).offline()/]"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditStoragelinkvmwareId" inputLabelExpression="feature:id">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditStoragelinkvmwareTitle" inputLabelExpression="feature:title">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditStoragelinkvmwareLocation" inputLabelExpression="feature:location">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="location" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditStoragelinkvmwareOcciStoragelinkDeviceid" inputLabelExpression="feature:occiStoragelinkDeviceid">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiStoragelinkDeviceid" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditStoragelinkvmwareOcciStoragelinkMountpoint" inputLabelExpression="feature:occiStoragelinkMountpoint">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiStoragelinkMountpoint" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditStoragelinkvmwareOcciStoragelinkState" inputLabelExpression="feature:occiStoragelinkState">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiStoragelinkState" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditStoragelinkvmwareOcciStoragelinkStateMessage" inputLabelExpression="feature:occiStoragelinkStateMessage">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiStoragelinkStateMessage" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditVswitchId" inputLabelExpression="feature:id">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditVswitchTitle" inputLabelExpression="feature:title">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditVswitchLocation" inputLabelExpression="feature:location">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="location" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditVswitchSummary" inputLabelExpression="feature:summary">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="summary" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditVswitchOcciNetworkVlan" inputLabelExpression="feature:occiNetworkVlan">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiNetworkVlan" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditVswitchOcciNetworkLabel" inputLabelExpression="feature:occiNetworkLabel">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiNetworkLabel" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditVswitchOcciNetworkState" inputLabelExpression="feature:occiNetworkState">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiNetworkState" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditVswitchOcciNetworkStateMessage" inputLabelExpression="feature:occiNetworkStateMessage">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiNetworkStateMessage" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditVswitchNbport" inputLabelExpression="feature:nbport">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="nbport" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:OperationAction" name="VswitchUpAction" label="Up" precondition="[self.oclIsKindOf(Vswitch)/]">
+            <view name="views"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Vswitch).up()/]"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:OperationAction" name="VswitchDownAction" label="Down" precondition="[self.oclIsKindOf(Vswitch)/]">
+            <view name="views"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Vswitch).down()/]"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditNetworkadapterId" inputLabelExpression="feature:id">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditNetworkadapterTitle" inputLabelExpression="feature:title">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditNetworkadapterLocation" inputLabelExpression="feature:location">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="location" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditNetworkadapterOcciNetworkinterfaceInterface" inputLabelExpression="feature:occiNetworkinterfaceInterface">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiNetworkinterfaceInterface" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditNetworkadapterOcciNetworkinterfaceMac" inputLabelExpression="feature:occiNetworkinterfaceMac">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiNetworkinterfaceMac" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditNetworkadapterOcciNetworkinterfaceState" inputLabelExpression="feature:occiNetworkinterfaceState">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiNetworkinterfaceState" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditNetworkadapterOcciNetworkinterfaceStateMessage" inputLabelExpression="feature:occiNetworkinterfaceStateMessage">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiNetworkinterfaceStateMessage" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditWindowsDatastoreisopath" inputLabelExpression="feature:datastoreisopath">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="datastoreisopath" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditWindowsGuestid" inputLabelExpression="feature:guestid">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="guestid" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditLinuxDatastoreisopath" inputLabelExpression="feature:datastoreisopath">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="datastoreisopath" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditLinuxGuestid" inputLabelExpression="feature:guestid">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="guestid" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditMacosxDatastoreisopath" inputLabelExpression="feature:datastoreisopath">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="datastoreisopath" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditMacosxGuestid" inputLabelExpression="feature:guestid">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="guestid" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditVmwarefoldersDatacentername" inputLabelExpression="feature:datacentername">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="datacentername" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditVmwarefoldersDatastorename" inputLabelExpression="feature:datastorename">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="datastorename" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditVmwarefoldersClustername" inputLabelExpression="feature:clustername">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="clustername" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditVmwarefoldersHostsystemname" inputLabelExpression="feature:hostsystemname">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="hostsystemname" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditVmwarefoldersInventorypath" inputLabelExpression="feature:inventorypath">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="inventorypath" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditOs_tpl_vmwareDatastoreisopath" inputLabelExpression="feature:datastoreisopath">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="datastoreisopath" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditOs_tpl_vmwareGuestid" inputLabelExpression="feature:guestid">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="guestid" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditSsh_user_dataOcciComputeUserdata" inputLabelExpression="feature:occiComputeUserdata">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiComputeUserdata" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditSsh_user_dataPassword" inputLabelExpression="feature:password">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="password" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditSsh_user_dataOcciComputeUserdataFile" inputLabelExpression="feature:occiComputeUserdataFile">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiComputeUserdataFile" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditSsh_user_dataUser" inputLabelExpression="feature:user">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="user" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:PopupMenu" name="CRUD operations" precondition="[self.oclIsKindOf(Entity)/]">
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Create">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Entity).occiCreate()/]"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Retrieve">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Entity).occiRetrieve()/]"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Update">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Entity).occiUpdate()/]"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Delete">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Entity).occiDelete()/]"/>
+              </initialOperation>
+            </menuItemDescription>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+<!--
+    <ownedJavaExtensions qualifiedClassName="org.occiware.clouddesigner.occi.design.services.DesignServices"/>
+-->
+  </ownedViewpoints>
+</description:Group>

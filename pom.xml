@@ -173,6 +173,9 @@
         <module>plugins/org.eclipse.cmf.occi.multicloud.monitoring.zabbix.connector</module>
         <module>plugins/org.eclipse.cmf.occi.multicloud.monitoring.zabbix.design</module>
         
+        <!-- designer for multiple extension (merged designers and customs) -->
+        <module>plugins/org.eclipse.cmf.occi.multicloud.vmware.monitoring.design</module>
+        
         <!-- Releng -->
         <module>features/org.eclipse.cmf.occi.multicloud</module>
     </modules>

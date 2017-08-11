@@ -508,6 +508,38 @@ litigation.
         install-size="0"
         version="0.0.0"
         unpack="false"/>
+    <!-- Designed for Elastic OCCI (elasticzabbix + vmware + ElasticOCCI) -->
+    <plugin
+        id="org.eclipse.cmf.occi.multicloud.elasticzabbix"
+        download-size="0"
+        install-size="0"
+        version="0.0.0"
+        unpack="false"/>
+    <plugin
+        id="org.eclipse.cmf.occi.multicloud.elasticzabbix.edit"
+        download-size="0"
+        install-size="0"
+        version="0.0.0"
+        unpack="false"/>
+    <plugin
+        id="org.eclipse.cmf.occi.multicloud.elasticzabbix.editor"
+        download-size="0"
+        install-size="0"
+        version="0.0.0"
+        unpack="false"/>
+    <plugin
+        id="org.eclipse.cmf.occi.multicloud.elasticzabbix.design"
+        download-size="0"
+        install-size="0"
+        version="0.0.0"
+        unpack="false"/>
+    <plugin
+        id="org.eclipse.cmf.occi.multicloud.elasticzabbix.connector"
+        download-size="0"
+        install-size="0"
+        version="0.0.0"
+        unpack="false"/>
+        
         <!-- Merged designer extensions -->
     <plugin
         id="org.eclipse.cmf.occi.multicloud.vmware.monitoring.design"

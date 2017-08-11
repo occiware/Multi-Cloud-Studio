@@ -10,7 +10,7 @@
  * - Christophe Gourdin <christophe.gourdin@inria.fr>
  *
  */
-package org.eclipse.cmf.occi.multicloud.monitoring.connector.utils;
+package org.eclipse.cmf.occi.multicloud.elasticzabbix.connector.utils;
 
 import java.util.Iterator;
 import java.util.List;
@@ -20,30 +20,17 @@ import org.eclipse.cmf.occi.core.AttributeState;
 import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.core.OCCIFactory;
-import org.eclipse.emf.common.command.Command;
-import org.eclipse.emf.transaction.RecordingCommand;
-import org.eclipse.emf.transaction.RollbackException;
-import org.eclipse.emf.transaction.TransactionalCommandStack;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * 
- * @author Christophe Gourdin
- *
- */
-public class MixinBaseUtils {
-	private static Logger LOGGER = LoggerFactory.getLogger(MixinBaseUtils.class);
-
+public class MixinBaseUtilsHeadless {
+	private static Logger LOGGER = LoggerFactory.getLogger(MixinBaseUtilsHeadless.class);
 	private static final String DELETE_ATTR = "delete";
 	private static final String ADD_ATTR = "add";
 	private static final String UPDATE_ATTR = "update";
 	
-	
 	/**
-	 * Create, update or delete some attributes on model MixinBase.
+	 * Create, update or delete some attributes on model mixinBase.
 	 *  
 	 * @param mixinBase
 	 * @param attrsToCreate 
@@ -54,36 +41,16 @@ public class MixinBaseUtils {
 			final Map<String, String> attrsToUpdate, final List<String> attrsToDelete) {
 		
 		if (!UIDialog.isStandAlone()) {
-			LOGGER.info("Updating attributes : UI Mode.");
-			// Cloud designer usage.
-			TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(mixinBase.eResource().getResourceSet());
-			Command cmd = new RecordingCommand(domain) {
-				@Override
-				protected void doExecute() {
-					executeOperations(mixinBase, attrsToCreate, attrsToUpdate, attrsToDelete);
-				}
-			};
-			try {
-				TransactionalCommandStack transactionCmd = (TransactionalCommandStack) domain.getCommandStack();
-				transactionCmd.execute(cmd, null); // default options
-			} catch (RollbackException rbe) {
-				LOGGER.error(rbe.getStatus().toString());
-			} catch (InterruptedException ex) {
-				LOGGER.error(ex.getMessage());
-			}
+			LOGGER.warn("This method must be used in a headless environment ! Check your caller code.");
+			
 		} else {
-			LOGGER.warn("This method (MixinBaseUtils.updateAttributes(....) must be called only on a designer environment (GUI) !");
+			// Standalone connector usage.
+			LOGGER.info("Updating attributes : Headless mode");
+			executeOperations(mixinBase, attrsToCreate, attrsToUpdate, attrsToDelete);
 		}
 	}
 	
-	/**
-	 * Launch update operations.
-	 * @param MixinBase
-	 * @param attrsToCreate
-	 * @param attrsToUpdate
-	 * @param attrsToDelete
-	 */
-	private static void executeOperations(MixinBase mixinBase, Map<String, String> attrsToCreate,
+	private static void executeOperations(final MixinBase mixinBase, Map<String, String> attrsToCreate,
 			Map<String, String> attrsToUpdate, List<String> attrsToDelete) {
 		String attrName;
 		String attrValue;
@@ -112,7 +79,7 @@ public class MixinBaseUtils {
 		
 		
 	}
-
+	
 	private static void executeOperation(final MixinBase mixinBase, final String operation, final AttributeState attr,
 			final String attrName, final String attrValue) {
 		switch (operation) {
@@ -127,7 +94,7 @@ public class MixinBaseUtils {
 
 			Iterator<AttributeState> it = mixinBase.getAttributes().iterator();
 			while (it.hasNext()) {
-				if (it.next().equals(attr)) {
+				if (it.equals(attr)) {
 					it.remove();
 					break;
 				}
@@ -162,7 +129,7 @@ public class MixinBaseUtils {
 	 * @return an AttributeState object, if attribute doesnt exist, null value
 	 *         is returned.
 	 */
-	public static AttributeState getAttributeStateObject(MixinBase mixinBase, final String key) {
+	private static AttributeState getAttributeStateObject(MixinBase mixinBase, final String key) {
 		AttributeState attr = null;
 		if (key == null) {
 			return attr;
@@ -177,4 +144,5 @@ public class MixinBaseUtils {
 
 		return attr;
 	}
+	
 }

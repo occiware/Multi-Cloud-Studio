@@ -129,7 +129,7 @@ public class MixinBaseUtilsHeadless {
 	 * @return an AttributeState object, if attribute doesnt exist, null value
 	 *         is returned.
 	 */
-	private static AttributeState getAttributeStateObject(MixinBase mixinBase, final String key) {
+	public static AttributeState getAttributeStateObject(MixinBase mixinBase, final String key) {
 		AttributeState attr = null;
 		if (key == null) {
 			return attr;

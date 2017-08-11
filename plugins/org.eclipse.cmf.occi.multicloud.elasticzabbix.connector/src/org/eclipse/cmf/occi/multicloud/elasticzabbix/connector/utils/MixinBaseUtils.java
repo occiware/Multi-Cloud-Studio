@@ -10,7 +10,7 @@
  * - Christophe Gourdin <christophe.gourdin@inria.fr>
  *
  */
-package org.eclipse.cmf.occi.multicloud.monitoring.connector.utils;
+package org.eclipse.cmf.occi.multicloud.elasticzabbix.connector.utils;
 
 import java.util.Iterator;
 import java.util.List;

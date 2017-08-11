@@ -65,6 +65,7 @@ public class CloudsensorConnector extends CloudsensorImpl {
 	 */
 	CloudsensorConnector() {
 		LOGGER.debug("Constructor called on " + this);
+		System.out.println("Constructor called on " + this);
 	}
 	// End of user code
 	//

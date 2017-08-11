@@ -11,11 +11,8 @@
    </extension>
    <extension
          point="org.eclipse.ui.newWizards">
-      <category
-            id="org.eclipse.cmf.occi.core.category.ID"
-            name="OCCI Studio">
-      </category>
       <wizard
+     		category="org.eclipse.cmf.occi.core.occi-studio.category.ID"
             class="org.eclipse.cmf.occi.multicloud.vmware.monitoring.design.wizard.NewConfigurationWizard"
             icon="platform:/plugin/org.eclipse.cmf.occi.core.edit/icons/full/obj16/Configuration.gif"
             id="org.eclipse.cmf.occi.multicloud.vmware.monitoring.design.wizard.NewConfigurationWizard"

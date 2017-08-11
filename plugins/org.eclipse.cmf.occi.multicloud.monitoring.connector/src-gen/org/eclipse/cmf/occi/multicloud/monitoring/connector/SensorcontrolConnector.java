@@ -20,13 +20,11 @@ import org.slf4j.LoggerFactory;
 import cloudmonitoring.impl.SensorcontrolImpl;
 
 /**
- * Connector implementation for the OCCI kind:
- * - scheme: http://occiware.org/occi/multicloud/monitoring#
- * - term: sensorcontrol
- * - title: 
+ * Connector implementation for the OCCI kind: - scheme:
+ * http://occiware.org/occi/multicloud/monitoring# - term: sensorcontrol -
+ * title:
  */
-public class SensorcontrolConnector extends SensorcontrolImpl
-{
+public class SensorcontrolConnector extends SensorcontrolImpl {
 	/**
 	 * Initialize the logger.
 	 */
@@ -36,42 +34,38 @@ public class SensorcontrolConnector extends SensorcontrolImpl
 	/**
 	 * Constructs a sensorcontrol connector.
 	 */
-	SensorcontrolConnector()
-	{
+	SensorcontrolConnector() {
 		LOGGER.debug("Constructor called on " + this);
-		// TODO: Implement this constructor.
+		System.out.println("Constructor called on " + this);
 	}
+
 	// End of user code
 	// Start of user code Sensorcontrol_Kind_startMonitoring_action
 	/**
-	 * Implement OCCI action:
-     * - scheme: http://occiware.org/occi/multicloud/monitoring/sensorcontrol/action#
-     * - term: startmonitoring
-     * - title: Start the monitoring system for this sensor
+	 * Implement OCCI action: - scheme:
+	 * http://occiware.org/occi/multicloud/monitoring/sensorcontrol/action# - term:
+	 * startmonitoring - title: Start the monitoring system for this sensor
 	 */
 	@Override
-	public void startmonitoring()
-	{
+	public void startmonitoring() {
 		LOGGER.debug("Action startmonitoring() called on " + this);
 
 		// TODO: Implement how to startmonitoring this sensorcontrol.
 	}
-		// End of user code
+	// End of user code
 
 	// Start of user code Sensorcontrol_Kind_stopMonitoring_action
 	/**
-	 * Implement OCCI action:
-     * - scheme: http://occiware.org/occi/multicloud/monitoring/sensorcontrol/action#
-     * - term: stopmonitoring
-     * - title: Stop monitoring for this sensor
+	 * Implement OCCI action: - scheme:
+	 * http://occiware.org/occi/multicloud/monitoring/sensorcontrol/action# - term:
+	 * stopmonitoring - title: Stop monitoring for this sensor
 	 */
 	@Override
-	public void stopmonitoring()
-	{
+	public void stopmonitoring() {
 		LOGGER.debug("Action stopmonitoring() called on " + this);
 
 		// TODO: Implement how to stopmonitoring this sensorcontrol.
 	}
-		// End of user code
+	// End of user code
 
-}	
+}

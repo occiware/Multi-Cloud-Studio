@@ -21,4 +21,5 @@ Require-Bundle: org.slf4j.api,
  org.eclipse.cmf.occi.multicloud.monitoring.connector,
  org.eclipse.cmf.occi.infrastructure,
  org.eclipse.cmf.occi.multicloud.vmware
-Export-Package: org.eclipse.cmf.occi.multicloud.monitoring.zabbix.connector.tinom
+Export-Package: org.eclipse.cmf.occi.multicloud.monitoring.zabbix.connector,
+ org.eclipse.cmf.occi.multicloud.monitoring.zabbix.connector.tinom

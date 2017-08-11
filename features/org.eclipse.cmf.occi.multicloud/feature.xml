@@ -349,12 +349,12 @@ litigation.
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-   <plugin
+<!--   <plugin
          id="org.eclipse.cmf.occi.infrastructure.design"
          download-size="0"
          install-size="0"
          version="0.0.0"
-         unpack="false"/>
+         unpack="false"/> -->
    <plugin
          id="org.eclipse.cmf.occi.crtp"
          download-size="0"
@@ -379,12 +379,12 @@ litigation.
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-   <plugin
+<!--   <plugin
          id="org.eclipse.cmf.occi.crtp.design"
          download-size="0"
          install-size="0"
          version="0.0.0"
-         unpack="false"/>
+         unpack="false"/> -->
    <plugin
          id="org.eclipse.cmf.occi.monitoring"
          download-size="0"
@@ -409,12 +409,12 @@ litigation.
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-   <plugin
+<!--   <plugin
          id="org.eclipse.cmf.occi.monitoring.design"
          download-size="0"
          install-size="0"
          version="0.0.0"
-         unpack="false"/>
+         unpack="false"/> -->
     <!-- VMware part -->
     <plugin
         id="org.eclipse.cmf.occi.multicloud.vmware"
@@ -434,12 +434,12 @@ litigation.
         install-size="0"
         version="0.0.0"
         unpack="false"/>
-    <plugin
+<!--    <plugin
         id="org.eclipse.cmf.occi.multicloud.vmware.design"
         download-size="0"
         install-size="0"
         version="0.0.0"
-        unpack="false"/>
+        unpack="false"/> -->
     <plugin
         id="org.eclipse.cmf.occi.multicloud.vmware.connector"
         download-size="0"
@@ -465,12 +465,12 @@ litigation.
         install-size="0"
         version="0.0.0"
         unpack="false"/>
-    <plugin
+<!--    <plugin
         id="org.eclipse.cmf.occi.multicloud.monitoring.design"
         download-size="0"
         install-size="0"
         version="0.0.0"
-        unpack="false"/>
+        unpack="false"/> -->
     <plugin
         id="org.eclipse.cmf.occi.multicloud.monitoring.connector"
         download-size="0"
@@ -496,12 +496,12 @@ litigation.
         install-size="0"
         version="0.0.0"
         unpack="false"/>
-    <plugin
+<!--    <plugin
         id="org.eclipse.cmf.occi.multicloud.monitoring.zabbix.design"
         download-size="0"
         install-size="0"
         version="0.0.0"
-        unpack="false"/>
+        unpack="false"/> -->
     <plugin
         id="org.eclipse.cmf.occi.multicloud.monitoring.zabbix.connector"
         download-size="0"

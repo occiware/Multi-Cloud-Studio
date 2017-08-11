@@ -47,6 +47,7 @@ public class EmfpublisherConnector extends EmfpublisherImpl
 	 */
 	EmfpublisherConnector() {
 		LOGGER.debug("Constructor called on " + this);
+		System.out.println("Constructor called on " + this);
 	}
 	// End of user code
 	

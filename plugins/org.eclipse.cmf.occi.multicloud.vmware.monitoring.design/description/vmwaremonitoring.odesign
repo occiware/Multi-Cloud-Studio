@@ -65,7 +65,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="CloudsensorLinksEdge" sourceMapping="//@ownedViewpoints[name='VmwareMonitoringConfiguration']/@ownedRepresentations[name='VmwareMonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='CloudsensorContainer']" targetFinderExpression="feature:links">
+        <edgeMappings name="CloudsensorLinksEdge" sourceMapping="//@ownedViewpoints[name='VmwareMonitoringConfiguration']/@ownedRepresentations[name='VmwareMonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='CloudsensorContainer']" targetMapping="//@ownedViewpoints[name='VmwareMonitoringConfiguration']/@ownedRepresentations[name='VmwareMonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ZabbixcollectorContainer']" targetFinderExpression="feature:links">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription>
@@ -73,7 +73,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="ZabbixcollectorTargetEdge" sourceMapping="//@ownedViewpoints[name='VmwareMonitoringConfiguration']/@ownedRepresentations[name='VmwareMonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ZabbixcollectorContainer']" targetFinderExpression="feature:target">
+        <edgeMappings name="ZabbixcollectorTargetEdge" sourceMapping="//@ownedViewpoints[name='VmwareMonitoringConfiguration']/@ownedRepresentations[name='VmwareMonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ZabbixcollectorContainer']" targetMapping="//@ownedViewpoints[name='VmwareMonitoringConfiguration']/@ownedRepresentations[name='VmwareMonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='CloudsensorContainer'] //@ownedViewpoints[name='VmwareMonitoringConfiguration']/@ownedRepresentations[name='VmwareMonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='InstancevmwareContainer']" targetFinderExpression="feature:target">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription>
@@ -81,7 +81,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="ZabbixcollectorEdge" domainClass="Zabbixcollector" useDomainElement="true">
+        <edgeMappings name="ZabbixcollectorEdge" sourceMapping="//@ownedViewpoints[name='VmwareMonitoringConfiguration']/@ownedRepresentations[name='VmwareMonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='CloudsensorContainer']" targetMapping="//@ownedViewpoints[name='VmwareMonitoringConfiguration']/@ownedRepresentations[name='VmwareMonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='CloudsensorContainer'] //@ownedViewpoints[name='VmwareMonitoringConfiguration']/@ownedRepresentations[name='VmwareMonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='InstancevmwareContainer']" domainClass="Zabbixcollector" useDomainElement="true">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription>
@@ -1161,7 +1161,7 @@
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
           </style>
         </containerMappings>
         <containerMappings name="ZabbixcollectorContainer" labelDirectEdit="//@ownedViewpoints[name='VmwareMonitoringConfiguration']/@ownedRepresentations[name='VmwareMonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditEntityTitle']" semanticCandidatesExpression="[resources.links->filter(Zabbixcollector)/]" domainClass="Zabbixcollector">
@@ -1269,7 +1269,7 @@
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
           </style>
         </containerMappings>
         <toolSections name="Vmware resources">

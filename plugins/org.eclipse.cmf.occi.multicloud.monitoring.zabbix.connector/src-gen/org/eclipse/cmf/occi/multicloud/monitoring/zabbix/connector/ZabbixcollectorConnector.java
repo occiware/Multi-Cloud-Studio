@@ -69,6 +69,7 @@ public class ZabbixcollectorConnector extends org.eclipse.cmf.occi.multicloud.mo
 	 */
 	ZabbixcollectorConnector() {
 		LOGGER.debug("Constructor called on " + this);
+		System.out.println("Constructor called on " + this);
 	}
 	// End of user code
 

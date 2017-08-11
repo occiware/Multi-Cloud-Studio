@@ -45,6 +45,7 @@ public class ZabbixapiconnectConnector
 	 */
 	ZabbixapiconnectConnector() {
 		LOGGER.debug("Constructor called on " + this);
+		System.out.println("Constructor called on " + this);
 	}
 	// End of user code
 
@@ -633,6 +634,7 @@ public class ZabbixapiconnectConnector
 
 	/**
 	 * Loggout and invalidate the authToken.
+	 * 
 	 * @param authToken
 	 */
 	public void LogoutZabbixAPI(String authToken) {

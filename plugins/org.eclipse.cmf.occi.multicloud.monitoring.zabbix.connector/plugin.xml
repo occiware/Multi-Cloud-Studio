@@ -18,7 +18,7 @@
    <extension point="org.eclipse.emf.ecore.factory_override">
       <factory
             uri="http://occiware.org/occi/multicloud/monitoring/zabbix/ecore"
-            class="org.eclipse.cmf.occi.multicloud.monitoring.zabbix.connector.tinom.ConnectorFactory"/>
+            class="org.eclipse.cmf.occi.multicloud.monitoring.zabbix.connector.ConnectorFactory"/>
    </extension>
 
 </plugin>

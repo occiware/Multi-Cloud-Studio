@@ -34,6 +34,8 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *   <li>{@link org.eclipse.cmf.occi.multicloud.elasticocci.Strategycpu#getStrategyCPUStepCPUDecrease <em>Strategy CPU Step CPU Decrease</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.elasticocci.Strategycpu#getStrategyCPUStepCPUIncrease <em>Strategy CPU Step CPU Increase</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.elasticocci.Strategycpu#getStrategyCPUDate <em>Strategy CPU Date</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.elasticocci.Strategycpu#getStrategyCPUIncreaseRelationalOp <em>Strategy CPU Increase Relational Op</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.elasticocci.Strategycpu#getStrategyCPUDecreaseRelationalOp <em>Strategy CPU Decrease Relational Op</em>}</li>
  * </ul>
  *
  * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategycpu()
@@ -43,6 +45,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 public interface Strategycpu extends MixinBase, Strategycompute {
 	/**
 	 * Returns the value of the '<em><b>Strategy CPU Upper Limit</b></em>' attribute.
+	 * The default value is <code>"7"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -51,7 +54,7 @@ public interface Strategycpu extends MixinBase, Strategycompute {
 	 * @return the value of the '<em>Strategy CPU Upper Limit</em>' attribute.
 	 * @see #setStrategyCPUUpperLimit(Integer)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategycpu_StrategyCPUUpperLimit()
-	 * @model dataType="org.eclipse.cmf.occi.core.Integer"
+	 * @model default="7" dataType="org.eclipse.cmf.occi.core.Integer"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategycpu!StrategyCPUUpperLimit'"
 	 * @generated
 	 */
@@ -69,6 +72,7 @@ public interface Strategycpu extends MixinBase, Strategycompute {
 
 	/**
 	 * Returns the value of the '<em><b>Strategy CPU Lower Limit</b></em>' attribute.
+	 * The default value is <code>"1"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -77,7 +81,7 @@ public interface Strategycpu extends MixinBase, Strategycompute {
 	 * @return the value of the '<em>Strategy CPU Lower Limit</em>' attribute.
 	 * @see #setStrategyCPULowerLimit(Integer)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategycpu_StrategyCPULowerLimit()
-	 * @model dataType="org.eclipse.cmf.occi.core.Integer"
+	 * @model default="1" dataType="org.eclipse.cmf.occi.core.Integer"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategycpu!StrategyCPULowerLimit'"
 	 * @generated
 	 */
@@ -95,6 +99,7 @@ public interface Strategycpu extends MixinBase, Strategycompute {
 
 	/**
 	 * Returns the value of the '<em><b>Strategy CPU Mode</b></em>' attribute.
+	 * The default value is <code>"dynamic"</code>.
 	 * The literals are from the enumeration {@link org.eclipse.cmf.occi.multicloud.elasticocci.ModeType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -105,7 +110,8 @@ public interface Strategycpu extends MixinBase, Strategycompute {
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ModeType
 	 * @see #setStrategyCPUMode(ModeType)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategycpu_StrategyCPUMode()
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategycpu!StrategyCPUMode'"
+	 * @model default="dynamic"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategycpu!StrategyCPUMode'"
 	 * @generated
 	 */
 	ModeType getStrategyCPUMode();
@@ -123,6 +129,7 @@ public interface Strategycpu extends MixinBase, Strategycompute {
 
 	/**
 	 * Returns the value of the '<em><b>Strategy CPU Direction</b></em>' attribute.
+	 * The default value is <code>"up"</code>.
 	 * The literals are from the enumeration {@link org.eclipse.cmf.occi.multicloud.elasticocci.DirectionType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -133,7 +140,8 @@ public interface Strategycpu extends MixinBase, Strategycompute {
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.DirectionType
 	 * @see #setStrategyCPUDirection(DirectionType)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategycpu_StrategyCPUDirection()
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategycpu!StrategyCPUDirection'"
+	 * @model default="up"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategycpu!StrategyCPUDirection'"
 	 * @generated
 	 */
 	DirectionType getStrategyCPUDirection();
@@ -151,6 +159,7 @@ public interface Strategycpu extends MixinBase, Strategycompute {
 
 	/**
 	 * Returns the value of the '<em><b>Strategy CPU Step CPU Decrease</b></em>' attribute.
+	 * The default value is <code>"1"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -159,7 +168,7 @@ public interface Strategycpu extends MixinBase, Strategycompute {
 	 * @return the value of the '<em>Strategy CPU Step CPU Decrease</em>' attribute.
 	 * @see #setStrategyCPUStepCPUDecrease(Integer)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategycpu_StrategyCPUStepCPUDecrease()
-	 * @model dataType="org.eclipse.cmf.occi.core.Integer"
+	 * @model default="1" dataType="org.eclipse.cmf.occi.core.Integer"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategycpu!StrategyCPUStepCPUDecrease'"
 	 * @generated
 	 */
@@ -177,6 +186,7 @@ public interface Strategycpu extends MixinBase, Strategycompute {
 
 	/**
 	 * Returns the value of the '<em><b>Strategy CPU Step CPU Increase</b></em>' attribute.
+	 * The default value is <code>"1"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -185,7 +195,7 @@ public interface Strategycpu extends MixinBase, Strategycompute {
 	 * @return the value of the '<em>Strategy CPU Step CPU Increase</em>' attribute.
 	 * @see #setStrategyCPUStepCPUIncrease(Integer)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategycpu_StrategyCPUStepCPUIncrease()
-	 * @model dataType="org.eclipse.cmf.occi.core.Integer"
+	 * @model default="1" dataType="org.eclipse.cmf.occi.core.Integer"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategycpu!StrategyCPUStepCPUIncrease'"
 	 * @generated
 	 */
@@ -226,6 +236,66 @@ public interface Strategycpu extends MixinBase, Strategycompute {
 	 * @generated
 	 */
 	void setStrategyCPUDate(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Strategy CPU Increase Relational Op</b></em>' attribute.
+	 * The default value is <code>"greaterThan"</code>.
+	 * The literals are from the enumeration {@link org.eclipse.cmf.occi.multicloud.elasticocci.RelationalType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Strategy CPU Increase Relational Op</em>' attribute.
+	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.RelationalType
+	 * @see #setStrategyCPUIncreaseRelationalOp(RelationalType)
+	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategycpu_StrategyCPUIncreaseRelationalOp()
+	 * @model default="greaterThan"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategycpu!StrategyCPUIncreaseRelationalOp'"
+	 * @generated
+	 */
+	RelationalType getStrategyCPUIncreaseRelationalOp();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.elasticocci.Strategycpu#getStrategyCPUIncreaseRelationalOp <em>Strategy CPU Increase Relational Op</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Strategy CPU Increase Relational Op</em>' attribute.
+	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.RelationalType
+	 * @see #getStrategyCPUIncreaseRelationalOp()
+	 * @generated
+	 */
+	void setStrategyCPUIncreaseRelationalOp(RelationalType value);
+
+	/**
+	 * Returns the value of the '<em><b>Strategy CPU Decrease Relational Op</b></em>' attribute.
+	 * The default value is <code>"lessThan"</code>.
+	 * The literals are from the enumeration {@link org.eclipse.cmf.occi.multicloud.elasticocci.RelationalType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Strategy CPU Decrease Relational Op</em>' attribute.
+	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.RelationalType
+	 * @see #setStrategyCPUDecreaseRelationalOp(RelationalType)
+	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategycpu_StrategyCPUDecreaseRelationalOp()
+	 * @model default="lessThan"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategycpu!StrategyCPUDecreaseRelationalOp'"
+	 * @generated
+	 */
+	RelationalType getStrategyCPUDecreaseRelationalOp();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.elasticocci.Strategycpu#getStrategyCPUDecreaseRelationalOp <em>Strategy CPU Decrease Relational Op</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Strategy CPU Decrease Relational Op</em>' attribute.
+	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.RelationalType
+	 * @see #getStrategyCPUDecreaseRelationalOp()
+	 * @generated
+	 */
+	void setStrategyCPUDecreaseRelationalOp(RelationalType value);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -18,6 +18,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="Double" instanceClassName="java.lang.Double"/>
   <eClassifiers xsi:type="ecore:EDataType" name="DateType" instanceClassName="java.lang.String"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="RelationalType">
+    <eLiterals name="greaterThan" literal="greaterThan"/>
+    <eLiterals name="lessThan" value="1" literal="lessThan"/>
+    <eLiterals name="greaterThanorEqual" value="2" literal="greaterThanorEqual"/>
+    <eLiterals name="lessThanorEqual" value="3" literal="lessThanorEqual"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Elasticcontroller" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Resource">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value=""/>
@@ -43,52 +49,37 @@
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Strategycompute" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase #//Strategy">
-    <eOperations name="createpolicy">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
-      </eAnnotations>
-      <eParameters name="metricUtilization" eType="#//Double">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value=""/>
-        </eAnnotations>
-      </eParameters>
-      <eParameters name="op" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value=""/>
-        </eAnnotations>
-      </eParameters>
-      <eParameters name="threshold" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value=""/>
-        </eAnnotations>
-      </eParameters>
-    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="StrategyComputeUthreshold"
-        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer">
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer"
+        defaultValueLiteral="90">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value=""/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="StrategyComputeBreathDown"
-        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer">
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer"
+        defaultValueLiteral="20000">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value=""/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="StrategyComputeBreathUp"
-        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer">
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer"
+        defaultValueLiteral="40000">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value=""/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="StrategyComputePollTime"
-        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer">
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer"
+        defaultValueLiteral="10000">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value=""/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="StrategyComputeLthreshold"
-        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer">
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer"
+        defaultValueLiteral="70">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value=""/>
       </eAnnotations>
@@ -112,40 +103,58 @@
       </eAnnotations>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="StrategyCPUUpperLimit"
-        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer">
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer"
+        defaultValueLiteral="7">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value=""/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="StrategyCPULowerLimit"
-        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer">
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer"
+        defaultValueLiteral="1">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value=""/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="StrategyCPUMode" eType="#//ModeType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="StrategyCPUMode" eType="#//ModeType"
+        defaultValueLiteral="dynamic">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value=""/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="StrategyCPUDirection" eType="#//DirectionType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="StrategyCPUDirection" eType="#//DirectionType"
+        defaultValueLiteral="up">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value=""/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="StrategyCPUStepCPUDecrease"
-        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer">
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer"
+        defaultValueLiteral="1">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value=""/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="StrategyCPUStepCPUIncrease"
-        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer">
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer"
+        defaultValueLiteral="1">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value=""/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="StrategyCPUDate" eType="#//DateType">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="StrategyCPUIncreaseRelationalOp"
+        eType="#//RelationalType" defaultValueLiteral="greaterThan">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="StrategyCPUDecreaseRelationalOp"
+        eType="#//RelationalType" defaultValueLiteral="lessThan">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value=""/>
       </eAnnotations>
@@ -168,42 +177,57 @@
         <details key="documentation" value=""/>
       </eAnnotations>
     </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="StrategyMemoryMode" eType="#//ModeType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="StrategyMemoryMode" eType="#//ModeType"
+        defaultValueLiteral="dynamic">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value=""/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="StrategyMemoryDirection"
-        eType="#//DirectionType">
+        eType="#//DirectionType" defaultValueLiteral="up">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value=""/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="StrategyMemoryStepMemDecrease"
-        eType="#//Double">
+        eType="#//Double" defaultValueLiteral="0.25">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value=""/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="StrategyMemoryStepMemIncrease"
-        eType="#//Double">
+        eType="#//Double" defaultValueLiteral="0.5">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value=""/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="StrategyMemoryUpperLimit"
-        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer">
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer"
+        defaultValueLiteral="5">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value=""/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="StrategyMemoryLowerLimit"
-        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer">
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer"
+        defaultValueLiteral="1">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value=""/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="StrategyCPUDate" eType="#//DateType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="StrategyMemoryDate" eType="#//DateType">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="StrategyMemoryIncreaseRelationalOp"
+        eType="#//RelationalType" defaultValueLiteral="greaterThan">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="StrategyMemoryDecreaseRelationalOp"
+        eType="#//RelationalType" defaultValueLiteral="lessThan">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value=""/>
       </eAnnotations>

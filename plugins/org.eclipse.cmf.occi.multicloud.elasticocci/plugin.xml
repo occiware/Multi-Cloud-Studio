@@ -54,8 +54,7 @@
       <!-- @generated elasticocci -->
       <package
             uri="http://occiware.org/occi/multicloud/elasticocci/ecore"
-            class="org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage"
-            genModel="model/elasticocci.genmodel"/>
+            class="org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage"/>
    </extension>
 
 </plugin>

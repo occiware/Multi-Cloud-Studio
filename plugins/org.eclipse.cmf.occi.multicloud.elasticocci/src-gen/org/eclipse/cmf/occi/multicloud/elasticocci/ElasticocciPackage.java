@@ -543,22 +543,13 @@ public interface ElasticocciPackage extends EPackage {
 	int STRATEGYCOMPUTE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Createpolicy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRATEGYCOMPUTE___CREATEPOLICY__DOUBLE_STRING_INTEGER = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
-
-	/**
 	 * The number of operations of the '<em>Strategycompute</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCOMPUTE_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
+	int STRATEGYCOMPUTE_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.elasticocci.impl.StrategycpuImpl <em>Strategycpu</em>}' class.
@@ -706,22 +697,31 @@ public interface ElasticocciPackage extends EPackage {
 	int STRATEGYCPU__STRATEGY_CPU_DATE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 11;
 
 	/**
+	 * The feature id for the '<em><b>Strategy CPU Increase Relational Op</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRATEGYCPU__STRATEGY_CPU_INCREASE_RELATIONAL_OP = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 12;
+
+	/**
+	 * The feature id for the '<em><b>Strategy CPU Decrease Relational Op</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRATEGYCPU__STRATEGY_CPU_DECREASE_RELATIONAL_OP = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 13;
+
+	/**
 	 * The number of structural features of the '<em>Strategycpu</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCPU_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 12;
-
-	/**
-	 * The operation id for the '<em>Createpolicy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRATEGYCPU___CREATEPOLICY__DOUBLE_STRING_INTEGER = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
+	int STRATEGYCPU_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 14;
 
 	/**
 	 * The operation id for the '<em>Start</em>' operation.
@@ -730,7 +730,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCPU___START = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
+	int STRATEGYCPU___START = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Stop</em>' operation.
@@ -739,7 +739,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCPU___STOP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 3;
+	int STRATEGYCPU___STOP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Applies Constraint</em>' operation.
@@ -748,7 +748,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCPU___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 4;
+	int STRATEGYCPU___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Strategycpu</em>' class.
@@ -757,7 +757,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCPU_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 5;
+	int STRATEGYCPU_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.elasticocci.impl.StrategymemoryImpl <em>Strategymemory</em>}' class.
@@ -896,13 +896,31 @@ public interface ElasticocciPackage extends EPackage {
 	int STRATEGYMEMORY__STRATEGY_MEMORY_LOWER_LIMIT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 10;
 
 	/**
-	 * The feature id for the '<em><b>Strategy CPU Date</b></em>' attribute.
+	 * The feature id for the '<em><b>Strategy Memory Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYMEMORY__STRATEGY_CPU_DATE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 11;
+	int STRATEGYMEMORY__STRATEGY_MEMORY_DATE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 11;
+
+	/**
+	 * The feature id for the '<em><b>Strategy Memory Increase Relational Op</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRATEGYMEMORY__STRATEGY_MEMORY_INCREASE_RELATIONAL_OP = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 12;
+
+	/**
+	 * The feature id for the '<em><b>Strategy Memory Decrease Relational Op</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRATEGYMEMORY__STRATEGY_MEMORY_DECREASE_RELATIONAL_OP = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 13;
 
 	/**
 	 * The number of structural features of the '<em>Strategymemory</em>' class.
@@ -911,16 +929,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYMEMORY_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 12;
-
-	/**
-	 * The operation id for the '<em>Createpolicy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRATEGYMEMORY___CREATEPOLICY__DOUBLE_STRING_INTEGER = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
+	int STRATEGYMEMORY_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 14;
 
 	/**
 	 * The operation id for the '<em>Stop</em>' operation.
@@ -929,7 +938,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYMEMORY___STOP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
+	int STRATEGYMEMORY___STOP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Start</em>' operation.
@@ -938,7 +947,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYMEMORY___START = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 3;
+	int STRATEGYMEMORY___START = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Applies Constraint</em>' operation.
@@ -947,7 +956,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYMEMORY___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 4;
+	int STRATEGYMEMORY___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Strategymemory</em>' class.
@@ -956,7 +965,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYMEMORY_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 5;
+	int STRATEGYMEMORY_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.elasticocci.ModeType <em>Mode Type</em>}' enum.
@@ -979,6 +988,16 @@ public interface ElasticocciPackage extends EPackage {
 	int DIRECTION_TYPE = 7;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.elasticocci.RelationalType <em>Relational Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.RelationalType
+	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.impl.ElasticocciPackageImpl#getRelationalType()
+	 * @generated
+	 */
+	int RELATIONAL_TYPE = 8;
+
+	/**
 	 * The meta object id for the '<em>Double</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -986,7 +1005,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.impl.ElasticocciPackageImpl#getDouble()
 	 * @generated
 	 */
-	int DOUBLE = 8;
+	int DOUBLE = 9;
 
 	/**
 	 * The meta object id for the '<em>Date Type</em>' data type.
@@ -996,7 +1015,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.impl.ElasticocciPackageImpl#getDateType()
 	 * @generated
 	 */
-	int DATE_TYPE = 9;
+	int DATE_TYPE = 10;
 
 
 	/**
@@ -1115,16 +1134,6 @@ public interface ElasticocciPackage extends EPackage {
 	EAttribute getStrategycompute_StrategyComputeLthreshold();
 
 	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.elasticocci.Strategycompute#createpolicy(java.lang.Double, java.lang.String, java.lang.Integer) <em>Createpolicy</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Createpolicy</em>' operation.
-	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.Strategycompute#createpolicy(java.lang.Double, java.lang.String, java.lang.Integer)
-	 * @generated
-	 */
-	EOperation getStrategycompute__Createpolicy__Double_String_Integer();
-
-	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.elasticocci.Strategycpu <em>Strategycpu</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1210,6 +1219,28 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getStrategycpu_StrategyCPUDate();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.elasticocci.Strategycpu#getStrategyCPUIncreaseRelationalOp <em>Strategy CPU Increase Relational Op</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Strategy CPU Increase Relational Op</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.Strategycpu#getStrategyCPUIncreaseRelationalOp()
+	 * @see #getStrategycpu()
+	 * @generated
+	 */
+	EAttribute getStrategycpu_StrategyCPUIncreaseRelationalOp();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.elasticocci.Strategycpu#getStrategyCPUDecreaseRelationalOp <em>Strategy CPU Decrease Relational Op</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Strategy CPU Decrease Relational Op</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.Strategycpu#getStrategyCPUDecreaseRelationalOp()
+	 * @see #getStrategycpu()
+	 * @generated
+	 */
+	EAttribute getStrategycpu_StrategyCPUDecreaseRelationalOp();
 
 	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.elasticocci.Strategycpu#start() <em>Start</em>}' operation.
@@ -1318,15 +1349,37 @@ public interface ElasticocciPackage extends EPackage {
 	EAttribute getStrategymemory_StrategyMemoryLowerLimit();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.elasticocci.Strategymemory#getStrategyCPUDate <em>Strategy CPU Date</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.elasticocci.Strategymemory#getStrategyMemoryDate <em>Strategy Memory Date</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Strategy CPU Date</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.Strategymemory#getStrategyCPUDate()
+	 * @return the meta object for the attribute '<em>Strategy Memory Date</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.Strategymemory#getStrategyMemoryDate()
 	 * @see #getStrategymemory()
 	 * @generated
 	 */
-	EAttribute getStrategymemory_StrategyCPUDate();
+	EAttribute getStrategymemory_StrategyMemoryDate();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.elasticocci.Strategymemory#getStrategyMemoryIncreaseRelationalOp <em>Strategy Memory Increase Relational Op</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Strategy Memory Increase Relational Op</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.Strategymemory#getStrategyMemoryIncreaseRelationalOp()
+	 * @see #getStrategymemory()
+	 * @generated
+	 */
+	EAttribute getStrategymemory_StrategyMemoryIncreaseRelationalOp();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.elasticocci.Strategymemory#getStrategyMemoryDecreaseRelationalOp <em>Strategy Memory Decrease Relational Op</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Strategy Memory Decrease Relational Op</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.Strategymemory#getStrategyMemoryDecreaseRelationalOp()
+	 * @see #getStrategymemory()
+	 * @generated
+	 */
+	EAttribute getStrategymemory_StrategyMemoryDecreaseRelationalOp();
 
 	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.elasticocci.Strategymemory#stop() <em>Stop</em>}' operation.
@@ -1377,6 +1430,16 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getDirectionType();
+
+	/**
+	 * Returns the meta object for enum '{@link org.eclipse.cmf.occi.multicloud.elasticocci.RelationalType <em>Relational Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Relational Type</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.RelationalType
+	 * @generated
+	 */
+	EEnum getRelationalType();
 
 	/**
 	 * Returns the meta object for data type '{@link java.lang.Double <em>Double</em>}'.
@@ -1520,14 +1583,6 @@ public interface ElasticocciPackage extends EPackage {
 		EAttribute STRATEGYCOMPUTE__STRATEGY_COMPUTE_LTHRESHOLD = eINSTANCE.getStrategycompute_StrategyComputeLthreshold();
 
 		/**
-		 * The meta object literal for the '<em><b>Createpolicy</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation STRATEGYCOMPUTE___CREATEPOLICY__DOUBLE_STRING_INTEGER = eINSTANCE.getStrategycompute__Createpolicy__Double_String_Integer();
-
-		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.elasticocci.impl.StrategycpuImpl <em>Strategycpu</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1592,6 +1647,22 @@ public interface ElasticocciPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute STRATEGYCPU__STRATEGY_CPU_DATE = eINSTANCE.getStrategycpu_StrategyCPUDate();
+
+		/**
+		 * The meta object literal for the '<em><b>Strategy CPU Increase Relational Op</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRATEGYCPU__STRATEGY_CPU_INCREASE_RELATIONAL_OP = eINSTANCE.getStrategycpu_StrategyCPUIncreaseRelationalOp();
+
+		/**
+		 * The meta object literal for the '<em><b>Strategy CPU Decrease Relational Op</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRATEGYCPU__STRATEGY_CPU_DECREASE_RELATIONAL_OP = eINSTANCE.getStrategycpu_StrategyCPUDecreaseRelationalOp();
 
 		/**
 		 * The meta object literal for the '<em><b>Start</b></em>' operation.
@@ -1676,12 +1747,28 @@ public interface ElasticocciPackage extends EPackage {
 		EAttribute STRATEGYMEMORY__STRATEGY_MEMORY_LOWER_LIMIT = eINSTANCE.getStrategymemory_StrategyMemoryLowerLimit();
 
 		/**
-		 * The meta object literal for the '<em><b>Strategy CPU Date</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Strategy Memory Date</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute STRATEGYMEMORY__STRATEGY_CPU_DATE = eINSTANCE.getStrategymemory_StrategyCPUDate();
+		EAttribute STRATEGYMEMORY__STRATEGY_MEMORY_DATE = eINSTANCE.getStrategymemory_StrategyMemoryDate();
+
+		/**
+		 * The meta object literal for the '<em><b>Strategy Memory Increase Relational Op</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRATEGYMEMORY__STRATEGY_MEMORY_INCREASE_RELATIONAL_OP = eINSTANCE.getStrategymemory_StrategyMemoryIncreaseRelationalOp();
+
+		/**
+		 * The meta object literal for the '<em><b>Strategy Memory Decrease Relational Op</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRATEGYMEMORY__STRATEGY_MEMORY_DECREASE_RELATIONAL_OP = eINSTANCE.getStrategymemory_StrategyMemoryDecreaseRelationalOp();
 
 		/**
 		 * The meta object literal for the '<em><b>Stop</b></em>' operation.
@@ -1726,6 +1813,16 @@ public interface ElasticocciPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum DIRECTION_TYPE = eINSTANCE.getDirectionType();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.elasticocci.RelationalType <em>Relational Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.cmf.occi.multicloud.elasticocci.RelationalType
+		 * @see org.eclipse.cmf.occi.multicloud.elasticocci.impl.ElasticocciPackageImpl#getRelationalType()
+		 * @generated
+		 */
+		EEnum RELATIONAL_TYPE = eINSTANCE.getRelationalType();
 
 		/**
 		 * The meta object literal for the '<em>Double</em>' data type.

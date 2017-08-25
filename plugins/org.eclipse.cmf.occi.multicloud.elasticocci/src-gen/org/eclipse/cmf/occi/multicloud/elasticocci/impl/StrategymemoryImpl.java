@@ -24,6 +24,7 @@ import org.eclipse.cmf.occi.multicloud.elasticocci.DirectionType;
 import org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage;
 import org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciTables;
 import org.eclipse.cmf.occi.multicloud.elasticocci.ModeType;
+import org.eclipse.cmf.occi.multicloud.elasticocci.RelationalType;
 import org.eclipse.cmf.occi.multicloud.elasticocci.Strategy;
 import org.eclipse.cmf.occi.multicloud.elasticocci.Strategycompute;
 import org.eclipse.cmf.occi.multicloud.elasticocci.Strategymemory;
@@ -73,7 +74,9 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  *   <li>{@link org.eclipse.cmf.occi.multicloud.elasticocci.impl.StrategymemoryImpl#getStrategyMemoryStepMemIncrease <em>Strategy Memory Step Mem Increase</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.elasticocci.impl.StrategymemoryImpl#getStrategyMemoryUpperLimit <em>Strategy Memory Upper Limit</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.elasticocci.impl.StrategymemoryImpl#getStrategyMemoryLowerLimit <em>Strategy Memory Lower Limit</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.elasticocci.impl.StrategymemoryImpl#getStrategyCPUDate <em>Strategy CPU Date</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.elasticocci.impl.StrategymemoryImpl#getStrategyMemoryDate <em>Strategy Memory Date</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.elasticocci.impl.StrategymemoryImpl#getStrategyMemoryIncreaseRelationalOp <em>Strategy Memory Increase Relational Op</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.elasticocci.impl.StrategymemoryImpl#getStrategyMemoryDecreaseRelationalOp <em>Strategy Memory Decrease Relational Op</em>}</li>
  * </ul>
  *
  * @generated
@@ -87,7 +90,7 @@ public class StrategymemoryImpl extends MixinBaseImpl implements Strategymemory 
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Integer STRATEGY_COMPUTE_UTHRESHOLD_EDEFAULT = null;
+	protected static final Integer STRATEGY_COMPUTE_UTHRESHOLD_EDEFAULT = new Integer(90);
 
 	/**
 	 * The cached value of the '{@link #getStrategyComputeUthreshold() <em>Strategy Compute Uthreshold</em>}' attribute.
@@ -107,7 +110,7 @@ public class StrategymemoryImpl extends MixinBaseImpl implements Strategymemory 
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Integer STRATEGY_COMPUTE_BREATH_DOWN_EDEFAULT = null;
+	protected static final Integer STRATEGY_COMPUTE_BREATH_DOWN_EDEFAULT = new Integer(20000);
 
 	/**
 	 * The cached value of the '{@link #getStrategyComputeBreathDown() <em>Strategy Compute Breath Down</em>}' attribute.
@@ -127,7 +130,7 @@ public class StrategymemoryImpl extends MixinBaseImpl implements Strategymemory 
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Integer STRATEGY_COMPUTE_BREATH_UP_EDEFAULT = null;
+	protected static final Integer STRATEGY_COMPUTE_BREATH_UP_EDEFAULT = new Integer(40000);
 
 	/**
 	 * The cached value of the '{@link #getStrategyComputeBreathUp() <em>Strategy Compute Breath Up</em>}' attribute.
@@ -147,7 +150,7 @@ public class StrategymemoryImpl extends MixinBaseImpl implements Strategymemory 
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Integer STRATEGY_COMPUTE_POLL_TIME_EDEFAULT = null;
+	protected static final Integer STRATEGY_COMPUTE_POLL_TIME_EDEFAULT = new Integer(10000);
 
 	/**
 	 * The cached value of the '{@link #getStrategyComputePollTime() <em>Strategy Compute Poll Time</em>}' attribute.
@@ -167,7 +170,7 @@ public class StrategymemoryImpl extends MixinBaseImpl implements Strategymemory 
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Integer STRATEGY_COMPUTE_LTHRESHOLD_EDEFAULT = null;
+	protected static final Integer STRATEGY_COMPUTE_LTHRESHOLD_EDEFAULT = new Integer(70);
 
 	/**
 	 * The cached value of the '{@link #getStrategyComputeLthreshold() <em>Strategy Compute Lthreshold</em>}' attribute.
@@ -187,7 +190,7 @@ public class StrategymemoryImpl extends MixinBaseImpl implements Strategymemory 
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ModeType STRATEGY_MEMORY_MODE_EDEFAULT = ModeType.MANUAL;
+	protected static final ModeType STRATEGY_MEMORY_MODE_EDEFAULT = ModeType.DYNAMIC;
 
 	/**
 	 * The cached value of the '{@link #getStrategyMemoryMode() <em>Strategy Memory Mode</em>}' attribute.
@@ -227,7 +230,7 @@ public class StrategymemoryImpl extends MixinBaseImpl implements Strategymemory 
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Double STRATEGY_MEMORY_STEP_MEM_DECREASE_EDEFAULT = null;
+	protected static final Double STRATEGY_MEMORY_STEP_MEM_DECREASE_EDEFAULT = new Double(0.25);
 
 	/**
 	 * The cached value of the '{@link #getStrategyMemoryStepMemDecrease() <em>Strategy Memory Step Mem Decrease</em>}' attribute.
@@ -247,7 +250,7 @@ public class StrategymemoryImpl extends MixinBaseImpl implements Strategymemory 
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Double STRATEGY_MEMORY_STEP_MEM_INCREASE_EDEFAULT = null;
+	protected static final Double STRATEGY_MEMORY_STEP_MEM_INCREASE_EDEFAULT = new Double(0.5);
 
 	/**
 	 * The cached value of the '{@link #getStrategyMemoryStepMemIncrease() <em>Strategy Memory Step Mem Increase</em>}' attribute.
@@ -267,7 +270,7 @@ public class StrategymemoryImpl extends MixinBaseImpl implements Strategymemory 
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Integer STRATEGY_MEMORY_UPPER_LIMIT_EDEFAULT = null;
+	protected static final Integer STRATEGY_MEMORY_UPPER_LIMIT_EDEFAULT = new Integer(5);
 
 	/**
 	 * The cached value of the '{@link #getStrategyMemoryUpperLimit() <em>Strategy Memory Upper Limit</em>}' attribute.
@@ -287,7 +290,7 @@ public class StrategymemoryImpl extends MixinBaseImpl implements Strategymemory 
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Integer STRATEGY_MEMORY_LOWER_LIMIT_EDEFAULT = null;
+	protected static final Integer STRATEGY_MEMORY_LOWER_LIMIT_EDEFAULT = new Integer(1);
 
 	/**
 	 * The cached value of the '{@link #getStrategyMemoryLowerLimit() <em>Strategy Memory Lower Limit</em>}' attribute.
@@ -300,24 +303,64 @@ public class StrategymemoryImpl extends MixinBaseImpl implements Strategymemory 
 	protected Integer strategyMemoryLowerLimit = STRATEGY_MEMORY_LOWER_LIMIT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getStrategyCPUDate() <em>Strategy CPU Date</em>}' attribute.
+	 * The default value of the '{@link #getStrategyMemoryDate() <em>Strategy Memory Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStrategyCPUDate()
+	 * @see #getStrategyMemoryDate()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STRATEGY_CPU_DATE_EDEFAULT = null;
+	protected static final String STRATEGY_MEMORY_DATE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getStrategyCPUDate() <em>Strategy CPU Date</em>}' attribute.
+	 * The cached value of the '{@link #getStrategyMemoryDate() <em>Strategy Memory Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStrategyCPUDate()
+	 * @see #getStrategyMemoryDate()
 	 * @generated
 	 * @ordered
 	 */
-	protected String strategyCPUDate = STRATEGY_CPU_DATE_EDEFAULT;
+	protected String strategyMemoryDate = STRATEGY_MEMORY_DATE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getStrategyMemoryIncreaseRelationalOp() <em>Strategy Memory Increase Relational Op</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStrategyMemoryIncreaseRelationalOp()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final RelationalType STRATEGY_MEMORY_INCREASE_RELATIONAL_OP_EDEFAULT = RelationalType.GREATER_THAN;
+
+	/**
+	 * The cached value of the '{@link #getStrategyMemoryIncreaseRelationalOp() <em>Strategy Memory Increase Relational Op</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStrategyMemoryIncreaseRelationalOp()
+	 * @generated
+	 * @ordered
+	 */
+	protected RelationalType strategyMemoryIncreaseRelationalOp = STRATEGY_MEMORY_INCREASE_RELATIONAL_OP_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getStrategyMemoryDecreaseRelationalOp() <em>Strategy Memory Decrease Relational Op</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStrategyMemoryDecreaseRelationalOp()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final RelationalType STRATEGY_MEMORY_DECREASE_RELATIONAL_OP_EDEFAULT = RelationalType.LESS_THAN;
+
+	/**
+	 * The cached value of the '{@link #getStrategyMemoryDecreaseRelationalOp() <em>Strategy Memory Decrease Relational Op</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStrategyMemoryDecreaseRelationalOp()
+	 * @generated
+	 * @ordered
+	 */
+	protected RelationalType strategyMemoryDecreaseRelationalOp = STRATEGY_MEMORY_DECREASE_RELATIONAL_OP_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -574,8 +617,8 @@ public class StrategymemoryImpl extends MixinBaseImpl implements Strategymemory 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getStrategyCPUDate() {
-		return strategyCPUDate;
+	public String getStrategyMemoryDate() {
+		return strategyMemoryDate;
 	}
 
 	/**
@@ -583,11 +626,53 @@ public class StrategymemoryImpl extends MixinBaseImpl implements Strategymemory 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStrategyCPUDate(String newStrategyCPUDate) {
-		String oldStrategyCPUDate = strategyCPUDate;
-		strategyCPUDate = newStrategyCPUDate;
+	public void setStrategyMemoryDate(String newStrategyMemoryDate) {
+		String oldStrategyMemoryDate = strategyMemoryDate;
+		strategyMemoryDate = newStrategyMemoryDate;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ElasticocciPackage.STRATEGYMEMORY__STRATEGY_CPU_DATE, oldStrategyCPUDate, strategyCPUDate));
+			eNotify(new ENotificationImpl(this, Notification.SET, ElasticocciPackage.STRATEGYMEMORY__STRATEGY_MEMORY_DATE, oldStrategyMemoryDate, strategyMemoryDate));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RelationalType getStrategyMemoryIncreaseRelationalOp() {
+		return strategyMemoryIncreaseRelationalOp;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setStrategyMemoryIncreaseRelationalOp(RelationalType newStrategyMemoryIncreaseRelationalOp) {
+		RelationalType oldStrategyMemoryIncreaseRelationalOp = strategyMemoryIncreaseRelationalOp;
+		strategyMemoryIncreaseRelationalOp = newStrategyMemoryIncreaseRelationalOp == null ? STRATEGY_MEMORY_INCREASE_RELATIONAL_OP_EDEFAULT : newStrategyMemoryIncreaseRelationalOp;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ElasticocciPackage.STRATEGYMEMORY__STRATEGY_MEMORY_INCREASE_RELATIONAL_OP, oldStrategyMemoryIncreaseRelationalOp, strategyMemoryIncreaseRelationalOp));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RelationalType getStrategyMemoryDecreaseRelationalOp() {
+		return strategyMemoryDecreaseRelationalOp;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setStrategyMemoryDecreaseRelationalOp(RelationalType newStrategyMemoryDecreaseRelationalOp) {
+		RelationalType oldStrategyMemoryDecreaseRelationalOp = strategyMemoryDecreaseRelationalOp;
+		strategyMemoryDecreaseRelationalOp = newStrategyMemoryDecreaseRelationalOp == null ? STRATEGY_MEMORY_DECREASE_RELATIONAL_OP_EDEFAULT : newStrategyMemoryDecreaseRelationalOp;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ElasticocciPackage.STRATEGYMEMORY__STRATEGY_MEMORY_DECREASE_RELATIONAL_OP, oldStrategyMemoryDecreaseRelationalOp, strategyMemoryDecreaseRelationalOp));
 	}
 
 	/**
@@ -652,15 +737,6 @@ public class StrategymemoryImpl extends MixinBaseImpl implements Strategymemory 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void createpolicy(final Double metricUtilization, final String op, final Integer threshold) {
-		throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategycompute!createpolicy(http://occiware.org/occi/multicloud/elasticocci/ecore!Double,String,Integer)
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -686,8 +762,12 @@ public class StrategymemoryImpl extends MixinBaseImpl implements Strategymemory 
 				return getStrategyMemoryUpperLimit();
 			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_MEMORY_LOWER_LIMIT:
 				return getStrategyMemoryLowerLimit();
-			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_CPU_DATE:
-				return getStrategyCPUDate();
+			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_MEMORY_DATE:
+				return getStrategyMemoryDate();
+			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_MEMORY_INCREASE_RELATIONAL_OP:
+				return getStrategyMemoryIncreaseRelationalOp();
+			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_MEMORY_DECREASE_RELATIONAL_OP:
+				return getStrategyMemoryDecreaseRelationalOp();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -733,8 +813,14 @@ public class StrategymemoryImpl extends MixinBaseImpl implements Strategymemory 
 			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_MEMORY_LOWER_LIMIT:
 				setStrategyMemoryLowerLimit((Integer)newValue);
 				return;
-			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_CPU_DATE:
-				setStrategyCPUDate((String)newValue);
+			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_MEMORY_DATE:
+				setStrategyMemoryDate((String)newValue);
+				return;
+			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_MEMORY_INCREASE_RELATIONAL_OP:
+				setStrategyMemoryIncreaseRelationalOp((RelationalType)newValue);
+				return;
+			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_MEMORY_DECREASE_RELATIONAL_OP:
+				setStrategyMemoryDecreaseRelationalOp((RelationalType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -781,8 +867,14 @@ public class StrategymemoryImpl extends MixinBaseImpl implements Strategymemory 
 			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_MEMORY_LOWER_LIMIT:
 				setStrategyMemoryLowerLimit(STRATEGY_MEMORY_LOWER_LIMIT_EDEFAULT);
 				return;
-			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_CPU_DATE:
-				setStrategyCPUDate(STRATEGY_CPU_DATE_EDEFAULT);
+			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_MEMORY_DATE:
+				setStrategyMemoryDate(STRATEGY_MEMORY_DATE_EDEFAULT);
+				return;
+			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_MEMORY_INCREASE_RELATIONAL_OP:
+				setStrategyMemoryIncreaseRelationalOp(STRATEGY_MEMORY_INCREASE_RELATIONAL_OP_EDEFAULT);
+				return;
+			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_MEMORY_DECREASE_RELATIONAL_OP:
+				setStrategyMemoryDecreaseRelationalOp(STRATEGY_MEMORY_DECREASE_RELATIONAL_OP_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -818,8 +910,12 @@ public class StrategymemoryImpl extends MixinBaseImpl implements Strategymemory 
 				return STRATEGY_MEMORY_UPPER_LIMIT_EDEFAULT == null ? strategyMemoryUpperLimit != null : !STRATEGY_MEMORY_UPPER_LIMIT_EDEFAULT.equals(strategyMemoryUpperLimit);
 			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_MEMORY_LOWER_LIMIT:
 				return STRATEGY_MEMORY_LOWER_LIMIT_EDEFAULT == null ? strategyMemoryLowerLimit != null : !STRATEGY_MEMORY_LOWER_LIMIT_EDEFAULT.equals(strategyMemoryLowerLimit);
-			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_CPU_DATE:
-				return STRATEGY_CPU_DATE_EDEFAULT == null ? strategyCPUDate != null : !STRATEGY_CPU_DATE_EDEFAULT.equals(strategyCPUDate);
+			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_MEMORY_DATE:
+				return STRATEGY_MEMORY_DATE_EDEFAULT == null ? strategyMemoryDate != null : !STRATEGY_MEMORY_DATE_EDEFAULT.equals(strategyMemoryDate);
+			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_MEMORY_INCREASE_RELATIONAL_OP:
+				return strategyMemoryIncreaseRelationalOp != STRATEGY_MEMORY_INCREASE_RELATIONAL_OP_EDEFAULT;
+			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_MEMORY_DECREASE_RELATIONAL_OP:
+				return strategyMemoryDecreaseRelationalOp != STRATEGY_MEMORY_DECREASE_RELATIONAL_OP_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -889,7 +985,6 @@ public class StrategymemoryImpl extends MixinBaseImpl implements Strategymemory 
 		}
 		if (baseClass == Strategycompute.class) {
 			switch (baseOperationID) {
-				case ElasticocciPackage.STRATEGYCOMPUTE___CREATEPOLICY__DOUBLE_STRING_INTEGER: return ElasticocciPackage.STRATEGYMEMORY___CREATEPOLICY__DOUBLE_STRING_INTEGER;
 				default: return -1;
 			}
 		}
@@ -913,9 +1008,6 @@ public class StrategymemoryImpl extends MixinBaseImpl implements Strategymemory 
 				return null;
 			case ElasticocciPackage.STRATEGYMEMORY___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP:
 				return appliesConstraint((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case ElasticocciPackage.STRATEGYMEMORY___CREATEPOLICY__DOUBLE_STRING_INTEGER:
-				createpolicy((Double)arguments.get(0), (String)arguments.get(1), (Integer)arguments.get(2));
-				return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -952,8 +1044,12 @@ public class StrategymemoryImpl extends MixinBaseImpl implements Strategymemory 
 		result.append(strategyMemoryUpperLimit);
 		result.append(", StrategyMemoryLowerLimit: ");
 		result.append(strategyMemoryLowerLimit);
-		result.append(", StrategyCPUDate: ");
-		result.append(strategyCPUDate);
+		result.append(", StrategyMemoryDate: ");
+		result.append(strategyMemoryDate);
+		result.append(", StrategyMemoryIncreaseRelationalOp: ");
+		result.append(strategyMemoryIncreaseRelationalOp);
+		result.append(", StrategyMemoryDecreaseRelationalOp: ");
+		result.append(strategyMemoryDecreaseRelationalOp);
 		result.append(')');
 		return result.toString();
 	}

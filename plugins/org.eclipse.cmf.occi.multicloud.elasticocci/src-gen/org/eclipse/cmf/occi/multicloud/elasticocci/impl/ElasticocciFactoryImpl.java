@@ -90,6 +90,8 @@ public class ElasticocciFactoryImpl extends EFactoryImpl implements ElasticocciF
 				return createModeTypeFromString(eDataType, initialValue);
 			case ElasticocciPackage.DIRECTION_TYPE:
 				return createDirectionTypeFromString(eDataType, initialValue);
+			case ElasticocciPackage.RELATIONAL_TYPE:
+				return createRelationalTypeFromString(eDataType, initialValue);
 			case ElasticocciPackage.DOUBLE:
 				return createDoubleFromString(eDataType, initialValue);
 			case ElasticocciPackage.DATE_TYPE:
@@ -111,6 +113,8 @@ public class ElasticocciFactoryImpl extends EFactoryImpl implements ElasticocciF
 				return convertModeTypeToString(eDataType, instanceValue);
 			case ElasticocciPackage.DIRECTION_TYPE:
 				return convertDirectionTypeToString(eDataType, instanceValue);
+			case ElasticocciPackage.RELATIONAL_TYPE:
+				return convertRelationalTypeToString(eDataType, instanceValue);
 			case ElasticocciPackage.DOUBLE:
 				return convertDoubleToString(eDataType, instanceValue);
 			case ElasticocciPackage.DATE_TYPE:
@@ -217,6 +221,26 @@ public class ElasticocciFactoryImpl extends EFactoryImpl implements ElasticocciF
 	 * @generated
 	 */
 	public String convertDirectionTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RelationalType createRelationalTypeFromString(EDataType eDataType, String initialValue) {
+		RelationalType result = RelationalType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertRelationalTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

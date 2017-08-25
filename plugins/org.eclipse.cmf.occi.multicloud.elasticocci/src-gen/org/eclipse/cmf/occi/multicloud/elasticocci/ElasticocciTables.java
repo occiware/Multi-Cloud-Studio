@@ -23,7 +23,6 @@ package org.eclipse.cmf.occi.multicloud.elasticocci;
 
 import org.eclipse.cmf.occi.core.OCCITables;
 import org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciTables;
-import org.eclipse.ocl.pivot.ParameterTypes;
 import org.eclipse.ocl.pivot.TemplateParameters;
 import org.eclipse.ocl.pivot.internal.library.ecore.EcoreExecutorEnumeration;
 import org.eclipse.ocl.pivot.internal.library.ecore.EcoreExecutorEnumerationLiteral;
@@ -78,6 +77,7 @@ public class ElasticocciTables
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_Double = org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciTables.PACKid_http_c_s_s_occiware_org_s_occi_s_multicloud_s_elasticocci_s_ecore.getDataTypeId("Double", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.EnumerationId ENUMid_DirectionType = org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciTables.PACKid_http_c_s_s_occiware_org_s_occi_s_multicloud_s_elasticocci_s_ecore.getEnumerationId("DirectionType");
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.EnumerationId ENUMid_ModeType = org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciTables.PACKid_http_c_s_s_occiware_org_s_occi_s_multicloud_s_elasticocci_s_ecore.getEnumerationId("ModeType");
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.EnumerationId ENUMid_RelationalType = org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciTables.PACKid_http_c_s_s_occiware_org_s_occi_s_multicloud_s_elasticocci_s_ecore.getEnumerationId("RelationalType");
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.values.IntegerValue INT_0 = org.eclipse.ocl.pivot.utilities.ValueUtil.integerValueOf("0");
 	public static final /*@NonInvalid*/ java.lang.String STR_Elasticlink_c_c_targetConstraint = "Elasticlink::targetConstraint";
 	public static final /*@NonInvalid*/ java.lang.String STR_Strategy_c_c_appliesConstraint = "Strategy::appliesConstraint";
@@ -118,6 +118,7 @@ public class ElasticocciTables
 		public static final /*@NonNull*/ EcoreExecutorType _Elasticcontroller = new EcoreExecutorType(ElasticocciPackage.Literals.ELASTICCONTROLLER, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Elasticlink = new EcoreExecutorType(ElasticocciPackage.Literals.ELASTICLINK, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorEnumeration _ModeType = new EcoreExecutorEnumeration(ElasticocciPackage.Literals.MODE_TYPE, PACKAGE, 0);
+		public static final /*@NonNull*/ EcoreExecutorEnumeration _RelationalType = new EcoreExecutorEnumeration(ElasticocciPackage.Literals.RELATIONAL_TYPE, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Strategy = new EcoreExecutorType(ElasticocciPackage.Literals.STRATEGY, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Strategycompute = new EcoreExecutorType(ElasticocciPackage.Literals.STRATEGYCOMPUTE, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Strategycpu = new EcoreExecutorType(ElasticocciPackage.Literals.STRATEGYCPU, PACKAGE, 0);
@@ -130,6 +131,7 @@ public class ElasticocciTables
 			_Elasticcontroller,
 			_Elasticlink,
 			_ModeType,
+			_RelationalType,
 			_Strategy,
 			_Strategycompute,
 			_Strategycpu,
@@ -189,6 +191,12 @@ public class ElasticocciTables
 		private static final /*@NonNull*/ ExecutorFragment _ModeType__OclEnumeration = new ExecutorFragment(Types._ModeType, OCLstdlibTables.Types._OclEnumeration);
 		private static final /*@NonNull*/ ExecutorFragment _ModeType__OclType = new ExecutorFragment(Types._ModeType, OCLstdlibTables.Types._OclType);
 
+		private static final /*@NonNull*/ ExecutorFragment _RelationalType__OclAny = new ExecutorFragment(Types._RelationalType, OCLstdlibTables.Types._OclAny);
+		private static final /*@NonNull*/ ExecutorFragment _RelationalType__OclElement = new ExecutorFragment(Types._RelationalType, OCLstdlibTables.Types._OclElement);
+		private static final /*@NonNull*/ ExecutorFragment _RelationalType__OclEnumeration = new ExecutorFragment(Types._RelationalType, OCLstdlibTables.Types._OclEnumeration);
+		private static final /*@NonNull*/ ExecutorFragment _RelationalType__OclType = new ExecutorFragment(Types._RelationalType, OCLstdlibTables.Types._OclType);
+		private static final /*@NonNull*/ ExecutorFragment _RelationalType__RelationalType = new ExecutorFragment(Types._RelationalType, ElasticocciTables.Types._RelationalType);
+
 		private static final /*@NonNull*/ ExecutorFragment _Strategy__MixinBase = new ExecutorFragment(Types._Strategy, OCCITables.Types._MixinBase);
 		private static final /*@NonNull*/ ExecutorFragment _Strategy__OclAny = new ExecutorFragment(Types._Strategy, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _Strategy__OclElement = new ExecutorFragment(Types._Strategy, OCLstdlibTables.Types._OclElement);
@@ -237,7 +245,6 @@ public class ElasticocciTables
 			Fragments.init();
 		}
 
-		public static final /*@NonNull*/ ParameterTypes _Double___String___Integer = TypeUtil.createParameterTypes(OCLstdlibTables.Types._Real, OCCITables.Types._String, OCCITables.Types._Integer);
 
 		static {
 			Init.initEnd();
@@ -261,9 +268,6 @@ public class ElasticocciTables
 			Init.initStart();
 			Parameters.init();
 		}
-
-		public static final /*@NonNull*/ ExecutorOperation _Strategycompute__createpolicy = new ExecutorOperation("createpolicy", Parameters._Double___String___Integer, Types._Strategycompute,
-			0, TemplateParameters.EMPTY_LIST, null);
 
 		public static final /*@NonNull*/ ExecutorOperation _Strategycpu__start = new ExecutorOperation("start", TypeUtil.EMPTY_PARAMETER_TYPES, Types._Strategycpu,
 			0, TemplateParameters.EMPTY_LIST, null);
@@ -306,20 +310,24 @@ public class ElasticocciTables
 		public static final /*@NonNull*/ ExecutorProperty _Strategycompute__StrategyComputeUthreshold = new EcoreExecutorProperty(ElasticocciPackage.Literals.STRATEGYCOMPUTE__STRATEGY_COMPUTE_UTHRESHOLD, Types._Strategycompute, 4);
 
 		public static final /*@NonNull*/ ExecutorProperty _Strategycpu__StrategyCPUDate = new EcoreExecutorProperty(ElasticocciPackage.Literals.STRATEGYCPU__STRATEGY_CPU_DATE, Types._Strategycpu, 0);
-		public static final /*@NonNull*/ ExecutorProperty _Strategycpu__StrategyCPUDirection = new EcoreExecutorProperty(ElasticocciPackage.Literals.STRATEGYCPU__STRATEGY_CPU_DIRECTION, Types._Strategycpu, 1);
-		public static final /*@NonNull*/ ExecutorProperty _Strategycpu__StrategyCPULowerLimit = new EcoreExecutorProperty(ElasticocciPackage.Literals.STRATEGYCPU__STRATEGY_CPU_LOWER_LIMIT, Types._Strategycpu, 2);
-		public static final /*@NonNull*/ ExecutorProperty _Strategycpu__StrategyCPUMode = new EcoreExecutorProperty(ElasticocciPackage.Literals.STRATEGYCPU__STRATEGY_CPU_MODE, Types._Strategycpu, 3);
-		public static final /*@NonNull*/ ExecutorProperty _Strategycpu__StrategyCPUStepCPUDecrease = new EcoreExecutorProperty(ElasticocciPackage.Literals.STRATEGYCPU__STRATEGY_CPU_STEP_CPU_DECREASE, Types._Strategycpu, 4);
-		public static final /*@NonNull*/ ExecutorProperty _Strategycpu__StrategyCPUStepCPUIncrease = new EcoreExecutorProperty(ElasticocciPackage.Literals.STRATEGYCPU__STRATEGY_CPU_STEP_CPU_INCREASE, Types._Strategycpu, 5);
-		public static final /*@NonNull*/ ExecutorProperty _Strategycpu__StrategyCPUUpperLimit = new EcoreExecutorProperty(ElasticocciPackage.Literals.STRATEGYCPU__STRATEGY_CPU_UPPER_LIMIT, Types._Strategycpu, 6);
+		public static final /*@NonNull*/ ExecutorProperty _Strategycpu__StrategyCPUDecreaseRelationalOp = new EcoreExecutorProperty(ElasticocciPackage.Literals.STRATEGYCPU__STRATEGY_CPU_DECREASE_RELATIONAL_OP, Types._Strategycpu, 1);
+		public static final /*@NonNull*/ ExecutorProperty _Strategycpu__StrategyCPUDirection = new EcoreExecutorProperty(ElasticocciPackage.Literals.STRATEGYCPU__STRATEGY_CPU_DIRECTION, Types._Strategycpu, 2);
+		public static final /*@NonNull*/ ExecutorProperty _Strategycpu__StrategyCPUIncreaseRelationalOp = new EcoreExecutorProperty(ElasticocciPackage.Literals.STRATEGYCPU__STRATEGY_CPU_INCREASE_RELATIONAL_OP, Types._Strategycpu, 3);
+		public static final /*@NonNull*/ ExecutorProperty _Strategycpu__StrategyCPULowerLimit = new EcoreExecutorProperty(ElasticocciPackage.Literals.STRATEGYCPU__STRATEGY_CPU_LOWER_LIMIT, Types._Strategycpu, 4);
+		public static final /*@NonNull*/ ExecutorProperty _Strategycpu__StrategyCPUMode = new EcoreExecutorProperty(ElasticocciPackage.Literals.STRATEGYCPU__STRATEGY_CPU_MODE, Types._Strategycpu, 5);
+		public static final /*@NonNull*/ ExecutorProperty _Strategycpu__StrategyCPUStepCPUDecrease = new EcoreExecutorProperty(ElasticocciPackage.Literals.STRATEGYCPU__STRATEGY_CPU_STEP_CPU_DECREASE, Types._Strategycpu, 6);
+		public static final /*@NonNull*/ ExecutorProperty _Strategycpu__StrategyCPUStepCPUIncrease = new EcoreExecutorProperty(ElasticocciPackage.Literals.STRATEGYCPU__STRATEGY_CPU_STEP_CPU_INCREASE, Types._Strategycpu, 7);
+		public static final /*@NonNull*/ ExecutorProperty _Strategycpu__StrategyCPUUpperLimit = new EcoreExecutorProperty(ElasticocciPackage.Literals.STRATEGYCPU__STRATEGY_CPU_UPPER_LIMIT, Types._Strategycpu, 8);
 
-		public static final /*@NonNull*/ ExecutorProperty _Strategymemory__StrategyCPUDate = new EcoreExecutorProperty(ElasticocciPackage.Literals.STRATEGYMEMORY__STRATEGY_CPU_DATE, Types._Strategymemory, 0);
-		public static final /*@NonNull*/ ExecutorProperty _Strategymemory__StrategyMemoryDirection = new EcoreExecutorProperty(ElasticocciPackage.Literals.STRATEGYMEMORY__STRATEGY_MEMORY_DIRECTION, Types._Strategymemory, 1);
-		public static final /*@NonNull*/ ExecutorProperty _Strategymemory__StrategyMemoryLowerLimit = new EcoreExecutorProperty(ElasticocciPackage.Literals.STRATEGYMEMORY__STRATEGY_MEMORY_LOWER_LIMIT, Types._Strategymemory, 2);
-		public static final /*@NonNull*/ ExecutorProperty _Strategymemory__StrategyMemoryMode = new EcoreExecutorProperty(ElasticocciPackage.Literals.STRATEGYMEMORY__STRATEGY_MEMORY_MODE, Types._Strategymemory, 3);
-		public static final /*@NonNull*/ ExecutorProperty _Strategymemory__StrategyMemoryStepMemDecrease = new EcoreExecutorProperty(ElasticocciPackage.Literals.STRATEGYMEMORY__STRATEGY_MEMORY_STEP_MEM_DECREASE, Types._Strategymemory, 4);
-		public static final /*@NonNull*/ ExecutorProperty _Strategymemory__StrategyMemoryStepMemIncrease = new EcoreExecutorProperty(ElasticocciPackage.Literals.STRATEGYMEMORY__STRATEGY_MEMORY_STEP_MEM_INCREASE, Types._Strategymemory, 5);
-		public static final /*@NonNull*/ ExecutorProperty _Strategymemory__StrategyMemoryUpperLimit = new EcoreExecutorProperty(ElasticocciPackage.Literals.STRATEGYMEMORY__STRATEGY_MEMORY_UPPER_LIMIT, Types._Strategymemory, 6);
+		public static final /*@NonNull*/ ExecutorProperty _Strategymemory__StrategyMemoryDate = new EcoreExecutorProperty(ElasticocciPackage.Literals.STRATEGYMEMORY__STRATEGY_MEMORY_DATE, Types._Strategymemory, 0);
+		public static final /*@NonNull*/ ExecutorProperty _Strategymemory__StrategyMemoryDecreaseRelationalOp = new EcoreExecutorProperty(ElasticocciPackage.Literals.STRATEGYMEMORY__STRATEGY_MEMORY_DECREASE_RELATIONAL_OP, Types._Strategymemory, 1);
+		public static final /*@NonNull*/ ExecutorProperty _Strategymemory__StrategyMemoryDirection = new EcoreExecutorProperty(ElasticocciPackage.Literals.STRATEGYMEMORY__STRATEGY_MEMORY_DIRECTION, Types._Strategymemory, 2);
+		public static final /*@NonNull*/ ExecutorProperty _Strategymemory__StrategyMemoryIncreaseRelationalOp = new EcoreExecutorProperty(ElasticocciPackage.Literals.STRATEGYMEMORY__STRATEGY_MEMORY_INCREASE_RELATIONAL_OP, Types._Strategymemory, 3);
+		public static final /*@NonNull*/ ExecutorProperty _Strategymemory__StrategyMemoryLowerLimit = new EcoreExecutorProperty(ElasticocciPackage.Literals.STRATEGYMEMORY__STRATEGY_MEMORY_LOWER_LIMIT, Types._Strategymemory, 4);
+		public static final /*@NonNull*/ ExecutorProperty _Strategymemory__StrategyMemoryMode = new EcoreExecutorProperty(ElasticocciPackage.Literals.STRATEGYMEMORY__STRATEGY_MEMORY_MODE, Types._Strategymemory, 5);
+		public static final /*@NonNull*/ ExecutorProperty _Strategymemory__StrategyMemoryStepMemDecrease = new EcoreExecutorProperty(ElasticocciPackage.Literals.STRATEGYMEMORY__STRATEGY_MEMORY_STEP_MEM_DECREASE, Types._Strategymemory, 6);
+		public static final /*@NonNull*/ ExecutorProperty _Strategymemory__StrategyMemoryStepMemIncrease = new EcoreExecutorProperty(ElasticocciPackage.Literals.STRATEGYMEMORY__STRATEGY_MEMORY_STEP_MEM_INCREASE, Types._Strategymemory, 7);
+		public static final /*@NonNull*/ ExecutorProperty _Strategymemory__StrategyMemoryUpperLimit = new EcoreExecutorProperty(ElasticocciPackage.Literals.STRATEGYMEMORY__STRATEGY_MEMORY_UPPER_LIMIT, Types._Strategymemory, 8);
 		static {
 			Init.initEnd();
 		}
@@ -393,6 +401,16 @@ public class ElasticocciTables
 		};
 		private static final int /*@NonNull*/ [] __ModeType = { 1,1,1,1,1 };
 
+		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _RelationalType =
+		{
+			Fragments._RelationalType__OclAny /* 0 */,
+			Fragments._RelationalType__OclElement /* 1 */,
+			Fragments._RelationalType__OclType /* 2 */,
+			Fragments._RelationalType__OclEnumeration /* 3 */,
+			Fragments._RelationalType__RelationalType /* 4 */
+		};
+		private static final int /*@NonNull*/ [] __RelationalType = { 1,1,1,1,1 };
+
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Strategy =
 		{
 			Fragments._Strategy__OclAny /* 0 */,
@@ -444,6 +462,7 @@ public class ElasticocciTables
 			Types._Elasticcontroller.initFragments(_Elasticcontroller, __Elasticcontroller);
 			Types._Elasticlink.initFragments(_Elasticlink, __Elasticlink);
 			Types._ModeType.initFragments(_ModeType, __ModeType);
+			Types._RelationalType.initFragments(_RelationalType, __RelationalType);
 			Types._Strategy.initFragments(_Strategy, __Strategy);
 			Types._Strategycompute.initFragments(_Strategycompute, __Strategycompute);
 			Types._Strategycpu.initFragments(_Strategycpu, __Strategycpu);
@@ -643,6 +662,40 @@ public class ElasticocciTables
 			OCLstdlibTables.Operations._OclType__conformsTo /* conformsTo(OclType[?]) */
 		};
 
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _RelationalType__RelationalType = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _RelationalType__OclAny = {
+			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
+			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
+			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
+			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
+			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
+			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
+			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
+			OCLstdlibTables.Operations._OclAny__toString /* toString() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _RelationalType__OclElement = {
+			OCLstdlibTables.Operations._OclEnumeration__allInstances /* allInstances() */,
+			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
+			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
+			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
+			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _RelationalType__OclEnumeration = {
+			OCLstdlibTables.Operations._OclEnumeration__allInstances /* allInstances() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _RelationalType__OclType = {
+			OCLstdlibTables.Operations._OclType__conformsTo /* conformsTo(OclType[?]) */
+		};
+
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Strategy__Strategy = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Strategy__MixinBase = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Strategy__OclAny = {
@@ -672,9 +725,7 @@ public class ElasticocciTables
 			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
 		};
 
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Strategycompute__Strategycompute = {
-			ElasticocciTables.Operations._Strategycompute__createpolicy /* createpolicy(Double[?],String[?],Integer[?]) */
-		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Strategycompute__Strategycompute = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Strategycompute__MixinBase = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Strategycompute__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
@@ -736,9 +787,7 @@ public class ElasticocciTables
 			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Strategycpu__Strategy = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Strategycpu__Strategycompute = {
-			ElasticocciTables.Operations._Strategycompute__createpolicy /* createpolicy(Double[?],String[?],Integer[?]) */
-		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Strategycpu__Strategycompute = {};
 
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Strategymemory__Strategymemory = {
 			ElasticocciTables.Operations._Strategymemory__start /* start() */,
@@ -772,9 +821,7 @@ public class ElasticocciTables
 			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Strategymemory__Strategy = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Strategymemory__Strategycompute = {
-			ElasticocciTables.Operations._Strategycompute__createpolicy /* createpolicy(Double[?],String[?],Integer[?]) */
-		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Strategymemory__Strategycompute = {};
 
 		/*
 		 *	Install the operation descriptors in the fragment descriptors.
@@ -809,6 +856,12 @@ public class ElasticocciTables
 			Fragments._ModeType__OclElement.initOperations(_ModeType__OclElement);
 			Fragments._ModeType__OclEnumeration.initOperations(_ModeType__OclEnumeration);
 			Fragments._ModeType__OclType.initOperations(_ModeType__OclType);
+
+			Fragments._RelationalType__OclAny.initOperations(_RelationalType__OclAny);
+			Fragments._RelationalType__OclElement.initOperations(_RelationalType__OclElement);
+			Fragments._RelationalType__OclEnumeration.initOperations(_RelationalType__OclEnumeration);
+			Fragments._RelationalType__OclType.initOperations(_RelationalType__OclType);
+			Fragments._RelationalType__RelationalType.initOperations(_RelationalType__RelationalType);
 
 			Fragments._Strategy__MixinBase.initOperations(_Strategy__MixinBase);
 			Fragments._Strategy__OclAny.initOperations(_Strategy__OclAny);
@@ -865,6 +918,8 @@ public class ElasticocciTables
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _ModeType = {};
 
+		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _RelationalType = {};
+
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Strategy = {};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Strategycompute = {
@@ -877,7 +932,9 @@ public class ElasticocciTables
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Strategycpu = {
 			ElasticocciTables.Properties._Strategycpu__StrategyCPUDate,
+			ElasticocciTables.Properties._Strategycpu__StrategyCPUDecreaseRelationalOp,
 			ElasticocciTables.Properties._Strategycpu__StrategyCPUDirection,
+			ElasticocciTables.Properties._Strategycpu__StrategyCPUIncreaseRelationalOp,
 			ElasticocciTables.Properties._Strategycpu__StrategyCPULowerLimit,
 			ElasticocciTables.Properties._Strategycpu__StrategyCPUMode,
 			ElasticocciTables.Properties._Strategycpu__StrategyCPUStepCPUDecrease,
@@ -891,13 +948,15 @@ public class ElasticocciTables
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Strategymemory = {
-			ElasticocciTables.Properties._Strategymemory__StrategyCPUDate,
 			ElasticocciTables.Properties._Strategycompute__StrategyComputeBreathDown,
 			ElasticocciTables.Properties._Strategycompute__StrategyComputeBreathUp,
 			ElasticocciTables.Properties._Strategycompute__StrategyComputeLthreshold,
 			ElasticocciTables.Properties._Strategycompute__StrategyComputePollTime,
 			ElasticocciTables.Properties._Strategycompute__StrategyComputeUthreshold,
+			ElasticocciTables.Properties._Strategymemory__StrategyMemoryDate,
+			ElasticocciTables.Properties._Strategymemory__StrategyMemoryDecreaseRelationalOp,
 			ElasticocciTables.Properties._Strategymemory__StrategyMemoryDirection,
+			ElasticocciTables.Properties._Strategymemory__StrategyMemoryIncreaseRelationalOp,
 			ElasticocciTables.Properties._Strategymemory__StrategyMemoryLowerLimit,
 			ElasticocciTables.Properties._Strategymemory__StrategyMemoryMode,
 			ElasticocciTables.Properties._Strategymemory__StrategyMemoryStepMemDecrease,
@@ -915,6 +974,7 @@ public class ElasticocciTables
 			Fragments._Elasticcontroller__Elasticcontroller.initProperties(_Elasticcontroller);
 			Fragments._Elasticlink__Elasticlink.initProperties(_Elasticlink);
 			Fragments._ModeType__ModeType.initProperties(_ModeType);
+			Fragments._RelationalType__RelationalType.initProperties(_RelationalType);
 			Fragments._Strategy__Strategy.initProperties(_Strategy);
 			Fragments._Strategycompute__Strategycompute.initProperties(_Strategycompute);
 			Fragments._Strategycpu__Strategycpu.initProperties(_Strategycpu);
@@ -954,12 +1014,24 @@ public class ElasticocciTables
 			_ModeType__scheduled
 		};
 
+		public static final /*@NonNull*/ EcoreExecutorEnumerationLiteral _RelationalType__greaterThan = new EcoreExecutorEnumerationLiteral(ElasticocciPackage.Literals.RELATIONAL_TYPE.getEEnumLiteral("greaterThan"), Types._RelationalType, 0);
+		public static final /*@NonNull*/ EcoreExecutorEnumerationLiteral _RelationalType__lessThan = new EcoreExecutorEnumerationLiteral(ElasticocciPackage.Literals.RELATIONAL_TYPE.getEEnumLiteral("lessThan"), Types._RelationalType, 1);
+		public static final /*@NonNull*/ EcoreExecutorEnumerationLiteral _RelationalType__greaterThanorEqual = new EcoreExecutorEnumerationLiteral(ElasticocciPackage.Literals.RELATIONAL_TYPE.getEEnumLiteral("greaterThanorEqual"), Types._RelationalType, 2);
+		public static final /*@NonNull*/ EcoreExecutorEnumerationLiteral _RelationalType__lessThanorEqual = new EcoreExecutorEnumerationLiteral(ElasticocciPackage.Literals.RELATIONAL_TYPE.getEEnumLiteral("lessThanorEqual"), Types._RelationalType, 3);
+		private static final /*@NonNull*/ EcoreExecutorEnumerationLiteral /*@NonNull*/ [] _RelationalType = {
+			_RelationalType__greaterThan,
+			_RelationalType__lessThan,
+			_RelationalType__greaterThanorEqual,
+			_RelationalType__lessThanorEqual
+		};
+
 		/**
 		 *	Install the enumeration literals in the enumerations.
 		 */
 		static {
 			Types._DirectionType.initLiterals(_DirectionType);
 			Types._ModeType.initLiterals(_ModeType);
+			Types._RelationalType.initLiterals(_RelationalType);
 
 			Init.initEnd();
 		}

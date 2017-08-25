@@ -77,7 +77,7 @@ public class StrategycomputeImpl extends MixinBaseImpl implements Strategycomput
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Integer STRATEGY_COMPUTE_UTHRESHOLD_EDEFAULT = null;
+	protected static final Integer STRATEGY_COMPUTE_UTHRESHOLD_EDEFAULT = new Integer(90);
 
 	/**
 	 * The cached value of the '{@link #getStrategyComputeUthreshold() <em>Strategy Compute Uthreshold</em>}' attribute.
@@ -97,7 +97,7 @@ public class StrategycomputeImpl extends MixinBaseImpl implements Strategycomput
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Integer STRATEGY_COMPUTE_BREATH_DOWN_EDEFAULT = null;
+	protected static final Integer STRATEGY_COMPUTE_BREATH_DOWN_EDEFAULT = new Integer(20000);
 
 	/**
 	 * The cached value of the '{@link #getStrategyComputeBreathDown() <em>Strategy Compute Breath Down</em>}' attribute.
@@ -117,7 +117,7 @@ public class StrategycomputeImpl extends MixinBaseImpl implements Strategycomput
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Integer STRATEGY_COMPUTE_BREATH_UP_EDEFAULT = null;
+	protected static final Integer STRATEGY_COMPUTE_BREATH_UP_EDEFAULT = new Integer(40000);
 
 	/**
 	 * The cached value of the '{@link #getStrategyComputeBreathUp() <em>Strategy Compute Breath Up</em>}' attribute.
@@ -137,7 +137,7 @@ public class StrategycomputeImpl extends MixinBaseImpl implements Strategycomput
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Integer STRATEGY_COMPUTE_POLL_TIME_EDEFAULT = null;
+	protected static final Integer STRATEGY_COMPUTE_POLL_TIME_EDEFAULT = new Integer(10000);
 
 	/**
 	 * The cached value of the '{@link #getStrategyComputePollTime() <em>Strategy Compute Poll Time</em>}' attribute.
@@ -157,7 +157,7 @@ public class StrategycomputeImpl extends MixinBaseImpl implements Strategycomput
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Integer STRATEGY_COMPUTE_LTHRESHOLD_EDEFAULT = null;
+	protected static final Integer STRATEGY_COMPUTE_LTHRESHOLD_EDEFAULT = new Integer(70);
 
 	/**
 	 * The cached value of the '{@link #getStrategyComputeLthreshold() <em>Strategy Compute Lthreshold</em>}' attribute.
@@ -291,15 +291,6 @@ public class StrategycomputeImpl extends MixinBaseImpl implements Strategycomput
 		strategyComputeLthreshold = newStrategyComputeLthreshold;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ElasticocciPackage.STRATEGYCOMPUTE__STRATEGY_COMPUTE_LTHRESHOLD, oldStrategyComputeLthreshold, strategyComputeLthreshold));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void createpolicy(final Double metricUtilization, final String op, final Integer threshold) {
-		throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategycompute!createpolicy(http://occiware.org/occi/multicloud/elasticocci/ecore!Double,String,Integer)
 	}
 
 	/**
@@ -463,9 +454,6 @@ public class StrategycomputeImpl extends MixinBaseImpl implements Strategycomput
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case ElasticocciPackage.STRATEGYCOMPUTE___CREATEPOLICY__DOUBLE_STRING_INTEGER:
-				createpolicy((Double)arguments.get(0), (String)arguments.get(1), (Integer)arguments.get(2));
-				return null;
 			case ElasticocciPackage.STRATEGYCOMPUTE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP:
 				return appliesConstraint((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}

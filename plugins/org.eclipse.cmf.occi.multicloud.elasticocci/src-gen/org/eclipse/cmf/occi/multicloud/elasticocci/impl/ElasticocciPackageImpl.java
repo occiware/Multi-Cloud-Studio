@@ -20,6 +20,7 @@ import org.eclipse.cmf.occi.multicloud.elasticocci.Elasticlink;
 import org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciFactory;
 import org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage;
 import org.eclipse.cmf.occi.multicloud.elasticocci.ModeType;
+import org.eclipse.cmf.occi.multicloud.elasticocci.RelationalType;
 import org.eclipse.cmf.occi.multicloud.elasticocci.Strategy;
 import org.eclipse.cmf.occi.multicloud.elasticocci.Strategycompute;
 import org.eclipse.cmf.occi.multicloud.elasticocci.Strategycpu;
@@ -100,6 +101,13 @@ public class ElasticocciPackageImpl extends EPackageImpl implements ElasticocciP
 	 * @generated
 	 */
 	private EEnum directionTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum relationalTypeEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -292,15 +300,6 @@ public class ElasticocciPackageImpl extends EPackageImpl implements ElasticocciP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getStrategycompute__Createpolicy__Double_String_Integer() {
-		return strategycomputeEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getStrategycpu() {
 		return strategycpuEClass;
 	}
@@ -366,6 +365,24 @@ public class ElasticocciPackageImpl extends EPackageImpl implements ElasticocciP
 	 */
 	public EAttribute getStrategycpu_StrategyCPUDate() {
 		return (EAttribute)strategycpuEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getStrategycpu_StrategyCPUIncreaseRelationalOp() {
+		return (EAttribute)strategycpuEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getStrategycpu_StrategyCPUDecreaseRelationalOp() {
+		return (EAttribute)strategycpuEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -463,8 +480,26 @@ public class ElasticocciPackageImpl extends EPackageImpl implements ElasticocciP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getStrategymemory_StrategyCPUDate() {
+	public EAttribute getStrategymemory_StrategyMemoryDate() {
 		return (EAttribute)strategymemoryEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getStrategymemory_StrategyMemoryIncreaseRelationalOp() {
+		return (EAttribute)strategymemoryEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getStrategymemory_StrategyMemoryDecreaseRelationalOp() {
+		return (EAttribute)strategymemoryEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -510,6 +545,15 @@ public class ElasticocciPackageImpl extends EPackageImpl implements ElasticocciP
 	 */
 	public EEnum getDirectionType() {
 		return directionTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getRelationalType() {
+		return relationalTypeEEnum;
 	}
 
 	/**
@@ -572,7 +616,6 @@ public class ElasticocciPackageImpl extends EPackageImpl implements ElasticocciP
 		createEAttribute(strategycomputeEClass, STRATEGYCOMPUTE__STRATEGY_COMPUTE_BREATH_UP);
 		createEAttribute(strategycomputeEClass, STRATEGYCOMPUTE__STRATEGY_COMPUTE_POLL_TIME);
 		createEAttribute(strategycomputeEClass, STRATEGYCOMPUTE__STRATEGY_COMPUTE_LTHRESHOLD);
-		createEOperation(strategycomputeEClass, STRATEGYCOMPUTE___CREATEPOLICY__DOUBLE_STRING_INTEGER);
 
 		strategycpuEClass = createEClass(STRATEGYCPU);
 		createEAttribute(strategycpuEClass, STRATEGYCPU__STRATEGY_CPU_UPPER_LIMIT);
@@ -582,6 +625,8 @@ public class ElasticocciPackageImpl extends EPackageImpl implements ElasticocciP
 		createEAttribute(strategycpuEClass, STRATEGYCPU__STRATEGY_CPU_STEP_CPU_DECREASE);
 		createEAttribute(strategycpuEClass, STRATEGYCPU__STRATEGY_CPU_STEP_CPU_INCREASE);
 		createEAttribute(strategycpuEClass, STRATEGYCPU__STRATEGY_CPU_DATE);
+		createEAttribute(strategycpuEClass, STRATEGYCPU__STRATEGY_CPU_INCREASE_RELATIONAL_OP);
+		createEAttribute(strategycpuEClass, STRATEGYCPU__STRATEGY_CPU_DECREASE_RELATIONAL_OP);
 		createEOperation(strategycpuEClass, STRATEGYCPU___START);
 		createEOperation(strategycpuEClass, STRATEGYCPU___STOP);
 		createEOperation(strategycpuEClass, STRATEGYCPU___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
@@ -593,7 +638,9 @@ public class ElasticocciPackageImpl extends EPackageImpl implements ElasticocciP
 		createEAttribute(strategymemoryEClass, STRATEGYMEMORY__STRATEGY_MEMORY_STEP_MEM_INCREASE);
 		createEAttribute(strategymemoryEClass, STRATEGYMEMORY__STRATEGY_MEMORY_UPPER_LIMIT);
 		createEAttribute(strategymemoryEClass, STRATEGYMEMORY__STRATEGY_MEMORY_LOWER_LIMIT);
-		createEAttribute(strategymemoryEClass, STRATEGYMEMORY__STRATEGY_CPU_DATE);
+		createEAttribute(strategymemoryEClass, STRATEGYMEMORY__STRATEGY_MEMORY_DATE);
+		createEAttribute(strategymemoryEClass, STRATEGYMEMORY__STRATEGY_MEMORY_INCREASE_RELATIONAL_OP);
+		createEAttribute(strategymemoryEClass, STRATEGYMEMORY__STRATEGY_MEMORY_DECREASE_RELATIONAL_OP);
 		createEOperation(strategymemoryEClass, STRATEGYMEMORY___STOP);
 		createEOperation(strategymemoryEClass, STRATEGYMEMORY___START);
 		createEOperation(strategymemoryEClass, STRATEGYMEMORY___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
@@ -601,6 +648,7 @@ public class ElasticocciPackageImpl extends EPackageImpl implements ElasticocciP
 		// Create enums
 		modeTypeEEnum = createEEnum(MODE_TYPE);
 		directionTypeEEnum = createEEnum(DIRECTION_TYPE);
+		relationalTypeEEnum = createEEnum(RELATIONAL_TYPE);
 
 		// Create data types
 		doubleEDataType = createEDataType(DOUBLE);
@@ -674,25 +722,22 @@ public class ElasticocciPackageImpl extends EPackageImpl implements ElasticocciP
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(strategycomputeEClass, Strategycompute.class, "Strategycompute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getStrategycompute_StrategyComputeUthreshold(), theOCCIPackage.getInteger(), "StrategyComputeUthreshold", null, 0, 1, Strategycompute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStrategycompute_StrategyComputeBreathDown(), theOCCIPackage.getInteger(), "StrategyComputeBreathDown", null, 0, 1, Strategycompute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStrategycompute_StrategyComputeBreathUp(), theOCCIPackage.getInteger(), "StrategyComputeBreathUp", null, 0, 1, Strategycompute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStrategycompute_StrategyComputePollTime(), theOCCIPackage.getInteger(), "StrategyComputePollTime", null, 0, 1, Strategycompute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStrategycompute_StrategyComputeLthreshold(), theOCCIPackage.getInteger(), "StrategyComputeLthreshold", null, 0, 1, Strategycompute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		op = initEOperation(getStrategycompute__Createpolicy__Double_String_Integer(), null, "createpolicy", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getDouble(), "metricUtilization", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theOCCIPackage.getString(), "op", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theOCCIPackage.getInteger(), "threshold", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEAttribute(getStrategycompute_StrategyComputeUthreshold(), theOCCIPackage.getInteger(), "StrategyComputeUthreshold", "90", 0, 1, Strategycompute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStrategycompute_StrategyComputeBreathDown(), theOCCIPackage.getInteger(), "StrategyComputeBreathDown", "20000", 0, 1, Strategycompute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStrategycompute_StrategyComputeBreathUp(), theOCCIPackage.getInteger(), "StrategyComputeBreathUp", "40000", 0, 1, Strategycompute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStrategycompute_StrategyComputePollTime(), theOCCIPackage.getInteger(), "StrategyComputePollTime", "10000", 0, 1, Strategycompute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStrategycompute_StrategyComputeLthreshold(), theOCCIPackage.getInteger(), "StrategyComputeLthreshold", "70", 0, 1, Strategycompute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(strategycpuEClass, Strategycpu.class, "Strategycpu", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getStrategycpu_StrategyCPUUpperLimit(), theOCCIPackage.getInteger(), "StrategyCPUUpperLimit", null, 0, 1, Strategycpu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStrategycpu_StrategyCPULowerLimit(), theOCCIPackage.getInteger(), "StrategyCPULowerLimit", null, 0, 1, Strategycpu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStrategycpu_StrategyCPUMode(), this.getModeType(), "StrategyCPUMode", null, 0, 1, Strategycpu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStrategycpu_StrategyCPUDirection(), this.getDirectionType(), "StrategyCPUDirection", null, 0, 1, Strategycpu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStrategycpu_StrategyCPUStepCPUDecrease(), theOCCIPackage.getInteger(), "StrategyCPUStepCPUDecrease", null, 0, 1, Strategycpu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStrategycpu_StrategyCPUStepCPUIncrease(), theOCCIPackage.getInteger(), "StrategyCPUStepCPUIncrease", null, 0, 1, Strategycpu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStrategycpu_StrategyCPUUpperLimit(), theOCCIPackage.getInteger(), "StrategyCPUUpperLimit", "7", 0, 1, Strategycpu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStrategycpu_StrategyCPULowerLimit(), theOCCIPackage.getInteger(), "StrategyCPULowerLimit", "1", 0, 1, Strategycpu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStrategycpu_StrategyCPUMode(), this.getModeType(), "StrategyCPUMode", "dynamic", 0, 1, Strategycpu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStrategycpu_StrategyCPUDirection(), this.getDirectionType(), "StrategyCPUDirection", "up", 0, 1, Strategycpu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStrategycpu_StrategyCPUStepCPUDecrease(), theOCCIPackage.getInteger(), "StrategyCPUStepCPUDecrease", "1", 0, 1, Strategycpu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStrategycpu_StrategyCPUStepCPUIncrease(), theOCCIPackage.getInteger(), "StrategyCPUStepCPUIncrease", "1", 0, 1, Strategycpu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStrategycpu_StrategyCPUDate(), this.getDateType(), "StrategyCPUDate", null, 0, 1, Strategycpu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStrategycpu_StrategyCPUIncreaseRelationalOp(), this.getRelationalType(), "StrategyCPUIncreaseRelationalOp", "greaterThan", 0, 1, Strategycpu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStrategycpu_StrategyCPUDecreaseRelationalOp(), this.getRelationalType(), "StrategyCPUDecreaseRelationalOp", "lessThan", 0, 1, Strategycpu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getStrategycpu__Start(), null, "start", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -708,13 +753,15 @@ public class ElasticocciPackageImpl extends EPackageImpl implements ElasticocciP
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(strategymemoryEClass, Strategymemory.class, "Strategymemory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getStrategymemory_StrategyMemoryMode(), this.getModeType(), "StrategyMemoryMode", null, 0, 1, Strategymemory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStrategymemory_StrategyMemoryDirection(), this.getDirectionType(), "StrategyMemoryDirection", null, 0, 1, Strategymemory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStrategymemory_StrategyMemoryStepMemDecrease(), this.getDouble(), "StrategyMemoryStepMemDecrease", null, 0, 1, Strategymemory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStrategymemory_StrategyMemoryStepMemIncrease(), this.getDouble(), "StrategyMemoryStepMemIncrease", null, 0, 1, Strategymemory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStrategymemory_StrategyMemoryUpperLimit(), theOCCIPackage.getInteger(), "StrategyMemoryUpperLimit", null, 0, 1, Strategymemory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStrategymemory_StrategyMemoryLowerLimit(), theOCCIPackage.getInteger(), "StrategyMemoryLowerLimit", null, 0, 1, Strategymemory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStrategymemory_StrategyCPUDate(), this.getDateType(), "StrategyCPUDate", null, 0, 1, Strategymemory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStrategymemory_StrategyMemoryMode(), this.getModeType(), "StrategyMemoryMode", "dynamic", 0, 1, Strategymemory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStrategymemory_StrategyMemoryDirection(), this.getDirectionType(), "StrategyMemoryDirection", "up", 0, 1, Strategymemory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStrategymemory_StrategyMemoryStepMemDecrease(), this.getDouble(), "StrategyMemoryStepMemDecrease", "0.25", 0, 1, Strategymemory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStrategymemory_StrategyMemoryStepMemIncrease(), this.getDouble(), "StrategyMemoryStepMemIncrease", "0.5", 0, 1, Strategymemory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStrategymemory_StrategyMemoryUpperLimit(), theOCCIPackage.getInteger(), "StrategyMemoryUpperLimit", "5", 0, 1, Strategymemory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStrategymemory_StrategyMemoryLowerLimit(), theOCCIPackage.getInteger(), "StrategyMemoryLowerLimit", "1", 0, 1, Strategymemory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStrategymemory_StrategyMemoryDate(), this.getDateType(), "StrategyMemoryDate", null, 0, 1, Strategymemory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStrategymemory_StrategyMemoryIncreaseRelationalOp(), this.getRelationalType(), "StrategyMemoryIncreaseRelationalOp", "greaterThan", 0, 1, Strategymemory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStrategymemory_StrategyMemoryDecreaseRelationalOp(), this.getRelationalType(), "StrategyMemoryDecreaseRelationalOp", "lessThan", 0, 1, Strategymemory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getStrategymemory__Stop(), null, "stop", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -738,6 +785,12 @@ public class ElasticocciPackageImpl extends EPackageImpl implements ElasticocciP
 		initEEnum(directionTypeEEnum, DirectionType.class, "DirectionType");
 		addEEnumLiteral(directionTypeEEnum, DirectionType.UP);
 		addEEnumLiteral(directionTypeEEnum, DirectionType.DOWN);
+
+		initEEnum(relationalTypeEEnum, RelationalType.class, "RelationalType");
+		addEEnumLiteral(relationalTypeEEnum, RelationalType.GREATER_THAN);
+		addEEnumLiteral(relationalTypeEEnum, RelationalType.LESS_THAN);
+		addEEnumLiteral(relationalTypeEEnum, RelationalType.GREATER_THANOR_EQUAL);
+		addEEnumLiteral(relationalTypeEEnum, RelationalType.LESS_THANOR_EQUAL);
 
 		// Initialize data types
 		initEDataType(doubleEDataType, Double.class, "Double", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

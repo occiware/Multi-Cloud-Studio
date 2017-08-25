@@ -37,6 +37,7 @@ import org.eclipse.cmf.occi.core.MixinBase;
 public interface Strategycompute extends MixinBase, Strategy {
 	/**
 	 * Returns the value of the '<em><b>Strategy Compute Uthreshold</b></em>' attribute.
+	 * The default value is <code>"90"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -45,7 +46,7 @@ public interface Strategycompute extends MixinBase, Strategy {
 	 * @return the value of the '<em>Strategy Compute Uthreshold</em>' attribute.
 	 * @see #setStrategyComputeUthreshold(Integer)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategycompute_StrategyComputeUthreshold()
-	 * @model dataType="org.eclipse.cmf.occi.core.Integer"
+	 * @model default="90" dataType="org.eclipse.cmf.occi.core.Integer"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategycompute!StrategyComputeUthreshold'"
 	 * @generated
 	 */
@@ -63,6 +64,7 @@ public interface Strategycompute extends MixinBase, Strategy {
 
 	/**
 	 * Returns the value of the '<em><b>Strategy Compute Breath Down</b></em>' attribute.
+	 * The default value is <code>"20000"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -71,7 +73,7 @@ public interface Strategycompute extends MixinBase, Strategy {
 	 * @return the value of the '<em>Strategy Compute Breath Down</em>' attribute.
 	 * @see #setStrategyComputeBreathDown(Integer)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategycompute_StrategyComputeBreathDown()
-	 * @model dataType="org.eclipse.cmf.occi.core.Integer"
+	 * @model default="20000" dataType="org.eclipse.cmf.occi.core.Integer"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategycompute!StrategyComputeBreathDown'"
 	 * @generated
 	 */
@@ -89,6 +91,7 @@ public interface Strategycompute extends MixinBase, Strategy {
 
 	/**
 	 * Returns the value of the '<em><b>Strategy Compute Breath Up</b></em>' attribute.
+	 * The default value is <code>"40000"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -97,7 +100,7 @@ public interface Strategycompute extends MixinBase, Strategy {
 	 * @return the value of the '<em>Strategy Compute Breath Up</em>' attribute.
 	 * @see #setStrategyComputeBreathUp(Integer)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategycompute_StrategyComputeBreathUp()
-	 * @model dataType="org.eclipse.cmf.occi.core.Integer"
+	 * @model default="40000" dataType="org.eclipse.cmf.occi.core.Integer"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategycompute!StrategyComputeBreathUp'"
 	 * @generated
 	 */
@@ -115,6 +118,7 @@ public interface Strategycompute extends MixinBase, Strategy {
 
 	/**
 	 * Returns the value of the '<em><b>Strategy Compute Poll Time</b></em>' attribute.
+	 * The default value is <code>"10000"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -123,7 +127,7 @@ public interface Strategycompute extends MixinBase, Strategy {
 	 * @return the value of the '<em>Strategy Compute Poll Time</em>' attribute.
 	 * @see #setStrategyComputePollTime(Integer)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategycompute_StrategyComputePollTime()
-	 * @model dataType="org.eclipse.cmf.occi.core.Integer"
+	 * @model default="10000" dataType="org.eclipse.cmf.occi.core.Integer"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategycompute!StrategyComputePollTime'"
 	 * @generated
 	 */
@@ -141,6 +145,7 @@ public interface Strategycompute extends MixinBase, Strategy {
 
 	/**
 	 * Returns the value of the '<em><b>Strategy Compute Lthreshold</b></em>' attribute.
+	 * The default value is <code>"70"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -149,7 +154,7 @@ public interface Strategycompute extends MixinBase, Strategy {
 	 * @return the value of the '<em>Strategy Compute Lthreshold</em>' attribute.
 	 * @see #setStrategyComputeLthreshold(Integer)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategycompute_StrategyComputeLthreshold()
-	 * @model dataType="org.eclipse.cmf.occi.core.Integer"
+	 * @model default="70" dataType="org.eclipse.cmf.occi.core.Integer"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategycompute!StrategyComputeLthreshold'"
 	 * @generated
 	 */
@@ -164,20 +169,5 @@ public interface Strategycompute extends MixinBase, Strategy {
 	 * @generated
 	 */
 	void setStrategyComputeLthreshold(Integer value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * 
-	 * @param metricUtilization 
-	 * @param op 
-	 * @param threshold 
-	 * <!-- end-model-doc -->
-	 * @model metricUtilizationDataType="org.eclipse.cmf.occi.multicloud.elasticocci.Double" opDataType="org.eclipse.cmf.occi.core.String" thresholdDataType="org.eclipse.cmf.occi.core.Integer"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategycompute!createpolicy(http://occiware.org/occi/multicloud/elasticocci/ecore!Double,String,Integer)'"
-	 * @generated
-	 */
-	void createpolicy(Double metricUtilization, String op, Integer threshold);
 
 } // Strategycompute

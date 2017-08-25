@@ -154,6 +154,8 @@ public class ElasticocciValidator extends EObjectValidator {
 				return validateModeType((ModeType)value, diagnostics, context);
 			case ElasticocciPackage.DIRECTION_TYPE:
 				return validateDirectionType((DirectionType)value, diagnostics, context);
+			case ElasticocciPackage.RELATIONAL_TYPE:
+				return validateRelationalType((RelationalType)value, diagnostics, context);
 			case ElasticocciPackage.DOUBLE:
 				return validateDouble((Double)value, diagnostics, context);
 			case ElasticocciPackage.DATE_TYPE:
@@ -341,6 +343,15 @@ public class ElasticocciValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateDirectionType(DirectionType directionType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRelationalType(RelationalType relationalType, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

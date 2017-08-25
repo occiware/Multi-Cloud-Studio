@@ -33,7 +33,9 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *   <li>{@link org.eclipse.cmf.occi.multicloud.elasticocci.Strategymemory#getStrategyMemoryStepMemIncrease <em>Strategy Memory Step Mem Increase</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.elasticocci.Strategymemory#getStrategyMemoryUpperLimit <em>Strategy Memory Upper Limit</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.elasticocci.Strategymemory#getStrategyMemoryLowerLimit <em>Strategy Memory Lower Limit</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.elasticocci.Strategymemory#getStrategyCPUDate <em>Strategy CPU Date</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.elasticocci.Strategymemory#getStrategyMemoryDate <em>Strategy Memory Date</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.elasticocci.Strategymemory#getStrategyMemoryIncreaseRelationalOp <em>Strategy Memory Increase Relational Op</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.elasticocci.Strategymemory#getStrategyMemoryDecreaseRelationalOp <em>Strategy Memory Decrease Relational Op</em>}</li>
  * </ul>
  *
  * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategymemory()
@@ -43,6 +45,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 public interface Strategymemory extends MixinBase, Strategycompute {
 	/**
 	 * Returns the value of the '<em><b>Strategy Memory Mode</b></em>' attribute.
+	 * The default value is <code>"dynamic"</code>.
 	 * The literals are from the enumeration {@link org.eclipse.cmf.occi.multicloud.elasticocci.ModeType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -53,7 +56,8 @@ public interface Strategymemory extends MixinBase, Strategycompute {
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ModeType
 	 * @see #setStrategyMemoryMode(ModeType)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategymemory_StrategyMemoryMode()
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategymemory!StrategyMemoryMode'"
+	 * @model default="dynamic"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategymemory!StrategyMemoryMode'"
 	 * @generated
 	 */
 	ModeType getStrategyMemoryMode();
@@ -71,6 +75,7 @@ public interface Strategymemory extends MixinBase, Strategycompute {
 
 	/**
 	 * Returns the value of the '<em><b>Strategy Memory Direction</b></em>' attribute.
+	 * The default value is <code>"up"</code>.
 	 * The literals are from the enumeration {@link org.eclipse.cmf.occi.multicloud.elasticocci.DirectionType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -81,7 +86,8 @@ public interface Strategymemory extends MixinBase, Strategycompute {
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.DirectionType
 	 * @see #setStrategyMemoryDirection(DirectionType)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategymemory_StrategyMemoryDirection()
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategymemory!StrategyMemoryDirection'"
+	 * @model default="up"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategymemory!StrategyMemoryDirection'"
 	 * @generated
 	 */
 	DirectionType getStrategyMemoryDirection();
@@ -99,6 +105,7 @@ public interface Strategymemory extends MixinBase, Strategycompute {
 
 	/**
 	 * Returns the value of the '<em><b>Strategy Memory Step Mem Decrease</b></em>' attribute.
+	 * The default value is <code>"0.25"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -107,7 +114,7 @@ public interface Strategymemory extends MixinBase, Strategycompute {
 	 * @return the value of the '<em>Strategy Memory Step Mem Decrease</em>' attribute.
 	 * @see #setStrategyMemoryStepMemDecrease(Double)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategymemory_StrategyMemoryStepMemDecrease()
-	 * @model dataType="org.eclipse.cmf.occi.multicloud.elasticocci.Double"
+	 * @model default="0.25" dataType="org.eclipse.cmf.occi.multicloud.elasticocci.Double"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategymemory!StrategyMemoryStepMemDecrease'"
 	 * @generated
 	 */
@@ -125,6 +132,7 @@ public interface Strategymemory extends MixinBase, Strategycompute {
 
 	/**
 	 * Returns the value of the '<em><b>Strategy Memory Step Mem Increase</b></em>' attribute.
+	 * The default value is <code>"0.5"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -133,7 +141,7 @@ public interface Strategymemory extends MixinBase, Strategycompute {
 	 * @return the value of the '<em>Strategy Memory Step Mem Increase</em>' attribute.
 	 * @see #setStrategyMemoryStepMemIncrease(Double)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategymemory_StrategyMemoryStepMemIncrease()
-	 * @model dataType="org.eclipse.cmf.occi.multicloud.elasticocci.Double"
+	 * @model default="0.5" dataType="org.eclipse.cmf.occi.multicloud.elasticocci.Double"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategymemory!StrategyMemoryStepMemIncrease'"
 	 * @generated
 	 */
@@ -151,6 +159,7 @@ public interface Strategymemory extends MixinBase, Strategycompute {
 
 	/**
 	 * Returns the value of the '<em><b>Strategy Memory Upper Limit</b></em>' attribute.
+	 * The default value is <code>"5"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -159,7 +168,7 @@ public interface Strategymemory extends MixinBase, Strategycompute {
 	 * @return the value of the '<em>Strategy Memory Upper Limit</em>' attribute.
 	 * @see #setStrategyMemoryUpperLimit(Integer)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategymemory_StrategyMemoryUpperLimit()
-	 * @model dataType="org.eclipse.cmf.occi.core.Integer"
+	 * @model default="5" dataType="org.eclipse.cmf.occi.core.Integer"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategymemory!StrategyMemoryUpperLimit'"
 	 * @generated
 	 */
@@ -177,6 +186,7 @@ public interface Strategymemory extends MixinBase, Strategycompute {
 
 	/**
 	 * Returns the value of the '<em><b>Strategy Memory Lower Limit</b></em>' attribute.
+	 * The default value is <code>"1"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -185,7 +195,7 @@ public interface Strategymemory extends MixinBase, Strategycompute {
 	 * @return the value of the '<em>Strategy Memory Lower Limit</em>' attribute.
 	 * @see #setStrategyMemoryLowerLimit(Integer)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategymemory_StrategyMemoryLowerLimit()
-	 * @model dataType="org.eclipse.cmf.occi.core.Integer"
+	 * @model default="1" dataType="org.eclipse.cmf.occi.core.Integer"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategymemory!StrategyMemoryLowerLimit'"
 	 * @generated
 	 */
@@ -202,30 +212,90 @@ public interface Strategymemory extends MixinBase, Strategycompute {
 	void setStrategyMemoryLowerLimit(Integer value);
 
 	/**
-	 * Returns the value of the '<em><b>Strategy CPU Date</b></em>' attribute.
+	 * Returns the value of the '<em><b>Strategy Memory Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * 
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Strategy CPU Date</em>' attribute.
-	 * @see #setStrategyCPUDate(String)
-	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategymemory_StrategyCPUDate()
+	 * @return the value of the '<em>Strategy Memory Date</em>' attribute.
+	 * @see #setStrategyMemoryDate(String)
+	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategymemory_StrategyMemoryDate()
 	 * @model dataType="org.eclipse.cmf.occi.multicloud.elasticocci.DateType"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategymemory!StrategyCPUDate'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategymemory!StrategyMemoryDate'"
 	 * @generated
 	 */
-	String getStrategyCPUDate();
+	String getStrategyMemoryDate();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.elasticocci.Strategymemory#getStrategyCPUDate <em>Strategy CPU Date</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.elasticocci.Strategymemory#getStrategyMemoryDate <em>Strategy Memory Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Strategy CPU Date</em>' attribute.
-	 * @see #getStrategyCPUDate()
+	 * @param value the new value of the '<em>Strategy Memory Date</em>' attribute.
+	 * @see #getStrategyMemoryDate()
 	 * @generated
 	 */
-	void setStrategyCPUDate(String value);
+	void setStrategyMemoryDate(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Strategy Memory Increase Relational Op</b></em>' attribute.
+	 * The default value is <code>"greaterThan"</code>.
+	 * The literals are from the enumeration {@link org.eclipse.cmf.occi.multicloud.elasticocci.RelationalType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Strategy Memory Increase Relational Op</em>' attribute.
+	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.RelationalType
+	 * @see #setStrategyMemoryIncreaseRelationalOp(RelationalType)
+	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategymemory_StrategyMemoryIncreaseRelationalOp()
+	 * @model default="greaterThan"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategymemory!StrategyMemoryIncreaseRelationalOp'"
+	 * @generated
+	 */
+	RelationalType getStrategyMemoryIncreaseRelationalOp();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.elasticocci.Strategymemory#getStrategyMemoryIncreaseRelationalOp <em>Strategy Memory Increase Relational Op</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Strategy Memory Increase Relational Op</em>' attribute.
+	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.RelationalType
+	 * @see #getStrategyMemoryIncreaseRelationalOp()
+	 * @generated
+	 */
+	void setStrategyMemoryIncreaseRelationalOp(RelationalType value);
+
+	/**
+	 * Returns the value of the '<em><b>Strategy Memory Decrease Relational Op</b></em>' attribute.
+	 * The default value is <code>"lessThan"</code>.
+	 * The literals are from the enumeration {@link org.eclipse.cmf.occi.multicloud.elasticocci.RelationalType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Strategy Memory Decrease Relational Op</em>' attribute.
+	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.RelationalType
+	 * @see #setStrategyMemoryDecreaseRelationalOp(RelationalType)
+	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategymemory_StrategyMemoryDecreaseRelationalOp()
+	 * @model default="lessThan"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategymemory!StrategyMemoryDecreaseRelationalOp'"
+	 * @generated
+	 */
+	RelationalType getStrategyMemoryDecreaseRelationalOp();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.elasticocci.Strategymemory#getStrategyMemoryDecreaseRelationalOp <em>Strategy Memory Decrease Relational Op</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Strategy Memory Decrease Relational Op</em>' attribute.
+	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.RelationalType
+	 * @see #getStrategyMemoryDecreaseRelationalOp()
+	 * @generated
+	 */
+	void setStrategyMemoryDecreaseRelationalOp(RelationalType value);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -27,6 +27,21 @@
         <ecoreEnumLiteral href="elasticocci.ecore#//DirectionType/down"/>
       </genEnumLiterals>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="elasticocci.ecore#//RelationalType"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="elasticocci.ecore#//RelationalType/greaterThan"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="elasticocci.ecore#//RelationalType/lessThan"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="elasticocci.ecore#//RelationalType/greaterThanorEqual"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="elasticocci.ecore#//RelationalType/lessThanorEqual"/>
+      </genEnumLiterals>
+    </genEnums>
     <genDataTypes>
       <ecoreDataType href="elasticocci.ecore#//Double"/>
     </genDataTypes>
@@ -59,18 +74,6 @@
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="elasticocci.ecore#//Strategycompute/StrategyComputeLthreshold"/>
       </genFeatures>
-      <genOperations>
-        <ecoreOperation href="elasticocci.ecore#//Strategycompute/createpolicy"/>
-        <genParameters>
-          <ecoreParameter href="elasticocci.ecore#//Strategycompute/createpolicy/metricUtilization"/>
-        </genParameters>
-        <genParameters>
-          <ecoreParameter href="elasticocci.ecore#//Strategycompute/createpolicy/op"/>
-        </genParameters>
-        <genParameters>
-          <ecoreParameter href="elasticocci.ecore#//Strategycompute/createpolicy/threshold"/>
-        </genParameters>
-      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="elasticocci.ecore#//Strategycpu"/>
@@ -94,6 +97,12 @@
       </genFeatures>
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="elasticocci.ecore#//Strategycpu/StrategyCPUDate"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="elasticocci.ecore#//Strategycpu/StrategyCPUIncreaseRelationalOp"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="elasticocci.ecore#//Strategycpu/StrategyCPUDecreaseRelationalOp"/>
       </genFeatures>
       <genOperations>
         <ecoreOperation href="elasticocci.ecore#//Strategycpu/start"/>
@@ -123,7 +132,13 @@
         <ecoreFeature xsi:type="ecore:EAttribute" href="elasticocci.ecore#//Strategymemory/StrategyMemoryLowerLimit"/>
       </genFeatures>
       <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="elasticocci.ecore#//Strategymemory/StrategyCPUDate"/>
+        <ecoreFeature xsi:type="ecore:EAttribute" href="elasticocci.ecore#//Strategymemory/StrategyMemoryDate"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="elasticocci.ecore#//Strategymemory/StrategyMemoryIncreaseRelationalOp"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="elasticocci.ecore#//Strategymemory/StrategyMemoryDecreaseRelationalOp"/>
       </genFeatures>
       <genOperations>
         <ecoreOperation href="elasticocci.ecore#//Strategymemory/stop"/>

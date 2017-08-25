@@ -24,6 +24,7 @@ import org.eclipse.cmf.occi.multicloud.elasticocci.DirectionType;
 import org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage;
 import org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciTables;
 import org.eclipse.cmf.occi.multicloud.elasticocci.ModeType;
+import org.eclipse.cmf.occi.multicloud.elasticocci.RelationalType;
 import org.eclipse.cmf.occi.multicloud.elasticocci.Strategy;
 import org.eclipse.cmf.occi.multicloud.elasticocci.Strategycompute;
 import org.eclipse.cmf.occi.multicloud.elasticocci.Strategycpu;
@@ -74,6 +75,8 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  *   <li>{@link org.eclipse.cmf.occi.multicloud.elasticocci.impl.StrategycpuImpl#getStrategyCPUStepCPUDecrease <em>Strategy CPU Step CPU Decrease</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.elasticocci.impl.StrategycpuImpl#getStrategyCPUStepCPUIncrease <em>Strategy CPU Step CPU Increase</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.elasticocci.impl.StrategycpuImpl#getStrategyCPUDate <em>Strategy CPU Date</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.elasticocci.impl.StrategycpuImpl#getStrategyCPUIncreaseRelationalOp <em>Strategy CPU Increase Relational Op</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.elasticocci.impl.StrategycpuImpl#getStrategyCPUDecreaseRelationalOp <em>Strategy CPU Decrease Relational Op</em>}</li>
  * </ul>
  *
  * @generated
@@ -87,7 +90,7 @@ public class StrategycpuImpl extends MixinBaseImpl implements Strategycpu {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Integer STRATEGY_COMPUTE_UTHRESHOLD_EDEFAULT = null;
+	protected static final Integer STRATEGY_COMPUTE_UTHRESHOLD_EDEFAULT = new Integer(90);
 
 	/**
 	 * The cached value of the '{@link #getStrategyComputeUthreshold() <em>Strategy Compute Uthreshold</em>}' attribute.
@@ -107,7 +110,7 @@ public class StrategycpuImpl extends MixinBaseImpl implements Strategycpu {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Integer STRATEGY_COMPUTE_BREATH_DOWN_EDEFAULT = null;
+	protected static final Integer STRATEGY_COMPUTE_BREATH_DOWN_EDEFAULT = new Integer(20000);
 
 	/**
 	 * The cached value of the '{@link #getStrategyComputeBreathDown() <em>Strategy Compute Breath Down</em>}' attribute.
@@ -127,7 +130,7 @@ public class StrategycpuImpl extends MixinBaseImpl implements Strategycpu {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Integer STRATEGY_COMPUTE_BREATH_UP_EDEFAULT = null;
+	protected static final Integer STRATEGY_COMPUTE_BREATH_UP_EDEFAULT = new Integer(40000);
 
 	/**
 	 * The cached value of the '{@link #getStrategyComputeBreathUp() <em>Strategy Compute Breath Up</em>}' attribute.
@@ -147,7 +150,7 @@ public class StrategycpuImpl extends MixinBaseImpl implements Strategycpu {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Integer STRATEGY_COMPUTE_POLL_TIME_EDEFAULT = null;
+	protected static final Integer STRATEGY_COMPUTE_POLL_TIME_EDEFAULT = new Integer(10000);
 
 	/**
 	 * The cached value of the '{@link #getStrategyComputePollTime() <em>Strategy Compute Poll Time</em>}' attribute.
@@ -167,7 +170,7 @@ public class StrategycpuImpl extends MixinBaseImpl implements Strategycpu {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Integer STRATEGY_COMPUTE_LTHRESHOLD_EDEFAULT = null;
+	protected static final Integer STRATEGY_COMPUTE_LTHRESHOLD_EDEFAULT = new Integer(70);
 
 	/**
 	 * The cached value of the '{@link #getStrategyComputeLthreshold() <em>Strategy Compute Lthreshold</em>}' attribute.
@@ -187,7 +190,7 @@ public class StrategycpuImpl extends MixinBaseImpl implements Strategycpu {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Integer STRATEGY_CPU_UPPER_LIMIT_EDEFAULT = null;
+	protected static final Integer STRATEGY_CPU_UPPER_LIMIT_EDEFAULT = new Integer(7);
 
 	/**
 	 * The cached value of the '{@link #getStrategyCPUUpperLimit() <em>Strategy CPU Upper Limit</em>}' attribute.
@@ -207,7 +210,7 @@ public class StrategycpuImpl extends MixinBaseImpl implements Strategycpu {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Integer STRATEGY_CPU_LOWER_LIMIT_EDEFAULT = null;
+	protected static final Integer STRATEGY_CPU_LOWER_LIMIT_EDEFAULT = new Integer(1);
 
 	/**
 	 * The cached value of the '{@link #getStrategyCPULowerLimit() <em>Strategy CPU Lower Limit</em>}' attribute.
@@ -227,7 +230,7 @@ public class StrategycpuImpl extends MixinBaseImpl implements Strategycpu {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ModeType STRATEGY_CPU_MODE_EDEFAULT = ModeType.MANUAL;
+	protected static final ModeType STRATEGY_CPU_MODE_EDEFAULT = ModeType.DYNAMIC;
 
 	/**
 	 * The cached value of the '{@link #getStrategyCPUMode() <em>Strategy CPU Mode</em>}' attribute.
@@ -267,7 +270,7 @@ public class StrategycpuImpl extends MixinBaseImpl implements Strategycpu {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Integer STRATEGY_CPU_STEP_CPU_DECREASE_EDEFAULT = null;
+	protected static final Integer STRATEGY_CPU_STEP_CPU_DECREASE_EDEFAULT = new Integer(1);
 
 	/**
 	 * The cached value of the '{@link #getStrategyCPUStepCPUDecrease() <em>Strategy CPU Step CPU Decrease</em>}' attribute.
@@ -287,7 +290,7 @@ public class StrategycpuImpl extends MixinBaseImpl implements Strategycpu {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Integer STRATEGY_CPU_STEP_CPU_INCREASE_EDEFAULT = null;
+	protected static final Integer STRATEGY_CPU_STEP_CPU_INCREASE_EDEFAULT = new Integer(1);
 
 	/**
 	 * The cached value of the '{@link #getStrategyCPUStepCPUIncrease() <em>Strategy CPU Step CPU Increase</em>}' attribute.
@@ -318,6 +321,46 @@ public class StrategycpuImpl extends MixinBaseImpl implements Strategycpu {
 	 * @ordered
 	 */
 	protected String strategyCPUDate = STRATEGY_CPU_DATE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getStrategyCPUIncreaseRelationalOp() <em>Strategy CPU Increase Relational Op</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStrategyCPUIncreaseRelationalOp()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final RelationalType STRATEGY_CPU_INCREASE_RELATIONAL_OP_EDEFAULT = RelationalType.GREATER_THAN;
+
+	/**
+	 * The cached value of the '{@link #getStrategyCPUIncreaseRelationalOp() <em>Strategy CPU Increase Relational Op</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStrategyCPUIncreaseRelationalOp()
+	 * @generated
+	 * @ordered
+	 */
+	protected RelationalType strategyCPUIncreaseRelationalOp = STRATEGY_CPU_INCREASE_RELATIONAL_OP_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getStrategyCPUDecreaseRelationalOp() <em>Strategy CPU Decrease Relational Op</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStrategyCPUDecreaseRelationalOp()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final RelationalType STRATEGY_CPU_DECREASE_RELATIONAL_OP_EDEFAULT = RelationalType.LESS_THAN;
+
+	/**
+	 * The cached value of the '{@link #getStrategyCPUDecreaseRelationalOp() <em>Strategy CPU Decrease Relational Op</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStrategyCPUDecreaseRelationalOp()
+	 * @generated
+	 * @ordered
+	 */
+	protected RelationalType strategyCPUDecreaseRelationalOp = STRATEGY_CPU_DECREASE_RELATIONAL_OP_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -595,6 +638,48 @@ public class StrategycpuImpl extends MixinBaseImpl implements Strategycpu {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public RelationalType getStrategyCPUIncreaseRelationalOp() {
+		return strategyCPUIncreaseRelationalOp;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setStrategyCPUIncreaseRelationalOp(RelationalType newStrategyCPUIncreaseRelationalOp) {
+		RelationalType oldStrategyCPUIncreaseRelationalOp = strategyCPUIncreaseRelationalOp;
+		strategyCPUIncreaseRelationalOp = newStrategyCPUIncreaseRelationalOp == null ? STRATEGY_CPU_INCREASE_RELATIONAL_OP_EDEFAULT : newStrategyCPUIncreaseRelationalOp;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ElasticocciPackage.STRATEGYCPU__STRATEGY_CPU_INCREASE_RELATIONAL_OP, oldStrategyCPUIncreaseRelationalOp, strategyCPUIncreaseRelationalOp));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RelationalType getStrategyCPUDecreaseRelationalOp() {
+		return strategyCPUDecreaseRelationalOp;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setStrategyCPUDecreaseRelationalOp(RelationalType newStrategyCPUDecreaseRelationalOp) {
+		RelationalType oldStrategyCPUDecreaseRelationalOp = strategyCPUDecreaseRelationalOp;
+		strategyCPUDecreaseRelationalOp = newStrategyCPUDecreaseRelationalOp == null ? STRATEGY_CPU_DECREASE_RELATIONAL_OP_EDEFAULT : newStrategyCPUDecreaseRelationalOp;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ElasticocciPackage.STRATEGYCPU__STRATEGY_CPU_DECREASE_RELATIONAL_OP, oldStrategyCPUDecreaseRelationalOp, strategyCPUDecreaseRelationalOp));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public void start() {
 		throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategycpu!start()
 	}
@@ -651,15 +736,6 @@ public class StrategycpuImpl extends MixinBaseImpl implements Strategycpu {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void createpolicy(final Double metricUtilization, final String op, final Integer threshold) {
-		throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategycompute!createpolicy(http://occiware.org/occi/multicloud/elasticocci/ecore!Double,String,Integer)
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -687,6 +763,10 @@ public class StrategycpuImpl extends MixinBaseImpl implements Strategycpu {
 				return getStrategyCPUStepCPUIncrease();
 			case ElasticocciPackage.STRATEGYCPU__STRATEGY_CPU_DATE:
 				return getStrategyCPUDate();
+			case ElasticocciPackage.STRATEGYCPU__STRATEGY_CPU_INCREASE_RELATIONAL_OP:
+				return getStrategyCPUIncreaseRelationalOp();
+			case ElasticocciPackage.STRATEGYCPU__STRATEGY_CPU_DECREASE_RELATIONAL_OP:
+				return getStrategyCPUDecreaseRelationalOp();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -734,6 +814,12 @@ public class StrategycpuImpl extends MixinBaseImpl implements Strategycpu {
 				return;
 			case ElasticocciPackage.STRATEGYCPU__STRATEGY_CPU_DATE:
 				setStrategyCPUDate((String)newValue);
+				return;
+			case ElasticocciPackage.STRATEGYCPU__STRATEGY_CPU_INCREASE_RELATIONAL_OP:
+				setStrategyCPUIncreaseRelationalOp((RelationalType)newValue);
+				return;
+			case ElasticocciPackage.STRATEGYCPU__STRATEGY_CPU_DECREASE_RELATIONAL_OP:
+				setStrategyCPUDecreaseRelationalOp((RelationalType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -783,6 +869,12 @@ public class StrategycpuImpl extends MixinBaseImpl implements Strategycpu {
 			case ElasticocciPackage.STRATEGYCPU__STRATEGY_CPU_DATE:
 				setStrategyCPUDate(STRATEGY_CPU_DATE_EDEFAULT);
 				return;
+			case ElasticocciPackage.STRATEGYCPU__STRATEGY_CPU_INCREASE_RELATIONAL_OP:
+				setStrategyCPUIncreaseRelationalOp(STRATEGY_CPU_INCREASE_RELATIONAL_OP_EDEFAULT);
+				return;
+			case ElasticocciPackage.STRATEGYCPU__STRATEGY_CPU_DECREASE_RELATIONAL_OP:
+				setStrategyCPUDecreaseRelationalOp(STRATEGY_CPU_DECREASE_RELATIONAL_OP_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -819,6 +911,10 @@ public class StrategycpuImpl extends MixinBaseImpl implements Strategycpu {
 				return STRATEGY_CPU_STEP_CPU_INCREASE_EDEFAULT == null ? strategyCPUStepCPUIncrease != null : !STRATEGY_CPU_STEP_CPU_INCREASE_EDEFAULT.equals(strategyCPUStepCPUIncrease);
 			case ElasticocciPackage.STRATEGYCPU__STRATEGY_CPU_DATE:
 				return STRATEGY_CPU_DATE_EDEFAULT == null ? strategyCPUDate != null : !STRATEGY_CPU_DATE_EDEFAULT.equals(strategyCPUDate);
+			case ElasticocciPackage.STRATEGYCPU__STRATEGY_CPU_INCREASE_RELATIONAL_OP:
+				return strategyCPUIncreaseRelationalOp != STRATEGY_CPU_INCREASE_RELATIONAL_OP_EDEFAULT;
+			case ElasticocciPackage.STRATEGYCPU__STRATEGY_CPU_DECREASE_RELATIONAL_OP:
+				return strategyCPUDecreaseRelationalOp != STRATEGY_CPU_DECREASE_RELATIONAL_OP_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -888,7 +984,6 @@ public class StrategycpuImpl extends MixinBaseImpl implements Strategycpu {
 		}
 		if (baseClass == Strategycompute.class) {
 			switch (baseOperationID) {
-				case ElasticocciPackage.STRATEGYCOMPUTE___CREATEPOLICY__DOUBLE_STRING_INTEGER: return ElasticocciPackage.STRATEGYCPU___CREATEPOLICY__DOUBLE_STRING_INTEGER;
 				default: return -1;
 			}
 		}
@@ -912,9 +1007,6 @@ public class StrategycpuImpl extends MixinBaseImpl implements Strategycpu {
 				return null;
 			case ElasticocciPackage.STRATEGYCPU___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP:
 				return appliesConstraint((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case ElasticocciPackage.STRATEGYCPU___CREATEPOLICY__DOUBLE_STRING_INTEGER:
-				createpolicy((Double)arguments.get(0), (String)arguments.get(1), (Integer)arguments.get(2));
-				return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -953,6 +1045,10 @@ public class StrategycpuImpl extends MixinBaseImpl implements Strategycpu {
 		result.append(strategyCPUStepCPUIncrease);
 		result.append(", StrategyCPUDate: ");
 		result.append(strategyCPUDate);
+		result.append(", StrategyCPUIncreaseRelationalOp: ");
+		result.append(strategyCPUIncreaseRelationalOp);
+		result.append(", StrategyCPUDecreaseRelationalOp: ");
+		result.append(strategyCPUDecreaseRelationalOp);
 		result.append(')');
 		return result.toString();
 	}

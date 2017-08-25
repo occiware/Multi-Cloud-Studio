@@ -10,62 +10,57 @@
   </kinds>
   <mixins name="Strategy" scheme="http://occiware.org/occi/multicloud/elasticocci#" applies="//@kinds[term='elasticcontroller']"/>
   <mixins name="StrategyCompute" scheme="http://occiware.org/occi/multicloud/elasticocci#" depends="//@mixins[term='strategy']">
-    <attributes name="StrategyCompute.uthreshold">
+    <attributes name="StrategyCompute.uthreshold" mutable="true" default="90">
       <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
     </attributes>
-    <attributes name="StrategyCompute.breathDown">
+    <attributes name="StrategyCompute.breathDown" mutable="true" default="20000">
       <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
     </attributes>
-    <attributes name="StrategyCompute.breathUp">
+    <attributes name="StrategyCompute.breathUp" mutable="true" default="40000">
       <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
     </attributes>
-    <attributes name="StrategyCompute.pollTime">
+    <attributes name="StrategyCompute.pollTime" mutable="true" default="10000">
       <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
     </attributes>
-    <attributes name="StrategyCompute.lthreshold">
+    <attributes name="StrategyCompute.lthreshold" mutable="true" default="70">
       <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
     </attributes>
-    <actions name="createPolicy" scheme="http://occiware.org/occi/multicloud/elasticocci/strategycompute/action#">
-      <attributes name="metricUtilization" type="//@types.2"/>
-      <attributes name="op">
-        <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
-      </attributes>
-      <attributes name="threshold">
-        <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
-      </attributes>
-    </actions>
   </mixins>
   <mixins name="StrategyCPU" scheme="http://occiware.org/occi/multicloud/elasticocci#" depends="//@mixins[term='strategycompute']" applies="//@kinds[term='elasticcontroller']">
-    <attributes name="StrategyCPU.upperLimit">
+    <attributes name="StrategyCPU.upperLimit" mutable="true" default="7">
       <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
     </attributes>
-    <attributes name="StrategyCPU.lowerLimit">
+    <attributes name="StrategyCPU.lowerLimit" mutable="true" default="1">
       <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
     </attributes>
-    <attributes name="StrategyCPU.mode" type="//@types.0"/>
-    <attributes name="StrategyCPU.direction" type="//@types.1"/>
-    <attributes name="StrategyCPU.stepCPUDecrease">
+    <attributes name="StrategyCPU.mode" mutable="true" default="dynamic" type="//@types.0"/>
+    <attributes name="StrategyCPU.direction" mutable="true" default="up" type="//@types.1"/>
+    <attributes name="StrategyCPU.stepCPUDecrease" mutable="true" default="1">
       <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
     </attributes>
-    <attributes name="StrategyCPU.stepCPUIncrease">
+    <attributes name="StrategyCPU.stepCPUIncrease" mutable="true" default="1">
       <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
     </attributes>
-    <attributes name="StrategyCPU.date" type="//@types.3"/>
+    <attributes name="StrategyCPU.date" mutable="true" type="//@types.3"/>
+    <attributes name="StrategyCPU.increaseRelationalOp" mutable="true" default="greaterThan" type="//@types.4"/>
+    <attributes name="StrategyCPU.decreaseRelationalOp" mutable="true" default="lessThan" type="//@types.4"/>
     <actions name="start" scheme="http://occiware.org/occi/multicloud/elasticocci/strategycpu/action#"/>
     <actions name="stop" scheme="http://occiware.org/occi/multicloud/elasticocci/strategycpu/action#"/>
   </mixins>
   <mixins name="StrategyMemory" scheme="http://occiware.org/occi/multicloud/elasticocci#" depends="//@mixins[term='strategycompute']" applies="//@kinds[term='elasticcontroller']">
-    <attributes name="StrategyMemory.mode" type="//@types.0"/>
-    <attributes name="StrategyMemory.direction" type="//@types.1"/>
-    <attributes name="StrategyMemory.stepMemDecrease" type="//@types.2"/>
-    <attributes name="StrategyMemory.stepMemIncrease" type="//@types.2"/>
-    <attributes name="StrategyMemory.upperLimit">
+    <attributes name="StrategyMemory.mode" mutable="true" default="dynamic" type="//@types.0"/>
+    <attributes name="StrategyMemory.direction" mutable="true" default="up" type="//@types.1"/>
+    <attributes name="StrategyMemory.stepMemDecrease" mutable="true" default="0.25" type="//@types.2"/>
+    <attributes name="StrategyMemory.stepMemIncrease" mutable="true" default="0.5" type="//@types.2"/>
+    <attributes name="StrategyMemory.upperLimit" mutable="true" default="5">
       <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
     </attributes>
-    <attributes name="StrategyMemory.lowerLimit">
+    <attributes name="StrategyMemory.lowerLimit" mutable="true" default="1">
       <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
     </attributes>
-    <attributes name="StrategyCPU.date" type="//@types.3"/>
+    <attributes name="StrategyMemory.date" mutable="true" type="//@types.3"/>
+    <attributes name="StrategyMemory.increaseRelationalOp" mutable="true" default="greaterThan" type="//@types.4"/>
+    <attributes name="StrategyMemory.decreaseRelationalOp" mutable="true" default="lessThan" type="//@types.4"/>
     <actions name="stop" scheme="http://occiware.org/occi/multicloud/elasticocci/strategymemory/action#"/>
     <actions name="start" scheme="http://occiware.org/occi/multicloud/elasticocci/strategymemory/action#"/>
   </mixins>
@@ -80,4 +75,10 @@
   </types>
   <types xsi:type="occi:NumericType" name="Double" type="Double"/>
   <types xsi:type="occi:StringType" name="DateType"/>
+  <types xsi:type="occi:EnumerationType" name="RelationalType">
+    <literals name="greaterThan"/>
+    <literals name="lessThan"/>
+    <literals name="greaterThanorEqual"/>
+    <literals name="lessThanorEqual"/>
+  </types>
 </occi:Extension>

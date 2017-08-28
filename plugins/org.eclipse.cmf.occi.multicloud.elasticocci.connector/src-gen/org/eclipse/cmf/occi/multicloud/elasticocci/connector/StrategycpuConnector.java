@@ -268,9 +268,9 @@ public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasti
 		}
 		
 		bool = false;
-		// TODO: Implement how to stop this strategycpu.
+		// TODO: Implement how to stop this strategycpu1.
 	}
-		// End of user code1
+		// End of user code
 
 }
 

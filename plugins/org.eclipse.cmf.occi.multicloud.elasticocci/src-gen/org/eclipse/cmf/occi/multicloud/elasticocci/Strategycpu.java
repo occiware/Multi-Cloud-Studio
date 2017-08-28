@@ -55,7 +55,6 @@ public interface Strategycpu extends MixinBase, Strategycompute {
 	 * @see #setStrategyCPUUpperLimit(Integer)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategycpu_StrategyCPUUpperLimit()
 	 * @model default="7" dataType="org.eclipse.cmf.occi.core.Integer"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategycpu!StrategyCPUUpperLimit'"
 	 * @generated
 	 */
 	Integer getStrategyCPUUpperLimit();
@@ -82,7 +81,6 @@ public interface Strategycpu extends MixinBase, Strategycompute {
 	 * @see #setStrategyCPULowerLimit(Integer)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategycpu_StrategyCPULowerLimit()
 	 * @model default="1" dataType="org.eclipse.cmf.occi.core.Integer"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategycpu!StrategyCPULowerLimit'"
 	 * @generated
 	 */
 	Integer getStrategyCPULowerLimit();
@@ -111,7 +109,6 @@ public interface Strategycpu extends MixinBase, Strategycompute {
 	 * @see #setStrategyCPUMode(ModeType)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategycpu_StrategyCPUMode()
 	 * @model default="dynamic"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategycpu!StrategyCPUMode'"
 	 * @generated
 	 */
 	ModeType getStrategyCPUMode();
@@ -141,7 +138,6 @@ public interface Strategycpu extends MixinBase, Strategycompute {
 	 * @see #setStrategyCPUDirection(DirectionType)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategycpu_StrategyCPUDirection()
 	 * @model default="up"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategycpu!StrategyCPUDirection'"
 	 * @generated
 	 */
 	DirectionType getStrategyCPUDirection();
@@ -169,7 +165,6 @@ public interface Strategycpu extends MixinBase, Strategycompute {
 	 * @see #setStrategyCPUStepCPUDecrease(Integer)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategycpu_StrategyCPUStepCPUDecrease()
 	 * @model default="1" dataType="org.eclipse.cmf.occi.core.Integer"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategycpu!StrategyCPUStepCPUDecrease'"
 	 * @generated
 	 */
 	Integer getStrategyCPUStepCPUDecrease();
@@ -196,7 +191,6 @@ public interface Strategycpu extends MixinBase, Strategycompute {
 	 * @see #setStrategyCPUStepCPUIncrease(Integer)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategycpu_StrategyCPUStepCPUIncrease()
 	 * @model default="1" dataType="org.eclipse.cmf.occi.core.Integer"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategycpu!StrategyCPUStepCPUIncrease'"
 	 * @generated
 	 */
 	Integer getStrategyCPUStepCPUIncrease();
@@ -222,7 +216,6 @@ public interface Strategycpu extends MixinBase, Strategycompute {
 	 * @see #setStrategyCPUDate(String)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategycpu_StrategyCPUDate()
 	 * @model dataType="org.eclipse.cmf.occi.multicloud.elasticocci.DateType"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategycpu!StrategyCPUDate'"
 	 * @generated
 	 */
 	String getStrategyCPUDate();
@@ -251,7 +244,6 @@ public interface Strategycpu extends MixinBase, Strategycompute {
 	 * @see #setStrategyCPUIncreaseRelationalOp(RelationalType)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategycpu_StrategyCPUIncreaseRelationalOp()
 	 * @model default="greaterThan"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategycpu!StrategyCPUIncreaseRelationalOp'"
 	 * @generated
 	 */
 	RelationalType getStrategyCPUIncreaseRelationalOp();
@@ -281,7 +273,6 @@ public interface Strategycpu extends MixinBase, Strategycompute {
 	 * @see #setStrategyCPUDecreaseRelationalOp(RelationalType)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategycpu_StrategyCPUDecreaseRelationalOp()
 	 * @model default="lessThan"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategycpu!StrategyCPUDecreaseRelationalOp'"
 	 * @generated
 	 */
 	RelationalType getStrategyCPUDecreaseRelationalOp();
@@ -303,7 +294,7 @@ public interface Strategycpu extends MixinBase, Strategycompute {
 	 * <!-- begin-model-doc -->
 	 * 
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategycpu!start()'"
+	 * @model
 	 * @generated
 	 */
 	void start();
@@ -314,7 +305,7 @@ public interface Strategycpu extends MixinBase, Strategycompute {
 	 * <!-- begin-model-doc -->
 	 * 
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategycpu!stop()'"
+	 * @model
 	 * @generated
 	 */
 	void stop();
@@ -322,7 +313,7 @@ public interface Strategycpu extends MixinBase, Strategycompute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='/**\n *\n * inv appliesConstraint:\n *   let severity : Integer[1] = \'Strategycpu::appliesConstraint\'.getSeverity()\n *   in\n *     if severity &lt;= 0\n *     then true\n *     else\n *       let\n *         result : occi::Boolean[1] = self.entity.oclIsKindOf(Elasticcontroller)\n *       in\n *         \'Strategycpu::appliesConstraint\'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)\n *     endif\n \052/\nfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.evaluation.Executor%&gt; executor = &lt;%org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal%&gt;.getExecutor(this);\nfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.ids.IdResolver%&gt; idResolver = executor.getIdResolver();\nfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.values.IntegerValue%&gt; severity_0 = &lt;%org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation%&gt;.INSTANCE.evaluate(executor, &lt;%org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciTables%&gt;.STR_Strategycpu_c_c_appliesConstraint);\nfinal /*@NonInvalid\052/ boolean le = &lt;%org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation%&gt;.INSTANCE.evaluate(executor, severity_0, &lt;%org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciTables%&gt;.INT_0).booleanValue();\n/*@NonInvalid\052/ boolean symbol_0;\nif (le) {\n\tsymbol_0 = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.TRUE_VALUE;\n}\nelse {\n\tfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.Class%&gt; TYP_elasticocci_c_c_Elasticcontroller_0 = idResolver.getClass(&lt;%org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciTables%&gt;.CLSSid_Elasticcontroller, null);\n\tfinal /*@NonInvalid\052/ &lt;%org.eclipse.cmf.occi.core.Entity%&gt; entity = this.getEntity();\n\tfinal /*@NonInvalid\052/ boolean result = &lt;%org.eclipse.ocl.pivot.library.oclany.OclAnyOclIsKindOfOperation%&gt;.INSTANCE.evaluate(executor, entity, TYP_elasticocci_c_c_Elasticcontroller_0).booleanValue();\n\tfinal /*@NonInvalid\052/ boolean logDiagnostic = &lt;%org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation%&gt;.INSTANCE.evaluate(executor, &lt;%org.eclipse.ocl.pivot.ids.TypeId%&gt;.BOOLEAN, &lt;%org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciTables%&gt;.STR_Strategycpu_c_c_appliesConstraint, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, &lt;%org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciTables%&gt;.INT_0).booleanValue();\n\tsymbol_0 = logDiagnostic;\n}\nreturn Boolean.TRUE == symbol_0;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.entity.oclIsKindOf(elasticocci::Elasticcontroller)'"
 	 * @generated
 	 */
 	boolean appliesConstraint(DiagnosticChain diagnostics, Map<Object, Object> context);

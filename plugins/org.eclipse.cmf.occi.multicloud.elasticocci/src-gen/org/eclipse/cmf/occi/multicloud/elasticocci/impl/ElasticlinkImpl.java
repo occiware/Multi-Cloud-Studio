@@ -24,6 +24,8 @@ import org.eclipse.cmf.occi.multicloud.elasticocci.Elasticlink;
 import org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage;
 import org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciTables;
 
+import org.eclipse.cmf.occi.multicloud.elasticocci.util.ElasticocciValidator;
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
@@ -74,41 +76,33 @@ public class ElasticlinkImpl extends LinkImpl implements Elasticlink {
 	}
 
 	/**
+	 * The cached validation expression for the '{@link #targetConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Target Constraint</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #targetConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TARGET_CONSTRAINT_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "self.target.oclIsKindOf(occi::Resource)";
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean targetConstraint(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		/**
-		 *
-		 * inv targetConstraint:
-		 *   let severity : Integer[1] = 'Elasticlink::targetConstraint'.getSeverity()
-		 *   in
-		 *     if severity <= 0
-		 *     then true
-		 *     else
-		 *       let
-		 *         result : occi::Boolean[1] = self.target.oclIsKindOf(occi::Resource)
-		 *       in
-		 *         'Elasticlink::targetConstraint'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
-		 *     endif
-		 */
-		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
-		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
-		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, ElasticocciTables.STR_Elasticlink_c_c_targetConstraint);
-		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, ElasticocciTables.INT_0).booleanValue();
-		/*@NonInvalid*/ boolean symbol_0;
-		if (le) {
-			symbol_0 = ValueUtil.TRUE_VALUE;
-		}
-		else {
-			final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_Resource = idResolver.getClass(ElasticocciTables.CLSSid_Resource, null);
-			final /*@NonInvalid*/ Resource target = this.getTarget();
-			final /*@NonInvalid*/ boolean result = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, target, TYP_occi_c_c_Resource).booleanValue();
-			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, ElasticocciTables.STR_Elasticlink_c_c_targetConstraint, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, ElasticocciTables.INT_0).booleanValue();
-			symbol_0 = logDiagnostic;
-		}
-		return Boolean.TRUE == symbol_0;
+	public boolean targetConstraint(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			ElasticocciValidator.validate
+				(ElasticocciPackage.Literals.ELASTICLINK,
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 ElasticocciPackage.Literals.ELASTICLINK___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP,
+				 TARGET_CONSTRAINT_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 ElasticocciValidator.DIAGNOSTIC_SOURCE,
+				 ElasticocciValidator.ELASTICLINK__TARGET_CONSTRAINT);
 	}
 
 	/**

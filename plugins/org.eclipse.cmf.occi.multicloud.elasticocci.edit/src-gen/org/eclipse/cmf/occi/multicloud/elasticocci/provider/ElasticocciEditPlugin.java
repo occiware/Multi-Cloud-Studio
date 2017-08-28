@@ -14,6 +14,7 @@ package org.eclipse.cmf.occi.multicloud.elasticocci.provider;
 
 import org.eclipse.cmf.occi.core.provider.OCCIEditPlugin;
 
+import org.eclipse.cmf.occi.infrastructure.provider.InfrastructureEditPlugin;
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -50,6 +51,7 @@ public final class ElasticocciEditPlugin extends EMFPlugin {
 	public ElasticocciEditPlugin() {
 		super
 		  (new ResourceLocator [] {
+		     InfrastructureEditPlugin.INSTANCE,
 		     OCCIEditPlugin.INSTANCE,
 		   });
 	}

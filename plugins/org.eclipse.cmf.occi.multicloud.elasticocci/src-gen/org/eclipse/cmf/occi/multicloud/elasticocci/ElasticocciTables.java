@@ -60,31 +60,6 @@ public class ElasticocciTables
 	public static final /*@NonNull*/ ExecutorStandardLibrary LIBRARY = OCLstdlibTables.LIBRARY;
 
 	/**
-	 *	Constants used by auto-generated code.
-	 */
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.RootPackageId PACKid_$metamodel$ = org.eclipse.ocl.pivot.ids.IdManager.getRootPackageId("$metamodel$");
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_occiware_org_s_occi_s_multicloud_s_elasticocci_s_ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://occiware.org/occi/multicloud/elasticocci/ecore", null, org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage.eINSTANCE);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://schemas.ogf.org/occi/core/ecore", "occi", org.eclipse.cmf.occi.core.OCCIPackage.eINSTANCE);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Class = org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciTables.PACKid_$metamodel$.getClassId("Class", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Elasticcontroller = org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciTables.PACKid_http_c_s_s_occiware_org_s_occi_s_multicloud_s_elasticocci_s_ecore.getClassId("Elasticcontroller", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Elasticlink = org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciTables.PACKid_http_c_s_s_occiware_org_s_occi_s_multicloud_s_elasticocci_s_ecore.getClassId("Elasticlink", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Entity = org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Entity", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Resource = org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Resource", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Strategy = org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciTables.PACKid_http_c_s_s_occiware_org_s_occi_s_multicloud_s_elasticocci_s_ecore.getClassId("Strategy", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Strategycpu = org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciTables.PACKid_http_c_s_s_occiware_org_s_occi_s_multicloud_s_elasticocci_s_ecore.getClassId("Strategycpu", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Strategymemory = org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciTables.PACKid_http_c_s_s_occiware_org_s_occi_s_multicloud_s_elasticocci_s_ecore.getClassId("Strategymemory", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_DateType = org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciTables.PACKid_http_c_s_s_occiware_org_s_occi_s_multicloud_s_elasticocci_s_ecore.getDataTypeId("DateType", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_Double = org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciTables.PACKid_http_c_s_s_occiware_org_s_occi_s_multicloud_s_elasticocci_s_ecore.getDataTypeId("Double", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.EnumerationId ENUMid_DirectionType = org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciTables.PACKid_http_c_s_s_occiware_org_s_occi_s_multicloud_s_elasticocci_s_ecore.getEnumerationId("DirectionType");
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.EnumerationId ENUMid_ModeType = org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciTables.PACKid_http_c_s_s_occiware_org_s_occi_s_multicloud_s_elasticocci_s_ecore.getEnumerationId("ModeType");
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.EnumerationId ENUMid_RelationalType = org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciTables.PACKid_http_c_s_s_occiware_org_s_occi_s_multicloud_s_elasticocci_s_ecore.getEnumerationId("RelationalType");
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.values.IntegerValue INT_0 = org.eclipse.ocl.pivot.utilities.ValueUtil.integerValueOf("0");
-	public static final /*@NonInvalid*/ java.lang.String STR_Elasticlink_c_c_targetConstraint = "Elasticlink::targetConstraint";
-	public static final /*@NonInvalid*/ java.lang.String STR_Strategy_c_c_appliesConstraint = "Strategy::appliesConstraint";
-	public static final /*@NonInvalid*/ java.lang.String STR_Strategycpu_c_c_appliesConstraint = "Strategycpu::appliesConstraint";
-	public static final /*@NonInvalid*/ java.lang.String STR_Strategymemory_c_c_appliesConstraint = "Strategymemory::appliesConstraint";
-
-	/**
 	 *	The type parameters for templated types and operations.
 	 */
 	public static class TypeParameters {

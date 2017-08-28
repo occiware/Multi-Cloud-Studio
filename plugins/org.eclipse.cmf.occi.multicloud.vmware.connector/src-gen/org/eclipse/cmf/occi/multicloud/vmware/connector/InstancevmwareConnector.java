@@ -2275,8 +2275,8 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			}
 			
 			assignVCpuToVMSpec();
-
-			VMHelper.reconfigureVm(vm, vcpu, resTpl.getMem(), summary);
+// Why using vcpu instead of occ.compute.cores
+			VMHelper.reconfigureVm(vm, /*vcpu*/getOcciComputeCores(), resTpl.getMem(), summary);
 		} catch (RemoteException ex) {
 			globalMessage = "Error while updating the virtual machine configuration : " + vmName + " \n message: "
 					+ ex.getMessage();

@@ -14,6 +14,7 @@ package org.eclipse.cmf.occi.multicloud.elasticocci.impl;
 
 import org.eclipse.cmf.occi.core.OCCIPackage;
 
+import org.eclipse.cmf.occi.infrastructure.InfrastructurePackage;
 import org.eclipse.cmf.occi.multicloud.elasticocci.DirectionType;
 import org.eclipse.cmf.occi.multicloud.elasticocci.Elasticcontroller;
 import org.eclipse.cmf.occi.multicloud.elasticocci.Elasticlink;
@@ -170,6 +171,7 @@ public class ElasticocciPackageImpl extends EPackageImpl implements ElasticocciP
 		isInited = true;
 
 		// Initialize simple dependencies
+		InfrastructurePackage.eINSTANCE.eClass();
 		OCCIPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
@@ -293,6 +295,15 @@ public class ElasticocciPackageImpl extends EPackageImpl implements ElasticocciP
 	 */
 	public EAttribute getStrategycompute_StrategyComputeLthreshold() {
 		return (EAttribute)strategycomputeEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getStrategycompute__MustBeCompute__DiagnosticChain_Map() {
+		return strategycomputeEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -616,6 +627,7 @@ public class ElasticocciPackageImpl extends EPackageImpl implements ElasticocciP
 		createEAttribute(strategycomputeEClass, STRATEGYCOMPUTE__STRATEGY_COMPUTE_BREATH_UP);
 		createEAttribute(strategycomputeEClass, STRATEGYCOMPUTE__STRATEGY_COMPUTE_POLL_TIME);
 		createEAttribute(strategycomputeEClass, STRATEGYCOMPUTE__STRATEGY_COMPUTE_LTHRESHOLD);
+		createEOperation(strategycomputeEClass, STRATEGYCOMPUTE___MUST_BE_COMPUTE__DIAGNOSTICCHAIN_MAP);
 
 		strategycpuEClass = createEClass(STRATEGYCPU);
 		createEAttribute(strategycpuEClass, STRATEGYCPU__STRATEGY_CPU_UPPER_LIMIT);
@@ -728,6 +740,15 @@ public class ElasticocciPackageImpl extends EPackageImpl implements ElasticocciP
 		initEAttribute(getStrategycompute_StrategyComputePollTime(), theOCCIPackage.getInteger(), "StrategyComputePollTime", "10000", 0, 1, Strategycompute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStrategycompute_StrategyComputeLthreshold(), theOCCIPackage.getInteger(), "StrategyComputeLthreshold", "70", 0, 1, Strategycompute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		op = initEOperation(getStrategycompute__MustBeCompute__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "MustBeCompute", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(strategycpuEClass, Strategycpu.class, "Strategycpu", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStrategycpu_StrategyCPUUpperLimit(), theOCCIPackage.getInteger(), "StrategyCPUUpperLimit", "7", 0, 1, Strategycpu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStrategycpu_StrategyCPULowerLimit(), theOCCIPackage.getInteger(), "StrategyCPULowerLimit", "1", 0, 1, Strategycpu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -802,6 +823,8 @@ public class ElasticocciPackageImpl extends EPackageImpl implements ElasticocciP
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot
+		createPivotAnnotations();
 	}
 
 	/**
@@ -816,6 +839,9 @@ public class ElasticocciPackageImpl extends EPackageImpl implements ElasticocciP
 		  (this, 
 		   source, 
 		   new String[] {
+			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
 		   });	
 		addAnnotation
 		  (elasticlinkEClass, 
@@ -830,6 +856,12 @@ public class ElasticocciPackageImpl extends EPackageImpl implements ElasticocciP
 			 "constraints", "appliesConstraint"
 		   });	
 		addAnnotation
+		  (strategycomputeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "MustBeCompute"
+		   });	
+		addAnnotation
 		  (strategycpuEClass, 
 		   source, 
 		   new String[] {
@@ -840,6 +872,46 @@ public class ElasticocciPackageImpl extends EPackageImpl implements ElasticocciP
 		   source, 
 		   new String[] {
 			 "constraints", "appliesConstraint"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createPivotAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";	
+		addAnnotation
+		  (getElasticlink__TargetConstraint__DiagnosticChain_Map(), 
+		   source, 
+		   new String[] {
+			 "body", "self.target.oclIsKindOf(occi::Resource)"
+		   });	
+		addAnnotation
+		  (getStrategy__AppliesConstraint__DiagnosticChain_Map(), 
+		   source, 
+		   new String[] {
+			 "body", "self.entity.oclIsKindOf(elasticocci::Elasticcontroller)"
+		   });	
+		addAnnotation
+		  (getStrategycompute__MustBeCompute__DiagnosticChain_Map(), 
+		   source, 
+		   new String[] {
+			 "body", "self.entity.oclAsType(occi::Resource).links->first().target.oclIsTypeOf(infrastructure::Compute)"
+		   });	
+		addAnnotation
+		  (getStrategycpu__AppliesConstraint__DiagnosticChain_Map(), 
+		   source, 
+		   new String[] {
+			 "body", "self.entity.oclIsKindOf(elasticocci::Elasticcontroller)"
+		   });	
+		addAnnotation
+		  (getStrategymemory__AppliesConstraint__DiagnosticChain_Map(), 
+		   source, 
+		   new String[] {
+			 "body", "self.entity.oclIsKindOf(elasticocci::Elasticcontroller)"
 		   });
 	}
 

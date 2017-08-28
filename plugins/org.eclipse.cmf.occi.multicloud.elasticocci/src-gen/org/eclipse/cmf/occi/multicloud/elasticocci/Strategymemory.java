@@ -57,7 +57,6 @@ public interface Strategymemory extends MixinBase, Strategycompute {
 	 * @see #setStrategyMemoryMode(ModeType)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategymemory_StrategyMemoryMode()
 	 * @model default="dynamic"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategymemory!StrategyMemoryMode'"
 	 * @generated
 	 */
 	ModeType getStrategyMemoryMode();
@@ -87,7 +86,6 @@ public interface Strategymemory extends MixinBase, Strategycompute {
 	 * @see #setStrategyMemoryDirection(DirectionType)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategymemory_StrategyMemoryDirection()
 	 * @model default="up"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategymemory!StrategyMemoryDirection'"
 	 * @generated
 	 */
 	DirectionType getStrategyMemoryDirection();
@@ -115,7 +113,6 @@ public interface Strategymemory extends MixinBase, Strategycompute {
 	 * @see #setStrategyMemoryStepMemDecrease(Double)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategymemory_StrategyMemoryStepMemDecrease()
 	 * @model default="0.25" dataType="org.eclipse.cmf.occi.multicloud.elasticocci.Double"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategymemory!StrategyMemoryStepMemDecrease'"
 	 * @generated
 	 */
 	Double getStrategyMemoryStepMemDecrease();
@@ -142,7 +139,6 @@ public interface Strategymemory extends MixinBase, Strategycompute {
 	 * @see #setStrategyMemoryStepMemIncrease(Double)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategymemory_StrategyMemoryStepMemIncrease()
 	 * @model default="0.5" dataType="org.eclipse.cmf.occi.multicloud.elasticocci.Double"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategymemory!StrategyMemoryStepMemIncrease'"
 	 * @generated
 	 */
 	Double getStrategyMemoryStepMemIncrease();
@@ -169,7 +165,6 @@ public interface Strategymemory extends MixinBase, Strategycompute {
 	 * @see #setStrategyMemoryUpperLimit(Integer)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategymemory_StrategyMemoryUpperLimit()
 	 * @model default="5" dataType="org.eclipse.cmf.occi.core.Integer"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategymemory!StrategyMemoryUpperLimit'"
 	 * @generated
 	 */
 	Integer getStrategyMemoryUpperLimit();
@@ -196,7 +191,6 @@ public interface Strategymemory extends MixinBase, Strategycompute {
 	 * @see #setStrategyMemoryLowerLimit(Integer)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategymemory_StrategyMemoryLowerLimit()
 	 * @model default="1" dataType="org.eclipse.cmf.occi.core.Integer"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategymemory!StrategyMemoryLowerLimit'"
 	 * @generated
 	 */
 	Integer getStrategyMemoryLowerLimit();
@@ -222,7 +216,6 @@ public interface Strategymemory extends MixinBase, Strategycompute {
 	 * @see #setStrategyMemoryDate(String)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategymemory_StrategyMemoryDate()
 	 * @model dataType="org.eclipse.cmf.occi.multicloud.elasticocci.DateType"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategymemory!StrategyMemoryDate'"
 	 * @generated
 	 */
 	String getStrategyMemoryDate();
@@ -251,7 +244,6 @@ public interface Strategymemory extends MixinBase, Strategycompute {
 	 * @see #setStrategyMemoryIncreaseRelationalOp(RelationalType)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategymemory_StrategyMemoryIncreaseRelationalOp()
 	 * @model default="greaterThan"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategymemory!StrategyMemoryIncreaseRelationalOp'"
 	 * @generated
 	 */
 	RelationalType getStrategyMemoryIncreaseRelationalOp();
@@ -281,7 +273,6 @@ public interface Strategymemory extends MixinBase, Strategycompute {
 	 * @see #setStrategyMemoryDecreaseRelationalOp(RelationalType)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategymemory_StrategyMemoryDecreaseRelationalOp()
 	 * @model default="lessThan"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategymemory!StrategyMemoryDecreaseRelationalOp'"
 	 * @generated
 	 */
 	RelationalType getStrategyMemoryDecreaseRelationalOp();
@@ -303,7 +294,7 @@ public interface Strategymemory extends MixinBase, Strategycompute {
 	 * <!-- begin-model-doc -->
 	 * 
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategymemory!stop()'"
+	 * @model
 	 * @generated
 	 */
 	void stop();
@@ -314,7 +305,7 @@ public interface Strategymemory extends MixinBase, Strategycompute {
 	 * <!-- begin-model-doc -->
 	 * 
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategymemory!start()'"
+	 * @model
 	 * @generated
 	 */
 	void start();
@@ -322,7 +313,7 @@ public interface Strategymemory extends MixinBase, Strategycompute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='/**\n *\n * inv appliesConstraint:\n *   let\n *     severity : Integer[1] = \'Strategymemory::appliesConstraint\'.getSeverity()\n *   in\n *     if severity &lt;= 0\n *     then true\n *     else\n *       let\n *         result : occi::Boolean[1] = self.entity.oclIsKindOf(Elasticcontroller)\n *       in\n *         \'Strategymemory::appliesConstraint\'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)\n *     endif\n \052/\nfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.evaluation.Executor%&gt; executor = &lt;%org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal%&gt;.getExecutor(this);\nfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.ids.IdResolver%&gt; idResolver = executor.getIdResolver();\nfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.values.IntegerValue%&gt; severity_0 = &lt;%org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation%&gt;.INSTANCE.evaluate(executor, &lt;%org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciTables%&gt;.STR_Strategymemory_c_c_appliesConstraint);\nfinal /*@NonInvalid\052/ boolean le = &lt;%org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation%&gt;.INSTANCE.evaluate(executor, severity_0, &lt;%org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciTables%&gt;.INT_0).booleanValue();\n/*@NonInvalid\052/ boolean symbol_0;\nif (le) {\n\tsymbol_0 = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.TRUE_VALUE;\n}\nelse {\n\tfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.Class%&gt; TYP_elasticocci_c_c_Elasticcontroller_0 = idResolver.getClass(&lt;%org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciTables%&gt;.CLSSid_Elasticcontroller, null);\n\tfinal /*@NonInvalid\052/ &lt;%org.eclipse.cmf.occi.core.Entity%&gt; entity = this.getEntity();\n\tfinal /*@NonInvalid\052/ boolean result = &lt;%org.eclipse.ocl.pivot.library.oclany.OclAnyOclIsKindOfOperation%&gt;.INSTANCE.evaluate(executor, entity, TYP_elasticocci_c_c_Elasticcontroller_0).booleanValue();\n\tfinal /*@NonInvalid\052/ boolean logDiagnostic = &lt;%org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation%&gt;.INSTANCE.evaluate(executor, &lt;%org.eclipse.ocl.pivot.ids.TypeId%&gt;.BOOLEAN, &lt;%org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciTables%&gt;.STR_Strategymemory_c_c_appliesConstraint, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, &lt;%org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciTables%&gt;.INT_0).booleanValue();\n\tsymbol_0 = logDiagnostic;\n}\nreturn Boolean.TRUE == symbol_0;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.entity.oclIsKindOf(elasticocci::Elasticcontroller)'"
 	 * @generated
 	 */
 	boolean appliesConstraint(DiagnosticChain diagnostics, Map<Object, Object> context);

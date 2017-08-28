@@ -71,6 +71,8 @@ public class StrategycpuItemProvider extends MixinBaseItemProvider {
 			addStrategyCPUStepCPUDecreasePropertyDescriptor(object);
 			addStrategyCPUStepCPUIncreasePropertyDescriptor(object);
 			addStrategyCPUDatePropertyDescriptor(object);
+			addStrategyCPUIncreaseRelationalOpPropertyDescriptor(object);
+			addStrategyCPUDecreaseRelationalOpPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -340,6 +342,50 @@ public class StrategycpuItemProvider extends MixinBaseItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Strategy CPU Increase Relational Op feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addStrategyCPUIncreaseRelationalOpPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Strategycpu_StrategyCPUIncreaseRelationalOp_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Strategycpu_StrategyCPUIncreaseRelationalOp_feature", "_UI_Strategycpu_type"),
+				 ElasticocciPackage.Literals.STRATEGYCPU__STRATEGY_CPU_INCREASE_RELATIONAL_OP,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Strategy CPU Decrease Relational Op feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addStrategyCPUDecreaseRelationalOpPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Strategycpu_StrategyCPUDecreaseRelationalOp_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Strategycpu_StrategyCPUDecreaseRelationalOp_feature", "_UI_Strategycpu_type"),
+				 ElasticocciPackage.Literals.STRATEGYCPU__STRATEGY_CPU_DECREASE_RELATIONAL_OP,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Strategycpu.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -390,6 +436,8 @@ public class StrategycpuItemProvider extends MixinBaseItemProvider {
 			case ElasticocciPackage.STRATEGYCPU__STRATEGY_CPU_STEP_CPU_DECREASE:
 			case ElasticocciPackage.STRATEGYCPU__STRATEGY_CPU_STEP_CPU_INCREASE:
 			case ElasticocciPackage.STRATEGYCPU__STRATEGY_CPU_DATE:
+			case ElasticocciPackage.STRATEGYCPU__STRATEGY_CPU_INCREASE_RELATIONAL_OP:
+			case ElasticocciPackage.STRATEGYCPU__STRATEGY_CPU_DECREASE_RELATIONAL_OP:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

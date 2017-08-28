@@ -170,6 +170,20 @@
                 <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
               </style>
             </subNodeMappings>
+<subNodeMappings name="StrategycpuStrategyCPUIncreaseRelationalOp" semanticCandidatesExpression="[self/]" domainClass="Strategycpu">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['StrategyCPUIncreaseRelationalOp = ' + self.StrategyCPUIncreaseRelationalOp.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="StrategycpuStrategyCPUDecreaseRelationalOp" semanticCandidatesExpression="[self/]" domainClass="Strategycpu">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['StrategyCPUDecreaseRelationalOp = ' + self.StrategyCPUDecreaseRelationalOp.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
 <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -255,8 +269,22 @@
                 <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
               </style>
             </subNodeMappings>
-<subNodeMappings name="StrategymemoryStrategyCPUDate" semanticCandidatesExpression="[self/]" domainClass="Strategymemory">
-              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['StrategyCPUDate = ' + self.StrategyCPUDate.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+<subNodeMappings name="StrategymemoryStrategyMemoryDate" semanticCandidatesExpression="[self/]" domainClass="Strategymemory">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['StrategyMemoryDate = ' + self.StrategyMemoryDate.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="StrategymemoryStrategyMemoryIncreaseRelationalOp" semanticCandidatesExpression="[self/]" domainClass="Strategymemory">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['StrategyMemoryIncreaseRelationalOp = ' + self.StrategyMemoryIncreaseRelationalOp.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<subNodeMappings name="StrategymemoryStrategyMemoryDecreaseRelationalOp" semanticCandidatesExpression="[self/]" domainClass="Strategymemory">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['StrategyMemoryDecreaseRelationalOp = ' + self.StrategyMemoryDecreaseRelationalOp.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -550,6 +578,18 @@
               <firstModelOperations xsi:type="tool_1:SetValue" featureName="StrategyCPUDate" valueExpression="var:arg0"/>
             </initialOperation>
           </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditStrategycpuStrategyCPUIncreaseRelationalOp" inputLabelExpression="feature:StrategyCPUIncreaseRelationalOp">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="StrategyCPUIncreaseRelationalOp" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditStrategycpuStrategyCPUDecreaseRelationalOp" inputLabelExpression="feature:StrategyCPUDecreaseRelationalOp">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="StrategyCPUDecreaseRelationalOp" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
           <ownedTools xsi:type="tool_1:OperationAction" name="StrategycpuStartAction" label="Start" precondition="[self.oclIsKindOf(Strategycpu)/]">
             <view name="views"/>
             <initialOperation>
@@ -628,10 +668,22 @@
               <firstModelOperations xsi:type="tool_1:SetValue" featureName="StrategyMemoryLowerLimit" valueExpression="var:arg0"/>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:DirectEditLabel" name="EditStrategymemoryStrategyCPUDate" inputLabelExpression="feature:StrategyCPUDate">
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditStrategymemoryStrategyMemoryDate" inputLabelExpression="feature:StrategyMemoryDate">
             <mask mask="{0}"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:SetValue" featureName="StrategyCPUDate" valueExpression="var:arg0"/>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="StrategyMemoryDate" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditStrategymemoryStrategyMemoryIncreaseRelationalOp" inputLabelExpression="feature:StrategyMemoryIncreaseRelationalOp">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="StrategyMemoryIncreaseRelationalOp" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditStrategymemoryStrategyMemoryDecreaseRelationalOp" inputLabelExpression="feature:StrategyMemoryDecreaseRelationalOp">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="StrategyMemoryDecreaseRelationalOp" valueExpression="var:arg0"/>
             </initialOperation>
           </ownedTools>
           <ownedTools xsi:type="tool_1:OperationAction" name="StrategymemoryStopAction" label="Stop" precondition="[self.oclIsKindOf(Strategymemory)/]">

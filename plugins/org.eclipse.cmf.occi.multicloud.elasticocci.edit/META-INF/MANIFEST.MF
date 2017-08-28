@@ -12,6 +12,8 @@ Export-Package: org.eclipse.cmf.occi.multicloud.elasticocci.provider
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.cmf.occi.multicloud.elasticocci;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,
+ org.eclipse.cmf.occi.infrastructure;visibility:=reexport,
+ org.eclipse.cmf.occi.infrastructure.edit;visibility:=reexport,
  org.eclipse.cmf.occi.core;visibility:=reexport,
  org.eclipse.cmf.occi.core.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

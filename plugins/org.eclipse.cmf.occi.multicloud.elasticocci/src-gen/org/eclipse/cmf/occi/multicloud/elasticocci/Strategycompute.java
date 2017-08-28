@@ -12,7 +12,9 @@
  */
 package org.eclipse.cmf.occi.multicloud.elasticocci;
 
+import java.util.Map;
 import org.eclipse.cmf.occi.core.MixinBase;
+import org.eclipse.emf.common.util.DiagnosticChain;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +33,7 @@ import org.eclipse.cmf.occi.core.MixinBase;
  * </ul>
  *
  * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategycompute()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='MustBeCompute'"
  * @generated
  */
 public interface Strategycompute extends MixinBase, Strategy {
@@ -47,7 +49,6 @@ public interface Strategycompute extends MixinBase, Strategy {
 	 * @see #setStrategyComputeUthreshold(Integer)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategycompute_StrategyComputeUthreshold()
 	 * @model default="90" dataType="org.eclipse.cmf.occi.core.Integer"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategycompute!StrategyComputeUthreshold'"
 	 * @generated
 	 */
 	Integer getStrategyComputeUthreshold();
@@ -74,7 +75,6 @@ public interface Strategycompute extends MixinBase, Strategy {
 	 * @see #setStrategyComputeBreathDown(Integer)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategycompute_StrategyComputeBreathDown()
 	 * @model default="20000" dataType="org.eclipse.cmf.occi.core.Integer"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategycompute!StrategyComputeBreathDown'"
 	 * @generated
 	 */
 	Integer getStrategyComputeBreathDown();
@@ -101,7 +101,6 @@ public interface Strategycompute extends MixinBase, Strategy {
 	 * @see #setStrategyComputeBreathUp(Integer)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategycompute_StrategyComputeBreathUp()
 	 * @model default="40000" dataType="org.eclipse.cmf.occi.core.Integer"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategycompute!StrategyComputeBreathUp'"
 	 * @generated
 	 */
 	Integer getStrategyComputeBreathUp();
@@ -128,7 +127,6 @@ public interface Strategycompute extends MixinBase, Strategy {
 	 * @see #setStrategyComputePollTime(Integer)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategycompute_StrategyComputePollTime()
 	 * @model default="10000" dataType="org.eclipse.cmf.occi.core.Integer"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategycompute!StrategyComputePollTime'"
 	 * @generated
 	 */
 	Integer getStrategyComputePollTime();
@@ -155,7 +153,6 @@ public interface Strategycompute extends MixinBase, Strategy {
 	 * @see #setStrategyComputeLthreshold(Integer)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategycompute_StrategyComputeLthreshold()
 	 * @model default="70" dataType="org.eclipse.cmf.occi.core.Integer"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategycompute!StrategyComputeLthreshold'"
 	 * @generated
 	 */
 	Integer getStrategyComputeLthreshold();
@@ -169,5 +166,13 @@ public interface Strategycompute extends MixinBase, Strategy {
 	 * @generated
 	 */
 	void setStrategyComputeLthreshold(Integer value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.entity.oclAsType(occi::Resource).links-&gt;first().target.oclIsTypeOf(infrastructure::Compute)'"
+	 * @generated
+	 */
+	boolean MustBeCompute(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // Strategycompute

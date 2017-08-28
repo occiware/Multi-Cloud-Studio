@@ -29,8 +29,10 @@ import org.eclipse.cmf.occi.multicloud.elasticocci.Strategy;
 import org.eclipse.cmf.occi.multicloud.elasticocci.Strategycompute;
 import org.eclipse.cmf.occi.multicloud.elasticocci.Strategymemory;
 
+import org.eclipse.cmf.occi.multicloud.elasticocci.util.ElasticocciValidator;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
@@ -681,7 +683,9 @@ public class StrategymemoryImpl extends MixinBaseImpl implements Strategymemory 
 	 * @generated
 	 */
 	public void stop() {
-		throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategymemory!stop()
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -690,46 +694,69 @@ public class StrategymemoryImpl extends MixinBaseImpl implements Strategymemory 
 	 * @generated
 	 */
 	public void start() {
-		throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/elasticocci/ecore!Strategymemory!start()
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
+
+	/**
+	 * The cached validation expression for the '{@link #appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String APPLIES_CONSTRAINT_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "self.entity.oclIsKindOf(elasticocci::Elasticcontroller)";
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean appliesConstraint(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		/**
-		 *
-		 * inv appliesConstraint:
-		 *   let
-		 *     severity : Integer[1] = 'Strategymemory::appliesConstraint'.getSeverity()
-		 *   in
-		 *     if severity <= 0
-		 *     then true
-		 *     else
-		 *       let
-		 *         result : occi::Boolean[1] = self.entity.oclIsKindOf(Elasticcontroller)
-		 *       in
-		 *         'Strategymemory::appliesConstraint'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
-		 *     endif
-		 */
-		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
-		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
-		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, ElasticocciTables.STR_Strategymemory_c_c_appliesConstraint);
-		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, ElasticocciTables.INT_0).booleanValue();
-		/*@NonInvalid*/ boolean symbol_0;
-		if (le) {
-			symbol_0 = ValueUtil.TRUE_VALUE;
-		}
-		else {
-			final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_elasticocci_c_c_Elasticcontroller_0 = idResolver.getClass(ElasticocciTables.CLSSid_Elasticcontroller, null);
-			final /*@NonInvalid*/ Entity entity = this.getEntity();
-			final /*@NonInvalid*/ boolean result = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity, TYP_elasticocci_c_c_Elasticcontroller_0).booleanValue();
-			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, ElasticocciTables.STR_Strategymemory_c_c_appliesConstraint, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, ElasticocciTables.INT_0).booleanValue();
-			symbol_0 = logDiagnostic;
-		}
-		return Boolean.TRUE == symbol_0;
+	public boolean appliesConstraint(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			ElasticocciValidator.validate
+				(ElasticocciPackage.Literals.STRATEGYMEMORY,
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 ElasticocciPackage.Literals.STRATEGYMEMORY___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP,
+				 APPLIES_CONSTRAINT_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 ElasticocciValidator.DIAGNOSTIC_SOURCE,
+				 ElasticocciValidator.STRATEGYMEMORY__APPLIES_CONSTRAINT);
+	}
+
+	/**
+	 * The cached validation expression for the '{@link #MustBeCompute(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Must Be Compute</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #MustBeCompute(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String MUST_BE_COMPUTE_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "self.entity.oclAsType(occi::Resource).links->first().target.oclIsTypeOf(infrastructure::Compute)";
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean MustBeCompute(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			ElasticocciValidator.validate
+				(ElasticocciPackage.Literals.STRATEGYMEMORY,
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 ElasticocciPackage.Literals.STRATEGYCOMPUTE___MUST_BE_COMPUTE__DIAGNOSTICCHAIN_MAP,
+				 MUST_BE_COMPUTE_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 ElasticocciValidator.DIAGNOSTIC_SOURCE,
+				 ElasticocciValidator.STRATEGYCOMPUTE__MUST_BE_COMPUTE);
 	}
 
 	/**
@@ -985,6 +1012,7 @@ public class StrategymemoryImpl extends MixinBaseImpl implements Strategymemory 
 		}
 		if (baseClass == Strategycompute.class) {
 			switch (baseOperationID) {
+				case ElasticocciPackage.STRATEGYCOMPUTE___MUST_BE_COMPUTE__DIAGNOSTICCHAIN_MAP: return ElasticocciPackage.STRATEGYMEMORY___MUST_BE_COMPUTE__DIAGNOSTICCHAIN_MAP;
 				default: return -1;
 			}
 		}
@@ -1008,6 +1036,8 @@ public class StrategymemoryImpl extends MixinBaseImpl implements Strategymemory 
 				return null;
 			case ElasticocciPackage.STRATEGYMEMORY___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP:
 				return appliesConstraint((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case ElasticocciPackage.STRATEGYMEMORY___MUST_BE_COMPUTE__DIAGNOSTICCHAIN_MAP:
+				return MustBeCompute((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

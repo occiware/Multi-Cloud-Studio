@@ -35,6 +35,7 @@ import org.eclipse.emf.ecore.EPackage;
  * <!-- end-user-doc -->
  * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot'"
  * @generated
  */
 public interface ElasticocciPackage extends EPackage {
@@ -543,13 +544,22 @@ public interface ElasticocciPackage extends EPackage {
 	int STRATEGYCOMPUTE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Must Be Compute</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRATEGYCOMPUTE___MUST_BE_COMPUTE__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
+
+	/**
 	 * The number of operations of the '<em>Strategycompute</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCOMPUTE_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
+	int STRATEGYCOMPUTE_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.elasticocci.impl.StrategycpuImpl <em>Strategycpu</em>}' class.
@@ -724,13 +734,22 @@ public interface ElasticocciPackage extends EPackage {
 	int STRATEGYCPU_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 14;
 
 	/**
+	 * The operation id for the '<em>Must Be Compute</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRATEGYCPU___MUST_BE_COMPUTE__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
+
+	/**
 	 * The operation id for the '<em>Start</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCPU___START = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
+	int STRATEGYCPU___START = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Stop</em>' operation.
@@ -739,7 +758,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCPU___STOP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
+	int STRATEGYCPU___STOP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Applies Constraint</em>' operation.
@@ -748,7 +767,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCPU___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 3;
+	int STRATEGYCPU___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Strategycpu</em>' class.
@@ -757,7 +776,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCPU_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 4;
+	int STRATEGYCPU_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.elasticocci.impl.StrategymemoryImpl <em>Strategymemory</em>}' class.
@@ -932,13 +951,22 @@ public interface ElasticocciPackage extends EPackage {
 	int STRATEGYMEMORY_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 14;
 
 	/**
+	 * The operation id for the '<em>Must Be Compute</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRATEGYMEMORY___MUST_BE_COMPUTE__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
+
+	/**
 	 * The operation id for the '<em>Stop</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYMEMORY___STOP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
+	int STRATEGYMEMORY___STOP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Start</em>' operation.
@@ -947,7 +975,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYMEMORY___START = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
+	int STRATEGYMEMORY___START = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Applies Constraint</em>' operation.
@@ -956,7 +984,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYMEMORY___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 3;
+	int STRATEGYMEMORY___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Strategymemory</em>' class.
@@ -965,7 +993,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYMEMORY_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 4;
+	int STRATEGYMEMORY_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.elasticocci.ModeType <em>Mode Type</em>}' enum.
@@ -1132,6 +1160,16 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getStrategycompute_StrategyComputeLthreshold();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.elasticocci.Strategycompute#MustBeCompute(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Must Be Compute</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Must Be Compute</em>' operation.
+	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.Strategycompute#MustBeCompute(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getStrategycompute__MustBeCompute__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.elasticocci.Strategycpu <em>Strategycpu</em>}'.
@@ -1581,6 +1619,14 @@ public interface ElasticocciPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute STRATEGYCOMPUTE__STRATEGY_COMPUTE_LTHRESHOLD = eINSTANCE.getStrategycompute_StrategyComputeLthreshold();
+
+		/**
+		 * The meta object literal for the '<em><b>Must Be Compute</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation STRATEGYCOMPUTE___MUST_BE_COMPUTE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getStrategycompute__MustBeCompute__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.elasticocci.impl.StrategycpuImpl <em>Strategycpu</em>}' class.

@@ -70,7 +70,9 @@ public class StrategymemoryItemProvider extends MixinBaseItemProvider {
 			addStrategyMemoryStepMemIncreasePropertyDescriptor(object);
 			addStrategyMemoryUpperLimitPropertyDescriptor(object);
 			addStrategyMemoryLowerLimitPropertyDescriptor(object);
-			addStrategyCPUDatePropertyDescriptor(object);
+			addStrategyMemoryDatePropertyDescriptor(object);
+			addStrategyMemoryIncreaseRelationalOpPropertyDescriptor(object);
+			addStrategyMemoryDecreaseRelationalOpPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -318,19 +320,63 @@ public class StrategymemoryItemProvider extends MixinBaseItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Strategy CPU Date feature.
+	 * This adds a property descriptor for the Strategy Memory Date feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addStrategyCPUDatePropertyDescriptor(Object object) {
+	protected void addStrategyMemoryDatePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Strategymemory_StrategyCPUDate_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Strategymemory_StrategyCPUDate_feature", "_UI_Strategymemory_type"),
-				 ElasticocciPackage.Literals.STRATEGYMEMORY__STRATEGY_CPU_DATE,
+				 getString("_UI_Strategymemory_StrategyMemoryDate_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Strategymemory_StrategyMemoryDate_feature", "_UI_Strategymemory_type"),
+				 ElasticocciPackage.Literals.STRATEGYMEMORY__STRATEGY_MEMORY_DATE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Strategy Memory Increase Relational Op feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addStrategyMemoryIncreaseRelationalOpPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Strategymemory_StrategyMemoryIncreaseRelationalOp_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Strategymemory_StrategyMemoryIncreaseRelationalOp_feature", "_UI_Strategymemory_type"),
+				 ElasticocciPackage.Literals.STRATEGYMEMORY__STRATEGY_MEMORY_INCREASE_RELATIONAL_OP,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Strategy Memory Decrease Relational Op feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addStrategyMemoryDecreaseRelationalOpPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Strategymemory_StrategyMemoryDecreaseRelationalOp_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Strategymemory_StrategyMemoryDecreaseRelationalOp_feature", "_UI_Strategymemory_type"),
+				 ElasticocciPackage.Literals.STRATEGYMEMORY__STRATEGY_MEMORY_DECREASE_RELATIONAL_OP,
 				 true,
 				 false,
 				 false,
@@ -389,7 +435,9 @@ public class StrategymemoryItemProvider extends MixinBaseItemProvider {
 			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_MEMORY_STEP_MEM_INCREASE:
 			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_MEMORY_UPPER_LIMIT:
 			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_MEMORY_LOWER_LIMIT:
-			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_CPU_DATE:
+			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_MEMORY_DATE:
+			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_MEMORY_INCREASE_RELATIONAL_OP:
+			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_MEMORY_DECREASE_RELATIONAL_OP:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

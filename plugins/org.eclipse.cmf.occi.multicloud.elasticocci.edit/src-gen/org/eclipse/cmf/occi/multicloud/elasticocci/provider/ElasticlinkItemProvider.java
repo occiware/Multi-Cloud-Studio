@@ -20,6 +20,7 @@ import org.eclipse.cmf.occi.core.OCCIPackage;
 
 import org.eclipse.cmf.occi.core.provider.LinkItemProvider;
 
+import org.eclipse.cmf.occi.infrastructure.InfrastructureFactory;
 import org.eclipse.cmf.occi.multicloud.elasticocci.Elasticlink;
 import org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciFactory;
 
@@ -131,6 +132,36 @@ public class ElasticlinkItemProvider extends LinkItemProvider {
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
 				 ElasticocciFactory.eINSTANCE.createStrategymemory()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 InfrastructureFactory.eINSTANCE.createIpnetwork()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 InfrastructureFactory.eINSTANCE.createIpnetworkinterface()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 InfrastructureFactory.eINSTANCE.createOs_tpl()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 InfrastructureFactory.eINSTANCE.createResource_tpl()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 InfrastructureFactory.eINSTANCE.createSsh_key()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 InfrastructureFactory.eINSTANCE.createUser_data()));
 	}
 
 	/**

@@ -21,6 +21,9 @@ import org.eclipse.cmf.occi.multicloud.elasticocci.*;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.EObjectValidator;
@@ -68,12 +71,20 @@ public class ElasticocciValidator extends EObjectValidator {
 	public static final int STRATEGY__APPLIES_CONSTRAINT = 2;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Must Be Compute' of 'Strategycompute'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int STRATEGYCOMPUTE__MUST_BE_COMPUTE = 3;
+
+	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Strategycpu'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int STRATEGYCPU__APPLIES_CONSTRAINT = 3;
+	public static final int STRATEGYCPU__APPLIES_CONSTRAINT = 4;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Strategymemory'.
@@ -81,7 +92,7 @@ public class ElasticocciValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int STRATEGYMEMORY__APPLIES_CONSTRAINT = 4;
+	public static final int STRATEGYMEMORY__APPLIES_CONSTRAINT = 5;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -89,7 +100,7 @@ public class ElasticocciValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 4;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 5;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -106,6 +117,16 @@ public class ElasticocciValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected OCCIValidator occiValidator;
+
+	/**
+	 * Delegates evaluation of the given invariant expression against the object in the given context.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static boolean validate(EClass eClass, EObject eObject, DiagnosticChain diagnostics, Map<Object, Object> context, String validationDelegate, EOperation invariant, String expression, int severity, String source, int code) {
+		return EObjectValidator.validate(eClass, eObject, diagnostics, context, validationDelegate, invariant, expression, severity, source, code);
+	}
 
 	/**
 	 * Creates an instance of the switch.
@@ -267,7 +288,18 @@ public class ElasticocciValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(strategycompute, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(strategycompute, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStrategy_appliesConstraint(strategycompute, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStrategycompute_MustBeCompute(strategycompute, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * Validates the MustBeCompute constraint of '<em>Strategycompute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateStrategycompute_MustBeCompute(Strategycompute strategycompute, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return strategycompute.MustBeCompute(diagnostics, context);
 	}
 
 	/**
@@ -286,6 +318,7 @@ public class ElasticocciValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(strategycpu, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(strategycpu, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStrategycpu_appliesConstraint(strategycpu, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStrategycompute_MustBeCompute(strategycpu, diagnostics, context);
 		return result;
 	}
 
@@ -315,6 +348,7 @@ public class ElasticocciValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(strategymemory, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(strategymemory, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStrategymemory_appliesConstraint(strategymemory, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStrategycompute_MustBeCompute(strategymemory, diagnostics, context);
 		return result;
 	}
 

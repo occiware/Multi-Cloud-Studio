@@ -28,7 +28,10 @@ import java.text.SimpleDateFormat;
 import java.util.Timer;
 import java.util.Date;
 
-import java.text.ParseException;
+//import java.text.ParseException;
+
+//import java.lang.reflect.InvocationTargetException;
+
 
 /**
  * Connector implementation for the OCCI kind:
@@ -36,11 +39,13 @@ import java.text.ParseException;
  * - term: strategycpu
  * - title: 
  */
-public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasticocci.impl.StrategycpuImpl
+public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasticocci.impl.StrategycpuImpl 
 {
 	/**
 	 * Initialize the logger.
 	 */
+	private static volatile boolean bool=true;
+	Timer timer = new Timer();
 	private static Logger LOGGER = LoggerFactory.getLogger(StrategycpuConnector.class);
 
 	// Start of user code Strategycpuconnector_constructor
@@ -128,8 +133,8 @@ public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasti
         	System.out.println("current vCPUs are: " + cpus);
         	final int size = cpus + getStrategyCPUStepCPUIncrease();
         	if (cpus <= getStrategyCPUUpperLimit()) {
-        		Timer timer = new Timer();
         		//Scheduler st = new Scheduler();
+        		this.timer = new Timer();
         		timer.schedule(new Scheduler() {
         				@Override
         				public void run() {
@@ -137,6 +142,7 @@ public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasti
         	        		System.out.println("you have increased your VCPUs by " + getStrategyCPUStepCPUIncrease());
         				}
         		}, date);
+        		
         	} else {
         		System.out.println("You can't add more cpus to this VM, you have arrived the maximum limit");
         	}
@@ -158,8 +164,9 @@ public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasti
 		//System.out.print("hi, cpus used is " + cpuUsed);
 		Vertical vmconnector = new Vertical();
 		
-		while (true) {
+		while (bool) {
 			Double cpuUsed = zabbix_obj.item_cpu_idle(zabi, hostid);
+			System.out.println("cpu usage " + cpuUsed);
         		int cpus = vmconnector.getCPUs(vmname);
         		System.out.println("current vCPUs are: " + cpus);
         		int size = cpus + getStrategyCPUStepCPUIncrease();
@@ -173,12 +180,13 @@ public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasti
         		} else {
         			System.out.println("You can't add more cpus to this VM, you have arrived the maximum limit");
         		}
-        		if ((createPolicy(cpuUsed, getStrategyCPUDecreaseRelationalOp().getName(), getStrategyComputeLthreshold())) && (cpus > getStrategyCPULowerLimit())) {
+        		if ((createPolicy(cpuUsed, getStrategyCPUDecreaseRelationalOp().getName(), getStrategyComputeLthreshold())) && (cpus >= getStrategyCPULowerLimit())) {
         			System.out.println("Sorry, you can't scale down in VMWare technology, please wait until we add more conncetors in OCCIware such as KVM");
         			Thread.sleep(getStrategyComputeBreathDown());
         		}
         Thread.sleep(getStrategyComputePollTime());	
 		}
+		bool = true;
 	}
 	// End of user code
 	// Start of user code Strategycpu_Kind_start_action
@@ -200,13 +208,25 @@ public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasti
 			manuel((getStrategyCPUDirection().getName()), vmname);
 			break;
 			
-		case "dynamic":
-			try {
-				dynamic(vmname);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+		case "dynamic":	
+			MyRunnable myRunnable = new MyRunnable() {
+				public void run() {
+					try {
+						dynamic(vmname);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					}
+			};
+			Thread thread = new Thread(myRunnable);
+			thread.start();
+			//try {
+			//	dynamic(vmname);
+			//} catch (InterruptedException e) {
+			//	// TODO Auto-generated catch block
+			//	e.printStackTrace();
+			//}
 			break;
 		
 		case "scheduled":
@@ -236,13 +256,24 @@ public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasti
      * - term: stop
      * - title: 
 	 */
+	
+	
+	
 	@Override
 	public void stop()
 	{
 		LOGGER.debug("Action stop() called on " + this);
-
+		if(this.timer != null) {
+			this.timer.cancel();
+		}
+		
+		bool = false;
 		// TODO: Implement how to stop this strategycpu.
 	}
 		// End of user code
 
-}	
+}
+
+
+
+

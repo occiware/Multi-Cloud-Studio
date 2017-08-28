@@ -47,7 +47,7 @@ public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasti
 	/**
 	 * Constructs a strategycpu connector.
 	 */
-	//test commit
+	//test commit1
 	StrategycpuConnector()
 	{
 		LOGGER.debug("Constructor called on " + this);

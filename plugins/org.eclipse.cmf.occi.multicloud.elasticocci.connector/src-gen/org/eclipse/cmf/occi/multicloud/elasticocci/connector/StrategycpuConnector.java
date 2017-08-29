@@ -81,42 +81,45 @@ public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasti
 		
 	return testoutput;	
 	}
-	private void manuel( String dir, String vmname) {
+	private void manuel( String dir, Compute vm) {
 //		Vertical vmconnector = new Vertical();
+		int cpus = vm.getOcciComputeCores();
 		switch (dir) {
-        	case "up":
-        		
+        	case "up":	
 //        		int cpus = vmconnector.getCPUs(vmname);
 //         		Instancevmware vm = ((Instancevmware)((Elasticcontroller) this.getEntity()).getLinks().get(0).getTarget());
 //        		int cpus = vm.getVcpu();
-        		Compute vm = ((Compute)((Elasticcontroller) this.getEntity()).getLinks().get(0).getTarget());
-        		int cpus = vm.getOcciComputeCores();
-//        		int cpus = ((Instancevmware)((Elasticcontroller) this.getEntity()).getLinks().get(0).getTarget()).getVcpu();
+//        		Compute vm = ((Compute)((Elasticcontroller) this.getEntity()).getLinks().get(0).getTarget());
+//        	int cpus = ((Instancevmware)((Elasticcontroller) this.getEntity()).getLinks().get(0).getTarget()).getVcpu();
         		System.out.println("current vCPUs are: " + cpus);
         		cpus = cpus + getStrategyCPUStepCPUIncrease();
-        		if (cpus <= getStrategyCPUUpperLimit()) {
-        			//int i = 0;
-        			//while(i < 13 ) {		
+        		if (cpus <= getStrategyCPUUpperLimit()) {		
         			//Sting x = ((Elasticcontroller) this.eContainer()).getLinks().get(0).getTarget().getAttributes();
         			//String x = ((Elasticcontroller) this.eContainer()).getLinks().get(0).getTarget().getAttributes().get(i).getValue();
         			//String y = ((Elasticcontroller) this.eContainer()).getLinks().get(0).getTarget().getAttributes().get(i).getName();
-        			//System.out.println("\nthis is the returned value " + x);
-        			//System.out.println("\nthis is the returned name " + y);
-        			//System.out.println("\n " + i);
-        			//i++;
-        			//}
-//        			vm.setVcpu(cpus);
+         		//vm.setVcpu(cpus);
         			vm.setOcciComputeCores(cpus);
         			vm.occiUpdate();
         			vm.occiRetrieve();
-//        			vmconnector.addCPU(vmname, cpus);   ///
+//        		vmconnector.addCPU(vmname, cpus);   ///
         			System.out.println("you have increased your VCPUs by " + getStrategyCPUStepCPUIncrease());
         		} else {
         			System.out.println("You can't add more cpus to this VM, you have arrived the maximum limit");
         		}
             break;
+            
         case "down":
-        		System.out.println("Sorry, you can't scale down in VMWare technology, please wait until we add more conncetors in OCCIware such as KVM");
+        		//int cpus = vm.getOcciComputeCores();
+        		cpus = cpus - getStrategyCPUStepCPUDecrease();
+        		if (cpus >= getStrategyCPULowerLimit()) {
+        			vm.setOcciComputeCores(cpus);
+        			vm.occiUpdate();
+        			vm.occiRetrieve();
+        			System.out.println("Sorry, you can't scale down in VMWare technology, please wait until we add more conncetors in OCCIware such as KVM");
+        		} else {
+        			System.out.println("You can't add more cpus to this VM, you have arrived the minmum lower limit");
+        		}
+        		
             break;
         default: 
         		System.out.println("Enter correct direction, we have only up and down");
@@ -125,21 +128,26 @@ public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasti
 		
 	}
 	
-	private void scheduled(String dir, final String vmname, Date date) {
-		final Vertical vmconnector = new Vertical();
+	private void scheduled(String dir, final Compute vm, Date date) {
+		//final Vertical vmconnector = new Vertical();
+		int cpus = vm.getOcciComputeCores();
+		int size;
 		switch (dir) {
         case "up":
-        	final int cpus = vmconnector.getCPUs(vmname);
+        	//final int cpus = vmconnector.getCPUs(vmname);
         	System.out.println("current vCPUs are: " + cpus);
-        	final int size = cpus + getStrategyCPUStepCPUIncrease();
-        	if (cpus <= getStrategyCPUUpperLimit()) {
+        	size = cpus + getStrategyCPUStepCPUIncrease();
+        	if (size <= getStrategyCPUUpperLimit()) {
         		//Scheduler st = new Scheduler();
         		this.timer = new Timer();
         		timer.schedule(new Scheduler() {
         				@Override
         				public void run() {
-        				//vmconnector.addCPU(vmname, size); ///////////////////////////
-        	        		System.out.println("you have increased your VCPUs by " + getStrategyCPUStepCPUIncrease());
+        					vm.setOcciComputeCores(size);
+                			vm.occiUpdate();
+                			vm.occiRetrieve();
+                			//vmconnector.addCPU(vmname, size); ///////////////////////////
+        	        			System.out.println("you have increased your VCPUs by " + getStrategyCPUStepCPUIncrease());
         				}
         		}, date);
         		
@@ -148,6 +156,26 @@ public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasti
         	}
             break;
         case "down":
+        	//final int cpus = vmconnector.getCPUs(vmname);
+        	System.out.println("current vCPUs are: " + cpus);
+        	size = cpus - getStrategyCPUStepCPUDecrease();
+        	if (size >= getStrategyCPULowerLimit()) {
+        		//Scheduler st = new Scheduler();
+        		this.timer = new Timer();
+        		timer.schedule(new Scheduler() {
+        				@Override
+        				public void run() {
+        					vm.setOcciComputeCores(size);
+                			vm.occiUpdate();
+                			vm.occiRetrieve();
+                			//vmconnector.addCPU(vmname, size); ///////////////////////////
+        	        			System.out.println("you have increased your VCPUs by " + getStrategyCPUStepCPUDecrease());
+        				}
+        		}, date);
+        		
+        	} else {
+        		System.out.println("You can't add more cpus to this VM, you have arrived the minmum limit");
+        	}
         	System.out.println("Sorry, you can't scale down in VMWare technology, please wait until we add more conncetors in OCCIware such as KVM");
             break;
         default: 
@@ -201,11 +229,11 @@ public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasti
 	{
 		LOGGER.debug("Action start() called on " + this);
 		//System.out.println(getStrategyComputeUthreshold());
-		
+		Compute vm = ((Compute)((Elasticcontroller) this.getEntity()).getLinks().get(0).getTarget());
 		String vmname = ((Elasticcontroller) this.getEntity()).getLinks().get(0).getTarget().getAttributes().get(1).getValue();
 		switch (getStrategyCPUMode().getName()) {
 		case "manual":
-			manuel((getStrategyCPUDirection().getName()), vmname);
+			manuel((getStrategyCPUDirection().getName()), vm);
 			break;
 			
 		case "dynamic":	
@@ -241,7 +269,7 @@ public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasti
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-    	    		scheduled((getStrategyCPUDirection().getName()), "vertical", date);
+    	    		scheduled((getStrategyCPUDirection().getName()), vm, date);
 			break;
 		}
 

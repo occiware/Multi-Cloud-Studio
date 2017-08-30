@@ -14,6 +14,8 @@
  */
 package org.eclipse.cmf.occi.multicloud.elasticocci.connector;
 
+import org.eclipse.cmf.occi.infrastructure.Compute;
+import org.eclipse.cmf.occi.multicloud.elasticocci.Elasticcontroller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -47,6 +49,29 @@ public class StrategymemoryConnector extends org.eclipse.cmf.occi.multicloud.ela
      * - term: stop
      * - title: 
 	 */
+	public boolean createPolicy ( double metricUtilization, String op, int threshold) {
+		boolean testoutput = false;
+		if (op.equals("greaterThan")){
+			if  (metricUtilization > threshold){
+				testoutput =  true;	
+			}
+		} else if (op.equals("greaterThanorEqual")){
+			if  (metricUtilization >= threshold){
+				testoutput =  true;
+			}
+		} else if (op.equals("lessThan")){
+			if  (metricUtilization < threshold){
+				testoutput =  true;
+			}
+		} else if (op.equals("lessThanorEqual")){
+			if  (metricUtilization <= threshold){
+				testoutput =  true;
+			}
+		}			
+		
+	return testoutput;	
+	}
+	
 	@Override
 	public void stop()
 	{
@@ -63,12 +88,57 @@ public class StrategymemoryConnector extends org.eclipse.cmf.occi.multicloud.ela
      * - term: start
      * - title: 
 	 */
+	private void manuel( String dir, Compute vm) {
+//		Vertical vmconnector = new Vertical();
+		float memSize = vm.getOcciComputeMemory();
+		switch (dir) {
+        	case "up":	
+        		System.out.println("current Memory is : " + memSize);
+        		memSize = (float) (memSize + getStrategyMemoryStepMemIncrease());
+        		if (memSize <= getStrategyMemoryUpperLimit()) {		
+        			vm.setOcciComputeMemory(memSize);
+        			vm.occiUpdate();
+        			vm.occiRetrieve();
+        			System.out.println("you have increased your Memory size by " + getStrategyMemoryStepMemIncrease());
+        		} else {
+        			System.out.println("You can't add more cpus to this VM, you have arrived the maximum limit");
+        		}
+            break;
+            
+        case "down":
+        	memSize = (float) (memSize - getStrategyMemoryStepMemIncrease());
+        		if (memSize >= getStrategyMemoryUpperLimit()) {
+        			vm.setOcciComputeMemory(memSize);
+        			vm.occiUpdate();
+        			vm.occiRetrieve();
+        			System.out.println("Sorry, you can't scale down in VMWare technology, please wait until we add more conncetors in OCCIware such as KVM");
+        		} else {
+        			System.out.println("You can't add more cpus to this VM, you have arrived the minmum lower limit");
+        		}
+        		
+            break;
+        default: 
+        		System.out.println("Enter correct direction, we have only up and down");
+        break;
+		}
+		
+	}
+	
 	@Override
 	public void start()
 	{
 		LOGGER.debug("Action start() called on " + this);
 
 		// TODO: Implement how to start this strategymemory.
+		Compute vm = ((Compute)((Elasticcontroller) this.getEntity()).getLinks().get(0).getTarget());
+		String vmname = ((Elasticcontroller) this.getEntity()).getLinks().get(0).getTarget().getAttributes().get(1).getValue();
+		switch (getStrategyMemoryMode().getName()) {
+		case "manual":
+			manuel((getStrategyMemoryDirection().getName()), vm);
+			break;
+		}
+		
+			
 	}
 		// End of user code
 

@@ -27,7 +27,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Timer;
 import java.util.Date;
-
 //import java.text.ParseException;
 
 //import java.lang.reflect.InvocationTargetException;
@@ -129,7 +128,8 @@ public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasti
 	}
 	
 	private void scheduled(String dir, final Compute vm, Date date) {
-		//final Vertical vmconnector = new Vertical();
+		final Vertical vmconnector = new Vertical();
+		String vmname = vm.getAttributes().get(1).getValue();
 		int cpus = vm.getOcciComputeCores();
 		int size;
 		switch (dir) {
@@ -143,10 +143,10 @@ public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasti
         		timer.schedule(new Scheduler() {
         				@Override
         				public void run() {
-        					vm.setOcciComputeCores(size);
-                			vm.occiUpdate();
-                			vm.occiRetrieve();
-                			//vmconnector.addCPU(vmname, size); ///////////////////////////
+        					//vm.setOcciComputeCores(size);
+                			//vm.occiUpdate();
+                			//vm.occiRetrieve();
+                			vmconnector.addCPU(vmname, size); ///////////////////////////
         	        			System.out.println("you have increased your VCPUs by " + getStrategyCPUStepCPUIncrease());
         				}
         		}, date);
@@ -165,11 +165,11 @@ public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasti
         		timer.schedule(new Scheduler() {
         				@Override
         				public void run() {
-        					vm.setOcciComputeCores(size);
-                			vm.occiUpdate();
-                			vm.occiRetrieve();
+        					//vm.setOcciComputeCores(size);
+                			//vm.occiUpdate();
+                			//vm.occiRetrieve();
                 			//vmconnector.addCPU(vmname, size); ///////////////////////////
-        	        			System.out.println("you have increased your VCPUs by " + getStrategyCPUStepCPUDecrease());
+        	        			System.out.println("you have decreased your VCPUs by " + getStrategyCPUStepCPUDecrease());
         				}
         		}, date);
         		
@@ -185,9 +185,10 @@ public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasti
 		
 	}
 	
-	private void dynamic(String vmname) throws InterruptedException {
+	private void dynamic(Compute vm) throws InterruptedException {
 		ZabbixMonitoring2 zabbix_obj = new ZabbixMonitoring2();
 		String zabi = zabbix_obj.connect();
+		String vmname = vm.getAttributes().get(1).getValue();
 		int hostid = zabbix_obj.getHostByName(zabi, vmname);
 		//System.out.print("hi, cpus used is " + cpuUsed);
 		Vertical vmconnector = new Vertical();
@@ -195,12 +196,16 @@ public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasti
 		while (bool) {
 			Double cpuUsed = zabbix_obj.item_cpu_idle(zabi, hostid);
 			System.out.println("cpu usage " + cpuUsed);
-        		int cpus = vmconnector.getCPUs(vmname);
+        		//int cpus = vmconnector.getCPUs(vmname);
+			int cpus = vm.getOcciComputeCores();
         		System.out.println("current vCPUs are: " + cpus);
         		int size = cpus + getStrategyCPUStepCPUIncrease();
-        		if (cpus <= getStrategyCPUUpperLimit()) {
+        		if (size <= getStrategyCPUUpperLimit()) {
         			if (createPolicy(cpuUsed, getStrategyCPUIncreaseRelationalOp().getName(), getStrategyComputeUthreshold())) {
         				vmconnector.addCPU(vmname, size);
+    					//vm.setOcciComputeCores(size);
+            			//vm.occiUpdate();
+            			//vm.occiRetrieve();
         				System.out.println("you have increased your VCPUs by " + getStrategyCPUStepCPUIncrease());
                     System.out.println("wait scaling up before taking another decision");
                     Thread.sleep(getStrategyComputeBreathUp());
@@ -240,7 +245,7 @@ public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasti
 			MyRunnable myRunnable = new MyRunnable() {
 				public void run() {
 					try {
-						dynamic(vmname);
+						dynamic(vm);
 					} catch (InterruptedException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();

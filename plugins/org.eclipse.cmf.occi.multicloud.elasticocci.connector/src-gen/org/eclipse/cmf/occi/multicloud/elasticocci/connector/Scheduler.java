@@ -2,6 +2,7 @@ package org.eclipse.cmf.occi.multicloud.elasticocci.connector;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.Date;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;;

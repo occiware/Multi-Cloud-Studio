@@ -16,12 +16,19 @@ package org.eclipse.cmf.occi.multicloud.elasticocci.connector;
 
 import org.eclipse.cmf.occi.multicloud.elasticocci.ModeType;
 import org.eclipse.cmf.occi.multicloud.vmware.Instancevmware;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.transaction.RecordingCommand;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
+import org.eclipse.jface.dialogs.ProgressMonitorDialog;
+import org.eclipse.swt.widgets.Shell;
 import org.eclipse.cmf.occi.infrastructure.Compute;
 import org.eclipse.cmf.occi.multicloud.elasticocci.Elasticcontroller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -127,6 +134,20 @@ public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasti
 		
 	}
 	
+	public void doEditing(EObject element, int size) {
+	    // Make sure your element is attached to a source, otherwise this will return null
+	    TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(element);
+	    domain.getCommandStack().execute(new RecordingCommand(domain) {
+
+	        @Override
+	        protected void doExecute() {
+	            // Implement your write operations here,
+	            // for example: set a new name
+	            element.eSet(element.eClass().getEStructuralFeature("occiComputeCores"), size);
+	        }
+	    });
+	}
+	
 	private void scheduled(String dir, final Compute vm, Date date) {
 		final Vertical vmconnector = new Vertical();
 		String vmname = vm.getAttributes().get(1).getValue();
@@ -143,11 +164,20 @@ public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasti
         		timer.schedule(new Scheduler() {
         				@Override
         				public void run() {
-        					//vm.setOcciComputeCores(size);
-                			//vm.occiUpdate();
+        					doEditing(vm,size);
+        					try {
+        						vm.occiUpdate();
+        					} catch (Exception e) {
+        						e.getMessage();
+        					}
+        					//vm.occiUpdate();
                 			//vm.occiRetrieve();
-                			vmconnector.addCPU(vmname, size); ///////////////////////////
+                			//vmconnector.addCPU(vmname, size); ///////////////////////////
         	        			System.out.println("you have increased your VCPUs by " + getStrategyCPUStepCPUIncrease());
+       
+        	        			//ProgressMonitorDialog dialog = new ProgressMonitorDialog(null);
+        	        			//dialog.close();
+        	        			
         				}
         		}, date);
         		
@@ -202,7 +232,20 @@ public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasti
         		int size = cpus + getStrategyCPUStepCPUIncrease();
         		if (size <= getStrategyCPUUpperLimit()) {
         			if (createPolicy(cpuUsed, getStrategyCPUIncreaseRelationalOp().getName(), getStrategyComputeUthreshold())) {
-        				vmconnector.addCPU(vmname, size);
+        				//vmconnector.addCPU(vmname, size);
+        				doEditing(vm,size);
+    					System.out.println(vm.getOcciComputeCores());
+    					try {
+    						vm.occiUpdate();
+    					} catch (Exception e) {
+    						e.getMessage();
+    					}
+    					try {
+    						vm.occiRetrieve();
+    					} catch (Exception e) {
+    						e.getMessage();
+    					}
+    					
     					//vm.setOcciComputeCores(size);
             			//vm.occiUpdate();
             			//vm.occiRetrieve();
@@ -219,7 +262,7 @@ public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasti
         		}
         Thread.sleep(getStrategyComputePollTime());	
 		}
-		bool = true;
+		//bool = true;
 	}
 	// End of user code
 	// Start of user code Strategycpu_Kind_start_action
@@ -254,6 +297,7 @@ public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasti
 			};
 			Thread thread = new Thread(myRunnable);
 			thread.start();
+			bool = true;
 			//try {
 			//	dynamic(vmname);
 			//} catch (InterruptedException e) {

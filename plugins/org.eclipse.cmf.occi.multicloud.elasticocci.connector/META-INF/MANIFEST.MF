@@ -12,5 +12,8 @@ Bundle-ActivationPolicy: lazy
 Require-Bundle: org.slf4j.api,
  org.eclipse.cmf.occi.core,
  org.eclipse.cmf.occi.multicloud.elasticocci,
- org.eclipse.cmf.occi.multicloud.vmware
+ org.eclipse.cmf.occi.multicloud.vmware,
+ org.eclipse.emf.transaction,
+ org.eclipse.swt
 Export-Package: org.eclipse.cmf.occi.multicloud.elasticocci.connector
+Import-Package: org.eclipse.jface.dialogs

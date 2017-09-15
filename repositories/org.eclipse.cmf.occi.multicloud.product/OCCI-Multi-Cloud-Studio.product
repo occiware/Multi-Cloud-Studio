@@ -70,8 +70,7 @@
   </configurations>
 
   <repositories>
-    <repository location="http://download.eclipse.org/releases/neon" enabled="true" />
-    <repository location="http://www.obeo.fr/download/occiware/repository" enabled="true" />
+    <repository location="http://download.eclipse.org/releases/oxygen" enabled="true" />
   </repositories>
 
   <preferencesInfo>

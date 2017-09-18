@@ -192,6 +192,10 @@
               <styles xmi:type="notation:FontStyle" xmi:id="_ZbxYMZxIEeenHthrqQCnOA" fontName=".AppleSystemUIFont" fontHeight="10"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_ZbxYMpxIEeenHthrqQCnOA"/>
             </children>
+            <children xmi:type="notation:Node" xmi:id="_-tydMJxIEeenHthrqQCnOA" type="3010" element="_-tqhYJxIEeenHthrqQCnOA">
+              <styles xmi:type="notation:FontStyle" xmi:id="_-tydMZxIEeenHthrqQCnOA" fontName=".AppleSystemUIFont" fontHeight="10"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_-tydMpxIEeenHthrqQCnOA"/>
+            </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_D57AVZxIEeenHthrqQCnOA"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_D57AVpxIEeenHthrqQCnOA"/>
           </children>
@@ -619,7 +623,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='KindContainer']/@subNodeMappings[name='KindAction']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="__uv10JxGEeenHthrqQCnOA" name="action3()">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="__uv10JxGEeenHthrqQCnOA" name="create()">
         <target xmi:type="occi:Action" href="model/horizontalelasticity.occie#//@kinds[term='horizontalgroup']/@actions.2"/>
         <semanticElements xmi:type="occi:Action" href="model/horizontalelasticity.occie#//@kinds[term='horizontalgroup']/@actions.2"/>
         <ownedStyle xmi:type="diagram:Square" xmi:id="__uwc4JxGEeenHthrqQCnOA" labelSize="10" labelAlignment="LEFT" labelPosition="node">
@@ -731,6 +735,14 @@
           <description xmi:type="style:SquareDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='KindContainer']/@subNodeMappings[name='KindAttribute']/@conditionnalStyles.2/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='KindContainer']/@subNodeMappings[name='KindAttribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_-tqhYJxIEeenHthrqQCnOA" name="start()">
+        <target xmi:type="occi:Action" href="model/horizontalelasticity.occie#//@kinds[term='manual']/@actions.0"/>
+        <semanticElements xmi:type="occi:Action" href="model/horizontalelasticity.occie#//@kinds[term='manual']/@actions.0"/>
+        <ownedStyle xmi:type="diagram:Square" xmi:id="_-tqhYZxIEeenHthrqQCnOA" labelSize="10" labelAlignment="LEFT" labelPosition="node">
+          <description xmi:type="style:SquareDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='KindContainer']/@subNodeMappings[name='KindAction']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='KindContainer']/@subNodeMappings[name='KindAction']"/>
       </ownedElements>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_EyCUEJxIEeenHthrqQCnOA" name="Dynamic" outgoingEdges="_LZXNYJxIEeenHthrqQCnOA">

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
 <occi:Extension xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:occi="http://schemas.ogf.org/occi/core/ecore" name="horizontalelasticity" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#">
   <import href="http://schemas.ogf.org/occi/core#/"/>
+  <import href="http://schemas.ogf.org/occi/infrastructure#/"/>
   <kinds name="HorizontalGroup" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#">
     <attributes name="HorizontalGroup.name" mutable="true">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
@@ -25,8 +26,12 @@
     <actions name="create" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/horizontalgroup/action#"/>
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
   </kinds>
-  <kinds name="Loadbalancer" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" parent="//@kinds[term='horizontalgroup']"/>
-  <kinds name="Instances" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" parent="//@kinds[term='horizontalgroup']"/>
+  <kinds name="Loadbalancer" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#">
+    <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
+  </kinds>
+  <kinds name="Instance" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#">
+    <parent href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
+  </kinds>
   <kinds name="HorizontalElasticContoller" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#">
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
   </kinds>
@@ -38,4 +43,10 @@
     <actions name="start" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/manual/action#"/>
   </kinds>
   <kinds name="Dynamic" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" parent="//@kinds[term='scalingstrategy']"/>
+  <kinds name="InstanceGroupLink" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" source="//@kinds[term='horizontalgroup']" target="//@kinds[term='instance']">
+    <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
+  </kinds>
+  <kinds name="LinkBalancer" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" source="//@kinds[term='horizontalgroup']" target="//@kinds[term='loadbalancer']">
+    <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
+  </kinds>
 </occi:Extension>

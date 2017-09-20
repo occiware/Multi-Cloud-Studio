@@ -210,20 +210,21 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		} else {
 			// Launching IRunnableWithProgress UI thread with business code.
 			LOGGER.debug("UI mode.");
-			IRunnableWithProgress runnableWithProgress = new IRunnableWithProgress() {
+			///IRunnableWithProgress runnableWithProgress = new IRunnableWithProgress() {
 
-				@Override
-				public void run(IProgressMonitor monitor) throws InvocationTargetException, InterruptedException {
-					createCompute(monitor);
-				}
-			};
-			UIDialog.executeActionThread(runnableWithProgress, titleMessage);
+				///@Override
+				///public void run(IProgressMonitor monitor) throws InvocationTargetException, InterruptedException {
+					//createCompute(monitor);
+					createCompute(null);
+				///}
+			///};
+			///UIDialog.executeActionThread(runnableWithProgress, titleMessage);
 			if (globalMessage != null && !globalMessage.isEmpty()) {
-				UIDialog.showUserMessage(titleMessage, globalMessage, levelMessage);
+				///UIDialog.showUserMessage(titleMessage, globalMessage, levelMessage);
 			}
 			// retrieve resource informations when no errors has been launched.
 			if ((levelMessage != null && !Level.ERROR.equals(levelMessage)) || levelMessage == null) {
-				occiRetrieve();
+				///occiRetrieve();
 			}
 		}
 
@@ -333,23 +334,24 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 
 		} else {
 			// Launching IRunnableWithProgress UI thread with business code.
-			IRunnableWithProgress runnableWithProgress = new IRunnableWithProgress() {
+			///IRunnableWithProgress runnableWithProgress = new IRunnableWithProgress() {
 
-				@Override
-				public void run(IProgressMonitor monitor) throws InvocationTargetException, InterruptedException {
-					deleteCompute(monitor);
-				}
-			};
+				///@Override
+				///public void run(IProgressMonitor monitor) throws InvocationTargetException, InterruptedException {
+					///deleteCompute(monitor);
+					deleteCompute(null);
+				///}
+			//};
 
-			if (UIDialog.showConfirmDialog()) {
-				UIDialog.executeActionThread(runnableWithProgress, titleMessage);
-			}
+			///if (UIDialog.showConfirmDialog()) {
+				///UIDialog.executeActionThread(runnableWithProgress, titleMessage);
+			///}
 
 			if (globalMessage != null && !globalMessage.isEmpty()) {
-				UIDialog.showUserMessage(titleMessage, globalMessage, levelMessage);
+				///UIDialog.showUserMessage(titleMessage, globalMessage, levelMessage);
 			}
 			if ((levelMessage != null && !Level.ERROR.equals(levelMessage)) || levelMessage == null) {
-				occiRetrieve();
+				///occiRetrieve();
 			}
 
 		}

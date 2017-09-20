@@ -326,6 +326,7 @@ public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasti
 	@Override
 	public void start()
 	{
+	
 		LOGGER.debug("Action start() called on " + this);
 		//System.out.println(getStrategyComputeUthreshold());
 		Compute vm = ((Compute)((Elasticcontroller) this.getEntity()).getLinks().get(0).getTarget());

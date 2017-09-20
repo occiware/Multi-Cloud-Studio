@@ -253,17 +253,17 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		} else {
 			// Launching IRunnableWithProgress UI thread with business code.
 			LOGGER.debug("UI mode.");
-			IRunnableWithProgress runnableWithProgress = new IRunnableWithProgress() {
+			//IRunnableWithProgress runnableWithProgress = new IRunnableWithProgress() {
 
-				@Override
-				public void run(IProgressMonitor monitor) throws InvocationTargetException, InterruptedException {
-					retrieveCompute(monitor);
-				}
-			};
-			UIDialog.executeActionThread(runnableWithProgress, titleMessage);
-			if (globalMessage != null && !globalMessage.isEmpty()) {
-				UIDialog.showUserMessage(titleMessage, globalMessage, levelMessage);
-			}
+				//@Override
+				//public void run(IProgressMonitor monitor) throws InvocationTargetException, InterruptedException {
+					retrieveCompute(null);
+				//}
+			//};
+			//UIDialog.executeActionThread(runnableWithProgress, titleMessage);
+			//if (globalMessage != null && !globalMessage.isEmpty()) {
+				//UIDialog.showUserMessage(titleMessage, globalMessage, levelMessage);
+			//}
 			if (!vmExist) {
 				vmState = VMHelper.POWER_OFF;
 			}
@@ -290,21 +290,22 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 
 		} else {
 
-			IRunnableWithProgress runnableWithProgress = new IRunnableWithProgress() {
+			//IRunnableWithProgress runnableWithProgress = new IRunnableWithProgress() {
 
-				@Override
-				public void run(IProgressMonitor monitor) throws InvocationTargetException, InterruptedException {
-					updateCompute(monitor);
-				}
-			};
-			UIDialog.executeActionThread(runnableWithProgress, titleMessage);
-			if (globalMessage != null && !globalMessage.isEmpty()) {
-				UIDialog.showUserMessage(titleMessage, globalMessage, levelMessage);
-			}
+			//	@Override
+			//	public void run(IProgressMonitor monitor) throws InvocationTargetException, InterruptedException {
+					//updateCompute(monitor);
+					updateCompute(null); // modified by yahya to overcome the problem of calling uidiag in thread
+			//	}
+			//};
+			//UIDialog.executeActionThread(runnableWithProgress, titleMessage);
+			//if (globalMessage != null && !globalMessage.isEmpty()) {
+			//	UIDialog.showUserMessage(titleMessage, globalMessage, levelMessage);
+			//}
 			// retrieve resource informations when no errors has been launched.
-			if ((levelMessage != null && !Level.ERROR.equals(levelMessage)) || levelMessage == null) {
+			//if ((levelMessage != null && !Level.ERROR.equals(levelMessage)) || levelMessage == null) {
 				occiRetrieve();
-			}
+			//}
 
 		}
 

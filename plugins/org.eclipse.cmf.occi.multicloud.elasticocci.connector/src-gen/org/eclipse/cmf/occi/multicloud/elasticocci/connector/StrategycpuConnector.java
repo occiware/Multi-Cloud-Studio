@@ -22,11 +22,14 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
 import org.eclipse.swt.widgets.Shell;
+import org.ecplise.cmf.occi.multicloud.vmware.connector.driver.VMHelper;
 import org.eclipse.cmf.occi.infrastructure.Compute;
 import org.eclipse.cmf.occi.multicloud.elasticocci.Elasticcontroller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.vmware.vim25.mo.VirtualMachine;
 
 import java.io.IOException;
 import java.text.DateFormat;
@@ -121,7 +124,7 @@ public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasti
         			vm.setOcciComputeCores(cpus);
         			vm.occiUpdate();
         			vm.occiRetrieve();
-        			System.out.println("Sorry, you can't scale down in VMWare technology, please wait until we add more conncetors in OCCIware such as KVM");
+        			//System.out.println("Sorry, you can't scale down in VMWare technology, please wait until we add more connectors in OCCIware such as KVM");
         		} else {
         			System.out.println("You can't add more cpus to this VM, you have arrived the minmum lower limit");
         		}
@@ -148,9 +151,26 @@ public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasti
 	    });
 	}
 	
+	public void doEditing2(EObject element) {
+	    // Make sure your element is attached to a source, otherwise this will return null
+	    TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(element);
+	    domain.getCommandStack().execute(new RecordingCommand(domain) {
+
+	        @Override
+	        protected void doExecute() {
+	            // Implement your write operations here,
+	            // for example: set a new name
+	        		//int numCores;
+	        		//int numCores = VMHelper.getNumSockets(element);
+	        		//int numCores = resourceTpl.getCores();
+	            element.eGet(element.eClass().getEStructuralFeature("occiComputeCores"));
+	        }
+	    });
+	}
+	
 	private void scheduled(String dir, final Compute vm, Date date) {
-		final Vertical vmconnector = new Vertical();
-		String vmname = vm.getAttributes().get(1).getValue();
+		//final Vertical vmconnector = new Vertical();
+		//String vmname = vm.getAttributes().get(1).getValue();
 		int cpus = vm.getOcciComputeCores();
 		int size;
 		switch (dir) {
@@ -170,6 +190,7 @@ public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasti
         					} catch (Exception e) {
         						e.getMessage();
         					}
+        					//vm.setOcciComputeCores(cpus);
         					//vm.occiUpdate();
                 			//vm.occiRetrieve();
                 			//vmconnector.addCPU(vmname, size); ///////////////////////////
@@ -195,18 +216,29 @@ public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasti
         		timer.schedule(new Scheduler() {
         				@Override
         				public void run() {
+        					doEditing(vm,size);
+        					try {
+        						vm.occiUpdate();
+        					} catch (Exception e) {
+        						e.getMessage();
+        					}
+        					try {
+        						vm.occiRetrieve();
+        					} catch (Exception e) {
+        						e.getMessage();
+        					}
         					//vm.setOcciComputeCores(size);
                 			//vm.occiUpdate();
                 			//vm.occiRetrieve();
                 			//vmconnector.addCPU(vmname, size); ///////////////////////////
-        	        			System.out.println("you have decreased your VCPUs by " + getStrategyCPUStepCPUDecrease());
+        	        			//System.out.println("you have decreased your VCPUs by " + getStrategyCPUStepCPUDecrease());
         				}
         		}, date);
         		
         	} else {
         		System.out.println("You can't add more cpus to this VM, you have arrived the minmum limit");
         	}
-        	System.out.println("Sorry, you can't scale down in VMWare technology, please wait until we add more conncetors in OCCIware such as KVM");
+        	//System.out.println("Sorry, you can't scale down in VMWare technology, please wait until we add more conncetors in OCCIware such as KVM");
             break;
         default: 
         	System.out.println("Enter correct direction, we have only up and down");
@@ -221,7 +253,7 @@ public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasti
 		String vmname = vm.getAttributes().get(1).getValue();
 		int hostid = zabbix_obj.getHostByName(zabi, vmname);
 		//System.out.print("hi, cpus used is " + cpuUsed);
-		Vertical vmconnector = new Vertical();
+		//Vertical vmconnector = new Vertical();
 		
 		while (bool) {
 			Double cpuUsed = zabbix_obj.item_cpu_idle(zabi, hostid);
@@ -229,9 +261,9 @@ public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasti
         		//int cpus = vmconnector.getCPUs(vmname);
 			int cpus = vm.getOcciComputeCores();
         		System.out.println("current vCPUs are: " + cpus);
-        		int size = cpus + getStrategyCPUStepCPUIncrease();
-        		if (size <= getStrategyCPUUpperLimit()) {
-        			if (createPolicy(cpuUsed, getStrategyCPUIncreaseRelationalOp().getName(), getStrategyComputeUthreshold())) {
+        		if (createPolicy(cpuUsed, getStrategyCPUIncreaseRelationalOp().getName(), getStrategyComputeUthreshold())) {
+            		int size = cpus + getStrategyCPUStepCPUIncrease();
+        			if (size <= getStrategyCPUUpperLimit()) {
         				//vmconnector.addCPU(vmname, size);
         				doEditing(vm,size);
     					System.out.println(vm.getOcciComputeCores());
@@ -253,12 +285,31 @@ public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasti
                     System.out.println("wait scaling up before taking another decision");
                     Thread.sleep(getStrategyComputeBreathUp());
         			}
-        		} else {
+        			else {
         			System.out.println("You can't add more cpus to this VM, you have arrived the maximum limit");
+        			}
         		}
-        		if ((createPolicy(cpuUsed, getStrategyCPUDecreaseRelationalOp().getName(), getStrategyComputeLthreshold())) && (cpus >= getStrategyCPULowerLimit())) {
-        			System.out.println("Sorry, you can't scale down in VMWare technology, please wait until we add more conncetors in OCCIware such as KVM");
-        			Thread.sleep(getStrategyComputeBreathDown());
+        		if (createPolicy(cpuUsed, getStrategyCPUDecreaseRelationalOp().getName(), getStrategyComputeLthreshold())) {
+        			int size = cpus - getStrategyCPUStepCPUIncrease();
+        			if (size >= getStrategyCPULowerLimit()) {
+        			//System.out.println("Sorry, you can't scale down in VMWare technology, please wait until we add more connectors in OCCIware such as KVM");
+        			doEditing(vm,size);
+				try {
+					vm.occiUpdate();
+				} catch (Exception e) {
+					e.getMessage();
+				}
+				//try {
+				//	vm.occiRetrieve();
+				//} catch (Exception e) {
+				//	e.getMessage();
+				//}
+				//doEditing2(vm);							
+				Thread.sleep(getStrategyComputeBreathDown());
+        			}
+        			else {
+            			System.out.println("You can't decrease  cpus of this VM, you have arrived the minmum limit");
+            		}
         		}
         Thread.sleep(getStrategyComputePollTime());	
 		}

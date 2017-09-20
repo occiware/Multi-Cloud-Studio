@@ -16,4 +16,6 @@ Require-Bundle: org.slf4j.api,
  org.eclipse.emf.transaction,
  org.eclipse.swt
 Export-Package: org.eclipse.cmf.occi.multicloud.elasticocci.connector
-Import-Package: org.eclipse.jface.dialogs
+Import-Package: com.vmware.vim25.mo,
+ org.eclipse.jface.dialogs,
+ org.ecplise.cmf.occi.multicloud.vmware.connector.driver

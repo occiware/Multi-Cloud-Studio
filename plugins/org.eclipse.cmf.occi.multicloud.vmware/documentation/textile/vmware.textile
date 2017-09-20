@@ -1,0 +1,302 @@
+h1. OCCI vmware extension
+
+
+
+| *Name* | vmware |
+| *Scheme* | http://occiware.org/occi/infrastructure/vmware# |
+
+
+Imported OCCI Extensions:
+
+| *Name* | *Scheme* |
+| <a href="core.textile">core</a> | http://schemas.ogf.org/occi/core# |
+| <a href="crtp.textile">crtp</a> | http://schemas.ogf.org/occi/infrastructure/compute/template/1.1# |
+| <a href="infrastructure.textile">infrastructure</a> | http://schemas.ogf.org/occi/infrastructure# |
+
+h1. Kinds
+
+h2. Kind instancevmware
+
+| *Term* | instancevmware |
+| *Scheme* | http://occiware.org/occi/infrastructure/vmware# |
+| *Title* |  |
+| *Parent* | <a href="infrastructure.textile#kind-compute">http://schemas.ogf.org/occi/infrastructure#compute</a> |
+
+Attributes of instancevmware are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| imagename | <a href="core.textile#-string">String</a> | false | true |  | Name of the template if this compute has a template or will be created with a template. |
+| markedastemplate | <a href="core.textile#-string">String</a> | false | true |  |  |
+| gueststate | <a href="core.textile#-string">String</a> | false | true |  |  |
+| guestosid | <a href="core.textile#-string">String</a> | false | true |  |  |
+| vcpu | <a href="core.textile#-integer">Integer</a> | false | true |  |  |
+| instanceId | <a href="core.textile#-string">String</a> | false | true |  | Unique Instance provider Id given by provider after creation |
+| guestIpv4Address | <a href="core.textile#-string">String</a> | false | true |  | Ipv4 address from guest tools. |
+| guestIpv6Address | <a href="core.textile#-string">String</a> | false | true |  |  |
+
+
+h2. Kind storagevmware
+
+| *Term* | storagevmware |
+| *Scheme* | http://occiware.org/occi/infrastructure/vmware# |
+| *Title* |  |
+| *Parent* | <a href="infrastructure.textile#kind-storage">http://schemas.ogf.org/occi/infrastructure#storage</a> |
+
+h2. Kind storagelinkvmware
+
+| *Term* | storagelinkvmware |
+| *Scheme* | http://occiware.org/occi/infrastructure/vmware# |
+| *Title* |  |
+| *Parent* | <a href="infrastructure.textile#kind-storagelink">http://schemas.ogf.org/occi/infrastructure#storagelink</a> |
+
+h2. Kind vswitch
+
+| *Term* | vswitch |
+| *Scheme* | http://occiware.org/occi/infrastructure/vmware# |
+| *Title* |  |
+| *Parent* | <a href="infrastructure.textile#kind-network">http://schemas.ogf.org/occi/infrastructure#network</a> |
+
+Attributes of vswitch are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| nbport | <a href="core.textile#-integer">Integer</a> | false | true |  |  |
+
+
+h2. Kind networkadapter
+
+| *Term* | networkadapter |
+| *Scheme* | http://occiware.org/occi/infrastructure/vmware# |
+| *Title* | Network adapter interface |
+| *Parent* | <a href="infrastructure.textile#kind-networkinterface">http://schemas.ogf.org/occi/infrastructure#networkinterface</a> |
+
+
+h1. Mixins
+
+h2. Mixin windows
+
+| *Term* | windows |
+| *Scheme* | http://occiware.org/occi/infrastructure/vmware# |
+| *Title* | Mixin os_tpl for Windows system |
+Depends on:
+* <a href="vmware.textile#mixin-os_tpl_vmware">http://occiware.org/occi/infrastructure/vmware#os_tpl_vmware</a>
+Applies to:
+* <a href="vmware.textile#kind-instancevmware">http://occiware.org/occi/infrastructure/vmware#instancevmware</a>
+
+h2. Mixin linux
+
+| *Term* | linux |
+| *Scheme* | http://occiware.org/occi/infrastructure/vmware# |
+| *Title* | Mixin os_tpl for linux systems |
+Depends on:
+* <a href="vmware.textile#mixin-os_tpl_vmware">http://occiware.org/occi/infrastructure/vmware#os_tpl_vmware</a>
+Applies to:
+* <a href="vmware.textile#kind-instancevmware">http://occiware.org/occi/infrastructure/vmware#instancevmware</a>
+
+h2. Mixin macosx
+
+| *Term* | macosx |
+| *Scheme* | http://occiware.org/occi/infrastructure/vmware# |
+| *Title* | Mixin os_tpl for mac os x systems |
+Depends on:
+* <a href="vmware.textile#mixin-os_tpl_vmware">http://occiware.org/occi/infrastructure/vmware#os_tpl_vmware</a>
+Applies to:
+* <a href="vmware.textile#kind-instancevmware">http://occiware.org/occi/infrastructure/vmware#instancevmware</a>
+
+h2. Mixin vmwarefolders
+
+| *Term* | vmwarefolders |
+| *Scheme* | http://occiware.org/occi/infrastructure/vmware# |
+| *Title* | This mixin add global attributes like datacentername, clustername, hostsystem name etc. |
+Applies to:
+* <a href="vmware.textile#kind-instancevmware">http://occiware.org/occi/infrastructure/vmware#instancevmware</a>
+* <a href="vmware.textile#kind-networkadapter">http://occiware.org/occi/infrastructure/vmware#networkadapter</a>
+* <a href="vmware.textile#kind-storagelinkvmware">http://occiware.org/occi/infrastructure/vmware#storagelinkvmware</a>
+* <a href="vmware.textile#kind-storagevmware">http://occiware.org/occi/infrastructure/vmware#storagevmware</a>
+* <a href="vmware.textile#kind-vswitch">http://occiware.org/occi/infrastructure/vmware#vswitch</a>
+
+Attributes of vmwarefolders are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| datacentername | <a href="core.textile#-string">String</a> | false | true |  | Datacenter name identifier of the entity |
+| datastorename | <a href="core.textile#-string">String</a> | false | true |  | Datastore name |
+| clustername | <a href="core.textile#-string">String</a> | false | true |  |  |
+| hostsystemname | <a href="core.textile#-string">String</a> | false | true |  |  |
+| inventorypath | <a href="core.textile#-string">String</a> | false | true |  |  |
+
+
+h2. Mixin os_tpl_vmware
+
+| *Term* | os_tpl_vmware |
+| *Scheme* | http://occiware.org/occi/infrastructure/vmware# |
+| *Title* |  |
+Depends on:
+* <a href="infrastructure.textile#mixin-os_tpl">http://schemas.ogf.org/occi/infrastructure#os_tpl</a>
+Applies to:
+* <a href="vmware.textile#kind-instancevmware">http://occiware.org/occi/infrastructure/vmware#instancevmware</a>
+
+Attributes of os_tpl_vmware are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| datastoreisopath | <a href="core.textile#-string">String</a> | false | true |  |  |
+| guestid | <a href="vmware.textile#-guestosidentifiers">GuestOsIdentifiers</a> | true | true |  |  |
+
+
+h2. Mixin ssh_user_data
+
+| *Term* | ssh_user_data |
+| *Scheme* | http://occiware.org/occi/infrastructure/vmware# |
+| *Title* |  |
+Depends on:
+* <a href="infrastructure.textile#mixin-user_data">http://schemas.ogf.org/occi/infrastructure/compute#user_data</a>
+Applies to:
+* <a href="vmware.textile#kind-instancevmware">http://occiware.org/occi/infrastructure/vmware#instancevmware</a>
+
+Attributes of ssh_user_data are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| password | <a href="core.textile#-string">String</a> | false | true |  |  |
+| occi.compute.userdata.file | <a href="core.textile#-string">String</a> | false | true |  |  |
+| user | <a href="core.textile#-string">String</a> | false | true |  |  |
+
+
+
+h1. Types
+
+h2. EnumerationType GuestOsIdentifiers
+
+Enumerate the guest os id used on vCenter VMware platform. 
+
+**Literals**:
+* dosGuest  
+* win31Guest  
+* win95Guest  
+* win98Guest  
+* winMeGuest  
+* winNTGuest  
+* win2000ProGuest  
+* win2000ServGuest  
+* win2000AdvServGuest  
+* winXPHomeGuest  
+* winXPProGuest  
+* winXPPro64Guest  
+* winNetWebGuest  
+* winNetStandardGuest  
+* winNetEnterpriseGuest  
+* winNetDatacenterGuest  
+* winNetBusinessGuest  
+* winNetStandard64Guest  
+* winNetEnterprise64Guest  
+* winLonghornGuest  
+* winLonghorn64Guest  
+* winNetDatacenter64Guest  
+* winVistaGuest  
+* winVista64Guest  
+* windows7Guest  
+* windows7_64Guest  
+* windows7Server64Guest  
+* windows8Guest  
+* windows8_64Guest  
+* windows8Server64Guest  
+* windows9Guest  
+* windows9_64Guest  
+* windows9Server64Guest  
+* windowsHyperVGuest  
+* freebsdGuest  
+* freebsd64Guest  
+* redhatGuest  
+* rhel2Guest  
+* rhel3Guest  
+* rhel3_64Guest  
+* rhel4Guest  
+* rhel4_64Guest  
+* rhel5Guest  
+* rhel5_64Guest  
+* rhel6Guest  
+* rhel6_64Guest  
+* rhel7Guest  
+* rhel7_64Guest  
+* centosGuest  
+* centos64Guest  
+* oracleLinuxGuest  
+* oracleLinux64Guest  
+* suseGuest  
+* suse64Guest  
+* slesGuest  
+* sles64Guest  
+* sles10Guest  
+* sles10_64Guest  
+* sles11Guest  
+* sles11_64Guest  
+* sles12Guest  
+* sles12_64Guest  
+* nld9Guest  
+* oesGuest  
+* sjdsGuest  
+* mandrakeGuest  
+* mandrivaGuest  
+* mandriva64Guest  
+* turboLinuxGuest  
+* turboLinux64Guest  
+* ubuntuGuest  
+* ubuntu64Guest  
+* debian4Guest  
+* debian4_64Guest  
+* debian5Guest  
+* debian5_64Guest  
+* debian6Guest  
+* debian6_64Guest  
+* debian7Guest  
+* debian7_64Guest  
+* debian8Guest  
+* debian8_64Guest  
+* asianux3Guest  
+* asianux3_64Guest  
+* asianux4Guest  
+* asianux4_64Guest  
+* asianux5_64Guest  
+* opensuseGuest  
+* opensuse64Guest  
+* fedoraGuest  
+* fedora64Guest  
+* coreos64Guest  
+* other24xLinuxGuest  
+* other26xLinuxGuest  
+* otherLinuxGuest  
+* other3xLinuxGuest  
+* genericLinuxGuest  
+* other24xLinux64Guest  
+* other26xLinux64Guest  
+* other3xLinux64Guest  
+* otherLinux64Guest  
+* solaris6Guest  
+* solaris7Guest  
+* solaris8Guest  
+* solaris9Guest  
+* solaris10Guest  
+* solaris10_64Guest  
+* solaris11_64Guest  
+* os2Guest  
+* eComStationGuest  
+* eComStation2Guest  
+* netware4Guest  
+* netware5Guest  
+* netware6Guest  
+* openServer5Guest  
+* openServer6Guest  
+* unixWare7Guest  
+* darwinGuest  
+* darwin64Guest  
+* darwin10Guest  
+* darwin10_64Guest  
+* darwin11Guest  
+* darwin11_64Guest  
+* darwin12_64Guest  
+* darwin13_64Guest  
+* darwin14_64Guest  
+* vmkernelGuest  
+* vmkernel5Guest  
+* vmkernel6Guest  
+* otherGuest  
+* otherGuest64  
+
+Generated at Thu Sep 14 09:32:40 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.vmware/model/vmware.occie by org.eclipse.cmf.occi.core.gen.textile

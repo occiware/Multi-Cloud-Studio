@@ -1,0 +1,778 @@
+\section{OCCI vmware extension}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & vmware \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/infrastructure/vmware\# \\
+  \hline
+  \textbf{Specification} &  \\
+  \hline
+\end{tabular}
+\end{center}
+
+\subsection{Imported OCCI extensions}
+
+\begin{center} 
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & core \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/core\# \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{center} 
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & crtp \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/infrastructure/compute/template/1.1\# \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{center} 
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & infrastructure \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/infrastructure\# \\
+  \hline
+\end{tabular}
+\end{center}
+
+
+\subsection{Types}
+\subsubsection{\texttt{GuestOsIdentifiers} type}
+Enumerate the guest os id used on vCenter VMware platform
+\textbf{Literals}
+\begin{itemize}
+\item \textbf{dosGuest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{win31Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{win95Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{win98Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{winMeGuest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{winNTGuest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{win2000ProGuest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{win2000ServGuest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{win2000AdvServGuest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{winXPHomeGuest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{winXPProGuest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{winXPPro64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{winNetWebGuest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{winNetStandardGuest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{winNetEnterpriseGuest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{winNetDatacenterGuest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{winNetBusinessGuest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{winNetStandard64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{winNetEnterprise64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{winLonghornGuest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{winLonghorn64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{winNetDatacenter64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{winVistaGuest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{winVista64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{windows7Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{windows7\_64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{windows7Server64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{windows8Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{windows8\_64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{windows8Server64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{windows9Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{windows9\_64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{windows9Server64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{windowsHyperVGuest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{freebsdGuest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{freebsd64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{redhatGuest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{rhel2Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{rhel3Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{rhel3\_64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{rhel4Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{rhel4\_64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{rhel5Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{rhel5\_64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{rhel6Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{rhel6\_64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{rhel7Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{rhel7\_64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{centosGuest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{centos64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{oracleLinuxGuest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{oracleLinux64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{suseGuest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{suse64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{slesGuest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{sles64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{sles10Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{sles10\_64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{sles11Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{sles11\_64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{sles12Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{sles12\_64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{nld9Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{oesGuest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{sjdsGuest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{mandrakeGuest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{mandrivaGuest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{mandriva64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{turboLinuxGuest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{turboLinux64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{ubuntuGuest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{ubuntu64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{debian4Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{debian4\_64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{debian5Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{debian5\_64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{debian6Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{debian6\_64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{debian7Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{debian7\_64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{debian8Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{debian8\_64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{asianux3Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{asianux3\_64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{asianux4Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{asianux4\_64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{asianux5\_64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{opensuseGuest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{opensuse64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{fedoraGuest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{fedora64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{coreos64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{other24xLinuxGuest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{other26xLinuxGuest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{otherLinuxGuest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{other3xLinuxGuest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{genericLinuxGuest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{other24xLinux64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{other26xLinux64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{other3xLinux64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{otherLinux64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{solaris6Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{solaris7Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{solaris8Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{solaris9Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{solaris10Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{solaris10\_64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{solaris11\_64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{os2Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{eComStationGuest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{eComStation2Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{netware4Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{netware5Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{netware6Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{openServer5Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{openServer6Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{unixWare7Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{darwinGuest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{darwin64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{darwin10Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{darwin10\_64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{darwin11Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{darwin11\_64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{darwin12\_64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{darwin13\_64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{darwin14\_64Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{vmkernelGuest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{vmkernel5Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{vmkernel6Guest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{otherGuest} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{otherGuest64} 
+\end{itemize}
+
+\subsection{Kinds}
+\subsubsection{\texttt{InstanceVMware} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & InstanceVMware \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/infrastructure/vmware\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+  \textbf{Parent} & Compute (http://schemas.ogf.org/occi/infrastructure\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{InstanceVMware} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  imagename & String & false & true &  & Name of the template if this compute has a template or will be created with a template. \\
+  \hline
+  markedastemplate & String & false & true &  &  \\
+  \hline
+  gueststate & String & false & true &  &  \\
+  \hline
+  guestosid & String & false & true &  &  \\
+  \hline
+  vcpu & Integer & false & true &  &  \\
+  \hline
+  instanceId & String & false & true &  & Unique Instance provider Id given by provider after creation \\
+  \hline
+  guestIpv4Address & String & false & true &  & Ipv4 address from guest tools. \\
+  \hline
+  guestIpv6Address & String & false & true &  &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+
+\subsubsection{\texttt{StorageVMware} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & StorageVMware \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/infrastructure/vmware\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+  \textbf{Parent} & Storage (http://schemas.ogf.org/occi/infrastructure\#) \\
+  \hline
+\end{tabular}
+\end{center}
+
+
+
+\subsubsection{\texttt{StorageLinkVMware} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & StorageLinkVMware \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/infrastructure/vmware\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+  \textbf{Parent} & StorageLink (http://schemas.ogf.org/occi/infrastructure\#) \\
+  \hline
+\end{tabular}
+\end{center}
+
+
+
+\subsubsection{\texttt{VSwitch} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & VSwitch \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/infrastructure/vmware\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+  \textbf{Parent} & Network (http://schemas.ogf.org/occi/infrastructure\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{VSwitch} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  nbport & Integer & false & true &  &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+
+\subsubsection{\texttt{NetworkAdapter} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & NetworkAdapter \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/infrastructure/vmware\# \\
+  \hline
+  \textbf{Title} & Network adapter interface \\
+  \hline
+  \textbf{Parent} & NetworkInterface (http://schemas.ogf.org/occi/infrastructure\#) \\
+  \hline
+\end{tabular}
+\end{center}
+
+
+
+\subsection{Mixins}
+\subsubsection{\texttt{windows} mixin}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & windows \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/infrastructure/vmware\# \\
+  \hline
+  \textbf{Title} & Mixin os\_tpl for Windows system \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{Applies to}:
+\begin{itemize}
+	\item InstanceVMware (http://occiware.org/occi/infrastructure/vmware\#)
+\end{itemize}
+\end{itemize} 
+\begin{itemize}
+\item \textbf{Depends on}:
+\begin{itemize}
+	\item os\_tpl_vmware (http://occiware.org/occi/infrastructure/vmware\#)
+\end{itemize}
+\end{itemize}
+
+
+
+ 
+\subsubsection{\texttt{linux} mixin}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & linux \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/infrastructure/vmware\# \\
+  \hline
+  \textbf{Title} & Mixin os\_tpl for linux systems \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{Applies to}:
+\begin{itemize}
+	\item InstanceVMware (http://occiware.org/occi/infrastructure/vmware\#)
+\end{itemize}
+\end{itemize} 
+\begin{itemize}
+\item \textbf{Depends on}:
+\begin{itemize}
+	\item os\_tpl_vmware (http://occiware.org/occi/infrastructure/vmware\#)
+\end{itemize}
+\end{itemize}
+
+
+
+ 
+\subsubsection{\texttt{macosx} mixin}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & macosx \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/infrastructure/vmware\# \\
+  \hline
+  \textbf{Title} & Mixin os\_tpl for mac os x systems \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{Applies to}:
+\begin{itemize}
+	\item InstanceVMware (http://occiware.org/occi/infrastructure/vmware\#)
+\end{itemize}
+\end{itemize} 
+\begin{itemize}
+\item \textbf{Depends on}:
+\begin{itemize}
+	\item os\_tpl_vmware (http://occiware.org/occi/infrastructure/vmware\#)
+\end{itemize}
+\end{itemize}
+
+
+
+ 
+\subsubsection{\texttt{vmwarefolders} mixin}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & vmwarefolders \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/infrastructure/vmware\# \\
+  \hline
+  \textbf{Title} & This mixin add global attributes like datacentername, clustername, hostsystem name etc. \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{Applies to}:
+\begin{itemize}
+	\item InstanceVMware (http://occiware.org/occi/infrastructure/vmware\#)
+	\item NetworkAdapter (http://occiware.org/occi/infrastructure/vmware\#)
+	\item StorageLinkVMware (http://occiware.org/occi/infrastructure/vmware\#)
+	\item StorageVMware (http://occiware.org/occi/infrastructure/vmware\#)
+	\item VSwitch (http://occiware.org/occi/infrastructure/vmware\#)
+\end{itemize}
+\end{itemize} 
+
+\begin{itemize}
+\item \textbf{\texttt{vmwarefolders} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  datacentername & String & false & true &  & Datacenter name identifier of the entity \\
+  \hline
+  datastorename & String & false & true &  & Datastore name \\
+  \hline
+  clustername & String & false & true &  &  \\
+  \hline
+  hostsystemname & String & false & true &  &  \\
+  \hline
+  inventorypath & String & false & true &  &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+ 
+\subsubsection{\texttt{os\_tpl_vmware} mixin}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & os\_tpl_vmware \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/infrastructure/vmware\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{Applies to}:
+\begin{itemize}
+	\item InstanceVMware (http://occiware.org/occi/infrastructure/vmware\#)
+\end{itemize}
+\end{itemize} 
+\begin{itemize}
+\item \textbf{Depends on}:
+\begin{itemize}
+	\item Os\_Tpl (http://schemas.ogf.org/occi/infrastructure\#)
+\end{itemize}
+\end{itemize}
+
+\begin{itemize}
+\item \textbf{\texttt{os\_tpl_vmware} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  datastoreisopath & String & false & true &  &  \\
+  \hline
+  guestid & GuestOsIdentifiers & true & true &  &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+ 
+\subsubsection{\texttt{SSH\_User_Data} mixin}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & SSH\_User_Data \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/infrastructure/vmware\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{Applies to}:
+\begin{itemize}
+	\item InstanceVMware (http://occiware.org/occi/infrastructure/vmware\#)
+\end{itemize}
+\end{itemize} 
+\begin{itemize}
+\item \textbf{Depends on}:
+\begin{itemize}
+	\item User\_Data (http://schemas.ogf.org/occi/infrastructure/compute\#)
+\end{itemize}
+\end{itemize}
+
+\begin{itemize}
+\item \textbf{\texttt{SSH\_User_Data} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  password & String & false & true &  &  \\
+  \hline
+  occi.compute.userdata.file & String & false & true &  &  \\
+  \hline
+  user & String & false & true &  &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+ 

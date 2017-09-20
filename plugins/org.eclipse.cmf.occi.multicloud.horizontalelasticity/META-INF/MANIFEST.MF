@@ -1,13 +1,21 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: org.eclipse.cmf.occi.multicloud.horizontalelasticity
+Bundle-Name: %pluginName
 Bundle-SymbolicName: org.eclipse.cmf.occi.multicloud.horizontalelasticity;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Vendor: OCCIware
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.eclipse.cmf.occi.multicloud.horizontalelasticity,
+ org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl,
+ org.eclipse.cmf.occi.multicloud.horizontalelasticity.util
 Bundle-ActivationPolicy: lazy
-Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.ocl.pivot;visibility:=reexport,
+ org.eclipse.ocl.examples.codegen;visibility:=reexport,
+ org.eclipse.cmf.occi.infrastructure;visibility:=reexport,
  org.eclipse.cmf.occi.core;visibility:=reexport,
  org.eclipse.cmf.occi.core.ui,
  org.eclipse.cmf.occi.core.gen.emf.ui

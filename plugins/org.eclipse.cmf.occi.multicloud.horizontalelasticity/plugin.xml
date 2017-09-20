@@ -50,4 +50,12 @@
          </action>
       </objectContribution>
    </extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated horizontalelasticity -->
+      <package
+            uri="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore"
+            class="org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage"
+            genModel="model/horizontalelasticity.genmodel"/>
+   </extension>
+
 </plugin>

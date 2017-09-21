@@ -3,7 +3,8 @@ Bundle-ManifestVersion: 2
 Bundle-Name: org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector
 Bundle-SymbolicName: org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-ClassPath: .
+Bundle-ClassPath: .,
+ META-INF/lib/org.eclipse.emf.transaction_1.9.0.201706061339.jar
 Bundle-Vendor: OCCIware
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
@@ -11,4 +12,8 @@ Require-Bundle: org.slf4j.api,
  org.eclipse.cmf.occi.core,
  org.eclipse.cmf.occi.multicloud.horizontalelasticity
 Export-Package: org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector
-Import-Package: org.eclipse.cmf.occi.multicloud.elasticocci.connector
+Import-Package: org.eclipse.cmf.occi.multicloud.elasticocci.connector,
+ org.eclipse.cmf.occi.multicloud.vmware.connector.utils.thread,
+ org.eclipse.core.runtime;version="3.5.0",
+ org.eclipse.jface.dialogs,
+ org.eclipse.jface.operation

@@ -14,14 +14,27 @@
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import org.eclipse.cmf.occi.infrastructure.Compute;
+import org.eclipse.cmf.occi.infrastructure.ComputeStatus;
 import org.eclipse.cmf.occi.multicloud.elasticocci.connector.MyRunnable;
+import org.eclipse.cmf.occi.multicloud.vmware.connector.utils.thread.UIDialog;
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.transaction.RecordingCommand;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
+import org.eclipse.jface.dialogs.ProgressMonitorDialog;
+import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+
 
 /**
  * Connector implementation for the OCCI kind:
@@ -76,9 +89,22 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 		final ExecutorService service = Executors.newCachedThreadPool();
 		MyRunnable myRunnable = new MyRunnable() {
 			public void run() {
-				inst.occiCreate();
+				try { 
+					inst.occiCreate();
+				} catch(Exception e) {
+					e.printStackTrace();
+				}
 				}
 		};
+		///MyRunnable myRunnable = new MyRunnable() {
+			///try {
+				///inst.occiCreate();
+		   /// }
+		    ///catch (Exception e) {
+		        ///e.printStackTrace();
+		    ///}
+		///};
+		//myRunnable.run();
 		
 		for (int i=1; i <= getHorizontalGroupGroupSize(); i++) {
 			String vmName = "node"+i;
@@ -96,7 +122,9 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 			//thread.start();
 		}
 		service.shutdown();
+		System.out.println("Oh, it works after thread");
 		
+					
 		//Compute vm = ((Compute)((Horizontalgroup) this.getEntity()).getLinks().get(0).getTarget());
 		//Compute inst = ((Compute)((this.getLinks()).get(0).getTarget()));
 		//inst.setTitle("yehiaDeletestp");
@@ -202,12 +230,115 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
      * - term: create
      * - title: 
 	 */
-	@Override
-	public void create()
-	{
-		LOGGER.debug("Action create() called on " + this);
+	public void doEditing(EObject element) {
+	    // Make sure your element is attached to a source, otherwise this will return null
+	    TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(element);
+	    domain.getCommandStack().execute(new RecordingCommand(domain) {
 
-		// TODO: Implement how to create this horizontalgroup.
+	        @Override
+	        protected void doExecute() {
+	            // Implement your write operations here,
+	            // for example: set a new name
+	            element.eGet(element.eClass().getEStructuralFeature("occiRetrieve"));
+	        }
+	    });
+	}
+	
+	
+	@Override
+	public void create() 
+	{
+		Compute inst = ((Compute)((this.getLinks()).get(0).getTarget()));
+		//for (int i =1;i<=2; i++) {
+			String vmName = "node1";
+		try {
+				inst.setTitle(vmName);
+				inst.occiRetrieve();
+				Thread.sleep(10000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			for (int x=0; x<=10; x++) {
+				System.out.println("attribute name " + inst.getAttributes().get(x).getName() + " attribute value " + inst.getAttributes().get(x).getValue());
+			}
+		//}
+		
+		
+		
+	///	inst.occiRetrieve();
+		
+		///IRunnableWithProgress op = new IRunnableWithProgress() {
+			///  @Override
+		      ///public void run(IProgressMonitor monitor) throws  InvocationTargetException, InterruptedException {
+		        //try {
+		        	///String gueststate = "notrunning";
+					//String gueststate = inst.getAttributes().get(4).getValue();
+					///while (!gueststate.equals("running")) {
+						//gueststate = inst.getAttributes().get(4).getValue();
+						///String stateMessage = inst.getOcciComputeStateMessage();
+						///System.out.println("The machine is creating " + stateMessage);
+						///Thread.sleep(10000);
+						//inst.occiRetrieve();
+						///doEditing(inst);
+		        ///}
+		      ///}
+		    ///};
+
+		   /// UIDialog.executeActionThread(op, "test");
+		    
+		    
+		//MyRunnable myRunnable2 = new MyRunnable() {
+			//public void run() {
+			//	///try {
+			//
+			//		//Thread.sleep(1000); // wait one second until the machine information is retrieved, 
+			//	
+			//	String gueststate = "notrunning";
+			//	//String gueststate = inst.getAttributes().get(4).getValue();
+			//	while (!gueststate.equals("running")) {
+			//		//gueststate = inst.getAttributes().get(4).getValue();
+			//		String stateMessage = inst.getOcciComputeStateMessage();
+			//		System.out.println("The machine is creating " + stateMessage);
+			//		try {
+			//			Thread.sleep(10000);
+			//		} catch (InterruptedException e) {
+			//			// TODO Auto-generated catch block
+			//			e.printStackTrace();
+			//		}
+			//		//inst.occiRetrieve();
+			//		doEditing(inst);
+					
+			//	}
+			//}};
+			//Thread thread = new Thread(myRunnable2);
+			//thread.start();
+						
+			
+			
+				///while (inst.getAttributes().get(8).getValue().isEmpty()) {
+					///System.out.println("Waiting for the machine to reboot and to get its DHCP ip");
+					///try {
+						///Thread.sleep(20000);
+					///} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						///e.printStackTrace();
+					///}
+					///inst.occiRetrieve();
+				///}
+				///System.out.println("the machine ip is " + inst.getAttributes().get(8).getValue());
+				 ///} catch (Exception e) {
+						// TODO Auto-generated catch block
+						///e.printStackTrace();
+				  ///}
+				
+				///}};
+				
+				///Thread thread = new Thread(myRunnable2);
+				///thread.start();
+		LOGGER.debug("Action create() called on " + this);
+			 
+	// TODO: Implement how to create this horizontalgroup.
 	}
 		// End of user code
 

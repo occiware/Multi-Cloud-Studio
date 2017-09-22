@@ -256,10 +256,11 @@ public class HorizontalelasticityTables
 
 		public static final /*@NonNull*/ ExecutorOperation _Horizontalgroup__create = new ExecutorOperation("create", TypeUtil.EMPTY_PARAMETER_TYPES, Types._Horizontalgroup,
 			0, TemplateParameters.EMPTY_LIST, null);
-		public static final /*@NonNull*/ ExecutorOperation _Horizontalgroup__delete = new ExecutorOperation("delete", TypeUtil.EMPTY_PARAMETER_TYPES, Types._Horizontalgroup,
+
+		public static final /*@NonNull*/ ExecutorOperation _Loadbalancer__addbackendserver = new ExecutorOperation("addbackendserver", TypeUtil.EMPTY_PARAMETER_TYPES, Types._Loadbalancer,
+			0, TemplateParameters.EMPTY_LIST, null);
+		public static final /*@NonNull*/ ExecutorOperation _Loadbalancer__removebackendserver = new ExecutorOperation("removebackendserver", TypeUtil.EMPTY_PARAMETER_TYPES, Types._Loadbalancer,
 			1, TemplateParameters.EMPTY_LIST, null);
-		public static final /*@NonNull*/ ExecutorOperation _Horizontalgroup__edit = new ExecutorOperation("edit", TypeUtil.EMPTY_PARAMETER_TYPES, Types._Horizontalgroup,
-			2, TemplateParameters.EMPTY_LIST, null);
 
 		public static final /*@NonNull*/ ExecutorOperation _Manual__start = new ExecutorOperation("start", TypeUtil.EMPTY_PARAMETER_TYPES, Types._Manual,
 			0, TemplateParameters.EMPTY_LIST, null);
@@ -294,6 +295,10 @@ public class HorizontalelasticityTables
 		public static final /*@NonNull*/ ExecutorProperty _Horizontalgroup__HorizontalGroupMinimum = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.HORIZONTALGROUP__HORIZONTAL_GROUP_MINIMUM, Types._Horizontalgroup, 3);
 		public static final /*@NonNull*/ ExecutorProperty _Horizontalgroup__HorizontalGroupName = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.HORIZONTALGROUP__HORIZONTAL_GROUP_NAME, Types._Horizontalgroup, 4);
 		public static final /*@NonNull*/ ExecutorProperty _Horizontalgroup__HorizontalGroupTemplateName = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.HORIZONTALGROUP__HORIZONTAL_GROUP_TEMPLATE_NAME, Types._Horizontalgroup, 5);
+
+		public static final /*@NonNull*/ ExecutorProperty _Loadbalancer__LoadbalancerAddress = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.LOADBALANCER__LOADBALANCER_ADDRESS, Types._Loadbalancer, 0);
+		public static final /*@NonNull*/ ExecutorProperty _Loadbalancer__LoadbalancerInstanceIP = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.LOADBALANCER__LOADBALANCER_INSTANCE_IP, Types._Loadbalancer, 1);
+		public static final /*@NonNull*/ ExecutorProperty _Loadbalancer__LoadbalancerName = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.LOADBALANCER__LOADBALANCER_NAME, Types._Loadbalancer, 2);
 
 		public static final /*@NonNull*/ ExecutorProperty _Manual__ManualGroupSize = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.MANUAL__MANUAL_GROUP_SIZE, Types._Manual, 0);
 		static {
@@ -524,9 +529,7 @@ public class HorizontalelasticityTables
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Horizontalelasticcontoller__Resource = {};
 
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Horizontalgroup__Horizontalgroup = {
-			HorizontalelasticityTables.Operations._Horizontalgroup__create /* create() */,
-			HorizontalelasticityTables.Operations._Horizontalgroup__delete /* delete() */,
-			HorizontalelasticityTables.Operations._Horizontalgroup__edit /* edit() */
+			HorizontalelasticityTables.Operations._Horizontalgroup__create /* create() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Horizontalgroup__Entity = {
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
@@ -695,7 +698,10 @@ public class HorizontalelasticityTables
 			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
 		};
 
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Loadbalancer__Loadbalancer = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Loadbalancer__Loadbalancer = {
+			HorizontalelasticityTables.Operations._Loadbalancer__addbackendserver /* addbackendserver() */,
+			HorizontalelasticityTables.Operations._Loadbalancer__removebackendserver /* removebackendserver() */
+		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Loadbalancer__Entity = {
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
@@ -918,7 +924,11 @@ public class HorizontalelasticityTables
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Linkbalancer = {};
 
-		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Loadbalancer = {};
+		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Loadbalancer = {
+			HorizontalelasticityTables.Properties._Loadbalancer__LoadbalancerAddress,
+			HorizontalelasticityTables.Properties._Loadbalancer__LoadbalancerInstanceIP,
+			HorizontalelasticityTables.Properties._Loadbalancer__LoadbalancerName
+		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Manual = {
 			HorizontalelasticityTables.Properties._Manual__ManualGroupSize

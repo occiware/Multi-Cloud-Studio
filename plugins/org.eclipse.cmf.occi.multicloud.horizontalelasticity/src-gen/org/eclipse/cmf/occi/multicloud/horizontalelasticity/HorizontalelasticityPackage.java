@@ -270,31 +270,13 @@ public interface HorizontalelasticityPackage extends EPackage {
 	int HORIZONTALGROUP___OCCI_DELETE = OCCIPackage.RESOURCE___OCCI_DELETE;
 
 	/**
-	 * The operation id for the '<em>Delete</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HORIZONTALGROUP___DELETE = OCCIPackage.RESOURCE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Edit</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HORIZONTALGROUP___EDIT = OCCIPackage.RESOURCE_OPERATION_COUNT + 1;
-
-	/**
 	 * The operation id for the '<em>Create</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HORIZONTALGROUP___CREATE = OCCIPackage.RESOURCE_OPERATION_COUNT + 2;
+	int HORIZONTALGROUP___CREATE = OCCIPackage.RESOURCE_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Horizontalgroup</em>' class.
@@ -303,7 +285,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HORIZONTALGROUP_OPERATION_COUNT = OCCIPackage.RESOURCE_OPERATION_COUNT + 3;
+	int HORIZONTALGROUP_OPERATION_COUNT = OCCIPackage.RESOURCE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.LoadbalancerImpl <em>Loadbalancer</em>}' class.
@@ -406,13 +388,40 @@ public interface HorizontalelasticityPackage extends EPackage {
 	int LOADBALANCER__RLINKS = OCCIPackage.RESOURCE__RLINKS;
 
 	/**
+	 * The feature id for the '<em><b>Loadbalancer Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOADBALANCER__LOADBALANCER_NAME = OCCIPackage.RESOURCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Loadbalancer Instance IP</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOADBALANCER__LOADBALANCER_INSTANCE_IP = OCCIPackage.RESOURCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Loadbalancer Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOADBALANCER__LOADBALANCER_ADDRESS = OCCIPackage.RESOURCE_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Loadbalancer</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOADBALANCER_FEATURE_COUNT = OCCIPackage.RESOURCE_FEATURE_COUNT + 0;
+	int LOADBALANCER_FEATURE_COUNT = OCCIPackage.RESOURCE_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Occi Create</em>' operation.
@@ -451,13 +460,31 @@ public interface HorizontalelasticityPackage extends EPackage {
 	int LOADBALANCER___OCCI_DELETE = OCCIPackage.RESOURCE___OCCI_DELETE;
 
 	/**
+	 * The operation id for the '<em>Addbackendserver</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOADBALANCER___ADDBACKENDSERVER = OCCIPackage.RESOURCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Removebackendserver</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOADBALANCER___REMOVEBACKENDSERVER = OCCIPackage.RESOURCE_OPERATION_COUNT + 1;
+
+	/**
 	 * The number of operations of the '<em>Loadbalancer</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOADBALANCER_OPERATION_COUNT = OCCIPackage.RESOURCE_OPERATION_COUNT + 0;
+	int LOADBALANCER_OPERATION_COUNT = OCCIPackage.RESOURCE_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.InstanceImpl <em>Instance</em>}' class.
@@ -1750,26 +1777,6 @@ public interface HorizontalelasticityPackage extends EPackage {
 	EAttribute getHorizontalgroup_HorizontalGroupLoadBalancer();
 
 	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup#delete() <em>Delete</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Delete</em>' operation.
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup#delete()
-	 * @generated
-	 */
-	EOperation getHorizontalgroup__Delete();
-
-	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup#edit() <em>Edit</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Edit</em>' operation.
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup#edit()
-	 * @generated
-	 */
-	EOperation getHorizontalgroup__Edit();
-
-	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup#create() <em>Create</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1788,6 +1795,59 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getLoadbalancer();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Loadbalancer#getLoadbalancerName <em>Loadbalancer Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Loadbalancer Name</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Loadbalancer#getLoadbalancerName()
+	 * @see #getLoadbalancer()
+	 * @generated
+	 */
+	EAttribute getLoadbalancer_LoadbalancerName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Loadbalancer#getLoadbalancerInstanceIP <em>Loadbalancer Instance IP</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Loadbalancer Instance IP</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Loadbalancer#getLoadbalancerInstanceIP()
+	 * @see #getLoadbalancer()
+	 * @generated
+	 */
+	EAttribute getLoadbalancer_LoadbalancerInstanceIP();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Loadbalancer#getLoadbalancerAddress <em>Loadbalancer Address</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Loadbalancer Address</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Loadbalancer#getLoadbalancerAddress()
+	 * @see #getLoadbalancer()
+	 * @generated
+	 */
+	EAttribute getLoadbalancer_LoadbalancerAddress();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Loadbalancer#addbackendserver() <em>Addbackendserver</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Addbackendserver</em>' operation.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Loadbalancer#addbackendserver()
+	 * @generated
+	 */
+	EOperation getLoadbalancer__Addbackendserver();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Loadbalancer#removebackendserver() <em>Removebackendserver</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Removebackendserver</em>' operation.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Loadbalancer#removebackendserver()
+	 * @generated
+	 */
+	EOperation getLoadbalancer__Removebackendserver();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Instance <em>Instance</em>}'.
@@ -1982,22 +2042,6 @@ public interface HorizontalelasticityPackage extends EPackage {
 		EAttribute HORIZONTALGROUP__HORIZONTAL_GROUP_LOAD_BALANCER = eINSTANCE.getHorizontalgroup_HorizontalGroupLoadBalancer();
 
 		/**
-		 * The meta object literal for the '<em><b>Delete</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation HORIZONTALGROUP___DELETE = eINSTANCE.getHorizontalgroup__Delete();
-
-		/**
-		 * The meta object literal for the '<em><b>Edit</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation HORIZONTALGROUP___EDIT = eINSTANCE.getHorizontalgroup__Edit();
-
-		/**
 		 * The meta object literal for the '<em><b>Create</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2014,6 +2058,46 @@ public interface HorizontalelasticityPackage extends EPackage {
 		 * @generated
 		 */
 		EClass LOADBALANCER = eINSTANCE.getLoadbalancer();
+
+		/**
+		 * The meta object literal for the '<em><b>Loadbalancer Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LOADBALANCER__LOADBALANCER_NAME = eINSTANCE.getLoadbalancer_LoadbalancerName();
+
+		/**
+		 * The meta object literal for the '<em><b>Loadbalancer Instance IP</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LOADBALANCER__LOADBALANCER_INSTANCE_IP = eINSTANCE.getLoadbalancer_LoadbalancerInstanceIP();
+
+		/**
+		 * The meta object literal for the '<em><b>Loadbalancer Address</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LOADBALANCER__LOADBALANCER_ADDRESS = eINSTANCE.getLoadbalancer_LoadbalancerAddress();
+
+		/**
+		 * The meta object literal for the '<em><b>Addbackendserver</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation LOADBALANCER___ADDBACKENDSERVER = eINSTANCE.getLoadbalancer__Addbackendserver();
+
+		/**
+		 * The meta object literal for the '<em><b>Removebackendserver</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation LOADBALANCER___REMOVEBACKENDSERVER = eINSTANCE.getLoadbalancer__Removebackendserver();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.InstanceImpl <em>Instance</em>}' class.

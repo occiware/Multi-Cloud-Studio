@@ -316,24 +316,6 @@ public class HorizontalgroupImpl extends ResourceImpl implements Horizontalgroup
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void delete() {
-		throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Horizontalgroup!delete()
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void edit() {
-		throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Horizontalgroup!edit()
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public void create() {
 		throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Horizontalgroup!create()
 	}
@@ -454,12 +436,6 @@ public class HorizontalgroupImpl extends ResourceImpl implements Horizontalgroup
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case HorizontalelasticityPackage.HORIZONTALGROUP___DELETE:
-				delete();
-				return null;
-			case HorizontalelasticityPackage.HORIZONTALGROUP___EDIT:
-				edit();
-				return null;
 			case HorizontalelasticityPackage.HORIZONTALGROUP___CREATE:
 				create();
 				return null;

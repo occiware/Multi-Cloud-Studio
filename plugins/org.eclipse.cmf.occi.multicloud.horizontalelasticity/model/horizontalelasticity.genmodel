@@ -27,17 +27,26 @@
         <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Horizontalgroup/HorizontalGroupLoadBalancer"/>
       </genFeatures>
       <genOperations>
-        <ecoreOperation href="horizontalelasticity.ecore#//Horizontalgroup/delete"/>
-      </genOperations>
-      <genOperations>
-        <ecoreOperation href="horizontalelasticity.ecore#//Horizontalgroup/edit"/>
-      </genOperations>
-      <genOperations>
         <ecoreOperation href="horizontalelasticity.ecore#//Horizontalgroup/create"/>
       </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="horizontalelasticity.ecore#//Loadbalancer"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Loadbalancer/LoadbalancerName"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Loadbalancer/LoadbalancerInstanceIP"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Loadbalancer/LoadbalancerAddress"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="horizontalelasticity.ecore#//Loadbalancer/addbackendserver"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="horizontalelasticity.ecore#//Loadbalancer/removebackendserver"/>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="horizontalelasticity.ecore#//Instance"/>

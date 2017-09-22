@@ -250,26 +250,8 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getHorizontalgroup__Delete() {
-		return horizontalgroupEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getHorizontalgroup__Edit() {
-		return horizontalgroupEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EOperation getHorizontalgroup__Create() {
-		return horizontalgroupEClass.getEOperations().get(2);
+		return horizontalgroupEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -279,6 +261,51 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 	 */
 	public EClass getLoadbalancer() {
 		return loadbalancerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLoadbalancer_LoadbalancerName() {
+		return (EAttribute)loadbalancerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLoadbalancer_LoadbalancerInstanceIP() {
+		return (EAttribute)loadbalancerEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLoadbalancer_LoadbalancerAddress() {
+		return (EAttribute)loadbalancerEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getLoadbalancer__Addbackendserver() {
+		return loadbalancerEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getLoadbalancer__Removebackendserver() {
+		return loadbalancerEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -415,11 +442,14 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 		createEAttribute(horizontalgroupEClass, HORIZONTALGROUP__HORIZONTAL_GROUP_MINIMUM);
 		createEAttribute(horizontalgroupEClass, HORIZONTALGROUP__HORIZONTAL_GROUP_TEMPLATE_NAME);
 		createEAttribute(horizontalgroupEClass, HORIZONTALGROUP__HORIZONTAL_GROUP_LOAD_BALANCER);
-		createEOperation(horizontalgroupEClass, HORIZONTALGROUP___DELETE);
-		createEOperation(horizontalgroupEClass, HORIZONTALGROUP___EDIT);
 		createEOperation(horizontalgroupEClass, HORIZONTALGROUP___CREATE);
 
 		loadbalancerEClass = createEClass(LOADBALANCER);
+		createEAttribute(loadbalancerEClass, LOADBALANCER__LOADBALANCER_NAME);
+		createEAttribute(loadbalancerEClass, LOADBALANCER__LOADBALANCER_INSTANCE_IP);
+		createEAttribute(loadbalancerEClass, LOADBALANCER__LOADBALANCER_ADDRESS);
+		createEOperation(loadbalancerEClass, LOADBALANCER___ADDBACKENDSERVER);
+		createEOperation(loadbalancerEClass, LOADBALANCER___REMOVEBACKENDSERVER);
 
 		instanceEClass = createEClass(INSTANCE);
 
@@ -491,13 +521,16 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 		initEAttribute(getHorizontalgroup_HorizontalGroupTemplateName(), theOCCIPackage.getString(), "HorizontalGroupTemplateName", null, 0, 1, Horizontalgroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getHorizontalgroup_HorizontalGroupLoadBalancer(), theOCCIPackage.getString(), "HorizontalGroupLoadBalancer", null, 0, 1, Horizontalgroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getHorizontalgroup__Delete(), null, "delete", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEOperation(getHorizontalgroup__Edit(), null, "edit", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEOperation(getHorizontalgroup__Create(), null, "create", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(loadbalancerEClass, Loadbalancer.class, "Loadbalancer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLoadbalancer_LoadbalancerName(), theOCCIPackage.getString(), "LoadbalancerName", null, 0, 1, Loadbalancer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLoadbalancer_LoadbalancerInstanceIP(), theOCCIPackage.getString(), "LoadbalancerInstanceIP", null, 0, 1, Loadbalancer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLoadbalancer_LoadbalancerAddress(), theOCCIPackage.getString(), "LoadbalancerAddress", null, 0, 1, Loadbalancer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getLoadbalancer__Addbackendserver(), null, "addbackendserver", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getLoadbalancer__Removebackendserver(), null, "removebackendserver", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(instanceEClass, Instance.class, "Instance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

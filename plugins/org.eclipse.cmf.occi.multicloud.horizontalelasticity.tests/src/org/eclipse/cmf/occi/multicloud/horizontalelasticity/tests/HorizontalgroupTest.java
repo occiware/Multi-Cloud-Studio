@@ -26,8 +26,6 @@ import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup#delete() <em>Delete</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup#edit() <em>Edit</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup#create() <em>Create</em>}</li>
  * </ul>
  * </p>
@@ -102,32 +100,6 @@ public class HorizontalgroupTest extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
-	}
-
-	/**
-	 * Tests the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup#delete() <em>Delete</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup#delete()
-	 * @generated
-	 */
-	public void testDelete() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup#edit() <em>Edit</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup#edit()
-	 * @generated
-	 */
-	public void testEdit() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
 	}
 
 	/**

@@ -21,12 +21,21 @@
     <attributes name="HorizontalGroup.loadBalancer" mutable="true">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <actions name="delete" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/horizontalgroup/action#"/>
-    <actions name="edit" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/horizontalgroup/action#"/>
     <actions name="create" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/horizontalgroup/action#"/>
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
   </kinds>
   <kinds name="Loadbalancer" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#">
+    <attributes name="Loadbalancer.name" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="Loadbalancer.instanceIP" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="Loadbalancer.address" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <actions name="addBackendServer" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/loadbalancer/action#"/>
+    <actions name="RemoveBackendServer" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/loadbalancer/action#"/>
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
   </kinds>
   <kinds name="Instance" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#">

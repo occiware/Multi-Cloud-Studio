@@ -14,6 +14,15 @@
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
+import java.util.ArrayList;
+
+import org.eclipse.cmf.occi.core.Configuration;
+import org.eclipse.cmf.occi.core.Link;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityFactory;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Instancegrouplink;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.InstancegrouplinkImpl;
+import org.eclipse.cmf.occi.multicloud.vmware.Instancevmware;
+import org.eclipse.cmf.occi.multicloud.vmware.VmwareFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -53,18 +62,31 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 	{
 		LOGGER.debug("occiCreate() called on " + this);
 		// TODO: Implement this callback or remove this method.
-		if (getHorizontalGroupGroupSize() > getHorizontalGroupMaximum()) {
-			setHorizontalGroupGroupSize(getHorizontalGroupMaximum());
-		}
-		
-		if (getHorizontalGroupGroupSize() < getHorizontalGroupMinimum()) {
-			setHorizontalGroupGroupSize(getHorizontalGroupMinimum());
-		}
-		
+//		if (getHorizontalGroupGroupSize() > getHorizontalGroupMaximum()) {
+//			setHorizontalGroupGroupSize(getHorizontalGroupMaximum());
+//		}
+//		
+//		if (getHorizontalGroupGroupSize() < getHorizontalGroupMinimum()) {
+//			setHorizontalGroupGroupSize(getHorizontalGroupMinimum());
+//		}
+//		
 		for (int i=1; i <= getHorizontalGroupGroupSize(); i++) {
-			
-			
+			Configuration config = (Configuration)this.eContainer();
+			Instancegrouplink igl = HorizontalelasticityFactory.eINSTANCE.createInstancegrouplink();
+			Instancevmware vm = VmwareFactory.eINSTANCE.createInstancevmware();
+			config.getResources().add(vm);
+			igl.setSource(this);
+			igl.setTarget(vm);
 		}
+		
+		ArrayList<Instancevmware> array = new ArrayList<Instancevmware>();
+		for (Link link : this.getLinks()) {
+			if(link.getTarget() instanceof Instancevmware) {
+				array.add((Instancevmware)link.getTarget());
+			}
+		}
+		System.out.println(array);
+		
 		
 	}
 	// End of user code

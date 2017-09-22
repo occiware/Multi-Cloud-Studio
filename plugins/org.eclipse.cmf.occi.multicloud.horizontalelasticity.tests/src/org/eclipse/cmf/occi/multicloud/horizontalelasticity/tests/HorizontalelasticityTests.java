@@ -43,13 +43,14 @@ public class HorizontalelasticityTests extends TestSuite {
 		TestSuite suite = new HorizontalelasticityTests("horizontalelasticity Tests");
 		suite.addTestSuite(HorizontalgroupTest.class);
 		suite.addTestSuite(LoadbalancerTest.class);
-		suite.addTestSuite(InstanceTest.class);
-		suite.addTestSuite(HorizontalelasticcontollerTest.class);
-		suite.addTestSuite(ScalingstrategyTest.class);
-		suite.addTestSuite(ManualTest.class);
-		suite.addTestSuite(DynamicTest.class);
+		suite.addTestSuite(HorizontalelasticcontrollerTest.class);
 		suite.addTestSuite(InstancegrouplinkTest.class);
 		suite.addTestSuite(LinkbalancerTest.class);
+		suite.addTestSuite(GrouplinkTest.class);
+		suite.addTestSuite(CreationTest.class);
+		suite.addTestSuite(StrategyTest.class);
+		suite.addTestSuite(ManualTest.class);
+		suite.addTestSuite(DynamicTest.class);
 		return suite;
 	}
 

@@ -38,24 +38,33 @@
     <actions name="RemoveBackendServer" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/loadbalancer/action#"/>
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
   </kinds>
-  <kinds name="Instance" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#">
-    <parent href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
-  </kinds>
-  <kinds name="HorizontalElasticContoller" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#">
+  <kinds name="HorizontalElasticController" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#">
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
   </kinds>
-  <kinds name="ScalingStrategy" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" parent="//@kinds[term='horizontalelasticcontoller']"/>
-  <kinds name="Manual" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" parent="//@kinds[term='scalingstrategy']">
-    <attributes name="Manual.groupSize" mutable="true">
-      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
-    </attributes>
-    <actions name="start" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/manual/action#"/>
-  </kinds>
-  <kinds name="Dynamic" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" parent="//@kinds[term='scalingstrategy']"/>
-  <kinds name="InstanceGroupLink" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" source="//@kinds[term='horizontalgroup']" target="//@kinds[term='instance']">
+  <kinds name="InstanceGroupLink" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" source="//@kinds[term='horizontalgroup']">
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
+    <target href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
   </kinds>
   <kinds name="LinkBalancer" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" source="//@kinds[term='horizontalgroup']" target="//@kinds[term='loadbalancer']">
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
   </kinds>
+  <kinds name="GroupLink" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" source="//@kinds[term='horizontalelasticcontroller']" target="//@kinds[term='horizontalgroup']">
+    <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
+  </kinds>
+  <mixins name="Creation" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#">
+    <attributes name="occi.compute.creation.date" mutable="true" type="//@types.0"/>
+    <applies href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
+  </mixins>
+  <mixins name="Strategy" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" applies="//@kinds[term='horizontalelasticcontroller']"/>
+  <mixins name="Manual" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" depends="//@mixins[term='strategy']">
+    <attributes name="Manual.groupSize" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <actions name="Start" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/manual/action#"/>
+  </mixins>
+  <mixins name="Dynamic" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" depends="//@mixins[term='strategy']">
+    <actions name="Start" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/dynamic/action#"/>
+    <actions name="Stop" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/dynamic/action#"/>
+  </mixins>
+  <types xsi:type="occi:EObjectType" name="Date" instanceClassName="java.sql.Time"/>
 </occi:Extension>

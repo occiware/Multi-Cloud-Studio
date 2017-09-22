@@ -14,25 +14,25 @@ package org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl;
 
 import org.eclipse.cmf.occi.core.impl.ResourceImpl;
 
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalelasticcontoller;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalelasticcontroller;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Horizontalelasticcontoller</b></em>'.
+ * An implementation of the model object '<em><b>Horizontalelasticcontroller</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class HorizontalelasticcontollerImpl extends ResourceImpl implements Horizontalelasticcontoller {
+public class HorizontalelasticcontrollerImpl extends ResourceImpl implements Horizontalelasticcontroller {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected HorizontalelasticcontollerImpl() {
+	protected HorizontalelasticcontrollerImpl() {
 		super();
 	}
 
@@ -43,7 +43,7 @@ public class HorizontalelasticcontollerImpl extends ResourceImpl implements Hori
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return HorizontalelasticityPackage.Literals.HORIZONTALELASTICCONTOLLER;
+		return HorizontalelasticityPackage.Literals.HORIZONTALELASTICCONTROLLER;
 	}
 
-} //HorizontalelasticcontollerImpl
+} //HorizontalelasticcontrollerImpl

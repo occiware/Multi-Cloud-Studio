@@ -12,9 +12,12 @@
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl;
 
+import java.sql.Time;
+
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.*;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -68,15 +71,46 @@ public class HorizontalelasticityFactoryImpl extends EFactoryImpl implements Hor
 		switch (eClass.getClassifierID()) {
 			case HorizontalelasticityPackage.HORIZONTALGROUP: return createHorizontalgroup();
 			case HorizontalelasticityPackage.LOADBALANCER: return createLoadbalancer();
-			case HorizontalelasticityPackage.INSTANCE: return createInstance();
-			case HorizontalelasticityPackage.HORIZONTALELASTICCONTOLLER: return createHorizontalelasticcontoller();
-			case HorizontalelasticityPackage.SCALINGSTRATEGY: return createScalingstrategy();
-			case HorizontalelasticityPackage.MANUAL: return createManual();
-			case HorizontalelasticityPackage.DYNAMIC: return createDynamic();
+			case HorizontalelasticityPackage.HORIZONTALELASTICCONTROLLER: return createHorizontalelasticcontroller();
 			case HorizontalelasticityPackage.INSTANCEGROUPLINK: return createInstancegrouplink();
 			case HorizontalelasticityPackage.LINKBALANCER: return createLinkbalancer();
+			case HorizontalelasticityPackage.GROUPLINK: return createGrouplink();
+			case HorizontalelasticityPackage.CREATION: return createCreation();
+			case HorizontalelasticityPackage.STRATEGY: return createStrategy();
+			case HorizontalelasticityPackage.MANUAL: return createManual();
+			case HorizontalelasticityPackage.DYNAMIC: return createDynamic();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case HorizontalelasticityPackage.DATE:
+				return createDateFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case HorizontalelasticityPackage.DATE:
+				return convertDateToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -105,9 +139,9 @@ public class HorizontalelasticityFactoryImpl extends EFactoryImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Instance createInstance() {
-		InstanceImpl instance = new InstanceImpl();
-		return instance;
+	public Horizontalelasticcontroller createHorizontalelasticcontroller() {
+		HorizontalelasticcontrollerImpl horizontalelasticcontroller = new HorizontalelasticcontrollerImpl();
+		return horizontalelasticcontroller;
 	}
 
 	/**
@@ -115,9 +149,9 @@ public class HorizontalelasticityFactoryImpl extends EFactoryImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Horizontalelasticcontoller createHorizontalelasticcontoller() {
-		HorizontalelasticcontollerImpl horizontalelasticcontoller = new HorizontalelasticcontollerImpl();
-		return horizontalelasticcontoller;
+	public Instancegrouplink createInstancegrouplink() {
+		InstancegrouplinkImpl instancegrouplink = new InstancegrouplinkImpl();
+		return instancegrouplink;
 	}
 
 	/**
@@ -125,9 +159,39 @@ public class HorizontalelasticityFactoryImpl extends EFactoryImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Scalingstrategy createScalingstrategy() {
-		ScalingstrategyImpl scalingstrategy = new ScalingstrategyImpl();
-		return scalingstrategy;
+	public Linkbalancer createLinkbalancer() {
+		LinkbalancerImpl linkbalancer = new LinkbalancerImpl();
+		return linkbalancer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Grouplink createGrouplink() {
+		GrouplinkImpl grouplink = new GrouplinkImpl();
+		return grouplink;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Creation createCreation() {
+		CreationImpl creation = new CreationImpl();
+		return creation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Strategy createStrategy() {
+		StrategyImpl strategy = new StrategyImpl();
+		return strategy;
 	}
 
 	/**
@@ -155,9 +219,8 @@ public class HorizontalelasticityFactoryImpl extends EFactoryImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Instancegrouplink createInstancegrouplink() {
-		InstancegrouplinkImpl instancegrouplink = new InstancegrouplinkImpl();
-		return instancegrouplink;
+	public Time createDateFromString(EDataType eDataType, String initialValue) {
+		return (Time)super.createFromString(eDataType, initialValue);
 	}
 
 	/**
@@ -165,9 +228,8 @@ public class HorizontalelasticityFactoryImpl extends EFactoryImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Linkbalancer createLinkbalancer() {
-		LinkbalancerImpl linkbalancer = new LinkbalancerImpl();
-		return linkbalancer;
+	public String convertDateToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

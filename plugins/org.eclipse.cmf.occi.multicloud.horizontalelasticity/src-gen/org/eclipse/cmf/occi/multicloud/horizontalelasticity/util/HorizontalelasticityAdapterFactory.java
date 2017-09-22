@@ -14,9 +14,8 @@ package org.eclipse.cmf.occi.multicloud.horizontalelasticity.util;
 
 import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.core.Link;
+import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.core.Resource;
-
-import org.eclipse.cmf.occi.infrastructure.Compute;
 
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.*;
 
@@ -92,24 +91,8 @@ public class HorizontalelasticityAdapterFactory extends AdapterFactoryImpl {
 				return createLoadbalancerAdapter();
 			}
 			@Override
-			public Adapter caseInstance(Instance object) {
-				return createInstanceAdapter();
-			}
-			@Override
-			public Adapter caseHorizontalelasticcontoller(Horizontalelasticcontoller object) {
-				return createHorizontalelasticcontollerAdapter();
-			}
-			@Override
-			public Adapter caseScalingstrategy(Scalingstrategy object) {
-				return createScalingstrategyAdapter();
-			}
-			@Override
-			public Adapter caseManual(Manual object) {
-				return createManualAdapter();
-			}
-			@Override
-			public Adapter caseDynamic(Dynamic object) {
-				return createDynamicAdapter();
+			public Adapter caseHorizontalelasticcontroller(Horizontalelasticcontroller object) {
+				return createHorizontalelasticcontrollerAdapter();
 			}
 			@Override
 			public Adapter caseInstancegrouplink(Instancegrouplink object) {
@@ -120,6 +103,26 @@ public class HorizontalelasticityAdapterFactory extends AdapterFactoryImpl {
 				return createLinkbalancerAdapter();
 			}
 			@Override
+			public Adapter caseGrouplink(Grouplink object) {
+				return createGrouplinkAdapter();
+			}
+			@Override
+			public Adapter caseCreation(Creation object) {
+				return createCreationAdapter();
+			}
+			@Override
+			public Adapter caseStrategy(Strategy object) {
+				return createStrategyAdapter();
+			}
+			@Override
+			public Adapter caseManual(Manual object) {
+				return createManualAdapter();
+			}
+			@Override
+			public Adapter caseDynamic(Dynamic object) {
+				return createDynamicAdapter();
+			}
+			@Override
 			public Adapter caseEntity(Entity object) {
 				return createEntityAdapter();
 			}
@@ -128,12 +131,12 @@ public class HorizontalelasticityAdapterFactory extends AdapterFactoryImpl {
 				return createResourceAdapter();
 			}
 			@Override
-			public Adapter caseCompute(Compute object) {
-				return createComputeAdapter();
-			}
-			@Override
 			public Adapter caseLink(Link object) {
 				return createLinkAdapter();
+			}
+			@Override
+			public Adapter caseMixinBase(MixinBase object) {
+				return createMixinBaseAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -184,72 +187,16 @@ public class HorizontalelasticityAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Instance <em>Instance</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalelasticcontroller <em>Horizontalelasticcontroller</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Instance
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalelasticcontroller
 	 * @generated
 	 */
-	public Adapter createInstanceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalelasticcontoller <em>Horizontalelasticcontoller</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalelasticcontoller
-	 * @generated
-	 */
-	public Adapter createHorizontalelasticcontollerAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Scalingstrategy <em>Scalingstrategy</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Scalingstrategy
-	 * @generated
-	 */
-	public Adapter createScalingstrategyAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Manual <em>Manual</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Manual
-	 * @generated
-	 */
-	public Adapter createManualAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamic <em>Dynamic</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamic
-	 * @generated
-	 */
-	public Adapter createDynamicAdapter() {
+	public Adapter createHorizontalelasticcontrollerAdapter() {
 		return null;
 	}
 
@@ -282,6 +229,76 @@ public class HorizontalelasticityAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Grouplink <em>Grouplink</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Grouplink
+	 * @generated
+	 */
+	public Adapter createGrouplinkAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Creation <em>Creation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Creation
+	 * @generated
+	 */
+	public Adapter createCreationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Strategy <em>Strategy</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Strategy
+	 * @generated
+	 */
+	public Adapter createStrategyAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Manual <em>Manual</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Manual
+	 * @generated
+	 */
+	public Adapter createManualAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamic <em>Dynamic</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamic
+	 * @generated
+	 */
+	public Adapter createDynamicAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.Entity <em>Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -310,20 +327,6 @@ public class HorizontalelasticityAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.infrastructure.Compute <em>Compute</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.infrastructure.Compute
-	 * @generated
-	 */
-	public Adapter createComputeAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.Link <em>Link</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -334,6 +337,20 @@ public class HorizontalelasticityAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createLinkAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.MixinBase <em>Mixin Base</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.core.MixinBase
+	 * @generated
+	 */
+	public Adapter createMixinBaseAdapter() {
 		return null;
 	}
 

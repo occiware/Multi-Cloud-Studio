@@ -12,25 +12,29 @@
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl;
 
+import java.sql.Time;
+
 import org.eclipse.cmf.occi.core.OCCIPackage;
 
 import org.eclipse.cmf.occi.infrastructure.InfrastructurePackage;
 
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalelasticcontoller;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Creation;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Grouplink;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalelasticcontroller;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityFactory;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup;
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Instance;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Instancegrouplink;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Linkbalancer;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Loadbalancer;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Manual;
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Scalingstrategy;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Strategy;
 
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.util.HorizontalelasticityValidator;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
@@ -64,21 +68,42 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass instanceEClass = null;
+	private EClass horizontalelasticcontrollerEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass horizontalelasticcontollerEClass = null;
+	private EClass instancegrouplinkEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass scalingstrategyEClass = null;
+	private EClass linkbalancerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass grouplinkEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass creationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass strategyEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -99,14 +124,7 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass instancegrouplinkEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass linkbalancerEClass = null;
+	private EDataType dateEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -313,8 +331,8 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getInstance() {
-		return instanceEClass;
+	public EClass getHorizontalelasticcontroller() {
+		return horizontalelasticcontrollerEClass;
 	}
 
 	/**
@@ -322,8 +340,8 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getHorizontalelasticcontoller() {
-		return horizontalelasticcontollerEClass;
+	public EClass getInstancegrouplink() {
+		return instancegrouplinkEClass;
 	}
 
 	/**
@@ -331,8 +349,89 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getScalingstrategy() {
-		return scalingstrategyEClass;
+	public EOperation getInstancegrouplink__TargetConstraint__DiagnosticChain_Map() {
+		return instancegrouplinkEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLinkbalancer() {
+		return linkbalancerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getLinkbalancer__TargetConstraint__DiagnosticChain_Map() {
+		return linkbalancerEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getGrouplink() {
+		return grouplinkEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getGrouplink__TargetConstraint__DiagnosticChain_Map() {
+		return grouplinkEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCreation() {
+		return creationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCreation_OcciComputeCreationDate() {
+		return (EAttribute)creationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getCreation__AppliesConstraint__DiagnosticChain_Map() {
+		return creationEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getStrategy() {
+		return strategyEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getStrategy__AppliesConstraint__DiagnosticChain_Map() {
+		return strategyEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -376,8 +475,8 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getInstancegrouplink() {
-		return instancegrouplinkEClass;
+	public EOperation getDynamic__Start() {
+		return dynamicEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -385,8 +484,8 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getInstancegrouplink__TargetConstraint__DiagnosticChain_Map() {
-		return instancegrouplinkEClass.getEOperations().get(0);
+	public EOperation getDynamic__Stop() {
+		return dynamicEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -394,17 +493,8 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getLinkbalancer() {
-		return linkbalancerEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getLinkbalancer__TargetConstraint__DiagnosticChain_Map() {
-		return linkbalancerEClass.getEOperations().get(0);
+	public EDataType getDate() {
+		return dateEDataType;
 	}
 
 	/**
@@ -451,23 +541,34 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 		createEOperation(loadbalancerEClass, LOADBALANCER___ADDBACKENDSERVER);
 		createEOperation(loadbalancerEClass, LOADBALANCER___REMOVEBACKENDSERVER);
 
-		instanceEClass = createEClass(INSTANCE);
-
-		horizontalelasticcontollerEClass = createEClass(HORIZONTALELASTICCONTOLLER);
-
-		scalingstrategyEClass = createEClass(SCALINGSTRATEGY);
-
-		manualEClass = createEClass(MANUAL);
-		createEAttribute(manualEClass, MANUAL__MANUAL_GROUP_SIZE);
-		createEOperation(manualEClass, MANUAL___START);
-
-		dynamicEClass = createEClass(DYNAMIC);
+		horizontalelasticcontrollerEClass = createEClass(HORIZONTALELASTICCONTROLLER);
 
 		instancegrouplinkEClass = createEClass(INSTANCEGROUPLINK);
 		createEOperation(instancegrouplinkEClass, INSTANCEGROUPLINK___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
 		linkbalancerEClass = createEClass(LINKBALANCER);
 		createEOperation(linkbalancerEClass, LINKBALANCER___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
+
+		grouplinkEClass = createEClass(GROUPLINK);
+		createEOperation(grouplinkEClass, GROUPLINK___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
+
+		creationEClass = createEClass(CREATION);
+		createEAttribute(creationEClass, CREATION__OCCI_COMPUTE_CREATION_DATE);
+		createEOperation(creationEClass, CREATION___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
+
+		strategyEClass = createEClass(STRATEGY);
+		createEOperation(strategyEClass, STRATEGY___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
+
+		manualEClass = createEClass(MANUAL);
+		createEAttribute(manualEClass, MANUAL__MANUAL_GROUP_SIZE);
+		createEOperation(manualEClass, MANUAL___START);
+
+		dynamicEClass = createEClass(DYNAMIC);
+		createEOperation(dynamicEClass, DYNAMIC___START);
+		createEOperation(dynamicEClass, DYNAMIC___STOP);
+
+		// Create data types
+		dateEDataType = createEDataType(DATE);
 	}
 
 	/**
@@ -495,7 +596,6 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 
 		// Obtain other dependent packages
 		OCCIPackage theOCCIPackage = (OCCIPackage)EPackage.Registry.INSTANCE.getEPackage(OCCIPackage.eNS_URI);
-		InfrastructurePackage theInfrastructurePackage = (InfrastructurePackage)EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -504,13 +604,16 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 		// Add supertypes to classes
 		horizontalgroupEClass.getESuperTypes().add(theOCCIPackage.getResource());
 		loadbalancerEClass.getESuperTypes().add(theOCCIPackage.getResource());
-		instanceEClass.getESuperTypes().add(theInfrastructurePackage.getCompute());
-		horizontalelasticcontollerEClass.getESuperTypes().add(theOCCIPackage.getResource());
-		scalingstrategyEClass.getESuperTypes().add(this.getHorizontalelasticcontoller());
-		manualEClass.getESuperTypes().add(this.getScalingstrategy());
-		dynamicEClass.getESuperTypes().add(this.getScalingstrategy());
+		horizontalelasticcontrollerEClass.getESuperTypes().add(theOCCIPackage.getResource());
 		instancegrouplinkEClass.getESuperTypes().add(theOCCIPackage.getLink());
 		linkbalancerEClass.getESuperTypes().add(theOCCIPackage.getLink());
+		grouplinkEClass.getESuperTypes().add(theOCCIPackage.getLink());
+		creationEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		strategyEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		manualEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		manualEClass.getESuperTypes().add(this.getStrategy());
+		dynamicEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		dynamicEClass.getESuperTypes().add(this.getStrategy());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(horizontalgroupEClass, Horizontalgroup.class, "Horizontalgroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -532,18 +635,7 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 
 		initEOperation(getLoadbalancer__Removebackendserver(), null, "removebackendserver", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(instanceEClass, Instance.class, "Instance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(horizontalelasticcontollerEClass, Horizontalelasticcontoller.class, "Horizontalelasticcontoller", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(scalingstrategyEClass, Scalingstrategy.class, "Scalingstrategy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(manualEClass, Manual.class, "Manual", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getManual_ManualGroupSize(), theOCCIPackage.getInteger(), "ManualGroupSize", null, 0, 1, Manual.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEOperation(getManual__Start(), null, "start", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEClass(dynamicEClass, org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamic.class, "Dynamic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(horizontalelasticcontrollerEClass, Horizontalelasticcontroller.class, "Horizontalelasticcontroller", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(instancegrouplinkEClass, Instancegrouplink.class, "Instancegrouplink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -566,6 +658,54 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(grouplinkEClass, Grouplink.class, "Grouplink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = initEOperation(getGrouplink__TargetConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "targetConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(creationEClass, Creation.class, "Creation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCreation_OcciComputeCreationDate(), this.getDate(), "occiComputeCreationDate", null, 0, 1, Creation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		op = initEOperation(getCreation__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(strategyEClass, Strategy.class, "Strategy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = initEOperation(getStrategy__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(manualEClass, Manual.class, "Manual", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getManual_ManualGroupSize(), theOCCIPackage.getString(), "ManualGroupSize", null, 0, 1, Manual.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getManual__Start(), null, "start", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(dynamicEClass, org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamic.class, "Dynamic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEOperation(getDynamic__Start(), null, "start", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getDynamic__Stop(), null, "stop", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		// Initialize data types
+		initEDataType(dateEDataType, Time.class, "Date", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -599,6 +739,24 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 		   source, 
 		   new String[] {
 			 "constraints", "targetConstraint"
+		   });	
+		addAnnotation
+		  (grouplinkEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "targetConstraint"
+		   });	
+		addAnnotation
+		  (creationEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (strategyEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
 		   });
 	}
 

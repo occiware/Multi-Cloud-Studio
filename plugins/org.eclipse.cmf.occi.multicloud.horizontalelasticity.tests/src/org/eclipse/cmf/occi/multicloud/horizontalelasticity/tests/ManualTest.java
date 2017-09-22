@@ -12,6 +12,8 @@
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.tests;
 
+import junit.framework.TestCase;
+
 import junit.textui.TestRunner;
 
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityFactory;
@@ -25,11 +27,20 @@ import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Manual;
  * The following operations are tested:
  * <ul>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Manual#start() <em>Start</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Strategy#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}</li>
  * </ul>
  * </p>
  * @generated
  */
-public class ManualTest extends ScalingstrategyTest {
+public class ManualTest extends TestCase {
+
+	/**
+	 * The fixture for this Manual test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected Manual fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -51,14 +62,23 @@ public class ManualTest extends ScalingstrategyTest {
 	}
 
 	/**
+	 * Sets the fixture for this Manual test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void setFixture(Manual fixture) {
+		this.fixture = fixture;
+	}
+
+	/**
 	 * Returns the fixture for this Manual test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected Manual getFixture() {
-		return (Manual)fixture;
+		return fixture;
 	}
 
 	/**
@@ -91,6 +111,19 @@ public class ManualTest extends ScalingstrategyTest {
 	 * @generated
 	 */
 	public void testStart() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Strategy#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Strategy#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	public void testAppliesConstraint__DiagnosticChain_Map() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

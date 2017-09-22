@@ -12,15 +12,12 @@
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity;
 
+import org.eclipse.cmf.occi.core.MixinBase;
 
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Manual</b></em>'.
  * <!-- end-user-doc -->
- *
- * <!-- begin-model-doc -->
- * 
- * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
@@ -33,7 +30,7 @@ package org.eclipse.cmf.occi.multicloud.horizontalelasticity;
  * @model
  * @generated
  */
-public interface Manual extends Scalingstrategy {
+public interface Manual extends MixinBase, Strategy {
 	/**
 	 * Returns the value of the '<em><b>Manual Group Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -42,13 +39,13 @@ public interface Manual extends Scalingstrategy {
 	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Manual Group Size</em>' attribute.
-	 * @see #setManualGroupSize(Integer)
+	 * @see #setManualGroupSize(String)
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getManual_ManualGroupSize()
-	 * @model dataType="org.eclipse.cmf.occi.core.Integer"
+	 * @model dataType="org.eclipse.cmf.occi.core.String"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Manual!ManualGroupSize'"
 	 * @generated
 	 */
-	Integer getManualGroupSize();
+	String getManualGroupSize();
 
 	/**
 	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Manual#getManualGroupSize <em>Manual Group Size</em>}' attribute.
@@ -58,7 +55,7 @@ public interface Manual extends Scalingstrategy {
 	 * @see #getManualGroupSize()
 	 * @generated
 	 */
-	void setManualGroupSize(Integer value);
+	void setManualGroupSize(String value);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -16,7 +16,7 @@ import org.eclipse.cmf.occi.core.Resource;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Horizontalelasticcontoller</b></em>'.
+ * A representation of the model object '<em><b>Horizontalelasticcontroller</b></em>'.
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
@@ -24,9 +24,9 @@ import org.eclipse.cmf.occi.core.Resource;
  * <!-- end-model-doc -->
  *
  *
- * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getHorizontalelasticcontoller()
+ * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getHorizontalelasticcontroller()
  * @model
  * @generated
  */
-public interface Horizontalelasticcontoller extends Resource {
-} // Horizontalelasticcontoller
+public interface Horizontalelasticcontroller extends Resource {
+} // Horizontalelasticcontroller

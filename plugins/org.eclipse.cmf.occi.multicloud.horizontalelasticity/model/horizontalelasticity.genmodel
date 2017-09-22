@@ -6,6 +6,9 @@
   <foreignModel>horizontalelasticity.ecore</foreignModel>
   <genPackages prefix="Horizontalelasticity" basePackage="org.eclipse.cmf.occi.multicloud" disposableProviderFactory="true">
     <ecorePackage href="horizontalelasticity.ecore#/"/>
+    <genDataTypes>
+      <ecoreDataType href="horizontalelasticity.ecore#//Date"/>
+    </genDataTypes>
     <genClasses>
       <ecoreClass href="horizontalelasticity.ecore#//Horizontalgroup"/>
       <genFeatures createChild="false">
@@ -49,13 +52,25 @@
       </genOperations>
     </genClasses>
     <genClasses>
-      <ecoreClass href="horizontalelasticity.ecore#//Instance"/>
+      <ecoreClass href="horizontalelasticity.ecore#//Horizontalelasticcontroller"/>
     </genClasses>
     <genClasses>
-      <ecoreClass href="horizontalelasticity.ecore#//Horizontalelasticcontoller"/>
+      <ecoreClass href="horizontalelasticity.ecore#//Instancegrouplink"/>
     </genClasses>
     <genClasses>
-      <ecoreClass href="horizontalelasticity.ecore#//Scalingstrategy"/>
+      <ecoreClass href="horizontalelasticity.ecore#//Linkbalancer"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="horizontalelasticity.ecore#//Grouplink"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="horizontalelasticity.ecore#//Creation"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Creation/occiComputeCreationDate"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="horizontalelasticity.ecore#//Strategy"/>
     </genClasses>
     <genClasses>
       <ecoreClass href="horizontalelasticity.ecore#//Manual"/>
@@ -68,12 +83,12 @@
     </genClasses>
     <genClasses>
       <ecoreClass href="horizontalelasticity.ecore#//Dynamic"/>
-    </genClasses>
-    <genClasses>
-      <ecoreClass href="horizontalelasticity.ecore#//Instancegrouplink"/>
-    </genClasses>
-    <genClasses>
-      <ecoreClass href="horizontalelasticity.ecore#//Linkbalancer"/>
+      <genOperations>
+        <ecoreOperation href="horizontalelasticity.ecore#//Dynamic/start"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="horizontalelasticity.ecore#//Dynamic/stop"/>
+      </genOperations>
     </genClasses>
   </genPackages>
   <usedGenPackages href="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.genmodel#//infrastructure"/>

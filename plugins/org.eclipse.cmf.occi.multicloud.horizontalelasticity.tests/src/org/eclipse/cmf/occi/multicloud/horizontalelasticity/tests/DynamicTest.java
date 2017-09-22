@@ -12,6 +12,8 @@
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.tests;
 
+import junit.framework.TestCase;
+
 import junit.textui.TestRunner;
 
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamic;
@@ -21,9 +23,25 @@ import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalelasticity
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Dynamic</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamic#start() <em>Start</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamic#stop() <em>Stop</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Strategy#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
-public class DynamicTest extends ScalingstrategyTest {
+public class DynamicTest extends TestCase {
+
+	/**
+	 * The fixture for this Dynamic test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected Dynamic fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,14 +63,23 @@ public class DynamicTest extends ScalingstrategyTest {
 	}
 
 	/**
+	 * Sets the fixture for this Dynamic test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void setFixture(Dynamic fixture) {
+		this.fixture = fixture;
+	}
+
+	/**
 	 * Returns the fixture for this Dynamic test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected Dynamic getFixture() {
-		return (Dynamic)fixture;
+		return fixture;
 	}
 
 	/**
@@ -75,6 +102,45 @@ public class DynamicTest extends ScalingstrategyTest {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamic#start() <em>Start</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamic#start()
+	 * @generated
+	 */
+	public void testStart() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamic#stop() <em>Stop</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamic#stop()
+	 * @generated
+	 */
+	public void testStop() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Strategy#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Strategy#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	public void testAppliesConstraint__DiagnosticChain_Map() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 } //DynamicTest

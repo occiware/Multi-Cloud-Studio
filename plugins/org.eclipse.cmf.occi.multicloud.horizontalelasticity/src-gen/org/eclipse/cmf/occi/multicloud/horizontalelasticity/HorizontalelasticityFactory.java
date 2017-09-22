@@ -50,49 +50,13 @@ public interface HorizontalelasticityFactory extends EFactory {
 	Loadbalancer createLoadbalancer();
 
 	/**
-	 * Returns a new object of class '<em>Instance</em>'.
+	 * Returns a new object of class '<em>Horizontalelasticcontroller</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Instance</em>'.
+	 * @return a new object of class '<em>Horizontalelasticcontroller</em>'.
 	 * @generated
 	 */
-	Instance createInstance();
-
-	/**
-	 * Returns a new object of class '<em>Horizontalelasticcontoller</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Horizontalelasticcontoller</em>'.
-	 * @generated
-	 */
-	Horizontalelasticcontoller createHorizontalelasticcontoller();
-
-	/**
-	 * Returns a new object of class '<em>Scalingstrategy</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Scalingstrategy</em>'.
-	 * @generated
-	 */
-	Scalingstrategy createScalingstrategy();
-
-	/**
-	 * Returns a new object of class '<em>Manual</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Manual</em>'.
-	 * @generated
-	 */
-	Manual createManual();
-
-	/**
-	 * Returns a new object of class '<em>Dynamic</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Dynamic</em>'.
-	 * @generated
-	 */
-	Dynamic createDynamic();
+	Horizontalelasticcontroller createHorizontalelasticcontroller();
 
 	/**
 	 * Returns a new object of class '<em>Instancegrouplink</em>'.
@@ -111,6 +75,51 @@ public interface HorizontalelasticityFactory extends EFactory {
 	 * @generated
 	 */
 	Linkbalancer createLinkbalancer();
+
+	/**
+	 * Returns a new object of class '<em>Grouplink</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Grouplink</em>'.
+	 * @generated
+	 */
+	Grouplink createGrouplink();
+
+	/**
+	 * Returns a new object of class '<em>Creation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Creation</em>'.
+	 * @generated
+	 */
+	Creation createCreation();
+
+	/**
+	 * Returns a new object of class '<em>Strategy</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Strategy</em>'.
+	 * @generated
+	 */
+	Strategy createStrategy();
+
+	/**
+	 * Returns a new object of class '<em>Manual</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Manual</em>'.
+	 * @generated
+	 */
+	Manual createManual();
+
+	/**
+	 * Returns a new object of class '<em>Dynamic</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Dynamic</em>'.
+	 * @generated
+	 */
+	Dynamic createDynamic();
 
 	/**
 	 * Returns the package supported by this factory.

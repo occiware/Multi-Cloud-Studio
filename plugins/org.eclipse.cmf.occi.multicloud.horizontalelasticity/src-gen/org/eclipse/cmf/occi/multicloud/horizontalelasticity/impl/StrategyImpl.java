@@ -22,17 +22,12 @@ import org.eclipse.cmf.occi.core.impl.MixinBaseImpl;
 
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables;
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Manual;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Strategy;
-
-import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.ocl.pivot.evaluation.Executor;
 
@@ -53,44 +48,18 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Manual</b></em>'.
+ * An implementation of the model object '<em><b>Strategy</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * The following features are implemented:
- * </p>
- * <ul>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ManualImpl#getManualGroupSize <em>Manual Group Size</em>}</li>
- * </ul>
  *
  * @generated
  */
-public class ManualImpl extends MixinBaseImpl implements Manual {
-	/**
-	 * The default value of the '{@link #getManualGroupSize() <em>Manual Group Size</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getManualGroupSize()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String MANUAL_GROUP_SIZE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getManualGroupSize() <em>Manual Group Size</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getManualGroupSize()
-	 * @generated
-	 * @ordered
-	 */
-	protected String manualGroupSize = MANUAL_GROUP_SIZE_EDEFAULT;
-
+public class StrategyImpl extends MixinBaseImpl implements Strategy {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ManualImpl() {
+	protected StrategyImpl() {
 		super();
 	}
 
@@ -101,37 +70,7 @@ public class ManualImpl extends MixinBaseImpl implements Manual {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return HorizontalelasticityPackage.Literals.MANUAL;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getManualGroupSize() {
-		return manualGroupSize;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setManualGroupSize(String newManualGroupSize) {
-		String oldManualGroupSize = manualGroupSize;
-		manualGroupSize = newManualGroupSize;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.MANUAL__MANUAL_GROUP_SIZE, oldManualGroupSize, manualGroupSize));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void start() {
-		throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Manual!start()
+		return HorizontalelasticityPackage.Literals.STRATEGY;
 	}
 
 	/**
@@ -178,106 +117,13 @@ public class ManualImpl extends MixinBaseImpl implements Manual {
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case HorizontalelasticityPackage.MANUAL__MANUAL_GROUP_SIZE:
-				return getManualGroupSize();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case HorizontalelasticityPackage.MANUAL__MANUAL_GROUP_SIZE:
-				setManualGroupSize((String)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case HorizontalelasticityPackage.MANUAL__MANUAL_GROUP_SIZE:
-				setManualGroupSize(MANUAL_GROUP_SIZE_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case HorizontalelasticityPackage.MANUAL__MANUAL_GROUP_SIZE:
-				return MANUAL_GROUP_SIZE_EDEFAULT == null ? manualGroupSize != null : !MANUAL_GROUP_SIZE_EDEFAULT.equals(manualGroupSize);
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
-		if (baseClass == Strategy.class) {
-			switch (baseOperationID) {
-				case HorizontalelasticityPackage.STRATEGY___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP: return HorizontalelasticityPackage.MANUAL___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP;
-				default: return -1;
-			}
-		}
-		return super.eDerivedOperationID(baseOperationID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case HorizontalelasticityPackage.MANUAL___START:
-				start();
-				return null;
-			case HorizontalelasticityPackage.MANUAL___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP:
+			case HorizontalelasticityPackage.STRATEGY___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP:
 				return appliesConstraint((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (ManualGroupSize: ");
-		result.append(manualGroupSize);
-		result.append(')');
-		return result.toString();
-	}
-
-} //ManualImpl
+} //StrategyImpl

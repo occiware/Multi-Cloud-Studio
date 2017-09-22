@@ -1,0 +1,871 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="horizontalelasticity" version="10.0.0.201505222000">
+  <ownedViewpoints name="HorizontalelasticityConfiguration" label="Horizontalelasticity Configuration">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="HorizontalelasticityConfiguration Diagram" domainClass="Configuration">
+      <metamodel href="http://schemas.ogf.org/occi/core/ecore#/"/>
+      <metamodel href="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore#/"/>
+      <defaultLayer name="Default">
+        <edgeMappings name="HorizontalgroupLinksEdge" sourceMapping="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HorizontalgroupContainer']" targetMapping="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='InstancegrouplinkContainer'] //@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='LinkbalancerContainer'] //@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='GrouplinkContainer']" targetFinderExpression="feature:links">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="LoadbalancerLinksEdge" sourceMapping="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='LoadbalancerContainer']" targetMapping="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='InstancegrouplinkContainer'] //@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='LinkbalancerContainer'] //@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='GrouplinkContainer']" targetFinderExpression="feature:links">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="HorizontalelasticcontrollerLinksEdge" sourceMapping="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HorizontalelasticcontrollerContainer']" targetMapping="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='InstancegrouplinkContainer'] //@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='LinkbalancerContainer'] //@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='GrouplinkContainer']" targetFinderExpression="feature:links">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="InstancegrouplinkTargetEdge" sourceMapping="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='InstancegrouplinkContainer']" targetMapping="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HorizontalgroupContainer'] //@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='LoadbalancerContainer'] //@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HorizontalelasticcontrollerContainer']" targetFinderExpression="feature:target">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="InstancegrouplinkEdge" sourceMapping="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HorizontalgroupContainer'] //@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='LoadbalancerContainer'] //@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HorizontalelasticcontrollerContainer']" targetMapping="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HorizontalgroupContainer'] //@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='LoadbalancerContainer'] //@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HorizontalelasticcontrollerContainer']" domainClass="Instancegrouplink" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="LinkbalancerTargetEdge" sourceMapping="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='LinkbalancerContainer']" targetMapping="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HorizontalgroupContainer'] //@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='LoadbalancerContainer'] //@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HorizontalelasticcontrollerContainer']" targetFinderExpression="feature:target">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="LinkbalancerEdge" sourceMapping="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HorizontalgroupContainer'] //@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='LoadbalancerContainer'] //@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HorizontalelasticcontrollerContainer']" targetMapping="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HorizontalgroupContainer'] //@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='LoadbalancerContainer'] //@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HorizontalelasticcontrollerContainer']" domainClass="Linkbalancer" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="GrouplinkTargetEdge" sourceMapping="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='GrouplinkContainer']" targetMapping="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HorizontalgroupContainer'] //@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='LoadbalancerContainer'] //@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HorizontalelasticcontrollerContainer']" targetFinderExpression="feature:target">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="GrouplinkEdge" sourceMapping="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HorizontalgroupContainer'] //@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='LoadbalancerContainer'] //@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HorizontalelasticcontrollerContainer']" targetMapping="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HorizontalgroupContainer'] //@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='LoadbalancerContainer'] //@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HorizontalelasticcontrollerContainer']" domainClass="Grouplink" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="HorizontalgroupContainer"
+            labelDirectEdit="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditEntityTitle']"
+			semanticCandidatesExpression="feature:resources" 
+			domainClass="Horizontalgroup">
+<subContainerMappings name="SubHorizontalgroupContainer" semanticCandidatesExpression="[self/]" domainClass="Horizontalgroup" childrenPresentation="List">
+          <subNodeMappings name="HorizontalgroupId"
+                labelDirectEdit="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditHorizontalgroupId']"
+                semanticCandidatesExpression="[self/]" domainClass="Horizontalgroup">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['id = ' + self.id.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="HorizontalgroupTitle"
+                labelDirectEdit="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditHorizontalgroupTitle']"
+                semanticCandidatesExpression="[self/]" domainClass="Horizontalgroup">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['title = ' + self.title.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="HorizontalgroupLocation"
+                labelDirectEdit="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditHorizontalgroupLocation']"
+                semanticCandidatesExpression="[self/]" domainClass="Horizontalgroup">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['location = ' + self.location.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="HorizontalgroupSummary"
+                labelDirectEdit="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditHorizontalgroupSummary']"
+                semanticCandidatesExpression="[self/]" domainClass="Horizontalgroup">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['summary = ' + self.summary.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="HorizontalgroupHorizontalGroupName"
+                labelDirectEdit="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditHorizontalgroupHorizontalGroupName']"
+                semanticCandidatesExpression="[self/]" domainClass="Horizontalgroup">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['HorizontalGroupName = ' + self.HorizontalGroupName.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="HorizontalgroupHorizontalGroupGroupSize"
+                labelDirectEdit="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditHorizontalgroupHorizontalGroupGroupSize']"
+                semanticCandidatesExpression="[self/]" domainClass="Horizontalgroup">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['HorizontalGroupGroupSize = ' + self.HorizontalGroupGroupSize.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="HorizontalgroupHorizontalGroupMaximum"
+                labelDirectEdit="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditHorizontalgroupHorizontalGroupMaximum']"
+                semanticCandidatesExpression="[self/]" domainClass="Horizontalgroup">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['HorizontalGroupMaximum = ' + self.HorizontalGroupMaximum.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="HorizontalgroupHorizontalGroupMinimum"
+                labelDirectEdit="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditHorizontalgroupHorizontalGroupMinimum']"
+                semanticCandidatesExpression="[self/]" domainClass="Horizontalgroup">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['HorizontalGroupMinimum = ' + self.HorizontalGroupMinimum.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="HorizontalgroupHorizontalGroupTemplateName"
+                labelDirectEdit="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditHorizontalgroupHorizontalGroupTemplateName']"
+                semanticCandidatesExpression="[self/]" domainClass="Horizontalgroup">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['HorizontalGroupTemplateName = ' + self.HorizontalGroupTemplateName.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="HorizontalgroupHorizontalGroupLoadBalancer"
+                labelDirectEdit="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditHorizontalgroupHorizontalGroupLoadBalancer']"
+                semanticCandidatesExpression="[self/]" domainClass="Horizontalgroup">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['HorizontalGroupLoadBalancer = ' + self.HorizontalGroupLoadBalancer.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+			<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.kind.scheme+self.kind.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+</subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="[self.title + ': Horizontalgroup'/]" roundedCorner="true">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style> 
+
+        </containerMappings>
+        <containerMappings name="LoadbalancerContainer"
+            labelDirectEdit="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditEntityTitle']"
+			semanticCandidatesExpression="feature:resources" 
+			domainClass="Loadbalancer">
+<subContainerMappings name="SubLoadbalancerContainer" semanticCandidatesExpression="[self/]" domainClass="Loadbalancer" childrenPresentation="List">
+          <subNodeMappings name="LoadbalancerId"
+                labelDirectEdit="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditLoadbalancerId']"
+                semanticCandidatesExpression="[self/]" domainClass="Loadbalancer">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['id = ' + self.id.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="LoadbalancerTitle"
+                labelDirectEdit="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditLoadbalancerTitle']"
+                semanticCandidatesExpression="[self/]" domainClass="Loadbalancer">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['title = ' + self.title.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="LoadbalancerLocation"
+                labelDirectEdit="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditLoadbalancerLocation']"
+                semanticCandidatesExpression="[self/]" domainClass="Loadbalancer">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['location = ' + self.location.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="LoadbalancerSummary"
+                labelDirectEdit="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditLoadbalancerSummary']"
+                semanticCandidatesExpression="[self/]" domainClass="Loadbalancer">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['summary = ' + self.summary.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="LoadbalancerLoadbalancerName"
+                labelDirectEdit="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditLoadbalancerLoadbalancerName']"
+                semanticCandidatesExpression="[self/]" domainClass="Loadbalancer">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['LoadbalancerName = ' + self.LoadbalancerName.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="LoadbalancerLoadbalancerInstanceIP"
+                labelDirectEdit="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditLoadbalancerLoadbalancerInstanceIP']"
+                semanticCandidatesExpression="[self/]" domainClass="Loadbalancer">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['LoadbalancerInstanceIP = ' + self.LoadbalancerInstanceIP.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="LoadbalancerLoadbalancerAddress"
+                labelDirectEdit="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditLoadbalancerLoadbalancerAddress']"
+                semanticCandidatesExpression="[self/]" domainClass="Loadbalancer">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['LoadbalancerAddress = ' + self.LoadbalancerAddress.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+			<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.kind.scheme+self.kind.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+</subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="[self.title + ': Loadbalancer'/]" roundedCorner="true">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style> 
+
+        </containerMappings>
+        <containerMappings name="HorizontalelasticcontrollerContainer"
+            labelDirectEdit="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditEntityTitle']"
+			semanticCandidatesExpression="feature:resources" 
+			domainClass="Horizontalelasticcontroller">
+<subContainerMappings name="SubHorizontalelasticcontrollerContainer" semanticCandidatesExpression="[self/]" domainClass="Horizontalelasticcontroller" childrenPresentation="List">
+          <subNodeMappings name="HorizontalelasticcontrollerId"
+                labelDirectEdit="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditHorizontalelasticcontrollerId']"
+                semanticCandidatesExpression="[self/]" domainClass="Horizontalelasticcontroller">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['id = ' + self.id.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="HorizontalelasticcontrollerTitle"
+                labelDirectEdit="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditHorizontalelasticcontrollerTitle']"
+                semanticCandidatesExpression="[self/]" domainClass="Horizontalelasticcontroller">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['title = ' + self.title.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="HorizontalelasticcontrollerLocation"
+                labelDirectEdit="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditHorizontalelasticcontrollerLocation']"
+                semanticCandidatesExpression="[self/]" domainClass="Horizontalelasticcontroller">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['location = ' + self.location.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="HorizontalelasticcontrollerSummary"
+                labelDirectEdit="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditHorizontalelasticcontrollerSummary']"
+                semanticCandidatesExpression="[self/]" domainClass="Horizontalelasticcontroller">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['summary = ' + self.summary.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+			<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.kind.scheme+self.kind.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+</subContainerMappings>
+<subContainerMappings name="StrategyMixin" preconditionExpression="[self.oclIsTypeOf(Strategy)/]" semanticCandidatesExpression="feature:parts" domainClass="Strategy" childrenPresentation="List">
+<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="[self.title + ': Horizontalelasticcontroller'/]" roundedCorner="true">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style> 
+
+        </containerMappings>
+        <containerMappings name="InstancegrouplinkContainer"
+            labelDirectEdit="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditEntityTitle']"
+			semanticCandidatesExpression="[resources.links->filter(Instancegrouplink)/]" 
+			domainClass="Instancegrouplink">
+<subContainerMappings name="SubInstancegrouplinkContainer" semanticCandidatesExpression="[self/]" domainClass="Instancegrouplink" childrenPresentation="List">
+          <subNodeMappings name="InstancegrouplinkId"
+                labelDirectEdit="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditInstancegrouplinkId']"
+                semanticCandidatesExpression="[self/]" domainClass="Instancegrouplink">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['id = ' + self.id.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="InstancegrouplinkTitle"
+                labelDirectEdit="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditInstancegrouplinkTitle']"
+                semanticCandidatesExpression="[self/]" domainClass="Instancegrouplink">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['title = ' + self.title.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="InstancegrouplinkLocation"
+                labelDirectEdit="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditInstancegrouplinkLocation']"
+                semanticCandidatesExpression="[self/]" domainClass="Instancegrouplink">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['location = ' + self.location.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+			<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.kind.scheme+self.kind.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+</subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="[self.title + ': Instancegrouplink'/]" roundedCorner="true">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style> 
+
+        </containerMappings>
+        <containerMappings name="LinkbalancerContainer"
+            labelDirectEdit="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditEntityTitle']"
+			semanticCandidatesExpression="[resources.links->filter(Linkbalancer)/]" 
+			domainClass="Linkbalancer">
+<subContainerMappings name="SubLinkbalancerContainer" semanticCandidatesExpression="[self/]" domainClass="Linkbalancer" childrenPresentation="List">
+          <subNodeMappings name="LinkbalancerId"
+                labelDirectEdit="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditLinkbalancerId']"
+                semanticCandidatesExpression="[self/]" domainClass="Linkbalancer">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['id = ' + self.id.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="LinkbalancerTitle"
+                labelDirectEdit="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditLinkbalancerTitle']"
+                semanticCandidatesExpression="[self/]" domainClass="Linkbalancer">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['title = ' + self.title.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="LinkbalancerLocation"
+                labelDirectEdit="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditLinkbalancerLocation']"
+                semanticCandidatesExpression="[self/]" domainClass="Linkbalancer">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['location = ' + self.location.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+			<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.kind.scheme+self.kind.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+</subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="[self.title + ': Linkbalancer'/]" roundedCorner="true">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style> 
+
+        </containerMappings>
+        <containerMappings name="GrouplinkContainer"
+            labelDirectEdit="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditEntityTitle']"
+			semanticCandidatesExpression="[resources.links->filter(Grouplink)/]" 
+			domainClass="Grouplink">
+<subContainerMappings name="SubGrouplinkContainer" semanticCandidatesExpression="[self/]" domainClass="Grouplink" childrenPresentation="List">
+          <subNodeMappings name="GrouplinkId"
+                labelDirectEdit="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditGrouplinkId']"
+                semanticCandidatesExpression="[self/]" domainClass="Grouplink">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['id = ' + self.id.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="GrouplinkTitle"
+                labelDirectEdit="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditGrouplinkTitle']"
+                semanticCandidatesExpression="[self/]" domainClass="Grouplink">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['title = ' + self.title.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="GrouplinkLocation"
+                labelDirectEdit="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditGrouplinkLocation']"
+                semanticCandidatesExpression="[self/]" domainClass="Grouplink">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['location = ' + self.location.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+			<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.kind.scheme+self.kind.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+</subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="[self.title + ': Grouplink'/]" roundedCorner="true">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style> 
+
+        </containerMappings>
+        <toolSections name="Horizontalelasticity resources">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" 
+			name="Create Horizontalgroup"
+			containerMappings="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HorizontalgroupContainer']"> 
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="Horizontalgroup" referenceName="resources">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="['horizontalgroup' + container.oclAsType(Configuration).resources->size().toString()/]"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" 
+			name="Create Loadbalancer"
+			containerMappings="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='LoadbalancerContainer']"> 
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="Loadbalancer" referenceName="resources">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="['loadbalancer' + container.oclAsType(Configuration).resources->size().toString()/]"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" 
+			name="Create Horizontalelasticcontroller"
+			containerMappings="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HorizontalelasticcontrollerContainer']"> 
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="Horizontalelasticcontroller" referenceName="resources">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="['horizontalelasticcontroller' + container.oclAsType(Configuration).resources->size().toString()/]"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+</toolSections>
+ <toolSections name="Horizontalelasticity links">
+          <ownedTools xsi:type="tool:EdgeCreationDescription"
+			name="Create Instancegrouplink"
+			edgeMappings="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@edgeMappings[name='InstancegrouplinkEdge']"> 
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Instancegrouplink" referenceName="links" variableName="link">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription"
+			name="Create Linkbalancer"
+			edgeMappings="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@edgeMappings[name='LinkbalancerEdge']"> 
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Linkbalancer" referenceName="links" variableName="link">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription"
+			name="Create Grouplink"
+			edgeMappings="//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@edgeMappings[name='GrouplinkEdge']"> 
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Grouplink" referenceName="links" variableName="link">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+   </toolSections>   
+ <toolSections name="Horizontalelasticity mixins">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Creation" containerMappings="
+">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Creation" referenceName="parts"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Strategy" containerMappings="
+//@ownedViewpoints[name='HorizontalelasticityConfiguration']/@ownedRepresentations[name='HorizontalelasticityConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HorizontalelasticcontrollerContainer']/@subContainerMappings[name='StrategyMixin']
+">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Strategy" referenceName="parts"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Manual" containerMappings="
+">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Manual" referenceName="parts"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Dynamic" containerMappings="
+">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Dynamic" referenceName="parts"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+   </toolSections>    
+        <toolSections name="Tools">
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditEntityTitle" inputLabelExpression="feature:title">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditHorizontalgroupId" inputLabelExpression="feature:id">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditHorizontalgroupTitle" inputLabelExpression="feature:title">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditHorizontalgroupLocation" inputLabelExpression="feature:location">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="location" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditHorizontalgroupSummary" inputLabelExpression="feature:summary">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="summary" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditHorizontalgroupHorizontalGroupName" inputLabelExpression="feature:HorizontalGroupName">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="HorizontalGroupName" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditHorizontalgroupHorizontalGroupGroupSize" inputLabelExpression="feature:HorizontalGroupGroupSize">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="HorizontalGroupGroupSize" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditHorizontalgroupHorizontalGroupMaximum" inputLabelExpression="feature:HorizontalGroupMaximum">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="HorizontalGroupMaximum" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditHorizontalgroupHorizontalGroupMinimum" inputLabelExpression="feature:HorizontalGroupMinimum">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="HorizontalGroupMinimum" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditHorizontalgroupHorizontalGroupTemplateName" inputLabelExpression="feature:HorizontalGroupTemplateName">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="HorizontalGroupTemplateName" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditHorizontalgroupHorizontalGroupLoadBalancer" inputLabelExpression="feature:HorizontalGroupLoadBalancer">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="HorizontalGroupLoadBalancer" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:OperationAction" name="HorizontalgroupCreateAction" label="Create" precondition="[self.oclIsKindOf(Horizontalgroup)/]">
+            <view name="views"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Horizontalgroup).create()/]"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditLoadbalancerId" inputLabelExpression="feature:id">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditLoadbalancerTitle" inputLabelExpression="feature:title">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditLoadbalancerLocation" inputLabelExpression="feature:location">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="location" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditLoadbalancerSummary" inputLabelExpression="feature:summary">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="summary" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditLoadbalancerLoadbalancerName" inputLabelExpression="feature:LoadbalancerName">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="LoadbalancerName" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditLoadbalancerLoadbalancerInstanceIP" inputLabelExpression="feature:LoadbalancerInstanceIP">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="LoadbalancerInstanceIP" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditLoadbalancerLoadbalancerAddress" inputLabelExpression="feature:LoadbalancerAddress">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="LoadbalancerAddress" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:OperationAction" name="LoadbalancerAddbackendserverAction" label="Addbackendserver" precondition="[self.oclIsKindOf(Loadbalancer)/]">
+            <view name="views"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Loadbalancer).addbackendserver()/]"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:OperationAction" name="LoadbalancerRemovebackendserverAction" label="Removebackendserver" precondition="[self.oclIsKindOf(Loadbalancer)/]">
+            <view name="views"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Loadbalancer).removebackendserver()/]"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditHorizontalelasticcontrollerId" inputLabelExpression="feature:id">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditHorizontalelasticcontrollerTitle" inputLabelExpression="feature:title">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditHorizontalelasticcontrollerLocation" inputLabelExpression="feature:location">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="location" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditHorizontalelasticcontrollerSummary" inputLabelExpression="feature:summary">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="summary" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditInstancegrouplinkId" inputLabelExpression="feature:id">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditInstancegrouplinkTitle" inputLabelExpression="feature:title">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditInstancegrouplinkLocation" inputLabelExpression="feature:location">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="location" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditLinkbalancerId" inputLabelExpression="feature:id">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditLinkbalancerTitle" inputLabelExpression="feature:title">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditLinkbalancerLocation" inputLabelExpression="feature:location">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="location" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditGrouplinkId" inputLabelExpression="feature:id">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditGrouplinkTitle" inputLabelExpression="feature:title">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditGrouplinkLocation" inputLabelExpression="feature:location">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="location" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditCreationOcciComputeCreationDate" inputLabelExpression="feature:occiComputeCreationDate">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="occiComputeCreationDate" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditManualManualGroupSize" inputLabelExpression="feature:ManualGroupSize">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="ManualGroupSize" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:OperationAction" name="ManualStartAction" label="Start" precondition="[self.oclIsKindOf(Manual)/]">
+            <view name="views"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Manual).start()/]"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:OperationAction" name="DynamicStartAction" label="Start" precondition="[self.oclIsKindOf(Dynamic)/]">
+            <view name="views"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Dynamic).start()/]"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:OperationAction" name="DynamicStopAction" label="Stop" precondition="[self.oclIsKindOf(Dynamic)/]">
+            <view name="views"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Dynamic).stop()/]"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:PopupMenu" name="CRUD operations" precondition="[self.oclIsKindOf(Entity)/]">
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Create">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Entity).occiCreate()/]"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Retrieve">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Entity).occiRetrieve()/]"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Update">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Entity).occiUpdate()/]"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Delete">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Entity).occiDelete()/]"/>
+              </initialOperation>
+            </menuItemDescription>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+<!--
+    <ownedJavaExtensions qualifiedClassName="org.occiware.clouddesigner.occi.design.services.DesignServices"/>
+-->
+  </ownedViewpoints>
+</description:Group>

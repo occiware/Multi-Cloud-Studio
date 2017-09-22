@@ -53,6 +53,19 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 	{
 		LOGGER.debug("occiCreate() called on " + this);
 		// TODO: Implement this callback or remove this method.
+		if (getHorizontalGroupGroupSize() > getHorizontalGroupMaximum()) {
+			setHorizontalGroupGroupSize(getHorizontalGroupMaximum());
+		}
+		
+		if (getHorizontalGroupGroupSize() < getHorizontalGroupMinimum()) {
+			setHorizontalGroupGroupSize(getHorizontalGroupMinimum());
+		}
+		
+		for (int i=1; i <= getHorizontalGroupGroupSize(); i++) {
+			
+			
+		}
+		
 	}
 	// End of user code
 

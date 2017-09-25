@@ -146,9 +146,9 @@ public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasti
 	        protected void doExecute() {
 	            // Implement your write operations here,
 	            // for example: set a new name
-//	            element.eSet(element.eClass().getEStructuralFeature("occiComputeCores"), size);
-	            ((Compute)element).setOcciComputeCores(size);
-	            ((Compute)element).occiRetrieve();
+	            element.eSet(element.eClass().getEStructuralFeature("occiComputeCores"), size);
+	            //((Compute)element).setOcciComputeCores(size);
+	            //((Compute)element).occiRetrieve();
 	        }
 	    });
 	}

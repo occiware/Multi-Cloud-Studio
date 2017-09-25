@@ -208,6 +208,38 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 	{
 		LOGGER.debug("occiDelete() called on " + this);
 		// TODO: Implement this callback or remove this method.
+		try {
+			ArrayList<String>  ips = getStatAndIP();
+			for(int n=0;n<ips.size();n++) {
+				String ip = ips.get(n);
+				System.out.println(ip);
+				//delete the ips from loadBlancer
+				Loadbalancer lb = (Loadbalancer) this.getLinks().get(0).getTarget();  
+				lb.setLoadbalancerInstanceIP(ip);
+				lb.removebackendserver();
+				System.out.println("Instance with " + ip + " is deregistered from the LoadBalancer" );
+				//delete the vms from the monitoring system
+				ZabbixMonitoring2 zabbix_obj = new ZabbixMonitoring2();
+				String zabi = zabbix_obj.connect();
+				zabbix_obj.host_delete(zabi, ip);
+				System.out.println("Instance with " + ip + " is deregistered from the MonitoringSystem" );
+			}
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		// delete the instances
+		for (Link link : this.getLinks()) {
+			if(link.getTarget() instanceof Instancevmware) {
+				Instancevmware inst = (Instancevmware)link.getTarget();
+				System.out.println("instance " + inst.getAttributes().get(1).getValue() + " is deleted from Vcenter");
+				inst.occiDelete();
+			}
+		}
+		
+		// delete the links and configurations
+
+		// top do
 	}
 	// End of user code
 

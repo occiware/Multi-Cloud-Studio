@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.EPackage;
  * <!-- end-user-doc -->
  * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot'"
  * @generated
  */
 public interface HorizontalelasticityPackage extends EPackage {
@@ -1294,15 +1295,6 @@ public interface HorizontalelasticityPackage extends EPackage {
 	int MANUAL_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANUAL___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
-
-	/**
 	 * The operation id for the '<em>Start</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1312,13 +1304,22 @@ public interface HorizontalelasticityPackage extends EPackage {
 	int MANUAL___START = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Applies Constraint</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANUAL___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
+
+	/**
 	 * The number of operations of the '<em>Manual</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MANUAL_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
+	int MANUAL_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.DynamicImpl <em>Dynamic</em>}' class.
@@ -1367,15 +1368,6 @@ public interface HorizontalelasticityPackage extends EPackage {
 	int DYNAMIC_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
-
-	/**
 	 * The operation id for the '<em>Start</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1394,13 +1386,22 @@ public interface HorizontalelasticityPackage extends EPackage {
 	int DYNAMIC___STOP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Applies Constraint</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMIC___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 3;
+
+	/**
 	 * The number of operations of the '<em>Dynamic</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 3;
+	int DYNAMIC_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 4;
 
 	/**
 	 * The meta object id for the '<em>Date</em>' data type.
@@ -1715,6 +1716,16 @@ public interface HorizontalelasticityPackage extends EPackage {
 	EOperation getManual__Start();
 
 	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Manual#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Manual#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getManual__AppliesConstraint__DiagnosticChain_Map();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamic <em>Dynamic</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1743,6 +1754,16 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getDynamic__Stop();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamic#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamic#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getDynamic__AppliesConstraint__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for data type '{@link java.sql.Time <em>Date</em>}'.
@@ -2029,6 +2050,14 @@ public interface HorizontalelasticityPackage extends EPackage {
 		EOperation MANUAL___START = eINSTANCE.getManual__Start();
 
 		/**
+		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MANUAL___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getManual__AppliesConstraint__DiagnosticChain_Map();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.DynamicImpl <em>Dynamic</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2053,6 +2082,14 @@ public interface HorizontalelasticityPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation DYNAMIC___STOP = eINSTANCE.getDynamic__Stop();
+
+		/**
+		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DYNAMIC___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getDynamic__AppliesConstraint__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '<em>Date</em>' data type.

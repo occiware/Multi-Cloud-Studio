@@ -58,33 +58,6 @@ public class HorizontalelasticityTables
 	public static final /*@NonNull*/ ExecutorStandardLibrary LIBRARY = OCLstdlibTables.LIBRARY;
 
 	/**
-	 *	Constants used by auto-generated code.
-	 */
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.RootPackageId PACKid_$metamodel$ = org.eclipse.ocl.pivot.ids.IdManager.getRootPackageId("$metamodel$");
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_horizontalelasticity_s_ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore", null, org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage.eINSTANCE);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://schemas.ogf.org/occi/core/ecore", "occi", org.eclipse.cmf.occi.core.OCCIPackage.eINSTANCE);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_infrastructure_s_ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://schemas.ogf.org/occi/infrastructure/ecore", null, org.eclipse.cmf.occi.infrastructure.InfrastructurePackage.eINSTANCE);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Class = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_$metamodel$.getClassId("Class", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Compute = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_infrastructure_s_ecore.getClassId("Compute", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Creation = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_horizontalelasticity_s_ecore.getClassId("Creation", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Entity = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Entity", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Grouplink = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_horizontalelasticity_s_ecore.getClassId("Grouplink", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Horizontalelasticcontroller = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_horizontalelasticity_s_ecore.getClassId("Horizontalelasticcontroller", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Horizontalgroup = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_horizontalelasticity_s_ecore.getClassId("Horizontalgroup", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Instancegrouplink = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_horizontalelasticity_s_ecore.getClassId("Instancegrouplink", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Linkbalancer = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_horizontalelasticity_s_ecore.getClassId("Linkbalancer", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Loadbalancer = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_horizontalelasticity_s_ecore.getClassId("Loadbalancer", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Resource = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Resource", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Strategy = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_horizontalelasticity_s_ecore.getClassId("Strategy", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_Date = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_horizontalelasticity_s_ecore.getDataTypeId("Date", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.values.IntegerValue INT_0 = org.eclipse.ocl.pivot.utilities.ValueUtil.integerValueOf("0");
-	public static final /*@NonInvalid*/ java.lang.String STR_Creation_c_c_appliesConstraint = "Creation::appliesConstraint";
-	public static final /*@NonInvalid*/ java.lang.String STR_Grouplink_c_c_targetConstraint = "Grouplink::targetConstraint";
-	public static final /*@NonInvalid*/ java.lang.String STR_Instancegrouplink_c_c_targetConstraint = "Instancegrouplink::targetConstraint";
-	public static final /*@NonInvalid*/ java.lang.String STR_Linkbalancer_c_c_targetConstraint = "Linkbalancer::targetConstraint";
-	public static final /*@NonInvalid*/ java.lang.String STR_Strategy_c_c_appliesConstraint = "Strategy::appliesConstraint";
-
-	/**
 	 *	The type parameters for templated types and operations.
 	 */
 	public static class TypeParameters {

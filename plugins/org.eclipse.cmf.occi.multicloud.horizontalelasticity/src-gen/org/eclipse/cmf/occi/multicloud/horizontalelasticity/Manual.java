@@ -12,7 +12,11 @@
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity;
 
+import java.util.Map;
+
 import org.eclipse.cmf.occi.core.MixinBase;
+
+import org.eclipse.emf.common.util.DiagnosticChain;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +31,7 @@ import org.eclipse.cmf.occi.core.MixinBase;
  * </ul>
  *
  * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getManual()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='appliesConstraint'"
  * @generated
  */
 public interface Manual extends MixinBase, Strategy {
@@ -42,7 +46,6 @@ public interface Manual extends MixinBase, Strategy {
 	 * @see #setManualGroupSize(String)
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getManual_ManualGroupSize()
 	 * @model dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Manual!ManualGroupSize'"
 	 * @generated
 	 */
 	String getManualGroupSize();
@@ -63,9 +66,17 @@ public interface Manual extends MixinBase, Strategy {
 	 * <!-- begin-model-doc -->
 	 * 
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Manual!start()'"
+	 * @model
 	 * @generated
 	 */
 	void start();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.entity.oclIsKindOf(horizontalelasticity::Horizontalelasticcontroller)'"
+	 * @generated
+	 */
+	boolean appliesConstraint(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // Manual

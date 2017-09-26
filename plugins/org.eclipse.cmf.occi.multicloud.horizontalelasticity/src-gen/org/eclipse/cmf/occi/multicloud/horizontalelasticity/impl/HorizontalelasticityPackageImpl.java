@@ -466,6 +466,15 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getManual__AppliesConstraint__DiagnosticChain_Map() {
+		return manualEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDynamic() {
 		return dynamicEClass;
 	}
@@ -486,6 +495,15 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 	 */
 	public EOperation getDynamic__Stop() {
 		return dynamicEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDynamic__AppliesConstraint__DiagnosticChain_Map() {
+		return dynamicEClass.getEOperations().get(2);
 	}
 
 	/**
@@ -562,10 +580,12 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 		manualEClass = createEClass(MANUAL);
 		createEAttribute(manualEClass, MANUAL__MANUAL_GROUP_SIZE);
 		createEOperation(manualEClass, MANUAL___START);
+		createEOperation(manualEClass, MANUAL___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
 		dynamicEClass = createEClass(DYNAMIC);
 		createEOperation(dynamicEClass, DYNAMIC___START);
 		createEOperation(dynamicEClass, DYNAMIC___STOP);
+		createEOperation(dynamicEClass, DYNAMIC___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
 		// Create data types
 		dateEDataType = createEDataType(DATE);
@@ -698,11 +718,29 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 
 		initEOperation(getManual__Start(), null, "start", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = initEOperation(getManual__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(dynamicEClass, org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamic.class, "Dynamic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEOperation(getDynamic__Start(), null, "start", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEOperation(getDynamic__Stop(), null, "stop", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getDynamic__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Initialize data types
 		initEDataType(dateEDataType, Time.class, "Date", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
@@ -713,6 +751,8 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot
+		createPivotAnnotations();
 	}
 
 	/**
@@ -727,6 +767,9 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 		  (this, 
 		   source, 
 		   new String[] {
+			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
 		   });	
 		addAnnotation
 		  (instancegrouplinkEClass, 
@@ -757,6 +800,70 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 		   source, 
 		   new String[] {
 			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (manualEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (dynamicEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createPivotAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";	
+		addAnnotation
+		  (getInstancegrouplink__TargetConstraint__DiagnosticChain_Map(), 
+		   source, 
+		   new String[] {
+			 "body", "self.target.oclIsKindOf(horizontalelasticity::Compute)"
+		   });	
+		addAnnotation
+		  (getLinkbalancer__TargetConstraint__DiagnosticChain_Map(), 
+		   source, 
+		   new String[] {
+			 "body", "self.target.oclIsKindOf(horizontalelasticity::Loadbalancer)"
+		   });	
+		addAnnotation
+		  (getGrouplink__TargetConstraint__DiagnosticChain_Map(), 
+		   source, 
+		   new String[] {
+			 "body", "self.target.oclIsKindOf(horizontalelasticity::Horizontalgroup)"
+		   });	
+		addAnnotation
+		  (getCreation__AppliesConstraint__DiagnosticChain_Map(), 
+		   source, 
+		   new String[] {
+			 "body", "self.entity.oclIsKindOf(infrastructure::Compute)"
+		   });	
+		addAnnotation
+		  (getStrategy__AppliesConstraint__DiagnosticChain_Map(), 
+		   source, 
+		   new String[] {
+			 "body", "self.entity.oclIsKindOf(horizontalelasticity::Horizontalelasticcontroller)"
+		   });	
+		addAnnotation
+		  (getManual__AppliesConstraint__DiagnosticChain_Map(), 
+		   source, 
+		   new String[] {
+			 "body", "self.entity.oclIsKindOf(horizontalelasticity::Horizontalelasticcontroller)"
+		   });	
+		addAnnotation
+		  (getDynamic__AppliesConstraint__DiagnosticChain_Map(), 
+		   source, 
+		   new String[] {
+			 "body", "self.entity.oclIsKindOf(horizontalelasticity::Horizontalelasticcontroller)"
 		   });
 	}
 

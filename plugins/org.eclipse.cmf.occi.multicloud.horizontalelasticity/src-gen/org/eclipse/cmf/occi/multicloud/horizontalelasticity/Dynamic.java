@@ -12,7 +12,11 @@
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity;
 
+import java.util.Map;
+
 import org.eclipse.cmf.occi.core.MixinBase;
+
+import org.eclipse.emf.common.util.DiagnosticChain;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +25,7 @@ import org.eclipse.cmf.occi.core.MixinBase;
  *
  *
  * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getDynamic()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='appliesConstraint'"
  * @generated
  */
 public interface Dynamic extends MixinBase, Strategy {
@@ -31,7 +35,7 @@ public interface Dynamic extends MixinBase, Strategy {
 	 * <!-- begin-model-doc -->
 	 * 
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Dynamic!start()'"
+	 * @model
 	 * @generated
 	 */
 	void start();
@@ -42,9 +46,17 @@ public interface Dynamic extends MixinBase, Strategy {
 	 * <!-- begin-model-doc -->
 	 * 
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Dynamic!stop()'"
+	 * @model
 	 * @generated
 	 */
 	void stop();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.entity.oclIsKindOf(horizontalelasticity::Horizontalelasticcontroller)'"
+	 * @generated
+	 */
+	boolean appliesConstraint(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // Dynamic

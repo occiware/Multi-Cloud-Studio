@@ -23,6 +23,9 @@ import org.eclipse.cmf.occi.multicloud.horizontalelasticity.*;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.EObjectValidator;
@@ -94,12 +97,28 @@ public class HorizontalelasticityValidator extends EObjectValidator {
 	public static final int STRATEGY__APPLIES_CONSTRAINT = 5;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Manual'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int MANUAL__APPLIES_CONSTRAINT = 6;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Dynamic'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int DYNAMIC__APPLIES_CONSTRAINT = 7;
+
+	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 5;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 7;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -116,6 +135,16 @@ public class HorizontalelasticityValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected OCCIValidator occiValidator;
+
+	/**
+	 * Delegates evaluation of the given invariant expression against the object in the given context.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static boolean validate(EClass eClass, EObject eObject, DiagnosticChain diagnostics, Map<Object, Object> context, String validationDelegate, EOperation invariant, String expression, int severity, String source, int code) {
+		return EObjectValidator.validate(eClass, eObject, diagnostics, context, validationDelegate, invariant, expression, severity, source, code);
+	}
 
 	/**
 	 * Creates an instance of the switch.
@@ -419,8 +448,18 @@ public class HorizontalelasticityValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(manual, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(manual, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(manual, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStrategy_appliesConstraint(manual, diagnostics, context);
+		if (result || diagnostics != null) result &= validateManual_appliesConstraint(manual, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>Manual</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateManual_appliesConstraint(Manual manual, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return manual.appliesConstraint(diagnostics, context);
 	}
 
 	/**
@@ -438,8 +477,18 @@ public class HorizontalelasticityValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(dynamic, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(dynamic, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(dynamic, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStrategy_appliesConstraint(dynamic, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamic_appliesConstraint(dynamic, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>Dynamic</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDynamic_appliesConstraint(Dynamic dynamic, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return dynamic.appliesConstraint(diagnostics, context);
 	}
 
 	/**

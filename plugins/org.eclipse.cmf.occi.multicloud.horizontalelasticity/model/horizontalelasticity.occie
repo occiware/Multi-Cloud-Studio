@@ -56,13 +56,13 @@
     <applies href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
   </mixins>
   <mixins name="Strategy" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" applies="//@kinds[term='horizontalelasticcontroller']"/>
-  <mixins name="Manual" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" depends="//@mixins[term='strategy']">
+  <mixins name="Manual" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" depends="//@mixins[term='strategy']" applies="//@kinds[term='horizontalelasticcontroller']">
     <attributes name="Manual.groupSize" mutable="true">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
     <actions name="Start" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/manual/action#"/>
   </mixins>
-  <mixins name="Dynamic" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" depends="//@mixins[term='strategy']">
+  <mixins name="Dynamic" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" depends="//@mixins[term='strategy']" applies="//@kinds[term='horizontalelasticcontroller']">
     <actions name="Start" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/dynamic/action#"/>
     <actions name="Stop" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/dynamic/action#"/>
   </mixins>

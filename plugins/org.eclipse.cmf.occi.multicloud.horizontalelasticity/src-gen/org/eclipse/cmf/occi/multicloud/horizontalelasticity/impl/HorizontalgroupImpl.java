@@ -317,7 +317,9 @@ public class HorizontalgroupImpl extends ResourceImpl implements Horizontalgroup
 	 * @generated
 	 */
 	public void create() {
-		throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Horizontalgroup!create()
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**

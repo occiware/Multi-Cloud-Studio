@@ -22,6 +22,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 import org.eclipse.cmf.occi.core.Configuration;
+import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.core.Link;
 import org.eclipse.cmf.occi.infrastructure.Compute;
 import org.eclipse.cmf.occi.infrastructure.ComputeStatus;
@@ -33,9 +34,9 @@ import org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.Instancegroupli
 import org.eclipse.cmf.occi.multicloud.vmware.Instancevmware;
 import org.eclipse.cmf.occi.multicloud.vmware.VmwareFactory;
 import org.eclipse.emf.ecore.EObject;
-//import org.eclipse.emf.transaction.RecordingCommand;
-//import org.eclipse.emf.transaction.TransactionalEditingDomain;
-//import org.eclipse.emf.transaction.util.TransactionUtil;
+import org.eclipse.emf.transaction.RecordingCommand;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -75,41 +76,28 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 	 * 
 	 */
 	
-//	public void doEditing(EObject element, String value) {
-//	    // Make sure your element is attached to a source, otherwise this will return null
-//	    TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(element);
-//	    domain.getCommandStack().execute(new RecordingCommand(domain) {
-//
-//	        @Override
-//	        protected void doExecute() {
-//	            // Implement your write operations here,
-//	            // for example: set a new name
-//	            //element.eSet(element.eClass().getEStructuralFeature("occiComputeCores"), size);
-//	            element.eSet(element.eClass().getEStructuralFeature("title"), value);
-//	            //((Compute)element).setOcciComputeCores(size);
-//	        	    //((Compute)element).eGet(element.eClass().eContainingFeature());
-//	          	//element.eGet("occiRetrieve());
-//	            //((Compute)element).occiRetrieve();
-//	        }
-//	    });
-//	}
-	
-//	public void doEditingAtrribute(EObject element, String attribute, String value) {
-//	    // Make sure your element is attached to a source, otherwise this will return null
-//	    TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(element);
-//	    domain.getCommandStack().execute(new RecordingCommand(domain) {
-//
-//	        @Override
-//	        protected void doExecute() {
-//	            // Implement your write operations here,
-//	            // for example: set a new name
-//	            element.eSet(element.eClass().getEStructuralFeature(attribute), value);
-//	            //((Compute)element).setOcciComputeCores(size);
-//	            //((Compute)element).occiRetrieve();
-//	        }
-//	    });
-//	}
-	
+	public void doEditing(EObject element) {
+	    // Make sure your element is attached to a source, otherwise this will return null
+	    TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(element);
+	    domain.getCommandStack().execute(new RecordingCommand(domain) {
+
+	        @Override
+	        protected void doExecute() {
+	            // Implement your write operations here,
+	            // for example: set a new name
+	            //element.eSet(element.eClass().getEStructuralFeature("occiComputeCores"), size);
+	            //element.eSet(element.eClass().getEStructuralFeature("title"), value);
+	            //((Compute)element).setOcciComputeCores(size);
+	        	    //((Compute)element).eGet(element.eClass().eContainingFeature());
+	          	//element.eGet("occiRetrieve());
+	            //((Compute)element).occiRetrieve();
+	        		//((Compute)element).occiCreate();
+	        		//(Compute)element).occiCreate();
+	        		
+	        }
+	    });
+	}
+
 	@Override
 	public void occiCreate()
 	{
@@ -175,12 +163,14 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 	@Override
 	public void occiRetrieve()
 	{
+
 		try {
-			getStatAndIP();
+			createConfigtemp(2);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
 		
 		LOGGER.debug("occiRetrieve() called on " + this);
 		// TODO: Implement this callback or remove this method.
@@ -195,6 +185,45 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 	public void occiUpdate()
 	{
 		LOGGER.debug("occiUpdate() called on " + this);
+		initializGroupSize(); // this is just to check the groupSize if it's bigger or smaller than the maximum and minimum size of the group
+		
+		int oldGroupSize = 0;
+		ArrayList<String> linksIds = new ArrayList<String>();
+		for (Link link : this.getLinks()) {
+			if(link.getTarget() instanceof Instancevmware) {
+				oldGroupSize = oldGroupSize+1;
+				linksIds.add(link.getId());
+			}
+		}
+		System.out.println("the old group size is  " + oldGroupSize );	
+		
+		if (getHorizontalGroupGroupSize() > oldGroupSize) {
+			System.out.println("The group will be increased by " + (getHorizontalGroupGroupSize() - oldGroupSize));
+			try {
+				createConfigtemp(oldGroupSize);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+        } else if (getHorizontalGroupGroupSize() < oldGroupSize) {
+        		int instancestodelete = (oldGroupSize - getHorizontalGroupGroupSize());
+        		System.out.println("The group will be decreased by " + instancestodelete);
+        		updateDecrease(instancestodelete);
+
+        } else {
+        		System.out.println("there is no change in the group size" );
+        		for (Link link : this.getLinks()) {
+        			if(link.getTarget() instanceof Instancevmware) {
+        				Instancevmware inst = (Instancevmware)link.getTarget();
+        				System.out.println(inst);
+        			}
+                }
+        	}
+        
+        	
+        		 
+		
 		// TODO: Implement this callback or remove this method.
 	}
 	// End of user code
@@ -309,6 +338,139 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 		}
 	}
 	
+	private  void createConfigtemp(int oldGroupSize) throws InterruptedException  {
+		//int oldGroupSize = 2;
+		ArrayList<String> linksIds = new ArrayList<String>();
+		for (Link link : this.getLinks()) {
+			if(link.getTarget() instanceof Instancevmware) {
+				//oldGroupSize = oldGroupSize+1;
+				linksIds.add(link.getId());
+				
+			}
+		}
+		
+		for (String p : linksIds)
+		    System.out.println("existed instances : " + p );
+		
+		
+		for (int i=oldGroupSize+1; i <= getHorizontalGroupGroupSize(); i++) {
+			Configuration config = (Configuration)this.eContainer();
+			Instancegrouplink igl = HorizontalelasticityFactory.eINSTANCE.createInstancegrouplink();
+			Instancevmware vm = VmwareFactory.eINSTANCE.createInstancevmware();
+			config.getResources().add(vm);
+			igl.setSource(this);
+			igl.setTarget(vm);
+			System.out.println(igl);
+			System.out.println(vm);
+			
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			i++;
+		}
+		
+		ArrayList<String> linksIds2 = new ArrayList<String>();
+		for (Link link : this.getLinks()) {
+			if(link.getTarget() instanceof Instancevmware) {
+				//oldGroupSize = oldGroupSize+1;
+				linksIds2.add(link.getId());
+				
+			}
+		}
+		
+		for (String p : linksIds2)
+		    System.out.println("hi : " + p );
+		
+		int index = oldGroupSize+1;
+		String vmname = "node"+ index;
+		TransactionalEditingDomain domain; 
+		for (Link link : this.getLinks()) { 
+			if(link.getTarget() instanceof Instancevmware) {
+				if(!linksIds.contains(link.getId())) { // try to deploy in the new created configuratio
+					System.out.println("will be deployed in the confiugration " + link.getId());
+					Instancevmware inst = (Instancevmware)link.getTarget();
+					System.out.println(" instance name " +  vmname);
+					inst.setTitle(vmname);
+					//doEditing1(inst, vmname);
+					inst.setOcciComputeState(ComputeStatus.ACTIVE);
+					//doEditing3(inst);
+					inst.setImagename("template");
+					//doEditing2(inst, "template");
+					domain = TransactionUtil.getEditingDomain(inst);
+					domain.getCommandStack().execute(new RecordingCommand(domain) {
+					   public void doExecute() {
+						   ((Compute)inst).occiCreate();
+					   }
+					});
+					
+					index++;
+					//service.submit(myRunnable);
+					try {
+						Thread.sleep(5000); // wait 5 seconds to allows threads to be created
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					
+				}
+			}
+			
+		}
+		//service.shutdown();
+		System.out.println("hi, the system will wait until the tasks are finsined");
+//		try {
+		//Thread.sleep(300000);
+//			service.awaitTermination(420, TimeUnit.SECONDS);
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		System.out.println("finsh, finsih finnnnnnnnnnnnsh");	
+		for (Link link : this.getLinks()) { 
+			if(link.getTarget() instanceof Instancevmware) {
+				if(!linksIds.contains(link.getId())) {
+					System.out.println("link fonnddddddd " + link.getId());
+					Instancevmware inst = (Instancevmware)link.getTarget();
+					inst.occiRetrieve();
+					Thread.sleep(20000);
+									
+					while (inst.getAttributes().get(8).getValue().isEmpty()) { 
+						String stateMessage = inst.getOcciComputeStateMessage();
+						String gueststate = inst.getAttributes().get(4).getValue();
+						if (!gueststate.equals("running")) {
+							System.out.println("The machine is creating  " + stateMessage + "the machine state is " + gueststate);
+						} else {
+							System.out.println("Waiting for the machine to reboot and to get its DHCP ip");
+						}
+						try {
+							inst.occiRetrieve();
+						} catch (Exception e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+
+						Thread.sleep(20000);
+					}
+					Loadbalancer lb = (Loadbalancer) this.getLinks().get(0).getTarget();  //register the ips in loadBlancer
+					lb.setLoadbalancerInstanceIP(inst.getAttributes().get(8).getValue());
+					lb.addbackendserver();
+					//register the vms in the monitoring system
+					ZabbixMonitoring2 zabbix_obj = new ZabbixMonitoring2();
+					String zabi = zabbix_obj.connect();
+			        String hostgroup = "Scalair scaling group";
+					zabbix_obj.host_create(zabi, inst.getAttributes().get(1).getValue(), inst.getAttributes().get(8).getValue(), 10050, hostgroup, "Scalair Template OS Linux");
+				}
+				
+			}
+			
+		}
+			
+	//return linksIds;
+	}
+	
 	private void createVMs() {
 		final ExecutorService service = Executors.newCachedThreadPool();
 		Collection<Future> futures = new LinkedList<Future>();
@@ -414,6 +576,39 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 				
 			
 		
+	}
+	private void updateDecrease(int instanceNum) {
+		//int instanceNum = 1;
+		int i = 1;
+		for (Link link : this.getLinks()) {
+			if((link.getTarget() instanceof Instancevmware) && i <=instanceNum) {
+				Instancevmware inst = (Instancevmware)link.getTarget();
+				Loadbalancer lb = (Loadbalancer) this.getLinks().get(0).getTarget();  
+				lb.removebackendserver();
+				System.out.println("Instance with " + inst.getAttributes().get(8).getValue() + " is deregistered from the LoadBalancer" );
+				//delete the vms from the monitoring system
+				ZabbixMonitoring2 zabbix_obj = new ZabbixMonitoring2();
+				String zabi = zabbix_obj.connect();
+				zabbix_obj.host_delete(zabi, inst.getAttributes().get(8).getValue());
+				System.out.println("Instance with " + inst.getAttributes().get(8).getValue() + " is deregistered from the MonitoringSystem" );
+				inst.occiDelete();
+				i++;
+			}
+		}
+			
+		}
+
+	private void initializGroupSize() {
+		if (getHorizontalGroupGroupSize() > getHorizontalGroupMaximum()) {
+			System.out.println("The group size is bigger than the maximum limit of the group, the group size is set to the maximum group size" );
+			setHorizontalGroupGroupSize(getHorizontalGroupMaximum());
+        } else if (getHorizontalGroupGroupSize() < getHorizontalGroupMinimum()) {
+        		System.out.println("The group size is smaller than the minimum limit of the group, the group size is set to the minimum group size" );
+
+        } else {
+        	System.out.println("it is ok, the groupSize is in the correct range" );
+        }
+        
 	}
 		// End of user code
 

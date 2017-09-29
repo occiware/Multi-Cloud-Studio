@@ -187,7 +187,7 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 		LOGGER.debug("occiUpdate() called on " + this);
 		initializGroupSize(); // this is just to check the groupSize if it's bigger or smaller than the maximum and minimum size of the group
 		
-		int oldGroupSize = 0;
+		int  oldGroupSize = 0;
 		ArrayList<String> linksIds = new ArrayList<String>();
 		for (Link link : this.getLinks()) {
 			if(link.getTarget() instanceof Instancevmware) {
@@ -198,13 +198,26 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 		System.out.println("the old group size is  " + oldGroupSize );	
 		
 		if (getHorizontalGroupGroupSize() > oldGroupSize) {
+			final int  oldGroupSize1 = oldGroupSize;
 			System.out.println("The group will be increased by " + (getHorizontalGroupGroupSize() - oldGroupSize));
-			try {
-				createConfigtemp(oldGroupSize);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			MyRunnable myRunnable = new MyRunnable() {
+				public void run() {
+					try {
+						createConfigtemp(oldGroupSize1);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					}
+			};
+			Thread thread = new Thread(myRunnable);
+			thread.start();
+			//try {
+			//	createConfigtemp(oldGroupSize);
+			//} catch (InterruptedException e) {
+			//	// TODO Auto-generated catch block
+			//	e.printStackTrace();
+			//}
 			
         } else if (getHorizontalGroupGroupSize() < oldGroupSize) {
         		int instancestodelete = (oldGroupSize - getHorizontalGroupGroupSize());

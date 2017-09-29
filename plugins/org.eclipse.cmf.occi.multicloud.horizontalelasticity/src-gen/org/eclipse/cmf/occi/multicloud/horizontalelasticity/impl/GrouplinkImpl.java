@@ -16,11 +16,13 @@ import java.lang.reflect.InvocationTargetException;
 
 import java.util.Map;
 
+import org.eclipse.cmf.occi.core.Resource;
 import org.eclipse.cmf.occi.core.impl.LinkImpl;
 
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Grouplink;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage;
 
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.util.HorizontalelasticityValidator;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -28,6 +30,16 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.ocl.pivot.evaluation.Executor;
+import org.eclipse.ocl.pivot.ids.IdResolver;
+import org.eclipse.ocl.pivot.ids.TypeId;
+import org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal;
+import org.eclipse.ocl.pivot.library.oclany.OclAnyOclIsKindOfOperation;
+import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation;
+import org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation;
+import org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation;
+import org.eclipse.ocl.pivot.utilities.ValueUtil;
+import org.eclipse.ocl.pivot.values.IntegerValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -57,33 +69,41 @@ public class GrouplinkImpl extends LinkImpl implements Grouplink {
 	}
 
 	/**
-	 * The cached validation expression for the '{@link #targetConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Target Constraint</em>}' invariant operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #targetConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TARGET_CONSTRAINT_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "self.target.oclIsKindOf(horizontalelasticity::Horizontalgroup)";
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean targetConstraint(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			HorizontalelasticityValidator.validate
-				(HorizontalelasticityPackage.Literals.GROUPLINK,
-				 this,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 HorizontalelasticityPackage.Literals.GROUPLINK___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP,
-				 TARGET_CONSTRAINT_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 HorizontalelasticityValidator.DIAGNOSTIC_SOURCE,
-				 HorizontalelasticityValidator.GROUPLINK__TARGET_CONSTRAINT);
+	public boolean targetConstraint(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		/**
+		 *
+		 * inv targetConstraint:
+		 *   let severity : Integer[1] = 'Grouplink::targetConstraint'.getSeverity()
+		 *   in
+		 *     if severity <= 0
+		 *     then true
+		 *     else
+		 *       let
+		 *         result : occi::Boolean[1] = self.target.oclIsKindOf(Horizontalgroup)
+		 *       in
+		 *         'Grouplink::targetConstraint'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+		 *     endif
+		 */
+		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
+		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
+		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, HorizontalelasticityTables.STR_Grouplink_c_c_targetConstraint);
+		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, HorizontalelasticityTables.INT_0).booleanValue();
+		/*@NonInvalid*/ boolean symbol_0;
+		if (le) {
+			symbol_0 = ValueUtil.TRUE_VALUE;
+		}
+		else {
+			final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_horizontalelasticity_c_c_Horizontalgroup = idResolver.getClass(HorizontalelasticityTables.CLSSid_Horizontalgroup, null);
+			final /*@NonInvalid*/ Resource target = this.getTarget();
+			final /*@NonInvalid*/ boolean result = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, target, TYP_horizontalelasticity_c_c_Horizontalgroup).booleanValue();
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, HorizontalelasticityTables.STR_Grouplink_c_c_targetConstraint, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, HorizontalelasticityTables.INT_0).booleanValue();
+			symbol_0 = logDiagnostic;
+		}
+		return Boolean.TRUE == symbol_0;
 	}
 
 	/**

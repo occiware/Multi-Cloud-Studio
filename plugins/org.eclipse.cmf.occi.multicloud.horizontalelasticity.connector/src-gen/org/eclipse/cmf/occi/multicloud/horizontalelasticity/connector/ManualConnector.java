@@ -14,6 +14,7 @@
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -50,6 +51,7 @@ public class ManualConnector extends org.eclipse.cmf.occi.multicloud.horizontale
 	@Override
 	public void start()
 	{
+		//Horizontalgroup hg = (Horizontalgroup) this.getLinks().get(0).getTarget();
 		LOGGER.debug("Action start() called on " + this);
 
 		// TODO: Implement how to start this manual.

@@ -298,7 +298,7 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 					String stateMessage = inst.getOcciComputeStateMessage();
 					String gueststate = inst.getAttributes().get(4).getValue();
 					if (!gueststate.equals("running")) {
-						System.out.println("The machine is creating  " + stateMessage + "the machine state is " + gueststate);
+						System.out.println("The machine is creating:  " + stateMessage + "  the machine state is: " + gueststate);
 					} else {
 						System.out.println("Waiting for the machine to reboot and to get its DHCP ip");
 					}
@@ -397,7 +397,7 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 					//doEditing1(inst, vmname);
 					inst.setOcciComputeState(ComputeStatus.ACTIVE);
 					//doEditing3(inst);
-					inst.setImagename("template");
+					inst.setImagename("templatelast");
 					//doEditing2(inst, "template");
 					domain = TransactionUtil.getEditingDomain(inst);
 					domain.getCommandStack().execute(new RecordingCommand(domain) {
@@ -441,7 +441,7 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 						String stateMessage = inst.getOcciComputeStateMessage();
 						String gueststate = inst.getAttributes().get(4).getValue();
 						if (!gueststate.equals("running")) {
-							System.out.println("The machine is creating  " + stateMessage + "the machine state is " + gueststate);
+							System.out.println("The machine is creating:  " + stateMessage + "   the machine state is:  " + gueststate);
 						} else {
 							System.out.println("Waiting for the machine to reboot and to get its DHCP ip");
 						}
@@ -484,7 +484,7 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 					inst.setTitle(vmName);
 					inst.setOcciComputeState(ComputeStatus.ACTIVE);
 					//doEditing2(inst, "template");
-					inst.setImagename("template");
+					inst.setImagename("templatelast");
 					MyRunnable myRunnable = new MyRunnable() {
 						public void run() {
 							try { 

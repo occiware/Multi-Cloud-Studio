@@ -751,8 +751,6 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
-		// http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot
-		createPivotAnnotations();
 	}
 
 	/**
@@ -767,9 +765,6 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 		  (this, 
 		   source, 
 		   new String[] {
-			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
 		   });	
 		addAnnotation
 		  (instancegrouplinkEClass, 
@@ -812,58 +807,6 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 		   source, 
 		   new String[] {
 			 "constraints", "appliesConstraint"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createPivotAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";	
-		addAnnotation
-		  (getInstancegrouplink__TargetConstraint__DiagnosticChain_Map(), 
-		   source, 
-		   new String[] {
-			 "body", "self.target.oclIsKindOf(horizontalelasticity::Compute)"
-		   });	
-		addAnnotation
-		  (getLinkbalancer__TargetConstraint__DiagnosticChain_Map(), 
-		   source, 
-		   new String[] {
-			 "body", "self.target.oclIsKindOf(horizontalelasticity::Loadbalancer)"
-		   });	
-		addAnnotation
-		  (getGrouplink__TargetConstraint__DiagnosticChain_Map(), 
-		   source, 
-		   new String[] {
-			 "body", "self.target.oclIsKindOf(horizontalelasticity::Horizontalgroup)"
-		   });	
-		addAnnotation
-		  (getCreation__AppliesConstraint__DiagnosticChain_Map(), 
-		   source, 
-		   new String[] {
-			 "body", "self.entity.oclIsKindOf(infrastructure::Compute)"
-		   });	
-		addAnnotation
-		  (getStrategy__AppliesConstraint__DiagnosticChain_Map(), 
-		   source, 
-		   new String[] {
-			 "body", "self.entity.oclIsKindOf(horizontalelasticity::Horizontalelasticcontroller)"
-		   });	
-		addAnnotation
-		  (getManual__AppliesConstraint__DiagnosticChain_Map(), 
-		   source, 
-		   new String[] {
-			 "body", "self.entity.oclIsKindOf(horizontalelasticity::Horizontalelasticcontroller)"
-		   });	
-		addAnnotation
-		  (getDynamic__AppliesConstraint__DiagnosticChain_Map(), 
-		   source, 
-		   new String[] {
-			 "body", "self.entity.oclIsKindOf(horizontalelasticity::Horizontalelasticcontroller)"
 		   });
 	}
 

@@ -23,7 +23,7 @@ public class ZabbixMonitoring2 {
 			mainJObj.put("id", "1");
  
 			Webb webb = Webb.create();
-			JSONObject result = webb.post("http://172.16.225.30/zabbix/api_jsonrpc.php")
+			JSONObject result = webb.post("http://172.16.225.37/zabbix/api_jsonrpc.php")
             	.header("Content-Type", "application/json")
                 .useCaches(false)
                 .body(mainJObj)
@@ -49,7 +49,7 @@ public class ZabbixMonitoring2 {
 			mainJObj.put("auth", zabi);
 			System.out.println(mainJObj);
 			Webb webb = Webb.create();
-			JSONObject result = webb.post("http://172.16.225.30/zabbix/api_jsonrpc.php")
+			JSONObject result = webb.post("http://172.16.225.37/zabbix/api_jsonrpc.php")
             	.header("Content-Type", "application/json")
                 .useCaches(false)
                 .body(mainJObj)
@@ -101,7 +101,7 @@ public class ZabbixMonitoring2 {
             Webb webb = Webb.create();
             //System.out.println("Data to send: " + mainJObj.toString());
 
-            JSONObject result = webb.post("http://172.16.225.30/zabbix/api_jsonrpc.php")
+            JSONObject result = webb.post("http://172.16.225.37/zabbix/api_jsonrpc.php")
                 .header("Content-Type", "application/json")
                 .useCaches(false)
                 .body(mainJObj)
@@ -140,7 +140,7 @@ public class ZabbixMonitoring2 {
 
             System.out.println("Data to send: " + mainJObj.toString());
 
-            JSONObject result = webb.post("http://172.16.225.30/zabbix/api_jsonrpc.php")
+            JSONObject result = webb.post("http://172.16.225.37/zabbix/api_jsonrpc.php")
                 .header("Content-Type", "application/json")
                 .useCaches(false)
                 .body(mainJObj)
@@ -183,7 +183,7 @@ public class ZabbixMonitoring2 {
             Webb webb = Webb.create();
             System.out.println("Data to send: " + mainJObj.toString());
 
-            JSONObject result = webb.post("http://172.16.225.30/zabbix/api_jsonrpc.php")
+            JSONObject result = webb.post("http://172.16.225.37/zabbix/api_jsonrpc.php")
                 .header("Content-Type", "application/json")
                 .useCaches(false)
                 .body(mainJObj)
@@ -222,7 +222,7 @@ public class ZabbixMonitoring2 {
             Webb webb = Webb.create();
             //System.out.println("Data to send: " + mainJObj.toString());
 
-            JSONObject result = webb.post("http://172.16.225.30/zabbix/api_jsonrpc.php")
+            JSONObject result = webb.post("http://172.16.225.37/zabbix/api_jsonrpc.php")
                 .header("Content-Type", "application/json")
                 .useCaches(false)
                 .body(mainJObj)
@@ -254,7 +254,7 @@ public class ZabbixMonitoring2 {
             Webb webb = Webb.create();
             System.out.println("Data to send: " + mainJObj.toString());
 
-            JSONObject result = webb.post("http://172.16.225.30/zabbix/api_jsonrpc.php")
+            JSONObject result = webb.post("http://172.16.225.37/zabbix/api_jsonrpc.php")
                 .header("Content-Type", "application/json")
                 .useCaches(false)
                 .body(mainJObj)
@@ -301,7 +301,7 @@ public class ZabbixMonitoring2 {
             mainJObj.put("id", "1");
             Webb webb = Webb.create();
             //System.out.println("Data to send: " + mainJObj.toString());
-            JSONObject result = webb.post("http://172.16.225.30/zabbix/api_jsonrpc.php")
+            JSONObject result = webb.post("http://172.16.225.37/zabbix/api_jsonrpc.php")
                 .header("Content-Type", "application/json")
                 .useCaches(false)
                 .body(mainJObj)
@@ -351,7 +351,7 @@ public class ZabbixMonitoring2 {
             Webb webb = Webb.create();
             System.out.println("Data to send: " + mainJObj.toString());
 
-            JSONObject result = webb.post("http://172.16.225.30/zabbix/api_jsonrpc.php")
+            JSONObject result = webb.post("http://172.16.225.37/zabbix/api_jsonrpc.php")
                 .header("Content-Type", "application/json")
                 .useCaches(false)
                 .body(mainJObj)
@@ -397,7 +397,7 @@ public class ZabbixMonitoring2 {
         	Webb webb = Webb.create();
         	//System.out.println("Data to send: " + mainJObj.toString());
 
-        	JSONObject result = webb.post("http://172.16.225.30/zabbix/api_jsonrpc.php")
+        	JSONObject result = webb.post("http://172.16.225.37/zabbix/api_jsonrpc.php")
             	.header("Content-Type", "application/json")
             	.useCaches(false)
             	.body(mainJObj)
@@ -433,7 +433,7 @@ public class ZabbixMonitoring2 {
         	Webb webb = Webb.create();
         	System.out.println("Data to send: " + mainJObj.toString());
 
-        	JSONObject result = webb.post("http://172.16.225.30/zabbix/api_jsonrpc.php")
+        	JSONObject result = webb.post("http://172.16.225.37/zabbix/api_jsonrpc.php")
             	.header("Content-Type", "application/json")
             	.useCaches(false)
             	.body(mainJObj)
@@ -469,7 +469,7 @@ public class ZabbixMonitoring2 {
         	Webb webb = Webb.create();
         	System.out.println("Data to send: " + mainJObj.toString());
 
-        	JSONObject result = webb.post("http://172.16.225.30/zabbix/api_jsonrpc.php")
+        	JSONObject result = webb.post("http://172.16.225.37/zabbix/api_jsonrpc.php")
             	.header("Content-Type", "application/json")
             	.useCaches(false)
             	.body(mainJObj)
@@ -506,7 +506,7 @@ public class ZabbixMonitoring2 {
         	Webb webb = Webb.create();
         	//System.out.println("Data to send: " + mainJObj.toString());
 
-        	JSONObject result = webb.post("http://172.16.225.30/zabbix/api_jsonrpc.php")
+        	JSONObject result = webb.post("http://172.16.225.37/zabbix/api_jsonrpc.php")
             	.header("Content-Type", "application/json")
             	.useCaches(false)
             	.body(mainJObj)
@@ -546,7 +546,7 @@ public class ZabbixMonitoring2 {
         	Webb webb = Webb.create();
         	System.out.println("Data to send: " + mainJObj.toString());
 
-        	JSONObject result = webb.post("http://172.16.225.30/zabbix/api_jsonrpc.php")
+        	JSONObject result = webb.post("http://172.16.225.37/zabbix/api_jsonrpc.php")
             	.header("Content-Type", "application/json")
             	.useCaches(false)
             	.body(mainJObj)
@@ -592,7 +592,7 @@ public class ZabbixMonitoring2 {
             	Webb webb = Webb.create();
             	//System.out.println("Data to send: " + mainJObj.toString());
 
-            	JSONObject result = webb.post("http://172.16.225.30/zabbix/api_jsonrpc.php")
+            	JSONObject result = webb.post("http://172.16.225.37/zabbix/api_jsonrpc.php")
                 	.header("Content-Type", "application/json")
                 	.useCaches(false)
                 	.body(mainJObj)

@@ -32,6 +32,33 @@ public interface HorizontalelasticityFactory extends EFactory {
 	HorizontalelasticityFactory eINSTANCE = org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Recurrence Step</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Recurrence Step</em>'.
+	 * @generated
+	 */
+	RecurrenceStep createRecurrenceStep();
+
+	/**
+	 * Returns a new object of class '<em>Array</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Array</em>'.
+	 * @generated
+	 */
+	Array createArray();
+
+	/**
+	 * Returns a new object of class '<em>Arrayof Recurrence Step</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Arrayof Recurrence Step</em>'.
+	 * @generated
+	 */
+	ArrayofRecurrenceStep createArrayofRecurrenceStep();
+
+	/**
 	 * Returns a new object of class '<em>Horizontalgroup</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -86,24 +113,6 @@ public interface HorizontalelasticityFactory extends EFactory {
 	Grouplink createGrouplink();
 
 	/**
-	 * Returns a new object of class '<em>Creation</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Creation</em>'.
-	 * @generated
-	 */
-	Creation createCreation();
-
-	/**
-	 * Returns a new object of class '<em>Strategy</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Strategy</em>'.
-	 * @generated
-	 */
-	Strategy createStrategy();
-
-	/**
 	 * Returns a new object of class '<em>Manual</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -120,6 +129,96 @@ public interface HorizontalelasticityFactory extends EFactory {
 	 * @generated
 	 */
 	Dynamic createDynamic();
+
+	/**
+	 * Returns a new object of class '<em>Simpledynamic</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Simpledynamic</em>'.
+	 * @generated
+	 */
+	Simpledynamic createSimpledynamic();
+
+	/**
+	 * Returns a new object of class '<em>Stepdynamic</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Stepdynamic</em>'.
+	 * @generated
+	 */
+	Stepdynamic createStepdynamic();
+
+	/**
+	 * Returns a new object of class '<em>Dynamicadjustment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Dynamicadjustment</em>'.
+	 * @generated
+	 */
+	Dynamicadjustment createDynamicadjustment();
+
+	/**
+	 * Returns a new object of class '<em>Creation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Creation</em>'.
+	 * @generated
+	 */
+	Creation createCreation();
+
+	/**
+	 * Returns a new object of class '<em>Steps</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Steps</em>'.
+	 * @generated
+	 */
+	Steps createSteps();
+
+	/**
+	 * Returns a new object of class '<em>Rule</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Rule</em>'.
+	 * @generated
+	 */
+	Rule createRule();
+
+	/**
+	 * Returns a new object of class '<em>Action</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Action</em>'.
+	 * @generated
+	 */
+	Action createAction();
+
+	/**
+	 * Returns a new object of class '<em>Scheduler</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Scheduler</em>'.
+	 * @generated
+	 */
+	Scheduler createScheduler();
+
+	/**
+	 * Returns a new object of class '<em>Uniqueschedule</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Uniqueschedule</em>'.
+	 * @generated
+	 */
+	Uniqueschedule createUniqueschedule();
+
+	/**
+	 * Returns a new object of class '<em>Recurringschedule</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Recurringschedule</em>'.
+	 * @generated
+	 */
+	Recurringschedule createRecurringschedule();
 
 	/**
 	 * Returns the package supported by this factory.

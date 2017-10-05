@@ -10,12 +10,11 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Fri Sep 22 14:58:42 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Wed Oct 04 16:03:06 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
 import org.eclipse.cmf.occi.core.Link;
-//import org.eclipse.cmf.occi.multicloud.elasticocci.connector.ZabbixMonitoring2;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup;
 import org.eclipse.cmf.occi.multicloud.vmware.Instancevmware;
 import org.slf4j.Logger;

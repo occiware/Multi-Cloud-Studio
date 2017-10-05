@@ -52,12 +52,28 @@ public class OccimonitoringValidator extends EObjectValidator {
 	public static final String DIAGNOSTIC_SOURCE = "org.eclipse.cmf.occi.multicloud.occimonitoring";
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Target Constraint' of 'Hostgroulink'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int HOSTGROULINK__TARGET_CONSTRAINT = 1;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Target Constraint' of 'Templatelink'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int TEMPLATELINK__TARGET_CONSTRAINT = 2;
+
+	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Metrics'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int METRICS__APPLIES_CONSTRAINT = 1;
+	public static final int METRICS__APPLIES_CONSTRAINT = 3;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Cpuusage'.
@@ -65,7 +81,7 @@ public class OccimonitoringValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CPUUSAGE__APPLIES_CONSTRAINT = 2;
+	public static final int CPUUSAGE__APPLIES_CONSTRAINT = 4;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Memoryusage'.
@@ -73,7 +89,7 @@ public class OccimonitoringValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int MEMORYUSAGE__APPLIES_CONSTRAINT = 3;
+	public static final int MEMORYUSAGE__APPLIES_CONSTRAINT = 5;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -81,7 +97,7 @@ public class OccimonitoringValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 3;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 5;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -136,6 +152,10 @@ public class OccimonitoringValidator extends EObjectValidator {
 				return validateHostgroup((Hostgroup)value, diagnostics, context);
 			case OccimonitoringPackage.ZABBIXTEMPLATE:
 				return validateZabbixtemplate((Zabbixtemplate)value, diagnostics, context);
+			case OccimonitoringPackage.HOSTGROULINK:
+				return validateHostgroulink((Hostgroulink)value, diagnostics, context);
+			case OccimonitoringPackage.TEMPLATELINK:
+				return validateTemplatelink((Templatelink)value, diagnostics, context);
 			case OccimonitoringPackage.METRICS:
 				return validateMetrics((Metrics)value, diagnostics, context);
 			case OccimonitoringPackage.CPUUSAGE:
@@ -213,6 +233,76 @@ public class OccimonitoringValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(zabbixtemplate, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateResource_ResourceKindIsInParent(zabbixtemplate, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateHostgroulink(Hostgroulink hostgroulink, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(hostgroulink, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(hostgroulink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(hostgroulink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(hostgroulink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(hostgroulink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(hostgroulink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(hostgroulink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(hostgroulink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(hostgroulink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(hostgroulink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(hostgroulink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(hostgroulink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateLink_LinkKindIsInParent(hostgroulink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateLink_sourceReferenceInvariant(hostgroulink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateLink_targetReferenceInvariant(hostgroulink, diagnostics, context);
+		if (result || diagnostics != null) result &= validateHostgroulink_targetConstraint(hostgroulink, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the targetConstraint constraint of '<em>Hostgroulink</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateHostgroulink_targetConstraint(Hostgroulink hostgroulink, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return hostgroulink.targetConstraint(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTemplatelink(Templatelink templatelink, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(templatelink, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(templatelink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(templatelink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(templatelink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(templatelink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(templatelink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(templatelink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(templatelink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(templatelink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(templatelink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(templatelink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(templatelink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateLink_LinkKindIsInParent(templatelink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateLink_sourceReferenceInvariant(templatelink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateLink_targetReferenceInvariant(templatelink, diagnostics, context);
+		if (result || diagnostics != null) result &= validateTemplatelink_targetConstraint(templatelink, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the targetConstraint constraint of '<em>Templatelink</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTemplatelink_targetConstraint(Templatelink templatelink, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return templatelink.targetConstraint(diagnostics, context);
 	}
 
 	/**

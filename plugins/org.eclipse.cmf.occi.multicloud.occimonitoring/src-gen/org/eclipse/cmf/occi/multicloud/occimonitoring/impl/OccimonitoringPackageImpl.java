@@ -15,11 +15,13 @@ package org.eclipse.cmf.occi.multicloud.occimonitoring.impl;
 import org.eclipse.cmf.occi.core.OCCIPackage;
 
 import org.eclipse.cmf.occi.multicloud.occimonitoring.Cpuusage;
+import org.eclipse.cmf.occi.multicloud.occimonitoring.Hostgroulink;
 import org.eclipse.cmf.occi.multicloud.occimonitoring.Hostgroup;
 import org.eclipse.cmf.occi.multicloud.occimonitoring.Memoryusage;
 import org.eclipse.cmf.occi.multicloud.occimonitoring.Metrics;
 import org.eclipse.cmf.occi.multicloud.occimonitoring.OccimonitoringFactory;
 import org.eclipse.cmf.occi.multicloud.occimonitoring.OccimonitoringPackage;
+import org.eclipse.cmf.occi.multicloud.occimonitoring.Templatelink;
 import org.eclipse.cmf.occi.multicloud.occimonitoring.Zabbixinstance;
 import org.eclipse.cmf.occi.multicloud.occimonitoring.Zabbixtemplate;
 
@@ -62,6 +64,20 @@ public class OccimonitoringPackageImpl extends EPackageImpl implements Occimonit
 	 * @generated
 	 */
 	private EClass zabbixtemplateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass hostgroulinkEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass templatelinkEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -259,6 +275,42 @@ public class OccimonitoringPackageImpl extends EPackageImpl implements Occimonit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getHostgroulink() {
+		return hostgroulinkEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getHostgroulink__TargetConstraint__DiagnosticChain_Map() {
+		return hostgroulinkEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTemplatelink() {
+		return templatelinkEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getTemplatelink__TargetConstraint__DiagnosticChain_Map() {
+		return templatelinkEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getMetrics() {
 		return metricsEClass;
 	}
@@ -295,8 +347,17 @@ public class OccimonitoringPackageImpl extends EPackageImpl implements Occimonit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getCpuusage__AppliesConstraint__DiagnosticChain_Map() {
+	public EOperation getCpuusage__Getmetric() {
 		return cpuusageEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getCpuusage__AppliesConstraint__DiagnosticChain_Map() {
+		return cpuusageEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -322,8 +383,17 @@ public class OccimonitoringPackageImpl extends EPackageImpl implements Occimonit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getMemoryusage__AppliesConstraint__DiagnosticChain_Map() {
+	public EOperation getMemoryusage__Getmetric() {
 		return memoryusageEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getMemoryusage__AppliesConstraint__DiagnosticChain_Map() {
+		return memoryusageEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -376,15 +446,23 @@ public class OccimonitoringPackageImpl extends EPackageImpl implements Occimonit
 		createEAttribute(zabbixtemplateEClass, ZABBIXTEMPLATE__ZABBIXTEMPLATE_HOSTGID);
 		createEAttribute(zabbixtemplateEClass, ZABBIXTEMPLATE__ZABBIXTEMPLATE_HOSTSIDS);
 
+		hostgroulinkEClass = createEClass(HOSTGROULINK);
+		createEOperation(hostgroulinkEClass, HOSTGROULINK___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
+
+		templatelinkEClass = createEClass(TEMPLATELINK);
+		createEOperation(templatelinkEClass, TEMPLATELINK___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
+
 		metricsEClass = createEClass(METRICS);
 		createEOperation(metricsEClass, METRICS___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
 		cpuusageEClass = createEClass(CPUUSAGE);
 		createEAttribute(cpuusageEClass, CPUUSAGE__CPU_USAGE_CPU_USAGE);
+		createEOperation(cpuusageEClass, CPUUSAGE___GETMETRIC);
 		createEOperation(cpuusageEClass, CPUUSAGE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
 		memoryusageEClass = createEClass(MEMORYUSAGE);
 		createEAttribute(memoryusageEClass, MEMORYUSAGE__MEMORY_USAGE_MEM_USAGE);
+		createEOperation(memoryusageEClass, MEMORYUSAGE___GETMETRIC);
 		createEOperation(memoryusageEClass, MEMORYUSAGE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
 		// Create data types
@@ -425,6 +503,8 @@ public class OccimonitoringPackageImpl extends EPackageImpl implements Occimonit
 		zabbixinstanceEClass.getESuperTypes().add(theOCCIPackage.getResource());
 		hostgroupEClass.getESuperTypes().add(theOCCIPackage.getResource());
 		zabbixtemplateEClass.getESuperTypes().add(theOCCIPackage.getResource());
+		hostgroulinkEClass.getESuperTypes().add(theOCCIPackage.getLink());
+		templatelinkEClass.getESuperTypes().add(theOCCIPackage.getLink());
 		metricsEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		cpuusageEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		cpuusageEClass.getESuperTypes().add(this.getMetrics());
@@ -445,9 +525,9 @@ public class OccimonitoringPackageImpl extends EPackageImpl implements Occimonit
 		initEAttribute(getZabbixtemplate_ZabbixtemplateHostgid(), theOCCIPackage.getInteger(), "zabbixtemplateHostgid", null, 0, 1, Zabbixtemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getZabbixtemplate_ZabbixtemplateHostsids(), theOCCIPackage.getInteger(), "zabbixtemplateHostsids", null, 0, 1, Zabbixtemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(metricsEClass, Metrics.class, "Metrics", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(hostgroulinkEClass, Hostgroulink.class, "Hostgroulink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		EOperation op = initEOperation(getMetrics__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getHostgroulink__TargetConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "targetConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
 		EGenericType g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -456,8 +536,32 @@ public class OccimonitoringPackageImpl extends EPackageImpl implements Occimonit
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		initEClass(templatelinkEClass, Templatelink.class, "Templatelink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = initEOperation(getTemplatelink__TargetConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "targetConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(metricsEClass, Metrics.class, "Metrics", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = initEOperation(getMetrics__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(cpuusageEClass, Cpuusage.class, "Cpuusage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCpuusage_CpuUsageCpuUsage(), this.getDouble(), "cpuUsageCpuUsage", null, 0, 1, Cpuusage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getCpuusage__Getmetric(), null, "getmetric", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getCpuusage__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -470,6 +574,8 @@ public class OccimonitoringPackageImpl extends EPackageImpl implements Occimonit
 
 		initEClass(memoryusageEClass, Memoryusage.class, "Memoryusage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMemoryusage_MemoryUsageMemUsage(), this.getDouble(), "memoryUsageMemUsage", null, 0, 1, Memoryusage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getMemoryusage__Getmetric(), null, "getmetric", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getMemoryusage__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -503,6 +609,18 @@ public class OccimonitoringPackageImpl extends EPackageImpl implements Occimonit
 		  (this, 
 		   source, 
 		   new String[] {
+		   });	
+		addAnnotation
+		  (hostgroulinkEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "targetConstraint"
+		   });	
+		addAnnotation
+		  (templatelinkEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "targetConstraint"
 		   });	
 		addAnnotation
 		  (metricsEClass, 

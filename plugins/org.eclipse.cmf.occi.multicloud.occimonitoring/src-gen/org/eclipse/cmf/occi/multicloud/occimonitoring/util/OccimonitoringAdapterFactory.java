@@ -13,6 +13,7 @@
 package org.eclipse.cmf.occi.multicloud.occimonitoring.util;
 
 import org.eclipse.cmf.occi.core.Entity;
+import org.eclipse.cmf.occi.core.Link;
 import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.core.Resource;
 
@@ -94,6 +95,14 @@ public class OccimonitoringAdapterFactory extends AdapterFactoryImpl {
 				return createZabbixtemplateAdapter();
 			}
 			@Override
+			public Adapter caseHostgroulink(Hostgroulink object) {
+				return createHostgroulinkAdapter();
+			}
+			@Override
+			public Adapter caseTemplatelink(Templatelink object) {
+				return createTemplatelinkAdapter();
+			}
+			@Override
 			public Adapter caseMetrics(Metrics object) {
 				return createMetricsAdapter();
 			}
@@ -112,6 +121,10 @@ public class OccimonitoringAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseResource(Resource object) {
 				return createResourceAdapter();
+			}
+			@Override
+			public Adapter caseLink(Link object) {
+				return createLinkAdapter();
 			}
 			@Override
 			public Adapter caseMixinBase(MixinBase object) {
@@ -176,6 +189,34 @@ public class OccimonitoringAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createZabbixtemplateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.occimonitoring.Hostgroulink <em>Hostgroulink</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.occimonitoring.Hostgroulink
+	 * @generated
+	 */
+	public Adapter createHostgroulinkAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.occimonitoring.Templatelink <em>Templatelink</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.occimonitoring.Templatelink
+	 * @generated
+	 */
+	public Adapter createTemplatelinkAdapter() {
 		return null;
 	}
 
@@ -246,6 +287,20 @@ public class OccimonitoringAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createResourceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.Link <em>Link</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.core.Link
+	 * @generated
+	 */
+	public Adapter createLinkAdapter() {
 		return null;
 	}
 

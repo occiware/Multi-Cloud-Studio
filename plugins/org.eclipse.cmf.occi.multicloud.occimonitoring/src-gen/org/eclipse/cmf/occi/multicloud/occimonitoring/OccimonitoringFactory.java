@@ -59,6 +59,24 @@ public interface OccimonitoringFactory extends EFactory {
 	Zabbixtemplate createZabbixtemplate();
 
 	/**
+	 * Returns a new object of class '<em>Hostgroulink</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Hostgroulink</em>'.
+	 * @generated
+	 */
+	Hostgroulink createHostgroulink();
+
+	/**
+	 * Returns a new object of class '<em>Templatelink</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Templatelink</em>'.
+	 * @generated
+	 */
+	Templatelink createTemplatelink();
+
+	/**
 	 * Returns a new object of class '<em>Metrics</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

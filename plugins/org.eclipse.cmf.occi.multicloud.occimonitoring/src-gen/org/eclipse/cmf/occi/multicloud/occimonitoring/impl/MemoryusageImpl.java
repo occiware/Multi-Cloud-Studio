@@ -130,6 +130,15 @@ public class MemoryusageImpl extends MixinBaseImpl implements Memoryusage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void getmetric() {
+		throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.occimonitoring/ecore!Memoryusage!getmetric()
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean appliesConstraint(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
 		/**
 		 *
@@ -246,6 +255,9 @@ public class MemoryusageImpl extends MixinBaseImpl implements Memoryusage {
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
+			case OccimonitoringPackage.MEMORYUSAGE___GETMETRIC:
+				getmetric();
+				return null;
 			case OccimonitoringPackage.MEMORYUSAGE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP:
 				return appliesConstraint((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}

@@ -16,6 +16,7 @@ package org.eclipse.cmf.occi.multicloud.horizontalelasticity.provider;
 import java.sql.Time;
 
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 
 import org.eclipse.cmf.occi.core.provider.MixinBaseItemProvider;
@@ -107,7 +108,7 @@ public class CreationItemProvider extends MixinBaseItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		Time labelValue = ((Creation)object).getOcciComputeCreationDate();
+		Date labelValue = ((Creation)object).getOcciComputeCreationDate();
 		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Creation_type") :

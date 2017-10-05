@@ -40,6 +40,12 @@
       </genFeatures>
     </genClasses>
     <genClasses>
+      <ecoreClass href="occimonitoring.ecore#//Hostgroulink"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="occimonitoring.ecore#//Templatelink"/>
+    </genClasses>
+    <genClasses>
       <ecoreClass href="occimonitoring.ecore#//Metrics"/>
     </genClasses>
     <genClasses>
@@ -47,12 +53,18 @@
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="occimonitoring.ecore#//Cpuusage/cpuUsageCpuUsage"/>
       </genFeatures>
+      <genOperations>
+        <ecoreOperation href="occimonitoring.ecore#//Cpuusage/getmetric"/>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="occimonitoring.ecore#//Memoryusage"/>
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="occimonitoring.ecore#//Memoryusage/memoryUsageMemUsage"/>
       </genFeatures>
+      <genOperations>
+        <ecoreOperation href="occimonitoring.ecore#//Memoryusage/getmetric"/>
+      </genOperations>
     </genClasses>
   </genPackages>
   <usedGenPackages href="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.genmodel#//occi"/>

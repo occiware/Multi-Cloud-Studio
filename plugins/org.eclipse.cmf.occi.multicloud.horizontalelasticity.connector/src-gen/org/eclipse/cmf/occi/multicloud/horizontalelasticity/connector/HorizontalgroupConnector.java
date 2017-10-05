@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Fri Sep 22 14:58:42 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Wed Oct 04 16:03:06 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
@@ -19,10 +19,10 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
 import org.eclipse.cmf.occi.core.Configuration;
-import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.core.Link;
 import org.eclipse.cmf.occi.infrastructure.Compute;
 import org.eclipse.cmf.occi.infrastructure.ComputeStatus;
@@ -30,7 +30,6 @@ import org.eclipse.cmf.occi.multicloud.elasticocci.connector.MyRunnable;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityFactory;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Instancegrouplink;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Loadbalancer;
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.InstancegrouplinkImpl;
 import org.eclipse.cmf.occi.multicloud.vmware.Instancevmware;
 import org.eclipse.cmf.occi.multicloud.vmware.VmwareFactory;
 import org.eclipse.emf.ecore.EObject;
@@ -39,9 +38,6 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.sun.corba.se.impl.orbutil.closure.Future;
-
 
 /**
  * Connector implementation for the OCCI kind:
@@ -163,15 +159,25 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 	@Override
 	public void occiRetrieve()
 	{
-
-		try {
-			createConfigtemp(2);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		
+		MyRunnable myRunnable = new MyRunnable() {
+			public void run() {
+				try {
+					createConfigtemp(1);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				}
+		};
+		Thread thread = new Thread(myRunnable);
+		thread.start();
+		//try {
+		//	createConfigtemp(2);
+		//} catch (InterruptedException e) {
+		//	// TODO Auto-generated catch block
+		//	e.printStackTrace();
+		//}
+		//
 		LOGGER.debug("occiRetrieve() called on " + this);
 		// TODO: Implement this callback or remove this method.
 	}
@@ -198,26 +204,15 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 		System.out.println("the old group size is  " + oldGroupSize );	
 		
 		if (getHorizontalGroupGroupSize() > oldGroupSize) {
-			final int  oldGroupSize1 = oldGroupSize;
+			//final int  oldGroupSize1 = oldGroupSize;
 			System.out.println("The group will be increased by " + (getHorizontalGroupGroupSize() - oldGroupSize));
-			MyRunnable myRunnable = new MyRunnable() {
-				public void run() {
-					try {
-						createConfigtemp(oldGroupSize1);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					}
-			};
-			Thread thread = new Thread(myRunnable);
-			thread.start();
-			//try {
-			//	createConfigtemp(oldGroupSize);
-			//} catch (InterruptedException e) {
-			//	// TODO Auto-generated catch block
-			//	e.printStackTrace();
-			//}
+			
+			try {
+				createConfigtemp(oldGroupSize);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			
         } else if (getHorizontalGroupGroupSize() < oldGroupSize) {
         		int instancestodelete = (oldGroupSize - getHorizontalGroupGroupSize());
@@ -412,6 +407,7 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 					//doEditing3(inst);
 					inst.setImagename("templatelast");
 					//doEditing2(inst, "template");
+					
 					domain = TransactionUtil.getEditingDomain(inst);
 					domain.getCommandStack().execute(new RecordingCommand(domain) {
 					   public void doExecute() {
@@ -458,6 +454,13 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 						} else {
 							System.out.println("Waiting for the machine to reboot and to get its DHCP ip");
 						}
+						//domain = TransactionUtil.getEditingDomain(inst);
+						//domain.getCommandStack().execute(new RecordingCommand(domain) {
+						//   public void doExecute() {
+						//	   ((Compute)inst).occiRetrieve();
+						//   }
+						//});
+						
 						try {
 							inst.occiRetrieve();
 						} catch (Exception e) {

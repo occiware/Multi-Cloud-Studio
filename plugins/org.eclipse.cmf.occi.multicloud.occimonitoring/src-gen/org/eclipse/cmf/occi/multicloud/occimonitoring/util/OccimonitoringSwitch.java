@@ -13,6 +13,7 @@
 package org.eclipse.cmf.occi.multicloud.occimonitoring.util;
 
 import org.eclipse.cmf.occi.core.Entity;
+import org.eclipse.cmf.occi.core.Link;
 import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.core.Resource;
 
@@ -104,6 +105,22 @@ public class OccimonitoringSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case OccimonitoringPackage.HOSTGROULINK: {
+				Hostgroulink hostgroulink = (Hostgroulink)theEObject;
+				T result = caseHostgroulink(hostgroulink);
+				if (result == null) result = caseLink(hostgroulink);
+				if (result == null) result = caseEntity(hostgroulink);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case OccimonitoringPackage.TEMPLATELINK: {
+				Templatelink templatelink = (Templatelink)theEObject;
+				T result = caseTemplatelink(templatelink);
+				if (result == null) result = caseLink(templatelink);
+				if (result == null) result = caseEntity(templatelink);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case OccimonitoringPackage.METRICS: {
 				Metrics metrics = (Metrics)theEObject;
 				T result = caseMetrics(metrics);
@@ -173,6 +190,36 @@ public class OccimonitoringSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseZabbixtemplate(Zabbixtemplate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Hostgroulink</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Hostgroulink</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseHostgroulink(Hostgroulink object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Templatelink</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Templatelink</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTemplatelink(Templatelink object) {
 		return null;
 	}
 
@@ -248,6 +295,21 @@ public class OccimonitoringSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseResource(Resource object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Link</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Link</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLink(Link object) {
 		return null;
 	}
 

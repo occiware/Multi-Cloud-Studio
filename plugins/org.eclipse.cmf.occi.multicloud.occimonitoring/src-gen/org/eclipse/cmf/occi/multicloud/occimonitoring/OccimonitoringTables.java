@@ -23,6 +23,7 @@ package org.eclipse.cmf.occi.multicloud.occimonitoring;
 
 import org.eclipse.cmf.occi.core.OCCITables;
 import org.eclipse.cmf.occi.multicloud.occimonitoring.OccimonitoringTables;
+import org.eclipse.ocl.pivot.TemplateParameters;
 import org.eclipse.ocl.pivot.internal.library.ecore.EcoreExecutorPackage;
 import org.eclipse.ocl.pivot.internal.library.ecore.EcoreExecutorProperty;
 import org.eclipse.ocl.pivot.internal.library.ecore.EcoreExecutorType;
@@ -31,6 +32,7 @@ import org.eclipse.ocl.pivot.internal.library.executor.ExecutorOperation;
 import org.eclipse.ocl.pivot.internal.library.executor.ExecutorProperty;
 import org.eclipse.ocl.pivot.internal.library.executor.ExecutorStandardLibrary;
 import org.eclipse.ocl.pivot.oclstdlib.OCLstdlibTables;
+import org.eclipse.ocl.pivot.utilities.TypeUtil;
 
 /**
  * OccimonitoringTables provides the dispatch tables for the occimonitoring for use by the OCL dispatcher.
@@ -64,14 +66,21 @@ public class OccimonitoringTables
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Class = org.eclipse.cmf.occi.multicloud.occimonitoring.OccimonitoringTables.PACKid_$metamodel$.getClassId("Class", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Cpuusage = org.eclipse.cmf.occi.multicloud.occimonitoring.OccimonitoringTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_occimonitoring_s_ecore.getClassId("Cpuusage", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Entity = org.eclipse.cmf.occi.multicloud.occimonitoring.OccimonitoringTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Entity", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Hostgroulink = org.eclipse.cmf.occi.multicloud.occimonitoring.OccimonitoringTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_occimonitoring_s_ecore.getClassId("Hostgroulink", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Hostgroup = org.eclipse.cmf.occi.multicloud.occimonitoring.OccimonitoringTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_occimonitoring_s_ecore.getClassId("Hostgroup", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Memoryusage = org.eclipse.cmf.occi.multicloud.occimonitoring.OccimonitoringTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_occimonitoring_s_ecore.getClassId("Memoryusage", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Metrics = org.eclipse.cmf.occi.multicloud.occimonitoring.OccimonitoringTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_occimonitoring_s_ecore.getClassId("Metrics", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Resource = org.eclipse.cmf.occi.multicloud.occimonitoring.OccimonitoringTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Resource", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Templatelink = org.eclipse.cmf.occi.multicloud.occimonitoring.OccimonitoringTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_occimonitoring_s_ecore.getClassId("Templatelink", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Zabbixinstance = org.eclipse.cmf.occi.multicloud.occimonitoring.OccimonitoringTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_occimonitoring_s_ecore.getClassId("Zabbixinstance", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Zabbixtemplate = org.eclipse.cmf.occi.multicloud.occimonitoring.OccimonitoringTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_occimonitoring_s_ecore.getClassId("Zabbixtemplate", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_Double = org.eclipse.cmf.occi.multicloud.occimonitoring.OccimonitoringTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_occimonitoring_s_ecore.getDataTypeId("Double", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.values.IntegerValue INT_0 = org.eclipse.ocl.pivot.utilities.ValueUtil.integerValueOf("0");
 	public static final /*@NonInvalid*/ java.lang.String STR_Cpuusage_c_c_appliesConstraint = "Cpuusage::appliesConstraint";
+	public static final /*@NonInvalid*/ java.lang.String STR_Hostgroulink_c_c_targetConstraint = "Hostgroulink::targetConstraint";
 	public static final /*@NonInvalid*/ java.lang.String STR_Memoryusage_c_c_appliesConstraint = "Memoryusage::appliesConstraint";
 	public static final /*@NonInvalid*/ java.lang.String STR_Metrics_c_c_appliesConstraint = "Metrics::appliesConstraint";
+	public static final /*@NonInvalid*/ java.lang.String STR_Templatelink_c_c_targetConstraint = "Templatelink::targetConstraint";
 
 	/**
 	 *	The type parameters for templated types and operations.
@@ -103,18 +112,22 @@ public class OccimonitoringTables
 
 		public static final /*@NonNull*/ EcoreExecutorType _Cpuusage = new EcoreExecutorType(OccimonitoringPackage.Literals.CPUUSAGE, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Double = new EcoreExecutorType("Double", PACKAGE, 0);
+		public static final /*@NonNull*/ EcoreExecutorType _Hostgroulink = new EcoreExecutorType(OccimonitoringPackage.Literals.HOSTGROULINK, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Hostgroup = new EcoreExecutorType(OccimonitoringPackage.Literals.HOSTGROUP, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Memoryusage = new EcoreExecutorType(OccimonitoringPackage.Literals.MEMORYUSAGE, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Metrics = new EcoreExecutorType(OccimonitoringPackage.Literals.METRICS, PACKAGE, 0);
+		public static final /*@NonNull*/ EcoreExecutorType _Templatelink = new EcoreExecutorType(OccimonitoringPackage.Literals.TEMPLATELINK, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Zabbixinstance = new EcoreExecutorType(OccimonitoringPackage.Literals.ZABBIXINSTANCE, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Zabbixtemplate = new EcoreExecutorType(OccimonitoringPackage.Literals.ZABBIXTEMPLATE, PACKAGE, 0);
 
 		private static final /*@NonNull*/ EcoreExecutorType /*@NonNull*/ [] types = {
 			_Cpuusage,
 			_Double,
+			_Hostgroulink,
 			_Hostgroup,
 			_Memoryusage,
 			_Metrics,
+			_Templatelink,
 			_Zabbixinstance,
 			_Zabbixtemplate
 		};
@@ -151,6 +164,12 @@ public class OccimonitoringTables
 		private static final /*@NonNull*/ ExecutorFragment _Double__Double = new ExecutorFragment(Types._Double, OccimonitoringTables.Types._Double);
 		private static final /*@NonNull*/ ExecutorFragment _Double__OclAny = new ExecutorFragment(Types._Double, OCLstdlibTables.Types._OclAny);
 
+		private static final /*@NonNull*/ ExecutorFragment _Hostgroulink__Entity = new ExecutorFragment(Types._Hostgroulink, OCCITables.Types._Entity);
+		private static final /*@NonNull*/ ExecutorFragment _Hostgroulink__Hostgroulink = new ExecutorFragment(Types._Hostgroulink, OccimonitoringTables.Types._Hostgroulink);
+		private static final /*@NonNull*/ ExecutorFragment _Hostgroulink__Link = new ExecutorFragment(Types._Hostgroulink, OCCITables.Types._Link);
+		private static final /*@NonNull*/ ExecutorFragment _Hostgroulink__OclAny = new ExecutorFragment(Types._Hostgroulink, OCLstdlibTables.Types._OclAny);
+		private static final /*@NonNull*/ ExecutorFragment _Hostgroulink__OclElement = new ExecutorFragment(Types._Hostgroulink, OCLstdlibTables.Types._OclElement);
+
 		private static final /*@NonNull*/ ExecutorFragment _Hostgroup__Entity = new ExecutorFragment(Types._Hostgroup, OCCITables.Types._Entity);
 		private static final /*@NonNull*/ ExecutorFragment _Hostgroup__Hostgroup = new ExecutorFragment(Types._Hostgroup, OccimonitoringTables.Types._Hostgroup);
 		private static final /*@NonNull*/ ExecutorFragment _Hostgroup__OclAny = new ExecutorFragment(Types._Hostgroup, OCLstdlibTables.Types._OclAny);
@@ -167,6 +186,12 @@ public class OccimonitoringTables
 		private static final /*@NonNull*/ ExecutorFragment _Metrics__MixinBase = new ExecutorFragment(Types._Metrics, OCCITables.Types._MixinBase);
 		private static final /*@NonNull*/ ExecutorFragment _Metrics__OclAny = new ExecutorFragment(Types._Metrics, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _Metrics__OclElement = new ExecutorFragment(Types._Metrics, OCLstdlibTables.Types._OclElement);
+
+		private static final /*@NonNull*/ ExecutorFragment _Templatelink__Entity = new ExecutorFragment(Types._Templatelink, OCCITables.Types._Entity);
+		private static final /*@NonNull*/ ExecutorFragment _Templatelink__Link = new ExecutorFragment(Types._Templatelink, OCCITables.Types._Link);
+		private static final /*@NonNull*/ ExecutorFragment _Templatelink__OclAny = new ExecutorFragment(Types._Templatelink, OCLstdlibTables.Types._OclAny);
+		private static final /*@NonNull*/ ExecutorFragment _Templatelink__OclElement = new ExecutorFragment(Types._Templatelink, OCLstdlibTables.Types._OclElement);
+		private static final /*@NonNull*/ ExecutorFragment _Templatelink__Templatelink = new ExecutorFragment(Types._Templatelink, OccimonitoringTables.Types._Templatelink);
 
 		private static final /*@NonNull*/ ExecutorFragment _Zabbixinstance__Entity = new ExecutorFragment(Types._Zabbixinstance, OCCITables.Types._Entity);
 		private static final /*@NonNull*/ ExecutorFragment _Zabbixinstance__OclAny = new ExecutorFragment(Types._Zabbixinstance, OCLstdlibTables.Types._OclAny);
@@ -226,6 +251,12 @@ public class OccimonitoringTables
 			Init.initStart();
 			Parameters.init();
 		}
+
+		public static final /*@NonNull*/ ExecutorOperation _Cpuusage__getmetric = new ExecutorOperation("getmetric", TypeUtil.EMPTY_PARAMETER_TYPES, Types._Cpuusage,
+			0, TemplateParameters.EMPTY_LIST, null);
+
+		public static final /*@NonNull*/ ExecutorOperation _Memoryusage__getmetric = new ExecutorOperation("getmetric", TypeUtil.EMPTY_PARAMETER_TYPES, Types._Memoryusage,
+			0, TemplateParameters.EMPTY_LIST, null);
 
 		static {
 			Init.initEnd();
@@ -299,6 +330,16 @@ public class OccimonitoringTables
 		};
 		private static final int /*@NonNull*/ [] __Double = { 1,1 };
 
+		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Hostgroulink =
+		{
+			Fragments._Hostgroulink__OclAny /* 0 */,
+			Fragments._Hostgroulink__OclElement /* 1 */,
+			Fragments._Hostgroulink__Entity /* 2 */,
+			Fragments._Hostgroulink__Link /* 3 */,
+			Fragments._Hostgroulink__Hostgroulink /* 4 */
+		};
+		private static final int /*@NonNull*/ [] __Hostgroulink = { 1,1,1,1,1 };
+
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Hostgroup =
 		{
 			Fragments._Hostgroup__OclAny /* 0 */,
@@ -328,6 +369,16 @@ public class OccimonitoringTables
 		};
 		private static final int /*@NonNull*/ [] __Metrics = { 1,1,1,1 };
 
+		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Templatelink =
+		{
+			Fragments._Templatelink__OclAny /* 0 */,
+			Fragments._Templatelink__OclElement /* 1 */,
+			Fragments._Templatelink__Entity /* 2 */,
+			Fragments._Templatelink__Link /* 3 */,
+			Fragments._Templatelink__Templatelink /* 4 */
+		};
+		private static final int /*@NonNull*/ [] __Templatelink = { 1,1,1,1,1 };
+
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Zabbixinstance =
 		{
 			Fragments._Zabbixinstance__OclAny /* 0 */,
@@ -354,9 +405,11 @@ public class OccimonitoringTables
 		static {
 			Types._Cpuusage.initFragments(_Cpuusage, __Cpuusage);
 			Types._Double.initFragments(_Double, __Double);
+			Types._Hostgroulink.initFragments(_Hostgroulink, __Hostgroulink);
 			Types._Hostgroup.initFragments(_Hostgroup, __Hostgroup);
 			Types._Memoryusage.initFragments(_Memoryusage, __Memoryusage);
 			Types._Metrics.initFragments(_Metrics, __Metrics);
+			Types._Templatelink.initFragments(_Templatelink, __Templatelink);
 			Types._Zabbixinstance.initFragments(_Zabbixinstance, __Zabbixinstance);
 			Types._Zabbixtemplate.initFragments(_Zabbixtemplate, __Zabbixtemplate);
 
@@ -378,7 +431,9 @@ public class OccimonitoringTables
 			TypeFragments.init();
 		}
 
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cpuusage__Cpuusage = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cpuusage__Cpuusage = {
+			OccimonitoringTables.Operations._Cpuusage__getmetric /* getmetric() */
+		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cpuusage__Metrics = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cpuusage__MixinBase = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cpuusage__OclAny = {
@@ -427,6 +482,50 @@ public class OccimonitoringTables
 			OCLstdlibTables.Operations._OclAny__toString /* toString() */
 		};
 
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Hostgroulink__Hostgroulink = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Hostgroulink__Entity = {
+			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
+			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
+			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
+			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
+			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
+			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
+			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */,
+			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Hostgroulink__Link = {
+			OCCITables.Operations._Link__LinkSourceInvariant /* LinkSourceInvariant(Kind[?],Kind[?]) */,
+			OCCITables.Operations._Link__LinkSourceInvariant /* LinkSourceInvariant(Kind[?],Kind[?]) */,
+			OCCITables.Operations._Link__LinkTargetInvariant /* LinkTargetInvariant(Kind[?],Kind[?]) */,
+			OCCITables.Operations._Link__LinkTargetInvariant /* LinkTargetInvariant(Kind[?],Kind[?]) */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Hostgroulink__OclAny = {
+			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
+			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
+			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
+			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
+			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
+			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
+			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
+			OCLstdlibTables.Operations._OclAny__toString /* toString() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Hostgroulink__OclElement = {
+			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
+			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
+			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
+			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
+			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
+		};
+
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Hostgroup__Hostgroup = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Hostgroup__Entity = {
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
@@ -466,7 +565,9 @@ public class OccimonitoringTables
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Hostgroup__Resource = {};
 
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Memoryusage__Memoryusage = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Memoryusage__Memoryusage = {
+			OccimonitoringTables.Operations._Memoryusage__getmetric /* getmetric() */
+		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Memoryusage__Metrics = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Memoryusage__MixinBase = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Memoryusage__OclAny = {
@@ -516,6 +617,50 @@ public class OccimonitoringTables
 			OCLstdlibTables.Operations._OclAny__toString /* toString() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Metrics__OclElement = {
+			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
+			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
+			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
+			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
+			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
+		};
+
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Templatelink__Templatelink = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Templatelink__Entity = {
+			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
+			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
+			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
+			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
+			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
+			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
+			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */,
+			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Templatelink__Link = {
+			OCCITables.Operations._Link__LinkSourceInvariant /* LinkSourceInvariant(Kind[?],Kind[?]) */,
+			OCCITables.Operations._Link__LinkSourceInvariant /* LinkSourceInvariant(Kind[?],Kind[?]) */,
+			OCCITables.Operations._Link__LinkTargetInvariant /* LinkTargetInvariant(Kind[?],Kind[?]) */,
+			OCCITables.Operations._Link__LinkTargetInvariant /* LinkTargetInvariant(Kind[?],Kind[?]) */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Templatelink__OclAny = {
+			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
+			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
+			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
+			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
+			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
+			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
+			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
+			OCLstdlibTables.Operations._OclAny__toString /* toString() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Templatelink__OclElement = {
 			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
 			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
 			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
@@ -616,6 +761,12 @@ public class OccimonitoringTables
 			Fragments._Double__Double.initOperations(_Double__Double);
 			Fragments._Double__OclAny.initOperations(_Double__OclAny);
 
+			Fragments._Hostgroulink__Entity.initOperations(_Hostgroulink__Entity);
+			Fragments._Hostgroulink__Hostgroulink.initOperations(_Hostgroulink__Hostgroulink);
+			Fragments._Hostgroulink__Link.initOperations(_Hostgroulink__Link);
+			Fragments._Hostgroulink__OclAny.initOperations(_Hostgroulink__OclAny);
+			Fragments._Hostgroulink__OclElement.initOperations(_Hostgroulink__OclElement);
+
 			Fragments._Hostgroup__Entity.initOperations(_Hostgroup__Entity);
 			Fragments._Hostgroup__Hostgroup.initOperations(_Hostgroup__Hostgroup);
 			Fragments._Hostgroup__OclAny.initOperations(_Hostgroup__OclAny);
@@ -632,6 +783,12 @@ public class OccimonitoringTables
 			Fragments._Metrics__MixinBase.initOperations(_Metrics__MixinBase);
 			Fragments._Metrics__OclAny.initOperations(_Metrics__OclAny);
 			Fragments._Metrics__OclElement.initOperations(_Metrics__OclElement);
+
+			Fragments._Templatelink__Entity.initOperations(_Templatelink__Entity);
+			Fragments._Templatelink__Link.initOperations(_Templatelink__Link);
+			Fragments._Templatelink__OclAny.initOperations(_Templatelink__OclAny);
+			Fragments._Templatelink__OclElement.initOperations(_Templatelink__OclElement);
+			Fragments._Templatelink__Templatelink.initOperations(_Templatelink__Templatelink);
 
 			Fragments._Zabbixinstance__Entity.initOperations(_Zabbixinstance__Entity);
 			Fragments._Zabbixinstance__OclAny.initOperations(_Zabbixinstance__OclAny);
@@ -669,6 +826,8 @@ public class OccimonitoringTables
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Double = {};
 
+		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Hostgroulink = {};
+
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Hostgroup = {
 			OccimonitoringTables.Properties._Hostgroup__hostgroupIdentifier
 		};
@@ -678,6 +837,8 @@ public class OccimonitoringTables
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Metrics = {};
+
+		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Templatelink = {};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Zabbixinstance = {
 			OccimonitoringTables.Properties._Zabbixinstance__zabbixinstanceIdentifier,
@@ -697,9 +858,11 @@ public class OccimonitoringTables
 		static {
 			Fragments._Cpuusage__Cpuusage.initProperties(_Cpuusage);
 			Fragments._Double__Double.initProperties(_Double);
+			Fragments._Hostgroulink__Hostgroulink.initProperties(_Hostgroulink);
 			Fragments._Hostgroup__Hostgroup.initProperties(_Hostgroup);
 			Fragments._Memoryusage__Memoryusage.initProperties(_Memoryusage);
 			Fragments._Metrics__Metrics.initProperties(_Metrics);
+			Fragments._Templatelink__Templatelink.initProperties(_Templatelink);
 			Fragments._Zabbixinstance__Zabbixinstance.initProperties(_Zabbixinstance);
 			Fragments._Zabbixtemplate__Zabbixtemplate.initProperties(_Zabbixtemplate);
 

@@ -70,6 +70,8 @@ public class OccimonitoringFactoryImpl extends EFactoryImpl implements Occimonit
 			case OccimonitoringPackage.ZABBIXINSTANCE: return createZabbixinstance();
 			case OccimonitoringPackage.HOSTGROUP: return createHostgroup();
 			case OccimonitoringPackage.ZABBIXTEMPLATE: return createZabbixtemplate();
+			case OccimonitoringPackage.HOSTGROULINK: return createHostgroulink();
+			case OccimonitoringPackage.TEMPLATELINK: return createTemplatelink();
 			case OccimonitoringPackage.METRICS: return createMetrics();
 			case OccimonitoringPackage.CPUUSAGE: return createCpuusage();
 			case OccimonitoringPackage.MEMORYUSAGE: return createMemoryusage();
@@ -136,6 +138,26 @@ public class OccimonitoringFactoryImpl extends EFactoryImpl implements Occimonit
 	public Zabbixtemplate createZabbixtemplate() {
 		ZabbixtemplateImpl zabbixtemplate = new ZabbixtemplateImpl();
 		return zabbixtemplate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Hostgroulink createHostgroulink() {
+		HostgroulinkImpl hostgroulink = new HostgroulinkImpl();
+		return hostgroulink;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Templatelink createTemplatelink() {
+		TemplatelinkImpl templatelink = new TemplatelinkImpl();
+		return templatelink;
 	}
 
 	/**

@@ -48,7 +48,7 @@ public interface Loadbalancer extends Resource {
 	 * @see #setLoadbalancerName(String)
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getLoadbalancer_LoadbalancerName()
 	 * @model dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Loadbalancer!LoadbalancerName'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Loadbalancer!loadbalancerName'"
 	 * @generated
 	 */
 	String getLoadbalancerName();
@@ -74,7 +74,7 @@ public interface Loadbalancer extends Resource {
 	 * @see #setLoadbalancerInstanceIP(String)
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getLoadbalancer_LoadbalancerInstanceIP()
 	 * @model dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Loadbalancer!LoadbalancerInstanceIP'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Loadbalancer!loadbalancerInstanceIP'"
 	 * @generated
 	 */
 	String getLoadbalancerInstanceIP();
@@ -100,7 +100,7 @@ public interface Loadbalancer extends Resource {
 	 * @see #setLoadbalancerAddress(String)
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getLoadbalancer_LoadbalancerAddress()
 	 * @model dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Loadbalancer!LoadbalancerAddress'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Loadbalancer!loadbalancerAddress'"
 	 * @generated
 	 */
 	String getLoadbalancerAddress();

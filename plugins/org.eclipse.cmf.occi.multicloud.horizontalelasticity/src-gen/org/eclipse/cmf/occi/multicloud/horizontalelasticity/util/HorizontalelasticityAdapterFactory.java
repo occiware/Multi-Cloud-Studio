@@ -83,6 +83,18 @@ public class HorizontalelasticityAdapterFactory extends AdapterFactoryImpl {
 	protected HorizontalelasticitySwitch<Adapter> modelSwitch =
 		new HorizontalelasticitySwitch<Adapter>() {
 			@Override
+			public Adapter caseRecurrenceStep(RecurrenceStep object) {
+				return createRecurrenceStepAdapter();
+			}
+			@Override
+			public Adapter caseArray(Array object) {
+				return createArrayAdapter();
+			}
+			@Override
+			public Adapter caseArrayofRecurrenceStep(ArrayofRecurrenceStep object) {
+				return createArrayofRecurrenceStepAdapter();
+			}
+			@Override
 			public Adapter caseHorizontalgroup(Horizontalgroup object) {
 				return createHorizontalgroupAdapter();
 			}
@@ -107,20 +119,52 @@ public class HorizontalelasticityAdapterFactory extends AdapterFactoryImpl {
 				return createGrouplinkAdapter();
 			}
 			@Override
-			public Adapter caseCreation(Creation object) {
-				return createCreationAdapter();
-			}
-			@Override
-			public Adapter caseStrategy(Strategy object) {
-				return createStrategyAdapter();
-			}
-			@Override
 			public Adapter caseManual(Manual object) {
 				return createManualAdapter();
 			}
 			@Override
 			public Adapter caseDynamic(Dynamic object) {
 				return createDynamicAdapter();
+			}
+			@Override
+			public Adapter caseSimpledynamic(Simpledynamic object) {
+				return createSimpledynamicAdapter();
+			}
+			@Override
+			public Adapter caseStepdynamic(Stepdynamic object) {
+				return createStepdynamicAdapter();
+			}
+			@Override
+			public Adapter caseDynamicadjustment(Dynamicadjustment object) {
+				return createDynamicadjustmentAdapter();
+			}
+			@Override
+			public Adapter caseCreation(Creation object) {
+				return createCreationAdapter();
+			}
+			@Override
+			public Adapter caseSteps(Steps object) {
+				return createStepsAdapter();
+			}
+			@Override
+			public Adapter caseRule(Rule object) {
+				return createRuleAdapter();
+			}
+			@Override
+			public Adapter caseAction(Action object) {
+				return createActionAdapter();
+			}
+			@Override
+			public Adapter caseScheduler(Scheduler object) {
+				return createSchedulerAdapter();
+			}
+			@Override
+			public Adapter caseUniqueschedule(Uniqueschedule object) {
+				return createUniquescheduleAdapter();
+			}
+			@Override
+			public Adapter caseRecurringschedule(Recurringschedule object) {
+				return createRecurringscheduleAdapter();
 			}
 			@Override
 			public Adapter caseEntity(Entity object) {
@@ -157,6 +201,48 @@ public class HorizontalelasticityAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.RecurrenceStep <em>Recurrence Step</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.RecurrenceStep
+	 * @generated
+	 */
+	public Adapter createRecurrenceStepAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Array <em>Array</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Array
+	 * @generated
+	 */
+	public Adapter createArrayAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.ArrayofRecurrenceStep <em>Arrayof Recurrence Step</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.ArrayofRecurrenceStep
+	 * @generated
+	 */
+	public Adapter createArrayofRecurrenceStepAdapter() {
+		return null;
+	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup <em>Horizontalgroup</em>}'.
@@ -243,34 +329,6 @@ public class HorizontalelasticityAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Creation <em>Creation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Creation
-	 * @generated
-	 */
-	public Adapter createCreationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Strategy <em>Strategy</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Strategy
-	 * @generated
-	 */
-	public Adapter createStrategyAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Manual <em>Manual</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -295,6 +353,146 @@ public class HorizontalelasticityAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDynamicAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Simpledynamic <em>Simpledynamic</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Simpledynamic
+	 * @generated
+	 */
+	public Adapter createSimpledynamicAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Stepdynamic <em>Stepdynamic</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Stepdynamic
+	 * @generated
+	 */
+	public Adapter createStepdynamicAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamicadjustment <em>Dynamicadjustment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamicadjustment
+	 * @generated
+	 */
+	public Adapter createDynamicadjustmentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Creation <em>Creation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Creation
+	 * @generated
+	 */
+	public Adapter createCreationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Steps <em>Steps</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Steps
+	 * @generated
+	 */
+	public Adapter createStepsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Rule <em>Rule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Rule
+	 * @generated
+	 */
+	public Adapter createRuleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Action <em>Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Action
+	 * @generated
+	 */
+	public Adapter createActionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Scheduler <em>Scheduler</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Scheduler
+	 * @generated
+	 */
+	public Adapter createSchedulerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Uniqueschedule <em>Uniqueschedule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Uniqueschedule
+	 * @generated
+	 */
+	public Adapter createUniquescheduleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Recurringschedule <em>Recurringschedule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Recurringschedule
+	 * @generated
+	 */
+	public Adapter createRecurringscheduleAdapter() {
 		return null;
 	}
 

@@ -309,11 +309,11 @@ public class LoadbalancerImpl extends ResourceImpl implements Loadbalancer {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (LoadbalancerName: ");
+		result.append(" (loadbalancerName: ");
 		result.append(loadbalancerName);
-		result.append(", LoadbalancerInstanceIP: ");
+		result.append(", loadbalancerInstanceIP: ");
 		result.append(loadbalancerInstanceIP);
-		result.append(", LoadbalancerAddress: ");
+		result.append(", loadbalancerAddress: ");
 		result.append(loadbalancerAddress);
 		result.append(')');
 		return result.toString();

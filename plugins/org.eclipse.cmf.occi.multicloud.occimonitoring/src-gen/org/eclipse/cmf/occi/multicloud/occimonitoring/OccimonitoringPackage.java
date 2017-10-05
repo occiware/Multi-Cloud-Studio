@@ -595,6 +595,350 @@ public interface OccimonitoringPackage extends EPackage {
 	int ZABBIXTEMPLATE_OPERATION_COUNT = OCCIPackage.RESOURCE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.occimonitoring.impl.HostgroulinkImpl <em>Hostgroulink</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.multicloud.occimonitoring.impl.HostgroulinkImpl
+	 * @see org.eclipse.cmf.occi.multicloud.occimonitoring.impl.OccimonitoringPackageImpl#getHostgroulink()
+	 * @generated
+	 */
+	int HOSTGROULINK = 3;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOSTGROULINK__ID = OCCIPackage.LINK__ID;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOSTGROULINK__TITLE = OCCIPackage.LINK__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOSTGROULINK__KIND = OCCIPackage.LINK__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Location</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOSTGROULINK__LOCATION = OCCIPackage.LINK__LOCATION;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOSTGROULINK__ATTRIBUTES = OCCIPackage.LINK__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Mixins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOSTGROULINK__MIXINS = OCCIPackage.LINK__MIXINS;
+
+	/**
+	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOSTGROULINK__PARTS = OCCIPackage.LINK__PARTS;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOSTGROULINK__SOURCE = OCCIPackage.LINK__SOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOSTGROULINK__TARGET = OCCIPackage.LINK__TARGET;
+
+	/**
+	 * The number of structural features of the '<em>Hostgroulink</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOSTGROULINK_FEATURE_COUNT = OCCIPackage.LINK_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Occi Create</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOSTGROULINK___OCCI_CREATE = OCCIPackage.LINK___OCCI_CREATE;
+
+	/**
+	 * The operation id for the '<em>Occi Retrieve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOSTGROULINK___OCCI_RETRIEVE = OCCIPackage.LINK___OCCI_RETRIEVE;
+
+	/**
+	 * The operation id for the '<em>Occi Update</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOSTGROULINK___OCCI_UPDATE = OCCIPackage.LINK___OCCI_UPDATE;
+
+	/**
+	 * The operation id for the '<em>Occi Delete</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOSTGROULINK___OCCI_DELETE = OCCIPackage.LINK___OCCI_DELETE;
+
+	/**
+	 * The operation id for the '<em>Link Target Invariant</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOSTGROULINK___LINK_TARGET_INVARIANT__KIND_KIND = OCCIPackage.LINK___LINK_TARGET_INVARIANT__KIND_KIND;
+
+	/**
+	 * The operation id for the '<em>Link Source Invariant</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOSTGROULINK___LINK_SOURCE_INVARIANT__KIND_KIND = OCCIPackage.LINK___LINK_SOURCE_INVARIANT__KIND_KIND;
+
+	/**
+	 * The operation id for the '<em>Target Constraint</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOSTGROULINK___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.LINK_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Hostgroulink</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOSTGROULINK_OPERATION_COUNT = OCCIPackage.LINK_OPERATION_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.occimonitoring.impl.TemplatelinkImpl <em>Templatelink</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.multicloud.occimonitoring.impl.TemplatelinkImpl
+	 * @see org.eclipse.cmf.occi.multicloud.occimonitoring.impl.OccimonitoringPackageImpl#getTemplatelink()
+	 * @generated
+	 */
+	int TEMPLATELINK = 4;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEMPLATELINK__ID = OCCIPackage.LINK__ID;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEMPLATELINK__TITLE = OCCIPackage.LINK__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEMPLATELINK__KIND = OCCIPackage.LINK__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Location</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEMPLATELINK__LOCATION = OCCIPackage.LINK__LOCATION;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEMPLATELINK__ATTRIBUTES = OCCIPackage.LINK__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Mixins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEMPLATELINK__MIXINS = OCCIPackage.LINK__MIXINS;
+
+	/**
+	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEMPLATELINK__PARTS = OCCIPackage.LINK__PARTS;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEMPLATELINK__SOURCE = OCCIPackage.LINK__SOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEMPLATELINK__TARGET = OCCIPackage.LINK__TARGET;
+
+	/**
+	 * The number of structural features of the '<em>Templatelink</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEMPLATELINK_FEATURE_COUNT = OCCIPackage.LINK_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Occi Create</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEMPLATELINK___OCCI_CREATE = OCCIPackage.LINK___OCCI_CREATE;
+
+	/**
+	 * The operation id for the '<em>Occi Retrieve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEMPLATELINK___OCCI_RETRIEVE = OCCIPackage.LINK___OCCI_RETRIEVE;
+
+	/**
+	 * The operation id for the '<em>Occi Update</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEMPLATELINK___OCCI_UPDATE = OCCIPackage.LINK___OCCI_UPDATE;
+
+	/**
+	 * The operation id for the '<em>Occi Delete</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEMPLATELINK___OCCI_DELETE = OCCIPackage.LINK___OCCI_DELETE;
+
+	/**
+	 * The operation id for the '<em>Link Target Invariant</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEMPLATELINK___LINK_TARGET_INVARIANT__KIND_KIND = OCCIPackage.LINK___LINK_TARGET_INVARIANT__KIND_KIND;
+
+	/**
+	 * The operation id for the '<em>Link Source Invariant</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEMPLATELINK___LINK_SOURCE_INVARIANT__KIND_KIND = OCCIPackage.LINK___LINK_SOURCE_INVARIANT__KIND_KIND;
+
+	/**
+	 * The operation id for the '<em>Target Constraint</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEMPLATELINK___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.LINK_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Templatelink</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEMPLATELINK_OPERATION_COUNT = OCCIPackage.LINK_OPERATION_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.occimonitoring.impl.MetricsImpl <em>Metrics</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -602,7 +946,7 @@ public interface OccimonitoringPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.occimonitoring.impl.OccimonitoringPackageImpl#getMetrics()
 	 * @generated
 	 */
-	int METRICS = 3;
+	int METRICS = 5;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -666,7 +1010,7 @@ public interface OccimonitoringPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.occimonitoring.impl.OccimonitoringPackageImpl#getCpuusage()
 	 * @generated
 	 */
-	int CPUUSAGE = 4;
+	int CPUUSAGE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -714,13 +1058,22 @@ public interface OccimonitoringPackage extends EPackage {
 	int CPUUSAGE_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Getmetric</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CPUUSAGE___GETMETRIC = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
+
+	/**
 	 * The operation id for the '<em>Applies Constraint</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CPUUSAGE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
+	int CPUUSAGE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Cpuusage</em>' class.
@@ -729,7 +1082,7 @@ public interface OccimonitoringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CPUUSAGE_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
+	int CPUUSAGE_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.occimonitoring.impl.MemoryusageImpl <em>Memoryusage</em>}' class.
@@ -739,7 +1092,7 @@ public interface OccimonitoringPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.occimonitoring.impl.OccimonitoringPackageImpl#getMemoryusage()
 	 * @generated
 	 */
-	int MEMORYUSAGE = 5;
+	int MEMORYUSAGE = 7;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -787,13 +1140,22 @@ public interface OccimonitoringPackage extends EPackage {
 	int MEMORYUSAGE_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Getmetric</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEMORYUSAGE___GETMETRIC = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
+
+	/**
 	 * The operation id for the '<em>Applies Constraint</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MEMORYUSAGE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
+	int MEMORYUSAGE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Memoryusage</em>' class.
@@ -802,7 +1164,7 @@ public interface OccimonitoringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEMORYUSAGE_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
+	int MEMORYUSAGE_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 3;
 
 	/**
 	 * The meta object id for the '<em>Double</em>' data type.
@@ -812,7 +1174,7 @@ public interface OccimonitoringPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.occimonitoring.impl.OccimonitoringPackageImpl#getDouble()
 	 * @generated
 	 */
-	int DOUBLE = 6;
+	int DOUBLE = 8;
 
 
 	/**
@@ -923,6 +1285,46 @@ public interface OccimonitoringPackage extends EPackage {
 	EAttribute getZabbixtemplate_ZabbixtemplateHostsids();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.occimonitoring.Hostgroulink <em>Hostgroulink</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Hostgroulink</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.occimonitoring.Hostgroulink
+	 * @generated
+	 */
+	EClass getHostgroulink();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.occimonitoring.Hostgroulink#targetConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Target Constraint</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Target Constraint</em>' operation.
+	 * @see org.eclipse.cmf.occi.multicloud.occimonitoring.Hostgroulink#targetConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getHostgroulink__TargetConstraint__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.occimonitoring.Templatelink <em>Templatelink</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Templatelink</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.occimonitoring.Templatelink
+	 * @generated
+	 */
+	EClass getTemplatelink();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.occimonitoring.Templatelink#targetConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Target Constraint</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Target Constraint</em>' operation.
+	 * @see org.eclipse.cmf.occi.multicloud.occimonitoring.Templatelink#targetConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getTemplatelink__TargetConstraint__DiagnosticChain_Map();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.occimonitoring.Metrics <em>Metrics</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -964,6 +1366,16 @@ public interface OccimonitoringPackage extends EPackage {
 	EAttribute getCpuusage_CpuUsageCpuUsage();
 
 	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.occimonitoring.Cpuusage#getmetric() <em>Getmetric</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Getmetric</em>' operation.
+	 * @see org.eclipse.cmf.occi.multicloud.occimonitoring.Cpuusage#getmetric()
+	 * @generated
+	 */
+	EOperation getCpuusage__Getmetric();
+
+	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.occimonitoring.Cpuusage#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -993,6 +1405,16 @@ public interface OccimonitoringPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getMemoryusage_MemoryUsageMemUsage();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.occimonitoring.Memoryusage#getmetric() <em>Getmetric</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Getmetric</em>' operation.
+	 * @see org.eclipse.cmf.occi.multicloud.occimonitoring.Memoryusage#getmetric()
+	 * @generated
+	 */
+	EOperation getMemoryusage__Getmetric();
 
 	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.occimonitoring.Memoryusage#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
@@ -1125,6 +1547,42 @@ public interface OccimonitoringPackage extends EPackage {
 		EAttribute ZABBIXTEMPLATE__ZABBIXTEMPLATE_HOSTSIDS = eINSTANCE.getZabbixtemplate_ZabbixtemplateHostsids();
 
 		/**
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.occimonitoring.impl.HostgroulinkImpl <em>Hostgroulink</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.cmf.occi.multicloud.occimonitoring.impl.HostgroulinkImpl
+		 * @see org.eclipse.cmf.occi.multicloud.occimonitoring.impl.OccimonitoringPackageImpl#getHostgroulink()
+		 * @generated
+		 */
+		EClass HOSTGROULINK = eINSTANCE.getHostgroulink();
+
+		/**
+		 * The meta object literal for the '<em><b>Target Constraint</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation HOSTGROULINK___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getHostgroulink__TargetConstraint__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.occimonitoring.impl.TemplatelinkImpl <em>Templatelink</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.cmf.occi.multicloud.occimonitoring.impl.TemplatelinkImpl
+		 * @see org.eclipse.cmf.occi.multicloud.occimonitoring.impl.OccimonitoringPackageImpl#getTemplatelink()
+		 * @generated
+		 */
+		EClass TEMPLATELINK = eINSTANCE.getTemplatelink();
+
+		/**
+		 * The meta object literal for the '<em><b>Target Constraint</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TEMPLATELINK___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getTemplatelink__TargetConstraint__DiagnosticChain_Map();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.occimonitoring.impl.MetricsImpl <em>Metrics</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1161,6 +1619,14 @@ public interface OccimonitoringPackage extends EPackage {
 		EAttribute CPUUSAGE__CPU_USAGE_CPU_USAGE = eINSTANCE.getCpuusage_CpuUsageCpuUsage();
 
 		/**
+		 * The meta object literal for the '<em><b>Getmetric</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CPUUSAGE___GETMETRIC = eINSTANCE.getCpuusage__Getmetric();
+
+		/**
 		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1185,6 +1651,14 @@ public interface OccimonitoringPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MEMORYUSAGE__MEMORY_USAGE_MEM_USAGE = eINSTANCE.getMemoryusage_MemoryUsageMemUsage();
+
+		/**
+		 * The meta object literal for the '<em><b>Getmetric</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MEMORYUSAGE___GETMETRIC = eINSTANCE.getMemoryusage__Getmetric();
 
 		/**
 		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.

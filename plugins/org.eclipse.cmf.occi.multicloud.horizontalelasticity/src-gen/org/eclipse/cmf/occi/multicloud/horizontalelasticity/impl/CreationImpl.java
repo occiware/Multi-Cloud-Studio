@@ -14,37 +14,41 @@ package org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl;
 
 import java.lang.reflect.InvocationTargetException;
 
-import java.sql.Time;
-
+import java.util.Date;
 import java.util.Map;
 
 import org.eclipse.cmf.occi.core.Entity;
+
 import org.eclipse.cmf.occi.core.impl.MixinBaseImpl;
 
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Creation;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage;
-
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables;
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.util.HorizontalelasticityValidator;
 
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.ocl.pivot.evaluation.Executor;
+
 import org.eclipse.ocl.pivot.ids.IdResolver;
 import org.eclipse.ocl.pivot.ids.TypeId;
+
 import org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal;
+
 import org.eclipse.ocl.pivot.library.oclany.OclAnyOclIsKindOfOperation;
 import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation;
+
 import org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation;
 import org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation;
+
 import org.eclipse.ocl.pivot.utilities.ValueUtil;
+
 import org.eclipse.ocl.pivot.values.IntegerValue;
 
 /**
@@ -69,7 +73,7 @@ public class CreationImpl extends MixinBaseImpl implements Creation {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Time OCCI_COMPUTE_CREATION_DATE_EDEFAULT = null;
+	protected static final Date OCCI_COMPUTE_CREATION_DATE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getOcciComputeCreationDate() <em>Occi Compute Creation Date</em>}' attribute.
@@ -79,7 +83,7 @@ public class CreationImpl extends MixinBaseImpl implements Creation {
 	 * @generated
 	 * @ordered
 	 */
-	protected Time occiComputeCreationDate = OCCI_COMPUTE_CREATION_DATE_EDEFAULT;
+	protected Date occiComputeCreationDate = OCCI_COMPUTE_CREATION_DATE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -105,7 +109,7 @@ public class CreationImpl extends MixinBaseImpl implements Creation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Time getOcciComputeCreationDate() {
+	public Date getOcciComputeCreationDate() {
 		return occiComputeCreationDate;
 	}
 
@@ -114,8 +118,8 @@ public class CreationImpl extends MixinBaseImpl implements Creation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOcciComputeCreationDate(Time newOcciComputeCreationDate) {
-		Time oldOcciComputeCreationDate = occiComputeCreationDate;
+	public void setOcciComputeCreationDate(Date newOcciComputeCreationDate) {
+		Date oldOcciComputeCreationDate = occiComputeCreationDate;
 		occiComputeCreationDate = newOcciComputeCreationDate;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.CREATION__OCCI_COMPUTE_CREATION_DATE, oldOcciComputeCreationDate, occiComputeCreationDate));
@@ -182,7 +186,7 @@ public class CreationImpl extends MixinBaseImpl implements Creation {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case HorizontalelasticityPackage.CREATION__OCCI_COMPUTE_CREATION_DATE:
-				setOcciComputeCreationDate((Time)newValue);
+				setOcciComputeCreationDate((Date)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

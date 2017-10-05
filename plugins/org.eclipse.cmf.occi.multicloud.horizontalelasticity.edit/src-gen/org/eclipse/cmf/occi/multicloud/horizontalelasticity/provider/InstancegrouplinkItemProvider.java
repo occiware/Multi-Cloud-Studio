@@ -122,17 +122,32 @@ public class InstancegrouplinkItemProvider extends LinkItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
-				 HorizontalelasticityFactory.eINSTANCE.createStrategy()));
+				 HorizontalelasticityFactory.eINSTANCE.createSteps()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
-				 HorizontalelasticityFactory.eINSTANCE.createManual()));
+				 HorizontalelasticityFactory.eINSTANCE.createRule()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
-				 HorizontalelasticityFactory.eINSTANCE.createDynamic()));
+				 HorizontalelasticityFactory.eINSTANCE.createAction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createScheduler()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createUniqueschedule()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createRecurringschedule()));
 
 		newChildDescriptors.add
 			(createChildParameter

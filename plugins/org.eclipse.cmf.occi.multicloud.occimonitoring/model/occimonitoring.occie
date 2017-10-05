@@ -31,12 +31,20 @@
     </attributes>
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
   </kinds>
+  <kinds name="HostgrouLink" scheme="http://org.eclipse.cmf.occi.multicloud.occimonitoring#" source="//@kinds[term='zabbixinstance']" target="//@kinds[term='hostgroup']">
+    <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
+  </kinds>
+  <kinds name="TemplateLink" scheme="http://org.eclipse.cmf.occi.multicloud.occimonitoring#" source="//@kinds[term='zabbixinstance']" target="//@kinds[term='zabbixtemplate']">
+    <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
+  </kinds>
   <mixins name="Metrics" scheme="http://org.eclipse.cmf.occi.multicloud.occimonitoring#" applies="//@kinds[term='zabbixinstance']"/>
   <mixins name="CpuUsage" scheme="http://org.eclipse.cmf.occi.multicloud.occimonitoring#" title="" depends="//@mixins[term='metrics']" applies="//@kinds[term='zabbixinstance']">
     <attributes name="cpuUsage.cpuUsage" mutable="true" default="" type="//@types.0"/>
+    <actions name="getmetric" scheme="http://org.eclipse.cmf.occi.multicloud.occimonitoring/cpuusage/action#"/>
   </mixins>
   <mixins name="MemoryUsage" scheme="http://org.eclipse.cmf.occi.multicloud.occimonitoring#" depends="//@mixins[term='metrics']" applies="//@kinds[term='zabbixinstance']">
     <attributes name="memoryUsage.memUsage" mutable="true" default="" type="//@types.0"/>
+    <actions name="getmetric" scheme="http://org.eclipse.cmf.occi.multicloud.occimonitoring/memoryusage/action#"/>
   </mixins>
   <types xsi:type="occi:NumericType" name="Double" type="Double"/>
 </occi:Extension>

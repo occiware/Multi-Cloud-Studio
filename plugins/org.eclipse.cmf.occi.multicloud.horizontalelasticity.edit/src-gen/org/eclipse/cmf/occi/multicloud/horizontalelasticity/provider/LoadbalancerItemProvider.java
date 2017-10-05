@@ -82,8 +82,8 @@ public class LoadbalancerItemProvider extends ResourceItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Loadbalancer_LoadbalancerName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Loadbalancer_LoadbalancerName_feature", "_UI_Loadbalancer_type"),
+				 getString("_UI_Loadbalancer_loadbalancerName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Loadbalancer_loadbalancerName_feature", "_UI_Loadbalancer_type"),
 				 HorizontalelasticityPackage.Literals.LOADBALANCER__LOADBALANCER_NAME,
 				 true,
 				 false,
@@ -104,8 +104,8 @@ public class LoadbalancerItemProvider extends ResourceItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Loadbalancer_LoadbalancerInstanceIP_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Loadbalancer_LoadbalancerInstanceIP_feature", "_UI_Loadbalancer_type"),
+				 getString("_UI_Loadbalancer_loadbalancerInstanceIP_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Loadbalancer_loadbalancerInstanceIP_feature", "_UI_Loadbalancer_type"),
 				 HorizontalelasticityPackage.Literals.LOADBALANCER__LOADBALANCER_INSTANCE_IP,
 				 true,
 				 false,
@@ -126,8 +126,8 @@ public class LoadbalancerItemProvider extends ResourceItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Loadbalancer_LoadbalancerAddress_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Loadbalancer_LoadbalancerAddress_feature", "_UI_Loadbalancer_type"),
+				 getString("_UI_Loadbalancer_loadbalancerAddress_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Loadbalancer_loadbalancerAddress_feature", "_UI_Loadbalancer_type"),
 				 HorizontalelasticityPackage.Literals.LOADBALANCER__LOADBALANCER_ADDRESS,
 				 true,
 				 false,
@@ -203,17 +203,32 @@ public class LoadbalancerItemProvider extends ResourceItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
-				 HorizontalelasticityFactory.eINSTANCE.createStrategy()));
+				 HorizontalelasticityFactory.eINSTANCE.createSteps()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
-				 HorizontalelasticityFactory.eINSTANCE.createManual()));
+				 HorizontalelasticityFactory.eINSTANCE.createRule()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
-				 HorizontalelasticityFactory.eINSTANCE.createDynamic()));
+				 HorizontalelasticityFactory.eINSTANCE.createAction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createScheduler()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createUniqueschedule()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createRecurringschedule()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -453,17 +453,17 @@ public class HorizontalgroupImpl extends ResourceImpl implements Horizontalgroup
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (HorizontalGroupName: ");
+		result.append(" (horizontalGroupName: ");
 		result.append(horizontalGroupName);
-		result.append(", HorizontalGroupGroupSize: ");
+		result.append(", horizontalGroupGroupSize: ");
 		result.append(horizontalGroupGroupSize);
-		result.append(", HorizontalGroupMaximum: ");
+		result.append(", horizontalGroupMaximum: ");
 		result.append(horizontalGroupMaximum);
-		result.append(", HorizontalGroupMinimum: ");
+		result.append(", horizontalGroupMinimum: ");
 		result.append(horizontalGroupMinimum);
-		result.append(", HorizontalGroupTemplateName: ");
+		result.append(", horizontalGroupTemplateName: ");
 		result.append(horizontalGroupTemplateName);
-		result.append(", HorizontalGroupLoadBalancer: ");
+		result.append(", horizontalGroupLoadBalancer: ");
 		result.append(horizontalGroupLoadBalancer);
 		result.append(')');
 		return result.toString();

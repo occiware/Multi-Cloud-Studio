@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry exported="true" kind="lib" path="META-INF/lib/jsch-0.1.54.jar"/>
-	<classpathentry exported="true" kind="lib" path="META-INF/lib/json-20080701.jar"/>
-	<classpathentry exported="true" kind="lib" path="META-INF/lib/david-webb-1.3.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="META-INF/lib/org.eclipse.emf.transaction_1.9.0.201706061339.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="src-gen"/>
 	<classpathentry kind="src" path="/org.eclipse.cmf.occi.multicloud.horizontalelasticity"/>

@@ -37,7 +37,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ManualItemProvider extends MixinBaseItemProvider {
+public class ManualItemProvider extends HorizontalelasticcontrollerItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -60,6 +60,8 @@ public class ManualItemProvider extends MixinBaseItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addManualGroupSizePropertyDescriptor(object);
+			addManualMaxGroupSizePropertyDescriptor(object);
+			addManualMinGroupSizePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -75,9 +77,53 @@ public class ManualItemProvider extends MixinBaseItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Manual_ManualGroupSize_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Manual_ManualGroupSize_feature", "_UI_Manual_type"),
+				 getString("_UI_Manual_manualGroupSize_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Manual_manualGroupSize_feature", "_UI_Manual_type"),
 				 HorizontalelasticityPackage.Literals.MANUAL__MANUAL_GROUP_SIZE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Manual Max Group Size feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addManualMaxGroupSizePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Manual_manualMaxGroupSize_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Manual_manualMaxGroupSize_feature", "_UI_Manual_type"),
+				 HorizontalelasticityPackage.Literals.MANUAL__MANUAL_MAX_GROUP_SIZE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Manual Min Group Size feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addManualMinGroupSizePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Manual_manualMinGroupSize_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Manual_manualMinGroupSize_feature", "_UI_Manual_type"),
+				 HorizontalelasticityPackage.Literals.MANUAL__MANUAL_MIN_GROUP_SIZE,
 				 true,
 				 false,
 				 false,
@@ -105,7 +151,7 @@ public class ManualItemProvider extends MixinBaseItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Manual)object).getManualGroupSize();
+		String label = ((Manual)object).getId();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Manual_type") :
 			getString("_UI_Manual_type") + " " + label;
@@ -125,6 +171,8 @@ public class ManualItemProvider extends MixinBaseItemProvider {
 
 		switch (notification.getFeatureID(Manual.class)) {
 			case HorizontalelasticityPackage.MANUAL__MANUAL_GROUP_SIZE:
+			case HorizontalelasticityPackage.MANUAL__MANUAL_MAX_GROUP_SIZE:
+			case HorizontalelasticityPackage.MANUAL__MANUAL_MIN_GROUP_SIZE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -141,17 +189,6 @@ public class ManualItemProvider extends MixinBaseItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return HorizontalelasticityEditPlugin.INSTANCE;
 	}
 
 }

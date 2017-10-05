@@ -12,8 +12,7 @@
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity;
 
-import java.sql.Time;
-
+import java.util.Date;
 import java.util.Map;
 
 import org.eclipse.cmf.occi.core.MixinBase;
@@ -45,13 +44,13 @@ public interface Creation extends MixinBase {
 	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Occi Compute Creation Date</em>' attribute.
-	 * @see #setOcciComputeCreationDate(Time)
+	 * @see #setOcciComputeCreationDate(Date)
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getCreation_OcciComputeCreationDate()
 	 * @model dataType="org.eclipse.cmf.occi.multicloud.horizontalelasticity.Date"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Creation!occiComputeCreationDate'"
 	 * @generated
 	 */
-	Time getOcciComputeCreationDate();
+	Date getOcciComputeCreationDate();
 
 	/**
 	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Creation#getOcciComputeCreationDate <em>Occi Compute Creation Date</em>}' attribute.
@@ -61,7 +60,7 @@ public interface Creation extends MixinBase {
 	 * @see #getOcciComputeCreationDate()
 	 * @generated
 	 */
-	void setOcciComputeCreationDate(Time value);
+	void setOcciComputeCreationDate(Date value);
 
 	/**
 	 * <!-- begin-user-doc -->

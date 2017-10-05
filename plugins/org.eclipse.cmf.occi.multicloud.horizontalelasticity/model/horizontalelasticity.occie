@@ -104,7 +104,7 @@
     </attributes>
     <attributes name="dynamicAdjustment.Target" mutable="true" type="//@types.1"/>
   </kinds>
-  <kinds name="Rule" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#">
+  <kinds name="Rule" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" source="//@kinds[term='simpledynamic']" target="//@kinds[term='action']">
     <attributes name="rule.name" mutable="true">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
@@ -117,6 +117,13 @@
     <attributes name="rule.consecutive" mutable="true">
       <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
     </attributes>
+    <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
+  </kinds>
+  <kinds name="Action" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#">
+    <attributes name="action" mutable="true" type="//@types.3"/>
+    <attributes name="actionType" mutable="true" type="//@types.4"/>
+    <attributes name="amount" mutable="true" type="//@types.1"/>
+    <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
   </kinds>
   <mixins name="Creation" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#">
     <attributes name="occi.compute.creation.date" mutable="true" type="//@types.9"/>
@@ -125,11 +132,6 @@
   <mixins name="Steps" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" applies="//@kinds[term='stepdynamic']">
     <attributes name="steps.lowerStepBound" mutable="true" type="//@types.1"/>
     <attributes name="steps.upperStepBound" mutable="true" type="//@types.1"/>
-  </mixins>
-  <mixins name="Action" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" applies="//@kinds[term='rule']">
-    <attributes name="action.action" mutable="true" type="//@types.3"/>
-    <attributes name="action.actionType" mutable="true" type="//@types.4"/>
-    <attributes name="action.amount" mutable="true" type="//@types.1"/>
   </mixins>
   <mixins name="Scheduler" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" title="">
     <attributes name="scheduler.startDate" mutable="true" type="//@types.9"/>

@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Mon Sep 18 17:56:08 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Wed Oct 04 16:03:06 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
@@ -95,4 +95,36 @@ public class DynamicConnector extends org.eclipse.cmf.occi.multicloud.horizontal
 	//
 	// Dynamic actions.
 	//
+	// Start of user code Dynamic_Kind_start_action
+	/**
+	 * Implement OCCI action:
+     * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/dynamic/action#
+     * - term: start
+     * - title: 
+	 */
+	@Override
+	public void start()
+	{
+		LOGGER.debug("Action start() called on " + this);
+
+		// TODO: Implement how to start this dynamic.
+	}
+		// End of user code
+
+	// Start of user code Dynamic_Kind_stop_action
+	/**
+	 * Implement OCCI action:
+     * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/dynamic/action#
+     * - term: stop
+     * - title: 
+	 */
+	@Override
+	public void stop()
+	{
+		LOGGER.debug("Action stop() called on " + this);
+
+		// TODO: Implement how to stop this dynamic.
+	}
+		// End of user code
+
 }	

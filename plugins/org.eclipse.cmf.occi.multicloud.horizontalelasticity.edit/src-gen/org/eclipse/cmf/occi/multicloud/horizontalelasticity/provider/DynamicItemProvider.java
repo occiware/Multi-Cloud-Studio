@@ -16,12 +16,19 @@ package org.eclipse.cmf.occi.multicloud.horizontalelasticity.provider;
 import java.util.Collection;
 import java.util.List;
 
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamic;
+import org.eclipse.cmf.occi.core.provider.MixinBaseItemProvider;
 
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamic;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
+
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamic} object.
@@ -29,7 +36,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DynamicItemProvider extends ScalingstrategyItemProvider {
+public class DynamicItemProvider extends HorizontalelasticcontrollerItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -51,8 +58,77 @@ public class DynamicItemProvider extends ScalingstrategyItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addDynamicGroupSizePropertyDescriptor(object);
+			addDynamicMaxGroupSizePropertyDescriptor(object);
+			addDynamicMinGroupSizePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Dynamic Group Size feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDynamicGroupSizePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Dynamic_dynamicGroupSize_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Dynamic_dynamicGroupSize_feature", "_UI_Dynamic_type"),
+				 HorizontalelasticityPackage.Literals.DYNAMIC__DYNAMIC_GROUP_SIZE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Dynamic Max Group Size feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDynamicMaxGroupSizePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Dynamic_dynamicMaxGroupSize_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Dynamic_dynamicMaxGroupSize_feature", "_UI_Dynamic_type"),
+				 HorizontalelasticityPackage.Literals.DYNAMIC__DYNAMIC_MAX_GROUP_SIZE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Dynamic Min Group Size feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDynamicMinGroupSizePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Dynamic_dynamicMinGroupSize_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Dynamic_dynamicMinGroupSize_feature", "_UI_Dynamic_type"),
+				 HorizontalelasticityPackage.Literals.DYNAMIC__DYNAMIC_MIN_GROUP_SIZE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -91,6 +167,14 @@ public class DynamicItemProvider extends ScalingstrategyItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(Dynamic.class)) {
+			case HorizontalelasticityPackage.DYNAMIC__DYNAMIC_GROUP_SIZE:
+			case HorizontalelasticityPackage.DYNAMIC__DYNAMIC_MAX_GROUP_SIZE:
+			case HorizontalelasticityPackage.DYNAMIC__DYNAMIC_MIN_GROUP_SIZE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

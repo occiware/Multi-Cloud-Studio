@@ -32,6 +32,33 @@ public interface HorizontalelasticityFactory extends EFactory {
 	HorizontalelasticityFactory eINSTANCE = org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Recurrence Step</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Recurrence Step</em>'.
+	 * @generated
+	 */
+	RecurrenceStep createRecurrenceStep();
+
+	/**
+	 * Returns a new object of class '<em>Array</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Array</em>'.
+	 * @generated
+	 */
+	Array createArray();
+
+	/**
+	 * Returns a new object of class '<em>Arrayof Recurrence Step</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Arrayof Recurrence Step</em>'.
+	 * @generated
+	 */
+	ArrayofRecurrenceStep createArrayofRecurrenceStep();
+
+	/**
 	 * Returns a new object of class '<em>Horizontalgroup</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -50,31 +77,40 @@ public interface HorizontalelasticityFactory extends EFactory {
 	Loadbalancer createLoadbalancer();
 
 	/**
-	 * Returns a new object of class '<em>Instance</em>'.
+	 * Returns a new object of class '<em>Horizontalelasticcontroller</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Instance</em>'.
+	 * @return a new object of class '<em>Horizontalelasticcontroller</em>'.
 	 * @generated
 	 */
-	Instance createInstance();
+	Horizontalelasticcontroller createHorizontalelasticcontroller();
 
 	/**
-	 * Returns a new object of class '<em>Horizontalelasticcontoller</em>'.
+	 * Returns a new object of class '<em>Instancegrouplink</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Horizontalelasticcontoller</em>'.
+	 * @return a new object of class '<em>Instancegrouplink</em>'.
 	 * @generated
 	 */
-	Horizontalelasticcontoller createHorizontalelasticcontoller();
+	Instancegrouplink createInstancegrouplink();
 
 	/**
-	 * Returns a new object of class '<em>Scalingstrategy</em>'.
+	 * Returns a new object of class '<em>Linkbalancer</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Scalingstrategy</em>'.
+	 * @return a new object of class '<em>Linkbalancer</em>'.
 	 * @generated
 	 */
-	Scalingstrategy createScalingstrategy();
+	Linkbalancer createLinkbalancer();
+
+	/**
+	 * Returns a new object of class '<em>Grouplink</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Grouplink</em>'.
+	 * @generated
+	 */
+	Grouplink createGrouplink();
 
 	/**
 	 * Returns a new object of class '<em>Manual</em>'.
@@ -95,22 +131,94 @@ public interface HorizontalelasticityFactory extends EFactory {
 	Dynamic createDynamic();
 
 	/**
-	 * Returns a new object of class '<em>Instancegrouplink</em>'.
+	 * Returns a new object of class '<em>Simpledynamic</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Instancegrouplink</em>'.
+	 * @return a new object of class '<em>Simpledynamic</em>'.
 	 * @generated
 	 */
-	Instancegrouplink createInstancegrouplink();
+	Simpledynamic createSimpledynamic();
 
 	/**
-	 * Returns a new object of class '<em>Linkbalancer</em>'.
+	 * Returns a new object of class '<em>Stepdynamic</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Linkbalancer</em>'.
+	 * @return a new object of class '<em>Stepdynamic</em>'.
 	 * @generated
 	 */
-	Linkbalancer createLinkbalancer();
+	Stepdynamic createStepdynamic();
+
+	/**
+	 * Returns a new object of class '<em>Dynamicadjustment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Dynamicadjustment</em>'.
+	 * @generated
+	 */
+	Dynamicadjustment createDynamicadjustment();
+
+	/**
+	 * Returns a new object of class '<em>Creation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Creation</em>'.
+	 * @generated
+	 */
+	Creation createCreation();
+
+	/**
+	 * Returns a new object of class '<em>Steps</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Steps</em>'.
+	 * @generated
+	 */
+	Steps createSteps();
+
+	/**
+	 * Returns a new object of class '<em>Rule</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Rule</em>'.
+	 * @generated
+	 */
+	Rule createRule();
+
+	/**
+	 * Returns a new object of class '<em>Action</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Action</em>'.
+	 * @generated
+	 */
+	Action createAction();
+
+	/**
+	 * Returns a new object of class '<em>Scheduler</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Scheduler</em>'.
+	 * @generated
+	 */
+	Scheduler createScheduler();
+
+	/**
+	 * Returns a new object of class '<em>Uniqueschedule</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Uniqueschedule</em>'.
+	 * @generated
+	 */
+	Uniqueschedule createUniqueschedule();
+
+	/**
+	 * Returns a new object of class '<em>Recurringschedule</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Recurringschedule</em>'.
+	 * @generated
+	 */
+	Recurringschedule createRecurringschedule();
 
 	/**
 	 * Returns the package supported by this factory.

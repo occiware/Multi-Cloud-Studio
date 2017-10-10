@@ -82,6 +82,75 @@ public class HorizontalelasticityItemProviderAdapterFactory extends Horizontalel
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.RecurrenceStep} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RecurrenceStepItemProvider recurrenceStepItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.RecurrenceStep}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRecurrenceStepAdapter() {
+		if (recurrenceStepItemProvider == null) {
+			recurrenceStepItemProvider = new RecurrenceStepItemProvider(this);
+		}
+
+		return recurrenceStepItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Array} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ArrayItemProvider arrayItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Array}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createArrayAdapter() {
+		if (arrayItemProvider == null) {
+			arrayItemProvider = new ArrayItemProvider(this);
+		}
+
+		return arrayItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.ArrayofRecurrenceStep} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ArrayofRecurrenceStepItemProvider arrayofRecurrenceStepItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.ArrayofRecurrenceStep}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createArrayofRecurrenceStepAdapter() {
+		if (arrayofRecurrenceStepItemProvider == null) {
+			arrayofRecurrenceStepItemProvider = new ArrayofRecurrenceStepItemProvider(this);
+		}
+
+		return arrayofRecurrenceStepItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -128,72 +197,256 @@ public class HorizontalelasticityItemProviderAdapterFactory extends Horizontalel
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Instance} instances.
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalelasticcontroller} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected InstanceItemProvider instanceItemProvider;
+	protected HorizontalelasticcontrollerItemProvider horizontalelasticcontrollerItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Instance}.
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalelasticcontroller}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createInstanceAdapter() {
-		if (instanceItemProvider == null) {
-			instanceItemProvider = new InstanceItemProvider(this);
+	public Adapter createHorizontalelasticcontrollerAdapter() {
+		if (horizontalelasticcontrollerItemProvider == null) {
+			horizontalelasticcontrollerItemProvider = new HorizontalelasticcontrollerItemProvider(this);
 		}
 
-		return instanceItemProvider;
+		return horizontalelasticcontrollerItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalelasticcontoller} instances.
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Instancegrouplink} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected HorizontalelasticcontollerItemProvider horizontalelasticcontollerItemProvider;
+	protected InstancegrouplinkItemProvider instancegrouplinkItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalelasticcontoller}.
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Instancegrouplink}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createHorizontalelasticcontollerAdapter() {
-		if (horizontalelasticcontollerItemProvider == null) {
-			horizontalelasticcontollerItemProvider = new HorizontalelasticcontollerItemProvider(this);
+	public Adapter createInstancegrouplinkAdapter() {
+		if (instancegrouplinkItemProvider == null) {
+			instancegrouplinkItemProvider = new InstancegrouplinkItemProvider(this);
 		}
 
-		return horizontalelasticcontollerItemProvider;
+		return instancegrouplinkItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Scalingstrategy} instances.
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Linkbalancer} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ScalingstrategyItemProvider scalingstrategyItemProvider;
+	protected LinkbalancerItemProvider linkbalancerItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Scalingstrategy}.
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Linkbalancer}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createScalingstrategyAdapter() {
-		if (scalingstrategyItemProvider == null) {
-			scalingstrategyItemProvider = new ScalingstrategyItemProvider(this);
+	public Adapter createLinkbalancerAdapter() {
+		if (linkbalancerItemProvider == null) {
+			linkbalancerItemProvider = new LinkbalancerItemProvider(this);
 		}
 
-		return scalingstrategyItemProvider;
+		return linkbalancerItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Grouplink} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected GrouplinkItemProvider grouplinkItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Grouplink}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createGrouplinkAdapter() {
+		if (grouplinkItemProvider == null) {
+			grouplinkItemProvider = new GrouplinkItemProvider(this);
+		}
+
+		return grouplinkItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Creation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CreationItemProvider creationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Creation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCreationAdapter() {
+		if (creationItemProvider == null) {
+			creationItemProvider = new CreationItemProvider(this);
+		}
+
+		return creationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Steps} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected StepsItemProvider stepsItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Steps}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createStepsAdapter() {
+		if (stepsItemProvider == null) {
+			stepsItemProvider = new StepsItemProvider(this);
+		}
+
+		return stepsItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Rule} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RuleItemProvider ruleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Rule}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRuleAdapter() {
+		if (ruleItemProvider == null) {
+			ruleItemProvider = new RuleItemProvider(this);
+		}
+
+		return ruleItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Action} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ActionItemProvider actionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Action}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createActionAdapter() {
+		if (actionItemProvider == null) {
+			actionItemProvider = new ActionItemProvider(this);
+		}
+
+		return actionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Scheduler} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SchedulerItemProvider schedulerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Scheduler}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSchedulerAdapter() {
+		if (schedulerItemProvider == null) {
+			schedulerItemProvider = new SchedulerItemProvider(this);
+		}
+
+		return schedulerItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Uniqueschedule} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected UniquescheduleItemProvider uniquescheduleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Uniqueschedule}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createUniquescheduleAdapter() {
+		if (uniquescheduleItemProvider == null) {
+			uniquescheduleItemProvider = new UniquescheduleItemProvider(this);
+		}
+
+		return uniquescheduleItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Recurringschedule} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RecurringscheduleItemProvider recurringscheduleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Recurringschedule}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRecurringscheduleAdapter() {
+		if (recurringscheduleItemProvider == null) {
+			recurringscheduleItemProvider = new RecurringscheduleItemProvider(this);
+		}
+
+		return recurringscheduleItemProvider;
 	}
 
 	/**
@@ -243,49 +496,72 @@ public class HorizontalelasticityItemProviderAdapterFactory extends Horizontalel
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Instancegrouplink} instances.
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Simpledynamic} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected InstancegrouplinkItemProvider instancegrouplinkItemProvider;
+	protected SimpledynamicItemProvider simpledynamicItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Instancegrouplink}.
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Simpledynamic}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createInstancegrouplinkAdapter() {
-		if (instancegrouplinkItemProvider == null) {
-			instancegrouplinkItemProvider = new InstancegrouplinkItemProvider(this);
+	public Adapter createSimpledynamicAdapter() {
+		if (simpledynamicItemProvider == null) {
+			simpledynamicItemProvider = new SimpledynamicItemProvider(this);
 		}
 
-		return instancegrouplinkItemProvider;
+		return simpledynamicItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Linkbalancer} instances.
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Stepdynamic} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected LinkbalancerItemProvider linkbalancerItemProvider;
+	protected StepdynamicItemProvider stepdynamicItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Linkbalancer}.
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Stepdynamic}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createLinkbalancerAdapter() {
-		if (linkbalancerItemProvider == null) {
-			linkbalancerItemProvider = new LinkbalancerItemProvider(this);
+	public Adapter createStepdynamicAdapter() {
+		if (stepdynamicItemProvider == null) {
+			stepdynamicItemProvider = new StepdynamicItemProvider(this);
 		}
 
-		return linkbalancerItemProvider;
+		return stepdynamicItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamicadjustment} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DynamicadjustmentItemProvider dynamicadjustmentItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamicadjustment}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDynamicadjustmentAdapter() {
+		if (dynamicadjustmentItemProvider == null) {
+			dynamicadjustmentItemProvider = new DynamicadjustmentItemProvider(this);
+		}
+
+		return dynamicadjustmentItemProvider;
 	}
 
 	/**
@@ -387,15 +663,27 @@ public class HorizontalelasticityItemProviderAdapterFactory extends Horizontalel
 	 * @generated
 	 */
 	public void dispose() {
+		if (recurrenceStepItemProvider != null) recurrenceStepItemProvider.dispose();
+		if (arrayItemProvider != null) arrayItemProvider.dispose();
+		if (arrayofRecurrenceStepItemProvider != null) arrayofRecurrenceStepItemProvider.dispose();
 		if (horizontalgroupItemProvider != null) horizontalgroupItemProvider.dispose();
 		if (loadbalancerItemProvider != null) loadbalancerItemProvider.dispose();
-		if (instanceItemProvider != null) instanceItemProvider.dispose();
-		if (horizontalelasticcontollerItemProvider != null) horizontalelasticcontollerItemProvider.dispose();
-		if (scalingstrategyItemProvider != null) scalingstrategyItemProvider.dispose();
-		if (manualItemProvider != null) manualItemProvider.dispose();
-		if (dynamicItemProvider != null) dynamicItemProvider.dispose();
+		if (horizontalelasticcontrollerItemProvider != null) horizontalelasticcontrollerItemProvider.dispose();
 		if (instancegrouplinkItemProvider != null) instancegrouplinkItemProvider.dispose();
 		if (linkbalancerItemProvider != null) linkbalancerItemProvider.dispose();
+		if (grouplinkItemProvider != null) grouplinkItemProvider.dispose();
+		if (manualItemProvider != null) manualItemProvider.dispose();
+		if (dynamicItemProvider != null) dynamicItemProvider.dispose();
+		if (simpledynamicItemProvider != null) simpledynamicItemProvider.dispose();
+		if (stepdynamicItemProvider != null) stepdynamicItemProvider.dispose();
+		if (dynamicadjustmentItemProvider != null) dynamicadjustmentItemProvider.dispose();
+		if (creationItemProvider != null) creationItemProvider.dispose();
+		if (stepsItemProvider != null) stepsItemProvider.dispose();
+		if (ruleItemProvider != null) ruleItemProvider.dispose();
+		if (actionItemProvider != null) actionItemProvider.dispose();
+		if (schedulerItemProvider != null) schedulerItemProvider.dispose();
+		if (uniquescheduleItemProvider != null) uniquescheduleItemProvider.dispose();
+		if (recurringscheduleItemProvider != null) recurringscheduleItemProvider.dispose();
 	}
 
 }

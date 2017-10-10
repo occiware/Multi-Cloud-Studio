@@ -16,11 +16,15 @@ package org.eclipse.cmf.occi.multicloud.horizontalelasticity.provider;
 import java.util.Collection;
 import java.util.List;
 
+import org.eclipse.cmf.occi.core.provider.MixinBaseItemProvider;
+
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Manual;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -33,7 +37,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ManualItemProvider extends ScalingstrategyItemProvider {
+public class ManualItemProvider extends HorizontalelasticcontrollerItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -56,6 +60,8 @@ public class ManualItemProvider extends ScalingstrategyItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addManualGroupSizePropertyDescriptor(object);
+			addManualMaxGroupSizePropertyDescriptor(object);
+			addManualMinGroupSizePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -71,9 +77,53 @@ public class ManualItemProvider extends ScalingstrategyItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Manual_ManualGroupSize_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Manual_ManualGroupSize_feature", "_UI_Manual_type"),
+				 getString("_UI_Manual_manualGroupSize_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Manual_manualGroupSize_feature", "_UI_Manual_type"),
 				 HorizontalelasticityPackage.Literals.MANUAL__MANUAL_GROUP_SIZE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Manual Max Group Size feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addManualMaxGroupSizePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Manual_manualMaxGroupSize_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Manual_manualMaxGroupSize_feature", "_UI_Manual_type"),
+				 HorizontalelasticityPackage.Literals.MANUAL__MANUAL_MAX_GROUP_SIZE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Manual Min Group Size feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addManualMinGroupSizePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Manual_manualMinGroupSize_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Manual_manualMinGroupSize_feature", "_UI_Manual_type"),
+				 HorizontalelasticityPackage.Literals.MANUAL__MANUAL_MIN_GROUP_SIZE,
 				 true,
 				 false,
 				 false,
@@ -121,6 +171,8 @@ public class ManualItemProvider extends ScalingstrategyItemProvider {
 
 		switch (notification.getFeatureID(Manual.class)) {
 			case HorizontalelasticityPackage.MANUAL__MANUAL_GROUP_SIZE:
+			case HorizontalelasticityPackage.MANUAL__MANUAL_MAX_GROUP_SIZE:
+			case HorizontalelasticityPackage.MANUAL__MANUAL_MIN_GROUP_SIZE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -34,11 +34,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ManualImpl#getManualGroupSize <em>Manual Group Size</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ManualImpl#getManualMaxGroupSize <em>Manual Max Group Size</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ManualImpl#getManualMinGroupSize <em>Manual Min Group Size</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ManualImpl extends ScalingstrategyImpl implements Manual {
+public class ManualImpl extends HorizontalelasticcontrollerImpl implements Manual {
 	/**
 	 * The default value of the '{@link #getManualGroupSize() <em>Manual Group Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -47,7 +49,7 @@ public class ManualImpl extends ScalingstrategyImpl implements Manual {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Integer MANUAL_GROUP_SIZE_EDEFAULT = null;
+	protected static final String MANUAL_GROUP_SIZE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getManualGroupSize() <em>Manual Group Size</em>}' attribute.
@@ -57,7 +59,47 @@ public class ManualImpl extends ScalingstrategyImpl implements Manual {
 	 * @generated
 	 * @ordered
 	 */
-	protected Integer manualGroupSize = MANUAL_GROUP_SIZE_EDEFAULT;
+	protected String manualGroupSize = MANUAL_GROUP_SIZE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getManualMaxGroupSize() <em>Manual Max Group Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getManualMaxGroupSize()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String MANUAL_MAX_GROUP_SIZE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getManualMaxGroupSize() <em>Manual Max Group Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getManualMaxGroupSize()
+	 * @generated
+	 * @ordered
+	 */
+	protected String manualMaxGroupSize = MANUAL_MAX_GROUP_SIZE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getManualMinGroupSize() <em>Manual Min Group Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getManualMinGroupSize()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String MANUAL_MIN_GROUP_SIZE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getManualMinGroupSize() <em>Manual Min Group Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getManualMinGroupSize()
+	 * @generated
+	 * @ordered
+	 */
+	protected String manualMinGroupSize = MANUAL_MIN_GROUP_SIZE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -83,7 +125,7 @@ public class ManualImpl extends ScalingstrategyImpl implements Manual {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Integer getManualGroupSize() {
+	public String getManualGroupSize() {
 		return manualGroupSize;
 	}
 
@@ -92,11 +134,53 @@ public class ManualImpl extends ScalingstrategyImpl implements Manual {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setManualGroupSize(Integer newManualGroupSize) {
-		Integer oldManualGroupSize = manualGroupSize;
+	public void setManualGroupSize(String newManualGroupSize) {
+		String oldManualGroupSize = manualGroupSize;
 		manualGroupSize = newManualGroupSize;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.MANUAL__MANUAL_GROUP_SIZE, oldManualGroupSize, manualGroupSize));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getManualMaxGroupSize() {
+		return manualMaxGroupSize;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setManualMaxGroupSize(String newManualMaxGroupSize) {
+		String oldManualMaxGroupSize = manualMaxGroupSize;
+		manualMaxGroupSize = newManualMaxGroupSize;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.MANUAL__MANUAL_MAX_GROUP_SIZE, oldManualMaxGroupSize, manualMaxGroupSize));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getManualMinGroupSize() {
+		return manualMinGroupSize;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setManualMinGroupSize(String newManualMinGroupSize) {
+		String oldManualMinGroupSize = manualMinGroupSize;
+		manualMinGroupSize = newManualMinGroupSize;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.MANUAL__MANUAL_MIN_GROUP_SIZE, oldManualMinGroupSize, manualMinGroupSize));
 	}
 
 	/**
@@ -113,11 +197,24 @@ public class ManualImpl extends ScalingstrategyImpl implements Manual {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void stop() {
+		throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Manual!stop()
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case HorizontalelasticityPackage.MANUAL__MANUAL_GROUP_SIZE:
 				return getManualGroupSize();
+			case HorizontalelasticityPackage.MANUAL__MANUAL_MAX_GROUP_SIZE:
+				return getManualMaxGroupSize();
+			case HorizontalelasticityPackage.MANUAL__MANUAL_MIN_GROUP_SIZE:
+				return getManualMinGroupSize();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -131,7 +228,13 @@ public class ManualImpl extends ScalingstrategyImpl implements Manual {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case HorizontalelasticityPackage.MANUAL__MANUAL_GROUP_SIZE:
-				setManualGroupSize((Integer)newValue);
+				setManualGroupSize((String)newValue);
+				return;
+			case HorizontalelasticityPackage.MANUAL__MANUAL_MAX_GROUP_SIZE:
+				setManualMaxGroupSize((String)newValue);
+				return;
+			case HorizontalelasticityPackage.MANUAL__MANUAL_MIN_GROUP_SIZE:
+				setManualMinGroupSize((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -148,6 +251,12 @@ public class ManualImpl extends ScalingstrategyImpl implements Manual {
 			case HorizontalelasticityPackage.MANUAL__MANUAL_GROUP_SIZE:
 				setManualGroupSize(MANUAL_GROUP_SIZE_EDEFAULT);
 				return;
+			case HorizontalelasticityPackage.MANUAL__MANUAL_MAX_GROUP_SIZE:
+				setManualMaxGroupSize(MANUAL_MAX_GROUP_SIZE_EDEFAULT);
+				return;
+			case HorizontalelasticityPackage.MANUAL__MANUAL_MIN_GROUP_SIZE:
+				setManualMinGroupSize(MANUAL_MIN_GROUP_SIZE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -162,6 +271,10 @@ public class ManualImpl extends ScalingstrategyImpl implements Manual {
 		switch (featureID) {
 			case HorizontalelasticityPackage.MANUAL__MANUAL_GROUP_SIZE:
 				return MANUAL_GROUP_SIZE_EDEFAULT == null ? manualGroupSize != null : !MANUAL_GROUP_SIZE_EDEFAULT.equals(manualGroupSize);
+			case HorizontalelasticityPackage.MANUAL__MANUAL_MAX_GROUP_SIZE:
+				return MANUAL_MAX_GROUP_SIZE_EDEFAULT == null ? manualMaxGroupSize != null : !MANUAL_MAX_GROUP_SIZE_EDEFAULT.equals(manualMaxGroupSize);
+			case HorizontalelasticityPackage.MANUAL__MANUAL_MIN_GROUP_SIZE:
+				return MANUAL_MIN_GROUP_SIZE_EDEFAULT == null ? manualMinGroupSize != null : !MANUAL_MIN_GROUP_SIZE_EDEFAULT.equals(manualMinGroupSize);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -177,6 +290,9 @@ public class ManualImpl extends ScalingstrategyImpl implements Manual {
 			case HorizontalelasticityPackage.MANUAL___START:
 				start();
 				return null;
+			case HorizontalelasticityPackage.MANUAL___STOP:
+				stop();
+				return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -191,8 +307,12 @@ public class ManualImpl extends ScalingstrategyImpl implements Manual {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (ManualGroupSize: ");
+		result.append(" (manualGroupSize: ");
 		result.append(manualGroupSize);
+		result.append(", manualMaxGroupSize: ");
+		result.append(manualMaxGroupSize);
+		result.append(", manualMinGroupSize: ");
+		result.append(manualMinGroupSize);
 		result.append(')');
 		return result.toString();
 	}

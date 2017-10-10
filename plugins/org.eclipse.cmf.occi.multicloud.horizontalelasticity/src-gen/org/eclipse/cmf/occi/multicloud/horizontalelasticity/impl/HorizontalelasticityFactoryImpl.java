@@ -12,9 +12,12 @@
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl;
 
+import java.util.Date;
+
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.*;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -66,18 +69,118 @@ public class HorizontalelasticityFactoryImpl extends EFactoryImpl implements Hor
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case HorizontalelasticityPackage.RECURRENCE_STEP: return createRecurrenceStep();
+			case HorizontalelasticityPackage.ARRAY: return createArray();
+			case HorizontalelasticityPackage.ARRAYOF_RECURRENCE_STEP: return createArrayofRecurrenceStep();
 			case HorizontalelasticityPackage.HORIZONTALGROUP: return createHorizontalgroup();
 			case HorizontalelasticityPackage.LOADBALANCER: return createLoadbalancer();
-			case HorizontalelasticityPackage.INSTANCE: return createInstance();
-			case HorizontalelasticityPackage.HORIZONTALELASTICCONTOLLER: return createHorizontalelasticcontoller();
-			case HorizontalelasticityPackage.SCALINGSTRATEGY: return createScalingstrategy();
-			case HorizontalelasticityPackage.MANUAL: return createManual();
-			case HorizontalelasticityPackage.DYNAMIC: return createDynamic();
+			case HorizontalelasticityPackage.HORIZONTALELASTICCONTROLLER: return createHorizontalelasticcontroller();
 			case HorizontalelasticityPackage.INSTANCEGROUPLINK: return createInstancegrouplink();
 			case HorizontalelasticityPackage.LINKBALANCER: return createLinkbalancer();
+			case HorizontalelasticityPackage.GROUPLINK: return createGrouplink();
+			case HorizontalelasticityPackage.MANUAL: return createManual();
+			case HorizontalelasticityPackage.DYNAMIC: return createDynamic();
+			case HorizontalelasticityPackage.SIMPLEDYNAMIC: return createSimpledynamic();
+			case HorizontalelasticityPackage.STEPDYNAMIC: return createStepdynamic();
+			case HorizontalelasticityPackage.DYNAMICADJUSTMENT: return createDynamicadjustment();
+			case HorizontalelasticityPackage.CREATION: return createCreation();
+			case HorizontalelasticityPackage.STEPS: return createSteps();
+			case HorizontalelasticityPackage.RULE: return createRule();
+			case HorizontalelasticityPackage.ACTION: return createAction();
+			case HorizontalelasticityPackage.SCHEDULER: return createScheduler();
+			case HorizontalelasticityPackage.UNIQUESCHEDULE: return createUniqueschedule();
+			case HorizontalelasticityPackage.RECURRINGSCHEDULE: return createRecurringschedule();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case HorizontalelasticityPackage.TYPE_METRIC:
+				return createTypeMetricFromString(eDataType, initialValue);
+			case HorizontalelasticityPackage.OPERATOR_TYPE:
+				return createOperatorTypeFromString(eDataType, initialValue);
+			case HorizontalelasticityPackage.ACTION_OPERATION:
+				return createActionOperationFromString(eDataType, initialValue);
+			case HorizontalelasticityPackage.ACTION_TYPE:
+				return createActionTypeFromString(eDataType, initialValue);
+			case HorizontalelasticityPackage.METRIC_TARGET_TRACKING:
+				return createMetricTargetTrackingFromString(eDataType, initialValue);
+			case HorizontalelasticityPackage.UNIT:
+				return createUnitFromString(eDataType, initialValue);
+			case HorizontalelasticityPackage.FLOAT:
+				return createFloatFromString(eDataType, initialValue);
+			case HorizontalelasticityPackage.DATE:
+				return createDateFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case HorizontalelasticityPackage.TYPE_METRIC:
+				return convertTypeMetricToString(eDataType, instanceValue);
+			case HorizontalelasticityPackage.OPERATOR_TYPE:
+				return convertOperatorTypeToString(eDataType, instanceValue);
+			case HorizontalelasticityPackage.ACTION_OPERATION:
+				return convertActionOperationToString(eDataType, instanceValue);
+			case HorizontalelasticityPackage.ACTION_TYPE:
+				return convertActionTypeToString(eDataType, instanceValue);
+			case HorizontalelasticityPackage.METRIC_TARGET_TRACKING:
+				return convertMetricTargetTrackingToString(eDataType, instanceValue);
+			case HorizontalelasticityPackage.UNIT:
+				return convertUnitToString(eDataType, instanceValue);
+			case HorizontalelasticityPackage.FLOAT:
+				return convertFloatToString(eDataType, instanceValue);
+			case HorizontalelasticityPackage.DATE:
+				return convertDateToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RecurrenceStep createRecurrenceStep() {
+		RecurrenceStepImpl recurrenceStep = new RecurrenceStepImpl();
+		return recurrenceStep;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Array createArray() {
+		ArrayImpl array = new ArrayImpl();
+		return array;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ArrayofRecurrenceStep createArrayofRecurrenceStep() {
+		ArrayofRecurrenceStepImpl arrayofRecurrenceStep = new ArrayofRecurrenceStepImpl();
+		return arrayofRecurrenceStep;
 	}
 
 	/**
@@ -105,9 +208,9 @@ public class HorizontalelasticityFactoryImpl extends EFactoryImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Instance createInstance() {
-		InstanceImpl instance = new InstanceImpl();
-		return instance;
+	public Horizontalelasticcontroller createHorizontalelasticcontroller() {
+		HorizontalelasticcontrollerImpl horizontalelasticcontroller = new HorizontalelasticcontrollerImpl();
+		return horizontalelasticcontroller;
 	}
 
 	/**
@@ -115,9 +218,9 @@ public class HorizontalelasticityFactoryImpl extends EFactoryImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Horizontalelasticcontoller createHorizontalelasticcontoller() {
-		HorizontalelasticcontollerImpl horizontalelasticcontoller = new HorizontalelasticcontollerImpl();
-		return horizontalelasticcontoller;
+	public Instancegrouplink createInstancegrouplink() {
+		InstancegrouplinkImpl instancegrouplink = new InstancegrouplinkImpl();
+		return instancegrouplink;
 	}
 
 	/**
@@ -125,9 +228,19 @@ public class HorizontalelasticityFactoryImpl extends EFactoryImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Scalingstrategy createScalingstrategy() {
-		ScalingstrategyImpl scalingstrategy = new ScalingstrategyImpl();
-		return scalingstrategy;
+	public Linkbalancer createLinkbalancer() {
+		LinkbalancerImpl linkbalancer = new LinkbalancerImpl();
+		return linkbalancer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Grouplink createGrouplink() {
+		GrouplinkImpl grouplink = new GrouplinkImpl();
+		return grouplink;
 	}
 
 	/**
@@ -155,9 +268,9 @@ public class HorizontalelasticityFactoryImpl extends EFactoryImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Instancegrouplink createInstancegrouplink() {
-		InstancegrouplinkImpl instancegrouplink = new InstancegrouplinkImpl();
-		return instancegrouplink;
+	public Simpledynamic createSimpledynamic() {
+		SimpledynamicImpl simpledynamic = new SimpledynamicImpl();
+		return simpledynamic;
 	}
 
 	/**
@@ -165,9 +278,245 @@ public class HorizontalelasticityFactoryImpl extends EFactoryImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Linkbalancer createLinkbalancer() {
-		LinkbalancerImpl linkbalancer = new LinkbalancerImpl();
-		return linkbalancer;
+	public Stepdynamic createStepdynamic() {
+		StepdynamicImpl stepdynamic = new StepdynamicImpl();
+		return stepdynamic;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Dynamicadjustment createDynamicadjustment() {
+		DynamicadjustmentImpl dynamicadjustment = new DynamicadjustmentImpl();
+		return dynamicadjustment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Creation createCreation() {
+		CreationImpl creation = new CreationImpl();
+		return creation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Steps createSteps() {
+		StepsImpl steps = new StepsImpl();
+		return steps;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Rule createRule() {
+		RuleImpl rule = new RuleImpl();
+		return rule;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Action createAction() {
+		ActionImpl action = new ActionImpl();
+		return action;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Scheduler createScheduler() {
+		SchedulerImpl scheduler = new SchedulerImpl();
+		return scheduler;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Uniqueschedule createUniqueschedule() {
+		UniquescheduleImpl uniqueschedule = new UniquescheduleImpl();
+		return uniqueschedule;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Recurringschedule createRecurringschedule() {
+		RecurringscheduleImpl recurringschedule = new RecurringscheduleImpl();
+		return recurringschedule;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TypeMetric createTypeMetricFromString(EDataType eDataType, String initialValue) {
+		TypeMetric result = TypeMetric.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertTypeMetricToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OperatorType createOperatorTypeFromString(EDataType eDataType, String initialValue) {
+		OperatorType result = OperatorType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertOperatorTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ActionOperation createActionOperationFromString(EDataType eDataType, String initialValue) {
+		ActionOperation result = ActionOperation.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertActionOperationToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ActionType createActionTypeFromString(EDataType eDataType, String initialValue) {
+		ActionType result = ActionType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertActionTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MetricTargetTracking createMetricTargetTrackingFromString(EDataType eDataType, String initialValue) {
+		MetricTargetTracking result = MetricTargetTracking.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertMetricTargetTrackingToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Unit createUnitFromString(EDataType eDataType, String initialValue) {
+		Unit result = Unit.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertUnitToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Float createFloatFromString(EDataType eDataType, String initialValue) {
+		return (Float)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertFloatToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Date createDateFromString(EDataType eDataType, String initialValue) {
+		return (Date)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertDateToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

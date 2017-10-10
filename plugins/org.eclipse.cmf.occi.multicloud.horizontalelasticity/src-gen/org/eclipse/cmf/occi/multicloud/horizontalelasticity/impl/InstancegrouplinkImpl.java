@@ -88,7 +88,8 @@ public class InstancegrouplinkImpl extends LinkImpl implements Instancegrouplink
 		 *     if severity <= 0
 		 *     then true
 		 *     else
-		 *       let result : occi::Boolean[1] = self.target.oclIsKindOf(Instance)
+		 *       let
+		 *         result : occi::Boolean[1] = self.target.oclIsKindOf(infrastructure::Compute)
 		 *       in
 		 *         'Instancegrouplink::targetConstraint'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
 		 *     endif
@@ -102,9 +103,9 @@ public class InstancegrouplinkImpl extends LinkImpl implements Instancegrouplink
 			symbol_0 = ValueUtil.TRUE_VALUE;
 		}
 		else {
-			final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_horizontalelasticity_c_c_Instance = idResolver.getClass(HorizontalelasticityTables.CLSSid_Instance, null);
+			final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_infrastructure_c_c_Compute = idResolver.getClass(HorizontalelasticityTables.CLSSid_Compute, null);
 			final /*@NonInvalid*/ Resource target = this.getTarget();
-			final /*@NonInvalid*/ boolean result = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, target, TYP_horizontalelasticity_c_c_Instance).booleanValue();
+			final /*@NonInvalid*/ boolean result = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, target, TYP_infrastructure_c_c_Compute).booleanValue();
 			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, HorizontalelasticityTables.STR_Instancegrouplink_c_c_targetConstraint, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, HorizontalelasticityTables.INT_0).booleanValue();
 			symbol_0 = logDiagnostic;
 		}

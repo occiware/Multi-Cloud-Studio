@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Mon Sep 18 17:56:08 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Wed Oct 04 16:03:06 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
@@ -46,34 +46,45 @@ public class ConnectorFactory extends org.eclipse.cmf.occi.multicloud.horizontal
 	/**
 	 * EFactory method for OCCI kind:
 	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
-	 * - term: instance
+	 * - term: horizontalelasticcontroller
 	 * - title: 
 	 */
 	@Override
-	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Instance createInstance() {
-		return new InstanceConnector();
+	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalelasticcontroller createHorizontalelasticcontroller() {
+		return new HorizontalelasticcontrollerConnector();
 	}
 
 	/**
 	 * EFactory method for OCCI kind:
 	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
-	 * - term: horizontalelasticcontoller
+	 * - term: instancegrouplink
 	 * - title: 
 	 */
 	@Override
-	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalelasticcontoller createHorizontalelasticcontoller() {
-		return new HorizontalelasticcontollerConnector();
+	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Instancegrouplink createInstancegrouplink() {
+		return new InstancegrouplinkConnector();
 	}
 
 	/**
 	 * EFactory method for OCCI kind:
 	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
-	 * - term: scalingstrategy
+	 * - term: linkbalancer
 	 * - title: 
 	 */
 	@Override
-	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Scalingstrategy createScalingstrategy() {
-		return new ScalingstrategyConnector();
+	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Linkbalancer createLinkbalancer() {
+		return new LinkbalancerConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
+	 * - term: grouplink
+	 * - title: 
+	 */
+	@Override
+	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Grouplink createGrouplink() {
+		return new GrouplinkConnector();
 	}
 
 	/**
@@ -101,23 +112,111 @@ public class ConnectorFactory extends org.eclipse.cmf.occi.multicloud.horizontal
 	/**
 	 * EFactory method for OCCI kind:
 	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
-	 * - term: instancegrouplink
+	 * - term: simpledynamic
 	 * - title: 
 	 */
 	@Override
-	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Instancegrouplink createInstancegrouplink() {
-		return new InstancegrouplinkConnector();
+	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Simpledynamic createSimpledynamic() {
+		return new SimpledynamicConnector();
 	}
 
 	/**
 	 * EFactory method for OCCI kind:
 	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
-	 * - term: linkbalancer
+	 * - term: stepdynamic
 	 * - title: 
 	 */
 	@Override
-	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Linkbalancer createLinkbalancer() {
-		return new LinkbalancerConnector();
+	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Stepdynamic createStepdynamic() {
+		return new StepdynamicConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
+	 * - term: dynamicadjustment
+	 * - title: 
+	 */
+	@Override
+	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamicadjustment createDynamicadjustment() {
+		return new DynamicadjustmentConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
+	 * - term: creation
+	 * - title: 
+	 */
+	@Override
+	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Creation createCreation() {
+		return new CreationConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
+	 * - term: steps
+	 * - title: 
+	 */
+	@Override
+	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Steps createSteps() {
+		return new StepsConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
+	 * - term: rule
+	 * - title: 
+	 */
+	@Override
+	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Rule createRule() {
+		return new RuleConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
+	 * - term: action
+	 * - title: 
+	 */
+	@Override
+	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Action createAction() {
+		return new ActionConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
+	 * - term: scheduler
+	 * - title: 
+	 */
+	@Override
+	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Scheduler createScheduler() {
+		return new SchedulerConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
+	 * - term: uniqueschedule
+	 * - title: 
+	 */
+	@Override
+	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Uniqueschedule createUniqueschedule() {
+		return new UniquescheduleConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
+	 * - term: recurringschedule
+	 * - title: 
+	 */
+	@Override
+	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Recurringschedule createRecurringschedule() {
+		return new RecurringscheduleConnector();
 	}
 
 }

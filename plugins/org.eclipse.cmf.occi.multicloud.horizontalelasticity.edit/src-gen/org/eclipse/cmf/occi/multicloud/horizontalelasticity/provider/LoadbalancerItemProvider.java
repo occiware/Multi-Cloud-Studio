@@ -23,6 +23,7 @@ import org.eclipse.cmf.occi.core.provider.ResourceItemProvider;
 import org.eclipse.cmf.occi.infrastructure.InfrastructureFactory;
 
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityFactory;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Loadbalancer;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -30,7 +31,10 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Loadbalancer} object.
@@ -60,8 +64,77 @@ public class LoadbalancerItemProvider extends ResourceItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addLoadbalancerNamePropertyDescriptor(object);
+			addLoadbalancerInstanceIPPropertyDescriptor(object);
+			addLoadbalancerAddressPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Loadbalancer Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLoadbalancerNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Loadbalancer_loadbalancerName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Loadbalancer_loadbalancerName_feature", "_UI_Loadbalancer_type"),
+				 HorizontalelasticityPackage.Literals.LOADBALANCER__LOADBALANCER_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Loadbalancer Instance IP feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLoadbalancerInstanceIPPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Loadbalancer_loadbalancerInstanceIP_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Loadbalancer_loadbalancerInstanceIP_feature", "_UI_Loadbalancer_type"),
+				 HorizontalelasticityPackage.Literals.LOADBALANCER__LOADBALANCER_INSTANCE_IP,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Loadbalancer Address feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLoadbalancerAddressPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Loadbalancer_loadbalancerAddress_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Loadbalancer_loadbalancerAddress_feature", "_UI_Loadbalancer_type"),
+				 HorizontalelasticityPackage.Literals.LOADBALANCER__LOADBALANCER_ADDRESS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -100,6 +173,14 @@ public class LoadbalancerItemProvider extends ResourceItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(Loadbalancer.class)) {
+			case HorizontalelasticityPackage.LOADBALANCER__LOADBALANCER_NAME:
+			case HorizontalelasticityPackage.LOADBALANCER__LOADBALANCER_INSTANCE_IP:
+			case HorizontalelasticityPackage.LOADBALANCER__LOADBALANCER_ADDRESS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 
@@ -113,6 +194,41 @@ public class LoadbalancerItemProvider extends ResourceItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createCreation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createSteps()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createRule()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createAction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createScheduler()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createUniqueschedule()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createRecurringschedule()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -153,6 +269,11 @@ public class LoadbalancerItemProvider extends ResourceItemProvider {
 			(createChildParameter
 				(OCCIPackage.Literals.RESOURCE__LINKS,
 				 HorizontalelasticityFactory.eINSTANCE.createLinkbalancer()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.RESOURCE__LINKS,
+				 HorizontalelasticityFactory.eINSTANCE.createGrouplink()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -14,9 +14,8 @@ package org.eclipse.cmf.occi.multicloud.horizontalelasticity.util;
 
 import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.core.Link;
+import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.core.Resource;
-
-import org.eclipse.cmf.occi.infrastructure.Compute;
 
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.*;
 
@@ -82,6 +81,24 @@ public class HorizontalelasticitySwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+			case HorizontalelasticityPackage.RECURRENCE_STEP: {
+				RecurrenceStep recurrenceStep = (RecurrenceStep)theEObject;
+				T result = caseRecurrenceStep(recurrenceStep);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HorizontalelasticityPackage.ARRAY: {
+				Array array = (Array)theEObject;
+				T result = caseArray(array);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HorizontalelasticityPackage.ARRAYOF_RECURRENCE_STEP: {
+				ArrayofRecurrenceStep arrayofRecurrenceStep = (ArrayofRecurrenceStep)theEObject;
+				T result = caseArrayofRecurrenceStep(arrayofRecurrenceStep);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case HorizontalelasticityPackage.HORIZONTALGROUP: {
 				Horizontalgroup horizontalgroup = (Horizontalgroup)theEObject;
 				T result = caseHorizontalgroup(horizontalgroup);
@@ -98,49 +115,11 @@ public class HorizontalelasticitySwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case HorizontalelasticityPackage.INSTANCE: {
-				Instance instance = (Instance)theEObject;
-				T result = caseInstance(instance);
-				if (result == null) result = caseCompute(instance);
-				if (result == null) result = caseResource(instance);
-				if (result == null) result = caseEntity(instance);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case HorizontalelasticityPackage.HORIZONTALELASTICCONTOLLER: {
-				Horizontalelasticcontoller horizontalelasticcontoller = (Horizontalelasticcontoller)theEObject;
-				T result = caseHorizontalelasticcontoller(horizontalelasticcontoller);
-				if (result == null) result = caseResource(horizontalelasticcontoller);
-				if (result == null) result = caseEntity(horizontalelasticcontoller);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case HorizontalelasticityPackage.SCALINGSTRATEGY: {
-				Scalingstrategy scalingstrategy = (Scalingstrategy)theEObject;
-				T result = caseScalingstrategy(scalingstrategy);
-				if (result == null) result = caseHorizontalelasticcontoller(scalingstrategy);
-				if (result == null) result = caseResource(scalingstrategy);
-				if (result == null) result = caseEntity(scalingstrategy);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case HorizontalelasticityPackage.MANUAL: {
-				Manual manual = (Manual)theEObject;
-				T result = caseManual(manual);
-				if (result == null) result = caseScalingstrategy(manual);
-				if (result == null) result = caseHorizontalelasticcontoller(manual);
-				if (result == null) result = caseResource(manual);
-				if (result == null) result = caseEntity(manual);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case HorizontalelasticityPackage.DYNAMIC: {
-				Dynamic dynamic = (Dynamic)theEObject;
-				T result = caseDynamic(dynamic);
-				if (result == null) result = caseScalingstrategy(dynamic);
-				if (result == null) result = caseHorizontalelasticcontoller(dynamic);
-				if (result == null) result = caseResource(dynamic);
-				if (result == null) result = caseEntity(dynamic);
+			case HorizontalelasticityPackage.HORIZONTALELASTICCONTROLLER: {
+				Horizontalelasticcontroller horizontalelasticcontroller = (Horizontalelasticcontroller)theEObject;
+				T result = caseHorizontalelasticcontroller(horizontalelasticcontroller);
+				if (result == null) result = caseResource(horizontalelasticcontroller);
+				if (result == null) result = caseEntity(horizontalelasticcontroller);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -160,8 +139,160 @@ public class HorizontalelasticitySwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case HorizontalelasticityPackage.GROUPLINK: {
+				Grouplink grouplink = (Grouplink)theEObject;
+				T result = caseGrouplink(grouplink);
+				if (result == null) result = caseLink(grouplink);
+				if (result == null) result = caseEntity(grouplink);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HorizontalelasticityPackage.MANUAL: {
+				Manual manual = (Manual)theEObject;
+				T result = caseManual(manual);
+				if (result == null) result = caseHorizontalelasticcontroller(manual);
+				if (result == null) result = caseResource(manual);
+				if (result == null) result = caseEntity(manual);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HorizontalelasticityPackage.DYNAMIC: {
+				Dynamic dynamic = (Dynamic)theEObject;
+				T result = caseDynamic(dynamic);
+				if (result == null) result = caseHorizontalelasticcontroller(dynamic);
+				if (result == null) result = caseResource(dynamic);
+				if (result == null) result = caseEntity(dynamic);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HorizontalelasticityPackage.SIMPLEDYNAMIC: {
+				Simpledynamic simpledynamic = (Simpledynamic)theEObject;
+				T result = caseSimpledynamic(simpledynamic);
+				if (result == null) result = caseDynamic(simpledynamic);
+				if (result == null) result = caseHorizontalelasticcontroller(simpledynamic);
+				if (result == null) result = caseResource(simpledynamic);
+				if (result == null) result = caseEntity(simpledynamic);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HorizontalelasticityPackage.STEPDYNAMIC: {
+				Stepdynamic stepdynamic = (Stepdynamic)theEObject;
+				T result = caseStepdynamic(stepdynamic);
+				if (result == null) result = caseDynamic(stepdynamic);
+				if (result == null) result = caseHorizontalelasticcontroller(stepdynamic);
+				if (result == null) result = caseResource(stepdynamic);
+				if (result == null) result = caseEntity(stepdynamic);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HorizontalelasticityPackage.DYNAMICADJUSTMENT: {
+				Dynamicadjustment dynamicadjustment = (Dynamicadjustment)theEObject;
+				T result = caseDynamicadjustment(dynamicadjustment);
+				if (result == null) result = caseDynamic(dynamicadjustment);
+				if (result == null) result = caseHorizontalelasticcontroller(dynamicadjustment);
+				if (result == null) result = caseResource(dynamicadjustment);
+				if (result == null) result = caseEntity(dynamicadjustment);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HorizontalelasticityPackage.CREATION: {
+				Creation creation = (Creation)theEObject;
+				T result = caseCreation(creation);
+				if (result == null) result = caseMixinBase(creation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HorizontalelasticityPackage.STEPS: {
+				Steps steps = (Steps)theEObject;
+				T result = caseSteps(steps);
+				if (result == null) result = caseMixinBase(steps);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HorizontalelasticityPackage.RULE: {
+				Rule rule = (Rule)theEObject;
+				T result = caseRule(rule);
+				if (result == null) result = caseMixinBase(rule);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HorizontalelasticityPackage.ACTION: {
+				Action action = (Action)theEObject;
+				T result = caseAction(action);
+				if (result == null) result = caseMixinBase(action);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HorizontalelasticityPackage.SCHEDULER: {
+				Scheduler scheduler = (Scheduler)theEObject;
+				T result = caseScheduler(scheduler);
+				if (result == null) result = caseMixinBase(scheduler);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HorizontalelasticityPackage.UNIQUESCHEDULE: {
+				Uniqueschedule uniqueschedule = (Uniqueschedule)theEObject;
+				T result = caseUniqueschedule(uniqueschedule);
+				if (result == null) result = caseScheduler(uniqueschedule);
+				if (result == null) result = caseMixinBase(uniqueschedule);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HorizontalelasticityPackage.RECURRINGSCHEDULE: {
+				Recurringschedule recurringschedule = (Recurringschedule)theEObject;
+				T result = caseRecurringschedule(recurringschedule);
+				if (result == null) result = caseScheduler(recurringschedule);
+				if (result == null) result = caseMixinBase(recurringschedule);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Recurrence Step</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Recurrence Step</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRecurrenceStep(RecurrenceStep object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Array</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Array</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseArray(Array object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Arrayof Recurrence Step</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Arrayof Recurrence Step</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseArrayofRecurrenceStep(ArrayofRecurrenceStep object) {
+		return null;
 	}
 
 	/**
@@ -195,77 +326,17 @@ public class HorizontalelasticitySwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Instance</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Horizontalelasticcontroller</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Instance</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Horizontalelasticcontroller</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseInstance(Instance object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Horizontalelasticcontoller</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Horizontalelasticcontoller</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseHorizontalelasticcontoller(Horizontalelasticcontoller object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Scalingstrategy</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Scalingstrategy</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseScalingstrategy(Scalingstrategy object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Manual</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Manual</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseManual(Manual object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Dynamic</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Dynamic</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDynamic(Dynamic object) {
+	public T caseHorizontalelasticcontroller(Horizontalelasticcontroller object) {
 		return null;
 	}
 
@@ -300,6 +371,201 @@ public class HorizontalelasticitySwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Grouplink</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Grouplink</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGrouplink(Grouplink object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Manual</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Manual</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseManual(Manual object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Dynamic</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Dynamic</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDynamic(Dynamic object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Simpledynamic</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Simpledynamic</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSimpledynamic(Simpledynamic object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Stepdynamic</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Stepdynamic</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStepdynamic(Stepdynamic object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Dynamicadjustment</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Dynamicadjustment</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDynamicadjustment(Dynamicadjustment object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Creation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Creation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCreation(Creation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Steps</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Steps</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSteps(Steps object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Rule</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Rule</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRule(Rule object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Action</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Action</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAction(Action object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Scheduler</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Scheduler</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseScheduler(Scheduler object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Uniqueschedule</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Uniqueschedule</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseUniqueschedule(Uniqueschedule object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Recurringschedule</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Recurringschedule</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRecurringschedule(Recurringschedule object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Entity</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -330,21 +596,6 @@ public class HorizontalelasticitySwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Compute</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Compute</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCompute(Compute object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Link</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -356,6 +607,21 @@ public class HorizontalelasticitySwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseLink(Link object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Mixin Base</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Mixin Base</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMixinBase(MixinBase object) {
 		return null;
 	}
 

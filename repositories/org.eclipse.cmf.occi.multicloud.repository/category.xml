@@ -15,5 +15,5 @@
    <feature url="features/org.eclipse.cmf.occi.multicloud_1.0.0.qualifier.jar" id="org.eclipse.cmf.occi.multicloud" version="1.0.0.qualifier">
       <category name="OCCI Multi-Cloud-Studio"/>
    </feature>
-   <category-def name="OCCI Multi-Cloud-Studio" label="OCCI Multi-Cloud-Studio"/>
+   <category-def name="OCCI Multi-Cloud-Studio" label="MultiCloud Studio"/>
 </site>

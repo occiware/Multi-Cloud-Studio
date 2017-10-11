@@ -208,16 +208,6 @@ public class LoadbalancerItemProvider extends ResourceItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
-				 HorizontalelasticityFactory.eINSTANCE.createRule()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.ENTITY__PARTS,
-				 HorizontalelasticityFactory.eINSTANCE.createAction()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.ENTITY__PARTS,
 				 HorizontalelasticityFactory.eINSTANCE.createScheduler()));
 
 		newChildDescriptors.add
@@ -274,6 +264,11 @@ public class LoadbalancerItemProvider extends ResourceItemProvider {
 			(createChildParameter
 				(OCCIPackage.Literals.RESOURCE__LINKS,
 				 HorizontalelasticityFactory.eINSTANCE.createGrouplink()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.RESOURCE__LINKS,
+				 HorizontalelasticityFactory.eINSTANCE.createRule()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -188,24 +188,6 @@ public class ManualImpl extends HorizontalelasticcontrollerImpl implements Manua
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void start() {
-		throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Manual!start()
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void stop() {
-		throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Manual!stop()
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -277,24 +259,6 @@ public class ManualImpl extends HorizontalelasticcontrollerImpl implements Manua
 				return MANUAL_MIN_GROUP_SIZE_EDEFAULT == null ? manualMinGroupSize != null : !MANUAL_MIN_GROUP_SIZE_EDEFAULT.equals(manualMinGroupSize);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case HorizontalelasticityPackage.MANUAL___START:
-				start();
-				return null;
-			case HorizontalelasticityPackage.MANUAL___STOP:
-				stop();
-				return null;
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

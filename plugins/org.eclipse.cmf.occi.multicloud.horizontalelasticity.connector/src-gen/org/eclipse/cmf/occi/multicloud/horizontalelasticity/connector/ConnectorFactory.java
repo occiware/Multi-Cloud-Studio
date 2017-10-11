@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Wed Oct 04 16:03:06 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Fri Oct 06 09:54:12 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
@@ -145,28 +145,6 @@ public class ConnectorFactory extends org.eclipse.cmf.occi.multicloud.horizontal
 	/**
 	 * EFactory method for OCCI kind:
 	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
-	 * - term: creation
-	 * - title: 
-	 */
-	@Override
-	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Creation createCreation() {
-		return new CreationConnector();
-	}
-
-	/**
-	 * EFactory method for OCCI kind:
-	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
-	 * - term: steps
-	 * - title: 
-	 */
-	@Override
-	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Steps createSteps() {
-		return new StepsConnector();
-	}
-
-	/**
-	 * EFactory method for OCCI kind:
-	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
 	 * - term: rule
 	 * - title: 
 	 */
@@ -184,6 +162,28 @@ public class ConnectorFactory extends org.eclipse.cmf.occi.multicloud.horizontal
 	@Override
 	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Action createAction() {
 		return new ActionConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
+	 * - term: creation
+	 * - title: 
+	 */
+	@Override
+	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Creation createCreation() {
+		return new CreationConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
+	 * - term: steps
+	 * - title: 
+	 */
+	@Override
+	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Steps createSteps() {
+		return new StepsConnector();
 	}
 
 	/**

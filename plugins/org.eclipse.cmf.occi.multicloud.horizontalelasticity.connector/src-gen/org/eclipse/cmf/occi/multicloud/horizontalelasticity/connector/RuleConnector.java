@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Wed Oct 04 16:03:06 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Fri Oct 06 09:54:12 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
@@ -40,4 +40,59 @@ public class RuleConnector extends org.eclipse.cmf.occi.multicloud.horizontalela
 		// TODO: Implement this constructor.
 	}
 	// End of user code
+	//
+	// OCCI CRUD callback operations.
+	//
+	
+	// Start of user code RuleocciCreate
+	/**
+	 * Called when this Rule instance is completely created.
+	 */
+	@Override
+	public void occiCreate()
+	{
+		LOGGER.debug("occiCreate() called on " + this);
+		// TODO: Implement this callback or remove this method.
+	}
+	// End of user code
+
+	// Start of user code Rule_occiRetrieve_method
+	/**
+	 * Called when this Rule instance must be retrieved.
+	 */
+	@Override
+	public void occiRetrieve()
+	{
+		LOGGER.debug("occiRetrieve() called on " + this);
+		// TODO: Implement this callback or remove this method.
+	}
+	// End of user code
+
+	// Start of user code Rule_occiUpdate_method
+	/**
+	 * Called when this Rule instance is completely updated.
+	 */
+	@Override
+	public void occiUpdate()
+	{
+		LOGGER.debug("occiUpdate() called on " + this);
+		// TODO: Implement this callback or remove this method.
+	}
+	// End of user code
+
+	// Start of user code RuleocciDelete_method
+	/**
+	 * Called when this Rule instance will be deleted.
+	 */
+	@Override
+	public void occiDelete()
+	{
+		LOGGER.debug("occiDelete() called on " + this);
+		// TODO: Implement this callback or remove this method.
+	}
+	// End of user code
+
+	//
+	// Rule actions.
+	//
 }	

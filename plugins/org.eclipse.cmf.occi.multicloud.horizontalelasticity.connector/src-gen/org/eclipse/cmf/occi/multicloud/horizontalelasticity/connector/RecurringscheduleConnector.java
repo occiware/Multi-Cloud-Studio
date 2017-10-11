@@ -10,12 +10,31 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Wed Oct 04 16:03:06 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Fri Oct 06 09:54:12 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+//////////job/////////////
+import java.util.Date;
+import org.quartz.Job;
+import org.quartz.JobExecutionContext;
+import org.quartz.JobExecutionException;
+import org.eclipse.cmf.occi.core.Entity;
+import org.eclipse.cmf.occi.multicloud.elasticocci.connector.MyRunnable;
+///////Quartz//////////
+import org.quartz.CronScheduleBuilder;
+import org.quartz.JobBuilder;
+import org.quartz.JobDetail;
+import org.quartz.Scheduler;
+import org.quartz.SchedulerException;
+import org.quartz.Trigger;
+import org.quartz.TriggerBuilder;
+import org.quartz.impl.StdSchedulerFactory;
+///////parm
+
 
 /**
  * Connector implementation for the OCCI kind:
@@ -41,4 +60,70 @@ public class RecurringscheduleConnector extends org.eclipse.cmf.occi.multicloud.
 	
 	}
 	// End of user code
+	// Start of user code Recurringschedule_Kind_start_action
+	/**
+	 * Implement OCCI action:
+     * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/recurringschedule/action#
+     * - term: start
+     * - title: 
+	 */
+	@Override
+	public void start()
+	{
+		LOGGER.debug("Action start() called on " + this);
+		Entity entity = getEntity();
+		JobDetail job1 = JobBuilder.newJob(Job1.class)
+				.withIdentity("dummyJobName", "group1").build();
+		//job1.getJobDataMap().put("key", entity); /// pass paramaters to job
+		
+		Trigger trigger = TriggerBuilder
+				.newTrigger()
+				.withIdentity("dummyTriggerName", "group1")
+				.withSchedule(
+					CronScheduleBuilder.cronSchedule("0/5 * * * * ?"))
+				.build();
+
+		    //schedule it
+		Scheduler scheduler;
+		try {
+			scheduler = new StdSchedulerFactory().getScheduler();
+		    scheduler.getContext().put("key", entity);
+
+			scheduler.start();
+			scheduler.scheduleJob(job1, trigger);
+		} catch (SchedulerException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		// TODO: Implement how to start this recurringschedule.
+	}
+		// End of user code
+
+	// Start of user code Recurringschedule_Kind_stop_action
+	/**
+	 * Implement OCCI action:
+     * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/recurringschedule/action#
+     * - term: stop
+     * - title: 
+	 */
+	@Override
+	public void stop()
+	{
+		LOGGER.debug("Action stop() called on " + this);
+
+		// TODO: Implement how to stop this recurringschedule.
+	}
+
+	
+	public void executeEntity()
+	{
+		Entity entity = getEntity();
+		if(entity instanceof ManualConnector) {
+			ManualConnector man = (ManualConnector) entity;
+			man.occiCreate();
+		}	
+	}
+		// End of user code
+
 }	

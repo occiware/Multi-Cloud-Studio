@@ -77,12 +77,20 @@ public class HorizontalelasticityValidator extends EObjectValidator {
 	public static final int GROUPLINK__TARGET_CONSTRAINT = 3;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Target Constraint' of 'Rule'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int RULE__TARGET_CONSTRAINT = 4;
+
+	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Creation'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CREATION__APPLIES_CONSTRAINT = 4;
+	public static final int CREATION__APPLIES_CONSTRAINT = 5;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Steps'.
@@ -90,31 +98,23 @@ public class HorizontalelasticityValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int STEPS__APPLIES_CONSTRAINT = 5;
+	public static final int STEPS__APPLIES_CONSTRAINT = 6;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Rule'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Uniqueschedule'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int RULE__APPLIES_CONSTRAINT = 6;
+	public static final int UNIQUESCHEDULE__APPLIES_CONSTRAINT = 7;
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Action'.
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Recurringschedule'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int ACTION__APPLIES_CONSTRAINT = 7;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Scheduler'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int SCHEDULER__APPLIES_CONSTRAINT = 8;
+	public static final int RECURRINGSCHEDULE__APPLIES_CONSTRAINT = 8;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -199,14 +199,14 @@ public class HorizontalelasticityValidator extends EObjectValidator {
 				return validateStepdynamic((Stepdynamic)value, diagnostics, context);
 			case HorizontalelasticityPackage.DYNAMICADJUSTMENT:
 				return validateDynamicadjustment((Dynamicadjustment)value, diagnostics, context);
-			case HorizontalelasticityPackage.CREATION:
-				return validateCreation((Creation)value, diagnostics, context);
-			case HorizontalelasticityPackage.STEPS:
-				return validateSteps((Steps)value, diagnostics, context);
 			case HorizontalelasticityPackage.RULE:
 				return validateRule((Rule)value, diagnostics, context);
 			case HorizontalelasticityPackage.ACTION:
 				return validateAction((Action)value, diagnostics, context);
+			case HorizontalelasticityPackage.CREATION:
+				return validateCreation((Creation)value, diagnostics, context);
+			case HorizontalelasticityPackage.STEPS:
+				return validateSteps((Steps)value, diagnostics, context);
 			case HorizontalelasticityPackage.SCHEDULER:
 				return validateScheduler((Scheduler)value, diagnostics, context);
 			case HorizontalelasticityPackage.UNIQUESCHEDULE:
@@ -615,18 +615,24 @@ public class HorizontalelasticityValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(rule, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(rule, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(rule, diagnostics, context);
-		if (result || diagnostics != null) result &= validateRule_appliesConstraint(rule, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(rule, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(rule, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(rule, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateLink_LinkKindIsInParent(rule, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateLink_sourceReferenceInvariant(rule, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateLink_targetReferenceInvariant(rule, diagnostics, context);
+		if (result || diagnostics != null) result &= validateRule_targetConstraint(rule, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the appliesConstraint constraint of '<em>Rule</em>'.
+	 * Validates the targetConstraint constraint of '<em>Rule</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateRule_appliesConstraint(Rule rule, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return rule.appliesConstraint(diagnostics, context);
+	public boolean validateRule_targetConstraint(Rule rule, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return rule.targetConstraint(diagnostics, context);
 	}
 
 	/**
@@ -644,18 +650,11 @@ public class HorizontalelasticityValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(action, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(action, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(action, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAction_appliesConstraint(action, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(action, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(action, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(action, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateResource_ResourceKindIsInParent(action, diagnostics, context);
 		return result;
-	}
-
-	/**
-	 * Validates the appliesConstraint constraint of '<em>Action</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateAction_appliesConstraint(Action action, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return action.appliesConstraint(diagnostics, context);
 	}
 
 	/**
@@ -664,27 +663,7 @@ public class HorizontalelasticityValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateScheduler(Scheduler scheduler, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(scheduler, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(scheduler, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(scheduler, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(scheduler, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(scheduler, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(scheduler, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(scheduler, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(scheduler, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(scheduler, diagnostics, context);
-		if (result || diagnostics != null) result &= validateScheduler_appliesConstraint(scheduler, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * Validates the appliesConstraint constraint of '<em>Scheduler</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateScheduler_appliesConstraint(Scheduler scheduler, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return scheduler.appliesConstraint(diagnostics, context);
+		return validate_EveryDefaultConstraint(scheduler, diagnostics, context);
 	}
 
 	/**
@@ -702,8 +681,18 @@ public class HorizontalelasticityValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(uniqueschedule, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(uniqueschedule, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(uniqueschedule, diagnostics, context);
-		if (result || diagnostics != null) result &= validateScheduler_appliesConstraint(uniqueschedule, diagnostics, context);
+		if (result || diagnostics != null) result &= validateUniqueschedule_appliesConstraint(uniqueschedule, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>Uniqueschedule</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateUniqueschedule_appliesConstraint(Uniqueschedule uniqueschedule, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return uniqueschedule.appliesConstraint(diagnostics, context);
 	}
 
 	/**
@@ -721,8 +710,18 @@ public class HorizontalelasticityValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(recurringschedule, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(recurringschedule, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(recurringschedule, diagnostics, context);
-		if (result || diagnostics != null) result &= validateScheduler_appliesConstraint(recurringschedule, diagnostics, context);
+		if (result || diagnostics != null) result &= validateRecurringschedule_appliesConstraint(recurringschedule, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>Recurringschedule</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRecurringschedule_appliesConstraint(Recurringschedule recurringschedule, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return recurringschedule.appliesConstraint(diagnostics, context);
 	}
 
 	/**

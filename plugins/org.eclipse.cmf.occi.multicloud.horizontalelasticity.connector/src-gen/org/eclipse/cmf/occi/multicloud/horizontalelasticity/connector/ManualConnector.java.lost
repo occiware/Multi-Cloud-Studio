@@ -17,3 +17,40 @@ Start of user code Manual_Kind_Start_action
 		// TODO: Implement how to start this manual.
 	}
 		// End of user code
+
+Fri Oct 06 09:54:12 CEST 2017
+================================================================================
+Start of user code Manual_Kind_stop_action
+	/**
+	 * Implement OCCI action:
+     * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/manual/action#
+     * - term: stop
+     * - title: 
+	 */
+	@Override
+	public void stop()
+	{
+		LOGGER.debug("Action stop() called on " + this);
+
+		// TODO: Implement how to stop this manual.
+	}
+		// End of user code
+Start of user code Manual_Kind_start_action
+	/**
+	 * Implement OCCI action:
+     * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/manual/action#
+     * - term: start
+     * - title: 
+	 */
+	@Override
+	public void start()
+	{
+		LOGGER.debug("Action start() called on " + this);
+		Horizontalgroup hg = (Horizontalgroup) this.getLinks().get(0).getTarget();
+		//int temporarycounter = 1;
+		//hg.setHorizontalGroupGroupSize(2);
+		//hg.occiUpdate();
+
+		// TODO: Implement how to start this manual.
+	}
+		// End of user code

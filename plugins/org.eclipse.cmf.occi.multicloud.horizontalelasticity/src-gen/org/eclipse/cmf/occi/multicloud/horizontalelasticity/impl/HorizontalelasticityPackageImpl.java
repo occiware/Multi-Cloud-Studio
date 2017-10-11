@@ -548,6 +548,24 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getHorizontalelasticcontroller__Start() {
+		return horizontalelasticcontrollerEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getHorizontalelasticcontroller__Stop() {
+		return horizontalelasticcontrollerEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getInstancegrouplink() {
 		return instancegrouplinkEClass;
 	}
@@ -638,24 +656,6 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getManual__Start() {
-		return manualEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getManual__Stop() {
-		return manualEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getDynamic() {
 		return dynamicEClass;
 	}
@@ -685,24 +685,6 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 	 */
 	public EAttribute getDynamic_DynamicMinGroupSize() {
 		return (EAttribute)dynamicEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getDynamic__Start() {
-		return dynamicEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getDynamic__Stop() {
-		return dynamicEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -944,7 +926,7 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getRule__AppliesConstraint__DiagnosticChain_Map() {
+	public EOperation getRule__TargetConstraint__DiagnosticChain_Map() {
 		return ruleEClass.getEOperations().get(0);
 	}
 
@@ -962,7 +944,7 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAction_ActionAction() {
+	public EAttribute getAction_Action() {
 		return (EAttribute)actionEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -971,7 +953,7 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAction_ActionActionType() {
+	public EAttribute getAction_ActionType() {
 		return (EAttribute)actionEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -980,17 +962,8 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAction_ActionAmount() {
+	public EAttribute getAction_Amount() {
 		return (EAttribute)actionEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getAction__AppliesConstraint__DiagnosticChain_Map() {
-		return actionEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -1025,8 +998,8 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getScheduler__AppliesConstraint__DiagnosticChain_Map() {
-		return schedulerEClass.getEOperations().get(0);
+	public EClass getUniqueschedule() {
+		return uniquescheduleEClass;
 	}
 
 	/**
@@ -1034,8 +1007,26 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getUniqueschedule() {
-		return uniquescheduleEClass;
+	public EOperation getUniqueschedule__Start() {
+		return uniquescheduleEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getUniqueschedule__Stop() {
+		return uniquescheduleEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getUniqueschedule__AppliesConstraint__DiagnosticChain_Map() {
+		return uniquescheduleEClass.getEOperations().get(2);
 	}
 
 	/**
@@ -1054,6 +1045,33 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 	 */
 	public EReference getRecurringschedule_RecurringscheduleRecurrence() {
 		return (EReference)recurringscheduleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getRecurringschedule__Start() {
+		return recurringscheduleEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getRecurringschedule__Stop() {
+		return recurringscheduleEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getRecurringschedule__AppliesConstraint__DiagnosticChain_Map() {
+		return recurringscheduleEClass.getEOperations().get(2);
 	}
 
 	/**
@@ -1183,6 +1201,8 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 		createEOperation(loadbalancerEClass, LOADBALANCER___REMOVEBACKENDSERVER);
 
 		horizontalelasticcontrollerEClass = createEClass(HORIZONTALELASTICCONTROLLER);
+		createEOperation(horizontalelasticcontrollerEClass, HORIZONTALELASTICCONTROLLER___START);
+		createEOperation(horizontalelasticcontrollerEClass, HORIZONTALELASTICCONTROLLER___STOP);
 
 		instancegrouplinkEClass = createEClass(INSTANCEGROUPLINK);
 		createEOperation(instancegrouplinkEClass, INSTANCEGROUPLINK___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
@@ -1197,15 +1217,11 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 		createEAttribute(manualEClass, MANUAL__MANUAL_GROUP_SIZE);
 		createEAttribute(manualEClass, MANUAL__MANUAL_MAX_GROUP_SIZE);
 		createEAttribute(manualEClass, MANUAL__MANUAL_MIN_GROUP_SIZE);
-		createEOperation(manualEClass, MANUAL___START);
-		createEOperation(manualEClass, MANUAL___STOP);
 
 		dynamicEClass = createEClass(DYNAMIC);
 		createEAttribute(dynamicEClass, DYNAMIC__DYNAMIC_GROUP_SIZE);
 		createEAttribute(dynamicEClass, DYNAMIC__DYNAMIC_MAX_GROUP_SIZE);
 		createEAttribute(dynamicEClass, DYNAMIC__DYNAMIC_MIN_GROUP_SIZE);
-		createEOperation(dynamicEClass, DYNAMIC___START);
-		createEOperation(dynamicEClass, DYNAMIC___STOP);
 
 		simpledynamicEClass = createEClass(SIMPLEDYNAMIC);
 		createEAttribute(simpledynamicEClass, SIMPLEDYNAMIC__SIMPLE_DYNAMIC_NAME);
@@ -1222,6 +1238,20 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 		createEAttribute(dynamicadjustmentEClass, DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_DISABLE_SCALE_IN);
 		createEAttribute(dynamicadjustmentEClass, DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_TARGET);
 
+		ruleEClass = createEClass(RULE);
+		createEAttribute(ruleEClass, RULE__RULE_NAME);
+		createEAttribute(ruleEClass, RULE__RULE_METRIC);
+		createEAttribute(ruleEClass, RULE__RULE_OPERATOR);
+		createEAttribute(ruleEClass, RULE__RULE_THRESHOLD);
+		createEAttribute(ruleEClass, RULE__RULE_PERIOD);
+		createEAttribute(ruleEClass, RULE__RULE_CONSECUTIVE);
+		createEOperation(ruleEClass, RULE___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
+
+		actionEClass = createEClass(ACTION);
+		createEAttribute(actionEClass, ACTION__ACTION);
+		createEAttribute(actionEClass, ACTION__ACTION_TYPE);
+		createEAttribute(actionEClass, ACTION__AMOUNT);
+
 		creationEClass = createEClass(CREATION);
 		createEAttribute(creationEClass, CREATION__OCCI_COMPUTE_CREATION_DATE);
 		createEOperation(creationEClass, CREATION___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
@@ -1231,30 +1261,20 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 		createEAttribute(stepsEClass, STEPS__STEPS_UPPER_STEP_BOUND);
 		createEOperation(stepsEClass, STEPS___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
-		ruleEClass = createEClass(RULE);
-		createEAttribute(ruleEClass, RULE__RULE_NAME);
-		createEAttribute(ruleEClass, RULE__RULE_METRIC);
-		createEAttribute(ruleEClass, RULE__RULE_OPERATOR);
-		createEAttribute(ruleEClass, RULE__RULE_THRESHOLD);
-		createEAttribute(ruleEClass, RULE__RULE_PERIOD);
-		createEAttribute(ruleEClass, RULE__RULE_CONSECUTIVE);
-		createEOperation(ruleEClass, RULE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
-
-		actionEClass = createEClass(ACTION);
-		createEAttribute(actionEClass, ACTION__ACTION_ACTION);
-		createEAttribute(actionEClass, ACTION__ACTION_ACTION_TYPE);
-		createEAttribute(actionEClass, ACTION__ACTION_AMOUNT);
-		createEOperation(actionEClass, ACTION___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
-
 		schedulerEClass = createEClass(SCHEDULER);
 		createEAttribute(schedulerEClass, SCHEDULER__SCHEDULER_START_DATE);
 		createEAttribute(schedulerEClass, SCHEDULER__SCHEDULER_END_DATE);
-		createEOperation(schedulerEClass, SCHEDULER___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
 		uniquescheduleEClass = createEClass(UNIQUESCHEDULE);
+		createEOperation(uniquescheduleEClass, UNIQUESCHEDULE___START);
+		createEOperation(uniquescheduleEClass, UNIQUESCHEDULE___STOP);
+		createEOperation(uniquescheduleEClass, UNIQUESCHEDULE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
 		recurringscheduleEClass = createEClass(RECURRINGSCHEDULE);
 		createEReference(recurringscheduleEClass, RECURRINGSCHEDULE__RECURRINGSCHEDULE_RECURRENCE);
+		createEOperation(recurringscheduleEClass, RECURRINGSCHEDULE___START);
+		createEOperation(recurringscheduleEClass, RECURRINGSCHEDULE___STOP);
+		createEOperation(recurringscheduleEClass, RECURRINGSCHEDULE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
 		// Create enums
 		typeMetricEEnum = createEEnum(TYPE_METRIC);
@@ -1311,10 +1331,10 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 		simpledynamicEClass.getESuperTypes().add(this.getDynamic());
 		stepdynamicEClass.getESuperTypes().add(this.getDynamic());
 		dynamicadjustmentEClass.getESuperTypes().add(this.getDynamic());
+		ruleEClass.getESuperTypes().add(theOCCIPackage.getLink());
+		actionEClass.getESuperTypes().add(theOCCIPackage.getResource());
 		creationEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		stepsEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
-		ruleEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
-		actionEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		schedulerEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		uniquescheduleEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		uniquescheduleEClass.getESuperTypes().add(this.getScheduler());
@@ -1352,6 +1372,10 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 		initEOperation(getLoadbalancer__Removebackendserver(), null, "removebackendserver", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(horizontalelasticcontrollerEClass, Horizontalelasticcontroller.class, "Horizontalelasticcontroller", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEOperation(getHorizontalelasticcontroller__Start(), null, "start", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getHorizontalelasticcontroller__Stop(), null, "stop", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(instancegrouplinkEClass, Instancegrouplink.class, "Instancegrouplink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1391,18 +1415,10 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 		initEAttribute(getManual_ManualMaxGroupSize(), theOCCIPackage.getString(), "manualMaxGroupSize", null, 0, 1, Manual.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getManual_ManualMinGroupSize(), theOCCIPackage.getString(), "manualMinGroupSize", null, 0, 1, Manual.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getManual__Start(), null, "start", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEOperation(getManual__Stop(), null, "stop", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(dynamicEClass, org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamic.class, "Dynamic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDynamic_DynamicGroupSize(), theOCCIPackage.getInteger(), "dynamicGroupSize", null, 0, 1, org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDynamic_DynamicMaxGroupSize(), theOCCIPackage.getInteger(), "dynamicMaxGroupSize", null, 0, 1, org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDynamic_DynamicMinGroupSize(), theOCCIPackage.getInteger(), "dynamicMinGroupSize", null, 0, 1, org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEOperation(getDynamic__Start(), null, "start", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEOperation(getDynamic__Stop(), null, "stop", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(simpledynamicEClass, Simpledynamic.class, "Simpledynamic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSimpledynamic_SimpleDynamicName(), theOCCIPackage.getString(), "simpleDynamicName", null, 0, 1, Simpledynamic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1418,6 +1434,28 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 		initEAttribute(getDynamicadjustment_DynamicAdjustmentCoolDuration(), theOCCIPackage.getInteger(), "dynamicAdjustmentCoolDuration", null, 0, 1, Dynamicadjustment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDynamicadjustment_DynamicAdjustmentDisableScaleIn(), theOCCIPackage.getBoolean(), "dynamicAdjustmentDisableScaleIn", null, 0, 1, Dynamicadjustment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDynamicadjustment_DynamicAdjustmentTarget(), this.getFloat(), "dynamicAdjustmentTarget", null, 0, 1, Dynamicadjustment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(ruleEClass, Rule.class, "Rule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRule_RuleName(), theOCCIPackage.getString(), "ruleName", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRule_RuleMetric(), this.getTypeMetric(), "ruleMetric", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRule_RuleOperator(), this.getOperatorType(), "ruleOperator", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRule_RuleThreshold(), this.getFloat(), "ruleThreshold", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRule_RulePeriod(), theOCCIPackage.getInteger(), "rulePeriod", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRule_RuleConsecutive(), theOCCIPackage.getInteger(), "ruleConsecutive", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		op = initEOperation(getRule__TargetConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "targetConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAction_Action(), this.getActionOperation(), "action", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAction_ActionType(), this.getActionType(), "actionType", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAction_Amount(), this.getFloat(), "amount", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(creationEClass, Creation.class, "Creation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCreation_OcciComputeCreationDate(), this.getDate(), "occiComputeCreationDate", null, 0, 1, Creation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1444,42 +1482,17 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(ruleEClass, Rule.class, "Rule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRule_RuleName(), theOCCIPackage.getString(), "ruleName", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRule_RuleMetric(), this.getTypeMetric(), "ruleMetric", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRule_RuleOperator(), this.getOperatorType(), "ruleOperator", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRule_RuleThreshold(), this.getFloat(), "ruleThreshold", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRule_RulePeriod(), theOCCIPackage.getInteger(), "rulePeriod", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRule_RuleConsecutive(), theOCCIPackage.getInteger(), "ruleConsecutive", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		op = initEOperation(getRule__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAction_ActionAction(), this.getActionOperation(), "actionAction", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAction_ActionActionType(), this.getActionType(), "actionActionType", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAction_ActionAmount(), this.getFloat(), "actionAmount", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		op = initEOperation(getAction__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(schedulerEClass, Scheduler.class, "Scheduler", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getScheduler_SchedulerStartDate(), this.getDate(), "schedulerStartDate", null, 0, 1, Scheduler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getScheduler_SchedulerEndDate(), this.getDate(), "schedulerEndDate", null, 0, 1, Scheduler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = initEOperation(getScheduler__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEClass(uniquescheduleEClass, Uniqueschedule.class, "Uniqueschedule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEOperation(getUniqueschedule__Start(), null, "start", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getUniqueschedule__Stop(), null, "stop", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getUniqueschedule__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -1488,10 +1501,21 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(uniquescheduleEClass, Uniqueschedule.class, "Uniqueschedule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
 		initEClass(recurringscheduleEClass, Recurringschedule.class, "Recurringschedule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRecurringschedule_RecurringscheduleRecurrence(), this.getArrayofRecurrenceStep(), null, "RecurringscheduleRecurrence", null, 0, 1, Recurringschedule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getRecurringschedule__Start(), null, "start", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getRecurringschedule__Stop(), null, "stop", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getRecurringschedule__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(typeMetricEEnum, TypeMetric.class, "TypeMetric");
@@ -1572,6 +1596,12 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 			 "constraints", "targetConstraint"
 		   });	
 		addAnnotation
+		  (ruleEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "targetConstraint"
+		   });	
+		addAnnotation
 		  (creationEClass, 
 		   source, 
 		   new String[] {
@@ -1584,19 +1614,13 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 			 "constraints", "appliesConstraint"
 		   });	
 		addAnnotation
-		  (ruleEClass, 
+		  (uniquescheduleEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "appliesConstraint"
 		   });	
 		addAnnotation
-		  (actionEClass, 
-		   source, 
-		   new String[] {
-			 "constraints", "appliesConstraint"
-		   });	
-		addAnnotation
-		  (schedulerEClass, 
+		  (recurringscheduleEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "appliesConstraint"

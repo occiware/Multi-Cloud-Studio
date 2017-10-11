@@ -54,7 +54,8 @@
       <!-- @generated horizontalelasticity -->
       <package
             uri="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore"
-            class="org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage"/>
+            class="org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage"
+            genModel="model/horizontalelasticity.genmodel"/>
    </extension>
 
 </plugin>

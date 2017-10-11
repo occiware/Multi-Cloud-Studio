@@ -20,6 +20,7 @@ import org.eclipse.cmf.occi.core.Entity;
 
 import org.eclipse.cmf.occi.core.impl.MixinBaseImpl;
 
+import org.eclipse.cmf.occi.core.impl.ResourceImpl;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Action;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.ActionOperation;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.ActionType;
@@ -60,73 +61,73 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ActionImpl#getActionAction <em>Action Action</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ActionImpl#getActionActionType <em>Action Action Type</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ActionImpl#getActionAmount <em>Action Amount</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ActionImpl#getAction <em>Action</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ActionImpl#getActionType <em>Action Type</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ActionImpl#getAmount <em>Amount</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ActionImpl extends MixinBaseImpl implements Action {
+public class ActionImpl extends ResourceImpl implements Action {
 	/**
-	 * The default value of the '{@link #getActionAction() <em>Action Action</em>}' attribute.
+	 * The default value of the '{@link #getAction() <em>Action</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getActionAction()
+	 * @see #getAction()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ActionOperation ACTION_ACTION_EDEFAULT = ActionOperation.ADD;
+	protected static final ActionOperation ACTION_EDEFAULT = ActionOperation.ADD;
 
 	/**
-	 * The cached value of the '{@link #getActionAction() <em>Action Action</em>}' attribute.
+	 * The cached value of the '{@link #getAction() <em>Action</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getActionAction()
+	 * @see #getAction()
 	 * @generated
 	 * @ordered
 	 */
-	protected ActionOperation actionAction = ACTION_ACTION_EDEFAULT;
+	protected ActionOperation action = ACTION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getActionActionType() <em>Action Action Type</em>}' attribute.
+	 * The default value of the '{@link #getActionType() <em>Action Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getActionActionType()
+	 * @see #getActionType()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ActionType ACTION_ACTION_TYPE_EDEFAULT = ActionType.INSTANCE_COUNT;
+	protected static final ActionType ACTION_TYPE_EDEFAULT = ActionType.INSTANCE_COUNT;
 
 	/**
-	 * The cached value of the '{@link #getActionActionType() <em>Action Action Type</em>}' attribute.
+	 * The cached value of the '{@link #getActionType() <em>Action Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getActionActionType()
+	 * @see #getActionType()
 	 * @generated
 	 * @ordered
 	 */
-	protected ActionType actionActionType = ACTION_ACTION_TYPE_EDEFAULT;
+	protected ActionType actionType = ACTION_TYPE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getActionAmount() <em>Action Amount</em>}' attribute.
+	 * The default value of the '{@link #getAmount() <em>Amount</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getActionAmount()
+	 * @see #getAmount()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Float ACTION_AMOUNT_EDEFAULT = null;
+	protected static final Float AMOUNT_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getActionAmount() <em>Action Amount</em>}' attribute.
+	 * The cached value of the '{@link #getAmount() <em>Amount</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getActionAmount()
+	 * @see #getAmount()
 	 * @generated
 	 * @ordered
 	 */
-	protected Float actionAmount = ACTION_AMOUNT_EDEFAULT;
+	protected Float amount = AMOUNT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -152,8 +153,8 @@ public class ActionImpl extends MixinBaseImpl implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ActionOperation getActionAction() {
-		return actionAction;
+	public ActionOperation getAction() {
+		return action;
 	}
 
 	/**
@@ -161,11 +162,11 @@ public class ActionImpl extends MixinBaseImpl implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setActionAction(ActionOperation newActionAction) {
-		ActionOperation oldActionAction = actionAction;
-		actionAction = newActionAction == null ? ACTION_ACTION_EDEFAULT : newActionAction;
+	public void setAction(ActionOperation newAction) {
+		ActionOperation oldAction = action;
+		action = newAction == null ? ACTION_EDEFAULT : newAction;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.ACTION__ACTION_ACTION, oldActionAction, actionAction));
+			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.ACTION__ACTION, oldAction, action));
 	}
 
 	/**
@@ -173,8 +174,8 @@ public class ActionImpl extends MixinBaseImpl implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ActionType getActionActionType() {
-		return actionActionType;
+	public ActionType getActionType() {
+		return actionType;
 	}
 
 	/**
@@ -182,11 +183,11 @@ public class ActionImpl extends MixinBaseImpl implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setActionActionType(ActionType newActionActionType) {
-		ActionType oldActionActionType = actionActionType;
-		actionActionType = newActionActionType == null ? ACTION_ACTION_TYPE_EDEFAULT : newActionActionType;
+	public void setActionType(ActionType newActionType) {
+		ActionType oldActionType = actionType;
+		actionType = newActionType == null ? ACTION_TYPE_EDEFAULT : newActionType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.ACTION__ACTION_ACTION_TYPE, oldActionActionType, actionActionType));
+			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.ACTION__ACTION_TYPE, oldActionType, actionType));
 	}
 
 	/**
@@ -194,8 +195,8 @@ public class ActionImpl extends MixinBaseImpl implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Float getActionAmount() {
-		return actionAmount;
+	public Float getAmount() {
+		return amount;
 	}
 
 	/**
@@ -203,59 +204,11 @@ public class ActionImpl extends MixinBaseImpl implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setActionAmount(Float newActionAmount) {
-		Float oldActionAmount = actionAmount;
-		actionAmount = newActionAmount;
+	public void setAmount(Float newAmount) {
+		Float oldAmount = amount;
+		amount = newAmount;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.ACTION__ACTION_AMOUNT, oldActionAmount, actionAmount));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean appliesConstraint(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		/**
-		 *
-		 * inv appliesConstraint:
-		 *   let severity : Integer[1] = 'Action::appliesConstraint'.getSeverity()
-		 *   in
-		 *     if severity <= 0
-		 *     then true
-		 *     else
-		 *       let
-		 *         result : occi::Boolean[?] = self.entity.oclIsKindOf(Simpledynamic) or
-		 *         self.entity.oclIsKindOf(Stepdynamic)
-		 *       in
-		 *         'Action::appliesConstraint'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
-		 *     endif
-		 */
-		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
-		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
-		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, HorizontalelasticityTables.STR_Action_c_c_appliesConstraint);
-		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, HorizontalelasticityTables.INT_0).booleanValue();
-		/*@NonInvalid*/ boolean symbol_0;
-		if (le) {
-			symbol_0 = ValueUtil.TRUE_VALUE;
-		}
-		else {
-			final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_horizontalelasticity_c_c_Simpledynamic_0 = idResolver.getClass(HorizontalelasticityTables.CLSSid_Simpledynamic, null);
-			final /*@NonInvalid*/ Entity entity_0 = this.getEntity();
-			final /*@NonInvalid*/ boolean oclIsKindOf = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_0, TYP_horizontalelasticity_c_c_Simpledynamic_0).booleanValue();
-			/*@NonInvalid*/ boolean result;
-			if (oclIsKindOf) {
-				result = ValueUtil.TRUE_VALUE;
-			}
-			else {
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_horizontalelasticity_c_c_Stepdynamic_0 = idResolver.getClass(HorizontalelasticityTables.CLSSid_Stepdynamic, null);
-				final /*@NonInvalid*/ boolean oclIsKindOf_0 = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_0, TYP_horizontalelasticity_c_c_Stepdynamic_0).booleanValue();
-				result = oclIsKindOf_0;
-			}
-			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, HorizontalelasticityTables.STR_Action_c_c_appliesConstraint, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, HorizontalelasticityTables.INT_0).booleanValue();
-			symbol_0 = logDiagnostic;
-		}
-		return Boolean.TRUE == symbol_0;
+			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.ACTION__AMOUNT, oldAmount, amount));
 	}
 
 	/**
@@ -266,12 +219,12 @@ public class ActionImpl extends MixinBaseImpl implements Action {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case HorizontalelasticityPackage.ACTION__ACTION_ACTION:
-				return getActionAction();
-			case HorizontalelasticityPackage.ACTION__ACTION_ACTION_TYPE:
-				return getActionActionType();
-			case HorizontalelasticityPackage.ACTION__ACTION_AMOUNT:
-				return getActionAmount();
+			case HorizontalelasticityPackage.ACTION__ACTION:
+				return getAction();
+			case HorizontalelasticityPackage.ACTION__ACTION_TYPE:
+				return getActionType();
+			case HorizontalelasticityPackage.ACTION__AMOUNT:
+				return getAmount();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -284,14 +237,14 @@ public class ActionImpl extends MixinBaseImpl implements Action {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case HorizontalelasticityPackage.ACTION__ACTION_ACTION:
-				setActionAction((ActionOperation)newValue);
+			case HorizontalelasticityPackage.ACTION__ACTION:
+				setAction((ActionOperation)newValue);
 				return;
-			case HorizontalelasticityPackage.ACTION__ACTION_ACTION_TYPE:
-				setActionActionType((ActionType)newValue);
+			case HorizontalelasticityPackage.ACTION__ACTION_TYPE:
+				setActionType((ActionType)newValue);
 				return;
-			case HorizontalelasticityPackage.ACTION__ACTION_AMOUNT:
-				setActionAmount((Float)newValue);
+			case HorizontalelasticityPackage.ACTION__AMOUNT:
+				setAmount((Float)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -305,14 +258,14 @@ public class ActionImpl extends MixinBaseImpl implements Action {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case HorizontalelasticityPackage.ACTION__ACTION_ACTION:
-				setActionAction(ACTION_ACTION_EDEFAULT);
+			case HorizontalelasticityPackage.ACTION__ACTION:
+				setAction(ACTION_EDEFAULT);
 				return;
-			case HorizontalelasticityPackage.ACTION__ACTION_ACTION_TYPE:
-				setActionActionType(ACTION_ACTION_TYPE_EDEFAULT);
+			case HorizontalelasticityPackage.ACTION__ACTION_TYPE:
+				setActionType(ACTION_TYPE_EDEFAULT);
 				return;
-			case HorizontalelasticityPackage.ACTION__ACTION_AMOUNT:
-				setActionAmount(ACTION_AMOUNT_EDEFAULT);
+			case HorizontalelasticityPackage.ACTION__AMOUNT:
+				setAmount(AMOUNT_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -326,29 +279,14 @@ public class ActionImpl extends MixinBaseImpl implements Action {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case HorizontalelasticityPackage.ACTION__ACTION_ACTION:
-				return actionAction != ACTION_ACTION_EDEFAULT;
-			case HorizontalelasticityPackage.ACTION__ACTION_ACTION_TYPE:
-				return actionActionType != ACTION_ACTION_TYPE_EDEFAULT;
-			case HorizontalelasticityPackage.ACTION__ACTION_AMOUNT:
-				return ACTION_AMOUNT_EDEFAULT == null ? actionAmount != null : !ACTION_AMOUNT_EDEFAULT.equals(actionAmount);
+			case HorizontalelasticityPackage.ACTION__ACTION:
+				return action != ACTION_EDEFAULT;
+			case HorizontalelasticityPackage.ACTION__ACTION_TYPE:
+				return actionType != ACTION_TYPE_EDEFAULT;
+			case HorizontalelasticityPackage.ACTION__AMOUNT:
+				return AMOUNT_EDEFAULT == null ? amount != null : !AMOUNT_EDEFAULT.equals(amount);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case HorizontalelasticityPackage.ACTION___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP:
-				return appliesConstraint((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
@@ -361,12 +299,12 @@ public class ActionImpl extends MixinBaseImpl implements Action {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (actionAction: ");
-		result.append(actionAction);
-		result.append(", actionActionType: ");
-		result.append(actionActionType);
-		result.append(", actionAmount: ");
-		result.append(actionAmount);
+		result.append(" (action: ");
+		result.append(action);
+		result.append(", actionType: ");
+		result.append(actionType);
+		result.append(", amount: ");
+		result.append(amount);
 		result.append(')');
 		return result.toString();
 	}

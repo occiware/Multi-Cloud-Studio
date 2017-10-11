@@ -195,6 +195,22 @@ public class HorizontalelasticitySwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case HorizontalelasticityPackage.RULE: {
+				Rule rule = (Rule)theEObject;
+				T result = caseRule(rule);
+				if (result == null) result = caseLink(rule);
+				if (result == null) result = caseEntity(rule);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HorizontalelasticityPackage.ACTION: {
+				Action action = (Action)theEObject;
+				T result = caseAction(action);
+				if (result == null) result = caseResource(action);
+				if (result == null) result = caseEntity(action);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case HorizontalelasticityPackage.CREATION: {
 				Creation creation = (Creation)theEObject;
 				T result = caseCreation(creation);
@@ -206,20 +222,6 @@ public class HorizontalelasticitySwitch<T> extends Switch<T> {
 				Steps steps = (Steps)theEObject;
 				T result = caseSteps(steps);
 				if (result == null) result = caseMixinBase(steps);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case HorizontalelasticityPackage.RULE: {
-				Rule rule = (Rule)theEObject;
-				T result = caseRule(rule);
-				if (result == null) result = caseMixinBase(rule);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case HorizontalelasticityPackage.ACTION: {
-				Action action = (Action)theEObject;
-				T result = caseAction(action);
-				if (result == null) result = caseMixinBase(action);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

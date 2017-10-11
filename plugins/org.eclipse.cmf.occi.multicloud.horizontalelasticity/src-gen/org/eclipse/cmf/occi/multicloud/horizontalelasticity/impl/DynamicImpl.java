@@ -187,24 +187,6 @@ public class DynamicImpl extends HorizontalelasticcontrollerImpl implements org.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void start() {
-		throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Dynamic!start()
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void stop() {
-		throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Dynamic!stop()
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -276,24 +258,6 @@ public class DynamicImpl extends HorizontalelasticcontrollerImpl implements org.
 				return DYNAMIC_MIN_GROUP_SIZE_EDEFAULT == null ? dynamicMinGroupSize != null : !DYNAMIC_MIN_GROUP_SIZE_EDEFAULT.equals(dynamicMinGroupSize);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case HorizontalelasticityPackage.DYNAMIC___START:
-				start();
-				return null;
-			case HorizontalelasticityPackage.DYNAMIC___STOP:
-				stop();
-				return null;
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

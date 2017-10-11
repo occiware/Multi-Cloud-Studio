@@ -16,8 +16,12 @@ package org.eclipse.cmf.occi.multicloud.horizontalelasticity.provider;
 import java.util.Collection;
 import java.util.List;
 
+import org.eclipse.cmf.occi.core.OCCIPackage;
+import org.eclipse.cmf.occi.core.provider.LinkItemProvider;
 import org.eclipse.cmf.occi.core.provider.MixinBaseItemProvider;
 
+import org.eclipse.cmf.occi.infrastructure.InfrastructureFactory;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityFactory;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Rule;
 
@@ -37,7 +41,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class RuleItemProvider extends MixinBaseItemProvider {
+public class RuleItemProvider extends LinkItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -220,7 +224,7 @@ public class RuleItemProvider extends MixinBaseItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Rule)object).getRuleName();
+		String label = ((Rule)object).getId();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Rule_type") :
 			getString("_UI_Rule_type") + " " + label;
@@ -261,6 +265,61 @@ public class RuleItemProvider extends MixinBaseItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createCreation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createSteps()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createScheduler()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createUniqueschedule()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createRecurringschedule()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 InfrastructureFactory.eINSTANCE.createIpnetwork()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 InfrastructureFactory.eINSTANCE.createIpnetworkinterface()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 InfrastructureFactory.eINSTANCE.createOs_tpl()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 InfrastructureFactory.eINSTANCE.createResource_tpl()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 InfrastructureFactory.eINSTANCE.createSsh_key()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 InfrastructureFactory.eINSTANCE.createUser_data()));
 	}
 
 	/**

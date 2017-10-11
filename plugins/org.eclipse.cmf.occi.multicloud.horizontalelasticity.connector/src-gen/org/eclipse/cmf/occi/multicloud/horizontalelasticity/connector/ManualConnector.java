@@ -10,11 +10,10 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Wed Oct 04 16:03:06 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Fri Oct 06 09:54:12 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -40,6 +39,10 @@ public class ManualConnector extends org.eclipse.cmf.occi.multicloud.horizontale
 		LOGGER.debug("Constructor called on " + this);
 		// TODO: Implement this constructor.
 	}
+	
+	public void start() {
+		
+	}
 	// End of user code
 	//
 	// OCCI CRUD callback operations.
@@ -53,6 +56,7 @@ public class ManualConnector extends org.eclipse.cmf.occi.multicloud.horizontale
 	public void occiCreate()
 	{
 		LOGGER.debug("occiCreate() called on " + this);
+		System.out.print("hope it works");
 		// TODO: Implement this callback or remove this method.
 	}
 	// End of user code
@@ -96,40 +100,4 @@ public class ManualConnector extends org.eclipse.cmf.occi.multicloud.horizontale
 	//
 	// Manual actions.
 	//
-	// Start of user code Manual_Kind_start_action
-	/**
-	 * Implement OCCI action:
-     * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/manual/action#
-     * - term: start
-     * - title: 
-	 */
-	@Override
-	public void start()
-	{
-		LOGGER.debug("Action start() called on " + this);
-		Horizontalgroup hg = (Horizontalgroup) this.getLinks().get(0).getTarget();
-		//int temporarycounter = 1;
-		//hg.setHorizontalGroupGroupSize(2);
-		//hg.occiUpdate();
-
-		// TODO: Implement how to start this manual.
-	}
-		// End of user code
-
-	// Start of user code Manual_Kind_stop_action
-	/**
-	 * Implement OCCI action:
-     * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/manual/action#
-     * - term: stop
-     * - title: 
-	 */
-	@Override
-	public void stop()
-	{
-		LOGGER.debug("Action stop() called on " + this);
-
-		// TODO: Implement how to stop this manual.
-	}
-		// End of user code
-
 }	

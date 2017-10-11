@@ -16,10 +16,14 @@ package org.eclipse.cmf.occi.multicloud.horizontalelasticity.provider;
 import java.util.Collection;
 import java.util.List;
 
+import org.eclipse.cmf.occi.core.OCCIPackage;
 import org.eclipse.cmf.occi.core.provider.MixinBaseItemProvider;
 
+import org.eclipse.cmf.occi.core.provider.ResourceItemProvider;
+import org.eclipse.cmf.occi.infrastructure.InfrastructureFactory;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Action;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.ActionOperation;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityFactory;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -38,7 +42,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ActionItemProvider extends MixinBaseItemProvider {
+public class ActionItemProvider extends ResourceItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -60,27 +64,27 @@ public class ActionItemProvider extends MixinBaseItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addActionActionPropertyDescriptor(object);
-			addActionActionTypePropertyDescriptor(object);
-			addActionAmountPropertyDescriptor(object);
+			addActionPropertyDescriptor(object);
+			addActionTypePropertyDescriptor(object);
+			addAmountPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Action Action feature.
+	 * This adds a property descriptor for the Action feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addActionActionPropertyDescriptor(Object object) {
+	protected void addActionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Action_actionAction_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Action_actionAction_feature", "_UI_Action_type"),
-				 HorizontalelasticityPackage.Literals.ACTION__ACTION_ACTION,
+				 getString("_UI_Action_action_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Action_action_feature", "_UI_Action_type"),
+				 HorizontalelasticityPackage.Literals.ACTION__ACTION,
 				 true,
 				 false,
 				 false,
@@ -90,19 +94,19 @@ public class ActionItemProvider extends MixinBaseItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Action Action Type feature.
+	 * This adds a property descriptor for the Action Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addActionActionTypePropertyDescriptor(Object object) {
+	protected void addActionTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Action_actionActionType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Action_actionActionType_feature", "_UI_Action_type"),
-				 HorizontalelasticityPackage.Literals.ACTION__ACTION_ACTION_TYPE,
+				 getString("_UI_Action_actionType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Action_actionType_feature", "_UI_Action_type"),
+				 HorizontalelasticityPackage.Literals.ACTION__ACTION_TYPE,
 				 true,
 				 false,
 				 false,
@@ -112,19 +116,19 @@ public class ActionItemProvider extends MixinBaseItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Action Amount feature.
+	 * This adds a property descriptor for the Amount feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addActionAmountPropertyDescriptor(Object object) {
+	protected void addAmountPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Action_actionAmount_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Action_actionAmount_feature", "_UI_Action_type"),
-				 HorizontalelasticityPackage.Literals.ACTION__ACTION_AMOUNT,
+				 getString("_UI_Action_amount_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Action_amount_feature", "_UI_Action_type"),
+				 HorizontalelasticityPackage.Literals.ACTION__AMOUNT,
 				 true,
 				 false,
 				 false,
@@ -152,8 +156,7 @@ public class ActionItemProvider extends MixinBaseItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		ActionOperation labelValue = ((Action)object).getActionAction();
-		String label = labelValue == null ? null : labelValue.toString();
+		String label = ((Action)object).getId();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Action_type") :
 			getString("_UI_Action_type") + " " + label;
@@ -172,9 +175,9 @@ public class ActionItemProvider extends MixinBaseItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Action.class)) {
-			case HorizontalelasticityPackage.ACTION__ACTION_ACTION:
-			case HorizontalelasticityPackage.ACTION__ACTION_ACTION_TYPE:
-			case HorizontalelasticityPackage.ACTION__ACTION_AMOUNT:
+			case HorizontalelasticityPackage.ACTION__ACTION:
+			case HorizontalelasticityPackage.ACTION__ACTION_TYPE:
+			case HorizontalelasticityPackage.ACTION__AMOUNT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -191,6 +194,91 @@ public class ActionItemProvider extends MixinBaseItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createCreation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createSteps()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createScheduler()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createUniqueschedule()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createRecurringschedule()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 InfrastructureFactory.eINSTANCE.createIpnetwork()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 InfrastructureFactory.eINSTANCE.createIpnetworkinterface()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 InfrastructureFactory.eINSTANCE.createOs_tpl()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 InfrastructureFactory.eINSTANCE.createResource_tpl()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 InfrastructureFactory.eINSTANCE.createSsh_key()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 InfrastructureFactory.eINSTANCE.createUser_data()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.RESOURCE__LINKS,
+				 HorizontalelasticityFactory.eINSTANCE.createInstancegrouplink()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.RESOURCE__LINKS,
+				 HorizontalelasticityFactory.eINSTANCE.createLinkbalancer()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.RESOURCE__LINKS,
+				 HorizontalelasticityFactory.eINSTANCE.createGrouplink()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.RESOURCE__LINKS,
+				 HorizontalelasticityFactory.eINSTANCE.createRule()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.RESOURCE__LINKS,
+				 InfrastructureFactory.eINSTANCE.createStoragelink()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.RESOURCE__LINKS,
+				 InfrastructureFactory.eINSTANCE.createNetworkinterface()));
 	}
 
 	/**

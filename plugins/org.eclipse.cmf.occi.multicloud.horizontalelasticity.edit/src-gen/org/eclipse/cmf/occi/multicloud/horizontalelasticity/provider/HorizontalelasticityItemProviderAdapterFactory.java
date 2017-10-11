@@ -677,10 +677,10 @@ public class HorizontalelasticityItemProviderAdapterFactory extends Horizontalel
 		if (simpledynamicItemProvider != null) simpledynamicItemProvider.dispose();
 		if (stepdynamicItemProvider != null) stepdynamicItemProvider.dispose();
 		if (dynamicadjustmentItemProvider != null) dynamicadjustmentItemProvider.dispose();
-		if (creationItemProvider != null) creationItemProvider.dispose();
-		if (stepsItemProvider != null) stepsItemProvider.dispose();
 		if (ruleItemProvider != null) ruleItemProvider.dispose();
 		if (actionItemProvider != null) actionItemProvider.dispose();
+		if (creationItemProvider != null) creationItemProvider.dispose();
+		if (stepsItemProvider != null) stepsItemProvider.dispose();
 		if (schedulerItemProvider != null) schedulerItemProvider.dispose();
 		if (uniquescheduleItemProvider != null) uniquescheduleItemProvider.dispose();
 		if (recurringscheduleItemProvider != null) recurringscheduleItemProvider.dispose();

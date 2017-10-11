@@ -172,64 +172,6 @@ public class SchedulerImpl extends MixinBaseImpl implements Scheduler {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean appliesConstraint(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		/**
-		 *
-		 * inv appliesConstraint:
-		 *   let severity : Integer[1] = 'Scheduler::appliesConstraint'.getSeverity()
-		 *   in
-		 *     if severity <= 0
-		 *     then true
-		 *     else
-		 *       let
-		 *         result : occi::Boolean[?] = self.entity.oclIsKindOf(Simpledynamic) or
-		 *         self.entity.oclIsKindOf(Stepdynamic) or
-		 *         self.entity.oclIsKindOf(Dynamicadjustment)
-		 *       in
-		 *         'Scheduler::appliesConstraint'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
-		 *     endif
-		 */
-		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
-		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
-		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, HorizontalelasticityTables.STR_Scheduler_c_c_appliesConstraint);
-		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, HorizontalelasticityTables.INT_0).booleanValue();
-		/*@NonInvalid*/ boolean symbol_0;
-		if (le) {
-			symbol_0 = ValueUtil.TRUE_VALUE;
-		}
-		else {
-			final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_horizontalelasticity_c_c_Simpledynamic_0 = idResolver.getClass(HorizontalelasticityTables.CLSSid_Simpledynamic, null);
-			final /*@NonInvalid*/ Entity entity_1 = this.getEntity();
-			final /*@NonInvalid*/ boolean oclIsKindOf = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_1, TYP_horizontalelasticity_c_c_Simpledynamic_0).booleanValue();
-			/*@NonInvalid*/ boolean or;
-			if (oclIsKindOf) {
-				or = ValueUtil.TRUE_VALUE;
-			}
-			else {
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_horizontalelasticity_c_c_Stepdynamic_0 = idResolver.getClass(HorizontalelasticityTables.CLSSid_Stepdynamic, null);
-				final /*@NonInvalid*/ boolean oclIsKindOf_0 = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_1, TYP_horizontalelasticity_c_c_Stepdynamic_0).booleanValue();
-				or = oclIsKindOf_0;
-			}
-			/*@NonInvalid*/ boolean result;
-			if (or) {
-				result = ValueUtil.TRUE_VALUE;
-			}
-			else {
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_horizontalelasticity_c_c_Dynamicadjustment = idResolver.getClass(HorizontalelasticityTables.CLSSid_Dynamicadjustment, null);
-				final /*@NonInvalid*/ boolean oclIsKindOf_1 = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_1, TYP_horizontalelasticity_c_c_Dynamicadjustment).booleanValue();
-				result = oclIsKindOf_1;
-			}
-			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, HorizontalelasticityTables.STR_Scheduler_c_c_appliesConstraint, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, HorizontalelasticityTables.INT_0).booleanValue();
-			symbol_0 = logDiagnostic;
-		}
-		return Boolean.TRUE == symbol_0;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -291,21 +233,6 @@ public class SchedulerImpl extends MixinBaseImpl implements Scheduler {
 				return SCHEDULER_END_DATE_EDEFAULT == null ? schedulerEndDate != null : !SCHEDULER_END_DATE_EDEFAULT.equals(schedulerEndDate);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case HorizontalelasticityPackage.SCHEDULER___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP:
-				return appliesConstraint((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

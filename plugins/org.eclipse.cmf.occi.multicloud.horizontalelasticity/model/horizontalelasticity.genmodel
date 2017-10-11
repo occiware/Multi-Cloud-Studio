@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2015-2017 Obeo, Inria&#xA;All rights reserved. This program and the accompanying materials&#xA;are made available under the terms of the Eclipse Public License v1.0&#xA;which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v10.html&#xA;&#x9;&#xA;Contributors:&#xA;- William Piers &lt;william.piers@obeo.fr>&#xA;- Philippe Merle &lt;philippe.merle@inria.fr>&#xA;- Faiez Zalila &lt;faiez.zalila@inria.fr>" modelDirectory="/org.eclipse.cmf.occi.multicloud.horizontalelasticity/src-gen" editDirectory="/org.eclipse.cmf.occi.multicloud.horizontalelasticity.edit/src-gen" editorDirectory="/org.eclipse.cmf.occi.multicloud.horizontalelasticity.editor/src-gen" modelPluginID="org.eclipse.cmf.occi.multicloud.horizontalelasticity" modelName="Horizontalelasticity" testsDirectory="/org.eclipse.cmf.occi.multicloud.horizontalelasticity.tests/src" complianceLevel="8.0" copyrightFields="false" editPluginID="org.eclipse.cmf.occi.multicloud.horizontalelasticity.edit" editorPluginID="org.eclipse.cmf.occi.multicloud.horizontalelasticity.editor" testsPluginID="org.eclipse.cmf.occi.multicloud.horizontalelasticity.tests" operationReflection="true">
+  <genAnnotations source="http://www.eclipse.org/OCL/GenModel">
+    <details key="Use Delegates" value="false"/>
+  </genAnnotations>
+  <foreignModel>horizontalelasticity.ecore</foreignModel>
+  <genPackages prefix="Horizontalelasticity" basePackage="org.eclipse.cmf.occi.multicloud" disposableProviderFactory="true">
+    <ecorePackage href="horizontalelasticity.ecore#/"/>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="horizontalelasticity.ecore#//TypeMetric"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="horizontalelasticity.ecore#//TypeMetric/CPUtilisation"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="horizontalelasticity.ecore#//TypeMetric/MemoryUtilisation"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="horizontalelasticity.ecore#//OperatorType"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="horizontalelasticity.ecore#//OperatorType/GraterThan"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="horizontalelasticity.ecore#//OperatorType/GreaterThanorEqualto"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="horizontalelasticity.ecore#//OperatorType/LessThan"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="horizontalelasticity.ecore#//OperatorType/LessThanorEqualto"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="horizontalelasticity.ecore#//OperatorType/Equalto"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="horizontalelasticity.ecore#//OperatorType/NotEqualto"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="horizontalelasticity.ecore#//ActionOperation"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="horizontalelasticity.ecore#//ActionOperation/add"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="horizontalelasticity.ecore#//ActionOperation/remove"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="horizontalelasticity.ecore#//ActionOperation/set_to"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="horizontalelasticity.ecore#//ActionType"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="horizontalelasticity.ecore#//ActionType/instanceCount"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="horizontalelasticity.ecore#//ActionType/percent"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="horizontalelasticity.ecore#//MetricTargetTracking"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="horizontalelasticity.ecore#//MetricTargetTracking/AverageCpuUtilisation"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="horizontalelasticity.ecore#//MetricTargetTracking/LBRequestCountperTarget"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="horizontalelasticity.ecore#//MetricTargetTracking/AverageNetworkin"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="horizontalelasticity.ecore#//MetricTargetTracking/AverageNetworkout"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="horizontalelasticity.ecore#//Unit"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="horizontalelasticity.ecore#//Unit/minute"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="horizontalelasticity.ecore#//Unit/hour"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="horizontalelasticity.ecore#//Unit/dayOfWeek"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="horizontalelasticity.ecore#//Unit/dayOfMonth"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="horizontalelasticity.ecore#//Unit/month"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genDataTypes>
+      <ecoreDataType href="horizontalelasticity.ecore#//Float"/>
+    </genDataTypes>
+    <genDataTypes>
+      <ecoreDataType href="horizontalelasticity.ecore#//Date"/>
+    </genDataTypes>
+    <genClasses>
+      <ecoreClass href="horizontalelasticity.ecore#//RecurrenceStep"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//RecurrenceStep/unit"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="horizontalelasticity.ecore#//RecurrenceStep/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="horizontalelasticity.ecore#//Array"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Array/values"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="horizontalelasticity.ecore#//ArrayofRecurrenceStep"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="horizontalelasticity.ecore#//ArrayofRecurrenceStep/arrayofrecurrencestepValues"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="horizontalelasticity.ecore#//Horizontalgroup"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Horizontalgroup/horizontalGroupName"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Horizontalgroup/horizontalGroupGroupSize"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Horizontalgroup/horizontalGroupMaximum"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Horizontalgroup/horizontalGroupMinimum"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Horizontalgroup/horizontalGroupTemplateName"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Horizontalgroup/horizontalGroupLoadBalancer"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="horizontalelasticity.ecore#//Horizontalgroup/create"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="horizontalelasticity.ecore#//Loadbalancer"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Loadbalancer/loadbalancerName"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Loadbalancer/loadbalancerInstanceIP"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Loadbalancer/loadbalancerAddress"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="horizontalelasticity.ecore#//Loadbalancer/addbackendserver"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="horizontalelasticity.ecore#//Loadbalancer/removebackendserver"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="horizontalelasticity.ecore#//Horizontalelasticcontroller"/>
+      <genOperations>
+        <ecoreOperation href="horizontalelasticity.ecore#//Horizontalelasticcontroller/start"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="horizontalelasticity.ecore#//Horizontalelasticcontroller/stop"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="horizontalelasticity.ecore#//Instancegrouplink"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="horizontalelasticity.ecore#//Linkbalancer"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="horizontalelasticity.ecore#//Grouplink"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="horizontalelasticity.ecore#//Manual"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Manual/manualGroupSize"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Manual/manualMaxGroupSize"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Manual/manualMinGroupSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="horizontalelasticity.ecore#//Dynamic"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Dynamic/dynamicGroupSize"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Dynamic/dynamicMaxGroupSize"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Dynamic/dynamicMinGroupSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="horizontalelasticity.ecore#//Simpledynamic"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Simpledynamic/simpleDynamicName"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Simpledynamic/simpleDynamicCoolDuration"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="horizontalelasticity.ecore#//Stepdynamic"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Stepdynamic/stepDynamicName"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Stepdynamic/stepDynamicCoolDuration"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="horizontalelasticity.ecore#//Dynamicadjustment"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Dynamicadjustment/dynamicAdjustmentName"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Dynamicadjustment/dynamicAdjustmentMetric"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Dynamicadjustment/dynamicAdjustmentCoolDuration"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Dynamicadjustment/dynamicAdjustmentDisableScaleIn"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Dynamicadjustment/dynamicAdjustmentTarget"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="horizontalelasticity.ecore#//Rule"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Rule/ruleName"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Rule/ruleMetric"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Rule/ruleOperator"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Rule/ruleThreshold"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Rule/rulePeriod"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Rule/ruleConsecutive"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="horizontalelasticity.ecore#//Action"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Action/action"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Action/actionType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Action/amount"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="horizontalelasticity.ecore#//Creation"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Creation/occiComputeCreationDate"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="horizontalelasticity.ecore#//Steps"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Steps/stepsLowerStepBound"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Steps/stepsUpperStepBound"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="horizontalelasticity.ecore#//Scheduler"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Scheduler/schedulerStartDate"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Scheduler/schedulerEndDate"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="horizontalelasticity.ecore#//Uniqueschedule"/>
+      <genOperations>
+        <ecoreOperation href="horizontalelasticity.ecore#//Uniqueschedule/start"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="horizontalelasticity.ecore#//Uniqueschedule/stop"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="horizontalelasticity.ecore#//Recurringschedule"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="horizontalelasticity.ecore#//Recurringschedule/RecurringscheduleRecurrence"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="horizontalelasticity.ecore#//Recurringschedule/start"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="horizontalelasticity.ecore#//Recurringschedule/stop"/>
+      </genOperations>
+    </genClasses>
+  </genPackages>
+  <usedGenPackages href="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.genmodel#//infrastructure"/>
+  <usedGenPackages href="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.genmodel#//occi"/>
+</genmodel:GenModel>

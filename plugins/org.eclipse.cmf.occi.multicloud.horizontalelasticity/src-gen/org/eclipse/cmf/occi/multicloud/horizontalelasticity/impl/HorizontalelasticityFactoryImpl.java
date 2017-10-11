@@ -83,10 +83,10 @@ public class HorizontalelasticityFactoryImpl extends EFactoryImpl implements Hor
 			case HorizontalelasticityPackage.SIMPLEDYNAMIC: return createSimpledynamic();
 			case HorizontalelasticityPackage.STEPDYNAMIC: return createStepdynamic();
 			case HorizontalelasticityPackage.DYNAMICADJUSTMENT: return createDynamicadjustment();
-			case HorizontalelasticityPackage.CREATION: return createCreation();
-			case HorizontalelasticityPackage.STEPS: return createSteps();
 			case HorizontalelasticityPackage.RULE: return createRule();
 			case HorizontalelasticityPackage.ACTION: return createAction();
+			case HorizontalelasticityPackage.CREATION: return createCreation();
+			case HorizontalelasticityPackage.STEPS: return createSteps();
 			case HorizontalelasticityPackage.SCHEDULER: return createScheduler();
 			case HorizontalelasticityPackage.UNIQUESCHEDULE: return createUniqueschedule();
 			case HorizontalelasticityPackage.RECURRINGSCHEDULE: return createRecurringschedule();

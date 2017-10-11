@@ -139,20 +139,20 @@ public class HorizontalelasticityAdapterFactory extends AdapterFactoryImpl {
 				return createDynamicadjustmentAdapter();
 			}
 			@Override
-			public Adapter caseCreation(Creation object) {
-				return createCreationAdapter();
-			}
-			@Override
-			public Adapter caseSteps(Steps object) {
-				return createStepsAdapter();
-			}
-			@Override
 			public Adapter caseRule(Rule object) {
 				return createRuleAdapter();
 			}
 			@Override
 			public Adapter caseAction(Action object) {
 				return createActionAdapter();
+			}
+			@Override
+			public Adapter caseCreation(Creation object) {
+				return createCreationAdapter();
+			}
+			@Override
+			public Adapter caseSteps(Steps object) {
+				return createStepsAdapter();
 			}
 			@Override
 			public Adapter caseScheduler(Scheduler object) {

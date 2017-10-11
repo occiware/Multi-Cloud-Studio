@@ -18,6 +18,8 @@ import java.util.Map;
 
 import org.eclipse.cmf.occi.core.Entity;
 
+import org.eclipse.cmf.occi.core.Resource;
+import org.eclipse.cmf.occi.core.impl.LinkImpl;
 import org.eclipse.cmf.occi.core.impl.MixinBaseImpl;
 
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage;
@@ -70,7 +72,7 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  *
  * @generated
  */
-public class RuleImpl extends MixinBaseImpl implements Rule {
+public class RuleImpl extends LinkImpl implements Rule {
 	/**
 	 * The default value of the '{@link #getRuleName() <em>Rule Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -341,44 +343,33 @@ public class RuleImpl extends MixinBaseImpl implements Rule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean appliesConstraint(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+	public boolean targetConstraint(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
 		/**
 		 *
-		 * inv appliesConstraint:
-		 *   let severity : Integer[1] = 'Rule::appliesConstraint'.getSeverity()
+		 * inv targetConstraint:
+		 *   let severity : Integer[1] = 'Rule::targetConstraint'.getSeverity()
 		 *   in
 		 *     if severity <= 0
 		 *     then true
 		 *     else
-		 *       let
-		 *         result : occi::Boolean[?] = self.entity.oclIsKindOf(Stepdynamic) or
-		 *         self.entity.oclIsKindOf(Simpledynamic)
+		 *       let result : occi::Boolean[1] = self.target.oclIsKindOf(Action)
 		 *       in
-		 *         'Rule::appliesConstraint'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+		 *         'Rule::targetConstraint'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
 		 *     endif
 		 */
 		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
 		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
-		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, HorizontalelasticityTables.STR_Rule_c_c_appliesConstraint);
+		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, HorizontalelasticityTables.STR_Rule_c_c_targetConstraint);
 		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, HorizontalelasticityTables.INT_0).booleanValue();
 		/*@NonInvalid*/ boolean symbol_0;
 		if (le) {
 			symbol_0 = ValueUtil.TRUE_VALUE;
 		}
 		else {
-			final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_horizontalelasticity_c_c_Stepdynamic_0 = idResolver.getClass(HorizontalelasticityTables.CLSSid_Stepdynamic, null);
-			final /*@NonInvalid*/ Entity entity_0 = this.getEntity();
-			final /*@NonInvalid*/ boolean oclIsKindOf = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_0, TYP_horizontalelasticity_c_c_Stepdynamic_0).booleanValue();
-			/*@NonInvalid*/ boolean result;
-			if (oclIsKindOf) {
-				result = ValueUtil.TRUE_VALUE;
-			}
-			else {
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_horizontalelasticity_c_c_Simpledynamic = idResolver.getClass(HorizontalelasticityTables.CLSSid_Simpledynamic, null);
-				final /*@NonInvalid*/ boolean oclIsKindOf_0 = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_0, TYP_horizontalelasticity_c_c_Simpledynamic).booleanValue();
-				result = oclIsKindOf_0;
-			}
-			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, HorizontalelasticityTables.STR_Rule_c_c_appliesConstraint, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, HorizontalelasticityTables.INT_0).booleanValue();
+			final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_horizontalelasticity_c_c_Action = idResolver.getClass(HorizontalelasticityTables.CLSSid_Action, null);
+			final /*@NonInvalid*/ Resource target = this.getTarget();
+			final /*@NonInvalid*/ boolean result = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, target, TYP_horizontalelasticity_c_c_Action).booleanValue();
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, HorizontalelasticityTables.STR_Rule_c_c_targetConstraint, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, HorizontalelasticityTables.INT_0).booleanValue();
 			symbol_0 = logDiagnostic;
 		}
 		return Boolean.TRUE == symbol_0;
@@ -501,8 +492,8 @@ public class RuleImpl extends MixinBaseImpl implements Rule {
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case HorizontalelasticityPackage.RULE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP:
-				return appliesConstraint((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case HorizontalelasticityPackage.RULE___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP:
+				return targetConstraint((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

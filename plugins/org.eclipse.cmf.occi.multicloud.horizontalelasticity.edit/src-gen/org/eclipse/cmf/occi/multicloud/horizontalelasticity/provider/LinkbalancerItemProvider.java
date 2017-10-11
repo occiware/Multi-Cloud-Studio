@@ -127,16 +127,6 @@ public class LinkbalancerItemProvider extends LinkItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
-				 HorizontalelasticityFactory.eINSTANCE.createRule()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.ENTITY__PARTS,
-				 HorizontalelasticityFactory.eINSTANCE.createAction()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.ENTITY__PARTS,
 				 HorizontalelasticityFactory.eINSTANCE.createScheduler()));
 
 		newChildDescriptors.add

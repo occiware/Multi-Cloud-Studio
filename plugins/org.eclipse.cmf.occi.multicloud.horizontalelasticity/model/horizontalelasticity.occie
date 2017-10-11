@@ -75,7 +75,7 @@
       <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
     </attributes>
   </kinds>
-  <kinds name="SimpleDynamic" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" parent="//@kinds[term='dynamic']">
+  <kinds name="SimpleDynamic" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" parent="//@kinds[term='dynamicpolicy']">
     <attributes name="simpleDynamic.name" mutable="true">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
@@ -83,7 +83,7 @@
       <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
     </attributes>
   </kinds>
-  <kinds name="StepDynamic" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" parent="//@kinds[term='dynamic']">
+  <kinds name="StepDynamic" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#">
     <attributes name="stepDynamic.name" mutable="true">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
@@ -104,7 +104,7 @@
     </attributes>
     <attributes name="dynamicAdjustment.Target" mutable="true" type="//@types.1"/>
   </kinds>
-  <kinds name="Rule" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" source="//@kinds[term='simpledynamic']" target="//@kinds[term='action']">
+  <kinds name="Rule" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" source="//@kinds[term='dynamicpolicy']" target="//@kinds[term='action']">
     <attributes name="rule.name" mutable="true">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
@@ -125,24 +125,30 @@
     <attributes name="amount" mutable="true" type="//@types.1"/>
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
   </kinds>
+  <kinds name="DynamicPolicy" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" parent="//@kinds[term='dynamic']"/>
+  <kinds name="Step" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#">
+    <attributes name="steps.lowerStepBound" mutable="true" type="//@types.1"/>
+    <attributes name="steps.upperStepBound" mutable="true" type="//@types.1"/>
+    <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
+  </kinds>
   <mixins name="Creation" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#">
     <attributes name="occi.compute.creation.date" mutable="true" type="//@types.9"/>
     <applies href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
   </mixins>
-  <mixins name="Steps" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" applies="//@kinds[term='stepdynamic']">
-    <attributes name="steps.lowerStepBound" mutable="true" type="//@types.1"/>
-    <attributes name="steps.upperStepBound" mutable="true" type="//@types.1"/>
+  <mixins name="Scheduler" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" title="" applies="//@kinds[term='manual'] //@kinds[term='simpledynamic'] //@kinds[term='stepdynamic'] //@kinds[term='dynamicadjustment']">
+    <actions name="Start" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/scheduler/action#"/>
+    <actions name="Stop" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/scheduler/action#"/>
   </mixins>
-  <mixins name="Scheduler" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" title="">
-    <attributes name="scheduler.startDate" mutable="true" type="//@types.9"/>
-    <attributes name="scheduler.endDate" mutable="true" type="//@types.9"/>
-  </mixins>
-  <mixins name="UniqueSchedule" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" depends="//@mixins[term='scheduler']" applies="//@kinds[term='manual'] //@kinds[term='simpledynamic'] //@kinds[term='stepdynamic'] //@kinds[term='dynamicadjustment']">
+  <mixins name="UniqueSchedule" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" depends="//@mixins[term='scheduler']">
+    <attributes name="UniqueSchedule.startDate" mutable="true" type="//@types.9"/>
+    <attributes name="UniqueSchedule.endDate" mutable="true" type="//@types.9"/>
     <actions name="start" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/uniqueschedule/action#"/>
     <actions name="stop" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/uniqueschedule/action#"/>
   </mixins>
-  <mixins name="Recurringschedule" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" depends="//@mixins[term='scheduler']" applies="//@kinds[term='manual'] //@kinds[term='dynamicadjustment'] //@kinds[term='stepdynamic'] //@kinds[term='simpledynamic']">
+  <mixins name="Recurringschedule" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" depends="//@mixins[term='scheduler']">
     <attributes name="Recurringschedule.recurrence" mutable="true" type="//@types.10"/>
+    <attributes name="Recurringschedule.startDate" mutable="true" type="//@types.9"/>
+    <attributes name="Recurringschedule.endDate" mutable="true" type="//@types.9"/>
     <actions name="start" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/recurringschedule/action#"/>
     <actions name="stop" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/recurringschedule/action#"/>
   </mixins>

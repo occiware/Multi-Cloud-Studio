@@ -238,7 +238,7 @@
             <styles xmi:type="notation:FilteringStyle" xmi:id="_xexQQ3d_Eeel8dnl9hOpkw"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_xewpMXd_Eeel8dnl9hOpkw" fontName=".SF NS Text" fontHeight="12" bold="true"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xewpMnd_Eeel8dnl9hOpkw" x="1884" y="376" width="171" height="151"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xewpMnd_Eeel8dnl9hOpkw" x="204" y="544" width="171" height="151"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_Du_YkHwQEeekHPYWYG6JCQ" type="2003" element="_DudNEHwQEeekHPYWYG6JCQ">
           <children xmi:type="notation:Node" xmi:id="_DvFfMHwQEeekHPYWYG6JCQ" type="5007"/>
@@ -259,7 +259,7 @@
             <styles xmi:type="notation:FilteringStyle" xmi:id="_DvGGQnwQEeekHPYWYG6JCQ"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_Du_YkXwQEeekHPYWYG6JCQ" fontName=".SF NS Text" fontHeight="12" bold="true"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Du_YknwQEeekHPYWYG6JCQ" x="2128" y="444" width="155" height="95"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Du_YknwQEeekHPYWYG6JCQ" x="448" y="612" width="155" height="95"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_LwNQgH3SEeesF9wyjuvyGQ" type="2002" element="_LqjUcH3SEeesF9wyjuvyGQ">
           <children xmi:type="notation:Node" xmi:id="_LwT-MH3SEeesF9wyjuvyGQ" type="5006"/>
@@ -781,17 +781,17 @@
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_-wtAYHd_Eeel8dnl9hOpkw" type="4001" element="_-wEHMHd_Eeel8dnl9hOpkw" source="_xewpMHd_Eeel8dnl9hOpkw" target="_tG7tWnd_Eeel8dnl9hOpkw">
           <children xmi:type="notation:Node" xmi:id="_-wtncHd_Eeel8dnl9hOpkw" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-wtncXd_Eeel8dnl9hOpkw" y="-10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-wtncXd_Eeel8dnl9hOpkw" x="-5" y="9"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_-wtncnd_Eeel8dnl9hOpkw" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-wtnc3d_Eeel8dnl9hOpkw" y="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-wtnc3d_Eeel8dnl9hOpkw" x="9" y="-10"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_-wtndHd_Eeel8dnl9hOpkw" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-wtndXd_Eeel8dnl9hOpkw" y="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-wtndXd_Eeel8dnl9hOpkw" x="5" y="-10"/>
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_-wtAYXd_Eeel8dnl9hOpkw"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_-wtAYnd_Eeel8dnl9hOpkw" fontName=".SF NS Text" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_-wtAY3d_Eeel8dnl9hOpkw" points="[0, 0, 205, 52]$[-205, -52, 0, 0]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_-wtAY3d_Eeel8dnl9hOpkw" points="[169, -26, -1306, 194]$[1475, -220, 0, 0]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_-wtndnd_Eeel8dnl9hOpkw" id="(0.0,0.5637583892617449)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_-wtnd3d_Eeel8dnl9hOpkw" id="(1.0,0.15789473684210525)"/>
         </edges>
@@ -1325,17 +1325,17 @@
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_yxFQUH5cEeebepCmJvlUlQ" type="4001" element="_ywLRYH5cEeebepCmJvlUlQ" source="_Du_YkHwQEeekHPYWYG6JCQ" target="_Bnq8Cn5bEee2_8lT7ZB_wA">
           <children xmi:type="notation:Node" xmi:id="_yxGecH5cEeebepCmJvlUlQ" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yxGecX5cEeebepCmJvlUlQ" x="2" y="-9"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yxGecX5cEeebepCmJvlUlQ" x="7" y="-4"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_yxHFgH5cEeebepCmJvlUlQ" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yxHFgX5cEeebepCmJvlUlQ" x="-3" y="11"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yxHFgX5cEeebepCmJvlUlQ" x="-9" y="8"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_yxHskH5cEeebepCmJvlUlQ" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yxHskX5cEeebepCmJvlUlQ" x="-1" y="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yxHskX5cEeebepCmJvlUlQ" x="-10" y="7"/>
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_yxFQUX5cEeebepCmJvlUlQ"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_yxFQUn5cEeebepCmJvlUlQ" fontName=".SF NS Text" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_yxFQU35cEeebepCmJvlUlQ" points="[-76, 15, 1767, -349]$[-1773, 351, 70, -13]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_yxFQU35cEeebepCmJvlUlQ" points="[-25, 47, 138, -149]$[-93, 182, 70, -14]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_yxKI0H5cEeebepCmJvlUlQ" id="(0.5,0.5)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_yxKI0X5cEeebepCmJvlUlQ" id="(0.5,0.5)"/>
         </edges>
@@ -1410,7 +1410,7 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='BooleanTypeContainer']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='BooleanTypeContainer']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_tGfohHd_Eeel8dnl9hOpkw" name="boolean" tooltipText="org.eclipse.cmf.occi.core.impl.BooleanTypeImpl@3fae27a2 (name: Boolean, documentation: Data type for booleans)">
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_tGfohHd_Eeel8dnl9hOpkw" name="boolean" tooltipText="org.eclipse.cmf.occi.core.impl.BooleanTypeImpl@3b3c786f (name: Boolean, documentation: Data type for booleans)">
           <target xmi:type="occi:BooleanType" href="http://schemas.ogf.org/occi/core#//@types.1"/>
           <semanticElements xmi:type="occi:BooleanType" href="http://schemas.ogf.org/occi/core#//@types.1"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_tGfohXd_Eeel8dnl9hOpkw" showIcon="false">
@@ -1428,7 +1428,7 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='StringTypeContainer']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='StringTypeContainer']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_tGfoiHd_Eeel8dnl9hOpkw" name="java.lang.String" tooltipText="org.eclipse.cmf.occi.core.impl.StringTypeImpl@775a2999 (name: String, documentation: Data type for strings) (pattern: null, length: &lt;unset>, minLength: &lt;unset>, maxLength: &lt;unset>)">
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_tGfoiHd_Eeel8dnl9hOpkw" name="java.lang.String" tooltipText="org.eclipse.cmf.occi.core.impl.StringTypeImpl@6a8356f2 (name: String, documentation: Data type for strings) (pattern: null, length: &lt;unset>, minLength: &lt;unset>, maxLength: &lt;unset>)">
           <target xmi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
           <semanticElements xmi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_tGfoiXd_Eeel8dnl9hOpkw" showIcon="false">
@@ -1446,7 +1446,7 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='NumericTypeContainer']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='NumericTypeContainer']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_tGfojHd_Eeel8dnl9hOpkw" name="Integer" tooltipText="org.eclipse.cmf.occi.core.impl.NumericTypeImpl@18c25fe2 (name: Integer, documentation: Data type for integers) (type: Integer, totalDigits: &lt;unset>, minExclusive: &lt;unset>, maxExclusive: &lt;unset>, minInclusive: &lt;unset>, maxInclusive: &lt;unset>)">
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_tGfojHd_Eeel8dnl9hOpkw" name="Integer" tooltipText="org.eclipse.cmf.occi.core.impl.NumericTypeImpl@4cdf26b0 (name: Integer, documentation: Data type for integers) (type: Integer, totalDigits: &lt;unset>, minExclusive: &lt;unset>, maxExclusive: &lt;unset>, minInclusive: &lt;unset>, maxInclusive: &lt;unset>)">
           <target xmi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
           <semanticElements xmi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_tGfojXd_Eeel8dnl9hOpkw" showIcon="false">
@@ -1592,7 +1592,7 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='StringTypeContainer']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='StringTypeContainer']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_tGfpJnd_Eeel8dnl9hOpkw" name="java.lang.String" tooltipText="org.eclipse.cmf.occi.core.impl.StringTypeImpl@1605720d (name: DateTime, documentation: null) (pattern: ^(\d{4}((-)?(0[1-9]|1[0-2])((-)?(0[1-9]|[1-2][0-9]|3[0-1])(T(24:00(:00(\.[0]+)?)?|(([0-1][0-9]|2[0-3])(:)[0-5][0-9])((:)[0-5][0-9](\.[\d]+)?)?)((\+|-)(14:00|(0[0-9]|1[0-3])(:)[0-5][0-9])|Z))?)?)?)$, length: &lt;unset>, minLength: &lt;unset>, maxLength: &lt;unset>)">
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_tGfpJnd_Eeel8dnl9hOpkw" name="java.lang.String" tooltipText="org.eclipse.cmf.occi.core.impl.StringTypeImpl@65aaad58 (name: DateTime, documentation: null) (pattern: ^(\d{4}((-)?(0[1-9]|1[0-2])((-)?(0[1-9]|[1-2][0-9]|3[0-1])(T(24:00(:00(\.[0]+)?)?|(([0-1][0-9]|2[0-3])(:)[0-5][0-9])((:)[0-5][0-9](\.[\d]+)?)?)((\+|-)(14:00|(0[0-9]|1[0-3])(:)[0-5][0-9])|Z))?)?)?)$, length: &lt;unset>, minLength: &lt;unset>, maxLength: &lt;unset>)">
           <target xmi:type="occi:StringType" href="http://schemas.ogf.org/occi/monitoring#//@types.1"/>
           <semanticElements xmi:type="occi:StringType" href="http://schemas.ogf.org/occi/monitoring#//@types.1"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_tGfpJ3d_Eeel8dnl9hOpkw" showIcon="false">
@@ -1610,7 +1610,7 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='NumericTypeContainer']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='NumericTypeContainer']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_tGfpKnd_Eeel8dnl9hOpkw" name="Integer" tooltipText="org.eclipse.cmf.occi.core.impl.NumericTypeImpl@18094657 (name: Second, documentation: null) (type: Integer, totalDigits: &lt;unset>, minExclusive: &lt;unset>, maxExclusive: &lt;unset>, minInclusive: 0, maxInclusive: &lt;unset>)">
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_tGfpKnd_Eeel8dnl9hOpkw" name="Integer" tooltipText="org.eclipse.cmf.occi.core.impl.NumericTypeImpl@553370ed (name: Second, documentation: null) (type: Integer, totalDigits: &lt;unset>, minExclusive: &lt;unset>, maxExclusive: &lt;unset>, minInclusive: 0, maxInclusive: &lt;unset>)">
           <target xmi:type="occi:NumericType" href="http://schemas.ogf.org/occi/monitoring#//@types.0"/>
           <semanticElements xmi:type="occi:NumericType" href="http://schemas.ogf.org/occi/monitoring#//@types.0"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_tGfpK3d_Eeel8dnl9hOpkw" showIcon="false">
@@ -2170,7 +2170,7 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='NumericTypeContainer']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='NumericTypeContainer']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_BnIJcn5bEee2_8lT7ZB_wA" name="Double" tooltipText="org.eclipse.cmf.occi.core.impl.NumericTypeImpl@3e796a35 (name: Percent, documentation: null) (type: Double, totalDigits: &lt;unset>, minExclusive: &lt;unset>, maxExclusive: &lt;unset>, minInclusive: 0.0, maxInclusive: &lt;unset>)">
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_BnIJcn5bEee2_8lT7ZB_wA" name="Double" tooltipText="org.eclipse.cmf.occi.core.impl.NumericTypeImpl@2abdd0c1 (name: Percent, documentation: null) (type: Double, totalDigits: &lt;unset>, minExclusive: &lt;unset>, maxExclusive: &lt;unset>, minInclusive: 0.0, maxInclusive: &lt;unset>)">
           <target xmi:type="occi:NumericType" href="http://occiware.org/occi/multicloud/monitoring#//@types.1"/>
           <semanticElements xmi:type="occi:NumericType" href="http://occiware.org/occi/multicloud/monitoring#//@types.1"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_BnIJc35bEee2_8lT7ZB_wA" showIcon="false">
@@ -2188,7 +2188,7 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='NumericTypeContainer']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='NumericTypeContainer']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_BnIJdH5bEee2_8lT7ZB_wA" name="Double" tooltipText="org.eclipse.cmf.occi.core.impl.NumericTypeImpl@314aac19 (name: Average, documentation: null) (type: Double, totalDigits: &lt;unset>, minExclusive: , maxExclusive: &lt;unset>, minInclusive: 0.0, maxInclusive: &lt;unset>)">
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_BnIJdH5bEee2_8lT7ZB_wA" name="Double" tooltipText="org.eclipse.cmf.occi.core.impl.NumericTypeImpl@27d817b5 (name: Average, documentation: null) (type: Double, totalDigits: &lt;unset>, minExclusive: , maxExclusive: &lt;unset>, minInclusive: 0.0, maxInclusive: &lt;unset>)">
           <target xmi:type="occi:NumericType" href="http://occiware.org/occi/multicloud/monitoring#//@types.2"/>
           <semanticElements xmi:type="occi:NumericType" href="http://occiware.org/occi/multicloud/monitoring#//@types.2"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_BnIJdX5bEee2_8lT7ZB_wA" showIcon="false">
@@ -2206,7 +2206,7 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='NumericTypeContainer']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='NumericTypeContainer']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_BnIwgH5bEee2_8lT7ZB_wA" name="Double" tooltipText="org.eclipse.cmf.occi.core.impl.NumericTypeImpl@67292f02 (name: PerSec, documentation: null) (type: Double, totalDigits: &lt;unset>, minExclusive: &lt;unset>, maxExclusive: &lt;unset>, minInclusive: 0.0, maxInclusive: &lt;unset>)">
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_BnIwgH5bEee2_8lT7ZB_wA" name="Double" tooltipText="org.eclipse.cmf.occi.core.impl.NumericTypeImpl@54094ddf (name: PerSec, documentation: null) (type: Double, totalDigits: &lt;unset>, minExclusive: &lt;unset>, maxExclusive: &lt;unset>, minInclusive: 0.0, maxInclusive: &lt;unset>)">
           <target xmi:type="occi:NumericType" href="http://occiware.org/occi/multicloud/monitoring#//@types.3"/>
           <semanticElements xmi:type="occi:NumericType" href="http://occiware.org/occi/multicloud/monitoring#//@types.3"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_BnIwgX5bEee2_8lT7ZB_wA" showIcon="false">
@@ -2224,7 +2224,7 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='NumericTypeContainer']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='NumericTypeContainer']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_BnIwgn5bEee2_8lT7ZB_wA" name="Double" tooltipText="org.eclipse.cmf.occi.core.impl.NumericTypeImpl@42095b97 (name: Temperature, documentation: null) (type: Double, totalDigits: &lt;unset>, minExclusive: &lt;unset>, maxExclusive: &lt;unset>, minInclusive: &lt;unset>, maxInclusive: &lt;unset>)">
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_BnIwgn5bEee2_8lT7ZB_wA" name="Double" tooltipText="org.eclipse.cmf.occi.core.impl.NumericTypeImpl@6f1b6382 (name: Temperature, documentation: null) (type: Double, totalDigits: &lt;unset>, minExclusive: &lt;unset>, maxExclusive: &lt;unset>, minInclusive: &lt;unset>, maxInclusive: &lt;unset>)">
           <target xmi:type="occi:NumericType" href="http://occiware.org/occi/multicloud/monitoring#//@types.5"/>
           <semanticElements xmi:type="occi:NumericType" href="http://occiware.org/occi/multicloud/monitoring#//@types.5"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_BnIwg35bEee2_8lT7ZB_wA" showIcon="false">

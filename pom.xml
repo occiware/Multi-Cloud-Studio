@@ -19,136 +19,7 @@
     <artifactId>org.eclipse.cmf.occi.multicloud.parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <dependencies>
-        <dependency>
-            <groupId>org.occiware</groupId>
-            <artifactId>org.eclipse.cmf.occi.core</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.occiware</groupId>
-            <artifactId>org.eclipse.cmf.occi.core.edit</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.occiware</groupId>
-            <artifactId>org.eclipse.cmf.occi.core.editor</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.occiware</groupId>
-            <artifactId>org.eclipse.cmf.occi.core.design</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-        <!-- xtext dependencies plugin -->
-        <dependency>
-            <groupId>org.occiware</groupId>
-            <artifactId>org.eclipse.cmf.occi.core.xtext</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.occiware</groupId>
-            <artifactId>org.eclipse.cmf.occi.core.xtext.ide</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.occiware</groupId>
-            <artifactId>org.eclipse.cmf.occi.core.xtext.ui</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-        <!-- generator core plugins -->
-        <dependency>
-            <groupId>org.occiware</groupId>
-            <artifactId>org.eclipse.cmf.occi.core.gen.emf</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.occiware</groupId>
-            <artifactId>org.eclipse.cmf.occi.core.gen.emf.ui</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.occiware</groupId>
-            <artifactId>org.eclipse.cmf.occi.core.gen.design</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.occiware</groupId>
-            <artifactId>org.eclipse.cmf.occi.core.gen.design.ui</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.occiware</groupId>
-            <artifactId>org.eclipse.cmf.occi.core.gen.connector</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.occiware</groupId>
-            <artifactId>org.eclipse.cmf.occi.core.gen.connector.ui</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-        <!-- infrastructure, monitoring and other extensions plugins dependencies -->
-        <dependency>
-            <groupId>org.occiware</groupId>
-            <artifactId>org.eclipse.cmf.occi.infrastructure</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.occiware</groupId>
-            <artifactId>org.eclipse.cmf.occi.infrastructure.edit</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.occiware</groupId>
-            <artifactId>org.eclipse.cmf.occi.infrastructure.editor</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-        <!-- <dependency>
-            <groupId>org.occiware</groupId>
-            <artifactId>org.eclipse.cmf.occi.infrastructure.design</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency> -->
-        <dependency>
-            <groupId>org.occiware</groupId>
-            <artifactId>org.eclipse.cmf.occi.crtp</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.occiware</groupId>
-            <artifactId>org.eclipse.cmf.occi.crtp.edit</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.occiware</groupId>
-            <artifactId>org.eclipse.cmf.occi.crtp.editor</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-        <!-- <dependency>
-            <groupId>org.occiware</groupId>
-            <artifactId>org.eclipse.cmf.occi.crtp.design</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency> -->
-        <dependency>
-            <groupId>org.occiware</groupId>
-            <artifactId>org.eclipse.cmf.occi.monitoring</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.occiware</groupId>
-            <artifactId>org.eclipse.cmf.occi.monitoring.edit</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.occiware</groupId>
-            <artifactId>org.eclipse.cmf.occi.monitoring.editor</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-        <!-- <dependency>
-            <groupId>org.occiware</groupId>
-            <artifactId>org.eclipse.cmf.occi.monitoring.design</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency> -->
-    </dependencies>
+    
     <modules>
         <!-- VMware modules -->
         <module>plugins/org.eclipse.cmf.occi.multicloud.vmware</module>
@@ -171,7 +42,16 @@
         <module>plugins/org.eclipse.cmf.occi.multicloud.monitoring.zabbix.tests</module>
         <module>plugins/org.eclipse.cmf.occi.multicloud.monitoring.zabbix.connector</module>
         <!-- <module>plugins/org.eclipse.cmf.occi.multicloud.monitoring.zabbix.design</module> -->
-        
+
+        <!-- module to use directly with monitoring extension, not multicloud.monitoring extension -->
+        <module>plugins/org.eclipse.cmf.occi.multicloud.elasticzabbix</module>
+        <module>plugins/org.eclipse.cmf.occi.multicloud.elasticzabbix.edit</module>
+        <module>plugins/org.eclipse.cmf.occi.multicloud.elasticzabbix.editor</module>
+        <module>plugins/org.eclipse.cmf.occi.multicloud.elasticzabbix.tests</module>
+        <module>plugins/org.eclipse.cmf.occi.multicloud.elasticzabbix.connector</module>
+        <module>plugins/org.eclipse.cmf.occi.multicloud.elasticzabbix.design</module>
+
+
         <!-- designer for multiple extension (merged designers and customs) -->
         <module>plugins/org.eclipse.cmf.occi.multicloud.vmware.monitoring.design</module>
         
@@ -198,6 +78,11 @@
     <repositories>
         <!-- configure p2 repository to resolve against -->
         <repository>
+            <id>OCCI-Studio</id>
+            <url>http://dl.bintray.com/occiware/OCCI-Studio/update-site/current-release</url>
+            <layout>p2</layout>
+        </repository>
+        <repository>
             <id>oxygen</id>
             <layout>p2</layout>
             <url>http://download.eclipse.org/releases/oxygen</url>
@@ -206,6 +91,14 @@
             <id>OCL-6.3</id>
             <layout>p2</layout>
             <url>http://download.eclipse.org/modeling/mdt/ocl/updates/milestones/6.3.0</url>
+        </repository>
+        <repository>
+            <id>oss-sonatype</id>
+            <name>oss-sonatype</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
         </repository>
         <repository>
             <id>mvnrepository</id>

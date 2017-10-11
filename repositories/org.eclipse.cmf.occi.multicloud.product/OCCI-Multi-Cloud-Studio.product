@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
-<!--
- Copyright (c) 2015-2017 Obeo, Inria
-  
- All rights reserved. This program and the accompanying materials
- are made available under the terms of the Eclipse Public License v1.0
- which accompanies this distribution, and is available at
- http://www.eclipse.org/legal/epl-v10.html
- 
- Contributors:
- - William Piers <william.piers@obeo.fr>
- - Philippe Merle <philippe.merle@inria.fr>
- - Christophe Gourdin <christophe.gourdin@inria.fr>
--->
-<?pde version="3.5"?>
+
 <product name="OCCI Multi-Cloud-Studio" uid="org.eclipse.cmf.occi.multicloud.product" id="org.eclipse.platform.ide" application="org.eclipse.ui.ide.workbench" version="1.0.0.qualifier" useFeatures="true" includeLaunchers="true">
 
   <aboutInfo>
@@ -70,6 +57,7 @@
   </configurations>
 
   <repositories>
+    <repository location="https://dl.bintray.com/occiware/Multi-Cloud-Studio/update-site/current-release" enabled="true" />
     <repository location="http://download.eclipse.org/releases/oxygen" enabled="true" />
   </repositories>
 

@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="occimonitoring" version="10.0.0.201505222000">
+  <ownedViewpoints name="OccimonitoringConfiguration" label="Occimonitoring Configuration">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="OccimonitoringConfiguration Diagram" domainClass="Configuration">
+      <metamodel href="http://schemas.ogf.org/occi/core/ecore#/"/>
+      <metamodel href="http://org.eclipse.cmf.occi.multicloud.occimonitoring/ecore#/"/>
+      <defaultLayer name="Default">
+        <edgeMappings name="ZabbixinstanceLinksEdge" sourceMapping="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ZabbixinstanceContainer']" targetMapping="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HostgroulinkContainer'] //@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='TemplatelinkContainer']" targetFinderExpression="feature:links">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="HostgroupLinksEdge" sourceMapping="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HostgroupContainer']" targetMapping="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HostgroulinkContainer'] //@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='TemplatelinkContainer']" targetFinderExpression="feature:links">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ZabbixtemplateLinksEdge" sourceMapping="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ZabbixtemplateContainer']" targetMapping="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HostgroulinkContainer'] //@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='TemplatelinkContainer']" targetFinderExpression="feature:links">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="HostgroulinkTargetEdge" sourceMapping="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HostgroulinkContainer']" targetMapping="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ZabbixinstanceContainer'] //@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HostgroupContainer'] //@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ZabbixtemplateContainer']" targetFinderExpression="feature:target">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="HostgroulinkEdge" sourceMapping="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ZabbixinstanceContainer'] //@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HostgroupContainer'] //@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ZabbixtemplateContainer']" targetMapping="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ZabbixinstanceContainer'] //@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HostgroupContainer'] //@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ZabbixtemplateContainer']" domainClass="Hostgroulink" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="TemplatelinkTargetEdge" sourceMapping="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='TemplatelinkContainer']" targetMapping="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ZabbixinstanceContainer'] //@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HostgroupContainer'] //@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ZabbixtemplateContainer']" targetFinderExpression="feature:target">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="TemplatelinkEdge" sourceMapping="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ZabbixinstanceContainer'] //@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HostgroupContainer'] //@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ZabbixtemplateContainer']" targetMapping="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ZabbixinstanceContainer'] //@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HostgroupContainer'] //@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ZabbixtemplateContainer']" domainClass="Templatelink" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="ZabbixinstanceContainer" preconditionExpression="[self.oclIsTypeOf(Zabbixinstance)/]"
+            labelDirectEdit="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditEntityTitle']"
+			semanticCandidatesExpression="feature:resources" 
+			domainClass="Zabbixinstance">
+<subContainerMappings name="SubZabbixinstanceContainer" semanticCandidatesExpression="[self/]" domainClass="Zabbixinstance" childrenPresentation="List">
+          <subNodeMappings name="ZabbixinstanceId"
+                labelDirectEdit="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditZabbixinstanceId']"
+                semanticCandidatesExpression="[self/]" domainClass="Zabbixinstance">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['id = ' + self.id.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="ZabbixinstanceTitle"
+                labelDirectEdit="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditZabbixinstanceTitle']"
+                semanticCandidatesExpression="[self/]" domainClass="Zabbixinstance">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['title = ' + self.title.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="ZabbixinstanceLocation"
+                labelDirectEdit="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditZabbixinstanceLocation']"
+                semanticCandidatesExpression="[self/]" domainClass="Zabbixinstance">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['location = ' + self.location.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="ZabbixinstanceSummary"
+                labelDirectEdit="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditZabbixinstanceSummary']"
+                semanticCandidatesExpression="[self/]" domainClass="Zabbixinstance">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['summary = ' + self.summary.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="ZabbixinstanceZabbixinstancePort"
+                labelDirectEdit="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditZabbixinstanceZabbixinstancePort']"
+                semanticCandidatesExpression="[self/]" domainClass="Zabbixinstance">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['zabbixinstancePort = ' + self.zabbixinstancePort.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="ZabbixinstanceZabbixinstanceIdentifier"
+                labelDirectEdit="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditZabbixinstanceZabbixinstanceIdentifier']"
+                semanticCandidatesExpression="[self/]" domainClass="Zabbixinstance">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['zabbixinstanceIdentifier = ' + self.zabbixinstanceIdentifier.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="ZabbixinstanceZabbixinstanceIp"
+                labelDirectEdit="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditZabbixinstanceZabbixinstanceIp']"
+                semanticCandidatesExpression="[self/]" domainClass="Zabbixinstance">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['zabbixinstanceIp = ' + self.zabbixinstanceIp.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+			<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.kind.scheme+self.kind.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+</subContainerMappings>
+<subContainerMappings name="MetricsMixin" preconditionExpression="[self.oclIsTypeOf(Metrics)/]" semanticCandidatesExpression="feature:parts" domainClass="Metrics" childrenPresentation="List">
+<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+<subContainerMappings name="CpuUsageMixin" preconditionExpression="[self.oclIsTypeOf(Cpuusage)/]" semanticCandidatesExpression="feature:parts" domainClass="Cpuusage" childrenPresentation="List">
+<subNodeMappings name="CpuusagecpuUsageCpuUsage" semanticCandidatesExpression="[self/]" domainClass="Cpuusage">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['cpuUsageCpuUsage = ' + self.cpuUsageCpuUsage.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+<subContainerMappings name="MemoryUsageMixin" preconditionExpression="[self.oclIsTypeOf(Memoryusage)/]" semanticCandidatesExpression="feature:parts" domainClass="Memoryusage" childrenPresentation="List">
+<subNodeMappings name="MemoryusagememoryUsageMemUsage" semanticCandidatesExpression="[self/]" domainClass="Memoryusage">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['memoryUsageMemUsage = ' + self.memoryUsageMemUsage.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.mixin.scheme+self.mixin.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="[self.title + ': Zabbixinstance'/]" roundedCorner="true">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style> 
+
+        </containerMappings>
+        <containerMappings name="HostgroupContainer" preconditionExpression="[self.oclIsTypeOf(Hostgroup)/]"
+            labelDirectEdit="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditEntityTitle']"
+			semanticCandidatesExpression="feature:resources" 
+			domainClass="Hostgroup">
+<subContainerMappings name="SubHostgroupContainer" semanticCandidatesExpression="[self/]" domainClass="Hostgroup" childrenPresentation="List">
+          <subNodeMappings name="HostgroupId"
+                labelDirectEdit="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditHostgroupId']"
+                semanticCandidatesExpression="[self/]" domainClass="Hostgroup">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['id = ' + self.id.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="HostgroupTitle"
+                labelDirectEdit="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditHostgroupTitle']"
+                semanticCandidatesExpression="[self/]" domainClass="Hostgroup">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['title = ' + self.title.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="HostgroupLocation"
+                labelDirectEdit="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditHostgroupLocation']"
+                semanticCandidatesExpression="[self/]" domainClass="Hostgroup">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['location = ' + self.location.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="HostgroupSummary"
+                labelDirectEdit="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditHostgroupSummary']"
+                semanticCandidatesExpression="[self/]" domainClass="Hostgroup">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['summary = ' + self.summary.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="HostgroupHostgroupIdentifier"
+                labelDirectEdit="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditHostgroupHostgroupIdentifier']"
+                semanticCandidatesExpression="[self/]" domainClass="Hostgroup">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['hostgroupIdentifier = ' + self.hostgroupIdentifier.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+			<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.kind.scheme+self.kind.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+</subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="[self.title + ': Hostgroup'/]" roundedCorner="true">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style> 
+
+        </containerMappings>
+        <containerMappings name="ZabbixtemplateContainer" preconditionExpression="[self.oclIsTypeOf(Zabbixtemplate)/]"
+            labelDirectEdit="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditEntityTitle']"
+			semanticCandidatesExpression="feature:resources" 
+			domainClass="Zabbixtemplate">
+<subContainerMappings name="SubZabbixtemplateContainer" semanticCandidatesExpression="[self/]" domainClass="Zabbixtemplate" childrenPresentation="List">
+          <subNodeMappings name="ZabbixtemplateId"
+                labelDirectEdit="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditZabbixtemplateId']"
+                semanticCandidatesExpression="[self/]" domainClass="Zabbixtemplate">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['id = ' + self.id.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="ZabbixtemplateTitle"
+                labelDirectEdit="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditZabbixtemplateTitle']"
+                semanticCandidatesExpression="[self/]" domainClass="Zabbixtemplate">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['title = ' + self.title.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="ZabbixtemplateLocation"
+                labelDirectEdit="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditZabbixtemplateLocation']"
+                semanticCandidatesExpression="[self/]" domainClass="Zabbixtemplate">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['location = ' + self.location.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="ZabbixtemplateSummary"
+                labelDirectEdit="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditZabbixtemplateSummary']"
+                semanticCandidatesExpression="[self/]" domainClass="Zabbixtemplate">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['summary = ' + self.summary.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="ZabbixtemplateZabbixtemplateIdentifier"
+                labelDirectEdit="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditZabbixtemplateZabbixtemplateIdentifier']"
+                semanticCandidatesExpression="[self/]" domainClass="Zabbixtemplate">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['zabbixtemplateIdentifier = ' + self.zabbixtemplateIdentifier.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="ZabbixtemplateZabbixtemplateHostgid"
+                labelDirectEdit="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditZabbixtemplateZabbixtemplateHostgid']"
+                semanticCandidatesExpression="[self/]" domainClass="Zabbixtemplate">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['zabbixtemplateHostgid = ' + self.zabbixtemplateHostgid.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="ZabbixtemplateZabbixtemplateHostsids"
+                labelDirectEdit="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditZabbixtemplateZabbixtemplateHostsids']"
+                semanticCandidatesExpression="[self/]" domainClass="Zabbixtemplate">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['zabbixtemplateHostsids = ' + self.zabbixtemplateHostsids.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+			<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.kind.scheme+self.kind.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+</subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="[self.title + ': Zabbixtemplate'/]" roundedCorner="true">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style> 
+
+        </containerMappings>
+        <containerMappings name="HostgroulinkContainer"
+            labelDirectEdit="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditEntityTitle']"
+			semanticCandidatesExpression="[resources.links->filter(Hostgroulink)/]" 
+			domainClass="Hostgroulink">
+<subContainerMappings name="SubHostgroulinkContainer" semanticCandidatesExpression="[self/]" domainClass="Hostgroulink" childrenPresentation="List">
+          <subNodeMappings name="HostgroulinkId"
+                labelDirectEdit="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditHostgroulinkId']"
+                semanticCandidatesExpression="[self/]" domainClass="Hostgroulink">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['id = ' + self.id.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="HostgroulinkTitle"
+                labelDirectEdit="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditHostgroulinkTitle']"
+                semanticCandidatesExpression="[self/]" domainClass="Hostgroulink">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['title = ' + self.title.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="HostgroulinkLocation"
+                labelDirectEdit="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditHostgroulinkLocation']"
+                semanticCandidatesExpression="[self/]" domainClass="Hostgroulink">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['location = ' + self.location.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+			<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.kind.scheme+self.kind.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+</subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="[self.title + ': Hostgroulink'/]" roundedCorner="true">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style> 
+
+        </containerMappings>
+        <containerMappings name="TemplatelinkContainer"
+            labelDirectEdit="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditEntityTitle']"
+			semanticCandidatesExpression="[resources.links->filter(Templatelink)/]" 
+			domainClass="Templatelink">
+<subContainerMappings name="SubTemplatelinkContainer" semanticCandidatesExpression="[self/]" domainClass="Templatelink" childrenPresentation="List">
+          <subNodeMappings name="TemplatelinkId"
+                labelDirectEdit="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditTemplatelinkId']"
+                semanticCandidatesExpression="[self/]" domainClass="Templatelink">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['id = ' + self.id.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="TemplatelinkTitle"
+                labelDirectEdit="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditTemplatelinkTitle']"
+                semanticCandidatesExpression="[self/]" domainClass="Templatelink">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['title = ' + self.title.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="TemplatelinkLocation"
+                labelDirectEdit="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditTemplatelinkLocation']"
+                semanticCandidatesExpression="[self/]" domainClass="Templatelink">
+            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['location = ' + self.location.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+			<style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="[self.kind.scheme+self.kind.term/]">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+</subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="10" labelExpression="[self.title + ': Templatelink'/]" roundedCorner="true">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style> 
+
+        </containerMappings>
+        <toolSections name="Occimonitoring resources">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" 
+			name="Create Zabbixinstance"
+			containerMappings="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ZabbixinstanceContainer']"> 
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="Zabbixinstance" referenceName="resources">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="['zabbixinstance' + container.oclAsType(Configuration).resources->size().toString()/]"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" 
+			name="Create Hostgroup"
+			containerMappings="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HostgroupContainer']"> 
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="Hostgroup" referenceName="resources">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="['hostgroup' + container.oclAsType(Configuration).resources->size().toString()/]"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" 
+			name="Create Zabbixtemplate"
+			containerMappings="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ZabbixtemplateContainer']"> 
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="Zabbixtemplate" referenceName="resources">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="['zabbixtemplate' + container.oclAsType(Configuration).resources->size().toString()/]"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+</toolSections>
+ <toolSections name="Occimonitoring links">
+          <ownedTools xsi:type="tool:EdgeCreationDescription"
+			name="Create Hostgroulink"
+			edgeMappings="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@edgeMappings[name='HostgroulinkEdge']"> 
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Hostgroulink" referenceName="links" variableName="link">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription"
+			name="Create Templatelink"
+			edgeMappings="//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@edgeMappings[name='TemplatelinkEdge']"> 
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Templatelink" referenceName="links" variableName="link">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+   </toolSections>   
+ <toolSections name="Occimonitoring mixins">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Metrics" containerMappings="
+//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ZabbixinstanceContainer']/@subContainerMappings[name='MetricsMixin']
+">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Metrics" referenceName="parts"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create CpuUsage" containerMappings="
+//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ZabbixinstanceContainer']/@subContainerMappings[name='CpuUsageMixin']
+">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Cpuusage" referenceName="parts"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create MemoryUsage" containerMappings="
+//@ownedViewpoints[name='OccimonitoringConfiguration']/@ownedRepresentations[name='OccimonitoringConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ZabbixinstanceContainer']/@subContainerMappings[name='MemoryUsageMixin']
+">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Memoryusage" referenceName="parts"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+   </toolSections>    
+        <toolSections name="Tools">
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditEntityTitle" inputLabelExpression="feature:title">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditZabbixinstanceId" inputLabelExpression="feature:id">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditZabbixinstanceTitle" inputLabelExpression="feature:title">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditZabbixinstanceLocation" inputLabelExpression="feature:location">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="location" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditZabbixinstanceSummary" inputLabelExpression="feature:summary">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="summary" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditZabbixinstanceZabbixinstancePort" inputLabelExpression="feature:zabbixinstancePort">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="zabbixinstancePort" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditZabbixinstanceZabbixinstanceIdentifier" inputLabelExpression="feature:zabbixinstanceIdentifier">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="zabbixinstanceIdentifier" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditZabbixinstanceZabbixinstanceIp" inputLabelExpression="feature:zabbixinstanceIp">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="zabbixinstanceIp" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditHostgroupId" inputLabelExpression="feature:id">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditHostgroupTitle" inputLabelExpression="feature:title">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditHostgroupLocation" inputLabelExpression="feature:location">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="location" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditHostgroupSummary" inputLabelExpression="feature:summary">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="summary" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditHostgroupHostgroupIdentifier" inputLabelExpression="feature:hostgroupIdentifier">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="hostgroupIdentifier" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditZabbixtemplateId" inputLabelExpression="feature:id">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditZabbixtemplateTitle" inputLabelExpression="feature:title">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditZabbixtemplateLocation" inputLabelExpression="feature:location">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="location" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditZabbixtemplateSummary" inputLabelExpression="feature:summary">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="summary" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditZabbixtemplateZabbixtemplateIdentifier" inputLabelExpression="feature:zabbixtemplateIdentifier">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="zabbixtemplateIdentifier" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditZabbixtemplateZabbixtemplateHostgid" inputLabelExpression="feature:zabbixtemplateHostgid">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="zabbixtemplateHostgid" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditZabbixtemplateZabbixtemplateHostsids" inputLabelExpression="feature:zabbixtemplateHostsids">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="zabbixtemplateHostsids" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditHostgroulinkId" inputLabelExpression="feature:id">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditHostgroulinkTitle" inputLabelExpression="feature:title">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditHostgroulinkLocation" inputLabelExpression="feature:location">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="location" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditTemplatelinkId" inputLabelExpression="feature:id">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditTemplatelinkTitle" inputLabelExpression="feature:title">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditTemplatelinkLocation" inputLabelExpression="feature:location">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="location" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditCpuusageCpuUsageCpuUsage" inputLabelExpression="feature:cpuUsageCpuUsage">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="cpuUsageCpuUsage" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:OperationAction" name="CpuusageGetmetricAction" label="Getmetric" precondition="[self.oclIsKindOf(Cpuusage)/]">
+            <view name="views"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Cpuusage).getmetric()/]"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditMemoryusageMemoryUsageMemUsage" inputLabelExpression="feature:memoryUsageMemUsage">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="memoryUsageMemUsage" valueExpression="var:arg0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:OperationAction" name="MemoryusageGetmetricAction" label="Getmetric" precondition="[self.oclIsKindOf(Memoryusage)/]">
+            <view name="views"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Memoryusage).getmetric()/]"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:PopupMenu" name="CRUD operations" precondition="[self.oclIsKindOf(Entity)/]">
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Create">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Entity).occiCreate()/]"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Retrieve">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Entity).occiRetrieve()/]"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Update">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Entity).occiUpdate()/]"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Delete">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Entity).occiDelete()/]"/>
+              </initialOperation>
+            </menuItemDescription>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+<!--
+    <ownedJavaExtensions qualifiedClassName="org.occiware.clouddesigner.occi.design.services.DesignServices"/>
+-->
+  </ownedViewpoints>
+</description:Group>

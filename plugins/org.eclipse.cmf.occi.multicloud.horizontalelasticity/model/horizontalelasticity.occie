@@ -83,7 +83,7 @@
       <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
     </attributes>
   </kinds>
-  <kinds name="StepDynamic" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#">
+  <kinds name="StepDynamic" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" parent="//@kinds[term='dynamicpolicy']">
     <attributes name="stepDynamic.name" mutable="true">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>

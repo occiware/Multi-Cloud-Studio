@@ -15,7 +15,6 @@ package org.eclipse.cmf.occi.multicloud.horizontalelasticity;
 import java.util.Map;
 
 import org.eclipse.cmf.occi.core.Link;
-import org.eclipse.cmf.occi.core.MixinBase;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 

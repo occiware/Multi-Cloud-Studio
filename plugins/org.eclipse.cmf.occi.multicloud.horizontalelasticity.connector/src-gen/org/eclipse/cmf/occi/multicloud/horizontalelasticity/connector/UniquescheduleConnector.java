@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Fri Oct 06 09:54:12 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Wed Oct 11 20:59:30 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
@@ -21,7 +21,6 @@ import java.util.Date;
 import java.util.Timer;
 
 import org.eclipse.cmf.occi.core.Entity;
-import org.eclipse.cmf.occi.core.Resource;
 import org.eclipse.cmf.occi.multicloud.elasticocci.connector.Scheduler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -39,8 +38,6 @@ public class UniquescheduleConnector extends org.eclipse.cmf.occi.multicloud.hor
 	 */
 	private static Logger LOGGER = LoggerFactory.getLogger(UniquescheduleConnector.class);
 	Timer timer = new Timer();
-
-
 	// Start of user code Uniquescheduleconnector_constructor
 	/**
 	 * Constructs a uniqueschedule connector.
@@ -63,7 +60,7 @@ public class UniquescheduleConnector extends org.eclipse.cmf.occi.multicloud.hor
 	{
 		LOGGER.debug("Action start() called on " + this);
 		DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		String date = dateFormatter.format(getSchedulerStartDate());
+		String date = dateFormatter.format(getUniqueScheduleStartDate());
 		System.out.println(date);
 		
 		Date date1 = null;

@@ -34,7 +34,7 @@ package org.eclipse.cmf.occi.multicloud.horizontalelasticity;
  * @model
  * @generated
  */
-public interface Simpledynamic extends Dynamic {
+public interface Simpledynamic extends Dynamicpolicy {
 	/**
 	 * Returns the value of the '<em><b>Simple Dynamic Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

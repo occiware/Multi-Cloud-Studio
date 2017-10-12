@@ -168,6 +168,7 @@ public class HorizontalelasticitySwitch<T> extends Switch<T> {
 			case HorizontalelasticityPackage.SIMPLEDYNAMIC: {
 				Simpledynamic simpledynamic = (Simpledynamic)theEObject;
 				T result = caseSimpledynamic(simpledynamic);
+				if (result == null) result = caseDynamicpolicy(simpledynamic);
 				if (result == null) result = caseDynamic(simpledynamic);
 				if (result == null) result = caseHorizontalelasticcontroller(simpledynamic);
 				if (result == null) result = caseResource(simpledynamic);
@@ -178,6 +179,7 @@ public class HorizontalelasticitySwitch<T> extends Switch<T> {
 			case HorizontalelasticityPackage.STEPDYNAMIC: {
 				Stepdynamic stepdynamic = (Stepdynamic)theEObject;
 				T result = caseStepdynamic(stepdynamic);
+				if (result == null) result = caseDynamicpolicy(stepdynamic);
 				if (result == null) result = caseDynamic(stepdynamic);
 				if (result == null) result = caseHorizontalelasticcontroller(stepdynamic);
 				if (result == null) result = caseResource(stepdynamic);
@@ -211,17 +213,28 @@ public class HorizontalelasticitySwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case HorizontalelasticityPackage.DYNAMICPOLICY: {
+				Dynamicpolicy dynamicpolicy = (Dynamicpolicy)theEObject;
+				T result = caseDynamicpolicy(dynamicpolicy);
+				if (result == null) result = caseDynamic(dynamicpolicy);
+				if (result == null) result = caseHorizontalelasticcontroller(dynamicpolicy);
+				if (result == null) result = caseResource(dynamicpolicy);
+				if (result == null) result = caseEntity(dynamicpolicy);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HorizontalelasticityPackage.STEP: {
+				Step step = (Step)theEObject;
+				T result = caseStep(step);
+				if (result == null) result = caseResource(step);
+				if (result == null) result = caseEntity(step);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case HorizontalelasticityPackage.CREATION: {
 				Creation creation = (Creation)theEObject;
 				T result = caseCreation(creation);
 				if (result == null) result = caseMixinBase(creation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case HorizontalelasticityPackage.STEPS: {
-				Steps steps = (Steps)theEObject;
-				T result = caseSteps(steps);
-				if (result == null) result = caseMixinBase(steps);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -463,36 +476,6 @@ public class HorizontalelasticitySwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Creation</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Creation</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCreation(Creation object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Steps</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Steps</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSteps(Steps object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Rule</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -519,6 +502,51 @@ public class HorizontalelasticitySwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAction(Action object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Dynamicpolicy</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Dynamicpolicy</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDynamicpolicy(Dynamicpolicy object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Step</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Step</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStep(Step object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Creation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Creation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCreation(Creation object) {
 		return null;
 	}
 

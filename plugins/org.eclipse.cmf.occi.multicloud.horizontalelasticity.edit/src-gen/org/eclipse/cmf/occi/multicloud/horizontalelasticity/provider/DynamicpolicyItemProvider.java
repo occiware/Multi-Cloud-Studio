@@ -16,29 +16,27 @@ package org.eclipse.cmf.occi.multicloud.horizontalelasticity.provider;
 import java.util.Collection;
 import java.util.List;
 
-import org.eclipse.cmf.occi.core.provider.MixinBaseItemProvider;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamicpolicy;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Strategy} object.
+ * This is the item provider adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamicpolicy} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class StrategyItemProvider extends MixinBaseItemProvider {
+public class DynamicpolicyItemProvider extends DynamicItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StrategyItemProvider(AdapterFactory adapterFactory) {
+	public DynamicpolicyItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -58,14 +56,14 @@ public class StrategyItemProvider extends MixinBaseItemProvider {
 	}
 
 	/**
-	 * This returns Strategy.gif.
+	 * This returns Dynamicpolicy.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Strategy"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Dynamicpolicy"));
 	}
 
 	/**
@@ -76,7 +74,10 @@ public class StrategyItemProvider extends MixinBaseItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Strategy_type");
+		String label = ((Dynamicpolicy)object).getId();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Dynamicpolicy_type") :
+			getString("_UI_Dynamicpolicy_type") + " " + label;
 	}
 	
 
@@ -103,17 +104,6 @@ public class StrategyItemProvider extends MixinBaseItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return HorizontalelasticityEditPlugin.INSTANCE;
 	}
 
 }

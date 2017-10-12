@@ -275,11 +275,6 @@ public class HorizontalgroupItemProvider extends ResourceItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
-				 HorizontalelasticityFactory.eINSTANCE.createSteps()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.ENTITY__PARTS,
 				 HorizontalelasticityFactory.eINSTANCE.createScheduler()));
 
 		newChildDescriptors.add

@@ -12,13 +12,9 @@
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl;
 
-import java.lang.reflect.InvocationTargetException;
-
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage;
 
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 

@@ -16,11 +16,9 @@ import java.lang.reflect.InvocationTargetException;
 
 import java.util.Map;
 
-import org.eclipse.cmf.occi.core.Entity;
-
 import org.eclipse.cmf.occi.core.Resource;
+
 import org.eclipse.cmf.occi.core.impl.LinkImpl;
-import org.eclipse.cmf.occi.core.impl.MixinBaseImpl;
 
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables;
@@ -492,7 +490,7 @@ public class RuleImpl extends LinkImpl implements Rule {
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case HorizontalelasticityPackage.RULE___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP:
+			case HorizontalelasticityPackage.RULE___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1:
 				return targetConstraint((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);

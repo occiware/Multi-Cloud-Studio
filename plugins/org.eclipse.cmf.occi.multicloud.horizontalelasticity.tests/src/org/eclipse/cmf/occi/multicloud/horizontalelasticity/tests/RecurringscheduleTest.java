@@ -28,7 +28,7 @@ import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Recurringschedule;
  * <ul>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Recurringschedule#start() <em>Start</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Recurringschedule#stop() <em>Stop</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Recurringschedule#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Scheduler#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -131,13 +131,13 @@ public class RecurringscheduleTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Recurringschedule#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
+	 * Tests the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Scheduler#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Recurringschedule#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Scheduler#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testAppliesConstraint__DiagnosticChain_Map() {
+	public void testAppliesConstraint__DiagnosticChain_Map_1() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

@@ -120,7 +120,7 @@ public class LinkbalancerImpl extends LinkImpl implements Linkbalancer {
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case HorizontalelasticityPackage.LINKBALANCER___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP:
+			case HorizontalelasticityPackage.LINKBALANCER___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1:
 				return targetConstraint((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);

@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Fri Oct 06 09:54:12 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Wed Oct 11 20:59:30 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
@@ -167,23 +167,34 @@ public class ConnectorFactory extends org.eclipse.cmf.occi.multicloud.horizontal
 	/**
 	 * EFactory method for OCCI kind:
 	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
+	 * - term: dynamicpolicy
+	 * - title: 
+	 */
+	@Override
+	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamicpolicy createDynamicpolicy() {
+		return new DynamicpolicyConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
+	 * - term: step
+	 * - title: 
+	 */
+	@Override
+	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Step createStep() {
+		return new StepConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
 	 * - term: creation
 	 * - title: 
 	 */
 	@Override
 	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Creation createCreation() {
 		return new CreationConnector();
-	}
-
-	/**
-	 * EFactory method for OCCI kind:
-	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
-	 * - term: steps
-	 * - title: 
-	 */
-	@Override
-	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Steps createSteps() {
-		return new StepsConnector();
 	}
 
 	/**

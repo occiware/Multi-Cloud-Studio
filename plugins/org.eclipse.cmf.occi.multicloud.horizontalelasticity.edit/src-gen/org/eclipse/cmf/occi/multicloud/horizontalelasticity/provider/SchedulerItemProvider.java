@@ -14,23 +14,16 @@ package org.eclipse.cmf.occi.multicloud.horizontalelasticity.provider;
 
 
 import java.util.Collection;
-import java.util.Date;
 import java.util.List;
 
 import org.eclipse.cmf.occi.core.provider.MixinBaseItemProvider;
-
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage;
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Scheduler;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Scheduler} object.
@@ -60,54 +53,8 @@ public class SchedulerItemProvider extends MixinBaseItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSchedulerStartDatePropertyDescriptor(object);
-			addSchedulerEndDatePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Scheduler Start Date feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSchedulerStartDatePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Scheduler_schedulerStartDate_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Scheduler_schedulerStartDate_feature", "_UI_Scheduler_type"),
-				 HorizontalelasticityPackage.Literals.SCHEDULER__SCHEDULER_START_DATE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Scheduler End Date feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSchedulerEndDatePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Scheduler_schedulerEndDate_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Scheduler_schedulerEndDate_feature", "_UI_Scheduler_type"),
-				 HorizontalelasticityPackage.Literals.SCHEDULER__SCHEDULER_END_DATE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -129,11 +76,7 @@ public class SchedulerItemProvider extends MixinBaseItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		Date labelValue = ((Scheduler)object).getSchedulerStartDate();
-		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Scheduler_type") :
-			getString("_UI_Scheduler_type") + " " + label;
+		return getString("_UI_Scheduler_type");
 	}
 	
 
@@ -147,13 +90,6 @@ public class SchedulerItemProvider extends MixinBaseItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(Scheduler.class)) {
-			case HorizontalelasticityPackage.SCHEDULER__SCHEDULER_START_DATE:
-			case HorizontalelasticityPackage.SCHEDULER__SCHEDULER_END_DATE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 

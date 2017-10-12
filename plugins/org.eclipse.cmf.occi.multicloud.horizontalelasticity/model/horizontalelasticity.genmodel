@@ -271,31 +271,40 @@
       </genFeatures>
     </genClasses>
     <genClasses>
+      <ecoreClass href="horizontalelasticity.ecore#//Dynamicpolicy"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="horizontalelasticity.ecore#//Step"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Step/stepsLowerStepBound"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Step/stepsUpperStepBound"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
       <ecoreClass href="horizontalelasticity.ecore#//Creation"/>
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Creation/occiComputeCreationDate"/>
       </genFeatures>
     </genClasses>
     <genClasses>
-      <ecoreClass href="horizontalelasticity.ecore#//Steps"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Steps/stepsLowerStepBound"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Steps/stepsUpperStepBound"/>
-      </genFeatures>
-    </genClasses>
-    <genClasses>
       <ecoreClass href="horizontalelasticity.ecore#//Scheduler"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Scheduler/schedulerStartDate"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Scheduler/schedulerEndDate"/>
-      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="horizontalelasticity.ecore#//Scheduler/start"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="horizontalelasticity.ecore#//Scheduler/stop"/>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="horizontalelasticity.ecore#//Uniqueschedule"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Uniqueschedule/UniqueScheduleStartDate"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Uniqueschedule/UniqueScheduleEndDate"/>
+      </genFeatures>
       <genOperations>
         <ecoreOperation href="horizontalelasticity.ecore#//Uniqueschedule/start"/>
       </genOperations>
@@ -305,8 +314,14 @@
     </genClasses>
     <genClasses>
       <ecoreClass href="horizontalelasticity.ecore#//Recurringschedule"/>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="horizontalelasticity.ecore#//Recurringschedule/RecurringscheduleRecurrence"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Recurringschedule/RecurringscheduleRecurrence"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Recurringschedule/RecurringscheduleStartDate"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Recurringschedule/RecurringscheduleEndDate"/>
       </genFeatures>
       <genOperations>
         <ecoreOperation href="horizontalelasticity.ecore#//Recurringschedule/start"/>

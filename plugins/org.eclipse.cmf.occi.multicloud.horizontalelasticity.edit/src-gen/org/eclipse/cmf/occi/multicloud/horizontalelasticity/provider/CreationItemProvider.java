@@ -13,8 +13,6 @@
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.provider;
 
 
-import java.sql.Time;
-
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;

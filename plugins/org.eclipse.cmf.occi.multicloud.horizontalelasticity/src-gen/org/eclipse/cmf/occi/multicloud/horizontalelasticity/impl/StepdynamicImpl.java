@@ -35,7 +35,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class StepdynamicImpl extends DynamicImpl implements Stepdynamic {
+public class StepdynamicImpl extends DynamicpolicyImpl implements Stepdynamic {
 	/**
 	 * The default value of the '{@link #getStepDynamicName() <em>Step Dynamic Name</em>}' attribute.
 	 * <!-- begin-user-doc -->

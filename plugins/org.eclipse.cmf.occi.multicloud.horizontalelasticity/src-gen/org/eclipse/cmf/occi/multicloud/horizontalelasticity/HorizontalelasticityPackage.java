@@ -940,7 +940,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTANCEGROUPLINK___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.LINK_OPERATION_COUNT + 0;
+	int INSTANCEGROUPLINK___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1 = OCCIPackage.LINK_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Instancegrouplink</em>' class.
@@ -1112,7 +1112,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINKBALANCER___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.LINK_OPERATION_COUNT + 0;
+	int LINKBALANCER___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1 = OCCIPackage.LINK_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Linkbalancer</em>' class.
@@ -1284,7 +1284,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GROUPLINK___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.LINK_OPERATION_COUNT + 0;
+	int GROUPLINK___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1 = OCCIPackage.LINK_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Grouplink</em>' class.
@@ -1694,6 +1694,205 @@ public interface HorizontalelasticityPackage extends EPackage {
 	int DYNAMIC_OPERATION_COUNT = HORIZONTALELASTICCONTROLLER_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.DynamicpolicyImpl <em>Dynamicpolicy</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.DynamicpolicyImpl
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getDynamicpolicy()
+	 * @generated
+	 */
+	int DYNAMICPOLICY = 16;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMICPOLICY__ID = DYNAMIC__ID;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMICPOLICY__TITLE = DYNAMIC__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMICPOLICY__KIND = DYNAMIC__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Location</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMICPOLICY__LOCATION = DYNAMIC__LOCATION;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMICPOLICY__ATTRIBUTES = DYNAMIC__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Mixins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMICPOLICY__MIXINS = DYNAMIC__MIXINS;
+
+	/**
+	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMICPOLICY__PARTS = DYNAMIC__PARTS;
+
+	/**
+	 * The feature id for the '<em><b>Summary</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMICPOLICY__SUMMARY = DYNAMIC__SUMMARY;
+
+	/**
+	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMICPOLICY__LINKS = DYNAMIC__LINKS;
+
+	/**
+	 * The feature id for the '<em><b>Rlinks</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMICPOLICY__RLINKS = DYNAMIC__RLINKS;
+
+	/**
+	 * The feature id for the '<em><b>Dynamic Group Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMICPOLICY__DYNAMIC_GROUP_SIZE = DYNAMIC__DYNAMIC_GROUP_SIZE;
+
+	/**
+	 * The feature id for the '<em><b>Dynamic Max Group Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMICPOLICY__DYNAMIC_MAX_GROUP_SIZE = DYNAMIC__DYNAMIC_MAX_GROUP_SIZE;
+
+	/**
+	 * The feature id for the '<em><b>Dynamic Min Group Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMICPOLICY__DYNAMIC_MIN_GROUP_SIZE = DYNAMIC__DYNAMIC_MIN_GROUP_SIZE;
+
+	/**
+	 * The number of structural features of the '<em>Dynamicpolicy</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMICPOLICY_FEATURE_COUNT = DYNAMIC_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Occi Create</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMICPOLICY___OCCI_CREATE = DYNAMIC___OCCI_CREATE;
+
+	/**
+	 * The operation id for the '<em>Occi Retrieve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMICPOLICY___OCCI_RETRIEVE = DYNAMIC___OCCI_RETRIEVE;
+
+	/**
+	 * The operation id for the '<em>Occi Update</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMICPOLICY___OCCI_UPDATE = DYNAMIC___OCCI_UPDATE;
+
+	/**
+	 * The operation id for the '<em>Occi Delete</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMICPOLICY___OCCI_DELETE = DYNAMIC___OCCI_DELETE;
+
+	/**
+	 * The operation id for the '<em>Start</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMICPOLICY___START = DYNAMIC___START;
+
+	/**
+	 * The operation id for the '<em>Stop</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMICPOLICY___STOP = DYNAMIC___STOP;
+
+	/**
+	 * The number of operations of the '<em>Dynamicpolicy</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMICPOLICY_OPERATION_COUNT = DYNAMIC_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.SimpledynamicImpl <em>Simpledynamic</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1710,7 +1909,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SIMPLEDYNAMIC__ID = DYNAMIC__ID;
+	int SIMPLEDYNAMIC__ID = DYNAMICPOLICY__ID;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -1719,7 +1918,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SIMPLEDYNAMIC__TITLE = DYNAMIC__TITLE;
+	int SIMPLEDYNAMIC__TITLE = DYNAMICPOLICY__TITLE;
 
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' reference.
@@ -1728,7 +1927,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SIMPLEDYNAMIC__KIND = DYNAMIC__KIND;
+	int SIMPLEDYNAMIC__KIND = DYNAMICPOLICY__KIND;
 
 	/**
 	 * The feature id for the '<em><b>Location</b></em>' attribute.
@@ -1737,7 +1936,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SIMPLEDYNAMIC__LOCATION = DYNAMIC__LOCATION;
+	int SIMPLEDYNAMIC__LOCATION = DYNAMICPOLICY__LOCATION;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -1746,7 +1945,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SIMPLEDYNAMIC__ATTRIBUTES = DYNAMIC__ATTRIBUTES;
+	int SIMPLEDYNAMIC__ATTRIBUTES = DYNAMICPOLICY__ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Mixins</b></em>' reference list.
@@ -1755,7 +1954,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SIMPLEDYNAMIC__MIXINS = DYNAMIC__MIXINS;
+	int SIMPLEDYNAMIC__MIXINS = DYNAMICPOLICY__MIXINS;
 
 	/**
 	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
@@ -1764,7 +1963,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SIMPLEDYNAMIC__PARTS = DYNAMIC__PARTS;
+	int SIMPLEDYNAMIC__PARTS = DYNAMICPOLICY__PARTS;
 
 	/**
 	 * The feature id for the '<em><b>Summary</b></em>' attribute.
@@ -1773,7 +1972,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SIMPLEDYNAMIC__SUMMARY = DYNAMIC__SUMMARY;
+	int SIMPLEDYNAMIC__SUMMARY = DYNAMICPOLICY__SUMMARY;
 
 	/**
 	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
@@ -1782,7 +1981,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SIMPLEDYNAMIC__LINKS = DYNAMIC__LINKS;
+	int SIMPLEDYNAMIC__LINKS = DYNAMICPOLICY__LINKS;
 
 	/**
 	 * The feature id for the '<em><b>Rlinks</b></em>' reference list.
@@ -1791,7 +1990,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SIMPLEDYNAMIC__RLINKS = DYNAMIC__RLINKS;
+	int SIMPLEDYNAMIC__RLINKS = DYNAMICPOLICY__RLINKS;
 
 	/**
 	 * The feature id for the '<em><b>Dynamic Group Size</b></em>' attribute.
@@ -1800,7 +1999,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SIMPLEDYNAMIC__DYNAMIC_GROUP_SIZE = DYNAMIC__DYNAMIC_GROUP_SIZE;
+	int SIMPLEDYNAMIC__DYNAMIC_GROUP_SIZE = DYNAMICPOLICY__DYNAMIC_GROUP_SIZE;
 
 	/**
 	 * The feature id for the '<em><b>Dynamic Max Group Size</b></em>' attribute.
@@ -1809,7 +2008,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SIMPLEDYNAMIC__DYNAMIC_MAX_GROUP_SIZE = DYNAMIC__DYNAMIC_MAX_GROUP_SIZE;
+	int SIMPLEDYNAMIC__DYNAMIC_MAX_GROUP_SIZE = DYNAMICPOLICY__DYNAMIC_MAX_GROUP_SIZE;
 
 	/**
 	 * The feature id for the '<em><b>Dynamic Min Group Size</b></em>' attribute.
@@ -1818,7 +2017,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SIMPLEDYNAMIC__DYNAMIC_MIN_GROUP_SIZE = DYNAMIC__DYNAMIC_MIN_GROUP_SIZE;
+	int SIMPLEDYNAMIC__DYNAMIC_MIN_GROUP_SIZE = DYNAMICPOLICY__DYNAMIC_MIN_GROUP_SIZE;
 
 	/**
 	 * The feature id for the '<em><b>Simple Dynamic Name</b></em>' attribute.
@@ -1827,7 +2026,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SIMPLEDYNAMIC__SIMPLE_DYNAMIC_NAME = DYNAMIC_FEATURE_COUNT + 0;
+	int SIMPLEDYNAMIC__SIMPLE_DYNAMIC_NAME = DYNAMICPOLICY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Simple Dynamic Cool Duration</b></em>' attribute.
@@ -1836,7 +2035,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SIMPLEDYNAMIC__SIMPLE_DYNAMIC_COOL_DURATION = DYNAMIC_FEATURE_COUNT + 1;
+	int SIMPLEDYNAMIC__SIMPLE_DYNAMIC_COOL_DURATION = DYNAMICPOLICY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Simpledynamic</em>' class.
@@ -1845,7 +2044,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SIMPLEDYNAMIC_FEATURE_COUNT = DYNAMIC_FEATURE_COUNT + 2;
+	int SIMPLEDYNAMIC_FEATURE_COUNT = DYNAMICPOLICY_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Occi Create</em>' operation.
@@ -1854,7 +2053,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SIMPLEDYNAMIC___OCCI_CREATE = DYNAMIC___OCCI_CREATE;
+	int SIMPLEDYNAMIC___OCCI_CREATE = DYNAMICPOLICY___OCCI_CREATE;
 
 	/**
 	 * The operation id for the '<em>Occi Retrieve</em>' operation.
@@ -1863,7 +2062,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SIMPLEDYNAMIC___OCCI_RETRIEVE = DYNAMIC___OCCI_RETRIEVE;
+	int SIMPLEDYNAMIC___OCCI_RETRIEVE = DYNAMICPOLICY___OCCI_RETRIEVE;
 
 	/**
 	 * The operation id for the '<em>Occi Update</em>' operation.
@@ -1872,7 +2071,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SIMPLEDYNAMIC___OCCI_UPDATE = DYNAMIC___OCCI_UPDATE;
+	int SIMPLEDYNAMIC___OCCI_UPDATE = DYNAMICPOLICY___OCCI_UPDATE;
 
 	/**
 	 * The operation id for the '<em>Occi Delete</em>' operation.
@@ -1881,7 +2080,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SIMPLEDYNAMIC___OCCI_DELETE = DYNAMIC___OCCI_DELETE;
+	int SIMPLEDYNAMIC___OCCI_DELETE = DYNAMICPOLICY___OCCI_DELETE;
 
 	/**
 	 * The operation id for the '<em>Start</em>' operation.
@@ -1890,7 +2089,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SIMPLEDYNAMIC___START = DYNAMIC___START;
+	int SIMPLEDYNAMIC___START = DYNAMICPOLICY___START;
 
 	/**
 	 * The operation id for the '<em>Stop</em>' operation.
@@ -1899,7 +2098,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SIMPLEDYNAMIC___STOP = DYNAMIC___STOP;
+	int SIMPLEDYNAMIC___STOP = DYNAMICPOLICY___STOP;
 
 	/**
 	 * The number of operations of the '<em>Simpledynamic</em>' class.
@@ -1908,7 +2107,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SIMPLEDYNAMIC_OPERATION_COUNT = DYNAMIC_OPERATION_COUNT + 0;
+	int SIMPLEDYNAMIC_OPERATION_COUNT = DYNAMICPOLICY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.StepdynamicImpl <em>Stepdynamic</em>}' class.
@@ -1927,7 +2126,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEPDYNAMIC__ID = DYNAMIC__ID;
+	int STEPDYNAMIC__ID = DYNAMICPOLICY__ID;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -1936,7 +2135,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEPDYNAMIC__TITLE = DYNAMIC__TITLE;
+	int STEPDYNAMIC__TITLE = DYNAMICPOLICY__TITLE;
 
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' reference.
@@ -1945,7 +2144,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEPDYNAMIC__KIND = DYNAMIC__KIND;
+	int STEPDYNAMIC__KIND = DYNAMICPOLICY__KIND;
 
 	/**
 	 * The feature id for the '<em><b>Location</b></em>' attribute.
@@ -1954,7 +2153,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEPDYNAMIC__LOCATION = DYNAMIC__LOCATION;
+	int STEPDYNAMIC__LOCATION = DYNAMICPOLICY__LOCATION;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -1963,7 +2162,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEPDYNAMIC__ATTRIBUTES = DYNAMIC__ATTRIBUTES;
+	int STEPDYNAMIC__ATTRIBUTES = DYNAMICPOLICY__ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Mixins</b></em>' reference list.
@@ -1972,7 +2171,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEPDYNAMIC__MIXINS = DYNAMIC__MIXINS;
+	int STEPDYNAMIC__MIXINS = DYNAMICPOLICY__MIXINS;
 
 	/**
 	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
@@ -1981,7 +2180,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEPDYNAMIC__PARTS = DYNAMIC__PARTS;
+	int STEPDYNAMIC__PARTS = DYNAMICPOLICY__PARTS;
 
 	/**
 	 * The feature id for the '<em><b>Summary</b></em>' attribute.
@@ -1990,7 +2189,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEPDYNAMIC__SUMMARY = DYNAMIC__SUMMARY;
+	int STEPDYNAMIC__SUMMARY = DYNAMICPOLICY__SUMMARY;
 
 	/**
 	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
@@ -1999,7 +2198,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEPDYNAMIC__LINKS = DYNAMIC__LINKS;
+	int STEPDYNAMIC__LINKS = DYNAMICPOLICY__LINKS;
 
 	/**
 	 * The feature id for the '<em><b>Rlinks</b></em>' reference list.
@@ -2008,7 +2207,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEPDYNAMIC__RLINKS = DYNAMIC__RLINKS;
+	int STEPDYNAMIC__RLINKS = DYNAMICPOLICY__RLINKS;
 
 	/**
 	 * The feature id for the '<em><b>Dynamic Group Size</b></em>' attribute.
@@ -2017,7 +2216,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEPDYNAMIC__DYNAMIC_GROUP_SIZE = DYNAMIC__DYNAMIC_GROUP_SIZE;
+	int STEPDYNAMIC__DYNAMIC_GROUP_SIZE = DYNAMICPOLICY__DYNAMIC_GROUP_SIZE;
 
 	/**
 	 * The feature id for the '<em><b>Dynamic Max Group Size</b></em>' attribute.
@@ -2026,7 +2225,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEPDYNAMIC__DYNAMIC_MAX_GROUP_SIZE = DYNAMIC__DYNAMIC_MAX_GROUP_SIZE;
+	int STEPDYNAMIC__DYNAMIC_MAX_GROUP_SIZE = DYNAMICPOLICY__DYNAMIC_MAX_GROUP_SIZE;
 
 	/**
 	 * The feature id for the '<em><b>Dynamic Min Group Size</b></em>' attribute.
@@ -2035,7 +2234,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEPDYNAMIC__DYNAMIC_MIN_GROUP_SIZE = DYNAMIC__DYNAMIC_MIN_GROUP_SIZE;
+	int STEPDYNAMIC__DYNAMIC_MIN_GROUP_SIZE = DYNAMICPOLICY__DYNAMIC_MIN_GROUP_SIZE;
 
 	/**
 	 * The feature id for the '<em><b>Step Dynamic Name</b></em>' attribute.
@@ -2044,7 +2243,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEPDYNAMIC__STEP_DYNAMIC_NAME = DYNAMIC_FEATURE_COUNT + 0;
+	int STEPDYNAMIC__STEP_DYNAMIC_NAME = DYNAMICPOLICY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Step Dynamic Cool Duration</b></em>' attribute.
@@ -2053,7 +2252,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEPDYNAMIC__STEP_DYNAMIC_COOL_DURATION = DYNAMIC_FEATURE_COUNT + 1;
+	int STEPDYNAMIC__STEP_DYNAMIC_COOL_DURATION = DYNAMICPOLICY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Stepdynamic</em>' class.
@@ -2062,7 +2261,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEPDYNAMIC_FEATURE_COUNT = DYNAMIC_FEATURE_COUNT + 2;
+	int STEPDYNAMIC_FEATURE_COUNT = DYNAMICPOLICY_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Occi Create</em>' operation.
@@ -2071,7 +2270,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEPDYNAMIC___OCCI_CREATE = DYNAMIC___OCCI_CREATE;
+	int STEPDYNAMIC___OCCI_CREATE = DYNAMICPOLICY___OCCI_CREATE;
 
 	/**
 	 * The operation id for the '<em>Occi Retrieve</em>' operation.
@@ -2080,7 +2279,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEPDYNAMIC___OCCI_RETRIEVE = DYNAMIC___OCCI_RETRIEVE;
+	int STEPDYNAMIC___OCCI_RETRIEVE = DYNAMICPOLICY___OCCI_RETRIEVE;
 
 	/**
 	 * The operation id for the '<em>Occi Update</em>' operation.
@@ -2089,7 +2288,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEPDYNAMIC___OCCI_UPDATE = DYNAMIC___OCCI_UPDATE;
+	int STEPDYNAMIC___OCCI_UPDATE = DYNAMICPOLICY___OCCI_UPDATE;
 
 	/**
 	 * The operation id for the '<em>Occi Delete</em>' operation.
@@ -2098,7 +2297,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEPDYNAMIC___OCCI_DELETE = DYNAMIC___OCCI_DELETE;
+	int STEPDYNAMIC___OCCI_DELETE = DYNAMICPOLICY___OCCI_DELETE;
 
 	/**
 	 * The operation id for the '<em>Start</em>' operation.
@@ -2107,7 +2306,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEPDYNAMIC___START = DYNAMIC___START;
+	int STEPDYNAMIC___START = DYNAMICPOLICY___START;
 
 	/**
 	 * The operation id for the '<em>Stop</em>' operation.
@@ -2116,7 +2315,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEPDYNAMIC___STOP = DYNAMIC___STOP;
+	int STEPDYNAMIC___STOP = DYNAMICPOLICY___STOP;
 
 	/**
 	 * The number of operations of the '<em>Stepdynamic</em>' class.
@@ -2125,7 +2324,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEPDYNAMIC_OPERATION_COUNT = DYNAMIC_OPERATION_COUNT + 0;
+	int STEPDYNAMIC_OPERATION_COUNT = DYNAMICPOLICY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.DynamicadjustmentImpl <em>Dynamicadjustment</em>}' class.
@@ -2372,26 +2571,6 @@ public interface HorizontalelasticityPackage extends EPackage {
 	int DYNAMICADJUSTMENT_OPERATION_COUNT = DYNAMIC_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.CreationImpl <em>Creation</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.CreationImpl
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getCreation()
-	 * @generated
-	 */
-	int CREATION = 16;
-
-	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.StepsImpl <em>Steps</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.StepsImpl
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getSteps()
-	 * @generated
-	 */
-	int STEPS = 17;
-
-	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.RuleImpl <em>Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2606,7 +2785,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RULE___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.LINK_OPERATION_COUNT + 0;
+	int RULE___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1 = OCCIPackage.LINK_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Rule</em>' class.
@@ -2799,6 +2978,188 @@ public interface HorizontalelasticityPackage extends EPackage {
 	int ACTION_OPERATION_COUNT = OCCIPackage.RESOURCE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.StepImpl <em>Step</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.StepImpl
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getStep()
+	 * @generated
+	 */
+	int STEP = 17;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__ID = OCCIPackage.RESOURCE__ID;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__TITLE = OCCIPackage.RESOURCE__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__KIND = OCCIPackage.RESOURCE__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Location</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__LOCATION = OCCIPackage.RESOURCE__LOCATION;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__ATTRIBUTES = OCCIPackage.RESOURCE__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Mixins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__MIXINS = OCCIPackage.RESOURCE__MIXINS;
+
+	/**
+	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__PARTS = OCCIPackage.RESOURCE__PARTS;
+
+	/**
+	 * The feature id for the '<em><b>Summary</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__SUMMARY = OCCIPackage.RESOURCE__SUMMARY;
+
+	/**
+	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__LINKS = OCCIPackage.RESOURCE__LINKS;
+
+	/**
+	 * The feature id for the '<em><b>Rlinks</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__RLINKS = OCCIPackage.RESOURCE__RLINKS;
+
+	/**
+	 * The feature id for the '<em><b>Steps Lower Step Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__STEPS_LOWER_STEP_BOUND = OCCIPackage.RESOURCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Steps Upper Step Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__STEPS_UPPER_STEP_BOUND = OCCIPackage.RESOURCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Step</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP_FEATURE_COUNT = OCCIPackage.RESOURCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Occi Create</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP___OCCI_CREATE = OCCIPackage.RESOURCE___OCCI_CREATE;
+
+	/**
+	 * The operation id for the '<em>Occi Retrieve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP___OCCI_RETRIEVE = OCCIPackage.RESOURCE___OCCI_RETRIEVE;
+
+	/**
+	 * The operation id for the '<em>Occi Update</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP___OCCI_UPDATE = OCCIPackage.RESOURCE___OCCI_UPDATE;
+
+	/**
+	 * The operation id for the '<em>Occi Delete</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP___OCCI_DELETE = OCCIPackage.RESOURCE___OCCI_DELETE;
+
+	/**
+	 * The number of operations of the '<em>Step</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP_OPERATION_COUNT = OCCIPackage.RESOURCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.CreationImpl <em>Creation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.CreationImpl
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getCreation()
+	 * @generated
+	 */
+	int CREATION = 18;
+
+	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2850,7 +3211,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATION___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
+	int CREATION___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1 = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Creation</em>' class.
@@ -2862,78 +3223,6 @@ public interface HorizontalelasticityPackage extends EPackage {
 	int CREATION_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Mixin</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEPS__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEPS__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEPS__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Steps Lower Step Bound</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEPS__STEPS_LOWER_STEP_BOUND = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Steps Upper Step Bound</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEPS__STEPS_UPPER_STEP_BOUND = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Steps</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEPS_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEPS___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Steps</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEPS_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
-
-	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.SchedulerImpl <em>Scheduler</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2941,7 +3230,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getScheduler()
 	 * @generated
 	 */
-	int SCHEDULER = 18;
+	int SCHEDULER = 19;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -2971,31 +3260,40 @@ public interface HorizontalelasticityPackage extends EPackage {
 	int SCHEDULER__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
 
 	/**
-	 * The feature id for the '<em><b>Scheduler Start Date</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SCHEDULER__SCHEDULER_START_DATE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Scheduler End Date</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SCHEDULER__SCHEDULER_END_DATE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Scheduler</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEDULER_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
+	int SCHEDULER_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Start</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULER___START = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Stop</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULER___STOP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Applies Constraint</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULER___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1 = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Scheduler</em>' class.
@@ -3004,7 +3302,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEDULER_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
+	int SCHEDULER_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.UniquescheduleImpl <em>Uniqueschedule</em>}' class.
@@ -3014,7 +3312,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getUniqueschedule()
 	 * @generated
 	 */
-	int UNIQUESCHEDULE = 19;
+	int UNIQUESCHEDULE = 20;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -3044,22 +3342,22 @@ public interface HorizontalelasticityPackage extends EPackage {
 	int UNIQUESCHEDULE__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
 
 	/**
-	 * The feature id for the '<em><b>Scheduler Start Date</b></em>' attribute.
+	 * The feature id for the '<em><b>Unique Schedule Start Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNIQUESCHEDULE__SCHEDULER_START_DATE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
+	int UNIQUESCHEDULE__UNIQUE_SCHEDULE_START_DATE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Scheduler End Date</b></em>' attribute.
+	 * The feature id for the '<em><b>Unique Schedule End Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNIQUESCHEDULE__SCHEDULER_END_DATE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
+	int UNIQUESCHEDULE__UNIQUE_SCHEDULE_END_DATE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Uniqueschedule</em>' class.
@@ -3071,13 +3369,22 @@ public interface HorizontalelasticityPackage extends EPackage {
 	int UNIQUESCHEDULE_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Applies Constraint</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIQUESCHEDULE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1 = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
+
+	/**
 	 * The operation id for the '<em>Start</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNIQUESCHEDULE___START = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
+	int UNIQUESCHEDULE___START = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Stop</em>' operation.
@@ -3086,16 +3393,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIQUESCHEDULE___STOP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIQUESCHEDULE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
+	int UNIQUESCHEDULE___STOP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Uniqueschedule</em>' class.
@@ -3104,7 +3402,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIQUESCHEDULE_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 3;
+	int UNIQUESCHEDULE_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.RecurringscheduleImpl <em>Recurringschedule</em>}' class.
@@ -3114,7 +3412,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getRecurringschedule()
 	 * @generated
 	 */
-	int RECURRINGSCHEDULE = 20;
+	int RECURRINGSCHEDULE = 21;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -3144,31 +3442,31 @@ public interface HorizontalelasticityPackage extends EPackage {
 	int RECURRINGSCHEDULE__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
 
 	/**
-	 * The feature id for the '<em><b>Scheduler Start Date</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECURRINGSCHEDULE__SCHEDULER_START_DATE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Scheduler End Date</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECURRINGSCHEDULE__SCHEDULER_END_DATE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Recurringschedule Recurrence</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECURRINGSCHEDULE__RECURRINGSCHEDULE_RECURRENCE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
+	int RECURRINGSCHEDULE__RECURRINGSCHEDULE_RECURRENCE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Recurringschedule Start Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECURRINGSCHEDULE__RECURRINGSCHEDULE_START_DATE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Recurringschedule End Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECURRINGSCHEDULE__RECURRINGSCHEDULE_END_DATE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Recurringschedule</em>' class.
@@ -3180,13 +3478,22 @@ public interface HorizontalelasticityPackage extends EPackage {
 	int RECURRINGSCHEDULE_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Applies Constraint</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECURRINGSCHEDULE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1 = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
+
+	/**
 	 * The operation id for the '<em>Start</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECURRINGSCHEDULE___START = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
+	int RECURRINGSCHEDULE___START = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Stop</em>' operation.
@@ -3195,16 +3502,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECURRINGSCHEDULE___STOP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECURRINGSCHEDULE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
+	int RECURRINGSCHEDULE___STOP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Recurringschedule</em>' class.
@@ -3213,7 +3511,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECURRINGSCHEDULE_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 3;
+	int RECURRINGSCHEDULE_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.TypeMetric <em>Type Metric</em>}' enum.
@@ -3223,7 +3521,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getTypeMetric()
 	 * @generated
 	 */
-	int TYPE_METRIC = 21;
+	int TYPE_METRIC = 22;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.OperatorType <em>Operator Type</em>}' enum.
@@ -3233,7 +3531,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getOperatorType()
 	 * @generated
 	 */
-	int OPERATOR_TYPE = 22;
+	int OPERATOR_TYPE = 23;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.ActionOperation <em>Action Operation</em>}' enum.
@@ -3243,7 +3541,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getActionOperation()
 	 * @generated
 	 */
-	int ACTION_OPERATION = 23;
+	int ACTION_OPERATION = 24;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.ActionType <em>Action Type</em>}' enum.
@@ -3253,7 +3551,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getActionType()
 	 * @generated
 	 */
-	int ACTION_TYPE = 24;
+	int ACTION_TYPE = 25;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.MetricTargetTracking <em>Metric Target Tracking</em>}' enum.
@@ -3263,7 +3561,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getMetricTargetTracking()
 	 * @generated
 	 */
-	int METRIC_TARGET_TRACKING = 25;
+	int METRIC_TARGET_TRACKING = 26;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Unit <em>Unit</em>}' enum.
@@ -3273,7 +3571,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getUnit()
 	 * @generated
 	 */
-	int UNIT = 26;
+	int UNIT = 27;
 
 	/**
 	 * The meta object id for the '<em>Float</em>' data type.
@@ -3283,7 +3581,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getFloat()
 	 * @generated
 	 */
-	int FLOAT = 27;
+	int FLOAT = 28;
 
 	/**
 	 * The meta object id for the '<em>Date</em>' data type.
@@ -3293,7 +3591,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getDate()
 	 * @generated
 	 */
-	int DATE = 28;
+	int DATE = 29;
 
 
 	/**
@@ -3567,7 +3865,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Instancegrouplink#targetConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getInstancegrouplink__TargetConstraint__DiagnosticChain_Map();
+	EOperation getInstancegrouplink__TargetConstraint__DiagnosticChain_Map_1();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Linkbalancer <em>Linkbalancer</em>}'.
@@ -3587,7 +3885,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Linkbalancer#targetConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getLinkbalancer__TargetConstraint__DiagnosticChain_Map();
+	EOperation getLinkbalancer__TargetConstraint__DiagnosticChain_Map_1();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Grouplink <em>Grouplink</em>}'.
@@ -3607,7 +3905,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Grouplink#targetConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getGrouplink__TargetConstraint__DiagnosticChain_Map();
+	EOperation getGrouplink__TargetConstraint__DiagnosticChain_Map_1();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Manual <em>Manual</em>}'.
@@ -3825,79 +4123,6 @@ public interface HorizontalelasticityPackage extends EPackage {
 	EAttribute getDynamicadjustment_DynamicAdjustmentTarget();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Creation <em>Creation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Creation</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Creation
-	 * @generated
-	 */
-	EClass getCreation();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Creation#getOcciComputeCreationDate <em>Occi Compute Creation Date</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Occi Compute Creation Date</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Creation#getOcciComputeCreationDate()
-	 * @see #getCreation()
-	 * @generated
-	 */
-	EAttribute getCreation_OcciComputeCreationDate();
-
-	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Creation#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Creation#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getCreation__AppliesConstraint__DiagnosticChain_Map();
-
-	/**
-	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Steps <em>Steps</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Steps</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Steps
-	 * @generated
-	 */
-	EClass getSteps();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Steps#getStepsLowerStepBound <em>Steps Lower Step Bound</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Steps Lower Step Bound</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Steps#getStepsLowerStepBound()
-	 * @see #getSteps()
-	 * @generated
-	 */
-	EAttribute getSteps_StepsLowerStepBound();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Steps#getStepsUpperStepBound <em>Steps Upper Step Bound</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Steps Upper Step Bound</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Steps#getStepsUpperStepBound()
-	 * @see #getSteps()
-	 * @generated
-	 */
-	EAttribute getSteps_StepsUpperStepBound();
-
-	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Steps#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Steps#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getSteps__AppliesConstraint__DiagnosticChain_Map();
-
-	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Rule <em>Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3981,7 +4206,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Rule#targetConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getRule__TargetConstraint__DiagnosticChain_Map();
+	EOperation getRule__TargetConstraint__DiagnosticChain_Map_1();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Action <em>Action</em>}'.
@@ -4027,6 +4252,79 @@ public interface HorizontalelasticityPackage extends EPackage {
 	EAttribute getAction_Amount();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamicpolicy <em>Dynamicpolicy</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Dynamicpolicy</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamicpolicy
+	 * @generated
+	 */
+	EClass getDynamicpolicy();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Step <em>Step</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Step</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Step
+	 * @generated
+	 */
+	EClass getStep();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Step#getStepsLowerStepBound <em>Steps Lower Step Bound</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Steps Lower Step Bound</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Step#getStepsLowerStepBound()
+	 * @see #getStep()
+	 * @generated
+	 */
+	EAttribute getStep_StepsLowerStepBound();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Step#getStepsUpperStepBound <em>Steps Upper Step Bound</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Steps Upper Step Bound</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Step#getStepsUpperStepBound()
+	 * @see #getStep()
+	 * @generated
+	 */
+	EAttribute getStep_StepsUpperStepBound();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Creation <em>Creation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Creation</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Creation
+	 * @generated
+	 */
+	EClass getCreation();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Creation#getOcciComputeCreationDate <em>Occi Compute Creation Date</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Occi Compute Creation Date</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Creation#getOcciComputeCreationDate()
+	 * @see #getCreation()
+	 * @generated
+	 */
+	EAttribute getCreation_OcciComputeCreationDate();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Creation#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Creation#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getCreation__AppliesConstraint__DiagnosticChain_Map_1();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Scheduler <em>Scheduler</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4037,26 +4335,34 @@ public interface HorizontalelasticityPackage extends EPackage {
 	EClass getScheduler();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Scheduler#getSchedulerStartDate <em>Scheduler Start Date</em>}'.
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Scheduler#start() <em>Start</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Scheduler Start Date</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Scheduler#getSchedulerStartDate()
-	 * @see #getScheduler()
+	 * @return the meta object for the '<em>Start</em>' operation.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Scheduler#start()
 	 * @generated
 	 */
-	EAttribute getScheduler_SchedulerStartDate();
+	EOperation getScheduler__Start();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Scheduler#getSchedulerEndDate <em>Scheduler End Date</em>}'.
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Scheduler#stop() <em>Stop</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Scheduler End Date</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Scheduler#getSchedulerEndDate()
-	 * @see #getScheduler()
+	 * @return the meta object for the '<em>Stop</em>' operation.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Scheduler#stop()
 	 * @generated
 	 */
-	EAttribute getScheduler_SchedulerEndDate();
+	EOperation getScheduler__Stop();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Scheduler#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Scheduler#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getScheduler__AppliesConstraint__DiagnosticChain_Map_1();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Uniqueschedule <em>Uniqueschedule</em>}'.
@@ -4067,6 +4373,28 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getUniqueschedule();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Uniqueschedule#getUniqueScheduleStartDate <em>Unique Schedule Start Date</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Unique Schedule Start Date</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Uniqueschedule#getUniqueScheduleStartDate()
+	 * @see #getUniqueschedule()
+	 * @generated
+	 */
+	EAttribute getUniqueschedule_UniqueScheduleStartDate();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Uniqueschedule#getUniqueScheduleEndDate <em>Unique Schedule End Date</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Unique Schedule End Date</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Uniqueschedule#getUniqueScheduleEndDate()
+	 * @see #getUniqueschedule()
+	 * @generated
+	 */
+	EAttribute getUniqueschedule_UniqueScheduleEndDate();
 
 	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Uniqueschedule#start() <em>Start</em>}' operation.
@@ -4087,16 +4415,6 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getUniqueschedule__Stop();
-
-	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Uniqueschedule#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Uniqueschedule#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getUniqueschedule__AppliesConstraint__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Recurringschedule <em>Recurringschedule</em>}'.
@@ -4120,6 +4438,28 @@ public interface HorizontalelasticityPackage extends EPackage {
 	EReference getRecurringschedule_RecurringscheduleRecurrence();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Recurringschedule#getRecurringscheduleStartDate <em>Recurringschedule Start Date</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Recurringschedule Start Date</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Recurringschedule#getRecurringscheduleStartDate()
+	 * @see #getRecurringschedule()
+	 * @generated
+	 */
+	EAttribute getRecurringschedule_RecurringscheduleStartDate();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Recurringschedule#getRecurringscheduleEndDate <em>Recurringschedule End Date</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Recurringschedule End Date</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Recurringschedule#getRecurringscheduleEndDate()
+	 * @see #getRecurringschedule()
+	 * @generated
+	 */
+	EAttribute getRecurringschedule_RecurringscheduleEndDate();
+
+	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Recurringschedule#start() <em>Start</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4138,16 +4478,6 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getRecurringschedule__Stop();
-
-	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Recurringschedule#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Recurringschedule#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getRecurringschedule__AppliesConstraint__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for enum '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.TypeMetric <em>Type Metric</em>}'.
@@ -4474,7 +4804,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation INSTANCEGROUPLINK___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getInstancegrouplink__TargetConstraint__DiagnosticChain_Map();
+		EOperation INSTANCEGROUPLINK___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1 = eINSTANCE.getInstancegrouplink__TargetConstraint__DiagnosticChain_Map_1();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.LinkbalancerImpl <em>Linkbalancer</em>}' class.
@@ -4492,7 +4822,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation LINKBALANCER___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getLinkbalancer__TargetConstraint__DiagnosticChain_Map();
+		EOperation LINKBALANCER___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1 = eINSTANCE.getLinkbalancer__TargetConstraint__DiagnosticChain_Map_1();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.GrouplinkImpl <em>Grouplink</em>}' class.
@@ -4510,7 +4840,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation GROUPLINK___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getGrouplink__TargetConstraint__DiagnosticChain_Map();
+		EOperation GROUPLINK___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1 = eINSTANCE.getGrouplink__TargetConstraint__DiagnosticChain_Map_1();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ManualImpl <em>Manual</em>}' class.
@@ -4683,66 +5013,6 @@ public interface HorizontalelasticityPackage extends EPackage {
 		EAttribute DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_TARGET = eINSTANCE.getDynamicadjustment_DynamicAdjustmentTarget();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.CreationImpl <em>Creation</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.CreationImpl
-		 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getCreation()
-		 * @generated
-		 */
-		EClass CREATION = eINSTANCE.getCreation();
-
-		/**
-		 * The meta object literal for the '<em><b>Occi Compute Creation Date</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CREATION__OCCI_COMPUTE_CREATION_DATE = eINSTANCE.getCreation_OcciComputeCreationDate();
-
-		/**
-		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation CREATION___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getCreation__AppliesConstraint__DiagnosticChain_Map();
-
-		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.StepsImpl <em>Steps</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.StepsImpl
-		 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getSteps()
-		 * @generated
-		 */
-		EClass STEPS = eINSTANCE.getSteps();
-
-		/**
-		 * The meta object literal for the '<em><b>Steps Lower Step Bound</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute STEPS__STEPS_LOWER_STEP_BOUND = eINSTANCE.getSteps_StepsLowerStepBound();
-
-		/**
-		 * The meta object literal for the '<em><b>Steps Upper Step Bound</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute STEPS__STEPS_UPPER_STEP_BOUND = eINSTANCE.getSteps_StepsUpperStepBound();
-
-		/**
-		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation STEPS___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getSteps__AppliesConstraint__DiagnosticChain_Map();
-
-		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.RuleImpl <em>Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4806,7 +5076,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation RULE___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getRule__TargetConstraint__DiagnosticChain_Map();
+		EOperation RULE___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1 = eINSTANCE.getRule__TargetConstraint__DiagnosticChain_Map_1();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ActionImpl <em>Action</em>}' class.
@@ -4843,6 +5113,68 @@ public interface HorizontalelasticityPackage extends EPackage {
 		EAttribute ACTION__AMOUNT = eINSTANCE.getAction_Amount();
 
 		/**
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.DynamicpolicyImpl <em>Dynamicpolicy</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.DynamicpolicyImpl
+		 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getDynamicpolicy()
+		 * @generated
+		 */
+		EClass DYNAMICPOLICY = eINSTANCE.getDynamicpolicy();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.StepImpl <em>Step</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.StepImpl
+		 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getStep()
+		 * @generated
+		 */
+		EClass STEP = eINSTANCE.getStep();
+
+		/**
+		 * The meta object literal for the '<em><b>Steps Lower Step Bound</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STEP__STEPS_LOWER_STEP_BOUND = eINSTANCE.getStep_StepsLowerStepBound();
+
+		/**
+		 * The meta object literal for the '<em><b>Steps Upper Step Bound</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STEP__STEPS_UPPER_STEP_BOUND = eINSTANCE.getStep_StepsUpperStepBound();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.CreationImpl <em>Creation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.CreationImpl
+		 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getCreation()
+		 * @generated
+		 */
+		EClass CREATION = eINSTANCE.getCreation();
+
+		/**
+		 * The meta object literal for the '<em><b>Occi Compute Creation Date</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CREATION__OCCI_COMPUTE_CREATION_DATE = eINSTANCE.getCreation_OcciComputeCreationDate();
+
+		/**
+		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CREATION___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1 = eINSTANCE.getCreation__AppliesConstraint__DiagnosticChain_Map_1();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.SchedulerImpl <em>Scheduler</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4853,20 +5185,28 @@ public interface HorizontalelasticityPackage extends EPackage {
 		EClass SCHEDULER = eINSTANCE.getScheduler();
 
 		/**
-		 * The meta object literal for the '<em><b>Scheduler Start Date</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Start</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SCHEDULER__SCHEDULER_START_DATE = eINSTANCE.getScheduler_SchedulerStartDate();
+		EOperation SCHEDULER___START = eINSTANCE.getScheduler__Start();
 
 		/**
-		 * The meta object literal for the '<em><b>Scheduler End Date</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Stop</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SCHEDULER__SCHEDULER_END_DATE = eINSTANCE.getScheduler_SchedulerEndDate();
+		EOperation SCHEDULER___STOP = eINSTANCE.getScheduler__Stop();
+
+		/**
+		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SCHEDULER___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1 = eINSTANCE.getScheduler__AppliesConstraint__DiagnosticChain_Map_1();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.UniquescheduleImpl <em>Uniqueschedule</em>}' class.
@@ -4877,6 +5217,22 @@ public interface HorizontalelasticityPackage extends EPackage {
 		 * @generated
 		 */
 		EClass UNIQUESCHEDULE = eINSTANCE.getUniqueschedule();
+
+		/**
+		 * The meta object literal for the '<em><b>Unique Schedule Start Date</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute UNIQUESCHEDULE__UNIQUE_SCHEDULE_START_DATE = eINSTANCE.getUniqueschedule_UniqueScheduleStartDate();
+
+		/**
+		 * The meta object literal for the '<em><b>Unique Schedule End Date</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute UNIQUESCHEDULE__UNIQUE_SCHEDULE_END_DATE = eINSTANCE.getUniqueschedule_UniqueScheduleEndDate();
 
 		/**
 		 * The meta object literal for the '<em><b>Start</b></em>' operation.
@@ -4893,14 +5249,6 @@ public interface HorizontalelasticityPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation UNIQUESCHEDULE___STOP = eINSTANCE.getUniqueschedule__Stop();
-
-		/**
-		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation UNIQUESCHEDULE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getUniqueschedule__AppliesConstraint__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.RecurringscheduleImpl <em>Recurringschedule</em>}' class.
@@ -4921,6 +5269,22 @@ public interface HorizontalelasticityPackage extends EPackage {
 		EReference RECURRINGSCHEDULE__RECURRINGSCHEDULE_RECURRENCE = eINSTANCE.getRecurringschedule_RecurringscheduleRecurrence();
 
 		/**
+		 * The meta object literal for the '<em><b>Recurringschedule Start Date</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RECURRINGSCHEDULE__RECURRINGSCHEDULE_START_DATE = eINSTANCE.getRecurringschedule_RecurringscheduleStartDate();
+
+		/**
+		 * The meta object literal for the '<em><b>Recurringschedule End Date</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RECURRINGSCHEDULE__RECURRINGSCHEDULE_END_DATE = eINSTANCE.getRecurringschedule_RecurringscheduleEndDate();
+
+		/**
 		 * The meta object literal for the '<em><b>Start</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4935,14 +5299,6 @@ public interface HorizontalelasticityPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation RECURRINGSCHEDULE___STOP = eINSTANCE.getRecurringschedule__Stop();
-
-		/**
-		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation RECURRINGSCHEDULE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getRecurringschedule__AppliesConstraint__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.TypeMetric <em>Type Metric</em>}' enum.

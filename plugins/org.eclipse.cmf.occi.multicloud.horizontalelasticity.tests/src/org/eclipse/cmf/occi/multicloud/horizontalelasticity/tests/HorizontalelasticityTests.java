@@ -54,8 +54,10 @@ public class HorizontalelasticityTests extends TestSuite {
 		suite.addTestSuite(DynamicadjustmentTest.class);
 		suite.addTestSuite(RuleTest.class);
 		suite.addTestSuite(ActionTest.class);
+		suite.addTestSuite(DynamicpolicyTest.class);
+		suite.addTestSuite(StepTest.class);
 		suite.addTestSuite(CreationTest.class);
-		suite.addTestSuite(StepsTest.class);
+		suite.addTestSuite(SchedulerTest.class);
 		suite.addTestSuite(UniquescheduleTest.class);
 		suite.addTestSuite(RecurringscheduleTest.class);
 		return suite;

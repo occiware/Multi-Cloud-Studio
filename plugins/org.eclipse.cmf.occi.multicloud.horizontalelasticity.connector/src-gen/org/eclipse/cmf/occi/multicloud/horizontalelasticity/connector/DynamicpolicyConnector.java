@@ -10,31 +10,31 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Tue Oct 03 17:45:32 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.occimonitoring/model/occimonitoring.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Wed Oct 11 20:59:30 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
  */
-package org.eclipse.cmf.occi.multicloud.occimonitoring.connector;
+package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
  * Connector implementation for the OCCI kind:
- * - scheme: http://org.eclipse.cmf.occi.multicloud.occimonitoring#
- * - term: hostgroulink
+ * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
+ * - term: dynamicpolicy
  * - title: 
  */
-public class HostgroulinkConnector extends org.eclipse.cmf.occi.multicloud.occimonitoring.impl.HostgroulinkImpl
+public class DynamicpolicyConnector extends org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.DynamicpolicyImpl
 {
 	/**
 	 * Initialize the logger.
 	 */
-	private static Logger LOGGER = LoggerFactory.getLogger(HostgroulinkConnector.class);
+	private static Logger LOGGER = LoggerFactory.getLogger(DynamicpolicyConnector.class);
 
-	// Start of user code Hostgroulinkconnector_constructor
+	// Start of user code Dynamicpolicyconnector_constructor
 	/**
-	 * Constructs a hostgroulink connector.
+	 * Constructs a dynamicpolicy connector.
 	 */
-	HostgroulinkConnector()
+	DynamicpolicyConnector()
 	{
 		LOGGER.debug("Constructor called on " + this);
 		// TODO: Implement this constructor.
@@ -44,9 +44,9 @@ public class HostgroulinkConnector extends org.eclipse.cmf.occi.multicloud.occim
 	// OCCI CRUD callback operations.
 	//
 	
-	// Start of user code HostgroulinkocciCreate
+	// Start of user code DynamicpolicyocciCreate
 	/**
-	 * Called when this Hostgroulink instance is completely created.
+	 * Called when this Dynamicpolicy instance is completely created.
 	 */
 	@Override
 	public void occiCreate()
@@ -56,9 +56,9 @@ public class HostgroulinkConnector extends org.eclipse.cmf.occi.multicloud.occim
 	}
 	// End of user code
 
-	// Start of user code Hostgroulink_occiRetrieve_method
+	// Start of user code Dynamicpolicy_occiRetrieve_method
 	/**
-	 * Called when this Hostgroulink instance must be retrieved.
+	 * Called when this Dynamicpolicy instance must be retrieved.
 	 */
 	@Override
 	public void occiRetrieve()
@@ -68,9 +68,9 @@ public class HostgroulinkConnector extends org.eclipse.cmf.occi.multicloud.occim
 	}
 	// End of user code
 
-	// Start of user code Hostgroulink_occiUpdate_method
+	// Start of user code Dynamicpolicy_occiUpdate_method
 	/**
-	 * Called when this Hostgroulink instance is completely updated.
+	 * Called when this Dynamicpolicy instance is completely updated.
 	 */
 	@Override
 	public void occiUpdate()
@@ -80,9 +80,9 @@ public class HostgroulinkConnector extends org.eclipse.cmf.occi.multicloud.occim
 	}
 	// End of user code
 
-	// Start of user code HostgroulinkocciDelete_method
+	// Start of user code DynamicpolicyocciDelete_method
 	/**
-	 * Called when this Hostgroulink instance will be deleted.
+	 * Called when this Dynamicpolicy instance will be deleted.
 	 */
 	@Override
 	public void occiDelete()
@@ -93,6 +93,6 @@ public class HostgroulinkConnector extends org.eclipse.cmf.occi.multicloud.occim
 	// End of user code
 
 	//
-	// Hostgroulink actions.
+	// Dynamicpolicy actions.
 	//
 }	

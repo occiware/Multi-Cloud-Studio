@@ -60,52 +60,52 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.UniquescheduleImpl#getSchedulerStartDate <em>Scheduler Start Date</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.UniquescheduleImpl#getSchedulerEndDate <em>Scheduler End Date</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.UniquescheduleImpl#getUniqueScheduleStartDate <em>Unique Schedule Start Date</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.UniquescheduleImpl#getUniqueScheduleEndDate <em>Unique Schedule End Date</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class UniquescheduleImpl extends MixinBaseImpl implements Uniqueschedule {
 	/**
-	 * The default value of the '{@link #getSchedulerStartDate() <em>Scheduler Start Date</em>}' attribute.
+	 * The default value of the '{@link #getUniqueScheduleStartDate() <em>Unique Schedule Start Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSchedulerStartDate()
+	 * @see #getUniqueScheduleStartDate()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Date SCHEDULER_START_DATE_EDEFAULT = null;
+	protected static final Date UNIQUE_SCHEDULE_START_DATE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getSchedulerStartDate() <em>Scheduler Start Date</em>}' attribute.
+	 * The cached value of the '{@link #getUniqueScheduleStartDate() <em>Unique Schedule Start Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSchedulerStartDate()
+	 * @see #getUniqueScheduleStartDate()
 	 * @generated
 	 * @ordered
 	 */
-	protected Date schedulerStartDate = SCHEDULER_START_DATE_EDEFAULT;
+	protected Date uniqueScheduleStartDate = UNIQUE_SCHEDULE_START_DATE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getSchedulerEndDate() <em>Scheduler End Date</em>}' attribute.
+	 * The default value of the '{@link #getUniqueScheduleEndDate() <em>Unique Schedule End Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSchedulerEndDate()
+	 * @see #getUniqueScheduleEndDate()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Date SCHEDULER_END_DATE_EDEFAULT = null;
+	protected static final Date UNIQUE_SCHEDULE_END_DATE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getSchedulerEndDate() <em>Scheduler End Date</em>}' attribute.
+	 * The cached value of the '{@link #getUniqueScheduleEndDate() <em>Unique Schedule End Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSchedulerEndDate()
+	 * @see #getUniqueScheduleEndDate()
 	 * @generated
 	 * @ordered
 	 */
-	protected Date schedulerEndDate = SCHEDULER_END_DATE_EDEFAULT;
+	protected Date uniqueScheduleEndDate = UNIQUE_SCHEDULE_END_DATE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -131,8 +131,8 @@ public class UniquescheduleImpl extends MixinBaseImpl implements Uniqueschedule 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Date getSchedulerStartDate() {
-		return schedulerStartDate;
+	public Date getUniqueScheduleStartDate() {
+		return uniqueScheduleStartDate;
 	}
 
 	/**
@@ -140,11 +140,11 @@ public class UniquescheduleImpl extends MixinBaseImpl implements Uniqueschedule 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSchedulerStartDate(Date newSchedulerStartDate) {
-		Date oldSchedulerStartDate = schedulerStartDate;
-		schedulerStartDate = newSchedulerStartDate;
+	public void setUniqueScheduleStartDate(Date newUniqueScheduleStartDate) {
+		Date oldUniqueScheduleStartDate = uniqueScheduleStartDate;
+		uniqueScheduleStartDate = newUniqueScheduleStartDate;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.UNIQUESCHEDULE__SCHEDULER_START_DATE, oldSchedulerStartDate, schedulerStartDate));
+			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.UNIQUESCHEDULE__UNIQUE_SCHEDULE_START_DATE, oldUniqueScheduleStartDate, uniqueScheduleStartDate));
 	}
 
 	/**
@@ -152,8 +152,8 @@ public class UniquescheduleImpl extends MixinBaseImpl implements Uniqueschedule 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Date getSchedulerEndDate() {
-		return schedulerEndDate;
+	public Date getUniqueScheduleEndDate() {
+		return uniqueScheduleEndDate;
 	}
 
 	/**
@@ -161,11 +161,11 @@ public class UniquescheduleImpl extends MixinBaseImpl implements Uniqueschedule 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSchedulerEndDate(Date newSchedulerEndDate) {
-		Date oldSchedulerEndDate = schedulerEndDate;
-		schedulerEndDate = newSchedulerEndDate;
+	public void setUniqueScheduleEndDate(Date newUniqueScheduleEndDate) {
+		Date oldUniqueScheduleEndDate = uniqueScheduleEndDate;
+		uniqueScheduleEndDate = newUniqueScheduleEndDate;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.UNIQUESCHEDULE__SCHEDULER_END_DATE, oldSchedulerEndDate, schedulerEndDate));
+			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.UNIQUESCHEDULE__UNIQUE_SCHEDULE_END_DATE, oldUniqueScheduleEndDate, uniqueScheduleEndDate));
 	}
 
 	/**
@@ -195,8 +195,7 @@ public class UniquescheduleImpl extends MixinBaseImpl implements Uniqueschedule 
 		/**
 		 *
 		 * inv appliesConstraint:
-		 *   let
-		 *     severity : Integer[1] = 'Uniqueschedule::appliesConstraint'.getSeverity()
+		 *   let severity : Integer[1] = 'Scheduler::appliesConstraint'.getSeverity()
 		 *   in
 		 *     if severity <= 0
 		 *     then true
@@ -207,12 +206,12 @@ public class UniquescheduleImpl extends MixinBaseImpl implements Uniqueschedule 
 		 *         self.entity.oclIsKindOf(Stepdynamic) or
 		 *         self.entity.oclIsKindOf(Dynamicadjustment)
 		 *       in
-		 *         'Uniqueschedule::appliesConstraint'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+		 *         'Scheduler::appliesConstraint'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
 		 *     endif
 		 */
 		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
 		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
-		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, HorizontalelasticityTables.STR_Uniqueschedule_c_c_appliesConstraint);
+		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, HorizontalelasticityTables.STR_Scheduler_c_c_appliesConstraint);
 		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, HorizontalelasticityTables.INT_0).booleanValue();
 		/*@NonInvalid*/ boolean symbol_0;
 		if (le) {
@@ -236,8 +235,8 @@ public class UniquescheduleImpl extends MixinBaseImpl implements Uniqueschedule 
 				or_0 = ValueUtil.TRUE_VALUE;
 			}
 			else {
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_horizontalelasticity_c_c_Stepdynamic_0 = idResolver.getClass(HorizontalelasticityTables.CLSSid_Stepdynamic, null);
-				final /*@NonInvalid*/ boolean oclIsKindOf_1 = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_2, TYP_horizontalelasticity_c_c_Stepdynamic_0).booleanValue();
+				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_horizontalelasticity_c_c_Stepdynamic = idResolver.getClass(HorizontalelasticityTables.CLSSid_Stepdynamic, null);
+				final /*@NonInvalid*/ boolean oclIsKindOf_1 = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_2, TYP_horizontalelasticity_c_c_Stepdynamic).booleanValue();
 				or_0 = oclIsKindOf_1;
 			}
 			/*@NonInvalid*/ boolean result;
@@ -249,7 +248,7 @@ public class UniquescheduleImpl extends MixinBaseImpl implements Uniqueschedule 
 				final /*@NonInvalid*/ boolean oclIsKindOf_2 = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_2, TYP_horizontalelasticity_c_c_Dynamicadjustment).booleanValue();
 				result = oclIsKindOf_2;
 			}
-			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, HorizontalelasticityTables.STR_Uniqueschedule_c_c_appliesConstraint, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, HorizontalelasticityTables.INT_0).booleanValue();
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, HorizontalelasticityTables.STR_Scheduler_c_c_appliesConstraint, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, HorizontalelasticityTables.INT_0).booleanValue();
 			symbol_0 = logDiagnostic;
 		}
 		return Boolean.TRUE == symbol_0;
@@ -263,10 +262,10 @@ public class UniquescheduleImpl extends MixinBaseImpl implements Uniqueschedule 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case HorizontalelasticityPackage.UNIQUESCHEDULE__SCHEDULER_START_DATE:
-				return getSchedulerStartDate();
-			case HorizontalelasticityPackage.UNIQUESCHEDULE__SCHEDULER_END_DATE:
-				return getSchedulerEndDate();
+			case HorizontalelasticityPackage.UNIQUESCHEDULE__UNIQUE_SCHEDULE_START_DATE:
+				return getUniqueScheduleStartDate();
+			case HorizontalelasticityPackage.UNIQUESCHEDULE__UNIQUE_SCHEDULE_END_DATE:
+				return getUniqueScheduleEndDate();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -279,11 +278,11 @@ public class UniquescheduleImpl extends MixinBaseImpl implements Uniqueschedule 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case HorizontalelasticityPackage.UNIQUESCHEDULE__SCHEDULER_START_DATE:
-				setSchedulerStartDate((Date)newValue);
+			case HorizontalelasticityPackage.UNIQUESCHEDULE__UNIQUE_SCHEDULE_START_DATE:
+				setUniqueScheduleStartDate((Date)newValue);
 				return;
-			case HorizontalelasticityPackage.UNIQUESCHEDULE__SCHEDULER_END_DATE:
-				setSchedulerEndDate((Date)newValue);
+			case HorizontalelasticityPackage.UNIQUESCHEDULE__UNIQUE_SCHEDULE_END_DATE:
+				setUniqueScheduleEndDate((Date)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -297,11 +296,11 @@ public class UniquescheduleImpl extends MixinBaseImpl implements Uniqueschedule 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case HorizontalelasticityPackage.UNIQUESCHEDULE__SCHEDULER_START_DATE:
-				setSchedulerStartDate(SCHEDULER_START_DATE_EDEFAULT);
+			case HorizontalelasticityPackage.UNIQUESCHEDULE__UNIQUE_SCHEDULE_START_DATE:
+				setUniqueScheduleStartDate(UNIQUE_SCHEDULE_START_DATE_EDEFAULT);
 				return;
-			case HorizontalelasticityPackage.UNIQUESCHEDULE__SCHEDULER_END_DATE:
-				setSchedulerEndDate(SCHEDULER_END_DATE_EDEFAULT);
+			case HorizontalelasticityPackage.UNIQUESCHEDULE__UNIQUE_SCHEDULE_END_DATE:
+				setUniqueScheduleEndDate(UNIQUE_SCHEDULE_END_DATE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -315,10 +314,10 @@ public class UniquescheduleImpl extends MixinBaseImpl implements Uniqueschedule 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case HorizontalelasticityPackage.UNIQUESCHEDULE__SCHEDULER_START_DATE:
-				return SCHEDULER_START_DATE_EDEFAULT == null ? schedulerStartDate != null : !SCHEDULER_START_DATE_EDEFAULT.equals(schedulerStartDate);
-			case HorizontalelasticityPackage.UNIQUESCHEDULE__SCHEDULER_END_DATE:
-				return SCHEDULER_END_DATE_EDEFAULT == null ? schedulerEndDate != null : !SCHEDULER_END_DATE_EDEFAULT.equals(schedulerEndDate);
+			case HorizontalelasticityPackage.UNIQUESCHEDULE__UNIQUE_SCHEDULE_START_DATE:
+				return UNIQUE_SCHEDULE_START_DATE_EDEFAULT == null ? uniqueScheduleStartDate != null : !UNIQUE_SCHEDULE_START_DATE_EDEFAULT.equals(uniqueScheduleStartDate);
+			case HorizontalelasticityPackage.UNIQUESCHEDULE__UNIQUE_SCHEDULE_END_DATE:
+				return UNIQUE_SCHEDULE_END_DATE_EDEFAULT == null ? uniqueScheduleEndDate != null : !UNIQUE_SCHEDULE_END_DATE_EDEFAULT.equals(uniqueScheduleEndDate);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -329,32 +328,16 @@ public class UniquescheduleImpl extends MixinBaseImpl implements Uniqueschedule 
 	 * @generated
 	 */
 	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
 		if (baseClass == Scheduler.class) {
-			switch (derivedFeatureID) {
-				case HorizontalelasticityPackage.UNIQUESCHEDULE__SCHEDULER_START_DATE: return HorizontalelasticityPackage.SCHEDULER__SCHEDULER_START_DATE;
-				case HorizontalelasticityPackage.UNIQUESCHEDULE__SCHEDULER_END_DATE: return HorizontalelasticityPackage.SCHEDULER__SCHEDULER_END_DATE;
+			switch (baseOperationID) {
+				case HorizontalelasticityPackage.SCHEDULER___START: return HorizontalelasticityPackage.UNIQUESCHEDULE___START;
+				case HorizontalelasticityPackage.SCHEDULER___STOP: return HorizontalelasticityPackage.UNIQUESCHEDULE___STOP;
+				case HorizontalelasticityPackage.SCHEDULER___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1: return HorizontalelasticityPackage.UNIQUESCHEDULE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1;
 				default: return -1;
 			}
 		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == Scheduler.class) {
-			switch (baseFeatureID) {
-				case HorizontalelasticityPackage.SCHEDULER__SCHEDULER_START_DATE: return HorizontalelasticityPackage.UNIQUESCHEDULE__SCHEDULER_START_DATE;
-				case HorizontalelasticityPackage.SCHEDULER__SCHEDULER_END_DATE: return HorizontalelasticityPackage.UNIQUESCHEDULE__SCHEDULER_END_DATE;
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+		return super.eDerivedOperationID(baseOperationID, baseClass);
 	}
 
 	/**
@@ -372,7 +355,7 @@ public class UniquescheduleImpl extends MixinBaseImpl implements Uniqueschedule 
 			case HorizontalelasticityPackage.UNIQUESCHEDULE___STOP:
 				stop();
 				return null;
-			case HorizontalelasticityPackage.UNIQUESCHEDULE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP:
+			case HorizontalelasticityPackage.UNIQUESCHEDULE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1:
 				return appliesConstraint((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
@@ -388,10 +371,10 @@ public class UniquescheduleImpl extends MixinBaseImpl implements Uniqueschedule 
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (schedulerStartDate: ");
-		result.append(schedulerStartDate);
-		result.append(", schedulerEndDate: ");
-		result.append(schedulerEndDate);
+		result.append(" (UniqueScheduleStartDate: ");
+		result.append(uniqueScheduleStartDate);
+		result.append(", UniqueScheduleEndDate: ");
+		result.append(uniqueScheduleEndDate);
 		result.append(')');
 		return result.toString();
 	}

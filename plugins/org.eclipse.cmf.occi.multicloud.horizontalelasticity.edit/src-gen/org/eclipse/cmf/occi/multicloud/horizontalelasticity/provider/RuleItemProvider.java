@@ -17,10 +17,11 @@ import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.cmf.occi.core.OCCIPackage;
+
 import org.eclipse.cmf.occi.core.provider.LinkItemProvider;
-import org.eclipse.cmf.occi.core.provider.MixinBaseItemProvider;
 
 import org.eclipse.cmf.occi.infrastructure.InfrastructureFactory;
+
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityFactory;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Rule;
@@ -270,11 +271,6 @@ public class RuleItemProvider extends LinkItemProvider {
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
 				 HorizontalelasticityFactory.eINSTANCE.createCreation()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.ENTITY__PARTS,
-				 HorizontalelasticityFactory.eINSTANCE.createSteps()));
 
 		newChildDescriptors.add
 			(createChildParameter

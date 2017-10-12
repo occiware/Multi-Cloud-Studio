@@ -63,54 +63,14 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.RecurringscheduleImpl#getSchedulerStartDate <em>Scheduler Start Date</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.RecurringscheduleImpl#getSchedulerEndDate <em>Scheduler End Date</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.RecurringscheduleImpl#getRecurringscheduleRecurrence <em>Recurringschedule Recurrence</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.RecurringscheduleImpl#getRecurringscheduleStartDate <em>Recurringschedule Start Date</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.RecurringscheduleImpl#getRecurringscheduleEndDate <em>Recurringschedule End Date</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class RecurringscheduleImpl extends MixinBaseImpl implements Recurringschedule {
-	/**
-	 * The default value of the '{@link #getSchedulerStartDate() <em>Scheduler Start Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSchedulerStartDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date SCHEDULER_START_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSchedulerStartDate() <em>Scheduler Start Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSchedulerStartDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date schedulerStartDate = SCHEDULER_START_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSchedulerEndDate() <em>Scheduler End Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSchedulerEndDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date SCHEDULER_END_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSchedulerEndDate() <em>Scheduler End Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSchedulerEndDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date schedulerEndDate = SCHEDULER_END_DATE_EDEFAULT;
-
 	/**
 	 * The cached value of the '{@link #getRecurringscheduleRecurrence() <em>Recurringschedule Recurrence</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -120,6 +80,46 @@ public class RecurringscheduleImpl extends MixinBaseImpl implements Recurringsch
 	 * @ordered
 	 */
 	protected ArrayofRecurrenceStep recurringscheduleRecurrence;
+
+	/**
+	 * The default value of the '{@link #getRecurringscheduleStartDate() <em>Recurringschedule Start Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRecurringscheduleStartDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Date RECURRINGSCHEDULE_START_DATE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getRecurringscheduleStartDate() <em>Recurringschedule Start Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRecurringscheduleStartDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected Date recurringscheduleStartDate = RECURRINGSCHEDULE_START_DATE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getRecurringscheduleEndDate() <em>Recurringschedule End Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRecurringscheduleEndDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Date RECURRINGSCHEDULE_END_DATE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getRecurringscheduleEndDate() <em>Recurringschedule End Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRecurringscheduleEndDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected Date recurringscheduleEndDate = RECURRINGSCHEDULE_END_DATE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -138,48 +138,6 @@ public class RecurringscheduleImpl extends MixinBaseImpl implements Recurringsch
 	@Override
 	protected EClass eStaticClass() {
 		return HorizontalelasticityPackage.Literals.RECURRINGSCHEDULE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Date getSchedulerStartDate() {
-		return schedulerStartDate;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSchedulerStartDate(Date newSchedulerStartDate) {
-		Date oldSchedulerStartDate = schedulerStartDate;
-		schedulerStartDate = newSchedulerStartDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.RECURRINGSCHEDULE__SCHEDULER_START_DATE, oldSchedulerStartDate, schedulerStartDate));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Date getSchedulerEndDate() {
-		return schedulerEndDate;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSchedulerEndDate(Date newSchedulerEndDate) {
-		Date oldSchedulerEndDate = schedulerEndDate;
-		schedulerEndDate = newSchedulerEndDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.RECURRINGSCHEDULE__SCHEDULER_END_DATE, oldSchedulerEndDate, schedulerEndDate));
 	}
 
 	/**
@@ -230,6 +188,48 @@ public class RecurringscheduleImpl extends MixinBaseImpl implements Recurringsch
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Date getRecurringscheduleStartDate() {
+		return recurringscheduleStartDate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRecurringscheduleStartDate(Date newRecurringscheduleStartDate) {
+		Date oldRecurringscheduleStartDate = recurringscheduleStartDate;
+		recurringscheduleStartDate = newRecurringscheduleStartDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.RECURRINGSCHEDULE__RECURRINGSCHEDULE_START_DATE, oldRecurringscheduleStartDate, recurringscheduleStartDate));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Date getRecurringscheduleEndDate() {
+		return recurringscheduleEndDate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRecurringscheduleEndDate(Date newRecurringscheduleEndDate) {
+		Date oldRecurringscheduleEndDate = recurringscheduleEndDate;
+		recurringscheduleEndDate = newRecurringscheduleEndDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.RECURRINGSCHEDULE__RECURRINGSCHEDULE_END_DATE, oldRecurringscheduleEndDate, recurringscheduleEndDate));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public void start() {
 		throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Recurringschedule!start()
 	}
@@ -252,40 +252,39 @@ public class RecurringscheduleImpl extends MixinBaseImpl implements Recurringsch
 		/**
 		 *
 		 * inv appliesConstraint:
-		 *   let
-		 *     severity : Integer[1] = 'Recurringschedule::appliesConstraint'.getSeverity()
+		 *   let severity : Integer[1] = 'Scheduler::appliesConstraint'.getSeverity()
 		 *   in
 		 *     if severity <= 0
 		 *     then true
 		 *     else
 		 *       let
 		 *         result : occi::Boolean[?] = self.entity.oclIsKindOf(Manual) or
-		 *         self.entity.oclIsKindOf(Dynamicadjustment) or
+		 *         self.entity.oclIsKindOf(Simpledynamic) or
 		 *         self.entity.oclIsKindOf(Stepdynamic) or
-		 *         self.entity.oclIsKindOf(Simpledynamic)
+		 *         self.entity.oclIsKindOf(Dynamicadjustment)
 		 *       in
-		 *         'Recurringschedule::appliesConstraint'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+		 *         'Scheduler::appliesConstraint'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
 		 *     endif
 		 */
 		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
 		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
-		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, HorizontalelasticityTables.STR_Recurringschedule_c_c_appliesConstraint);
+		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, HorizontalelasticityTables.STR_Scheduler_c_c_appliesConstraint);
 		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, HorizontalelasticityTables.INT_0).booleanValue();
 		/*@NonInvalid*/ boolean symbol_0;
 		if (le) {
 			symbol_0 = ValueUtil.TRUE_VALUE;
 		}
 		else {
-			final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_horizontalelasticity_c_c_Manual_0 = idResolver.getClass(HorizontalelasticityTables.CLSSid_Manual, null);
+			final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_horizontalelasticity_c_c_Manual = idResolver.getClass(HorizontalelasticityTables.CLSSid_Manual, null);
 			final /*@NonInvalid*/ Entity entity_2 = this.getEntity();
-			final /*@NonInvalid*/ boolean oclIsKindOf = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_2, TYP_horizontalelasticity_c_c_Manual_0).booleanValue();
+			final /*@NonInvalid*/ boolean oclIsKindOf = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_2, TYP_horizontalelasticity_c_c_Manual).booleanValue();
 			/*@NonInvalid*/ boolean or;
 			if (oclIsKindOf) {
 				or = ValueUtil.TRUE_VALUE;
 			}
 			else {
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_horizontalelasticity_c_c_Dynamicadjustment_0 = idResolver.getClass(HorizontalelasticityTables.CLSSid_Dynamicadjustment, null);
-				final /*@NonInvalid*/ boolean oclIsKindOf_0 = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_2, TYP_horizontalelasticity_c_c_Dynamicadjustment_0).booleanValue();
+				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_horizontalelasticity_c_c_Simpledynamic = idResolver.getClass(HorizontalelasticityTables.CLSSid_Simpledynamic, null);
+				final /*@NonInvalid*/ boolean oclIsKindOf_0 = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_2, TYP_horizontalelasticity_c_c_Simpledynamic).booleanValue();
 				or = oclIsKindOf_0;
 			}
 			/*@NonInvalid*/ boolean or_0;
@@ -293,8 +292,8 @@ public class RecurringscheduleImpl extends MixinBaseImpl implements Recurringsch
 				or_0 = ValueUtil.TRUE_VALUE;
 			}
 			else {
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_horizontalelasticity_c_c_Stepdynamic_0 = idResolver.getClass(HorizontalelasticityTables.CLSSid_Stepdynamic, null);
-				final /*@NonInvalid*/ boolean oclIsKindOf_1 = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_2, TYP_horizontalelasticity_c_c_Stepdynamic_0).booleanValue();
+				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_horizontalelasticity_c_c_Stepdynamic = idResolver.getClass(HorizontalelasticityTables.CLSSid_Stepdynamic, null);
+				final /*@NonInvalid*/ boolean oclIsKindOf_1 = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_2, TYP_horizontalelasticity_c_c_Stepdynamic).booleanValue();
 				or_0 = oclIsKindOf_1;
 			}
 			/*@NonInvalid*/ boolean result;
@@ -302,11 +301,11 @@ public class RecurringscheduleImpl extends MixinBaseImpl implements Recurringsch
 				result = ValueUtil.TRUE_VALUE;
 			}
 			else {
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_horizontalelasticity_c_c_Simpledynamic_0 = idResolver.getClass(HorizontalelasticityTables.CLSSid_Simpledynamic, null);
-				final /*@NonInvalid*/ boolean oclIsKindOf_2 = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_2, TYP_horizontalelasticity_c_c_Simpledynamic_0).booleanValue();
+				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_horizontalelasticity_c_c_Dynamicadjustment = idResolver.getClass(HorizontalelasticityTables.CLSSid_Dynamicadjustment, null);
+				final /*@NonInvalid*/ boolean oclIsKindOf_2 = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_2, TYP_horizontalelasticity_c_c_Dynamicadjustment).booleanValue();
 				result = oclIsKindOf_2;
 			}
-			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, HorizontalelasticityTables.STR_Recurringschedule_c_c_appliesConstraint, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, HorizontalelasticityTables.INT_0).booleanValue();
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, HorizontalelasticityTables.STR_Scheduler_c_c_appliesConstraint, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, HorizontalelasticityTables.INT_0).booleanValue();
 			symbol_0 = logDiagnostic;
 		}
 		return Boolean.TRUE == symbol_0;
@@ -334,12 +333,12 @@ public class RecurringscheduleImpl extends MixinBaseImpl implements Recurringsch
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case HorizontalelasticityPackage.RECURRINGSCHEDULE__SCHEDULER_START_DATE:
-				return getSchedulerStartDate();
-			case HorizontalelasticityPackage.RECURRINGSCHEDULE__SCHEDULER_END_DATE:
-				return getSchedulerEndDate();
 			case HorizontalelasticityPackage.RECURRINGSCHEDULE__RECURRINGSCHEDULE_RECURRENCE:
 				return getRecurringscheduleRecurrence();
+			case HorizontalelasticityPackage.RECURRINGSCHEDULE__RECURRINGSCHEDULE_START_DATE:
+				return getRecurringscheduleStartDate();
+			case HorizontalelasticityPackage.RECURRINGSCHEDULE__RECURRINGSCHEDULE_END_DATE:
+				return getRecurringscheduleEndDate();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -352,14 +351,14 @@ public class RecurringscheduleImpl extends MixinBaseImpl implements Recurringsch
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case HorizontalelasticityPackage.RECURRINGSCHEDULE__SCHEDULER_START_DATE:
-				setSchedulerStartDate((Date)newValue);
-				return;
-			case HorizontalelasticityPackage.RECURRINGSCHEDULE__SCHEDULER_END_DATE:
-				setSchedulerEndDate((Date)newValue);
-				return;
 			case HorizontalelasticityPackage.RECURRINGSCHEDULE__RECURRINGSCHEDULE_RECURRENCE:
 				setRecurringscheduleRecurrence((ArrayofRecurrenceStep)newValue);
+				return;
+			case HorizontalelasticityPackage.RECURRINGSCHEDULE__RECURRINGSCHEDULE_START_DATE:
+				setRecurringscheduleStartDate((Date)newValue);
+				return;
+			case HorizontalelasticityPackage.RECURRINGSCHEDULE__RECURRINGSCHEDULE_END_DATE:
+				setRecurringscheduleEndDate((Date)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -373,14 +372,14 @@ public class RecurringscheduleImpl extends MixinBaseImpl implements Recurringsch
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case HorizontalelasticityPackage.RECURRINGSCHEDULE__SCHEDULER_START_DATE:
-				setSchedulerStartDate(SCHEDULER_START_DATE_EDEFAULT);
-				return;
-			case HorizontalelasticityPackage.RECURRINGSCHEDULE__SCHEDULER_END_DATE:
-				setSchedulerEndDate(SCHEDULER_END_DATE_EDEFAULT);
-				return;
 			case HorizontalelasticityPackage.RECURRINGSCHEDULE__RECURRINGSCHEDULE_RECURRENCE:
 				setRecurringscheduleRecurrence((ArrayofRecurrenceStep)null);
+				return;
+			case HorizontalelasticityPackage.RECURRINGSCHEDULE__RECURRINGSCHEDULE_START_DATE:
+				setRecurringscheduleStartDate(RECURRINGSCHEDULE_START_DATE_EDEFAULT);
+				return;
+			case HorizontalelasticityPackage.RECURRINGSCHEDULE__RECURRINGSCHEDULE_END_DATE:
+				setRecurringscheduleEndDate(RECURRINGSCHEDULE_END_DATE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -394,12 +393,12 @@ public class RecurringscheduleImpl extends MixinBaseImpl implements Recurringsch
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case HorizontalelasticityPackage.RECURRINGSCHEDULE__SCHEDULER_START_DATE:
-				return SCHEDULER_START_DATE_EDEFAULT == null ? schedulerStartDate != null : !SCHEDULER_START_DATE_EDEFAULT.equals(schedulerStartDate);
-			case HorizontalelasticityPackage.RECURRINGSCHEDULE__SCHEDULER_END_DATE:
-				return SCHEDULER_END_DATE_EDEFAULT == null ? schedulerEndDate != null : !SCHEDULER_END_DATE_EDEFAULT.equals(schedulerEndDate);
 			case HorizontalelasticityPackage.RECURRINGSCHEDULE__RECURRINGSCHEDULE_RECURRENCE:
 				return recurringscheduleRecurrence != null;
+			case HorizontalelasticityPackage.RECURRINGSCHEDULE__RECURRINGSCHEDULE_START_DATE:
+				return RECURRINGSCHEDULE_START_DATE_EDEFAULT == null ? recurringscheduleStartDate != null : !RECURRINGSCHEDULE_START_DATE_EDEFAULT.equals(recurringscheduleStartDate);
+			case HorizontalelasticityPackage.RECURRINGSCHEDULE__RECURRINGSCHEDULE_END_DATE:
+				return RECURRINGSCHEDULE_END_DATE_EDEFAULT == null ? recurringscheduleEndDate != null : !RECURRINGSCHEDULE_END_DATE_EDEFAULT.equals(recurringscheduleEndDate);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -410,32 +409,16 @@ public class RecurringscheduleImpl extends MixinBaseImpl implements Recurringsch
 	 * @generated
 	 */
 	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
 		if (baseClass == Scheduler.class) {
-			switch (derivedFeatureID) {
-				case HorizontalelasticityPackage.RECURRINGSCHEDULE__SCHEDULER_START_DATE: return HorizontalelasticityPackage.SCHEDULER__SCHEDULER_START_DATE;
-				case HorizontalelasticityPackage.RECURRINGSCHEDULE__SCHEDULER_END_DATE: return HorizontalelasticityPackage.SCHEDULER__SCHEDULER_END_DATE;
+			switch (baseOperationID) {
+				case HorizontalelasticityPackage.SCHEDULER___START: return HorizontalelasticityPackage.RECURRINGSCHEDULE___START;
+				case HorizontalelasticityPackage.SCHEDULER___STOP: return HorizontalelasticityPackage.RECURRINGSCHEDULE___STOP;
+				case HorizontalelasticityPackage.SCHEDULER___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1: return HorizontalelasticityPackage.RECURRINGSCHEDULE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1;
 				default: return -1;
 			}
 		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == Scheduler.class) {
-			switch (baseFeatureID) {
-				case HorizontalelasticityPackage.SCHEDULER__SCHEDULER_START_DATE: return HorizontalelasticityPackage.RECURRINGSCHEDULE__SCHEDULER_START_DATE;
-				case HorizontalelasticityPackage.SCHEDULER__SCHEDULER_END_DATE: return HorizontalelasticityPackage.RECURRINGSCHEDULE__SCHEDULER_END_DATE;
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+		return super.eDerivedOperationID(baseOperationID, baseClass);
 	}
 
 	/**
@@ -453,7 +436,7 @@ public class RecurringscheduleImpl extends MixinBaseImpl implements Recurringsch
 			case HorizontalelasticityPackage.RECURRINGSCHEDULE___STOP:
 				stop();
 				return null;
-			case HorizontalelasticityPackage.RECURRINGSCHEDULE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP:
+			case HorizontalelasticityPackage.RECURRINGSCHEDULE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1:
 				return appliesConstraint((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
@@ -469,10 +452,10 @@ public class RecurringscheduleImpl extends MixinBaseImpl implements Recurringsch
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (schedulerStartDate: ");
-		result.append(schedulerStartDate);
-		result.append(", schedulerEndDate: ");
-		result.append(schedulerEndDate);
+		result.append(" (RecurringscheduleStartDate: ");
+		result.append(recurringscheduleStartDate);
+		result.append(", RecurringscheduleEndDate: ");
+		result.append(recurringscheduleEndDate);
 		result.append(')');
 		return result.toString();
 	}

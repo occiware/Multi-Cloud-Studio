@@ -17,12 +17,12 @@ import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.cmf.occi.core.OCCIPackage;
-import org.eclipse.cmf.occi.core.provider.MixinBaseItemProvider;
 
 import org.eclipse.cmf.occi.core.provider.ResourceItemProvider;
+
 import org.eclipse.cmf.occi.infrastructure.InfrastructureFactory;
+
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Action;
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.ActionOperation;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityFactory;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage;
 
@@ -199,11 +199,6 @@ public class ActionItemProvider extends ResourceItemProvider {
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
 				 HorizontalelasticityFactory.eINSTANCE.createCreation()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.ENTITY__PARTS,
-				 HorizontalelasticityFactory.eINSTANCE.createSteps()));
 
 		newChildDescriptors.add
 			(createChildParameter

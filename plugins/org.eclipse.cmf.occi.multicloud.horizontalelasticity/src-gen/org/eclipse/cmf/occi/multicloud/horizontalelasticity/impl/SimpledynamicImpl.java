@@ -35,7 +35,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class SimpledynamicImpl extends DynamicImpl implements Simpledynamic {
+public class SimpledynamicImpl extends DynamicpolicyImpl implements Simpledynamic {
 	/**
 	 * The default value of the '{@link #getSimpleDynamicName() <em>Simple Dynamic Name</em>}' attribute.
 	 * <!-- begin-user-doc -->

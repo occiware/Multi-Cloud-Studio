@@ -29,7 +29,6 @@ import org.eclipse.cmf.occi.core.Resource;
  * @generated
  */
 public interface Horizontalelasticcontroller extends Resource {
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -51,4 +50,5 @@ public interface Horizontalelasticcontroller extends Resource {
 	 * @generated
 	 */
 	void stop();
+
 } // Horizontalelasticcontroller

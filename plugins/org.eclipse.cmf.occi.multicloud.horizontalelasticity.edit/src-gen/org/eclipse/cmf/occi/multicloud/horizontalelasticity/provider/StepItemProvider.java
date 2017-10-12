@@ -16,10 +16,15 @@ package org.eclipse.cmf.occi.multicloud.horizontalelasticity.provider;
 import java.util.Collection;
 import java.util.List;
 
-import org.eclipse.cmf.occi.core.provider.MixinBaseItemProvider;
+import org.eclipse.cmf.occi.core.OCCIPackage;
 
+import org.eclipse.cmf.occi.core.provider.ResourceItemProvider;
+
+import org.eclipse.cmf.occi.infrastructure.InfrastructureFactory;
+
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityFactory;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage;
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Steps;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Step;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
@@ -32,19 +37,19 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Steps} object.
+ * This is the item provider adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Step} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class StepsItemProvider extends MixinBaseItemProvider {
+public class StepItemProvider extends ResourceItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StepsItemProvider(AdapterFactory adapterFactory) {
+	public StepItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -76,9 +81,9 @@ public class StepsItemProvider extends MixinBaseItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Steps_stepsLowerStepBound_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Steps_stepsLowerStepBound_feature", "_UI_Steps_type"),
-				 HorizontalelasticityPackage.Literals.STEPS__STEPS_LOWER_STEP_BOUND,
+				 getString("_UI_Step_stepsLowerStepBound_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Step_stepsLowerStepBound_feature", "_UI_Step_type"),
+				 HorizontalelasticityPackage.Literals.STEP__STEPS_LOWER_STEP_BOUND,
 				 true,
 				 false,
 				 false,
@@ -98,9 +103,9 @@ public class StepsItemProvider extends MixinBaseItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Steps_stepsUpperStepBound_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Steps_stepsUpperStepBound_feature", "_UI_Steps_type"),
-				 HorizontalelasticityPackage.Literals.STEPS__STEPS_UPPER_STEP_BOUND,
+				 getString("_UI_Step_stepsUpperStepBound_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Step_stepsUpperStepBound_feature", "_UI_Step_type"),
+				 HorizontalelasticityPackage.Literals.STEP__STEPS_UPPER_STEP_BOUND,
 				 true,
 				 false,
 				 false,
@@ -110,14 +115,14 @@ public class StepsItemProvider extends MixinBaseItemProvider {
 	}
 
 	/**
-	 * This returns Steps.gif.
+	 * This returns Step.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Steps"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Step"));
 	}
 
 	/**
@@ -128,11 +133,10 @@ public class StepsItemProvider extends MixinBaseItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		Float labelValue = ((Steps)object).getStepsLowerStepBound();
-		String label = labelValue == null ? null : labelValue.toString();
+		String label = ((Step)object).getId();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Steps_type") :
-			getString("_UI_Steps_type") + " " + label;
+			getString("_UI_Step_type") :
+			getString("_UI_Step_type") + " " + label;
 	}
 	
 
@@ -147,9 +151,9 @@ public class StepsItemProvider extends MixinBaseItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Steps.class)) {
-			case HorizontalelasticityPackage.STEPS__STEPS_LOWER_STEP_BOUND:
-			case HorizontalelasticityPackage.STEPS__STEPS_UPPER_STEP_BOUND:
+		switch (notification.getFeatureID(Step.class)) {
+			case HorizontalelasticityPackage.STEP__STEPS_LOWER_STEP_BOUND:
+			case HorizontalelasticityPackage.STEP__STEPS_UPPER_STEP_BOUND:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -166,6 +170,86 @@ public class StepsItemProvider extends MixinBaseItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createCreation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createScheduler()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createUniqueschedule()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createRecurringschedule()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 InfrastructureFactory.eINSTANCE.createIpnetwork()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 InfrastructureFactory.eINSTANCE.createIpnetworkinterface()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 InfrastructureFactory.eINSTANCE.createOs_tpl()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 InfrastructureFactory.eINSTANCE.createResource_tpl()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 InfrastructureFactory.eINSTANCE.createSsh_key()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 InfrastructureFactory.eINSTANCE.createUser_data()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.RESOURCE__LINKS,
+				 HorizontalelasticityFactory.eINSTANCE.createInstancegrouplink()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.RESOURCE__LINKS,
+				 HorizontalelasticityFactory.eINSTANCE.createLinkbalancer()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.RESOURCE__LINKS,
+				 HorizontalelasticityFactory.eINSTANCE.createGrouplink()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.RESOURCE__LINKS,
+				 HorizontalelasticityFactory.eINSTANCE.createRule()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.RESOURCE__LINKS,
+				 InfrastructureFactory.eINSTANCE.createStoragelink()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.RESOURCE__LINKS,
+				 InfrastructureFactory.eINSTANCE.createNetworkinterface()));
 	}
 
 	/**

@@ -63,26 +63,26 @@ public class RecurringscheduleItemProvider extends MixinBaseItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSchedulerStartDatePropertyDescriptor(object);
-			addSchedulerEndDatePropertyDescriptor(object);
+			addRecurringscheduleStartDatePropertyDescriptor(object);
+			addRecurringscheduleEndDatePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Scheduler Start Date feature.
+	 * This adds a property descriptor for the Recurringschedule Start Date feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSchedulerStartDatePropertyDescriptor(Object object) {
+	protected void addRecurringscheduleStartDatePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Scheduler_schedulerStartDate_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Scheduler_schedulerStartDate_feature", "_UI_Scheduler_type"),
-				 HorizontalelasticityPackage.Literals.SCHEDULER__SCHEDULER_START_DATE,
+				 getString("_UI_Recurringschedule_RecurringscheduleStartDate_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Recurringschedule_RecurringscheduleStartDate_feature", "_UI_Recurringschedule_type"),
+				 HorizontalelasticityPackage.Literals.RECURRINGSCHEDULE__RECURRINGSCHEDULE_START_DATE,
 				 true,
 				 false,
 				 false,
@@ -92,19 +92,19 @@ public class RecurringscheduleItemProvider extends MixinBaseItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Scheduler End Date feature.
+	 * This adds a property descriptor for the Recurringschedule End Date feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSchedulerEndDatePropertyDescriptor(Object object) {
+	protected void addRecurringscheduleEndDatePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Scheduler_schedulerEndDate_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Scheduler_schedulerEndDate_feature", "_UI_Scheduler_type"),
-				 HorizontalelasticityPackage.Literals.SCHEDULER__SCHEDULER_END_DATE,
+				 getString("_UI_Recurringschedule_RecurringscheduleEndDate_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Recurringschedule_RecurringscheduleEndDate_feature", "_UI_Recurringschedule_type"),
+				 HorizontalelasticityPackage.Literals.RECURRINGSCHEDULE__RECURRINGSCHEDULE_END_DATE,
 				 true,
 				 false,
 				 false,
@@ -162,7 +162,7 @@ public class RecurringscheduleItemProvider extends MixinBaseItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		Date labelValue = ((Recurringschedule)object).getSchedulerStartDate();
+		Date labelValue = ((Recurringschedule)object).getRecurringscheduleStartDate();
 		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Recurringschedule_type") :
@@ -182,8 +182,8 @@ public class RecurringscheduleItemProvider extends MixinBaseItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Recurringschedule.class)) {
-			case HorizontalelasticityPackage.RECURRINGSCHEDULE__SCHEDULER_START_DATE:
-			case HorizontalelasticityPackage.RECURRINGSCHEDULE__SCHEDULER_END_DATE:
+			case HorizontalelasticityPackage.RECURRINGSCHEDULE__RECURRINGSCHEDULE_START_DATE:
+			case HorizontalelasticityPackage.RECURRINGSCHEDULE__RECURRINGSCHEDULE_END_DATE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case HorizontalelasticityPackage.RECURRINGSCHEDULE__RECURRINGSCHEDULE_RECURRENCE:

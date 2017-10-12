@@ -17,29 +17,23 @@ import junit.framework.TestCase;
 import junit.textui.TestRunner;
 
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityFactory;
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Steps;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Step;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Steps</b></em>'.
+ * A test case for the model object '<em><b>Step</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * The following operations are tested:
- * <ul>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Steps#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}</li>
- * </ul>
- * </p>
  * @generated
  */
-public class StepsTest extends TestCase {
+public class StepTest extends TestCase {
 
 	/**
-	 * The fixture for this Steps test case.
+	 * The fixture for this Step test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Steps fixture = null;
+	protected Step fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -47,36 +41,36 @@ public class StepsTest extends TestCase {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(StepsTest.class);
+		TestRunner.run(StepTest.class);
 	}
 
 	/**
-	 * Constructs a new Steps test case with the given name.
+	 * Constructs a new Step test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StepsTest(String name) {
+	public StepTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Sets the fixture for this Steps test case.
+	 * Sets the fixture for this Step test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(Steps fixture) {
+	protected void setFixture(Step fixture) {
 		this.fixture = fixture;
 	}
 
 	/**
-	 * Returns the fixture for this Steps test case.
+	 * Returns the fixture for this Step test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Steps getFixture() {
+	protected Step getFixture() {
 		return fixture;
 	}
 
@@ -88,7 +82,7 @@ public class StepsTest extends TestCase {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(HorizontalelasticityFactory.eINSTANCE.createSteps());
+		setFixture(HorizontalelasticityFactory.eINSTANCE.createStep());
 	}
 
 	/**
@@ -102,17 +96,4 @@ public class StepsTest extends TestCase {
 		setFixture(null);
 	}
 
-	/**
-	 * Tests the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Steps#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Steps#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	public void testAppliesConstraint__DiagnosticChain_Map() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-} //StepsTest
+} //StepTest

@@ -60,26 +60,26 @@ public class UniquescheduleItemProvider extends MixinBaseItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSchedulerStartDatePropertyDescriptor(object);
-			addSchedulerEndDatePropertyDescriptor(object);
+			addUniqueScheduleStartDatePropertyDescriptor(object);
+			addUniqueScheduleEndDatePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Scheduler Start Date feature.
+	 * This adds a property descriptor for the Unique Schedule Start Date feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSchedulerStartDatePropertyDescriptor(Object object) {
+	protected void addUniqueScheduleStartDatePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Scheduler_schedulerStartDate_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Scheduler_schedulerStartDate_feature", "_UI_Scheduler_type"),
-				 HorizontalelasticityPackage.Literals.SCHEDULER__SCHEDULER_START_DATE,
+				 getString("_UI_Uniqueschedule_UniqueScheduleStartDate_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Uniqueschedule_UniqueScheduleStartDate_feature", "_UI_Uniqueschedule_type"),
+				 HorizontalelasticityPackage.Literals.UNIQUESCHEDULE__UNIQUE_SCHEDULE_START_DATE,
 				 true,
 				 false,
 				 false,
@@ -89,19 +89,19 @@ public class UniquescheduleItemProvider extends MixinBaseItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Scheduler End Date feature.
+	 * This adds a property descriptor for the Unique Schedule End Date feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSchedulerEndDatePropertyDescriptor(Object object) {
+	protected void addUniqueScheduleEndDatePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Scheduler_schedulerEndDate_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Scheduler_schedulerEndDate_feature", "_UI_Scheduler_type"),
-				 HorizontalelasticityPackage.Literals.SCHEDULER__SCHEDULER_END_DATE,
+				 getString("_UI_Uniqueschedule_UniqueScheduleEndDate_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Uniqueschedule_UniqueScheduleEndDate_feature", "_UI_Uniqueschedule_type"),
+				 HorizontalelasticityPackage.Literals.UNIQUESCHEDULE__UNIQUE_SCHEDULE_END_DATE,
 				 true,
 				 false,
 				 false,
@@ -129,7 +129,7 @@ public class UniquescheduleItemProvider extends MixinBaseItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		Date labelValue = ((Uniqueschedule)object).getSchedulerStartDate();
+		Date labelValue = ((Uniqueschedule)object).getUniqueScheduleStartDate();
 		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Uniqueschedule_type") :
@@ -149,8 +149,8 @@ public class UniquescheduleItemProvider extends MixinBaseItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Uniqueschedule.class)) {
-			case HorizontalelasticityPackage.UNIQUESCHEDULE__SCHEDULER_START_DATE:
-			case HorizontalelasticityPackage.UNIQUESCHEDULE__SCHEDULER_END_DATE:
+			case HorizontalelasticityPackage.UNIQUESCHEDULE__UNIQUE_SCHEDULE_START_DATE:
+			case HorizontalelasticityPackage.UNIQUESCHEDULE__UNIQUE_SCHEDULE_END_DATE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

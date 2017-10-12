@@ -12,59 +12,32 @@
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl;
 
-import java.lang.reflect.InvocationTargetException;
-
-import java.util.Map;
-
-import org.eclipse.cmf.occi.core.Entity;
-
-import org.eclipse.cmf.occi.core.impl.MixinBaseImpl;
+import org.eclipse.cmf.occi.core.impl.ResourceImpl;
 
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage;
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables;
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Steps;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Step;
 
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.DiagnosticChain;
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.ocl.pivot.evaluation.Executor;
-
-import org.eclipse.ocl.pivot.ids.IdResolver;
-import org.eclipse.ocl.pivot.ids.TypeId;
-
-import org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal;
-
-import org.eclipse.ocl.pivot.library.oclany.OclAnyOclIsKindOfOperation;
-import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation;
-
-import org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation;
-import org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation;
-
-import org.eclipse.ocl.pivot.utilities.ValueUtil;
-
-import org.eclipse.ocl.pivot.values.IntegerValue;
-
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Steps</b></em>'.
+ * An implementation of the model object '<em><b>Step</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.StepsImpl#getStepsLowerStepBound <em>Steps Lower Step Bound</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.StepsImpl#getStepsUpperStepBound <em>Steps Upper Step Bound</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.StepImpl#getStepsLowerStepBound <em>Steps Lower Step Bound</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.StepImpl#getStepsUpperStepBound <em>Steps Upper Step Bound</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class StepsImpl extends MixinBaseImpl implements Steps {
+public class StepImpl extends ResourceImpl implements Step {
 	/**
 	 * The default value of the '{@link #getStepsLowerStepBound() <em>Steps Lower Step Bound</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -110,7 +83,7 @@ public class StepsImpl extends MixinBaseImpl implements Steps {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected StepsImpl() {
+	protected StepImpl() {
 		super();
 	}
 
@@ -121,7 +94,7 @@ public class StepsImpl extends MixinBaseImpl implements Steps {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return HorizontalelasticityPackage.Literals.STEPS;
+		return HorizontalelasticityPackage.Literals.STEP;
 	}
 
 	/**
@@ -142,7 +115,7 @@ public class StepsImpl extends MixinBaseImpl implements Steps {
 		Float oldStepsLowerStepBound = stepsLowerStepBound;
 		stepsLowerStepBound = newStepsLowerStepBound;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.STEPS__STEPS_LOWER_STEP_BOUND, oldStepsLowerStepBound, stepsLowerStepBound));
+			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.STEP__STEPS_LOWER_STEP_BOUND, oldStepsLowerStepBound, stepsLowerStepBound));
 	}
 
 	/**
@@ -163,45 +136,7 @@ public class StepsImpl extends MixinBaseImpl implements Steps {
 		Float oldStepsUpperStepBound = stepsUpperStepBound;
 		stepsUpperStepBound = newStepsUpperStepBound;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.STEPS__STEPS_UPPER_STEP_BOUND, oldStepsUpperStepBound, stepsUpperStepBound));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean appliesConstraint(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		/**
-		 *
-		 * inv appliesConstraint:
-		 *   let severity : Integer[1] = 'Steps::appliesConstraint'.getSeverity()
-		 *   in
-		 *     if severity <= 0
-		 *     then true
-		 *     else
-		 *       let
-		 *         result : occi::Boolean[1] = self.entity.oclIsKindOf(Stepdynamic)
-		 *       in
-		 *         'Steps::appliesConstraint'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
-		 *     endif
-		 */
-		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
-		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
-		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, HorizontalelasticityTables.STR_Steps_c_c_appliesConstraint);
-		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, HorizontalelasticityTables.INT_0).booleanValue();
-		/*@NonInvalid*/ boolean symbol_0;
-		if (le) {
-			symbol_0 = ValueUtil.TRUE_VALUE;
-		}
-		else {
-			final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_horizontalelasticity_c_c_Stepdynamic = idResolver.getClass(HorizontalelasticityTables.CLSSid_Stepdynamic, null);
-			final /*@NonInvalid*/ Entity entity = this.getEntity();
-			final /*@NonInvalid*/ boolean result = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity, TYP_horizontalelasticity_c_c_Stepdynamic).booleanValue();
-			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, HorizontalelasticityTables.STR_Steps_c_c_appliesConstraint, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, HorizontalelasticityTables.INT_0).booleanValue();
-			symbol_0 = logDiagnostic;
-		}
-		return Boolean.TRUE == symbol_0;
+			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.STEP__STEPS_UPPER_STEP_BOUND, oldStepsUpperStepBound, stepsUpperStepBound));
 	}
 
 	/**
@@ -212,9 +147,9 @@ public class StepsImpl extends MixinBaseImpl implements Steps {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case HorizontalelasticityPackage.STEPS__STEPS_LOWER_STEP_BOUND:
+			case HorizontalelasticityPackage.STEP__STEPS_LOWER_STEP_BOUND:
 				return getStepsLowerStepBound();
-			case HorizontalelasticityPackage.STEPS__STEPS_UPPER_STEP_BOUND:
+			case HorizontalelasticityPackage.STEP__STEPS_UPPER_STEP_BOUND:
 				return getStepsUpperStepBound();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -228,10 +163,10 @@ public class StepsImpl extends MixinBaseImpl implements Steps {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case HorizontalelasticityPackage.STEPS__STEPS_LOWER_STEP_BOUND:
+			case HorizontalelasticityPackage.STEP__STEPS_LOWER_STEP_BOUND:
 				setStepsLowerStepBound((Float)newValue);
 				return;
-			case HorizontalelasticityPackage.STEPS__STEPS_UPPER_STEP_BOUND:
+			case HorizontalelasticityPackage.STEP__STEPS_UPPER_STEP_BOUND:
 				setStepsUpperStepBound((Float)newValue);
 				return;
 		}
@@ -246,10 +181,10 @@ public class StepsImpl extends MixinBaseImpl implements Steps {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case HorizontalelasticityPackage.STEPS__STEPS_LOWER_STEP_BOUND:
+			case HorizontalelasticityPackage.STEP__STEPS_LOWER_STEP_BOUND:
 				setStepsLowerStepBound(STEPS_LOWER_STEP_BOUND_EDEFAULT);
 				return;
-			case HorizontalelasticityPackage.STEPS__STEPS_UPPER_STEP_BOUND:
+			case HorizontalelasticityPackage.STEP__STEPS_UPPER_STEP_BOUND:
 				setStepsUpperStepBound(STEPS_UPPER_STEP_BOUND_EDEFAULT);
 				return;
 		}
@@ -264,27 +199,12 @@ public class StepsImpl extends MixinBaseImpl implements Steps {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case HorizontalelasticityPackage.STEPS__STEPS_LOWER_STEP_BOUND:
+			case HorizontalelasticityPackage.STEP__STEPS_LOWER_STEP_BOUND:
 				return STEPS_LOWER_STEP_BOUND_EDEFAULT == null ? stepsLowerStepBound != null : !STEPS_LOWER_STEP_BOUND_EDEFAULT.equals(stepsLowerStepBound);
-			case HorizontalelasticityPackage.STEPS__STEPS_UPPER_STEP_BOUND:
+			case HorizontalelasticityPackage.STEP__STEPS_UPPER_STEP_BOUND:
 				return STEPS_UPPER_STEP_BOUND_EDEFAULT == null ? stepsUpperStepBound != null : !STEPS_UPPER_STEP_BOUND_EDEFAULT.equals(stepsUpperStepBound);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case HorizontalelasticityPackage.STEPS___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP:
-				return appliesConstraint((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
@@ -305,4 +225,4 @@ public class StepsImpl extends MixinBaseImpl implements Steps {
 		return result.toString();
 	}
 
-} //StepsImpl
+} //StepImpl

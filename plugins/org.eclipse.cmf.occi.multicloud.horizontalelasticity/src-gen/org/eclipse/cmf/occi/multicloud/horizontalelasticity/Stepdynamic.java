@@ -34,7 +34,7 @@ package org.eclipse.cmf.occi.multicloud.horizontalelasticity;
  * @model
  * @generated
  */
-public interface Stepdynamic extends Dynamic {
+public interface Stepdynamic extends Dynamicpolicy {
 	/**
 	 * Returns the value of the '<em><b>Step Dynamic Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

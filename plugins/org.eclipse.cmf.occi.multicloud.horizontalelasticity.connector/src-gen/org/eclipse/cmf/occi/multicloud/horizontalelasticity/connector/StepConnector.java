@@ -10,31 +10,31 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Tue Oct 03 17:45:32 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.occimonitoring/model/occimonitoring.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Wed Oct 11 20:59:30 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
  */
-package org.eclipse.cmf.occi.multicloud.occimonitoring.connector;
+package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
  * Connector implementation for the OCCI kind:
- * - scheme: http://org.eclipse.cmf.occi.multicloud.occimonitoring#
- * - term: templatelink
+ * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
+ * - term: step
  * - title: 
  */
-public class TemplatelinkConnector extends org.eclipse.cmf.occi.multicloud.occimonitoring.impl.TemplatelinkImpl
+public class StepConnector extends org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.StepImpl
 {
 	/**
 	 * Initialize the logger.
 	 */
-	private static Logger LOGGER = LoggerFactory.getLogger(TemplatelinkConnector.class);
+	private static Logger LOGGER = LoggerFactory.getLogger(StepConnector.class);
 
-	// Start of user code Templatelinkconnector_constructor
+	// Start of user code Stepconnector_constructor
 	/**
-	 * Constructs a templatelink connector.
+	 * Constructs a step connector.
 	 */
-	TemplatelinkConnector()
+	StepConnector()
 	{
 		LOGGER.debug("Constructor called on " + this);
 		// TODO: Implement this constructor.
@@ -44,9 +44,9 @@ public class TemplatelinkConnector extends org.eclipse.cmf.occi.multicloud.occim
 	// OCCI CRUD callback operations.
 	//
 	
-	// Start of user code TemplatelinkocciCreate
+	// Start of user code StepocciCreate
 	/**
-	 * Called when this Templatelink instance is completely created.
+	 * Called when this Step instance is completely created.
 	 */
 	@Override
 	public void occiCreate()
@@ -56,9 +56,9 @@ public class TemplatelinkConnector extends org.eclipse.cmf.occi.multicloud.occim
 	}
 	// End of user code
 
-	// Start of user code Templatelink_occiRetrieve_method
+	// Start of user code Step_occiRetrieve_method
 	/**
-	 * Called when this Templatelink instance must be retrieved.
+	 * Called when this Step instance must be retrieved.
 	 */
 	@Override
 	public void occiRetrieve()
@@ -68,9 +68,9 @@ public class TemplatelinkConnector extends org.eclipse.cmf.occi.multicloud.occim
 	}
 	// End of user code
 
-	// Start of user code Templatelink_occiUpdate_method
+	// Start of user code Step_occiUpdate_method
 	/**
-	 * Called when this Templatelink instance is completely updated.
+	 * Called when this Step instance is completely updated.
 	 */
 	@Override
 	public void occiUpdate()
@@ -80,9 +80,9 @@ public class TemplatelinkConnector extends org.eclipse.cmf.occi.multicloud.occim
 	}
 	// End of user code
 
-	// Start of user code TemplatelinkocciDelete_method
+	// Start of user code StepocciDelete_method
 	/**
-	 * Called when this Templatelink instance will be deleted.
+	 * Called when this Step instance will be deleted.
 	 */
 	@Override
 	public void occiDelete()
@@ -93,6 +93,6 @@ public class TemplatelinkConnector extends org.eclipse.cmf.occi.multicloud.occim
 	// End of user code
 
 	//
-	// Templatelink actions.
+	// Step actions.
 	//
 }	

@@ -23,7 +23,7 @@ import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Stepdynamic;
  * <!-- end-user-doc -->
  * @generated
  */
-public class StepdynamicTest extends DynamicTest {
+public class StepdynamicTest extends DynamicpolicyTest {
 
 	/**
 	 * <!-- begin-user-doc -->

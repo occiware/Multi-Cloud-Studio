@@ -85,8 +85,9 @@ public class HorizontalelasticityFactoryImpl extends EFactoryImpl implements Hor
 			case HorizontalelasticityPackage.DYNAMICADJUSTMENT: return createDynamicadjustment();
 			case HorizontalelasticityPackage.RULE: return createRule();
 			case HorizontalelasticityPackage.ACTION: return createAction();
+			case HorizontalelasticityPackage.DYNAMICPOLICY: return createDynamicpolicy();
+			case HorizontalelasticityPackage.STEP: return createStep();
 			case HorizontalelasticityPackage.CREATION: return createCreation();
-			case HorizontalelasticityPackage.STEPS: return createSteps();
 			case HorizontalelasticityPackage.SCHEDULER: return createScheduler();
 			case HorizontalelasticityPackage.UNIQUESCHEDULE: return createUniqueschedule();
 			case HorizontalelasticityPackage.RECURRINGSCHEDULE: return createRecurringschedule();
@@ -298,26 +299,6 @@ public class HorizontalelasticityFactoryImpl extends EFactoryImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Creation createCreation() {
-		CreationImpl creation = new CreationImpl();
-		return creation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Steps createSteps() {
-		StepsImpl steps = new StepsImpl();
-		return steps;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Rule createRule() {
 		RuleImpl rule = new RuleImpl();
 		return rule;
@@ -331,6 +312,36 @@ public class HorizontalelasticityFactoryImpl extends EFactoryImpl implements Hor
 	public Action createAction() {
 		ActionImpl action = new ActionImpl();
 		return action;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Dynamicpolicy createDynamicpolicy() {
+		DynamicpolicyImpl dynamicpolicy = new DynamicpolicyImpl();
+		return dynamicpolicy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Step createStep() {
+		StepImpl step = new StepImpl();
+		return step;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Creation createCreation() {
+		CreationImpl creation = new CreationImpl();
+		return creation;
 	}
 
 	/**

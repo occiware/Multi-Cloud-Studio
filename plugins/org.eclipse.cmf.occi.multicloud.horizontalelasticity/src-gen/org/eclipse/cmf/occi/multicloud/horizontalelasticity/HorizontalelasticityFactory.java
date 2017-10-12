@@ -158,24 +158,6 @@ public interface HorizontalelasticityFactory extends EFactory {
 	Dynamicadjustment createDynamicadjustment();
 
 	/**
-	 * Returns a new object of class '<em>Creation</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Creation</em>'.
-	 * @generated
-	 */
-	Creation createCreation();
-
-	/**
-	 * Returns a new object of class '<em>Steps</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Steps</em>'.
-	 * @generated
-	 */
-	Steps createSteps();
-
-	/**
 	 * Returns a new object of class '<em>Rule</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -192,6 +174,33 @@ public interface HorizontalelasticityFactory extends EFactory {
 	 * @generated
 	 */
 	Action createAction();
+
+	/**
+	 * Returns a new object of class '<em>Dynamicpolicy</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Dynamicpolicy</em>'.
+	 * @generated
+	 */
+	Dynamicpolicy createDynamicpolicy();
+
+	/**
+	 * Returns a new object of class '<em>Step</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Step</em>'.
+	 * @generated
+	 */
+	Step createStep();
+
+	/**
+	 * Returns a new object of class '<em>Creation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Creation</em>'.
+	 * @generated
+	 */
+	Creation createCreation();
 
 	/**
 	 * Returns a new object of class '<em>Scheduler</em>'.

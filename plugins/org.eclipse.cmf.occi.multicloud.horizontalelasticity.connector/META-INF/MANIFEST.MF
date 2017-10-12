@@ -19,4 +19,6 @@ Require-Bundle: org.slf4j.api,
  org.eclipse.cmf.occi.multicloud.horizontalelasticity
 Export-Package: org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector
 Import-Package: org.eclipse.cmf.occi.multicloud.elasticocci.connector,
- org.eclipse.cmf.occi.multicloud.vmware
+ org.eclipse.cmf.occi.multicloud.vmware,
+ org.eclipse.emf.transaction,
+ org.eclipse.emf.transaction.util

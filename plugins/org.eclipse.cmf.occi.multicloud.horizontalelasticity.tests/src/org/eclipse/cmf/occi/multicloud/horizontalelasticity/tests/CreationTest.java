@@ -109,7 +109,7 @@ public class CreationTest extends TestCase {
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Creation#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	public void testAppliesConstraint__DiagnosticChain_Map() {
+	public void testAppliesConstraint__DiagnosticChain_Map_1() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

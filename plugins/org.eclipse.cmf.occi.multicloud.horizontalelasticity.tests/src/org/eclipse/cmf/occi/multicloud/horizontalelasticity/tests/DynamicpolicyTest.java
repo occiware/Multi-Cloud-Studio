@@ -14,16 +14,16 @@ package org.eclipse.cmf.occi.multicloud.horizontalelasticity.tests;
 
 import junit.textui.TestRunner;
 
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamicpolicy;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityFactory;
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Simpledynamic;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Simpledynamic</b></em>'.
+ * A test case for the model object '<em><b>Dynamicpolicy</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class SimpledynamicTest extends DynamicpolicyTest {
+public class DynamicpolicyTest extends DynamicTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -31,28 +31,28 @@ public class SimpledynamicTest extends DynamicpolicyTest {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(SimpledynamicTest.class);
+		TestRunner.run(DynamicpolicyTest.class);
 	}
 
 	/**
-	 * Constructs a new Simpledynamic test case with the given name.
+	 * Constructs a new Dynamicpolicy test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SimpledynamicTest(String name) {
+	public DynamicpolicyTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Returns the fixture for this Simpledynamic test case.
+	 * Returns the fixture for this Dynamicpolicy test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	protected Simpledynamic getFixture() {
-		return (Simpledynamic)fixture;
+	protected Dynamicpolicy getFixture() {
+		return (Dynamicpolicy)fixture;
 	}
 
 	/**
@@ -63,7 +63,7 @@ public class SimpledynamicTest extends DynamicpolicyTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(HorizontalelasticityFactory.eINSTANCE.createSimpledynamic());
+		setFixture(HorizontalelasticityFactory.eINSTANCE.createDynamicpolicy());
 	}
 
 	/**
@@ -77,4 +77,4 @@ public class SimpledynamicTest extends DynamicpolicyTest {
 		setFixture(null);
 	}
 
-} //SimpledynamicTest
+} //DynamicpolicyTest

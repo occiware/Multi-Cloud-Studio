@@ -122,11 +122,6 @@ public class HorizontalelasticcontrollerItemProvider extends ResourceItemProvide
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
-				 HorizontalelasticityFactory.eINSTANCE.createSteps()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.ENTITY__PARTS,
 				 HorizontalelasticityFactory.eINSTANCE.createScheduler()));
 
 		newChildDescriptors.add

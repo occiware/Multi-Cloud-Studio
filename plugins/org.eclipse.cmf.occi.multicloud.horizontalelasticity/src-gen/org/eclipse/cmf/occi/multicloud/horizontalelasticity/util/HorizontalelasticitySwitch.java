@@ -93,9 +93,9 @@ public class HorizontalelasticitySwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case HorizontalelasticityPackage.ARRAYOF_RECURRENCE_STEP: {
-				ArrayofRecurrenceStep arrayofRecurrenceStep = (ArrayofRecurrenceStep)theEObject;
-				T result = caseArrayofRecurrenceStep(arrayofRecurrenceStep);
+			case HorizontalelasticityPackage.ARROF_REC_STEP: {
+				ArrofRecStep arrofRecStep = (ArrofRecStep)theEObject;
+				T result = caseArrofRecStep(arrofRecStep);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -296,17 +296,17 @@ public class HorizontalelasticitySwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Arrayof Recurrence Step</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Arrof Rec Step</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Arrayof Recurrence Step</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Arrof Rec Step</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseArrayofRecurrenceStep(ArrayofRecurrenceStep object) {
+	public T caseArrofRecStep(ArrofRecStep object) {
 		return null;
 	}
 

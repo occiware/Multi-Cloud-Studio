@@ -33,7 +33,7 @@ import org.eclipse.cmf.occi.core.MixinBase;
  * @model
  * @generated
  */
-public interface Uniqueschedule extends MixinBase, Scheduler {
+public interface Uniqueschedule extends Scheduler, MixinBase {
 	/**
 	 * Returns the value of the '<em><b>Unique Schedule Start Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -85,27 +85,5 @@ public interface Uniqueschedule extends MixinBase, Scheduler {
 	 * @generated
 	 */
 	void setUniqueScheduleEndDate(Date value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * 
-	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Uniqueschedule!start()'"
-	 * @generated
-	 */
-	void start();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * 
-	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Uniqueschedule!stop()'"
-	 * @generated
-	 */
-	void stop();
 
 } // Uniqueschedule

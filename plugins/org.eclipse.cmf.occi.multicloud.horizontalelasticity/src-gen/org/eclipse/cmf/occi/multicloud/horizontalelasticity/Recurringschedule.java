@@ -34,7 +34,7 @@ import org.eclipse.cmf.occi.core.MixinBase;
  * @model
  * @generated
  */
-public interface Recurringschedule extends MixinBase, Scheduler {
+public interface Recurringschedule extends Scheduler, MixinBase {
 	/**
 	 * Returns the value of the '<em><b>Recurringschedule Recurrence</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -43,13 +43,13 @@ public interface Recurringschedule extends MixinBase, Scheduler {
 	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Recurringschedule Recurrence</em>' containment reference.
-	 * @see #setRecurringscheduleRecurrence(ArrayofRecurrenceStep)
+	 * @see #setRecurringscheduleRecurrence(ArrofRecStep)
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getRecurringschedule_RecurringscheduleRecurrence()
 	 * @model containment="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Recurringschedule!RecurringscheduleRecurrence'"
 	 * @generated
 	 */
-	ArrayofRecurrenceStep getRecurringscheduleRecurrence();
+	ArrofRecStep getRecurringscheduleRecurrence();
 
 	/**
 	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Recurringschedule#getRecurringscheduleRecurrence <em>Recurringschedule Recurrence</em>}' containment reference.
@@ -59,7 +59,7 @@ public interface Recurringschedule extends MixinBase, Scheduler {
 	 * @see #getRecurringscheduleRecurrence()
 	 * @generated
 	 */
-	void setRecurringscheduleRecurrence(ArrayofRecurrenceStep value);
+	void setRecurringscheduleRecurrence(ArrofRecStep value);
 
 	/**
 	 * Returns the value of the '<em><b>Recurringschedule Start Date</b></em>' attribute.
@@ -112,27 +112,5 @@ public interface Recurringschedule extends MixinBase, Scheduler {
 	 * @generated
 	 */
 	void setRecurringscheduleEndDate(Date value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * 
-	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Recurringschedule!start()'"
-	 * @generated
-	 */
-	void start();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * 
-	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Recurringschedule!stop()'"
-	 * @generated
-	 */
-	void stop();
 
 } // Recurringschedule

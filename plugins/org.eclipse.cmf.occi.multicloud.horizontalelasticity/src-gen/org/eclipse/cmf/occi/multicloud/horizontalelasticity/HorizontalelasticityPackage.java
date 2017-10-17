@@ -155,41 +155,41 @@ public interface HorizontalelasticityPackage extends EPackage {
 	int ARRAY_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ArrayofRecurrenceStepImpl <em>Arrayof Recurrence Step</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ArrofRecStepImpl <em>Arrof Rec Step</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ArrayofRecurrenceStepImpl
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getArrayofRecurrenceStep()
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ArrofRecStepImpl
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getArrofRecStep()
 	 * @generated
 	 */
-	int ARRAYOF_RECURRENCE_STEP = 2;
+	int ARROF_REC_STEP = 2;
 
 	/**
-	 * The feature id for the '<em><b>Arrayofrecurrencestep Values</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Arrofrecstep Values</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARRAYOF_RECURRENCE_STEP__ARRAYOFRECURRENCESTEP_VALUES = 0;
+	int ARROF_REC_STEP__ARROFRECSTEP_VALUES = 0;
 
 	/**
-	 * The number of structural features of the '<em>Arrayof Recurrence Step</em>' class.
+	 * The number of structural features of the '<em>Arrof Rec Step</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARRAYOF_RECURRENCE_STEP_FEATURE_COUNT = 1;
+	int ARROF_REC_STEP_FEATURE_COUNT = 1;
 
 	/**
-	 * The number of operations of the '<em>Arrayof Recurrence Step</em>' class.
+	 * The number of operations of the '<em>Arrof Rec Step</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARRAYOF_RECURRENCE_STEP_OPERATION_COUNT = 0;
+	int ARROF_REC_STEP_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalgroupImpl <em>Horizontalgroup</em>}' class.
@@ -940,7 +940,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTANCEGROUPLINK___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1 = OCCIPackage.LINK_OPERATION_COUNT + 0;
+	int INSTANCEGROUPLINK___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.LINK_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Instancegrouplink</em>' class.
@@ -1112,7 +1112,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINKBALANCER___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1 = OCCIPackage.LINK_OPERATION_COUNT + 0;
+	int LINKBALANCER___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.LINK_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Linkbalancer</em>' class.
@@ -1284,7 +1284,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GROUPLINK___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1 = OCCIPackage.LINK_OPERATION_COUNT + 0;
+	int GROUPLINK___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.LINK_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Grouplink</em>' class.
@@ -2785,7 +2785,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RULE___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1 = OCCIPackage.LINK_OPERATION_COUNT + 0;
+	int RULE___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.LINK_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Rule</em>' class.
@@ -3211,7 +3211,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATION___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1 = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
+	int CREATION___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Creation</em>' class.
@@ -3293,7 +3293,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEDULER___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1 = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
+	int SCHEDULER___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Scheduler</em>' class.
@@ -3321,7 +3321,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIQUESCHEDULE__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
+	int UNIQUESCHEDULE__MIXIN = SCHEDULER__MIXIN;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' container reference.
@@ -3330,7 +3330,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIQUESCHEDULE__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
+	int UNIQUESCHEDULE__ENTITY = SCHEDULER__ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -3339,7 +3339,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIQUESCHEDULE__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
+	int UNIQUESCHEDULE__ATTRIBUTES = SCHEDULER__ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Unique Schedule Start Date</b></em>' attribute.
@@ -3348,7 +3348,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIQUESCHEDULE__UNIQUE_SCHEDULE_START_DATE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
+	int UNIQUESCHEDULE__UNIQUE_SCHEDULE_START_DATE = SCHEDULER_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Unique Schedule End Date</b></em>' attribute.
@@ -3357,7 +3357,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIQUESCHEDULE__UNIQUE_SCHEDULE_END_DATE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
+	int UNIQUESCHEDULE__UNIQUE_SCHEDULE_END_DATE = SCHEDULER_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Uniqueschedule</em>' class.
@@ -3366,16 +3366,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIQUESCHEDULE_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIQUESCHEDULE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1 = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
+	int UNIQUESCHEDULE_FEATURE_COUNT = SCHEDULER_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Start</em>' operation.
@@ -3384,7 +3375,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIQUESCHEDULE___START = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 3;
+	int UNIQUESCHEDULE___START = SCHEDULER___START;
 
 	/**
 	 * The operation id for the '<em>Stop</em>' operation.
@@ -3393,7 +3384,16 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIQUESCHEDULE___STOP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 4;
+	int UNIQUESCHEDULE___STOP = SCHEDULER___STOP;
+
+	/**
+	 * The operation id for the '<em>Applies Constraint</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIQUESCHEDULE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = SCHEDULER___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The number of operations of the '<em>Uniqueschedule</em>' class.
@@ -3402,7 +3402,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIQUESCHEDULE_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 5;
+	int UNIQUESCHEDULE_OPERATION_COUNT = SCHEDULER_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.RecurringscheduleImpl <em>Recurringschedule</em>}' class.
@@ -3421,7 +3421,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECURRINGSCHEDULE__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
+	int RECURRINGSCHEDULE__MIXIN = SCHEDULER__MIXIN;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' container reference.
@@ -3430,7 +3430,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECURRINGSCHEDULE__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
+	int RECURRINGSCHEDULE__ENTITY = SCHEDULER__ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -3439,7 +3439,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECURRINGSCHEDULE__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
+	int RECURRINGSCHEDULE__ATTRIBUTES = SCHEDULER__ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Recurringschedule Recurrence</b></em>' containment reference.
@@ -3448,7 +3448,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECURRINGSCHEDULE__RECURRINGSCHEDULE_RECURRENCE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
+	int RECURRINGSCHEDULE__RECURRINGSCHEDULE_RECURRENCE = SCHEDULER_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Recurringschedule Start Date</b></em>' attribute.
@@ -3457,7 +3457,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECURRINGSCHEDULE__RECURRINGSCHEDULE_START_DATE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
+	int RECURRINGSCHEDULE__RECURRINGSCHEDULE_START_DATE = SCHEDULER_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Recurringschedule End Date</b></em>' attribute.
@@ -3466,7 +3466,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECURRINGSCHEDULE__RECURRINGSCHEDULE_END_DATE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
+	int RECURRINGSCHEDULE__RECURRINGSCHEDULE_END_DATE = SCHEDULER_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Recurringschedule</em>' class.
@@ -3475,16 +3475,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECURRINGSCHEDULE_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECURRINGSCHEDULE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1 = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
+	int RECURRINGSCHEDULE_FEATURE_COUNT = SCHEDULER_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Start</em>' operation.
@@ -3493,7 +3484,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECURRINGSCHEDULE___START = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 3;
+	int RECURRINGSCHEDULE___START = SCHEDULER___START;
 
 	/**
 	 * The operation id for the '<em>Stop</em>' operation.
@@ -3502,7 +3493,16 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECURRINGSCHEDULE___STOP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 4;
+	int RECURRINGSCHEDULE___STOP = SCHEDULER___STOP;
+
+	/**
+	 * The operation id for the '<em>Applies Constraint</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECURRINGSCHEDULE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = SCHEDULER___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The number of operations of the '<em>Recurringschedule</em>' class.
@@ -3511,7 +3511,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECURRINGSCHEDULE_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 5;
+	int RECURRINGSCHEDULE_OPERATION_COUNT = SCHEDULER_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.TypeMetric <em>Type Metric</em>}' enum.
@@ -3648,25 +3648,25 @@ public interface HorizontalelasticityPackage extends EPackage {
 	EAttribute getArray_Values();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.ArrayofRecurrenceStep <em>Arrayof Recurrence Step</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.ArrofRecStep <em>Arrof Rec Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Arrayof Recurrence Step</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.ArrayofRecurrenceStep
+	 * @return the meta object for class '<em>Arrof Rec Step</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.ArrofRecStep
 	 * @generated
 	 */
-	EClass getArrayofRecurrenceStep();
+	EClass getArrofRecStep();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.ArrayofRecurrenceStep#getArrayofrecurrencestepValues <em>Arrayofrecurrencestep Values</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.ArrofRecStep#getArrofrecstepValues <em>Arrofrecstep Values</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Arrayofrecurrencestep Values</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.ArrayofRecurrenceStep#getArrayofrecurrencestepValues()
-	 * @see #getArrayofRecurrenceStep()
+	 * @return the meta object for the containment reference list '<em>Arrofrecstep Values</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.ArrofRecStep#getArrofrecstepValues()
+	 * @see #getArrofRecStep()
 	 * @generated
 	 */
-	EReference getArrayofRecurrenceStep_ArrayofrecurrencestepValues();
+	EReference getArrofRecStep_ArrofrecstepValues();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup <em>Horizontalgroup</em>}'.
@@ -3865,7 +3865,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Instancegrouplink#targetConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getInstancegrouplink__TargetConstraint__DiagnosticChain_Map_1();
+	EOperation getInstancegrouplink__TargetConstraint__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Linkbalancer <em>Linkbalancer</em>}'.
@@ -3885,7 +3885,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Linkbalancer#targetConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getLinkbalancer__TargetConstraint__DiagnosticChain_Map_1();
+	EOperation getLinkbalancer__TargetConstraint__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Grouplink <em>Grouplink</em>}'.
@@ -3905,7 +3905,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Grouplink#targetConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getGrouplink__TargetConstraint__DiagnosticChain_Map_1();
+	EOperation getGrouplink__TargetConstraint__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Manual <em>Manual</em>}'.
@@ -4206,7 +4206,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Rule#targetConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getRule__TargetConstraint__DiagnosticChain_Map_1();
+	EOperation getRule__TargetConstraint__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Action <em>Action</em>}'.
@@ -4322,7 +4322,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Creation#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getCreation__AppliesConstraint__DiagnosticChain_Map_1();
+	EOperation getCreation__AppliesConstraint__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Scheduler <em>Scheduler</em>}'.
@@ -4362,7 +4362,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Scheduler#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getScheduler__AppliesConstraint__DiagnosticChain_Map_1();
+	EOperation getScheduler__AppliesConstraint__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Uniqueschedule <em>Uniqueschedule</em>}'.
@@ -4395,26 +4395,6 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getUniqueschedule_UniqueScheduleEndDate();
-
-	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Uniqueschedule#start() <em>Start</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Start</em>' operation.
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Uniqueschedule#start()
-	 * @generated
-	 */
-	EOperation getUniqueschedule__Start();
-
-	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Uniqueschedule#stop() <em>Stop</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Stop</em>' operation.
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Uniqueschedule#stop()
-	 * @generated
-	 */
-	EOperation getUniqueschedule__Stop();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Recurringschedule <em>Recurringschedule</em>}'.
@@ -4458,26 +4438,6 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRecurringschedule_RecurringscheduleEndDate();
-
-	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Recurringschedule#start() <em>Start</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Start</em>' operation.
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Recurringschedule#start()
-	 * @generated
-	 */
-	EOperation getRecurringschedule__Start();
-
-	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Recurringschedule#stop() <em>Stop</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Stop</em>' operation.
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Recurringschedule#stop()
-	 * @generated
-	 */
-	EOperation getRecurringschedule__Stop();
 
 	/**
 	 * Returns the meta object for enum '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.TypeMetric <em>Type Metric</em>}'.
@@ -4629,22 +4589,22 @@ public interface HorizontalelasticityPackage extends EPackage {
 		EAttribute ARRAY__VALUES = eINSTANCE.getArray_Values();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ArrayofRecurrenceStepImpl <em>Arrayof Recurrence Step</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ArrofRecStepImpl <em>Arrof Rec Step</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ArrayofRecurrenceStepImpl
-		 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getArrayofRecurrenceStep()
+		 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ArrofRecStepImpl
+		 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getArrofRecStep()
 		 * @generated
 		 */
-		EClass ARRAYOF_RECURRENCE_STEP = eINSTANCE.getArrayofRecurrenceStep();
+		EClass ARROF_REC_STEP = eINSTANCE.getArrofRecStep();
 
 		/**
-		 * The meta object literal for the '<em><b>Arrayofrecurrencestep Values</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Arrofrecstep Values</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ARRAYOF_RECURRENCE_STEP__ARRAYOFRECURRENCESTEP_VALUES = eINSTANCE.getArrayofRecurrenceStep_ArrayofrecurrencestepValues();
+		EReference ARROF_REC_STEP__ARROFRECSTEP_VALUES = eINSTANCE.getArrofRecStep_ArrofrecstepValues();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalgroupImpl <em>Horizontalgroup</em>}' class.
@@ -4804,7 +4764,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation INSTANCEGROUPLINK___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1 = eINSTANCE.getInstancegrouplink__TargetConstraint__DiagnosticChain_Map_1();
+		EOperation INSTANCEGROUPLINK___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getInstancegrouplink__TargetConstraint__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.LinkbalancerImpl <em>Linkbalancer</em>}' class.
@@ -4822,7 +4782,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation LINKBALANCER___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1 = eINSTANCE.getLinkbalancer__TargetConstraint__DiagnosticChain_Map_1();
+		EOperation LINKBALANCER___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getLinkbalancer__TargetConstraint__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.GrouplinkImpl <em>Grouplink</em>}' class.
@@ -4840,7 +4800,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation GROUPLINK___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1 = eINSTANCE.getGrouplink__TargetConstraint__DiagnosticChain_Map_1();
+		EOperation GROUPLINK___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getGrouplink__TargetConstraint__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ManualImpl <em>Manual</em>}' class.
@@ -5076,7 +5036,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation RULE___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1 = eINSTANCE.getRule__TargetConstraint__DiagnosticChain_Map_1();
+		EOperation RULE___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getRule__TargetConstraint__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ActionImpl <em>Action</em>}' class.
@@ -5172,7 +5132,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation CREATION___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1 = eINSTANCE.getCreation__AppliesConstraint__DiagnosticChain_Map_1();
+		EOperation CREATION___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getCreation__AppliesConstraint__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.SchedulerImpl <em>Scheduler</em>}' class.
@@ -5206,7 +5166,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation SCHEDULER___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1 = eINSTANCE.getScheduler__AppliesConstraint__DiagnosticChain_Map_1();
+		EOperation SCHEDULER___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getScheduler__AppliesConstraint__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.UniquescheduleImpl <em>Uniqueschedule</em>}' class.
@@ -5233,22 +5193,6 @@ public interface HorizontalelasticityPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute UNIQUESCHEDULE__UNIQUE_SCHEDULE_END_DATE = eINSTANCE.getUniqueschedule_UniqueScheduleEndDate();
-
-		/**
-		 * The meta object literal for the '<em><b>Start</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation UNIQUESCHEDULE___START = eINSTANCE.getUniqueschedule__Start();
-
-		/**
-		 * The meta object literal for the '<em><b>Stop</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation UNIQUESCHEDULE___STOP = eINSTANCE.getUniqueschedule__Stop();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.RecurringscheduleImpl <em>Recurringschedule</em>}' class.
@@ -5283,22 +5227,6 @@ public interface HorizontalelasticityPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute RECURRINGSCHEDULE__RECURRINGSCHEDULE_END_DATE = eINSTANCE.getRecurringschedule_RecurringscheduleEndDate();
-
-		/**
-		 * The meta object literal for the '<em><b>Start</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation RECURRINGSCHEDULE___START = eINSTANCE.getRecurringschedule__Start();
-
-		/**
-		 * The meta object literal for the '<em><b>Stop</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation RECURRINGSCHEDULE___STOP = eINSTANCE.getRecurringschedule__Stop();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.TypeMetric <em>Type Metric</em>}' enum.

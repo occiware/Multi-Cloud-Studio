@@ -106,10 +106,7 @@ public class SchedulerImpl extends MixinBaseImpl implements Scheduler {
 		 *     then true
 		 *     else
 		 *       let
-		 *         result : occi::Boolean[?] = self.entity.oclIsKindOf(Manual) or
-		 *         self.entity.oclIsKindOf(Simpledynamic) or
-		 *         self.entity.oclIsKindOf(Stepdynamic) or
-		 *         self.entity.oclIsKindOf(Dynamicadjustment)
+		 *         result : occi::Boolean[1] = self.entity.oclIsKindOf(Horizontalelasticcontroller)
 		 *       in
 		 *         'Scheduler::appliesConstraint'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
 		 *     endif
@@ -123,36 +120,9 @@ public class SchedulerImpl extends MixinBaseImpl implements Scheduler {
 			symbol_0 = ValueUtil.TRUE_VALUE;
 		}
 		else {
-			final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_horizontalelasticity_c_c_Manual = idResolver.getClass(HorizontalelasticityTables.CLSSid_Manual, null);
-			final /*@NonInvalid*/ Entity entity_2 = this.getEntity();
-			final /*@NonInvalid*/ boolean oclIsKindOf = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_2, TYP_horizontalelasticity_c_c_Manual).booleanValue();
-			/*@NonInvalid*/ boolean or;
-			if (oclIsKindOf) {
-				or = ValueUtil.TRUE_VALUE;
-			}
-			else {
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_horizontalelasticity_c_c_Simpledynamic = idResolver.getClass(HorizontalelasticityTables.CLSSid_Simpledynamic, null);
-				final /*@NonInvalid*/ boolean oclIsKindOf_0 = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_2, TYP_horizontalelasticity_c_c_Simpledynamic).booleanValue();
-				or = oclIsKindOf_0;
-			}
-			/*@NonInvalid*/ boolean or_0;
-			if (or) {
-				or_0 = ValueUtil.TRUE_VALUE;
-			}
-			else {
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_horizontalelasticity_c_c_Stepdynamic = idResolver.getClass(HorizontalelasticityTables.CLSSid_Stepdynamic, null);
-				final /*@NonInvalid*/ boolean oclIsKindOf_1 = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_2, TYP_horizontalelasticity_c_c_Stepdynamic).booleanValue();
-				or_0 = oclIsKindOf_1;
-			}
-			/*@NonInvalid*/ boolean result;
-			if (or_0) {
-				result = ValueUtil.TRUE_VALUE;
-			}
-			else {
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_horizontalelasticity_c_c_Dynamicadjustment = idResolver.getClass(HorizontalelasticityTables.CLSSid_Dynamicadjustment, null);
-				final /*@NonInvalid*/ boolean oclIsKindOf_2 = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_2, TYP_horizontalelasticity_c_c_Dynamicadjustment).booleanValue();
-				result = oclIsKindOf_2;
-			}
+			final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_horizontalelasticity_c_c_Horizontalelasticcontroller = idResolver.getClass(HorizontalelasticityTables.CLSSid_Horizontalelasticcontroller, null);
+			final /*@NonInvalid*/ Entity entity = this.getEntity();
+			final /*@NonInvalid*/ boolean result = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity, TYP_horizontalelasticity_c_c_Horizontalelasticcontroller).booleanValue();
 			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, HorizontalelasticityTables.STR_Scheduler_c_c_appliesConstraint, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, HorizontalelasticityTables.INT_0).booleanValue();
 			symbol_0 = logDiagnostic;
 		}
@@ -174,7 +144,7 @@ public class SchedulerImpl extends MixinBaseImpl implements Scheduler {
 			case HorizontalelasticityPackage.SCHEDULER___STOP:
 				stop();
 				return null;
-			case HorizontalelasticityPackage.SCHEDULER___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1:
+			case HorizontalelasticityPackage.SCHEDULER___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP:
 				return appliesConstraint((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);

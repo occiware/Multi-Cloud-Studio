@@ -71,7 +71,7 @@ public class HorizontalelasticityFactoryImpl extends EFactoryImpl implements Hor
 		switch (eClass.getClassifierID()) {
 			case HorizontalelasticityPackage.RECURRENCE_STEP: return createRecurrenceStep();
 			case HorizontalelasticityPackage.ARRAY: return createArray();
-			case HorizontalelasticityPackage.ARRAYOF_RECURRENCE_STEP: return createArrayofRecurrenceStep();
+			case HorizontalelasticityPackage.ARROF_REC_STEP: return createArrofRecStep();
 			case HorizontalelasticityPackage.HORIZONTALGROUP: return createHorizontalgroup();
 			case HorizontalelasticityPackage.LOADBALANCER: return createLoadbalancer();
 			case HorizontalelasticityPackage.HORIZONTALELASTICCONTROLLER: return createHorizontalelasticcontroller();
@@ -179,9 +179,9 @@ public class HorizontalelasticityFactoryImpl extends EFactoryImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ArrayofRecurrenceStep createArrayofRecurrenceStep() {
-		ArrayofRecurrenceStepImpl arrayofRecurrenceStep = new ArrayofRecurrenceStepImpl();
-		return arrayofRecurrenceStep;
+	public ArrofRecStep createArrofRecStep() {
+		ArrofRecStepImpl arrofRecStep = new ArrofRecStepImpl();
+		return arrofRecStep;
 	}
 
 	/**

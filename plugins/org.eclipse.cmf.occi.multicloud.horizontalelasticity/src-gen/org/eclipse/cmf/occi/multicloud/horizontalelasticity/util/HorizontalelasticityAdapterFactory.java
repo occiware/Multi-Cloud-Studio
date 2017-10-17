@@ -91,8 +91,8 @@ public class HorizontalelasticityAdapterFactory extends AdapterFactoryImpl {
 				return createArrayAdapter();
 			}
 			@Override
-			public Adapter caseArrayofRecurrenceStep(ArrayofRecurrenceStep object) {
-				return createArrayofRecurrenceStepAdapter();
+			public Adapter caseArrofRecStep(ArrofRecStep object) {
+				return createArrofRecStepAdapter();
 			}
 			@Override
 			public Adapter caseHorizontalgroup(Horizontalgroup object) {
@@ -235,16 +235,16 @@ public class HorizontalelasticityAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.ArrayofRecurrenceStep <em>Arrayof Recurrence Step</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.ArrofRecStep <em>Arrof Rec Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.ArrayofRecurrenceStep
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.ArrofRecStep
 	 * @generated
 	 */
-	public Adapter createArrayofRecurrenceStepAdapter() {
+	public Adapter createArrofRecStepAdapter() {
 		return null;
 	}
 

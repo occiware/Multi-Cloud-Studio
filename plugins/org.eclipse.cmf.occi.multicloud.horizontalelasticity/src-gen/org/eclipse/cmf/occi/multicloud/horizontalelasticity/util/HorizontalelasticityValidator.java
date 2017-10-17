@@ -159,8 +159,8 @@ public class HorizontalelasticityValidator extends EObjectValidator {
 				return validateRecurrenceStep((RecurrenceStep)value, diagnostics, context);
 			case HorizontalelasticityPackage.ARRAY:
 				return validateArray((Array)value, diagnostics, context);
-			case HorizontalelasticityPackage.ARRAYOF_RECURRENCE_STEP:
-				return validateArrayofRecurrenceStep((ArrayofRecurrenceStep)value, diagnostics, context);
+			case HorizontalelasticityPackage.ARROF_REC_STEP:
+				return validateArrofRecStep((ArrofRecStep)value, diagnostics, context);
 			case HorizontalelasticityPackage.HORIZONTALGROUP:
 				return validateHorizontalgroup((Horizontalgroup)value, diagnostics, context);
 			case HorizontalelasticityPackage.LOADBALANCER:
@@ -243,8 +243,8 @@ public class HorizontalelasticityValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateArrayofRecurrenceStep(ArrayofRecurrenceStep arrayofRecurrenceStep, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(arrayofRecurrenceStep, diagnostics, context);
+	public boolean validateArrofRecStep(ArrofRecStep arrofRecStep, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(arrofRecStep, diagnostics, context);
 	}
 
 	/**

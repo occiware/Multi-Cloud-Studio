@@ -230,7 +230,7 @@ public class CreationImpl extends MixinBaseImpl implements Creation {
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case HorizontalelasticityPackage.CREATION___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1:
+			case HorizontalelasticityPackage.CREATION___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP:
 				return appliesConstraint((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);

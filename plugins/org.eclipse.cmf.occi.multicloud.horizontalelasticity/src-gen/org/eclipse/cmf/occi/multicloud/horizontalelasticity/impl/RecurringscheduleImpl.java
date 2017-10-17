@@ -12,48 +12,19 @@
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl;
 
-import java.lang.reflect.InvocationTargetException;
-
 import java.util.Date;
-import java.util.Map;
 
-import org.eclipse.cmf.occi.core.Entity;
-
-import org.eclipse.cmf.occi.core.impl.MixinBaseImpl;
-
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.ArrayofRecurrenceStep;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.ArrofRecStep;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage;
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Recurringschedule;
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Scheduler;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.DiagnosticChain;
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.ocl.pivot.evaluation.Executor;
-
-import org.eclipse.ocl.pivot.ids.IdResolver;
-import org.eclipse.ocl.pivot.ids.TypeId;
-
-import org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal;
-
-import org.eclipse.ocl.pivot.library.oclany.OclAnyOclIsKindOfOperation;
-import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation;
-
-import org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation;
-import org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation;
-
-import org.eclipse.ocl.pivot.utilities.ValueUtil;
-
-import org.eclipse.ocl.pivot.values.IntegerValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -70,7 +41,7 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  *
  * @generated
  */
-public class RecurringscheduleImpl extends MixinBaseImpl implements Recurringschedule {
+public class RecurringscheduleImpl extends SchedulerImpl implements Recurringschedule {
 	/**
 	 * The cached value of the '{@link #getRecurringscheduleRecurrence() <em>Recurringschedule Recurrence</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -79,7 +50,7 @@ public class RecurringscheduleImpl extends MixinBaseImpl implements Recurringsch
 	 * @generated
 	 * @ordered
 	 */
-	protected ArrayofRecurrenceStep recurringscheduleRecurrence;
+	protected ArrofRecStep recurringscheduleRecurrence;
 
 	/**
 	 * The default value of the '{@link #getRecurringscheduleStartDate() <em>Recurringschedule Start Date</em>}' attribute.
@@ -145,7 +116,7 @@ public class RecurringscheduleImpl extends MixinBaseImpl implements Recurringsch
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ArrayofRecurrenceStep getRecurringscheduleRecurrence() {
+	public ArrofRecStep getRecurringscheduleRecurrence() {
 		return recurringscheduleRecurrence;
 	}
 
@@ -154,8 +125,8 @@ public class RecurringscheduleImpl extends MixinBaseImpl implements Recurringsch
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetRecurringscheduleRecurrence(ArrayofRecurrenceStep newRecurringscheduleRecurrence, NotificationChain msgs) {
-		ArrayofRecurrenceStep oldRecurringscheduleRecurrence = recurringscheduleRecurrence;
+	public NotificationChain basicSetRecurringscheduleRecurrence(ArrofRecStep newRecurringscheduleRecurrence, NotificationChain msgs) {
+		ArrofRecStep oldRecurringscheduleRecurrence = recurringscheduleRecurrence;
 		recurringscheduleRecurrence = newRecurringscheduleRecurrence;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.RECURRINGSCHEDULE__RECURRINGSCHEDULE_RECURRENCE, oldRecurringscheduleRecurrence, newRecurringscheduleRecurrence);
@@ -169,7 +140,7 @@ public class RecurringscheduleImpl extends MixinBaseImpl implements Recurringsch
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRecurringscheduleRecurrence(ArrayofRecurrenceStep newRecurringscheduleRecurrence) {
+	public void setRecurringscheduleRecurrence(ArrofRecStep newRecurringscheduleRecurrence) {
 		if (newRecurringscheduleRecurrence != recurringscheduleRecurrence) {
 			NotificationChain msgs = null;
 			if (recurringscheduleRecurrence != null)
@@ -230,92 +201,6 @@ public class RecurringscheduleImpl extends MixinBaseImpl implements Recurringsch
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void start() {
-		throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Recurringschedule!start()
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void stop() {
-		throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Recurringschedule!stop()
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean appliesConstraint(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		/**
-		 *
-		 * inv appliesConstraint:
-		 *   let severity : Integer[1] = 'Scheduler::appliesConstraint'.getSeverity()
-		 *   in
-		 *     if severity <= 0
-		 *     then true
-		 *     else
-		 *       let
-		 *         result : occi::Boolean[?] = self.entity.oclIsKindOf(Manual) or
-		 *         self.entity.oclIsKindOf(Simpledynamic) or
-		 *         self.entity.oclIsKindOf(Stepdynamic) or
-		 *         self.entity.oclIsKindOf(Dynamicadjustment)
-		 *       in
-		 *         'Scheduler::appliesConstraint'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
-		 *     endif
-		 */
-		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
-		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
-		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, HorizontalelasticityTables.STR_Scheduler_c_c_appliesConstraint);
-		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, HorizontalelasticityTables.INT_0).booleanValue();
-		/*@NonInvalid*/ boolean symbol_0;
-		if (le) {
-			symbol_0 = ValueUtil.TRUE_VALUE;
-		}
-		else {
-			final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_horizontalelasticity_c_c_Manual = idResolver.getClass(HorizontalelasticityTables.CLSSid_Manual, null);
-			final /*@NonInvalid*/ Entity entity_2 = this.getEntity();
-			final /*@NonInvalid*/ boolean oclIsKindOf = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_2, TYP_horizontalelasticity_c_c_Manual).booleanValue();
-			/*@NonInvalid*/ boolean or;
-			if (oclIsKindOf) {
-				or = ValueUtil.TRUE_VALUE;
-			}
-			else {
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_horizontalelasticity_c_c_Simpledynamic = idResolver.getClass(HorizontalelasticityTables.CLSSid_Simpledynamic, null);
-				final /*@NonInvalid*/ boolean oclIsKindOf_0 = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_2, TYP_horizontalelasticity_c_c_Simpledynamic).booleanValue();
-				or = oclIsKindOf_0;
-			}
-			/*@NonInvalid*/ boolean or_0;
-			if (or) {
-				or_0 = ValueUtil.TRUE_VALUE;
-			}
-			else {
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_horizontalelasticity_c_c_Stepdynamic = idResolver.getClass(HorizontalelasticityTables.CLSSid_Stepdynamic, null);
-				final /*@NonInvalid*/ boolean oclIsKindOf_1 = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_2, TYP_horizontalelasticity_c_c_Stepdynamic).booleanValue();
-				or_0 = oclIsKindOf_1;
-			}
-			/*@NonInvalid*/ boolean result;
-			if (or_0) {
-				result = ValueUtil.TRUE_VALUE;
-			}
-			else {
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_horizontalelasticity_c_c_Dynamicadjustment = idResolver.getClass(HorizontalelasticityTables.CLSSid_Dynamicadjustment, null);
-				final /*@NonInvalid*/ boolean oclIsKindOf_2 = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_2, TYP_horizontalelasticity_c_c_Dynamicadjustment).booleanValue();
-				result = oclIsKindOf_2;
-			}
-			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, HorizontalelasticityTables.STR_Scheduler_c_c_appliesConstraint, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, HorizontalelasticityTables.INT_0).booleanValue();
-			symbol_0 = logDiagnostic;
-		}
-		return Boolean.TRUE == symbol_0;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -352,7 +237,7 @@ public class RecurringscheduleImpl extends MixinBaseImpl implements Recurringsch
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case HorizontalelasticityPackage.RECURRINGSCHEDULE__RECURRINGSCHEDULE_RECURRENCE:
-				setRecurringscheduleRecurrence((ArrayofRecurrenceStep)newValue);
+				setRecurringscheduleRecurrence((ArrofRecStep)newValue);
 				return;
 			case HorizontalelasticityPackage.RECURRINGSCHEDULE__RECURRINGSCHEDULE_START_DATE:
 				setRecurringscheduleStartDate((Date)newValue);
@@ -373,7 +258,7 @@ public class RecurringscheduleImpl extends MixinBaseImpl implements Recurringsch
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case HorizontalelasticityPackage.RECURRINGSCHEDULE__RECURRINGSCHEDULE_RECURRENCE:
-				setRecurringscheduleRecurrence((ArrayofRecurrenceStep)null);
+				setRecurringscheduleRecurrence((ArrofRecStep)null);
 				return;
 			case HorizontalelasticityPackage.RECURRINGSCHEDULE__RECURRINGSCHEDULE_START_DATE:
 				setRecurringscheduleStartDate(RECURRINGSCHEDULE_START_DATE_EDEFAULT);
@@ -401,45 +286,6 @@ public class RecurringscheduleImpl extends MixinBaseImpl implements Recurringsch
 				return RECURRINGSCHEDULE_END_DATE_EDEFAULT == null ? recurringscheduleEndDate != null : !RECURRINGSCHEDULE_END_DATE_EDEFAULT.equals(recurringscheduleEndDate);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
-		if (baseClass == Scheduler.class) {
-			switch (baseOperationID) {
-				case HorizontalelasticityPackage.SCHEDULER___START: return HorizontalelasticityPackage.RECURRINGSCHEDULE___START;
-				case HorizontalelasticityPackage.SCHEDULER___STOP: return HorizontalelasticityPackage.RECURRINGSCHEDULE___STOP;
-				case HorizontalelasticityPackage.SCHEDULER___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1: return HorizontalelasticityPackage.RECURRINGSCHEDULE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1;
-				default: return -1;
-			}
-		}
-		return super.eDerivedOperationID(baseOperationID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case HorizontalelasticityPackage.RECURRINGSCHEDULE___START:
-				start();
-				return null;
-			case HorizontalelasticityPackage.RECURRINGSCHEDULE___STOP:
-				stop();
-				return null;
-			case HorizontalelasticityPackage.RECURRINGSCHEDULE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP_1:
-				return appliesConstraint((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

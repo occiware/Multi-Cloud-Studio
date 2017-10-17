@@ -112,9 +112,9 @@
       </genFeatures>
     </genClasses>
     <genClasses>
-      <ecoreClass href="horizontalelasticity.ecore#//ArrayofRecurrenceStep"/>
+      <ecoreClass href="horizontalelasticity.ecore#//ArrofRecStep"/>
       <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="horizontalelasticity.ecore#//ArrayofRecurrenceStep/arrayofrecurrencestepValues"/>
+        <ecoreFeature xsi:type="ecore:EReference" href="horizontalelasticity.ecore#//ArrofRecStep/arrofrecstepValues"/>
       </genFeatures>
     </genClasses>
     <genClasses>
@@ -305,17 +305,11 @@
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Uniqueschedule/UniqueScheduleEndDate"/>
       </genFeatures>
-      <genOperations>
-        <ecoreOperation href="horizontalelasticity.ecore#//Uniqueschedule/start"/>
-      </genOperations>
-      <genOperations>
-        <ecoreOperation href="horizontalelasticity.ecore#//Uniqueschedule/stop"/>
-      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="horizontalelasticity.ecore#//Recurringschedule"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Recurringschedule/RecurringscheduleRecurrence"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="horizontalelasticity.ecore#//Recurringschedule/RecurringscheduleRecurrence"/>
       </genFeatures>
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Recurringschedule/RecurringscheduleStartDate"/>
@@ -323,12 +317,6 @@
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Recurringschedule/RecurringscheduleEndDate"/>
       </genFeatures>
-      <genOperations>
-        <ecoreOperation href="horizontalelasticity.ecore#//Recurringschedule/start"/>
-      </genOperations>
-      <genOperations>
-        <ecoreOperation href="horizontalelasticity.ecore#//Recurringschedule/stop"/>
-      </genOperations>
     </genClasses>
   </genPackages>
   <usedGenPackages href="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.genmodel#//infrastructure"/>

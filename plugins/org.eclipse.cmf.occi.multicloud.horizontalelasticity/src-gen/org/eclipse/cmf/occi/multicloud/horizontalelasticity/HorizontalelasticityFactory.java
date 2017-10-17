@@ -50,13 +50,13 @@ public interface HorizontalelasticityFactory extends EFactory {
 	Array createArray();
 
 	/**
-	 * Returns a new object of class '<em>Arrayof Recurrence Step</em>'.
+	 * Returns a new object of class '<em>Arrof Rec Step</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Arrayof Recurrence Step</em>'.
+	 * @return a new object of class '<em>Arrof Rec Step</em>'.
 	 * @generated
 	 */
-	ArrayofRecurrenceStep createArrayofRecurrenceStep();
+	ArrofRecStep createArrofRecStep();
 
 	/**
 	 * Returns a new object of class '<em>Horizontalgroup</em>'.

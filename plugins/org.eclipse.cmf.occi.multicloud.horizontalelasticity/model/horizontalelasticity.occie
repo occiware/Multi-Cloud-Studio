@@ -55,13 +55,13 @@
   </kinds>
   <kinds name="Manual" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" parent="//@kinds[term='horizontalelasticcontroller']">
     <attributes name="manual.groupSize" mutable="true">
-      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
     </attributes>
     <attributes name="manual.maxGroupSize" mutable="true">
-      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
     </attributes>
     <attributes name="manual.minGroupSize" mutable="true">
-      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
     </attributes>
   </kinds>
   <kinds name="Dynamic" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" parent="//@kinds[term='horizontalelasticcontroller']">
@@ -127,30 +127,29 @@
   </kinds>
   <kinds name="DynamicPolicy" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" parent="//@kinds[term='dynamic']"/>
   <kinds name="Step" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#">
-    <attributes name="steps.lowerStepBound" mutable="true" type="//@types.1"/>
-    <attributes name="steps.upperStepBound" mutable="true" type="//@types.1"/>
+    <attributes name="step.lowerStepBound" mutable="true" type="//@types.1"/>
+    <attributes name="step.upperStepBound" mutable="true" type="//@types.1"/>
+    <attributes name="step.size" mutable="true">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
+    </attributes>
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
   </kinds>
   <mixins name="Creation" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#">
     <attributes name="occi.compute.creation.date" mutable="true" type="//@types.9"/>
     <applies href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
   </mixins>
-  <mixins name="Scheduler" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" title="" applies="//@kinds[term='manual'] //@kinds[term='simpledynamic'] //@kinds[term='stepdynamic'] //@kinds[term='dynamicadjustment']">
+  <mixins name="Scheduler" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" title="" applies="//@kinds[term='horizontalelasticcontroller']">
     <actions name="Start" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/scheduler/action#"/>
     <actions name="Stop" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/scheduler/action#"/>
   </mixins>
   <mixins name="UniqueSchedule" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" depends="//@mixins[term='scheduler']">
     <attributes name="UniqueSchedule.startDate" mutable="true" type="//@types.9"/>
     <attributes name="UniqueSchedule.endDate" mutable="true" type="//@types.9"/>
-    <actions name="start" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/uniqueschedule/action#"/>
-    <actions name="stop" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/uniqueschedule/action#"/>
   </mixins>
   <mixins name="Recurringschedule" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" depends="//@mixins[term='scheduler']">
     <attributes name="Recurringschedule.recurrence" mutable="true" type="//@types.10"/>
     <attributes name="Recurringschedule.startDate" mutable="true" type="//@types.9"/>
     <attributes name="Recurringschedule.endDate" mutable="true" type="//@types.9"/>
-    <actions name="start" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/recurringschedule/action#"/>
-    <actions name="stop" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/recurringschedule/action#"/>
   </mixins>
   <types xsi:type="occi:EnumerationType" name="TypeMetric">
     <literals name="CPUtilisation"/>
@@ -195,5 +194,5 @@
     <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
   </types>
   <types xsi:type="occi:EObjectType" name="Date" instanceClassName="java.util.Date"/>
-  <types xsi:type="occi:ArrayType" name="ArrayofRecurrenceStep" type="//@types.6"/>
+  <types xsi:type="occi:ArrayType" name="ArrofRecStep" type="//@types.6"/>
 </occi:Extension>

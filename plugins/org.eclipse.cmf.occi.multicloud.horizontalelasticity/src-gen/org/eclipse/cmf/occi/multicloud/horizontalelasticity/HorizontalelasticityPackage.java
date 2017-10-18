@@ -3078,22 +3078,31 @@ public interface HorizontalelasticityPackage extends EPackage {
 	int STEP__RLINKS = OCCIPackage.RESOURCE__RLINKS;
 
 	/**
-	 * The feature id for the '<em><b>Steps Lower Step Bound</b></em>' attribute.
+	 * The feature id for the '<em><b>Step Lower Step Bound</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STEP__STEPS_LOWER_STEP_BOUND = OCCIPackage.RESOURCE_FEATURE_COUNT + 0;
+	int STEP__STEP_LOWER_STEP_BOUND = OCCIPackage.RESOURCE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Steps Upper Step Bound</b></em>' attribute.
+	 * The feature id for the '<em><b>Step Upper Step Bound</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STEP__STEPS_UPPER_STEP_BOUND = OCCIPackage.RESOURCE_FEATURE_COUNT + 1;
+	int STEP__STEP_UPPER_STEP_BOUND = OCCIPackage.RESOURCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Step Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__STEP_SIZE = OCCIPackage.RESOURCE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Step</em>' class.
@@ -3102,7 +3111,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEP_FEATURE_COUNT = OCCIPackage.RESOURCE_FEATURE_COUNT + 2;
+	int STEP_FEATURE_COUNT = OCCIPackage.RESOURCE_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Occi Create</em>' operation.
@@ -4272,26 +4281,37 @@ public interface HorizontalelasticityPackage extends EPackage {
 	EClass getStep();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Step#getStepsLowerStepBound <em>Steps Lower Step Bound</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Step#getStepLowerStepBound <em>Step Lower Step Bound</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Steps Lower Step Bound</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Step#getStepsLowerStepBound()
+	 * @return the meta object for the attribute '<em>Step Lower Step Bound</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Step#getStepLowerStepBound()
 	 * @see #getStep()
 	 * @generated
 	 */
-	EAttribute getStep_StepsLowerStepBound();
+	EAttribute getStep_StepLowerStepBound();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Step#getStepsUpperStepBound <em>Steps Upper Step Bound</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Step#getStepUpperStepBound <em>Step Upper Step Bound</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Steps Upper Step Bound</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Step#getStepsUpperStepBound()
+	 * @return the meta object for the attribute '<em>Step Upper Step Bound</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Step#getStepUpperStepBound()
 	 * @see #getStep()
 	 * @generated
 	 */
-	EAttribute getStep_StepsUpperStepBound();
+	EAttribute getStep_StepUpperStepBound();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Step#getStepSize <em>Step Size</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Step Size</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Step#getStepSize()
+	 * @see #getStep()
+	 * @generated
+	 */
+	EAttribute getStep_StepSize();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Creation <em>Creation</em>}'.
@@ -5093,20 +5113,28 @@ public interface HorizontalelasticityPackage extends EPackage {
 		EClass STEP = eINSTANCE.getStep();
 
 		/**
-		 * The meta object literal for the '<em><b>Steps Lower Step Bound</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Step Lower Step Bound</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute STEP__STEPS_LOWER_STEP_BOUND = eINSTANCE.getStep_StepsLowerStepBound();
+		EAttribute STEP__STEP_LOWER_STEP_BOUND = eINSTANCE.getStep_StepLowerStepBound();
 
 		/**
-		 * The meta object literal for the '<em><b>Steps Upper Step Bound</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Step Upper Step Bound</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute STEP__STEPS_UPPER_STEP_BOUND = eINSTANCE.getStep_StepsUpperStepBound();
+		EAttribute STEP__STEP_UPPER_STEP_BOUND = eINSTANCE.getStep_StepUpperStepBound();
+
+		/**
+		 * The meta object literal for the '<em><b>Step Size</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STEP__STEP_SIZE = eINSTANCE.getStep_StepSize();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.CreationImpl <em>Creation</em>}' class.

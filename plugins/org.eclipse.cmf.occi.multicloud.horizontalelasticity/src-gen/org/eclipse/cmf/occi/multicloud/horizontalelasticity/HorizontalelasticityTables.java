@@ -546,8 +546,9 @@ public class HorizontalelasticityTables
 		public static final /*@NonNull*/ ExecutorProperty _Simpledynamic__simpleDynamicCoolDuration = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.SIMPLEDYNAMIC__SIMPLE_DYNAMIC_COOL_DURATION, Types._Simpledynamic, 0);
 		public static final /*@NonNull*/ ExecutorProperty _Simpledynamic__simpleDynamicName = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.SIMPLEDYNAMIC__SIMPLE_DYNAMIC_NAME, Types._Simpledynamic, 1);
 
-		public static final /*@NonNull*/ ExecutorProperty _Step__stepsLowerStepBound = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.STEP__STEPS_LOWER_STEP_BOUND, Types._Step, 0);
-		public static final /*@NonNull*/ ExecutorProperty _Step__stepsUpperStepBound = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.STEP__STEPS_UPPER_STEP_BOUND, Types._Step, 1);
+		public static final /*@NonNull*/ ExecutorProperty _Step__stepLowerStepBound = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.STEP__STEP_LOWER_STEP_BOUND, Types._Step, 0);
+		public static final /*@NonNull*/ ExecutorProperty _Step__stepSize = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.STEP__STEP_SIZE, Types._Step, 1);
+		public static final /*@NonNull*/ ExecutorProperty _Step__stepUpperStepBound = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.STEP__STEP_UPPER_STEP_BOUND, Types._Step, 2);
 
 		public static final /*@NonNull*/ ExecutorProperty _Stepdynamic__stepDynamicCoolDuration = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.STEPDYNAMIC__STEP_DYNAMIC_COOL_DURATION, Types._Stepdynamic, 0);
 		public static final /*@NonNull*/ ExecutorProperty _Stepdynamic__stepDynamicName = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.STEPDYNAMIC__STEP_DYNAMIC_NAME, Types._Stepdynamic, 1);
@@ -2344,8 +2345,9 @@ public class HorizontalelasticityTables
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Step = {
-			HorizontalelasticityTables.Properties._Step__stepsLowerStepBound,
-			HorizontalelasticityTables.Properties._Step__stepsUpperStepBound
+			HorizontalelasticityTables.Properties._Step__stepLowerStepBound,
+			HorizontalelasticityTables.Properties._Step__stepSize,
+			HorizontalelasticityTables.Properties._Step__stepUpperStepBound
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Stepdynamic = {

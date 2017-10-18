@@ -128,26 +128,26 @@ public class HorizontalelasticityItemProviderAdapterFactory extends Horizontalel
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.ArrayofRecurrenceStep} instances.
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.ArrofRecStep} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ArrayofRecurrenceStepItemProvider arrayofRecurrenceStepItemProvider;
+	protected ArrofRecStepItemProvider arrofRecStepItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.ArrayofRecurrenceStep}.
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.ArrofRecStep}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createArrayofRecurrenceStepAdapter() {
-		if (arrayofRecurrenceStepItemProvider == null) {
-			arrayofRecurrenceStepItemProvider = new ArrayofRecurrenceStepItemProvider(this);
+	public Adapter createArrofRecStepAdapter() {
+		if (arrofRecStepItemProvider == null) {
+			arrofRecStepItemProvider = new ArrofRecStepItemProvider(this);
 		}
 
-		return arrayofRecurrenceStepItemProvider;
+		return arrofRecStepItemProvider;
 	}
 
 	/**
@@ -688,7 +688,7 @@ public class HorizontalelasticityItemProviderAdapterFactory extends Horizontalel
 	public void dispose() {
 		if (recurrenceStepItemProvider != null) recurrenceStepItemProvider.dispose();
 		if (arrayItemProvider != null) arrayItemProvider.dispose();
-		if (arrayofRecurrenceStepItemProvider != null) arrayofRecurrenceStepItemProvider.dispose();
+		if (arrofRecStepItemProvider != null) arrofRecStepItemProvider.dispose();
 		if (horizontalgroupItemProvider != null) horizontalgroupItemProvider.dispose();
 		if (loadbalancerItemProvider != null) loadbalancerItemProvider.dispose();
 		if (horizontalelasticcontrollerItemProvider != null) horizontalelasticcontrollerItemProvider.dispose();

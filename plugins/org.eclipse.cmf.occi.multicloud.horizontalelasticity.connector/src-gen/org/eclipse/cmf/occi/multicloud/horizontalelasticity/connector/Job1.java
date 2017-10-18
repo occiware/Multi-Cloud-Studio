@@ -6,6 +6,9 @@ import java.util.Date;
 
 import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector.RecurringscheduleConnector;
+import org.eclipse.emf.transaction.RecordingCommand;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector.ManualConnector;
 import org.quartz.Job;
 import org.quartz.JobDataMap;
@@ -43,7 +46,15 @@ public class Job1 implements Job{
 			//System.out.println("entity " + entity);
 			if(entity instanceof ManualConnector) {
 				ManualConnector man = (ManualConnector) entity;
-				man.occiCreate();
+				///TransactionalEditingDomain domain; 
+				///domain = TransactionUtil.getEditingDomain(man);
+				///domain.getCommandStack().execute(new RecordingCommand(domain) {
+				   ///public void doExecute() {
+					   ///man.start();
+					   man.occiCreate();
+					   //((ManualConnector)man).start();
+				   ///}
+				///});
 			}
 		} catch (SchedulerException e) {
 			// TODO Auto-generated catch block

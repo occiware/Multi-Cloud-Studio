@@ -31,52 +31,73 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.StepImpl#getStepsLowerStepBound <em>Steps Lower Step Bound</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.StepImpl#getStepsUpperStepBound <em>Steps Upper Step Bound</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.StepImpl#getStepLowerStepBound <em>Step Lower Step Bound</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.StepImpl#getStepUpperStepBound <em>Step Upper Step Bound</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.StepImpl#getStepSize <em>Step Size</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class StepImpl extends ResourceImpl implements Step {
 	/**
-	 * The default value of the '{@link #getStepsLowerStepBound() <em>Steps Lower Step Bound</em>}' attribute.
+	 * The default value of the '{@link #getStepLowerStepBound() <em>Step Lower Step Bound</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStepsLowerStepBound()
+	 * @see #getStepLowerStepBound()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Float STEPS_LOWER_STEP_BOUND_EDEFAULT = null;
+	protected static final Float STEP_LOWER_STEP_BOUND_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getStepsLowerStepBound() <em>Steps Lower Step Bound</em>}' attribute.
+	 * The cached value of the '{@link #getStepLowerStepBound() <em>Step Lower Step Bound</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStepsLowerStepBound()
+	 * @see #getStepLowerStepBound()
 	 * @generated
 	 * @ordered
 	 */
-	protected Float stepsLowerStepBound = STEPS_LOWER_STEP_BOUND_EDEFAULT;
+	protected Float stepLowerStepBound = STEP_LOWER_STEP_BOUND_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getStepsUpperStepBound() <em>Steps Upper Step Bound</em>}' attribute.
+	 * The default value of the '{@link #getStepUpperStepBound() <em>Step Upper Step Bound</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStepsUpperStepBound()
+	 * @see #getStepUpperStepBound()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Float STEPS_UPPER_STEP_BOUND_EDEFAULT = null;
+	protected static final Float STEP_UPPER_STEP_BOUND_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getStepsUpperStepBound() <em>Steps Upper Step Bound</em>}' attribute.
+	 * The cached value of the '{@link #getStepUpperStepBound() <em>Step Upper Step Bound</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStepsUpperStepBound()
+	 * @see #getStepUpperStepBound()
 	 * @generated
 	 * @ordered
 	 */
-	protected Float stepsUpperStepBound = STEPS_UPPER_STEP_BOUND_EDEFAULT;
+	protected Float stepUpperStepBound = STEP_UPPER_STEP_BOUND_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getStepSize() <em>Step Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStepSize()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Integer STEP_SIZE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getStepSize() <em>Step Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStepSize()
+	 * @generated
+	 * @ordered
+	 */
+	protected Integer stepSize = STEP_SIZE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -102,8 +123,8 @@ public class StepImpl extends ResourceImpl implements Step {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Float getStepsLowerStepBound() {
-		return stepsLowerStepBound;
+	public Float getStepLowerStepBound() {
+		return stepLowerStepBound;
 	}
 
 	/**
@@ -111,11 +132,11 @@ public class StepImpl extends ResourceImpl implements Step {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStepsLowerStepBound(Float newStepsLowerStepBound) {
-		Float oldStepsLowerStepBound = stepsLowerStepBound;
-		stepsLowerStepBound = newStepsLowerStepBound;
+	public void setStepLowerStepBound(Float newStepLowerStepBound) {
+		Float oldStepLowerStepBound = stepLowerStepBound;
+		stepLowerStepBound = newStepLowerStepBound;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.STEP__STEPS_LOWER_STEP_BOUND, oldStepsLowerStepBound, stepsLowerStepBound));
+			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.STEP__STEP_LOWER_STEP_BOUND, oldStepLowerStepBound, stepLowerStepBound));
 	}
 
 	/**
@@ -123,8 +144,8 @@ public class StepImpl extends ResourceImpl implements Step {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Float getStepsUpperStepBound() {
-		return stepsUpperStepBound;
+	public Float getStepUpperStepBound() {
+		return stepUpperStepBound;
 	}
 
 	/**
@@ -132,11 +153,32 @@ public class StepImpl extends ResourceImpl implements Step {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStepsUpperStepBound(Float newStepsUpperStepBound) {
-		Float oldStepsUpperStepBound = stepsUpperStepBound;
-		stepsUpperStepBound = newStepsUpperStepBound;
+	public void setStepUpperStepBound(Float newStepUpperStepBound) {
+		Float oldStepUpperStepBound = stepUpperStepBound;
+		stepUpperStepBound = newStepUpperStepBound;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.STEP__STEPS_UPPER_STEP_BOUND, oldStepsUpperStepBound, stepsUpperStepBound));
+			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.STEP__STEP_UPPER_STEP_BOUND, oldStepUpperStepBound, stepUpperStepBound));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Integer getStepSize() {
+		return stepSize;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setStepSize(Integer newStepSize) {
+		Integer oldStepSize = stepSize;
+		stepSize = newStepSize;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.STEP__STEP_SIZE, oldStepSize, stepSize));
 	}
 
 	/**
@@ -147,10 +189,12 @@ public class StepImpl extends ResourceImpl implements Step {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case HorizontalelasticityPackage.STEP__STEPS_LOWER_STEP_BOUND:
-				return getStepsLowerStepBound();
-			case HorizontalelasticityPackage.STEP__STEPS_UPPER_STEP_BOUND:
-				return getStepsUpperStepBound();
+			case HorizontalelasticityPackage.STEP__STEP_LOWER_STEP_BOUND:
+				return getStepLowerStepBound();
+			case HorizontalelasticityPackage.STEP__STEP_UPPER_STEP_BOUND:
+				return getStepUpperStepBound();
+			case HorizontalelasticityPackage.STEP__STEP_SIZE:
+				return getStepSize();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -163,11 +207,14 @@ public class StepImpl extends ResourceImpl implements Step {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case HorizontalelasticityPackage.STEP__STEPS_LOWER_STEP_BOUND:
-				setStepsLowerStepBound((Float)newValue);
+			case HorizontalelasticityPackage.STEP__STEP_LOWER_STEP_BOUND:
+				setStepLowerStepBound((Float)newValue);
 				return;
-			case HorizontalelasticityPackage.STEP__STEPS_UPPER_STEP_BOUND:
-				setStepsUpperStepBound((Float)newValue);
+			case HorizontalelasticityPackage.STEP__STEP_UPPER_STEP_BOUND:
+				setStepUpperStepBound((Float)newValue);
+				return;
+			case HorizontalelasticityPackage.STEP__STEP_SIZE:
+				setStepSize((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -181,11 +228,14 @@ public class StepImpl extends ResourceImpl implements Step {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case HorizontalelasticityPackage.STEP__STEPS_LOWER_STEP_BOUND:
-				setStepsLowerStepBound(STEPS_LOWER_STEP_BOUND_EDEFAULT);
+			case HorizontalelasticityPackage.STEP__STEP_LOWER_STEP_BOUND:
+				setStepLowerStepBound(STEP_LOWER_STEP_BOUND_EDEFAULT);
 				return;
-			case HorizontalelasticityPackage.STEP__STEPS_UPPER_STEP_BOUND:
-				setStepsUpperStepBound(STEPS_UPPER_STEP_BOUND_EDEFAULT);
+			case HorizontalelasticityPackage.STEP__STEP_UPPER_STEP_BOUND:
+				setStepUpperStepBound(STEP_UPPER_STEP_BOUND_EDEFAULT);
+				return;
+			case HorizontalelasticityPackage.STEP__STEP_SIZE:
+				setStepSize(STEP_SIZE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -199,10 +249,12 @@ public class StepImpl extends ResourceImpl implements Step {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case HorizontalelasticityPackage.STEP__STEPS_LOWER_STEP_BOUND:
-				return STEPS_LOWER_STEP_BOUND_EDEFAULT == null ? stepsLowerStepBound != null : !STEPS_LOWER_STEP_BOUND_EDEFAULT.equals(stepsLowerStepBound);
-			case HorizontalelasticityPackage.STEP__STEPS_UPPER_STEP_BOUND:
-				return STEPS_UPPER_STEP_BOUND_EDEFAULT == null ? stepsUpperStepBound != null : !STEPS_UPPER_STEP_BOUND_EDEFAULT.equals(stepsUpperStepBound);
+			case HorizontalelasticityPackage.STEP__STEP_LOWER_STEP_BOUND:
+				return STEP_LOWER_STEP_BOUND_EDEFAULT == null ? stepLowerStepBound != null : !STEP_LOWER_STEP_BOUND_EDEFAULT.equals(stepLowerStepBound);
+			case HorizontalelasticityPackage.STEP__STEP_UPPER_STEP_BOUND:
+				return STEP_UPPER_STEP_BOUND_EDEFAULT == null ? stepUpperStepBound != null : !STEP_UPPER_STEP_BOUND_EDEFAULT.equals(stepUpperStepBound);
+			case HorizontalelasticityPackage.STEP__STEP_SIZE:
+				return STEP_SIZE_EDEFAULT == null ? stepSize != null : !STEP_SIZE_EDEFAULT.equals(stepSize);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -217,10 +269,12 @@ public class StepImpl extends ResourceImpl implements Step {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (stepsLowerStepBound: ");
-		result.append(stepsLowerStepBound);
-		result.append(", stepsUpperStepBound: ");
-		result.append(stepsUpperStepBound);
+		result.append(" (stepLowerStepBound: ");
+		result.append(stepLowerStepBound);
+		result.append(", stepUpperStepBound: ");
+		result.append(stepUpperStepBound);
+		result.append(", stepSize: ");
+		result.append(stepSize);
 		result.append(')');
 		return result.toString();
 	}

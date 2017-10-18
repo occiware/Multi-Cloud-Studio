@@ -64,26 +64,27 @@ public class StepItemProvider extends ResourceItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addStepsLowerStepBoundPropertyDescriptor(object);
-			addStepsUpperStepBoundPropertyDescriptor(object);
+			addStepLowerStepBoundPropertyDescriptor(object);
+			addStepUpperStepBoundPropertyDescriptor(object);
+			addStepSizePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Steps Lower Step Bound feature.
+	 * This adds a property descriptor for the Step Lower Step Bound feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addStepsLowerStepBoundPropertyDescriptor(Object object) {
+	protected void addStepLowerStepBoundPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Step_stepsLowerStepBound_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Step_stepsLowerStepBound_feature", "_UI_Step_type"),
-				 HorizontalelasticityPackage.Literals.STEP__STEPS_LOWER_STEP_BOUND,
+				 getString("_UI_Step_stepLowerStepBound_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Step_stepLowerStepBound_feature", "_UI_Step_type"),
+				 HorizontalelasticityPackage.Literals.STEP__STEP_LOWER_STEP_BOUND,
 				 true,
 				 false,
 				 false,
@@ -93,19 +94,41 @@ public class StepItemProvider extends ResourceItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Steps Upper Step Bound feature.
+	 * This adds a property descriptor for the Step Upper Step Bound feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addStepsUpperStepBoundPropertyDescriptor(Object object) {
+	protected void addStepUpperStepBoundPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Step_stepsUpperStepBound_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Step_stepsUpperStepBound_feature", "_UI_Step_type"),
-				 HorizontalelasticityPackage.Literals.STEP__STEPS_UPPER_STEP_BOUND,
+				 getString("_UI_Step_stepUpperStepBound_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Step_stepUpperStepBound_feature", "_UI_Step_type"),
+				 HorizontalelasticityPackage.Literals.STEP__STEP_UPPER_STEP_BOUND,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Step Size feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addStepSizePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Step_stepSize_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Step_stepSize_feature", "_UI_Step_type"),
+				 HorizontalelasticityPackage.Literals.STEP__STEP_SIZE,
 				 true,
 				 false,
 				 false,
@@ -152,8 +175,9 @@ public class StepItemProvider extends ResourceItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Step.class)) {
-			case HorizontalelasticityPackage.STEP__STEPS_LOWER_STEP_BOUND:
-			case HorizontalelasticityPackage.STEP__STEPS_UPPER_STEP_BOUND:
+			case HorizontalelasticityPackage.STEP__STEP_LOWER_STEP_BOUND:
+			case HorizontalelasticityPackage.STEP__STEP_UPPER_STEP_BOUND:
+			case HorizontalelasticityPackage.STEP__STEP_SIZE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

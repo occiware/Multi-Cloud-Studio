@@ -10,12 +10,14 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Wed Oct 11 20:59:30 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Tue Oct 17 14:17:54 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+
 
 /**
  * Connector implementation for the OCCI kind:
@@ -95,4 +97,8 @@ public class RuleConnector extends org.eclipse.cmf.occi.multicloud.horizontalela
 	//
 	// Rule actions.
 	//
+
+		
+
+
 }	

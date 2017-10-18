@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Wed Oct 11 20:59:30 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Tue Oct 17 14:17:54 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
@@ -19,6 +19,8 @@ import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup;
 import org.eclipse.cmf.occi.multicloud.vmware.Instancevmware;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+
 
 /**
  * Connector implementation for the OCCI kind:
@@ -57,9 +59,8 @@ public class HorizontalelasticcontrollerConnector extends org.eclipse.cmf.occi.m
 		LOGGER.debug("occiCreate() called on " + this);
 		// TODO: Implement this callback or remove this method.
 		Horizontalgroup hg = (Horizontalgroup) this.getLinks().get(0).getTarget();
-		//int temporarycounter = 1;
 		hg.setHorizontalGroupGroupSize(2);
-		hg.occiUpdate();
+		//hg.occiUpdate();
 	}
 	// End of user code
 
@@ -218,21 +219,6 @@ public class HorizontalelasticcontrollerConnector extends org.eclipse.cmf.occi.m
 	//
 	// Horizontalelasticcontroller actions.
 	//
-	// Start of user code Horizontalelasticcontroller_Kind_start_action
-	/**
-	 * Implement OCCI action:
-     * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/horizontalelasticcontroller/action#
-     * - term: start
-     * - title: 
-	 */
-	@Override
-	public void start()
-	{
-		LOGGER.debug("Action start() called on " + this);
-
-		// TODO: Implement how to start this horizontalelasticcontroller.
-	}
-		// End of user code
 
 	// Start of user code Horizontalelasticcontroller_Kind_stop_action
 	/**
@@ -249,5 +235,22 @@ public class HorizontalelasticcontrollerConnector extends org.eclipse.cmf.occi.m
 		// TODO: Implement how to stop this horizontalelasticcontroller.
 	}
 		// End of user code
+	// Start of user code Horizontalelasticcontroller_Kind_start_action
+	/**
+	 * Implement OCCI action:
+     * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/horizontalelasticcontroller/action#
+     * - term: start
+     * - title: 
+	 */
+	@Override
+	public void start()
+	{
+		LOGGER.debug("Action start() called on " + this);
+
+		// TODO: Implement how to start this horizontalelasticcontroller.
+	}
+		// End of user code
+		
+
 
 }	

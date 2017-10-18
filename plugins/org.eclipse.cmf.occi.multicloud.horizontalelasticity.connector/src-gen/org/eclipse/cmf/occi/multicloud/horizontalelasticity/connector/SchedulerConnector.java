@@ -10,12 +10,14 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Wed Oct 11 20:59:30 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Tue Oct 17 14:17:54 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+
 
 /**
  * Connector implementation for the OCCI kind:
@@ -40,7 +42,9 @@ public class SchedulerConnector extends org.eclipse.cmf.occi.multicloud.horizont
 		// TODO: Implement this constructor.
 	}
 	// End of user code
-	// Start of user code Scheduler_Kind_Start_action
+
+
+	// Start of user code Scheduler_Mixin_Start_action
 	/**
 	 * Implement OCCI action:
      * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/scheduler/action#
@@ -54,9 +58,8 @@ public class SchedulerConnector extends org.eclipse.cmf.occi.multicloud.horizont
 
 		// TODO: Implement how to start this scheduler.
 	}
-		// End of user code
-
-	// Start of user code Scheduler_Kind_Stop_action
+	// End of user code
+	// Start of user code Scheduler_Mixin_Stop_action
 	/**
 	 * Implement OCCI action:
      * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/scheduler/action#
@@ -70,6 +73,8 @@ public class SchedulerConnector extends org.eclipse.cmf.occi.multicloud.horizont
 
 		// TODO: Implement how to stop this scheduler.
 	}
-		// End of user code
+	// End of user code
+		
+
 
 }	

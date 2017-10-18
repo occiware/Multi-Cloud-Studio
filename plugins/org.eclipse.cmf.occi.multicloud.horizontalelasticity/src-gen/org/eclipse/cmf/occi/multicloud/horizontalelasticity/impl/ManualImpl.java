@@ -45,7 +45,7 @@ public class ManualImpl extends HorizontalelasticcontrollerImpl implements Manua
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String MANUAL_GROUP_SIZE_EDEFAULT = null;
+	protected static final Integer MANUAL_GROUP_SIZE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getManualGroupSize() <em>Manual Group Size</em>}' attribute.
@@ -55,7 +55,7 @@ public class ManualImpl extends HorizontalelasticcontrollerImpl implements Manua
 	 * @generated
 	 * @ordered
 	 */
-	protected String manualGroupSize = MANUAL_GROUP_SIZE_EDEFAULT;
+	protected Integer manualGroupSize = MANUAL_GROUP_SIZE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getManualMaxGroupSize() <em>Manual Max Group Size</em>}' attribute.
@@ -65,7 +65,7 @@ public class ManualImpl extends HorizontalelasticcontrollerImpl implements Manua
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String MANUAL_MAX_GROUP_SIZE_EDEFAULT = null;
+	protected static final Integer MANUAL_MAX_GROUP_SIZE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getManualMaxGroupSize() <em>Manual Max Group Size</em>}' attribute.
@@ -75,7 +75,7 @@ public class ManualImpl extends HorizontalelasticcontrollerImpl implements Manua
 	 * @generated
 	 * @ordered
 	 */
-	protected String manualMaxGroupSize = MANUAL_MAX_GROUP_SIZE_EDEFAULT;
+	protected Integer manualMaxGroupSize = MANUAL_MAX_GROUP_SIZE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getManualMinGroupSize() <em>Manual Min Group Size</em>}' attribute.
@@ -85,7 +85,7 @@ public class ManualImpl extends HorizontalelasticcontrollerImpl implements Manua
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String MANUAL_MIN_GROUP_SIZE_EDEFAULT = null;
+	protected static final Integer MANUAL_MIN_GROUP_SIZE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getManualMinGroupSize() <em>Manual Min Group Size</em>}' attribute.
@@ -95,7 +95,7 @@ public class ManualImpl extends HorizontalelasticcontrollerImpl implements Manua
 	 * @generated
 	 * @ordered
 	 */
-	protected String manualMinGroupSize = MANUAL_MIN_GROUP_SIZE_EDEFAULT;
+	protected Integer manualMinGroupSize = MANUAL_MIN_GROUP_SIZE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -121,7 +121,7 @@ public class ManualImpl extends HorizontalelasticcontrollerImpl implements Manua
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getManualGroupSize() {
+	public Integer getManualGroupSize() {
 		return manualGroupSize;
 	}
 
@@ -130,8 +130,8 @@ public class ManualImpl extends HorizontalelasticcontrollerImpl implements Manua
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setManualGroupSize(String newManualGroupSize) {
-		String oldManualGroupSize = manualGroupSize;
+	public void setManualGroupSize(Integer newManualGroupSize) {
+		Integer oldManualGroupSize = manualGroupSize;
 		manualGroupSize = newManualGroupSize;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.MANUAL__MANUAL_GROUP_SIZE, oldManualGroupSize, manualGroupSize));
@@ -142,7 +142,7 @@ public class ManualImpl extends HorizontalelasticcontrollerImpl implements Manua
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getManualMaxGroupSize() {
+	public Integer getManualMaxGroupSize() {
 		return manualMaxGroupSize;
 	}
 
@@ -151,8 +151,8 @@ public class ManualImpl extends HorizontalelasticcontrollerImpl implements Manua
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setManualMaxGroupSize(String newManualMaxGroupSize) {
-		String oldManualMaxGroupSize = manualMaxGroupSize;
+	public void setManualMaxGroupSize(Integer newManualMaxGroupSize) {
+		Integer oldManualMaxGroupSize = manualMaxGroupSize;
 		manualMaxGroupSize = newManualMaxGroupSize;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.MANUAL__MANUAL_MAX_GROUP_SIZE, oldManualMaxGroupSize, manualMaxGroupSize));
@@ -163,7 +163,7 @@ public class ManualImpl extends HorizontalelasticcontrollerImpl implements Manua
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getManualMinGroupSize() {
+	public Integer getManualMinGroupSize() {
 		return manualMinGroupSize;
 	}
 
@@ -172,8 +172,8 @@ public class ManualImpl extends HorizontalelasticcontrollerImpl implements Manua
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setManualMinGroupSize(String newManualMinGroupSize) {
-		String oldManualMinGroupSize = manualMinGroupSize;
+	public void setManualMinGroupSize(Integer newManualMinGroupSize) {
+		Integer oldManualMinGroupSize = manualMinGroupSize;
 		manualMinGroupSize = newManualMinGroupSize;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.MANUAL__MANUAL_MIN_GROUP_SIZE, oldManualMinGroupSize, manualMinGroupSize));
@@ -206,13 +206,13 @@ public class ManualImpl extends HorizontalelasticcontrollerImpl implements Manua
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case HorizontalelasticityPackage.MANUAL__MANUAL_GROUP_SIZE:
-				setManualGroupSize((String)newValue);
+				setManualGroupSize((Integer)newValue);
 				return;
 			case HorizontalelasticityPackage.MANUAL__MANUAL_MAX_GROUP_SIZE:
-				setManualMaxGroupSize((String)newValue);
+				setManualMaxGroupSize((Integer)newValue);
 				return;
 			case HorizontalelasticityPackage.MANUAL__MANUAL_MIN_GROUP_SIZE:
-				setManualMinGroupSize((String)newValue);
+				setManualMinGroupSize((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

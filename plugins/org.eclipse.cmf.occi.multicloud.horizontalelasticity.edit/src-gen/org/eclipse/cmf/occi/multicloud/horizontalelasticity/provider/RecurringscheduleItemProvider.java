@@ -17,16 +17,12 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
-import org.eclipse.cmf.occi.core.provider.MixinBaseItemProvider;
-
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityFactory;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Recurringschedule;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
@@ -41,7 +37,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class RecurringscheduleItemProvider extends MixinBaseItemProvider {
+public class RecurringscheduleItemProvider extends SchedulerItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -207,18 +203,7 @@ public class RecurringscheduleItemProvider extends MixinBaseItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(HorizontalelasticityPackage.Literals.RECURRINGSCHEDULE__RECURRINGSCHEDULE_RECURRENCE,
-				 HorizontalelasticityFactory.eINSTANCE.createArrayofRecurrenceStep()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return HorizontalelasticityEditPlugin.INSTANCE;
+				 HorizontalelasticityFactory.eINSTANCE.createArrofRecStep()));
 	}
 
 }

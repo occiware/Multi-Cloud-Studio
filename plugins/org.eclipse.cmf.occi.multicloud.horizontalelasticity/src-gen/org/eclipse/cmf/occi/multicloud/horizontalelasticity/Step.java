@@ -27,8 +27,9 @@ import org.eclipse.cmf.occi.core.Resource;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Step#getStepsLowerStepBound <em>Steps Lower Step Bound</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Step#getStepsUpperStepBound <em>Steps Upper Step Bound</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Step#getStepLowerStepBound <em>Step Lower Step Bound</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Step#getStepUpperStepBound <em>Step Upper Step Bound</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Step#getStepSize <em>Step Size</em>}</li>
  * </ul>
  *
  * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getStep()
@@ -37,55 +38,81 @@ import org.eclipse.cmf.occi.core.Resource;
  */
 public interface Step extends Resource {
 	/**
-	 * Returns the value of the '<em><b>Steps Lower Step Bound</b></em>' attribute.
+	 * Returns the value of the '<em><b>Step Lower Step Bound</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * 
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Steps Lower Step Bound</em>' attribute.
-	 * @see #setStepsLowerStepBound(Float)
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getStep_StepsLowerStepBound()
+	 * @return the value of the '<em>Step Lower Step Bound</em>' attribute.
+	 * @see #setStepLowerStepBound(Float)
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getStep_StepLowerStepBound()
 	 * @model dataType="org.eclipse.cmf.occi.multicloud.horizontalelasticity.Float"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Step!stepsLowerStepBound'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Step!stepLowerStepBound'"
 	 * @generated
 	 */
-	Float getStepsLowerStepBound();
+	Float getStepLowerStepBound();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Step#getStepsLowerStepBound <em>Steps Lower Step Bound</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Step#getStepLowerStepBound <em>Step Lower Step Bound</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Steps Lower Step Bound</em>' attribute.
-	 * @see #getStepsLowerStepBound()
+	 * @param value the new value of the '<em>Step Lower Step Bound</em>' attribute.
+	 * @see #getStepLowerStepBound()
 	 * @generated
 	 */
-	void setStepsLowerStepBound(Float value);
+	void setStepLowerStepBound(Float value);
 
 	/**
-	 * Returns the value of the '<em><b>Steps Upper Step Bound</b></em>' attribute.
+	 * Returns the value of the '<em><b>Step Upper Step Bound</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * 
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Steps Upper Step Bound</em>' attribute.
-	 * @see #setStepsUpperStepBound(Float)
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getStep_StepsUpperStepBound()
+	 * @return the value of the '<em>Step Upper Step Bound</em>' attribute.
+	 * @see #setStepUpperStepBound(Float)
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getStep_StepUpperStepBound()
 	 * @model dataType="org.eclipse.cmf.occi.multicloud.horizontalelasticity.Float"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Step!stepsUpperStepBound'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Step!stepUpperStepBound'"
 	 * @generated
 	 */
-	Float getStepsUpperStepBound();
+	Float getStepUpperStepBound();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Step#getStepsUpperStepBound <em>Steps Upper Step Bound</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Step#getStepUpperStepBound <em>Step Upper Step Bound</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Steps Upper Step Bound</em>' attribute.
-	 * @see #getStepsUpperStepBound()
+	 * @param value the new value of the '<em>Step Upper Step Bound</em>' attribute.
+	 * @see #getStepUpperStepBound()
 	 * @generated
 	 */
-	void setStepsUpperStepBound(Float value);
+	void setStepUpperStepBound(Float value);
+
+	/**
+	 * Returns the value of the '<em><b>Step Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Step Size</em>' attribute.
+	 * @see #setStepSize(Integer)
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getStep_StepSize()
+	 * @model dataType="org.eclipse.cmf.occi.core.Integer"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Step!stepSize'"
+	 * @generated
+	 */
+	Integer getStepSize();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Step#getStepSize <em>Step Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Step Size</em>' attribute.
+	 * @see #getStepSize()
+	 * @generated
+	 */
+	void setStepSize(Integer value);
 
 } // Step

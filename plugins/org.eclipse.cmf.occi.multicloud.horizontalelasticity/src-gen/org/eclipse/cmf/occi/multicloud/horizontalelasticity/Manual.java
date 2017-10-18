@@ -44,13 +44,13 @@ public interface Manual extends Horizontalelasticcontroller {
 	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Manual Group Size</em>' attribute.
-	 * @see #setManualGroupSize(String)
+	 * @see #setManualGroupSize(Integer)
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getManual_ManualGroupSize()
-	 * @model dataType="org.eclipse.cmf.occi.core.String"
+	 * @model dataType="org.eclipse.cmf.occi.core.Integer"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Manual!manualGroupSize'"
 	 * @generated
 	 */
-	String getManualGroupSize();
+	Integer getManualGroupSize();
 
 	/**
 	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Manual#getManualGroupSize <em>Manual Group Size</em>}' attribute.
@@ -60,7 +60,7 @@ public interface Manual extends Horizontalelasticcontroller {
 	 * @see #getManualGroupSize()
 	 * @generated
 	 */
-	void setManualGroupSize(String value);
+	void setManualGroupSize(Integer value);
 
 	/**
 	 * Returns the value of the '<em><b>Manual Max Group Size</b></em>' attribute.
@@ -70,13 +70,13 @@ public interface Manual extends Horizontalelasticcontroller {
 	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Manual Max Group Size</em>' attribute.
-	 * @see #setManualMaxGroupSize(String)
+	 * @see #setManualMaxGroupSize(Integer)
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getManual_ManualMaxGroupSize()
-	 * @model dataType="org.eclipse.cmf.occi.core.String"
+	 * @model dataType="org.eclipse.cmf.occi.core.Integer"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Manual!manualMaxGroupSize'"
 	 * @generated
 	 */
-	String getManualMaxGroupSize();
+	Integer getManualMaxGroupSize();
 
 	/**
 	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Manual#getManualMaxGroupSize <em>Manual Max Group Size</em>}' attribute.
@@ -86,7 +86,7 @@ public interface Manual extends Horizontalelasticcontroller {
 	 * @see #getManualMaxGroupSize()
 	 * @generated
 	 */
-	void setManualMaxGroupSize(String value);
+	void setManualMaxGroupSize(Integer value);
 
 	/**
 	 * Returns the value of the '<em><b>Manual Min Group Size</b></em>' attribute.
@@ -96,13 +96,13 @@ public interface Manual extends Horizontalelasticcontroller {
 	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Manual Min Group Size</em>' attribute.
-	 * @see #setManualMinGroupSize(String)
+	 * @see #setManualMinGroupSize(Integer)
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getManual_ManualMinGroupSize()
-	 * @model dataType="org.eclipse.cmf.occi.core.String"
+	 * @model dataType="org.eclipse.cmf.occi.core.Integer"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Manual!manualMinGroupSize'"
 	 * @generated
 	 */
-	String getManualMinGroupSize();
+	Integer getManualMinGroupSize();
 
 	/**
 	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Manual#getManualMinGroupSize <em>Manual Min Group Size</em>}' attribute.
@@ -112,6 +112,6 @@ public interface Manual extends Horizontalelasticcontroller {
 	 * @see #getManualMinGroupSize()
 	 * @generated
 	 */
-	void setManualMinGroupSize(String value);
+	void setManualMinGroupSize(Integer value);
 
 } // Manual

@@ -934,7 +934,7 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getStep_StepsLowerStepBound() {
+	public EAttribute getStep_StepLowerStepBound() {
 		return (EAttribute)stepEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -943,8 +943,17 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getStep_StepsUpperStepBound() {
+	public EAttribute getStep_StepUpperStepBound() {
 		return (EAttribute)stepEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getStep_StepSize() {
+		return (EAttribute)stepEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1254,8 +1263,9 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 		dynamicpolicyEClass = createEClass(DYNAMICPOLICY);
 
 		stepEClass = createEClass(STEP);
-		createEAttribute(stepEClass, STEP__STEPS_LOWER_STEP_BOUND);
-		createEAttribute(stepEClass, STEP__STEPS_UPPER_STEP_BOUND);
+		createEAttribute(stepEClass, STEP__STEP_LOWER_STEP_BOUND);
+		createEAttribute(stepEClass, STEP__STEP_UPPER_STEP_BOUND);
+		createEAttribute(stepEClass, STEP__STEP_SIZE);
 
 		creationEClass = createEClass(CREATION);
 		createEAttribute(creationEClass, CREATION__OCCI_COMPUTE_CREATION_DATE);
@@ -1411,9 +1421,9 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(manualEClass, Manual.class, "Manual", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getManual_ManualGroupSize(), theOCCIPackage.getString(), "manualGroupSize", null, 0, 1, Manual.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getManual_ManualMaxGroupSize(), theOCCIPackage.getString(), "manualMaxGroupSize", null, 0, 1, Manual.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getManual_ManualMinGroupSize(), theOCCIPackage.getString(), "manualMinGroupSize", null, 0, 1, Manual.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getManual_ManualGroupSize(), theOCCIPackage.getInteger(), "manualGroupSize", null, 0, 1, Manual.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getManual_ManualMaxGroupSize(), theOCCIPackage.getInteger(), "manualMaxGroupSize", null, 0, 1, Manual.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getManual_ManualMinGroupSize(), theOCCIPackage.getInteger(), "manualMinGroupSize", null, 0, 1, Manual.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dynamicEClass, org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamic.class, "Dynamic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDynamic_DynamicGroupSize(), theOCCIPackage.getInteger(), "dynamicGroupSize", null, 0, 1, org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1460,8 +1470,9 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 		initEClass(dynamicpolicyEClass, Dynamicpolicy.class, "Dynamicpolicy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(stepEClass, Step.class, "Step", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getStep_StepsLowerStepBound(), this.getFloat(), "stepsLowerStepBound", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStep_StepsUpperStepBound(), this.getFloat(), "stepsUpperStepBound", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStep_StepLowerStepBound(), this.getFloat(), "stepLowerStepBound", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStep_StepUpperStepBound(), this.getFloat(), "stepUpperStepBound", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStep_StepSize(), theOCCIPackage.getInteger(), "stepSize", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(creationEClass, Creation.class, "Creation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCreation_OcciComputeCreationDate(), this.getDate(), "occiComputeCreationDate", null, 0, 1, Creation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

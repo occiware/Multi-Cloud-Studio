@@ -10,12 +10,16 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Wed Oct 11 20:59:30 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Tue Oct 17 14:17:54 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
+import org.eclipse.cmf.occi.core.Link;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Rule;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+
 
 /**
  * Connector implementation for the OCCI kind:
@@ -95,4 +99,50 @@ public class StepdynamicConnector extends org.eclipse.cmf.occi.multicloud.horizo
 	//
 	// Stepdynamic actions.
 	//
+
+	// Start of user code Stepdynamic_Kind_stop_action
+	/**
+	 * Implement OCCI action:
+     * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/horizontalelasticcontroller/action#
+     * - term: stop
+     * - title: 
+	 */
+	@Override
+	public void stop()
+	{
+		LOGGER.debug("Action stop() called on " + this);
+
+		// TODO: Implement how to stop this stepdynamic.
+	}
+	// End of user code
+	// Start of user code Stepdynamic_Kind_start_action
+	/**
+	 * Implement OCCI action:
+     * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/horizontalelasticcontroller/action#
+     * - term: start
+     * - title: 
+	 */
+	@Override
+	public void start()
+	{
+		LOGGER.debug("Action start() called on " + this);
+		Link rule = null;
+		for (Link link : this.getLinks()) {
+			   rule = link;
+			   }
+			if ((rule != null) && (rule instanceof Rule)) {
+				System.out.println(rule);
+				String ruleID = rule.getAttributes().get(0).getValue();
+				String ruletitle = rule.getAttributes().get(1).getName();
+
+				System.out.println(rule);
+			} else {
+				System.out.println("there is not or rule");
+			}
+		// TODO: Implement how to start this stepdynamic.
+	}
+	// End of user code
+		
+
+
 }	

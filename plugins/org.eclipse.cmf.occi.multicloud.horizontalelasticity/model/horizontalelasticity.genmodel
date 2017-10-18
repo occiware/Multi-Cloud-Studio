@@ -276,10 +276,13 @@
     <genClasses>
       <ecoreClass href="horizontalelasticity.ecore#//Step"/>
       <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Step/stepsLowerStepBound"/>
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Step/stepLowerStepBound"/>
       </genFeatures>
       <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Step/stepsUpperStepBound"/>
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Step/stepUpperStepBound"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Step/stepSize"/>
       </genFeatures>
     </genClasses>
     <genClasses>

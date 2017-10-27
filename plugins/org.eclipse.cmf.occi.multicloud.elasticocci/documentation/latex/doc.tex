@@ -1,0 +1,333 @@
+\section{OCCI elasticocci extension}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & elasticocci \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/multicloud/elasticocci\# \\
+  \hline
+  \textbf{Specification} &  \\
+  \hline
+\end{tabular}
+\end{center}
+
+\subsection{Imported OCCI extensions}
+
+\begin{center} 
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & core \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/core\# \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{center} 
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & infrastructure \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/infrastructure\# \\
+  \hline
+\end{tabular}
+\end{center}
+
+
+\subsection{Types}
+\subsubsection{\texttt{ModeType} type}
+
+\textbf{Literals}
+\begin{itemize}
+\item \textbf{manual} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{dynamic} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{scheduled} 
+\end{itemize}
+
+\subsubsection{\texttt{DirectionType} type}
+
+\textbf{Literals}
+\begin{itemize}
+\item \textbf{up} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{down} 
+\end{itemize}
+
+\subsubsection{\texttt{Double} type}
+
+\begin{itemize}
+\item \textbf{Basic type:} Double
+\end{itemize}
+\subsubsection{\texttt{DateType} type}
+
+\begin{itemize}
+\item \textbf{Basic type:} String
+\end{itemize}
+\subsubsection{\texttt{RelationalType} type}
+
+\textbf{Literals}
+\begin{itemize}
+\item \textbf{greaterThan} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{lessThan} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{greaterThanorEqual} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{lessThanorEqual} 
+\end{itemize}
+
+\subsection{Kinds}
+\subsubsection{\texttt{ElasticController} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & ElasticController \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/multicloud/elasticocci\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+  \textbf{Parent} & Resource (http://schemas.ogf.org/occi/core\#) \\
+  \hline
+\end{tabular}
+\end{center}
+
+
+
+\subsubsection{\texttt{ElasticLink} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & ElasticLink \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/multicloud/elasticocci\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+  \textbf{Parent} & Link (http://schemas.ogf.org/occi/core\#) \\
+  \hline
+\end{tabular}
+\end{center}
+
+
+
+\subsection{Mixins}
+\subsubsection{\texttt{Strategy} mixin}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Strategy \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/multicloud/elasticocci\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{Applies to}:
+\begin{itemize}
+	\item ElasticController (http://occiware.org/occi/multicloud/elasticocci\#)
+\end{itemize}
+\end{itemize} 
+
+
+
+ 
+\subsubsection{\texttt{StrategyCompute} mixin}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & StrategyCompute \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/multicloud/elasticocci\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+\end{tabular}
+\end{center}
+
+\begin{itemize}
+\item \textbf{Depends on}:
+\begin{itemize}
+	\item Strategy (http://occiware.org/occi/multicloud/elasticocci\#)
+\end{itemize}
+\end{itemize}
+
+\begin{itemize}
+\item \textbf{\texttt{StrategyCompute} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  StrategyCompute.uthreshold & Integer & false & true & 90 &  \\
+  \hline
+  StrategyCompute.breathDown & Integer & false & true & 20000 &  \\
+  \hline
+  StrategyCompute.breathUp & Integer & false & true & 40000 &  \\
+  \hline
+  StrategyCompute.pollTime & Integer & false & true & 10000 &  \\
+  \hline
+  StrategyCompute.lthreshold & Integer & false & true & 70 &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+ 
+\subsubsection{\texttt{StrategyCPU} mixin}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & StrategyCPU \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/multicloud/elasticocci\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{Applies to}:
+\begin{itemize}
+	\item ElasticController (http://occiware.org/occi/multicloud/elasticocci\#)
+\end{itemize}
+\end{itemize} 
+\begin{itemize}
+\item \textbf{Depends on}:
+\begin{itemize}
+	\item StrategyCompute (http://occiware.org/occi/multicloud/elasticocci\#)
+\end{itemize}
+\end{itemize}
+
+\begin{itemize}
+\item \textbf{\texttt{StrategyCPU} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  StrategyCPU.upperLimit & Integer & false & true & 7 &  \\
+  \hline
+  StrategyCPU.lowerLimit & Integer & false & true & 1 &  \\
+  \hline
+  StrategyCPU.mode & ModeType & false & true & dynamic &  \\
+  \hline
+  StrategyCPU.direction & DirectionType & false & true & up &  \\
+  \hline
+  StrategyCPU.stepCPUDecrease & Integer & false & true & 1 &  \\
+  \hline
+  StrategyCPU.stepCPUIncrease & Integer & false & true & 1 &  \\
+  \hline
+  StrategyCPU.date & DateType & false & true &  &  \\
+  \hline
+  StrategyCPU.increaseRelationalOp & RelationalType & false & true & greaterThan &  \\
+  \hline
+  StrategyCPU.decreaseRelationalOp & RelationalType & false & true & lessThan &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+\begin{itemize}
+\item \textbf{\texttt{StrategyCPU} actions}
+
+\begin{itemize}
+	\item \textbf{Scheme}: http://occiware.org/occi/multicloud/elasticocci/strategycpu/action\#
+\end{itemize}
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+  \hline
+  \textbf{Term}  & \textbf{Attributes} & \textbf{Title} \\
+  \hline  
+  start & &  \\
+  \hline
+  stop & &  \\
+  \hline
+\end{tabular}
+\end{center}
+\end{itemize}
+
+ 
+\subsubsection{\texttt{StrategyMemory} mixin}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & StrategyMemory \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/multicloud/elasticocci\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{Applies to}:
+\begin{itemize}
+	\item ElasticController (http://occiware.org/occi/multicloud/elasticocci\#)
+\end{itemize}
+\end{itemize} 
+\begin{itemize}
+\item \textbf{Depends on}:
+\begin{itemize}
+	\item StrategyCompute (http://occiware.org/occi/multicloud/elasticocci\#)
+\end{itemize}
+\end{itemize}
+
+\begin{itemize}
+\item \textbf{\texttt{StrategyMemory} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  StrategyMemory.mode & ModeType & false & true & dynamic &  \\
+  \hline
+  StrategyMemory.direction & DirectionType & false & true & up &  \\
+  \hline
+  StrategyMemory.stepMemDecrease & Double & false & true & 0.25 &  \\
+  \hline
+  StrategyMemory.stepMemIncrease & Double & false & true & 0.5 &  \\
+  \hline
+  StrategyMemory.upperLimit & Integer & false & true & 5 &  \\
+  \hline
+  StrategyMemory.lowerLimit & Integer & false & true & 1 &  \\
+  \hline
+  StrategyMemory.date & DateType & false & true &  &  \\
+  \hline
+  StrategyMemory.increaseRelationalOp & RelationalType & false & true & greaterThan &  \\
+  \hline
+  StrategyMemory.decreaseRelationalOp & RelationalType & false & true & lessThan &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+\begin{itemize}
+\item \textbf{\texttt{StrategyMemory} actions}
+
+\begin{itemize}
+	\item \textbf{Scheme}: http://occiware.org/occi/multicloud/elasticocci/strategymemory/action\#
+\end{itemize}
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+  \hline
+  \textbf{Term}  & \textbf{Attributes} & \textbf{Title} \\
+  \hline  
+  stop & &  \\
+  \hline
+  start & &  \\
+  \hline
+\end{tabular}
+\end{center}
+\end{itemize}
+
+ 

@@ -1,0 +1,776 @@
+\section{OCCI horizontalelasticity extension}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & horizontalelasticity \\
+  \hline  
+  \textbf{Scheme} & http://org.eclipse.cmf.occi.multicloud.horizontalelasticity\# \\
+  \hline
+  \textbf{Specification} &  \\
+  \hline
+\end{tabular}
+\end{center}
+
+\subsection{Imported OCCI extensions}
+
+\begin{center} 
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & core \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/core\# \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{center} 
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & infrastructure \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/infrastructure\# \\
+  \hline
+\end{tabular}
+\end{center}
+
+
+\subsection{Types}
+\subsubsection{\texttt{TypeMetric} type}
+
+\textbf{Literals}
+\begin{itemize}
+\item \textbf{CPUtilisation} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{MemoryUtilisation} 
+\end{itemize}
+
+\subsubsection{\texttt{Float} type}
+
+\begin{itemize}
+\item \textbf{Basic type:} Float
+\end{itemize}
+\subsubsection{\texttt{OperatorType} type}
+
+\textbf{Literals}
+\begin{itemize}
+\item \textbf{GraterThan} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{GreaterThanorEqualto} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{LessThan} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{LessThanorEqualto} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{Equalto} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{NotEqualto} 
+\end{itemize}
+
+\subsubsection{\texttt{ActionOperation} type}
+
+\textbf{Literals}
+\begin{itemize}
+\item \textbf{add} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{remove} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{set\_to} 
+\end{itemize}
+
+\subsubsection{\texttt{ActionType} type}
+
+\textbf{Literals}
+\begin{itemize}
+\item \textbf{instanceCount} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{percent} 
+\end{itemize}
+
+\subsubsection{\texttt{MetricTargetTracking} type}
+
+\textbf{Literals}
+\begin{itemize}
+\item \textbf{AverageCpuUtilisation} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{LBRequestCountperTarget} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{AverageNetworkin} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{AverageNetworkout} 
+\end{itemize}
+
+\subsubsection{\texttt{RecurrenceStep} type}
+
+\textbf{Fields}
+\begin{itemize}
+\item unit: 
+\end{itemize}
+\begin{itemize}
+\item value: 
+\end{itemize}
+
+\subsubsection{\texttt{Unit} type}
+
+\textbf{Literals}
+\begin{itemize}
+\item \textbf{minute} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{hour} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{dayOfWeek} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{dayOfMonth} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{month} 
+\end{itemize}
+
+\subsubsection{\texttt{Array} type}
+
+\begin{itemize}
+\item \textbf{Basic type:} Integer
+\end{itemize}
+\subsubsection{\texttt{Date} type}
+
+\begin{itemize}
+\item \textbf{Basic type:} java.util.Date
+\end{itemize}
+\subsubsection{\texttt{ArrofRecStep} type}
+
+\begin{itemize}
+\item \textbf{Basic type:} RecurrenceStep
+\end{itemize}
+\subsection{Kinds}
+\subsubsection{\texttt{HorizontalGroup} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & HorizontalGroup \\
+  \hline  
+  \textbf{Scheme} & http://org.eclipse.cmf.occi.multicloud.horizontalelasticity\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+  \textbf{Parent} & Resource (http://schemas.ogf.org/occi/core\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{HorizontalGroup} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  horizontalGroup.name & String & false & true &  &  \\
+  \hline
+  horizontalGroup.groupSize & Integer & false & true &  &  \\
+  \hline
+  horizontalGroup.maximum & Integer & false & true &  &  \\
+  \hline
+  horizontalGroup.minimum & Integer & false & true &  &  \\
+  \hline
+  horizontalGroup.templateName & String & false & true &  &  \\
+  \hline
+  horizontalGroup.loadBalancer & String & false & true &  &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+\begin{itemize}
+\item \textbf{\texttt{HorizontalGroup} actions}
+
+\begin{itemize}
+	\item \textbf{Scheme}: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/horizontalgroup/action\#
+\end{itemize}
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+  \hline
+  \textbf{Term}  & \textbf{Attributes} & \textbf{Title} \\
+  \hline  
+  create & &  \\
+  \hline
+\end{tabular}
+\end{center}
+\end{itemize}
+
+
+\subsubsection{\texttt{Loadbalancer} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Loadbalancer \\
+  \hline  
+  \textbf{Scheme} & http://org.eclipse.cmf.occi.multicloud.horizontalelasticity\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+  \textbf{Parent} & Resource (http://schemas.ogf.org/occi/core\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{Loadbalancer} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  loadbalancer.name & String & false & true &  &  \\
+  \hline
+  loadbalancer.instanceIP & String & false & true &  &  \\
+  \hline
+  loadbalancer.address & String & false & true &  &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+\begin{itemize}
+\item \textbf{\texttt{Loadbalancer} actions}
+
+\begin{itemize}
+	\item \textbf{Scheme}: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/loadbalancer/action\#
+\end{itemize}
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+  \hline
+  \textbf{Term}  & \textbf{Attributes} & \textbf{Title} \\
+  \hline  
+  addbackendserver & &  \\
+  \hline
+  removebackendserver & &  \\
+  \hline
+\end{tabular}
+\end{center}
+\end{itemize}
+
+
+\subsubsection{\texttt{HorizontalElasticController} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & HorizontalElasticController \\
+  \hline  
+  \textbf{Scheme} & http://org.eclipse.cmf.occi.multicloud.horizontalelasticity\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+  \textbf{Parent} & Resource (http://schemas.ogf.org/occi/core\#) \\
+  \hline
+\end{tabular}
+\end{center}
+
+\begin{itemize}
+\item \textbf{\texttt{HorizontalElasticController} actions}
+
+\begin{itemize}
+	\item \textbf{Scheme}: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/horizontalelasticcontroller/action\#
+\end{itemize}
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+  \hline
+  \textbf{Term}  & \textbf{Attributes} & \textbf{Title} \\
+  \hline  
+  start & &  \\
+  \hline
+  stop & &  \\
+  \hline
+\end{tabular}
+\end{center}
+\end{itemize}
+
+
+\subsubsection{\texttt{InstanceGroupLink} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & InstanceGroupLink \\
+  \hline  
+  \textbf{Scheme} & http://org.eclipse.cmf.occi.multicloud.horizontalelasticity\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+  \textbf{Parent} & Link (http://schemas.ogf.org/occi/core\#) \\
+  \hline
+\end{tabular}
+\end{center}
+
+
+
+\subsubsection{\texttt{LinkBalancer} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & LinkBalancer \\
+  \hline  
+  \textbf{Scheme} & http://org.eclipse.cmf.occi.multicloud.horizontalelasticity\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+  \textbf{Parent} & Link (http://schemas.ogf.org/occi/core\#) \\
+  \hline
+\end{tabular}
+\end{center}
+
+
+
+\subsubsection{\texttt{GroupLink} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & GroupLink \\
+  \hline  
+  \textbf{Scheme} & http://org.eclipse.cmf.occi.multicloud.horizontalelasticity\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+  \textbf{Parent} & Link (http://schemas.ogf.org/occi/core\#) \\
+  \hline
+\end{tabular}
+\end{center}
+
+
+
+\subsubsection{\texttt{Manual} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Manual \\
+  \hline  
+  \textbf{Scheme} & http://org.eclipse.cmf.occi.multicloud.horizontalelasticity\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+  \textbf{Parent} & HorizontalElasticController (http://org.eclipse.cmf.occi.multicloud.horizontalelasticity\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{Manual} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  manual.groupSize & String & false & true &  &  \\
+  \hline
+  manual.maxGroupSize & String & false & true &  &  \\
+  \hline
+  manual.minGroupSize & String & false & true &  &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+
+\subsubsection{\texttt{Dynamic} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Dynamic \\
+  \hline  
+  \textbf{Scheme} & http://org.eclipse.cmf.occi.multicloud.horizontalelasticity\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+  \textbf{Parent} & HorizontalElasticController (http://org.eclipse.cmf.occi.multicloud.horizontalelasticity\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{Dynamic} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  dynamic.groupSize & Integer & false & true &  &  \\
+  \hline
+  dynamic.maxGroupSize & Integer & false & true &  &  \\
+  \hline
+  dynamic.minGroupSize & Integer & false & true &  &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+
+\subsubsection{\texttt{SimpleDynamic} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & SimpleDynamic \\
+  \hline  
+  \textbf{Scheme} & http://org.eclipse.cmf.occi.multicloud.horizontalelasticity\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+  \textbf{Parent} & DynamicPolicy (http://org.eclipse.cmf.occi.multicloud.horizontalelasticity\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{SimpleDynamic} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  simpleDynamic.name & String & false & true &  &  \\
+  \hline
+  simpleDynamic.coolDuration & Integer & false & true &  &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+
+\subsubsection{\texttt{StepDynamic} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & StepDynamic \\
+  \hline  
+  \textbf{Scheme} & http://org.eclipse.cmf.occi.multicloud.horizontalelasticity\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+  \textbf{Parent} & DynamicPolicy (http://org.eclipse.cmf.occi.multicloud.horizontalelasticity\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{StepDynamic} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  stepDynamic.name & String & false & true &  &  \\
+  \hline
+  stepDynamic.coolDuration & Integer & false & true &  &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+
+\subsubsection{\texttt{DynamicAdjustment} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & DynamicAdjustment \\
+  \hline  
+  \textbf{Scheme} & http://org.eclipse.cmf.occi.multicloud.horizontalelasticity\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+  \textbf{Parent} & Dynamic (http://org.eclipse.cmf.occi.multicloud.horizontalelasticity\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{DynamicAdjustment} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  dynamicAdjustment.name & String & false & true &  &  \\
+  \hline
+  dynamicAdjustment.metric & MetricTargetTracking & false & true &  &  \\
+  \hline
+  dynamicAdjustment.coolDuration & Integer & false & true &  &  \\
+  \hline
+  dynamicAdjustment.disableScaleIn & Boolean & false & true &  &  \\
+  \hline
+  dynamicAdjustment.Target & Float & false & true &  &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+
+\subsubsection{\texttt{Rule} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Rule \\
+  \hline  
+  \textbf{Scheme} & http://org.eclipse.cmf.occi.multicloud.horizontalelasticity\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+  \textbf{Parent} & Link (http://schemas.ogf.org/occi/core\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{Rule} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  rule.name & String & false & true &  &  \\
+  \hline
+  rule.metric & TypeMetric & false & true &  &  \\
+  \hline
+  rule.operator & OperatorType & false & true &  &  \\
+  \hline
+  rule.threshold & Float & false & true &  &  \\
+  \hline
+  rule.period & Integer & false & true &  &  \\
+  \hline
+  rule.consecutive & Integer & false & true &  &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+
+\subsubsection{\texttt{Action} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Action \\
+  \hline  
+  \textbf{Scheme} & http://org.eclipse.cmf.occi.multicloud.horizontalelasticity\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+  \textbf{Parent} & Resource (http://schemas.ogf.org/occi/core\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{Action} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  action & ActionOperation & false & true &  &  \\
+  \hline
+  actionType & ActionType & false & true &  &  \\
+  \hline
+  amount & Float & false & true &  &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+
+\subsubsection{\texttt{DynamicPolicy} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & DynamicPolicy \\
+  \hline  
+  \textbf{Scheme} & http://org.eclipse.cmf.occi.multicloud.horizontalelasticity\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+  \textbf{Parent} & Dynamic (http://org.eclipse.cmf.occi.multicloud.horizontalelasticity\#) \\
+  \hline
+\end{tabular}
+\end{center}
+
+
+
+\subsubsection{\texttt{Step} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Step \\
+  \hline  
+  \textbf{Scheme} & http://org.eclipse.cmf.occi.multicloud.horizontalelasticity\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+  \textbf{Parent} & Resource (http://schemas.ogf.org/occi/core\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{Step} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  steps.lowerStepBound & Float & false & true &  &  \\
+  \hline
+  steps.upperStepBound & Float & false & true &  &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+
+\subsection{Mixins}
+\subsubsection{\texttt{Creation} mixin}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Creation \\
+  \hline  
+  \textbf{Scheme} & http://org.eclipse.cmf.occi.multicloud.horizontalelasticity\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{Applies to}:
+\begin{itemize}
+	\item Compute (http://schemas.ogf.org/occi/infrastructure\#)
+\end{itemize}
+\end{itemize} 
+
+\begin{itemize}
+\item \textbf{\texttt{Creation} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  occi.compute.creation.date & Date & false & true &  &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+ 
+\subsubsection{\texttt{Scheduler} mixin}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Scheduler \\
+  \hline  
+  \textbf{Scheme} & http://org.eclipse.cmf.occi.multicloud.horizontalelasticity\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{Applies to}:
+\begin{itemize}
+	\item HorizontalElasticController (http://org.eclipse.cmf.occi.multicloud.horizontalelasticity\#)
+\end{itemize}
+\end{itemize} 
+
+
+\begin{itemize}
+\item \textbf{\texttt{Scheduler} actions}
+
+\begin{itemize}
+	\item \textbf{Scheme}: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/scheduler/action\#
+\end{itemize}
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+  \hline
+  \textbf{Term}  & \textbf{Attributes} & \textbf{Title} \\
+  \hline  
+  start & &  \\
+  \hline
+  stop & &  \\
+  \hline
+\end{tabular}
+\end{center}
+\end{itemize}
+
+ 
+\subsubsection{\texttt{UniqueSchedule} mixin}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & UniqueSchedule \\
+  \hline  
+  \textbf{Scheme} & http://org.eclipse.cmf.occi.multicloud.horizontalelasticity\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+\end{tabular}
+\end{center}
+
+\begin{itemize}
+\item \textbf{Depends on}:
+\begin{itemize}
+	\item Scheduler (http://org.eclipse.cmf.occi.multicloud.horizontalelasticity\#)
+\end{itemize}
+\end{itemize}
+
+\begin{itemize}
+\item \textbf{\texttt{UniqueSchedule} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  UniqueSchedule.startDate & Date & false & true &  &  \\
+  \hline
+  UniqueSchedule.endDate & Date & false & true &  &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+ 
+\subsubsection{\texttt{Recurringschedule} mixin}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Recurringschedule \\
+  \hline  
+  \textbf{Scheme} & http://org.eclipse.cmf.occi.multicloud.horizontalelasticity\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+\end{tabular}
+\end{center}
+
+\begin{itemize}
+\item \textbf{Depends on}:
+\begin{itemize}
+	\item Scheduler (http://org.eclipse.cmf.occi.multicloud.horizontalelasticity\#)
+\end{itemize}
+\end{itemize}
+
+\begin{itemize}
+\item \textbf{\texttt{Recurringschedule} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  Recurringschedule.recurrence & ArrofRecStep & false & true &  &  \\
+  \hline
+  Recurringschedule.startDate & Date & false & true &  &  \\
+  \hline
+  Recurringschedule.endDate & Date & false & true &  &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+ 

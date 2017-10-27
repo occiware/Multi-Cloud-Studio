@@ -189,17 +189,17 @@ public class ManualConnector extends org.eclipse.cmf.occi.multicloud.horizontale
 		   System.out.println("getManualGroupSize() "+getManualGroupSize());
 		   if ((getManualGroupSize() != 0) && (getManualGroupSize() != null)) {
 			   System.out.println("toto");
-			   doEditing(hg, getManualGroupSize());
-			   ((HorizontalgroupConnector) hg).doEditing22(getManualGroupSize());
-				//hg.setHorizontalGroupGroupSize(getManualGroupSize());
+			  // doEditing(hg, getManualGroupSize());
+			  // ((HorizontalgroupConnector) hg).doEditing22(getManualGroupSize());
+				hg.setHorizontalGroupGroupSize(getManualGroupSize());
 			}		   
-		 //  if ((getManualMaxGroupSize() != 0) && (getManualMaxGroupSize() != null)) {
-		//		hg.setHorizontalGroupMaximum(getManualMaxGroupSize());
-		//	}
-	   //
-		//	if ((getManualMinGroupSize() != 0) && (getManualMinGroupSize() != null)) {
-		//		hg.setHorizontalGroupMinimum(getManualMinGroupSize());
-		//	}
+		   if ((getManualMaxGroupSize() != 0) && (getManualMaxGroupSize() != null)) {
+				hg.setHorizontalGroupMaximum(getManualMaxGroupSize());
+			}
+	   
+			if ((getManualMinGroupSize() != 0) && (getManualMinGroupSize() != null)) {
+				hg.setHorizontalGroupMinimum(getManualMinGroupSize());
+			}
 			
 			//hg.occiUpdate();
 

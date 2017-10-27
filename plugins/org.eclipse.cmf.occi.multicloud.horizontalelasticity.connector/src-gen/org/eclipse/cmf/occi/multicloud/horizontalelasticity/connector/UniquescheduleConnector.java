@@ -21,6 +21,9 @@ import java.util.Date;
 import java.util.Timer;
 
 import org.eclipse.cmf.occi.core.Entity;
+import org.eclipse.emf.transaction.RecordingCommand;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -90,26 +93,52 @@ public class UniquescheduleConnector extends org.eclipse.cmf.occi.multicloud.hor
 			e1.printStackTrace();
 		}
 		
-		this.timer = new Timer();
-		timer.schedule(new Scheduler() {
-				@Override
-				public void run() {
-					try {
-						Entity  entity = getEntity();
-						System.out.println("entity " + entity);
-						if(entity instanceof ManualConnector) {
+///		this.timer = new Timer();
+///		timer.schedule(new Scheduler() {
+///				@Override
+///				public void run() {
+///					try {
+///						Entity  entity = getEntity();
+///						System.out.println("entity " + entity);
+///						if(entity instanceof ManualConnector) {
+///							ManualConnector man = (ManualConnector) entity;
+///							man.start();
+///						}
+///							
+///					} catch (Exception e) {
+///						e.getMessage();
+///					}	
+///				}
+///		}, date1);
+		// TODO: Implement how to stop this uniqueschedule.
+		
+		final Entity  entity = getEntity();
+        final TransactionalEditingDomain ted = 
+        	TransactionUtil.getEditingDomain(this);
+        System.out.println("the domain " + ted);
+        Timer timer = new Timer(true);
+        timer.schedule(new Scheduler() {
+        		@Override
+            public void run() {
+        			ted.getCommandStack().execute(new RecordingCommand(ted) {
+
+						@Override
+						protected void doExecute() {
 							ManualConnector man = (ManualConnector) entity;
 							man.start();
-						}
 							
-					} catch (Exception e) {
-						e.getMessage();
-					}	
-				}
-		}, date1);
-		// TODO: Implement how to stop this uniqueschedule.
-	}
+						}
+        					
+	        	});
+        		}
+        },date1); 
+
+    }
+
+
+		
 	@Override
+	
 	public void stop()
 	{
 		LOGGER.debug("Action stop() called on " + this);

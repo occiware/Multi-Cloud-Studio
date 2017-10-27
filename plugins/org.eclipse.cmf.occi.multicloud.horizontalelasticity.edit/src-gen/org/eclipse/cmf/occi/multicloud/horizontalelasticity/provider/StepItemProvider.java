@@ -268,6 +268,11 @@ public class StepItemProvider extends ResourceItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.RESOURCE__LINKS,
+				 HorizontalelasticityFactory.eINSTANCE.createSteplink()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.RESOURCE__LINKS,
 				 InfrastructureFactory.eINSTANCE.createStoragelink()));
 
 		newChildDescriptors.add

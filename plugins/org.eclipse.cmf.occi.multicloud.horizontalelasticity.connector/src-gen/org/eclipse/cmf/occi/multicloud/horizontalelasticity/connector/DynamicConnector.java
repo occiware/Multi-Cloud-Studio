@@ -10,10 +10,13 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Tue Oct 17 14:17:54 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Wed Oct 18 15:58:47 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
+import org.eclipse.cmf.occi.core.Link;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup;
+import org.eclipse.cmf.occi.multicloud.vmware.Instancevmware;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -55,6 +58,9 @@ public class DynamicConnector extends org.eclipse.cmf.occi.multicloud.horizontal
 	{
 		LOGGER.debug("occiCreate() called on " + this);
 		// TODO: Implement this callback or remove this method.
+		Horizontalgroup hg = (Horizontalgroup) this.getLinks().get(0).getTarget();
+		System.out.println("HG -------" + hg);
+		CPUGroupUsage();
 	}
 	// End of user code
 
@@ -127,8 +133,75 @@ public class DynamicConnector extends org.eclipse.cmf.occi.multicloud.horizontal
 
 		// TODO: Implement how to start this dynamic.
 	}
-	// End of user code
+	
+	protected double CPUGroupUsage() {
+		double cpuGroupUsage = 0.0;
+		int instanceCount = 0;
+		double cputotal = 0.0;
 		
-
-
+		ZabbixMonitoring2 zabbix_obj = new ZabbixMonitoring2();
+		Horizontalgroup hg = (Horizontalgroup) this.getLinks().get(0).getTarget();
+		//ZabbixMonitoring2 zabbix_obj = new ZabbixMonitoring2();
+		int noOfLinks = 0;
+		for(Link link : hg.getLinks()) {
+			noOfLinks++;
+		}
+		System.out.println("number of links" +  noOfLinks);
+		
+		for(int i =0; i< noOfLinks; ++i) {
+			if(hg.getLinks().get(i).getTarget() instanceof Instancevmware) {
+				//System.out.println(hg.getLinks().get(i));
+				//System.out.println(hg.getLinks().get(i).getTarget().getTitle());
+				Instancevmware inst = (Instancevmware) hg.getLinks().get(i).getTarget();
+				if (!(inst.getAttributes().get(8).getValue().isEmpty())) {
+					//System.out.println(inst);
+					//System.out.println(hg.getLinks().get(i).getTarget().getTitle());
+					String instanceIp = inst.getGuestIpv4Address();
+					//String instanceIp = inst.getAttributes().get(8).getValue();
+					System.out.println("trying to connect to zabbix");
+					System.out.println("instance ip " + instanceIp);
+					String zabi = zabbix_obj.connect();
+					System.out.println("zabbi authentification " +  zabi);
+					
+					int hostid = zabbix_obj.get_host_by_ip(zabi, instanceIp);
+					//String vmname = vm.getAttributes().get(1).getValue();
+					//int hostid = zabbix_obj.getHostByName(zabi, vmname);
+					Double cpuUsed = zabbix_obj.item_cpu_idle(zabi, hostid);
+					//System.out.println("cpu used :" + cpuUsed);
+					cputotal = cputotal + cpuUsed;
+					instanceCount = instanceCount +1;
+				}
+			}
+		}
+		
+		System.out.println("number of instances in the group " + instanceCount);
+		if (instanceCount ==0) {
+			System.out.println("no instances in the group");
+		} else {
+			cpuGroupUsage = cputotal/instanceCount;
+		}
+		System.out.println("cpu average usage for the group is " + cpuGroupUsage);
+		return cpuGroupUsage;
+	}
+	
+	public double getMetricUsage(String metricName, int period, int consecutive)
+	{
+		double metrcUsage = 34.0;
+		if (metricName.equals("CPUtilisation")) {
+			System.out.println("\n Now, we found the accumulated " + metricName + " the metci usage ");
+			CPUGroupUsage();
+		} 
+		else if(metricName.equals("MemoryUtilisation")) {
+			System.out.println("\n Now, we found the accumulated " + metricName + " the metci usage ");
+		}
+		else if(metricName.equals("AverageCpuUtilisation")) {
+			System.out.println("\n Now, we found the accumulated " + metricName + " the metci usage ");
+		}
+		
+		return metrcUsage;
+		
+	}
+	
+	// End of user code
+	
 }	

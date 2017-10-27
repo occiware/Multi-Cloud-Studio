@@ -84,9 +84,10 @@ public class HorizontalelasticityFactoryImpl extends EFactoryImpl implements Hor
 			case HorizontalelasticityPackage.STEPDYNAMIC: return createStepdynamic();
 			case HorizontalelasticityPackage.DYNAMICADJUSTMENT: return createDynamicadjustment();
 			case HorizontalelasticityPackage.RULE: return createRule();
-			case HorizontalelasticityPackage.ACTION: return createAction();
+			case HorizontalelasticityPackage.ACTIONTRIGGER: return createActiontrigger();
 			case HorizontalelasticityPackage.DYNAMICPOLICY: return createDynamicpolicy();
 			case HorizontalelasticityPackage.STEP: return createStep();
+			case HorizontalelasticityPackage.STEPLINK: return createSteplink();
 			case HorizontalelasticityPackage.CREATION: return createCreation();
 			case HorizontalelasticityPackage.SCHEDULER: return createScheduler();
 			case HorizontalelasticityPackage.UNIQUESCHEDULE: return createUniqueschedule();
@@ -309,9 +310,9 @@ public class HorizontalelasticityFactoryImpl extends EFactoryImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Action createAction() {
-		ActionImpl action = new ActionImpl();
-		return action;
+	public Actiontrigger createActiontrigger() {
+		ActiontriggerImpl actiontrigger = new ActiontriggerImpl();
+		return actiontrigger;
 	}
 
 	/**
@@ -332,6 +333,16 @@ public class HorizontalelasticityFactoryImpl extends EFactoryImpl implements Hor
 	public Step createStep() {
 		StepImpl step = new StepImpl();
 		return step;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Steplink createSteplink() {
+		SteplinkImpl steplink = new SteplinkImpl();
+		return steplink;
 	}
 
 	/**

@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Tue Oct 17 14:17:54 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Wed Oct 18 15:58:47 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
@@ -21,16 +21,8 @@ import java.util.Date;
 import java.util.Timer;
 
 import org.eclipse.cmf.occi.core.Entity;
-import org.eclipse.cmf.occi.infrastructure.Compute;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.transaction.RecordingCommand;
-//import org.eclipse.cmf.occi.multicloud.elasticocci.connector.Scheduler;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-
 
 
 
@@ -57,24 +49,7 @@ public class UniquescheduleConnector extends org.eclipse.cmf.occi.multicloud.hor
 		// TODO: Implement this constructor.
 	}
 	// End of user code
-	public void doEditing(EObject element) {
-    // Make sure your element is attached to a source, otherwise this will return null
-		TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(element);
-		domain.getCommandStack().execute(new RecordingCommand(domain) {
 
-        @Override
-        protected void doExecute() {
-        	
-        		((ManualConnector)element).start();
-            // Implement your write operations here,
-            // for example: set a new name
-        		///((Horizontalgroup)element).setHorizontalGroupGroupSize(value);
-            //element.eSet(element.eClass().getEStructuralFeature("horizontalGroupGroupSize"), value);
-            //((Compute)element).setOcciComputeCores(size);
-            //((Compute)element).occiRetrieve();
-        }
-    });
-	}
 
 	// Start of user code Uniqueschedule_Mixin_Start_action
 	/**
@@ -142,13 +117,7 @@ public class UniquescheduleConnector extends org.eclipse.cmf.occi.multicloud.hor
 		// TODO: Implement how to stop this uniqueschedule.
 	}
 	// End of user code
-	///TransactionalEditingDomain domain; 
-	///domain = TransactionUtil.getEditingDomain(man);
-	///domain.getCommandStack().execute(new RecordingCommand(domain) {
-	   ///public void doExecute() {
-		   ///((ManualConnector)man).start();
-	   ///}
-	///});		
+		
 
 
 }	

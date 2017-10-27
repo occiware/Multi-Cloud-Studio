@@ -24,6 +24,9 @@ import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.multicloud.elasticocci.connector.MyRunnable;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.ArrofRecStep;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.RecurrenceStep;
+import org.eclipse.emf.common.util.EList;
 ///////Quartz//////////
 import org.quartz.CronScheduleBuilder;
 import org.quartz.JobBuilder;
@@ -109,6 +112,14 @@ public class RecurringscheduleConnector extends org.eclipse.cmf.occi.multicloud.
 	@Override
 	public void stop()
 	{
+		////// just test of record //////////////
+		//RecurrenceStep arr {second,{20,24}, minutes,{55}, hour,{15}, domonth,{30}, month,{12}, doweek,{1}, year,{2007}}
+		EList<RecurrenceStep> xy = (EList<RecurrenceStep>) getRecurringscheduleRecurrence();
+		//ArrofRecStep xy =  getRecurringscheduleRecurrence();
+		for(RecurrenceStep element: xy) {
+			System.out.println(element);
+		}
+		
 		LOGGER.debug("Action stop() called on " + this);
 
 		// TODO: Implement how to stop this recurringschedule.

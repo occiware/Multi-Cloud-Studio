@@ -10,10 +10,13 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Tue Oct 17 14:17:54 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Wed Oct 18 15:58:47 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
+import org.eclipse.cmf.occi.core.Link;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup;
+import org.eclipse.cmf.occi.multicloud.vmware.Instancevmware;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -55,6 +58,10 @@ public class DynamicadjustmentConnector extends org.eclipse.cmf.occi.multicloud.
 	{
 		LOGGER.debug("occiCreate() called on " + this);
 		// TODO: Implement this callback or remove this method.
+		System.out.print("this is just test");
+		//DynamicConnector dynamic = new DynamicConnector();
+		//Dynamic dyc = new Dynamic();
+		CPUGroupUsage();
 	}
 	// End of user code
 
@@ -124,8 +131,153 @@ public class DynamicadjustmentConnector extends org.eclipse.cmf.occi.multicloud.
 	public void start()
 	{
 		LOGGER.debug("Action start() called on " + this);
+		DynamicpolicyConnector dp = new DynamicpolicyConnector();
+		
+		while(true) {
+			String  targetMetric = this.getDynamicAdjustmentMetric().getName();
+			double metrcUsage  = dp.getMetricUsage(targetMetric, 0, 0);
+			
+			Horizontalgroup hg = getHorzontalgroup();
+			int groupSize = hg.getHorizontalGroupGroupSize();
+			float decreaseIndicator = ((this.dynamicAdjustmentTarget/groupSize) - 5);  // B = (Tcpu/count) - alpha
+			
+			if (metrcUsage >= this.dynamicAdjustmentTarget) {
+				action( "add", "instanceCount", 1, this.getDynamicAdjustmentCoolDuration());
+			}
+			
+			if(metrcUsage < decreaseIndicator) {
+				action( "remove", "instanceCount", 1, this.getDynamicAdjustmentCoolDuration());
+			}
+		System.out.println("Wait betwwen loop cycles to avoid consuming CPU cycles");	
+		try {
+			Thread.sleep(20000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
+		}
+		
 
 		// TODO: Implement how to start this dynamicadjustment.
+	}
+	
+	public Horizontalgroup getHorzontalgroup()
+	{
+		LOGGER.debug("Action start() called on " + this);
+		Horizontalgroup hg = null;
+		for (Link link : this.getLinks()) {
+			if (link.getTarget() instanceof Horizontalgroup) { // && linkedGroup instanceof Horizontalgroup) {
+				   hg = (Horizontalgroup) link.getTarget();
+				   System.out.println(hg);
+				}  
+		}
+		if (hg ==null) {
+			System.out.println("Can't find the horizontalgroup");
+		}
+		return hg;
+	}
+	
+	public void action( String action, String actionType, float amount, int coolduration)
+	{
+		//DynamicConnector dc = new DynamicConnector();
+		Horizontalgroup hg =  getHorzontalgroup();
+		int numberofinstances = 0;
+		int currentInstance = hg.getHorizontalGroupGroupSize();
+		if (action.equals("add")) {
+			System.out.println("You are going to add more resources");
+			if(actionType.equals("instanceCount")) {
+				System.out.println("You are going to add more resources according to " + actionType);
+				numberofinstances = (int) amount;
+				System.out.println(" nubmer of instances to ba added " + numberofinstances);
+				System.out.println(" The group size will become  " + (numberofinstances + currentInstance));
+				hg.setHorizontalGroupGroupSize(numberofinstances + currentInstance);
+				//hg.occiUpdate();
+			} else if(actionType.equals("percent")) {
+				System.out.println("You are going to add more resources according to " + actionType);
+				System.out.print("\n current instance are :" + currentInstance);
+				numberofinstances = (int) (currentInstance * (amount/100));
+				hg.setHorizontalGroupGroupSize(currentInstance + numberofinstances);
+				//hg.occiUpdate();
+				System.out.println("\n the number of inatances will be " + (currentInstance + numberofinstances));
+			}
+			
+		}
+		
+		else if(action.equals("remove")) {
+			System.out.println("You are going to delete Resources");
+			if(actionType.equals("instanceCount")) {
+				System.out.println("You are going to remove more resources according to " + actionType);
+				numberofinstances = (int) amount;
+				System.out.println("You are going to remove " + amount + " instance");
+				System.out.println(" The group size will become  " + ( currentInstance - numberofinstances));
+				//hg.setHorizontalGroupGroupSize(numberofinstances + currentInstance);
+				//hg.occiUpdate();
+			} else if(actionType.equals("percent")) {
+				System.out.println("You are going to remove more resources according to " + actionType);
+				System.out.print("\n current instance are :" + currentInstance);
+				numberofinstances = (int) (currentInstance * (amount/100));
+				hg.setHorizontalGroupGroupSize(currentInstance - numberofinstances);
+				System.out.println("\n the number of instances or groupsize will be:" + (currentInstance - numberofinstances));
+			}
+		}
+		System.out.print("wait, cool duration");
+		try {
+			Thread.sleep(coolduration);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	/////////////////////////////////////// cpu usage ////////////////////////////////////
+	protected double CPUGroupUsage() {
+		double cpuGroupUsage = 0.0;
+		int instanceCount = 0;
+		double cputotal = 0.0;
+		
+		ZabbixMonitoring2 zabbix_obj = new ZabbixMonitoring2();
+		Horizontalgroup hg = (Horizontalgroup) this.getLinks().get(0).getTarget();
+		//ZabbixMonitoring2 zabbix_obj = new ZabbixMonitoring2();
+		int noOfLinks = 0;
+		for(Link link : hg.getLinks()) {
+			noOfLinks++;
+		}
+		System.out.println("number of links" +  noOfLinks);
+		
+		for(int i =0; i< noOfLinks; ++i) {
+			if(hg.getLinks().get(i).getTarget() instanceof Instancevmware) {
+				//System.out.println(hg.getLinks().get(i));
+				//System.out.println(hg.getLinks().get(i).getTarget().getTitle());
+				Instancevmware inst = (Instancevmware) hg.getLinks().get(i).getTarget();
+				if (!(inst.getAttributes().get(8).getValue().isEmpty())) {
+					//System.out.println(inst);
+					//System.out.println(hg.getLinks().get(i).getTarget().getTitle());
+					String instanceIp = inst.getGuestIpv4Address();
+					//String instanceIp = inst.getAttributes().get(8).getValue();
+					System.out.println("trying to connect to zabbix");
+					System.out.println("instance ip " + instanceIp);
+					String zabi = zabbix_obj.connect();
+					System.out.println("zabbi authentification " +  zabi);
+					
+					int hostid = zabbix_obj.get_host_by_ip(zabi, instanceIp);
+					//String vmname = vm.getAttributes().get(1).getValue();
+					//int hostid = zabbix_obj.getHostByName(zabi, vmname);
+					Double cpuUsed = zabbix_obj.item_cpu_idle(zabi, hostid);
+					//System.out.println("cpu used :" + cpuUsed);
+					cputotal = cputotal + cpuUsed;
+					instanceCount = instanceCount +1;
+				}
+			}
+		}
+		
+		System.out.println("number of instances in the group " + instanceCount);
+		if (instanceCount ==0) {
+			System.out.println("no instances in the group");
+		} else {
+			cpuGroupUsage = cputotal/instanceCount;
+		}
+		System.out.println("cpu average usage for the group is " + cpuGroupUsage);
+		return cpuGroupUsage;
 	}
 	// End of user code
 		

@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Tue Oct 17 14:17:54 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Wed Oct 18 15:58:47 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
@@ -156,12 +156,12 @@ public class ConnectorFactory extends org.eclipse.cmf.occi.multicloud.horizontal
 	/**
 	 * EFactory method for OCCI kind:
 	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
-	 * - term: action
+	 * - term: actiontrigger
 	 * - title: 
 	 */
 	@Override
-	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Action createAction() {
-		return new ActionConnector();
+	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Actiontrigger createActiontrigger() {
+		return new ActiontriggerConnector();
 	}
 
 	/**
@@ -184,6 +184,17 @@ public class ConnectorFactory extends org.eclipse.cmf.occi.multicloud.horizontal
 	@Override
 	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Step createStep() {
 		return new StepConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
+	 * - term: steplink
+	 * - title: 
+	 */
+	@Override
+	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Steplink createSteplink() {
+		return new SteplinkConnector();
 	}
 
 	/**

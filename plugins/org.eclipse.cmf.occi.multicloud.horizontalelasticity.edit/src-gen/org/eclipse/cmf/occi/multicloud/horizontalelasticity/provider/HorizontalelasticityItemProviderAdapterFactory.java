@@ -427,26 +427,26 @@ public class HorizontalelasticityItemProviderAdapterFactory extends Horizontalel
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Action} instances.
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Actiontrigger} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ActionItemProvider actionItemProvider;
+	protected ActiontriggerItemProvider actiontriggerItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Action}.
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Actiontrigger}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createActionAdapter() {
-		if (actionItemProvider == null) {
-			actionItemProvider = new ActionItemProvider(this);
+	public Adapter createActiontriggerAdapter() {
+		if (actiontriggerItemProvider == null) {
+			actiontriggerItemProvider = new ActiontriggerItemProvider(this);
 		}
 
-		return actionItemProvider;
+		return actiontriggerItemProvider;
 	}
 
 	/**
@@ -493,6 +493,29 @@ public class HorizontalelasticityItemProviderAdapterFactory extends Horizontalel
 		}
 
 		return stepItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Steplink} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SteplinkItemProvider steplinkItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Steplink}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSteplinkAdapter() {
+		if (steplinkItemProvider == null) {
+			steplinkItemProvider = new SteplinkItemProvider(this);
+		}
+
+		return steplinkItemProvider;
 	}
 
 	/**
@@ -701,9 +724,10 @@ public class HorizontalelasticityItemProviderAdapterFactory extends Horizontalel
 		if (stepdynamicItemProvider != null) stepdynamicItemProvider.dispose();
 		if (dynamicadjustmentItemProvider != null) dynamicadjustmentItemProvider.dispose();
 		if (ruleItemProvider != null) ruleItemProvider.dispose();
-		if (actionItemProvider != null) actionItemProvider.dispose();
+		if (actiontriggerItemProvider != null) actiontriggerItemProvider.dispose();
 		if (dynamicpolicyItemProvider != null) dynamicpolicyItemProvider.dispose();
 		if (stepItemProvider != null) stepItemProvider.dispose();
+		if (steplinkItemProvider != null) steplinkItemProvider.dispose();
 		if (creationItemProvider != null) creationItemProvider.dispose();
 		if (schedulerItemProvider != null) schedulerItemProvider.dispose();
 		if (uniquescheduleItemProvider != null) uniquescheduleItemProvider.dispose();

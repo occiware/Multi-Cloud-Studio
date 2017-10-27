@@ -205,11 +205,11 @@ public class HorizontalelasticitySwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case HorizontalelasticityPackage.ACTION: {
-				Action action = (Action)theEObject;
-				T result = caseAction(action);
-				if (result == null) result = caseResource(action);
-				if (result == null) result = caseEntity(action);
+			case HorizontalelasticityPackage.ACTIONTRIGGER: {
+				Actiontrigger actiontrigger = (Actiontrigger)theEObject;
+				T result = caseActiontrigger(actiontrigger);
+				if (result == null) result = caseResource(actiontrigger);
+				if (result == null) result = caseEntity(actiontrigger);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -228,6 +228,14 @@ public class HorizontalelasticitySwitch<T> extends Switch<T> {
 				T result = caseStep(step);
 				if (result == null) result = caseResource(step);
 				if (result == null) result = caseEntity(step);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HorizontalelasticityPackage.STEPLINK: {
+				Steplink steplink = (Steplink)theEObject;
+				T result = caseSteplink(steplink);
+				if (result == null) result = caseLink(steplink);
+				if (result == null) result = caseEntity(steplink);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -491,17 +499,17 @@ public class HorizontalelasticitySwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Action</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Actiontrigger</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Action</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Actiontrigger</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseAction(Action object) {
+	public T caseActiontrigger(Actiontrigger object) {
 		return null;
 	}
 
@@ -532,6 +540,21 @@ public class HorizontalelasticitySwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseStep(Step object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Steplink</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Steplink</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSteplink(Steplink object) {
 		return null;
 	}
 

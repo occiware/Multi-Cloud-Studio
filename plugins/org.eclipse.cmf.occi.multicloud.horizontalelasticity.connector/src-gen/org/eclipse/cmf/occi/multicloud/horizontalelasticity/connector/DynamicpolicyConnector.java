@@ -10,10 +10,12 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Tue Oct 17 14:17:54 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Wed Oct 18 15:58:47 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
+import org.eclipse.cmf.occi.core.Link;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -124,11 +126,87 @@ public class DynamicpolicyConnector extends org.eclipse.cmf.occi.multicloud.hori
 	public void start()
 	{
 		LOGGER.debug("Action start() called on " + this);
-
+		action("add", "instanceCount", 1);
+		//System.out.println("the hg is " + hg);
 		// TODO: Implement how to start this dynamicpolicy.
 	}
 	// End of user code
 		
-
-
+	public double getMetricUsage(String metricName, int period, int consecutive)
+	{
+		double metrcUsage = 34.0;
+		if (metricName.equals("CPUtilisation")) {
+			System.out.println("\n Now, we found the accumulated " + metricName + " the metci usage ");
+		} 
+		else if(metricName.equals("MemoryUtilisation")) {
+			System.out.println("\n Now, we found the accumulated " + metricName + " the metci usage ");
+		}
+		else if(metricName.equals("AverageCpuUtilisation")) {
+			System.out.println("\n Now, we found the accumulated " + metricName + " the metci usage ");
+		}
+		
+		return metrcUsage;
+		
+	}
+	
+	public Horizontalgroup getHorzontalgroup()
+	{
+		LOGGER.debug("Action start() called on " + this);
+		Horizontalgroup hg = null;
+		Link linkedGroup = null;
+		
+		for (Link link : this.getLinks()) {
+			   linkedGroup = link;
+			   System.out.println(linkedGroup);
+		}
+		if (linkedGroup != null) { // && linkedGroup instanceof Horizontalgroup) {
+		   hg = (Horizontalgroup) linkedGroup.getTarget();
+		} else {
+			System.out.println("Can't find the horizontalgroup");
+		  }
+		return hg;
+		
+	}
+	
+	public void action( String action, String actionType, float amount)
+	{
+		//DynamicConnector dc = new DynamicConnector();
+		Horizontalgroup hg =  getHorzontalgroup();
+		int numberofinstances = 0;
+		if (action.equals("add")) {
+			System.out.println("You are going to add more resources");
+			if(actionType.equals("instanceCount")) {
+				System.out.println("You are going to add more resources according to " + actionType);
+				numberofinstances = (int) amount;
+				System.out.println(" nubmer of instances" + numberofinstances);
+				//hg.setHorizontalGroupGroupSize(numberofinstances);
+				//hg.occiUpdate();
+			} else if(actionType.equals("percent")) {
+				System.out.println("You are going to add more resources according to " + actionType);
+				int currentInstance = hg.getHorizontalGroupGroupSize();
+				System.out.print("current instance are :" + currentInstance);
+				numberofinstances = (int) (currentInstance * (amount/100));
+				//hg.setHorizontalGroupGroupSize(currentInstance + numberofinstances);
+				//hg.occiUpdate();
+				System.out.println(" instances to be removed" + (currentInstance + numberofinstances));
+			}
+		}
+		else if(action.equals("remove")) {
+			System.out.println("You are going to delete Resources");
+			if(actionType.equals("instanceCount")) {
+				System.out.println("You are going to remove more resources according to " + actionType);
+				numberofinstances = (int) amount;
+				//hg.setHorizontalGroupGroupSize(numberofinstances);
+				//hg.occiUpdate();
+			} else if(actionType.equals("percent")) {
+				System.out.println("You are going to remove more resources according to " + actionType);
+				int currentInstance = hg.getHorizontalGroupGroupSize();
+				//numberofinstances = (int) (currentInstance * (amount/100));
+				//hg.setHorizontalGroupGroupSize(currentInstance - numberofinstances);
+				System.out.println(" instances to be removed" + (currentInstance - numberofinstances));
+			}
+		}
+	}
+	
+	
 }	

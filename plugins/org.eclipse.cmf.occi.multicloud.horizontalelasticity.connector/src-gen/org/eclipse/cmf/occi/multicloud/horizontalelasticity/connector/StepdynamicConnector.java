@@ -10,14 +10,19 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Tue Oct 17 14:17:54 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Wed Oct 18 15:58:47 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
 import org.eclipse.cmf.occi.core.Link;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Actiontrigger;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Rule;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Step;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Steplink;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import java.util.ArrayList;
 
 
 
@@ -126,23 +131,167 @@ public class StepdynamicConnector extends org.eclipse.cmf.occi.multicloud.horizo
 	public void start()
 	{
 		LOGGER.debug("Action start() called on " + this);
-		Link rule = null;
+		
+		Rule myRule = null;
+		ArrayList<Step> arrlistofsteps= new ArrayList<Step>();
 		for (Link link : this.getLinks()) {
-			   rule = link;
-			   }
-			if ((rule != null) && (rule instanceof Rule)) {
-				System.out.println(rule);
-				String ruleID = rule.getAttributes().get(0).getValue();
-				String ruletitle = rule.getAttributes().get(1).getName();
-
-				System.out.println(rule);
-			} else {
-				System.out.println("there is not or rule");
+			if (link instanceof Rule) {
+				myRule = (Rule) link;
 			}
-		// TODO: Implement how to start this stepdynamic.
+			if (link instanceof Steplink) {
+				Step sp = (Step) link.getTarget();
+				arrlistofsteps.add(sp);
+			}
+		}
+		Boolean controller = true;
+		while (controller) {
+			if (myRule != null) {
+				DynamicpolicyConnector dp = new DynamicpolicyConnector();
+				String ruleMetric = myRule.getRuleMetric().getName();
+				int ruleperiod = myRule.getRulePeriod();
+				int consecutive = myRule.getRuleConsecutive();
+				
+				String ruleoperator = myRule.getRuleOperator().getName();
+				float threshold = myRule.getRuleThreshold();	
+					
+				Actiontrigger action = (Actiontrigger)myRule.getTarget();
+				String actionname = action.getAction().getName();
+				String actiontype = action.getActionType().getName();
+				Float amount = action.getAmount();
+				int coolduration = this.getStepDynamicCoolDuration();
+				
+				////////////////////here call the action according to Rule and steps///////////////
+				double metrcUsage  = dp.getMetricUsage(ruleMetric, ruleperiod, consecutive); // get the metric utilization on an interval of (period) for a consecutive of (consecutive),
+				/////////////// test the rule ///////////////////////////////////////
+				if (testRule(metrcUsage, ruleoperator, threshold)) {
+					////////////////////here call the action according to Rule and steps///////////////
+					if (arrlistofsteps.isEmpty()) {
+						System.out.println("execute without steps");
+						action(actionname, actiontype, amount, coolduration);
+					}
+					else {
+						System.out.println("execute  steps");
+						for (Step element: arrlistofsteps) {
+							float lower = element.getStepLowerStepBound() + threshold ;
+							float upper = element.getStepUpperStepBound() + threshold;
+							if (metrcUsage >=lower && metrcUsage <= upper) {
+								int size1 = element.getStepSize();
+								action(actionname, actiontype, size1, coolduration);
+							}
+							System.out.print(50 + element.getStepLowerStepBound());
+						}
+					}		
+				}
+			} else {
+				System.out.println("there is o rule associated");
+			}	
+		try {
+			Thread.sleep(20000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
+		}
 	}
 	// End of user code
 		
-
+	public void action( String action, String actionType, float amount, int coolduration)
+	{
+		//DynamicConnector dc = new DynamicConnector();
+		Horizontalgroup hg =  getHorzontalgroup();
+		int numberofinstances = 0;
+		int currentInstance = hg.getHorizontalGroupGroupSize();
+		if (action.equals("add")) {
+			System.out.println("You are going to add more resources");
+			if(actionType.equals("instanceCount")) {
+				System.out.println("You are going to add more resources according to " + actionType);
+				numberofinstances = (int) amount;
+				System.out.println(" nubmer of instances to ba added " + numberofinstances);
+				System.out.println(" The group size will become  " + (numberofinstances + currentInstance));
+				//hg.setHorizontalGroupGroupSize(numberofinstances + currentInstance);
+				//hg.occiUpdate();
+			} else if(actionType.equals("percent")) {
+				System.out.println("You are going to add more resources according to " + actionType);
+				System.out.print("\n current instance are :" + currentInstance);
+				numberofinstances = (int) (currentInstance * (amount/100));
+				//hg.setHorizontalGroupGroupSize(currentInstance + numberofinstances);
+				//hg.occiUpdate();
+				System.out.println("\n the number of inatances will be " + (currentInstance + numberofinstances));
+			}
+			
+		}
+		
+		else if(action.equals("remove")) {
+			System.out.println("You are going to delete Resources");
+			if(actionType.equals("instanceCount")) {
+				System.out.println("You are going to remove more resources according to " + actionType);
+				numberofinstances = (int) amount;
+				System.out.println("You are going to remove " + amount + " instance");
+				System.out.println(" The group size will become  " + ( currentInstance - numberofinstances));
+				//hg.setHorizontalGroupGroupSize(numberofinstances + currentInstance);
+				//hg.occiUpdate();
+			} else if(actionType.equals("percent")) {
+				System.out.println("You are going to remove more resources according to " + actionType);
+				System.out.print("\n current instance are :" + currentInstance);
+				numberofinstances = (int) (currentInstance * (amount/100));
+				hg.setHorizontalGroupGroupSize(currentInstance - numberofinstances);
+				System.out.println("\n the number of instances or groupsize will be:" + (currentInstance - numberofinstances));
+			}
+		}
+		System.out.print("wait, cool duration");
+		try {
+			Thread.sleep(coolduration);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public Horizontalgroup getHorzontalgroup()
+	{
+		LOGGER.debug("Action start() called on " + this);
+		Horizontalgroup hg = null;
+		for (Link link : this.getLinks()) {
+			if (link.getTarget() instanceof Horizontalgroup) { // && linkedGroup instanceof Horizontalgroup) {
+				   hg = (Horizontalgroup) link.getTarget();
+				   System.out.println(hg);
+				}  
+		}
+		if (hg ==null) {
+			System.out.println("Can't find the horizontalgroup");
+		}
+		return hg;
+	}
+	
+	public boolean testRule ( double metricUtilization, String op, float threshold) {
+		boolean testoutput = false;
+		if (op.equals("GraterThan")){
+			if  (metricUtilization > threshold){
+				testoutput =  true;	
+			}
+		} else if (op.equals("GreaterThanorEqualto")){
+			if  (metricUtilization >= threshold){
+				testoutput =  true;
+			}
+		} else if (op.equals("LessThan")){
+			if  (metricUtilization < threshold){
+				testoutput =  true;
+			}
+		} else if (op.equals("LessThanorEqualto")){
+			if  (metricUtilization <= threshold){
+				testoutput =  true;
+			}
+		} else if (op.equals("Equalto")){
+			if  (metricUtilization == threshold){
+				testoutput =  true;
+			}
+		} else if (op.equals("NotEqualto")){
+			if  (metricUtilization != threshold){
+				testoutput =  true;
+			}
+		}			
+		
+	return testoutput;	
+	}
 
 }	

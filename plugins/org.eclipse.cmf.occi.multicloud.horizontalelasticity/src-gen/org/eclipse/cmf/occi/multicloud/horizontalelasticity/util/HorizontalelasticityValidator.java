@@ -85,12 +85,20 @@ public class HorizontalelasticityValidator extends EObjectValidator {
 	public static final int RULE__TARGET_CONSTRAINT = 4;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Target Constraint' of 'Steplink'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int STEPLINK__TARGET_CONSTRAINT = 5;
+
+	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Creation'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CREATION__APPLIES_CONSTRAINT = 5;
+	public static final int CREATION__APPLIES_CONSTRAINT = 6;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Scheduler'.
@@ -98,7 +106,7 @@ public class HorizontalelasticityValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int SCHEDULER__APPLIES_CONSTRAINT = 6;
+	public static final int SCHEDULER__APPLIES_CONSTRAINT = 7;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -106,7 +114,7 @@ public class HorizontalelasticityValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 6;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 7;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -185,12 +193,14 @@ public class HorizontalelasticityValidator extends EObjectValidator {
 				return validateDynamicadjustment((Dynamicadjustment)value, diagnostics, context);
 			case HorizontalelasticityPackage.RULE:
 				return validateRule((Rule)value, diagnostics, context);
-			case HorizontalelasticityPackage.ACTION:
-				return validateAction((Action)value, diagnostics, context);
+			case HorizontalelasticityPackage.ACTIONTRIGGER:
+				return validateActiontrigger((Actiontrigger)value, diagnostics, context);
 			case HorizontalelasticityPackage.DYNAMICPOLICY:
 				return validateDynamicpolicy((Dynamicpolicy)value, diagnostics, context);
 			case HorizontalelasticityPackage.STEP:
 				return validateStep((Step)value, diagnostics, context);
+			case HorizontalelasticityPackage.STEPLINK:
+				return validateSteplink((Steplink)value, diagnostics, context);
 			case HorizontalelasticityPackage.CREATION:
 				return validateCreation((Creation)value, diagnostics, context);
 			case HorizontalelasticityPackage.SCHEDULER:
@@ -568,20 +578,20 @@ public class HorizontalelasticityValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAction(Action action, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(action, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(action, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(action, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(action, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(action, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(action, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(action, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(action, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(action, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(action, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(action, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(action, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateResource_ResourceKindIsInParent(action, diagnostics, context);
+	public boolean validateActiontrigger(Actiontrigger actiontrigger, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(actiontrigger, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(actiontrigger, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(actiontrigger, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(actiontrigger, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(actiontrigger, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(actiontrigger, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(actiontrigger, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(actiontrigger, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(actiontrigger, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(actiontrigger, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(actiontrigger, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(actiontrigger, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateResource_ResourceKindIsInParent(actiontrigger, diagnostics, context);
 		return result;
 	}
 
@@ -627,6 +637,41 @@ public class HorizontalelasticityValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(step, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateResource_ResourceKindIsInParent(step, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSteplink(Steplink steplink, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(steplink, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(steplink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(steplink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(steplink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(steplink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(steplink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(steplink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(steplink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(steplink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(steplink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(steplink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(steplink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateLink_LinkKindIsInParent(steplink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateLink_sourceReferenceInvariant(steplink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateLink_targetReferenceInvariant(steplink, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSteplink_targetConstraint(steplink, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the targetConstraint constraint of '<em>Steplink</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSteplink_targetConstraint(Steplink steplink, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return steplink.targetConstraint(diagnostics, context);
 	}
 
 	/**

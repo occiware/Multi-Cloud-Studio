@@ -18,9 +18,9 @@ import org.eclipse.cmf.occi.core.OCCIPackage;
 
 import org.eclipse.cmf.occi.infrastructure.InfrastructurePackage;
 
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Action;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.ActionOperation;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.ActionType;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Actiontrigger;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Array;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.ArrofRecStep;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Creation;
@@ -44,6 +44,7 @@ import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Scheduler;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Simpledynamic;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Step;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Stepdynamic;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Steplink;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.TypeMetric;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Uniqueschedule;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Unit;
@@ -179,7 +180,7 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass actionEClass = null;
+	private EClass actiontriggerEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -194,6 +195,13 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 	 * @generated
 	 */
 	private EClass stepEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass steplinkEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -880,8 +888,8 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAction() {
-		return actionEClass;
+	public EClass getActiontrigger() {
+		return actiontriggerEClass;
 	}
 
 	/**
@@ -889,8 +897,8 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAction_Action() {
-		return (EAttribute)actionEClass.getEStructuralFeatures().get(0);
+	public EAttribute getActiontrigger_Action() {
+		return (EAttribute)actiontriggerEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -898,8 +906,8 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAction_ActionType() {
-		return (EAttribute)actionEClass.getEStructuralFeatures().get(1);
+	public EAttribute getActiontrigger_ActionType() {
+		return (EAttribute)actiontriggerEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -907,8 +915,8 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAction_Amount() {
-		return (EAttribute)actionEClass.getEStructuralFeatures().get(2);
+	public EAttribute getActiontrigger_Amount() {
+		return (EAttribute)actiontriggerEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -954,6 +962,24 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 	 */
 	public EAttribute getStep_StepSize() {
 		return (EAttribute)stepEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSteplink() {
+		return steplinkEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getSteplink__TargetConstraint__DiagnosticChain_Map() {
+		return steplinkEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -1255,10 +1281,10 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 		createEAttribute(ruleEClass, RULE__RULE_CONSECUTIVE);
 		createEOperation(ruleEClass, RULE___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
-		actionEClass = createEClass(ACTION);
-		createEAttribute(actionEClass, ACTION__ACTION);
-		createEAttribute(actionEClass, ACTION__ACTION_TYPE);
-		createEAttribute(actionEClass, ACTION__AMOUNT);
+		actiontriggerEClass = createEClass(ACTIONTRIGGER);
+		createEAttribute(actiontriggerEClass, ACTIONTRIGGER__ACTION);
+		createEAttribute(actiontriggerEClass, ACTIONTRIGGER__ACTION_TYPE);
+		createEAttribute(actiontriggerEClass, ACTIONTRIGGER__AMOUNT);
 
 		dynamicpolicyEClass = createEClass(DYNAMICPOLICY);
 
@@ -1266,6 +1292,9 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 		createEAttribute(stepEClass, STEP__STEP_LOWER_STEP_BOUND);
 		createEAttribute(stepEClass, STEP__STEP_UPPER_STEP_BOUND);
 		createEAttribute(stepEClass, STEP__STEP_SIZE);
+
+		steplinkEClass = createEClass(STEPLINK);
+		createEOperation(steplinkEClass, STEPLINK___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
 		creationEClass = createEClass(CREATION);
 		createEAttribute(creationEClass, CREATION__OCCI_COMPUTE_CREATION_DATE);
@@ -1341,9 +1370,10 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 		stepdynamicEClass.getESuperTypes().add(this.getDynamicpolicy());
 		dynamicadjustmentEClass.getESuperTypes().add(this.getDynamic());
 		ruleEClass.getESuperTypes().add(theOCCIPackage.getLink());
-		actionEClass.getESuperTypes().add(theOCCIPackage.getResource());
+		actiontriggerEClass.getESuperTypes().add(theOCCIPackage.getResource());
 		dynamicpolicyEClass.getESuperTypes().add(this.getDynamic());
 		stepEClass.getESuperTypes().add(theOCCIPackage.getResource());
+		steplinkEClass.getESuperTypes().add(theOCCIPackage.getLink());
 		creationEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		schedulerEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		uniquescheduleEClass.getESuperTypes().add(this.getScheduler());
@@ -1462,10 +1492,10 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAction_Action(), this.getActionOperation(), "action", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAction_ActionType(), this.getActionType(), "actionType", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAction_Amount(), this.getFloat(), "amount", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(actiontriggerEClass, Actiontrigger.class, "Actiontrigger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getActiontrigger_Action(), this.getActionOperation(), "action", null, 0, 1, Actiontrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getActiontrigger_ActionType(), this.getActionType(), "actionType", null, 0, 1, Actiontrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getActiontrigger_Amount(), this.getFloat(), "amount", null, 0, 1, Actiontrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dynamicpolicyEClass, Dynamicpolicy.class, "Dynamicpolicy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1473,6 +1503,17 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 		initEAttribute(getStep_StepLowerStepBound(), this.getFloat(), "stepLowerStepBound", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStep_StepUpperStepBound(), this.getFloat(), "stepUpperStepBound", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStep_StepSize(), theOCCIPackage.getInteger(), "stepSize", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(steplinkEClass, Steplink.class, "Steplink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = initEOperation(getSteplink__TargetConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "targetConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(creationEClass, Creation.class, "Creation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCreation_OcciComputeCreationDate(), this.getDate(), "occiComputeCreationDate", null, 0, 1, Creation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1590,6 +1631,12 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 		   });	
 		addAnnotation
 		  (ruleEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "targetConstraint"
+		   });	
+		addAnnotation
+		  (steplinkEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "targetConstraint"

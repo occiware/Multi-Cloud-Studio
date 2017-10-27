@@ -167,13 +167,13 @@ public interface HorizontalelasticityFactory extends EFactory {
 	Rule createRule();
 
 	/**
-	 * Returns a new object of class '<em>Action</em>'.
+	 * Returns a new object of class '<em>Actiontrigger</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Action</em>'.
+	 * @return a new object of class '<em>Actiontrigger</em>'.
 	 * @generated
 	 */
-	Action createAction();
+	Actiontrigger createActiontrigger();
 
 	/**
 	 * Returns a new object of class '<em>Dynamicpolicy</em>'.
@@ -192,6 +192,15 @@ public interface HorizontalelasticityFactory extends EFactory {
 	 * @generated
 	 */
 	Step createStep();
+
+	/**
+	 * Returns a new object of class '<em>Steplink</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Steplink</em>'.
+	 * @generated
+	 */
+	Steplink createSteplink();
 
 	/**
 	 * Returns a new object of class '<em>Creation</em>'.

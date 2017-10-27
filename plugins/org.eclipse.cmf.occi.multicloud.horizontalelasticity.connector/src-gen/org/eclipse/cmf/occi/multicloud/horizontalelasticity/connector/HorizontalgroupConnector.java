@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Tue Oct 17 14:17:54 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Wed Oct 18 15:58:47 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
@@ -28,11 +28,14 @@ import org.eclipse.cmf.occi.infrastructure.Compute;
 import org.eclipse.cmf.occi.infrastructure.ComputeStatus;
 import org.eclipse.cmf.occi.multicloud.elasticocci.connector.MyRunnable;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityFactory;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Instancegrouplink;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Loadbalancer;
 import org.eclipse.cmf.occi.multicloud.vmware.Instancevmware;
 import org.eclipse.cmf.occi.multicloud.vmware.VmwareFactory;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
@@ -74,27 +77,81 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 	 * 
 	 */
 	
-	public void doEditing(EObject element) {
+	public void doEditing(int value) {
+		System.out.println("titi " + this);
+		Horizontalgroup hg = this;
+		HorizontalgroupConnector hgc = this;
 	    // Make sure your element is attached to a source, otherwise this will return null
-	    TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(element);
+		Resource res = this.eResource();
+		ResourceSet rs = this.eResource().getResourceSet();
+		//System.out.println("1-titi " + this.eResource());
+		//System.out.println("2-titi " + this.eResource().getResourceSet());
+		//TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(hg);
+		//TransactionalEditingDomain domain = TransactionalEditingDomain.Factory.INSTANCE.createEditingDomain((ResourceSet) hgc);
+		TransactionalEditingDomain domain = TransactionalEditingDomain.Factory.INSTANCE.createEditingDomain(rs);
+		//if(domain == null){
+		//domain =
+		//TransactionalEditingDomain.Factory.INSTANCE.createEditingDomain(rs);
+		//}
+	    //System.out.println("tata " + domain);
 	    domain.getCommandStack().execute(new RecordingCommand(domain) {
-
 	        @Override
 	        protected void doExecute() {
 	            // Implement your write operations here,
 	            // for example: set a new name
-	            //element.eSet(element.eClass().getEStructuralFeature("occiComputeCores"), size);
-	            //element.eSet(element.eClass().getEStructuralFeature("title"), value);
+	        		//((Horizontalgroup)element).setHorizontalGroupGroupSize(value);
+	   ///     		System.out.println("element " +hgc);
+	    ///    		System.out.println("getfeature " +hgc.eClass().getEStructuralFeature("horizontalGroupGroupSize"));
+	        		hg.eSet(hg.eClass().getEStructuralFeature("horizontalGroupGroupSize"), value);
 	            //((Compute)element).setOcciComputeCores(size);
-	        	    //((Compute)element).eGet(element.eClass().eContainingFeature());
-	          	//element.eGet("occiRetrieve());
 	            //((Compute)element).occiRetrieve();
-	        		//((Compute)element).occiCreate();
-	        		//(Compute)element).occiCreate();
-	        		
 	        }
 	    });
 	}
+	
+	public void doEditing22(int value) {
+		final Horizontalgroup hg = this;
+		//final Machine machine = this;
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                TransactionalEditingDomain ted = 
+                	TransactionUtil.getEditingDomain(hg);
+                ted.getCommandStack().execute(new RecordingCommand(ted) 
+                	{
+                 @Override
+                 protected void doExecute() {
+                	 hg.setHorizontalGroupGroupSize(value);
+                	 //hg.eSet(hg.eClass().getEStructuralFeature("horizontalGroupGroupSize"), value);
+                }
+                });
+            }
+        };
+        Thread thread = new Thread(runnable);
+        thread.start();
+    }
+	
+//	public void doEditing(EObject element) {
+//	    // Make sure your element is attached to a source, otherwise this will return null
+//	    TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(element);
+//	    domain.getCommandStack().execute(new RecordingCommand(domain) {
+//
+//	        @Override
+//	        protected void doExecute() {
+//	            // Implement your write operations here,
+//	            // for example: set a new name
+//	            //element.eSet(element.eClass().getEStructuralFeature("occiComputeCores"), size);
+//	            //element.eSet(element.eClass().getEStructuralFeature("title"), value);
+//	            //((Compute)element).setOcciComputeCores(size);
+//	        	    //((Compute)element).eGet(element.eClass().eContainingFeature());
+//	          	//element.eGet("occiRetrieve());
+//	            //((Compute)element).occiRetrieve();
+//	        		//((Compute)element).occiCreate();
+//	        		//(Compute)element).occiCreate();
+//	        		
+//	        }
+//	    });
+//	}
 
 	@Override
 	public void occiCreate()
@@ -410,13 +467,14 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 					//doEditing3(inst);
 					inst.setImagename("templatelast");
 					//doEditing2(inst, "template");
-					
-					domain = TransactionUtil.getEditingDomain(inst);
-					domain.getCommandStack().execute(new RecordingCommand(domain) {
-					   public void doExecute() {
-						   ((Compute)inst).occiCreate();
-					   }
-					});
+					System.out.print("instance  " + inst);
+					inst.occiCreate();
+					///domain = TransactionUtil.getEditingDomain(inst);
+					///domain.getCommandStack().execute(new RecordingCommand(domain) {
+					///   public void doExecute() {
+					///	   ((Compute)inst).occiCreate();
+					///   }
+					///});
 					
 					index++;
 					//service.submit(myRunnable);

@@ -259,15 +259,15 @@
       </genFeatures>
     </genClasses>
     <genClasses>
-      <ecoreClass href="horizontalelasticity.ecore#//Action"/>
+      <ecoreClass href="horizontalelasticity.ecore#//Actiontrigger"/>
       <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Action/action"/>
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Actiontrigger/action"/>
       </genFeatures>
       <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Action/actionType"/>
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Actiontrigger/actionType"/>
       </genFeatures>
       <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Action/amount"/>
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Actiontrigger/amount"/>
       </genFeatures>
     </genClasses>
     <genClasses>
@@ -284,6 +284,9 @@
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Step/stepSize"/>
       </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="horizontalelasticity.ecore#//Steplink"/>
     </genClasses>
     <genClasses>
       <ecoreClass href="horizontalelasticity.ecore#//Creation"/>

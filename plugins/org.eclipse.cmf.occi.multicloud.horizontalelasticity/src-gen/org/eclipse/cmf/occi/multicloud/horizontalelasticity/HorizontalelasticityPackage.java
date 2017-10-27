@@ -2797,14 +2797,14 @@ public interface HorizontalelasticityPackage extends EPackage {
 	int RULE_OPERATION_COUNT = OCCIPackage.LINK_OPERATION_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ActionImpl <em>Action</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ActiontriggerImpl <em>Actiontrigger</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ActionImpl
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getAction()
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ActiontriggerImpl
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getActiontrigger()
 	 * @generated
 	 */
-	int ACTION = 15;
+	int ACTIONTRIGGER = 15;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -2813,7 +2813,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION__ID = OCCIPackage.RESOURCE__ID;
+	int ACTIONTRIGGER__ID = OCCIPackage.RESOURCE__ID;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -2822,7 +2822,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION__TITLE = OCCIPackage.RESOURCE__TITLE;
+	int ACTIONTRIGGER__TITLE = OCCIPackage.RESOURCE__TITLE;
 
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' reference.
@@ -2831,7 +2831,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION__KIND = OCCIPackage.RESOURCE__KIND;
+	int ACTIONTRIGGER__KIND = OCCIPackage.RESOURCE__KIND;
 
 	/**
 	 * The feature id for the '<em><b>Location</b></em>' attribute.
@@ -2840,7 +2840,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION__LOCATION = OCCIPackage.RESOURCE__LOCATION;
+	int ACTIONTRIGGER__LOCATION = OCCIPackage.RESOURCE__LOCATION;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -2849,7 +2849,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION__ATTRIBUTES = OCCIPackage.RESOURCE__ATTRIBUTES;
+	int ACTIONTRIGGER__ATTRIBUTES = OCCIPackage.RESOURCE__ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Mixins</b></em>' reference list.
@@ -2858,7 +2858,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION__MIXINS = OCCIPackage.RESOURCE__MIXINS;
+	int ACTIONTRIGGER__MIXINS = OCCIPackage.RESOURCE__MIXINS;
 
 	/**
 	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
@@ -2867,7 +2867,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION__PARTS = OCCIPackage.RESOURCE__PARTS;
+	int ACTIONTRIGGER__PARTS = OCCIPackage.RESOURCE__PARTS;
 
 	/**
 	 * The feature id for the '<em><b>Summary</b></em>' attribute.
@@ -2876,7 +2876,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION__SUMMARY = OCCIPackage.RESOURCE__SUMMARY;
+	int ACTIONTRIGGER__SUMMARY = OCCIPackage.RESOURCE__SUMMARY;
 
 	/**
 	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
@@ -2885,7 +2885,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION__LINKS = OCCIPackage.RESOURCE__LINKS;
+	int ACTIONTRIGGER__LINKS = OCCIPackage.RESOURCE__LINKS;
 
 	/**
 	 * The feature id for the '<em><b>Rlinks</b></em>' reference list.
@@ -2894,7 +2894,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION__RLINKS = OCCIPackage.RESOURCE__RLINKS;
+	int ACTIONTRIGGER__RLINKS = OCCIPackage.RESOURCE__RLINKS;
 
 	/**
 	 * The feature id for the '<em><b>Action</b></em>' attribute.
@@ -2903,7 +2903,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION__ACTION = OCCIPackage.RESOURCE_FEATURE_COUNT + 0;
+	int ACTIONTRIGGER__ACTION = OCCIPackage.RESOURCE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Action Type</b></em>' attribute.
@@ -2912,7 +2912,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION__ACTION_TYPE = OCCIPackage.RESOURCE_FEATURE_COUNT + 1;
+	int ACTIONTRIGGER__ACTION_TYPE = OCCIPackage.RESOURCE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Amount</b></em>' attribute.
@@ -2921,16 +2921,16 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION__AMOUNT = OCCIPackage.RESOURCE_FEATURE_COUNT + 2;
+	int ACTIONTRIGGER__AMOUNT = OCCIPackage.RESOURCE_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of structural features of the '<em>Action</em>' class.
+	 * The number of structural features of the '<em>Actiontrigger</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_FEATURE_COUNT = OCCIPackage.RESOURCE_FEATURE_COUNT + 3;
+	int ACTIONTRIGGER_FEATURE_COUNT = OCCIPackage.RESOURCE_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Occi Create</em>' operation.
@@ -2939,7 +2939,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION___OCCI_CREATE = OCCIPackage.RESOURCE___OCCI_CREATE;
+	int ACTIONTRIGGER___OCCI_CREATE = OCCIPackage.RESOURCE___OCCI_CREATE;
 
 	/**
 	 * The operation id for the '<em>Occi Retrieve</em>' operation.
@@ -2948,7 +2948,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION___OCCI_RETRIEVE = OCCIPackage.RESOURCE___OCCI_RETRIEVE;
+	int ACTIONTRIGGER___OCCI_RETRIEVE = OCCIPackage.RESOURCE___OCCI_RETRIEVE;
 
 	/**
 	 * The operation id for the '<em>Occi Update</em>' operation.
@@ -2957,7 +2957,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION___OCCI_UPDATE = OCCIPackage.RESOURCE___OCCI_UPDATE;
+	int ACTIONTRIGGER___OCCI_UPDATE = OCCIPackage.RESOURCE___OCCI_UPDATE;
 
 	/**
 	 * The operation id for the '<em>Occi Delete</em>' operation.
@@ -2966,16 +2966,16 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION___OCCI_DELETE = OCCIPackage.RESOURCE___OCCI_DELETE;
+	int ACTIONTRIGGER___OCCI_DELETE = OCCIPackage.RESOURCE___OCCI_DELETE;
 
 	/**
-	 * The number of operations of the '<em>Action</em>' class.
+	 * The number of operations of the '<em>Actiontrigger</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_OPERATION_COUNT = OCCIPackage.RESOURCE_OPERATION_COUNT + 0;
+	int ACTIONTRIGGER_OPERATION_COUNT = OCCIPackage.RESOURCE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.StepImpl <em>Step</em>}' class.
@@ -3159,6 +3159,178 @@ public interface HorizontalelasticityPackage extends EPackage {
 	int STEP_OPERATION_COUNT = OCCIPackage.RESOURCE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.SteplinkImpl <em>Steplink</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.SteplinkImpl
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getSteplink()
+	 * @generated
+	 */
+	int STEPLINK = 18;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEPLINK__ID = OCCIPackage.LINK__ID;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEPLINK__TITLE = OCCIPackage.LINK__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEPLINK__KIND = OCCIPackage.LINK__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Location</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEPLINK__LOCATION = OCCIPackage.LINK__LOCATION;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEPLINK__ATTRIBUTES = OCCIPackage.LINK__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Mixins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEPLINK__MIXINS = OCCIPackage.LINK__MIXINS;
+
+	/**
+	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEPLINK__PARTS = OCCIPackage.LINK__PARTS;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEPLINK__SOURCE = OCCIPackage.LINK__SOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEPLINK__TARGET = OCCIPackage.LINK__TARGET;
+
+	/**
+	 * The number of structural features of the '<em>Steplink</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEPLINK_FEATURE_COUNT = OCCIPackage.LINK_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Occi Create</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEPLINK___OCCI_CREATE = OCCIPackage.LINK___OCCI_CREATE;
+
+	/**
+	 * The operation id for the '<em>Occi Retrieve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEPLINK___OCCI_RETRIEVE = OCCIPackage.LINK___OCCI_RETRIEVE;
+
+	/**
+	 * The operation id for the '<em>Occi Update</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEPLINK___OCCI_UPDATE = OCCIPackage.LINK___OCCI_UPDATE;
+
+	/**
+	 * The operation id for the '<em>Occi Delete</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEPLINK___OCCI_DELETE = OCCIPackage.LINK___OCCI_DELETE;
+
+	/**
+	 * The operation id for the '<em>Link Target Invariant</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEPLINK___LINK_TARGET_INVARIANT__KIND_KIND = OCCIPackage.LINK___LINK_TARGET_INVARIANT__KIND_KIND;
+
+	/**
+	 * The operation id for the '<em>Link Source Invariant</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEPLINK___LINK_SOURCE_INVARIANT__KIND_KIND = OCCIPackage.LINK___LINK_SOURCE_INVARIANT__KIND_KIND;
+
+	/**
+	 * The operation id for the '<em>Target Constraint</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEPLINK___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.LINK_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Steplink</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEPLINK_OPERATION_COUNT = OCCIPackage.LINK_OPERATION_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.CreationImpl <em>Creation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3166,7 +3338,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getCreation()
 	 * @generated
 	 */
-	int CREATION = 18;
+	int CREATION = 19;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -3239,7 +3411,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getScheduler()
 	 * @generated
 	 */
-	int SCHEDULER = 19;
+	int SCHEDULER = 20;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -3321,7 +3493,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getUniqueschedule()
 	 * @generated
 	 */
-	int UNIQUESCHEDULE = 20;
+	int UNIQUESCHEDULE = 21;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -3421,7 +3593,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getRecurringschedule()
 	 * @generated
 	 */
-	int RECURRINGSCHEDULE = 21;
+	int RECURRINGSCHEDULE = 22;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -3530,7 +3702,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getTypeMetric()
 	 * @generated
 	 */
-	int TYPE_METRIC = 22;
+	int TYPE_METRIC = 23;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.OperatorType <em>Operator Type</em>}' enum.
@@ -3540,7 +3712,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getOperatorType()
 	 * @generated
 	 */
-	int OPERATOR_TYPE = 23;
+	int OPERATOR_TYPE = 24;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.ActionOperation <em>Action Operation</em>}' enum.
@@ -3550,7 +3722,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getActionOperation()
 	 * @generated
 	 */
-	int ACTION_OPERATION = 24;
+	int ACTION_OPERATION = 25;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.ActionType <em>Action Type</em>}' enum.
@@ -3560,7 +3732,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getActionType()
 	 * @generated
 	 */
-	int ACTION_TYPE = 25;
+	int ACTION_TYPE = 26;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.MetricTargetTracking <em>Metric Target Tracking</em>}' enum.
@@ -3570,7 +3742,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getMetricTargetTracking()
 	 * @generated
 	 */
-	int METRIC_TARGET_TRACKING = 26;
+	int METRIC_TARGET_TRACKING = 27;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Unit <em>Unit</em>}' enum.
@@ -3580,7 +3752,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getUnit()
 	 * @generated
 	 */
-	int UNIT = 27;
+	int UNIT = 28;
 
 	/**
 	 * The meta object id for the '<em>Float</em>' data type.
@@ -3590,7 +3762,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getFloat()
 	 * @generated
 	 */
-	int FLOAT = 28;
+	int FLOAT = 29;
 
 	/**
 	 * The meta object id for the '<em>Date</em>' data type.
@@ -3600,7 +3772,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getDate()
 	 * @generated
 	 */
-	int DATE = 29;
+	int DATE = 30;
 
 
 	/**
@@ -4218,47 +4390,47 @@ public interface HorizontalelasticityPackage extends EPackage {
 	EOperation getRule__TargetConstraint__DiagnosticChain_Map();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Action <em>Action</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Actiontrigger <em>Actiontrigger</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Action</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Action
+	 * @return the meta object for class '<em>Actiontrigger</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Actiontrigger
 	 * @generated
 	 */
-	EClass getAction();
+	EClass getActiontrigger();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Action#getAction <em>Action</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Actiontrigger#getAction <em>Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Action</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Action#getAction()
-	 * @see #getAction()
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Actiontrigger#getAction()
+	 * @see #getActiontrigger()
 	 * @generated
 	 */
-	EAttribute getAction_Action();
+	EAttribute getActiontrigger_Action();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Action#getActionType <em>Action Type</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Actiontrigger#getActionType <em>Action Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Action Type</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Action#getActionType()
-	 * @see #getAction()
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Actiontrigger#getActionType()
+	 * @see #getActiontrigger()
 	 * @generated
 	 */
-	EAttribute getAction_ActionType();
+	EAttribute getActiontrigger_ActionType();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Action#getAmount <em>Amount</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Actiontrigger#getAmount <em>Amount</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Amount</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Action#getAmount()
-	 * @see #getAction()
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Actiontrigger#getAmount()
+	 * @see #getActiontrigger()
 	 * @generated
 	 */
-	EAttribute getAction_Amount();
+	EAttribute getActiontrigger_Amount();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamicpolicy <em>Dynamicpolicy</em>}'.
@@ -4312,6 +4484,26 @@ public interface HorizontalelasticityPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getStep_StepSize();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Steplink <em>Steplink</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Steplink</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Steplink
+	 * @generated
+	 */
+	EClass getSteplink();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Steplink#targetConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Target Constraint</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Target Constraint</em>' operation.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Steplink#targetConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getSteplink__TargetConstraint__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Creation <em>Creation</em>}'.
@@ -5059,14 +5251,14 @@ public interface HorizontalelasticityPackage extends EPackage {
 		EOperation RULE___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getRule__TargetConstraint__DiagnosticChain_Map();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ActionImpl <em>Action</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ActiontriggerImpl <em>Actiontrigger</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ActionImpl
-		 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getAction()
+		 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ActiontriggerImpl
+		 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getActiontrigger()
 		 * @generated
 		 */
-		EClass ACTION = eINSTANCE.getAction();
+		EClass ACTIONTRIGGER = eINSTANCE.getActiontrigger();
 
 		/**
 		 * The meta object literal for the '<em><b>Action</b></em>' attribute feature.
@@ -5074,7 +5266,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ACTION__ACTION = eINSTANCE.getAction_Action();
+		EAttribute ACTIONTRIGGER__ACTION = eINSTANCE.getActiontrigger_Action();
 
 		/**
 		 * The meta object literal for the '<em><b>Action Type</b></em>' attribute feature.
@@ -5082,7 +5274,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ACTION__ACTION_TYPE = eINSTANCE.getAction_ActionType();
+		EAttribute ACTIONTRIGGER__ACTION_TYPE = eINSTANCE.getActiontrigger_ActionType();
 
 		/**
 		 * The meta object literal for the '<em><b>Amount</b></em>' attribute feature.
@@ -5090,7 +5282,7 @@ public interface HorizontalelasticityPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ACTION__AMOUNT = eINSTANCE.getAction_Amount();
+		EAttribute ACTIONTRIGGER__AMOUNT = eINSTANCE.getActiontrigger_Amount();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.DynamicpolicyImpl <em>Dynamicpolicy</em>}' class.
@@ -5135,6 +5327,24 @@ public interface HorizontalelasticityPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute STEP__STEP_SIZE = eINSTANCE.getStep_StepSize();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.SteplinkImpl <em>Steplink</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.SteplinkImpl
+		 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticityPackageImpl#getSteplink()
+		 * @generated
+		 */
+		EClass STEPLINK = eINSTANCE.getSteplink();
+
+		/**
+		 * The meta object literal for the '<em><b>Target Constraint</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation STEPLINK___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getSteplink__TargetConstraint__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.CreationImpl <em>Creation</em>}' class.

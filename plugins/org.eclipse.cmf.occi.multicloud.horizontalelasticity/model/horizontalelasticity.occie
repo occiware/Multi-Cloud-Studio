@@ -2,6 +2,7 @@
 <occi:Extension xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:occi="http://schemas.ogf.org/occi/core/ecore" name="horizontalelasticity" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#">
   <import href="http://schemas.ogf.org/occi/core#/"/>
   <import href="http://schemas.ogf.org/occi/infrastructure#/"/>
+  <import href="http://occiware.org/occi/infrastructure/vmware#/"/>
   <kinds name="HorizontalGroup" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#">
     <attributes name="horizontalGroup.name" mutable="true">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
@@ -104,7 +105,7 @@
     </attributes>
     <attributes name="dynamicAdjustment.Target" mutable="true" type="//@types.1"/>
   </kinds>
-  <kinds name="Rule" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" source="//@kinds[term='dynamicpolicy']" target="//@kinds[term='action']">
+  <kinds name="Rule" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" source="//@kinds[term='dynamicpolicy']" target="//@kinds[term='actiontrigger']">
     <attributes name="rule.name" mutable="true">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
@@ -119,7 +120,7 @@
     </attributes>
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
   </kinds>
-  <kinds name="Action" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#">
+  <kinds name="ActionTrigger" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#">
     <attributes name="action" mutable="true" type="//@types.3"/>
     <attributes name="actionType" mutable="true" type="//@types.4"/>
     <attributes name="amount" mutable="true" type="//@types.1"/>
@@ -133,6 +134,9 @@
       <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
     </attributes>
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
+  </kinds>
+  <kinds name="StepLink" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" source="//@kinds[term='simpledynamic']" target="//@kinds[term='step']">
+    <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
   </kinds>
   <mixins name="Creation" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#">
     <attributes name="occi.compute.creation.date" mutable="true" type="//@types.9"/>

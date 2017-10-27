@@ -187,6 +187,11 @@ public class HorizontalelasticcontrollerItemProvider extends ResourceItemProvide
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.RESOURCE__LINKS,
+				 HorizontalelasticityFactory.eINSTANCE.createSteplink()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.RESOURCE__LINKS,
 				 InfrastructureFactory.eINSTANCE.createStoragelink()));
 
 		newChildDescriptors.add

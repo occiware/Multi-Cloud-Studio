@@ -10,17 +10,15 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Tue Oct 17 14:17:54 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Wed Oct 18 15:58:47 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
 import org.eclipse.cmf.occi.core.Link;
-import org.eclipse.cmf.occi.core.Resource;
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalelasticcontroller;
+import org.eclipse.cmf.occi.multicloud.elasticocci.connector.MyRunnable;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup;
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticcontrollerImpl;
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalgroupImpl;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
@@ -134,16 +132,40 @@ public class ManualConnector extends org.eclipse.cmf.occi.multicloud.horizontale
      * - title: 
 	 */
 	public void doEditing(EObject element, int value) {
+		//final Machine machine = this;
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                TransactionalEditingDomain ted = 
+                	TransactionUtil.getEditingDomain(element);
+                ted.getCommandStack().execute(new RecordingCommand(ted) 
+                	{
+                 @Override
+                 protected void doExecute() {
+                	 element.eSet(element.eClass().getEStructuralFeature("horizontalGroupGroupSize"), value);
+                }
+                });
+            }
+        };
+        Thread thread = new Thread(runnable);
+        thread.start();
+    }
+	public void doEditing44(EObject element, int value) {
+		System.out.println("titi " + element);
 	    // Make sure your element is attached to a source, otherwise this will return null
 	    TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(element);
+		///TransactionalEditingDomain domain = TransactionalEditingDomain.Factory.INSTANCE.createEditingDomain((ResourceSet) element);
+	    System.out.println("tata " + domain);
 	    domain.getCommandStack().execute(new RecordingCommand(domain) {
 
 	        @Override
 	        protected void doExecute() {
 	            // Implement your write operations here,
 	            // for example: set a new name
-	        		///((Horizontalgroup)element).setHorizontalGroupGroupSize(value);
-	            ///element.eSet(element.eClass().getEStructuralFeature("horizontalGroupGroupSize"), value);
+	        		//((Horizontalgroup)element).setHorizontalGroupGroupSize(value);
+	        		System.out.println("element " +element);
+	        		System.out.println("getfeature " +element.eClass().getEStructuralFeature("horizontalGroupGroupSize"));
+	            element.eSet(element.eClass().getEStructuralFeature("horizontalGroupGroupSize"), value);
 	            //((Compute)element).setOcciComputeCores(size);
 	            //((Compute)element).occiRetrieve();
 	        }
@@ -163,17 +185,21 @@ public class ManualConnector extends org.eclipse.cmf.occi.multicloud.horizontale
 		}
 		if (linkedGroup != null) {
 		   hg = (Horizontalgroup) linkedGroup.getTarget();
+		   System.out.println("hg "+ hg);
+		   System.out.println("getManualGroupSize() "+getManualGroupSize());
 		   if ((getManualGroupSize() != 0) && (getManualGroupSize() != null)) {
-			    //doEditing(hg, getManualGroupSize());
-				hg.setHorizontalGroupGroupSize(getManualGroupSize());
+			   System.out.println("toto");
+			   doEditing(hg, getManualGroupSize());
+			   ((HorizontalgroupConnector) hg).doEditing22(getManualGroupSize());
+				//hg.setHorizontalGroupGroupSize(getManualGroupSize());
 			}		   
-		   if ((getManualMaxGroupSize() != 0) && (getManualMaxGroupSize() != null)) {
-				hg.setHorizontalGroupMaximum(getManualMaxGroupSize());
-			}
-	   
-			if ((getManualMinGroupSize() != 0) && (getManualMinGroupSize() != null)) {
-				hg.setHorizontalGroupMinimum(getManualMinGroupSize());
-			}
+		 //  if ((getManualMaxGroupSize() != 0) && (getManualMaxGroupSize() != null)) {
+		//		hg.setHorizontalGroupMaximum(getManualMaxGroupSize());
+		//	}
+	   //
+		//	if ((getManualMinGroupSize() != 0) && (getManualMinGroupSize() != null)) {
+		//		hg.setHorizontalGroupMinimum(getManualMinGroupSize());
+		//	}
 			
 			//hg.occiUpdate();
 

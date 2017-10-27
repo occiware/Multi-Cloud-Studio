@@ -350,7 +350,8 @@ public class RuleImpl extends LinkImpl implements Rule {
 		 *     if severity <= 0
 		 *     then true
 		 *     else
-		 *       let result : occi::Boolean[1] = self.target.oclIsKindOf(Action)
+		 *       let
+		 *         result : occi::Boolean[1] = self.target.oclIsKindOf(Actiontrigger)
 		 *       in
 		 *         'Rule::targetConstraint'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
 		 *     endif
@@ -364,9 +365,9 @@ public class RuleImpl extends LinkImpl implements Rule {
 			symbol_0 = ValueUtil.TRUE_VALUE;
 		}
 		else {
-			final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_horizontalelasticity_c_c_Action = idResolver.getClass(HorizontalelasticityTables.CLSSid_Action, null);
+			final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_horizontalelasticity_c_c_Actiontrigger = idResolver.getClass(HorizontalelasticityTables.CLSSid_Actiontrigger, null);
 			final /*@NonInvalid*/ Resource target = this.getTarget();
-			final /*@NonInvalid*/ boolean result = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, target, TYP_horizontalelasticity_c_c_Action).booleanValue();
+			final /*@NonInvalid*/ boolean result = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, target, TYP_horizontalelasticity_c_c_Actiontrigger).booleanValue();
 			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, HorizontalelasticityTables.STR_Rule_c_c_targetConstraint, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, HorizontalelasticityTables.INT_0).booleanValue();
 			symbol_0 = logDiagnostic;
 		}

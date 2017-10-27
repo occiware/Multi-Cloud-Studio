@@ -143,8 +143,8 @@ public class HorizontalelasticityAdapterFactory extends AdapterFactoryImpl {
 				return createRuleAdapter();
 			}
 			@Override
-			public Adapter caseAction(Action object) {
-				return createActionAdapter();
+			public Adapter caseActiontrigger(Actiontrigger object) {
+				return createActiontriggerAdapter();
 			}
 			@Override
 			public Adapter caseDynamicpolicy(Dynamicpolicy object) {
@@ -153,6 +153,10 @@ public class HorizontalelasticityAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseStep(Step object) {
 				return createStepAdapter();
+			}
+			@Override
+			public Adapter caseSteplink(Steplink object) {
+				return createSteplinkAdapter();
 			}
 			@Override
 			public Adapter caseCreation(Creation object) {
@@ -417,16 +421,16 @@ public class HorizontalelasticityAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Action <em>Action</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Actiontrigger <em>Actiontrigger</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Action
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Actiontrigger
 	 * @generated
 	 */
-	public Adapter createActionAdapter() {
+	public Adapter createActiontriggerAdapter() {
 		return null;
 	}
 
@@ -455,6 +459,20 @@ public class HorizontalelasticityAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createStepAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Steplink <em>Steplink</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Steplink
+	 * @generated
+	 */
+	public Adapter createSteplinkAdapter() {
 		return null;
 	}
 

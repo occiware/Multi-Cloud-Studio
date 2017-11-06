@@ -15,8 +15,12 @@
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
 import org.eclipse.cmf.occi.core.Link;
+import org.eclipse.cmf.occi.multicloud.elasticocci.connector.MyRunnable;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup;
 import org.eclipse.cmf.occi.multicloud.vmware.Instancevmware;
+import org.eclipse.emf.transaction.RecordingCommand;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -33,6 +37,7 @@ public class DynamicadjustmentConnector extends org.eclipse.cmf.occi.multicloud.
 	/**
 	 * Initialize the logger.
 	 */
+	private static volatile boolean bool=true;
 	private static Logger LOGGER = LoggerFactory.getLogger(DynamicadjustmentConnector.class);
 
 	// Start of user code Dynamicadjustmentconnector_constructor
@@ -117,7 +122,7 @@ public class DynamicadjustmentConnector extends org.eclipse.cmf.occi.multicloud.
 	{
 		LOGGER.debug("Action stop() called on " + this);
 
-		// TODO: Implement how to stop this dynamicadjustment.
+		bool = false;
 	}
 	// End of user code
 	// Start of user code Dynamicadjustment_Kind_start_action
@@ -131,9 +136,34 @@ public class DynamicadjustmentConnector extends org.eclipse.cmf.occi.multicloud.
 	public void start()
 	{
 		LOGGER.debug("Action start() called on " + this);
+		bool = true;
+		///final TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(this);
+		MyRunnable myRunnable = new MyRunnable() {
+			public void run() {
+				while(bool) {
+					///domain.getCommandStack().execute(new RecordingCommand(domain) {
+						///@Override
+						///protected void doExecute() {
+							startdynamicadjustment();
+						///}});
+					
+					System.out.println("Wait betwwen loop cycles to avoid consuming CPU cycles");	
+					try {
+						Thread.sleep(20000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}	
+				}
+			}
+		};
+		Thread thread = new Thread(myRunnable);
+		thread.start();
+	}
+	
+	protected void startdynamicadjustment() {
 		DynamicpolicyConnector dp = new DynamicpolicyConnector();
-		
-		while(true) {
+		//while(bool) {
 			String  targetMetric = this.getDynamicAdjustmentMetric().getName();
 			double metrcUsage  = dp.getMetricUsage(targetMetric, 0, 0);
 			
@@ -147,18 +177,8 @@ public class DynamicadjustmentConnector extends org.eclipse.cmf.occi.multicloud.
 			
 			if(metrcUsage < decreaseIndicator) {
 				action( "remove", "instanceCount", 1, this.getDynamicAdjustmentCoolDuration());
-			}
-		System.out.println("Wait betwwen loop cycles to avoid consuming CPU cycles");	
-		try {
-			Thread.sleep(20000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}	
-		}
-		
-
-		// TODO: Implement how to start this dynamicadjustment.
+			}	
+		//}
 	}
 	
 	public Horizontalgroup getHorzontalgroup()
@@ -180,25 +200,40 @@ public class DynamicadjustmentConnector extends org.eclipse.cmf.occi.multicloud.
 	public void action( String action, String actionType, float amount, int coolduration)
 	{
 		//DynamicConnector dc = new DynamicConnector();
+		final TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(this);
 		Horizontalgroup hg =  getHorzontalgroup();
-		int numberofinstances = 0;
+		int  numberofinstances;
 		int currentInstance = hg.getHorizontalGroupGroupSize();
 		if (action.equals("add")) {
 			System.out.println("You are going to add more resources");
 			if(actionType.equals("instanceCount")) {
 				System.out.println("You are going to add more resources according to " + actionType);
 				numberofinstances = (int) amount;
-				System.out.println(" nubmer of instances to ba added " + numberofinstances);
+				System.out.println(" nubmer of instances to be added " + numberofinstances);
 				System.out.println(" The group size will become  " + (numberofinstances + currentInstance));
-				hg.setHorizontalGroupGroupSize(numberofinstances + currentInstance);
-				//hg.occiUpdate();
+				///int newGroupSize = numberofinstances + currentInstance;
+				domain.getCommandStack().execute(new RecordingCommand(domain) {
+					@Override
+					protected void doExecute() {
+						hg.setHorizontalGroupGroupSize(numberofinstances + currentInstance);
+						hg.occiUpdate();
+					}});
+				
+				///hg.setHorizontalGroupGroupSize(numberofinstances + currentInstance);
+				///hg.occiUpdate();
 			} else if(actionType.equals("percent")) {
 				System.out.println("You are going to add more resources according to " + actionType);
 				System.out.print("\n current instance are :" + currentInstance);
 				numberofinstances = (int) (currentInstance * (amount/100));
-				hg.setHorizontalGroupGroupSize(currentInstance + numberofinstances);
+				//hg.setHorizontalGroupGroupSize(currentInstance + numberofinstances);
 				//hg.occiUpdate();
 				System.out.println("\n the number of inatances will be " + (currentInstance + numberofinstances));
+				domain.getCommandStack().execute(new RecordingCommand(domain) {
+					@Override
+					protected void doExecute() {
+						hg.setHorizontalGroupGroupSize(numberofinstances + currentInstance);
+						hg.occiUpdate();
+					}});
 			}
 			
 		}
@@ -212,12 +247,24 @@ public class DynamicadjustmentConnector extends org.eclipse.cmf.occi.multicloud.
 				System.out.println(" The group size will become  " + ( currentInstance - numberofinstances));
 				//hg.setHorizontalGroupGroupSize(numberofinstances + currentInstance);
 				//hg.occiUpdate();
+				domain.getCommandStack().execute(new RecordingCommand(domain) {
+					@Override
+					protected void doExecute() {
+						hg.setHorizontalGroupGroupSize(currentInstance - numberofinstances);
+						hg.occiUpdate();
+					}});
 			} else if(actionType.equals("percent")) {
 				System.out.println("You are going to remove more resources according to " + actionType);
 				System.out.print("\n current instance are :" + currentInstance);
 				numberofinstances = (int) (currentInstance * (amount/100));
 				hg.setHorizontalGroupGroupSize(currentInstance - numberofinstances);
 				System.out.println("\n the number of instances or groupsize will be:" + (currentInstance - numberofinstances));
+				domain.getCommandStack().execute(new RecordingCommand(domain) {
+					@Override
+					protected void doExecute() {
+						hg.setHorizontalGroupGroupSize(currentInstance - numberofinstances);
+						hg.occiUpdate();
+					}});
 			}
 		}
 		System.out.print("wait, cool duration");

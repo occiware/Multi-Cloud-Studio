@@ -27,6 +27,9 @@ import org.eclipse.cmf.occi.multicloud.elasticocci.connector.MyRunnable;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.ArrofRecStep;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.RecurrenceStep;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.transaction.RecordingCommand;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
 ///////Quartz//////////
 import org.quartz.CronScheduleBuilder;
 import org.quartz.JobBuilder;
@@ -35,7 +38,13 @@ import org.quartz.Scheduler;
 import org.quartz.SchedulerException;
 import org.quartz.Trigger;
 import org.quartz.TriggerBuilder;
+import org.quartz.TriggerKey;
 import org.quartz.impl.StdSchedulerFactory;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.text.DateFormat;
+
 
 
 /**
@@ -50,7 +59,10 @@ public class RecurringscheduleConnector extends org.eclipse.cmf.occi.multicloud.
 	 * Initialize the logger.
 	 */
 	private static Logger LOGGER = LoggerFactory.getLogger(RecurringscheduleConnector.class);
-
+	Scheduler scheduler;
+	//TriggerKey triggerKey;
+	Trigger trigger;
+	
 	// Start of user code Recurringscheduleconnector_constructor
 	/**
 	 * Constructs a recurringschedule connector.
@@ -89,40 +101,46 @@ public class RecurringscheduleConnector extends org.eclipse.cmf.occi.multicloud.
 				.withIdentity("dummyJobName", "group1").build();
 		//job1.getJobDataMap().put("key", entity); /// pass paramaters to job
 		
-		Trigger trigger = TriggerBuilder
+		//Trigger trigger = TriggerBuilder
+		this.trigger = TriggerBuilder
 				.newTrigger()
-				.withIdentity("dummyTriggerName", "group1")
-				.withSchedule(
-					CronScheduleBuilder.cronSchedule("0/20 * * * * ?"))
+				.withIdentity("triggerkeyname", "group1")
+				.startAt(this.getRecurringscheduleStartDate())
+				.withSchedule(CronScheduleBuilder.cronSchedule("0/20 * * * * ?"))
 				.build();
-
+			//.endAt(enddate)
 		    //schedule it
-		Scheduler scheduler;
+		//Scheduler scheduler;
 		try {
-			scheduler = new StdSchedulerFactory().getScheduler();
-		    scheduler.getContext().put("key", entity);
-
-			scheduler.start();
-			scheduler.scheduleJob(job1, trigger);
+			this.scheduler = new StdSchedulerFactory().getScheduler();
+			this.scheduler.getContext().put("key", entity);
+			this.scheduler.start();
+			this.scheduler.scheduleJob(job1, this.trigger);
 		} catch (SchedulerException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
+	
 	@Override
 	public void stop()
 	{
 		////// just test of record //////////////
 		//RecurrenceStep arr {second,{20,24}, minutes,{55}, hour,{15}, domonth,{30}, month,{12}, doweek,{1}, year,{2007}}
-		EList<RecurrenceStep> xy = (EList<RecurrenceStep>) getRecurringscheduleRecurrence();
+		////EList<RecurrenceStep> xy = (EList<RecurrenceStep>) getRecurringscheduleRecurrence();
 		//ArrofRecStep xy =  getRecurringscheduleRecurrence();
-		for(RecurrenceStep element: xy) {
-			System.out.println(element);
-		}
+		////for(RecurrenceStep element: xy) {
+			////System.out.println(element);
+		////}
 		
 		LOGGER.debug("Action stop() called on " + this);
-
-		// TODO: Implement how to stop this recurringschedule.
+		//this.scheduler.unscheduleJob("dummyTriggerName", "group1");
+		try {
+			this.scheduler.unscheduleJob(this.trigger.getKey());
+		} catch (SchedulerException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	// End of user code
 		

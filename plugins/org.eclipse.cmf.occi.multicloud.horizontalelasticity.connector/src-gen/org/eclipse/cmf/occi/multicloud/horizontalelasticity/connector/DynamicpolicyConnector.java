@@ -134,7 +134,7 @@ public class DynamicpolicyConnector extends org.eclipse.cmf.occi.multicloud.hori
 		
 	public double getMetricUsage(String metricName, int period, int consecutive)
 	{
-		double metrcUsage = 34.0;
+		double metrcUsage = 70.0;
 		if (metricName.equals("CPUtilisation")) {
 			System.out.println("\n Now, we found the accumulated " + metricName + " the metci usage ");
 		} 

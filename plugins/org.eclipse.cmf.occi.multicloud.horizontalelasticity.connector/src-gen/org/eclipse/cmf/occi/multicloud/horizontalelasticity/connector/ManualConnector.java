@@ -185,8 +185,8 @@ public class ManualConnector extends org.eclipse.cmf.occi.multicloud.horizontale
 		}
 		if (linkedGroup != null) {
 		   hg = (Horizontalgroup) linkedGroup.getTarget();
-		   System.out.println("hg "+ hg);
-		   System.out.println("getManualGroupSize() "+getManualGroupSize());
+		   //System.out.println("hg "+ hg);
+		   //System.out.println("getManualGroupSize() "+getManualGroupSize());
 		   if ((getManualGroupSize() != 0) && (getManualGroupSize() != null)) {
 			   System.out.println("toto");
 			  // doEditing(hg, getManualGroupSize());
@@ -208,7 +208,4 @@ public class ManualConnector extends org.eclipse.cmf.occi.multicloud.horizontale
 		  }
 	}
 	// End of user code
-		
-
-
 }	

@@ -21,6 +21,9 @@ import java.util.Date;
 import java.util.Timer;
 
 import org.eclipse.cmf.occi.core.Entity;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamicadjustment;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Simpledynamic;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Stepdynamic;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
@@ -113,20 +116,36 @@ public class UniquescheduleConnector extends org.eclipse.cmf.occi.multicloud.hor
 		// TODO: Implement how to stop this uniqueschedule.
 		
 		final Entity  entity = getEntity();
-        final TransactionalEditingDomain ted = 
-        	TransactionUtil.getEditingDomain(this);
-        System.out.println("the domain " + ted);
-        Timer timer = new Timer(true);
+        final TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(this);
+        System.out.println("the domain " + domain);
+       // Timer timer = new Timer(true);
+        this.timer = new Timer(true);
         timer.schedule(new Scheduler() {
         		@Override
             public void run() {
-        			ted.getCommandStack().execute(new RecordingCommand(ted) {
+        			domain.getCommandStack().execute(new RecordingCommand(domain) {
 
 						@Override
 						protected void doExecute() {
-							ManualConnector man = (ManualConnector) entity;
-							man.start();
+							if (entity instanceof ManualConnector) {
+								ManualConnector man = (ManualConnector) entity;
+								man.start();
+							}
 							
+							else if (entity instanceof Simpledynamic) {
+								SimpledynamicConnector man = (SimpledynamicConnector) entity;
+								man.start();
+							}
+							
+							else if (entity instanceof Stepdynamic) {
+								StepdynamicConnector man = (StepdynamicConnector) entity;
+								man.start();
+							}
+							
+							else if (entity instanceof Dynamicadjustment) {
+								DynamicadjustmentConnector man = (DynamicadjustmentConnector) entity;
+								man.start();
+							}
 						}
         					
 	        	});
@@ -143,7 +162,9 @@ public class UniquescheduleConnector extends org.eclipse.cmf.occi.multicloud.hor
 	{
 		LOGGER.debug("Action stop() called on " + this);
 
-		// TODO: Implement how to stop this uniqueschedule.
+		if(this.timer != null) {
+			this.timer.cancel();
+		}
 	}
 	// End of user code
 		

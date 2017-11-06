@@ -17,10 +17,14 @@ package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 import java.util.ArrayList;
 
 import org.eclipse.cmf.occi.core.Link;
+import org.eclipse.cmf.occi.multicloud.elasticocci.connector.MyRunnable;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Actiontrigger;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Rule;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Step;
+import org.eclipse.emf.transaction.RecordingCommand;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -37,6 +41,7 @@ public class SimpledynamicConnector extends org.eclipse.cmf.occi.multicloud.hori
 	/**
 	 * Initialize the logger.
 	 */
+	private static volatile boolean bool=true;
 	private static Logger LOGGER = LoggerFactory.getLogger(SimpledynamicConnector.class);
 
 	// Start of user code Simpledynamicconnector_constructor
@@ -60,6 +65,7 @@ public class SimpledynamicConnector extends org.eclipse.cmf.occi.multicloud.hori
 	@Override
 	public void occiCreate()
 	{
+		System.out.print("you are in simple dynamic");
 		LOGGER.debug("occiCreate() called on " + this);
 		// TODO: Implement this callback or remove this method.
 	}
@@ -116,7 +122,7 @@ public class SimpledynamicConnector extends org.eclipse.cmf.occi.multicloud.hori
 	public void stop()
 	{
 		LOGGER.debug("Action stop() called on " + this);
-
+		bool = false;
 		// TODO: Implement how to stop this simpledynamic.
 	}
 	// End of user code
@@ -130,8 +136,34 @@ public class SimpledynamicConnector extends org.eclipse.cmf.occi.multicloud.hori
 	@Override
 	public void start()
 	{
-		LOGGER.debug("Action start() called on " + this);
-		
+		bool = true;
+		final TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(this);
+		MyRunnable myRunnable = new MyRunnable() {
+			public void run() {
+				//////// main code //////
+				while(bool) {
+					domain.getCommandStack().execute(new RecordingCommand(domain) {
+						@Override
+						protected void doExecute() {
+							startDynamic();
+						}});
+					System.out.println("Wait 20 second between loop to save CPU cycles");
+					try {
+						Thread.sleep(20000);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+				//////// end of run //////
+			}
+		};
+		Thread thread = new Thread(myRunnable);
+		thread.start();
+	}
+	
+	///////////////////////////dynamic start/////////
+	public void startDynamic()
+	{
 		//Horizontalgroup hg = null;
 		int removeRulesCount = 0;
 		int removeRulesTrue = 0;
@@ -175,18 +207,15 @@ public class SimpledynamicConnector extends org.eclipse.cmf.occi.multicloud.hori
 			}
 		}
 		
-		if (removeRulesCount == removeRulesTrue) {  //all the rules that have remove rules are true
+		if (removeRulesCount == removeRulesTrue && (removeRulesCount !=0 )) {  //all the rules that have remove rules are true
 			Rule myRule  = actionList.get(actionList.size() - 1);
 			Actiontrigger action = (Actiontrigger)myRule.getTarget();
 			String actionname = action.getAction().getName();
 			String actiontype = action.getActionType().getName();
 			Float amount = action.getAmount();
 			action(actionname, actiontype, amount, coolduration);
-		}
-
-		// TODO: Implement how to start this simpledynamic.
+		}		
 	}
-	
 	/////////////////////// action /////////////
 	public void action( String action, String actionType, float amount, int coolduration)
 	{
@@ -201,8 +230,8 @@ public class SimpledynamicConnector extends org.eclipse.cmf.occi.multicloud.hori
 				numberofinstances = (int) amount;
 				System.out.println(" nubmer of instances to ba added " + numberofinstances);
 				System.out.println(" The group size will become  " + (numberofinstances + currentInstance));
-				//hg.setHorizontalGroupGroupSize(numberofinstances + currentInstance);
-				//hg.occiUpdate();
+				hg.setHorizontalGroupGroupSize(numberofinstances + currentInstance);
+				hg.occiUpdate();
 			} else if(actionType.equals("percent")) {
 				System.out.println("You are going to add more resources according to " + actionType);
 				System.out.print("\n current instance are :" + currentInstance);

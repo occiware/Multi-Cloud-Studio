@@ -15,11 +15,15 @@
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
 import org.eclipse.cmf.occi.core.Link;
+import org.eclipse.cmf.occi.multicloud.elasticocci.connector.MyRunnable;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Actiontrigger;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Rule;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Step;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Steplink;
+import org.eclipse.emf.transaction.RecordingCommand;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
@@ -37,6 +41,7 @@ public class StepdynamicConnector extends org.eclipse.cmf.occi.multicloud.horizo
 	/**
 	 * Initialize the logger.
 	 */
+	private static volatile boolean controller=true;
 	private static Logger LOGGER = LoggerFactory.getLogger(StepdynamicConnector.class);
 
 	// Start of user code Stepdynamicconnector_constructor
@@ -117,7 +122,7 @@ public class StepdynamicConnector extends org.eclipse.cmf.occi.multicloud.horizo
 	{
 		LOGGER.debug("Action stop() called on " + this);
 
-		// TODO: Implement how to stop this stepdynamic.
+		controller = false;
 	}
 	// End of user code
 	// Start of user code Stepdynamic_Kind_start_action
@@ -131,7 +136,17 @@ public class StepdynamicConnector extends org.eclipse.cmf.occi.multicloud.horizo
 	public void start()
 	{
 		LOGGER.debug("Action start() called on " + this);
-		
+		MyRunnable myRunnable = new MyRunnable() {
+			public void run() {
+				startstepdynamic();
+			}
+		};
+		Thread thread = new Thread(myRunnable);
+		thread.start();	
+	}
+	// End of user code
+	
+	protected void startstepdynamic() {
 		Rule myRule = null;
 		ArrayList<Step> arrlistofsteps= new ArrayList<Step>();
 		for (Link link : this.getLinks()) {
@@ -143,7 +158,7 @@ public class StepdynamicConnector extends org.eclipse.cmf.occi.multicloud.horizo
 				arrlistofsteps.add(sp);
 			}
 		}
-		Boolean controller = true;
+		controller = true;
 		while (controller) {
 			if (myRule != null) {
 				DynamicpolicyConnector dp = new DynamicpolicyConnector();
@@ -192,14 +207,15 @@ public class StepdynamicConnector extends org.eclipse.cmf.occi.multicloud.horizo
 			e.printStackTrace();
 		}	
 		}
-	}
-	// End of user code
 		
+	}
+	
 	public void action( String action, String actionType, float amount, int coolduration)
 	{
+		final TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(this);
 		//DynamicConnector dc = new DynamicConnector();
 		Horizontalgroup hg =  getHorzontalgroup();
-		int numberofinstances = 0;
+		int numberofinstances;
 		int currentInstance = hg.getHorizontalGroupGroupSize();
 		if (action.equals("add")) {
 			System.out.println("You are going to add more resources");
@@ -210,6 +226,12 @@ public class StepdynamicConnector extends org.eclipse.cmf.occi.multicloud.horizo
 				System.out.println(" The group size will become  " + (numberofinstances + currentInstance));
 				//hg.setHorizontalGroupGroupSize(numberofinstances + currentInstance);
 				//hg.occiUpdate();
+				domain.getCommandStack().execute(new RecordingCommand(domain) {
+					@Override
+					protected void doExecute() {
+						hg.setHorizontalGroupGroupSize(numberofinstances + currentInstance);
+						hg.occiUpdate();
+					}});
 			} else if(actionType.equals("percent")) {
 				System.out.println("You are going to add more resources according to " + actionType);
 				System.out.print("\n current instance are :" + currentInstance);
@@ -217,6 +239,12 @@ public class StepdynamicConnector extends org.eclipse.cmf.occi.multicloud.horizo
 				//hg.setHorizontalGroupGroupSize(currentInstance + numberofinstances);
 				//hg.occiUpdate();
 				System.out.println("\n the number of inatances will be " + (currentInstance + numberofinstances));
+				domain.getCommandStack().execute(new RecordingCommand(domain) {
+					@Override
+					protected void doExecute() {
+						hg.setHorizontalGroupGroupSize(numberofinstances + currentInstance);
+						hg.occiUpdate();
+					}});
 			}
 			
 		}
@@ -230,12 +258,24 @@ public class StepdynamicConnector extends org.eclipse.cmf.occi.multicloud.horizo
 				System.out.println(" The group size will become  " + ( currentInstance - numberofinstances));
 				//hg.setHorizontalGroupGroupSize(numberofinstances + currentInstance);
 				//hg.occiUpdate();
+				domain.getCommandStack().execute(new RecordingCommand(domain) {
+					@Override
+					protected void doExecute() {
+						hg.setHorizontalGroupGroupSize(currentInstance - numberofinstances);
+						hg.occiUpdate();
+					}});
 			} else if(actionType.equals("percent")) {
 				System.out.println("You are going to remove more resources according to " + actionType);
 				System.out.print("\n current instance are :" + currentInstance);
 				numberofinstances = (int) (currentInstance * (amount/100));
 				hg.setHorizontalGroupGroupSize(currentInstance - numberofinstances);
 				System.out.println("\n the number of instances or groupsize will be:" + (currentInstance - numberofinstances));
+				domain.getCommandStack().execute(new RecordingCommand(domain) {
+					@Override
+					protected void doExecute() {
+						hg.setHorizontalGroupGroupSize(currentInstance - numberofinstances);
+						hg.occiUpdate();
+					}});
 			}
 		}
 		System.out.print("wait, cool duration");

@@ -42,7 +42,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='appliesConstraint'"
  * @generated
  */
-public interface Strategymemory extends MixinBase, Strategycompute {
+public interface Strategymemory extends Strategycompute, MixinBase {
 	/**
 	 * Returns the value of the '<em><b>Strategy Memory Mode</b></em>' attribute.
 	 * The default value is <code>"dynamic"</code>.

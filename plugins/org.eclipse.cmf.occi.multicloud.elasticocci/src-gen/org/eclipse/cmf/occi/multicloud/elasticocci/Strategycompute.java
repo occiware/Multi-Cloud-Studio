@@ -13,7 +13,9 @@
 package org.eclipse.cmf.occi.multicloud.elasticocci;
 
 import java.util.Map;
+
 import org.eclipse.cmf.occi.core.MixinBase;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 
 /**
@@ -36,7 +38,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='MustBeCompute'"
  * @generated
  */
-public interface Strategycompute extends MixinBase, Strategy {
+public interface Strategycompute extends Strategy, MixinBase {
 	/**
 	 * Returns the value of the '<em><b>Strategy Compute Uthreshold</b></em>' attribute.
 	 * The default value is <code>"90"</code>.

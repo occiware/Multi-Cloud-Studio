@@ -42,7 +42,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='appliesConstraint'"
  * @generated
  */
-public interface Strategycpu extends MixinBase, Strategycompute {
+public interface Strategycpu extends Strategycompute, MixinBase {
 	/**
 	 * Returns the value of the '<em><b>Strategy CPU Upper Limit</b></em>' attribute.
 	 * The default value is <code>"7"</code>.
@@ -97,7 +97,7 @@ public interface Strategycpu extends MixinBase, Strategycompute {
 
 	/**
 	 * Returns the value of the '<em><b>Strategy CPU Mode</b></em>' attribute.
-	 * The default value is <code>"dynamic"</code>.
+	 * The default value is <code>"scheduled"</code>.
 	 * The literals are from the enumeration {@link org.eclipse.cmf.occi.multicloud.elasticocci.ModeType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -108,7 +108,7 @@ public interface Strategycpu extends MixinBase, Strategycompute {
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ModeType
 	 * @see #setStrategyCPUMode(ModeType)
 	 * @see org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage#getStrategycpu_StrategyCPUMode()
-	 * @model default="dynamic"
+	 * @model default="scheduled"
 	 * @generated
 	 */
 	ModeType getStrategyCPUMode();

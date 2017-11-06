@@ -15,6 +15,7 @@ package org.eclipse.cmf.occi.multicloud.elasticocci.impl;
 import org.eclipse.cmf.occi.core.OCCIPackage;
 
 import org.eclipse.cmf.occi.infrastructure.InfrastructurePackage;
+
 import org.eclipse.cmf.occi.multicloud.elasticocci.DirectionType;
 import org.eclipse.cmf.occi.multicloud.elasticocci.Elasticcontroller;
 import org.eclipse.cmf.occi.multicloud.elasticocci.Elasticlink;
@@ -701,12 +702,12 @@ public class ElasticocciPackageImpl extends EPackageImpl implements ElasticocciP
 		elasticcontrollerEClass.getESuperTypes().add(theOCCIPackage.getResource());
 		elasticlinkEClass.getESuperTypes().add(theOCCIPackage.getLink());
 		strategyEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
-		strategycomputeEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		strategycomputeEClass.getESuperTypes().add(this.getStrategy());
-		strategycpuEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		strategycomputeEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		strategycpuEClass.getESuperTypes().add(this.getStrategycompute());
-		strategymemoryEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		strategycpuEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		strategymemoryEClass.getESuperTypes().add(this.getStrategycompute());
+		strategymemoryEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(elasticcontrollerEClass, Elasticcontroller.class, "Elasticcontroller", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -752,7 +753,7 @@ public class ElasticocciPackageImpl extends EPackageImpl implements ElasticocciP
 		initEClass(strategycpuEClass, Strategycpu.class, "Strategycpu", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStrategycpu_StrategyCPUUpperLimit(), theOCCIPackage.getInteger(), "StrategyCPUUpperLimit", "7", 0, 1, Strategycpu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStrategycpu_StrategyCPULowerLimit(), theOCCIPackage.getInteger(), "StrategyCPULowerLimit", "1", 0, 1, Strategycpu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStrategycpu_StrategyCPUMode(), this.getModeType(), "StrategyCPUMode", "dynamic", 0, 1, Strategycpu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStrategycpu_StrategyCPUMode(), this.getModeType(), "StrategyCPUMode", "scheduled", 0, 1, Strategycpu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStrategycpu_StrategyCPUDirection(), this.getDirectionType(), "StrategyCPUDirection", "up", 0, 1, Strategycpu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStrategycpu_StrategyCPUStepCPUDecrease(), theOCCIPackage.getInteger(), "StrategyCPUStepCPUDecrease", "1", 0, 1, Strategycpu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStrategycpu_StrategyCPUStepCPUIncrease(), theOCCIPackage.getInteger(), "StrategyCPUStepCPUIncrease", "1", 0, 1, Strategycpu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -887,7 +888,7 @@ public class ElasticocciPackageImpl extends EPackageImpl implements ElasticocciP
 		  (getElasticlink__TargetConstraint__DiagnosticChain_Map(), 
 		   source, 
 		   new String[] {
-			 "body", "self.target.oclIsKindOf(occi::Resource)"
+			 "body", "self.target.oclIsKindOf(core::Resource)"
 		   });	
 		addAnnotation
 		  (getStrategy__AppliesConstraint__DiagnosticChain_Map(), 

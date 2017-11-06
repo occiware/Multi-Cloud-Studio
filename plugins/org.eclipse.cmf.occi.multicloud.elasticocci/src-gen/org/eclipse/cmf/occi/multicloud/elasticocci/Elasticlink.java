@@ -36,7 +36,7 @@ public interface Elasticlink extends Link {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.target.oclIsKindOf(occi::Resource)'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.target.oclIsKindOf(core::Resource)'"
 	 * @generated
 	 */
 	boolean targetConstraint(DiagnosticChain diagnostics, Map<Object, Object> context);

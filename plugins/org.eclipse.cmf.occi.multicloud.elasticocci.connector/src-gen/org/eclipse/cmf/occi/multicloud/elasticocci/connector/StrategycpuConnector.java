@@ -141,11 +141,12 @@ public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasti
 	    // Make sure your element is attached to a source, otherwise this will return null
 	    TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(element);
 	    domain.getCommandStack().execute(new RecordingCommand(domain) {
-
+	    
 	        @Override
 	        protected void doExecute() {
 	            // Implement your write operations here,
 	            // for example: set a new name
+	        		System.out.println("doamin " + domain);
 	            element.eSet(element.eClass().getEStructuralFeature("occiComputeCores"), size);
 	            //((Compute)element).setOcciComputeCores(size);
 	            //((Compute)element).occiRetrieve();

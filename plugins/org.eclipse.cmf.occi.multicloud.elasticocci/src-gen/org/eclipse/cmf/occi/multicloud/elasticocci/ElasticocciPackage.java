@@ -362,6 +362,24 @@ public interface ElasticocciPackage extends EPackage {
 	int ELASTICLINK___OCCI_DELETE = OCCIPackage.LINK___OCCI_DELETE;
 
 	/**
+	 * The operation id for the '<em>Link Target Invariant</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELASTICLINK___LINK_TARGET_INVARIANT__KIND_KIND = OCCIPackage.LINK___LINK_TARGET_INVARIANT__KIND_KIND;
+
+	/**
+	 * The operation id for the '<em>Link Source Invariant</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELASTICLINK___LINK_SOURCE_INVARIANT__KIND_KIND = OCCIPackage.LINK___LINK_SOURCE_INVARIANT__KIND_KIND;
+
+	/**
 	 * The operation id for the '<em>Target Constraint</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -460,7 +478,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCOMPUTE__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
+	int STRATEGYCOMPUTE__MIXIN = STRATEGY__MIXIN;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' container reference.
@@ -469,7 +487,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCOMPUTE__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
+	int STRATEGYCOMPUTE__ENTITY = STRATEGY__ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -478,7 +496,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCOMPUTE__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
+	int STRATEGYCOMPUTE__ATTRIBUTES = STRATEGY__ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Strategy Compute Uthreshold</b></em>' attribute.
@@ -487,7 +505,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCOMPUTE__STRATEGY_COMPUTE_UTHRESHOLD = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
+	int STRATEGYCOMPUTE__STRATEGY_COMPUTE_UTHRESHOLD = STRATEGY_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Strategy Compute Breath Down</b></em>' attribute.
@@ -496,7 +514,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCOMPUTE__STRATEGY_COMPUTE_BREATH_DOWN = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
+	int STRATEGYCOMPUTE__STRATEGY_COMPUTE_BREATH_DOWN = STRATEGY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Strategy Compute Breath Up</b></em>' attribute.
@@ -505,7 +523,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCOMPUTE__STRATEGY_COMPUTE_BREATH_UP = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
+	int STRATEGYCOMPUTE__STRATEGY_COMPUTE_BREATH_UP = STRATEGY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Strategy Compute Poll Time</b></em>' attribute.
@@ -514,7 +532,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCOMPUTE__STRATEGY_COMPUTE_POLL_TIME = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
+	int STRATEGYCOMPUTE__STRATEGY_COMPUTE_POLL_TIME = STRATEGY_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Strategy Compute Lthreshold</b></em>' attribute.
@@ -523,7 +541,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCOMPUTE__STRATEGY_COMPUTE_LTHRESHOLD = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 4;
+	int STRATEGYCOMPUTE__STRATEGY_COMPUTE_LTHRESHOLD = STRATEGY_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Strategycompute</em>' class.
@@ -532,7 +550,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCOMPUTE_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 5;
+	int STRATEGYCOMPUTE_FEATURE_COUNT = STRATEGY_FEATURE_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Applies Constraint</em>' operation.
@@ -541,7 +559,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCOMPUTE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
+	int STRATEGYCOMPUTE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = STRATEGY___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Must Be Compute</em>' operation.
@@ -550,7 +568,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCOMPUTE___MUST_BE_COMPUTE__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
+	int STRATEGYCOMPUTE___MUST_BE_COMPUTE__DIAGNOSTICCHAIN_MAP = STRATEGY_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Strategycompute</em>' class.
@@ -559,7 +577,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCOMPUTE_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
+	int STRATEGYCOMPUTE_OPERATION_COUNT = STRATEGY_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.elasticocci.impl.StrategycpuImpl <em>Strategycpu</em>}' class.
@@ -578,7 +596,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCPU__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
+	int STRATEGYCPU__MIXIN = STRATEGYCOMPUTE__MIXIN;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' container reference.
@@ -587,7 +605,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCPU__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
+	int STRATEGYCPU__ENTITY = STRATEGYCOMPUTE__ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -596,7 +614,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCPU__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
+	int STRATEGYCPU__ATTRIBUTES = STRATEGYCOMPUTE__ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Strategy Compute Uthreshold</b></em>' attribute.
@@ -605,7 +623,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCPU__STRATEGY_COMPUTE_UTHRESHOLD = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
+	int STRATEGYCPU__STRATEGY_COMPUTE_UTHRESHOLD = STRATEGYCOMPUTE__STRATEGY_COMPUTE_UTHRESHOLD;
 
 	/**
 	 * The feature id for the '<em><b>Strategy Compute Breath Down</b></em>' attribute.
@@ -614,7 +632,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCPU__STRATEGY_COMPUTE_BREATH_DOWN = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
+	int STRATEGYCPU__STRATEGY_COMPUTE_BREATH_DOWN = STRATEGYCOMPUTE__STRATEGY_COMPUTE_BREATH_DOWN;
 
 	/**
 	 * The feature id for the '<em><b>Strategy Compute Breath Up</b></em>' attribute.
@@ -623,7 +641,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCPU__STRATEGY_COMPUTE_BREATH_UP = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
+	int STRATEGYCPU__STRATEGY_COMPUTE_BREATH_UP = STRATEGYCOMPUTE__STRATEGY_COMPUTE_BREATH_UP;
 
 	/**
 	 * The feature id for the '<em><b>Strategy Compute Poll Time</b></em>' attribute.
@@ -632,7 +650,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCPU__STRATEGY_COMPUTE_POLL_TIME = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
+	int STRATEGYCPU__STRATEGY_COMPUTE_POLL_TIME = STRATEGYCOMPUTE__STRATEGY_COMPUTE_POLL_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Strategy Compute Lthreshold</b></em>' attribute.
@@ -641,7 +659,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCPU__STRATEGY_COMPUTE_LTHRESHOLD = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 4;
+	int STRATEGYCPU__STRATEGY_COMPUTE_LTHRESHOLD = STRATEGYCOMPUTE__STRATEGY_COMPUTE_LTHRESHOLD;
 
 	/**
 	 * The feature id for the '<em><b>Strategy CPU Upper Limit</b></em>' attribute.
@@ -650,7 +668,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCPU__STRATEGY_CPU_UPPER_LIMIT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 5;
+	int STRATEGYCPU__STRATEGY_CPU_UPPER_LIMIT = STRATEGYCOMPUTE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Strategy CPU Lower Limit</b></em>' attribute.
@@ -659,7 +677,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCPU__STRATEGY_CPU_LOWER_LIMIT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 6;
+	int STRATEGYCPU__STRATEGY_CPU_LOWER_LIMIT = STRATEGYCOMPUTE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Strategy CPU Mode</b></em>' attribute.
@@ -668,7 +686,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCPU__STRATEGY_CPU_MODE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 7;
+	int STRATEGYCPU__STRATEGY_CPU_MODE = STRATEGYCOMPUTE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Strategy CPU Direction</b></em>' attribute.
@@ -677,7 +695,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCPU__STRATEGY_CPU_DIRECTION = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 8;
+	int STRATEGYCPU__STRATEGY_CPU_DIRECTION = STRATEGYCOMPUTE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Strategy CPU Step CPU Decrease</b></em>' attribute.
@@ -686,7 +704,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCPU__STRATEGY_CPU_STEP_CPU_DECREASE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 9;
+	int STRATEGYCPU__STRATEGY_CPU_STEP_CPU_DECREASE = STRATEGYCOMPUTE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Strategy CPU Step CPU Increase</b></em>' attribute.
@@ -695,7 +713,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCPU__STRATEGY_CPU_STEP_CPU_INCREASE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 10;
+	int STRATEGYCPU__STRATEGY_CPU_STEP_CPU_INCREASE = STRATEGYCOMPUTE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Strategy CPU Date</b></em>' attribute.
@@ -704,7 +722,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCPU__STRATEGY_CPU_DATE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 11;
+	int STRATEGYCPU__STRATEGY_CPU_DATE = STRATEGYCOMPUTE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Strategy CPU Increase Relational Op</b></em>' attribute.
@@ -713,7 +731,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCPU__STRATEGY_CPU_INCREASE_RELATIONAL_OP = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 12;
+	int STRATEGYCPU__STRATEGY_CPU_INCREASE_RELATIONAL_OP = STRATEGYCOMPUTE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Strategy CPU Decrease Relational Op</b></em>' attribute.
@@ -722,7 +740,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCPU__STRATEGY_CPU_DECREASE_RELATIONAL_OP = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 13;
+	int STRATEGYCPU__STRATEGY_CPU_DECREASE_RELATIONAL_OP = STRATEGYCOMPUTE_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Strategycpu</em>' class.
@@ -731,7 +749,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCPU_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 14;
+	int STRATEGYCPU_FEATURE_COUNT = STRATEGYCOMPUTE_FEATURE_COUNT + 9;
 
 	/**
 	 * The operation id for the '<em>Must Be Compute</em>' operation.
@@ -740,7 +758,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCPU___MUST_BE_COMPUTE__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
+	int STRATEGYCPU___MUST_BE_COMPUTE__DIAGNOSTICCHAIN_MAP = STRATEGYCOMPUTE___MUST_BE_COMPUTE__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Start</em>' operation.
@@ -749,7 +767,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCPU___START = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
+	int STRATEGYCPU___START = STRATEGYCOMPUTE_OPERATION_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Stop</em>' operation.
@@ -758,7 +776,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCPU___STOP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 3;
+	int STRATEGYCPU___STOP = STRATEGYCOMPUTE_OPERATION_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Applies Constraint</em>' operation.
@@ -767,7 +785,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCPU___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 4;
+	int STRATEGYCPU___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = STRATEGYCOMPUTE_OPERATION_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Strategycpu</em>' class.
@@ -776,7 +794,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYCPU_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 5;
+	int STRATEGYCPU_OPERATION_COUNT = STRATEGYCOMPUTE_OPERATION_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.elasticocci.impl.StrategymemoryImpl <em>Strategymemory</em>}' class.
@@ -795,7 +813,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYMEMORY__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
+	int STRATEGYMEMORY__MIXIN = STRATEGYCOMPUTE__MIXIN;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' container reference.
@@ -804,7 +822,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYMEMORY__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
+	int STRATEGYMEMORY__ENTITY = STRATEGYCOMPUTE__ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -813,7 +831,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYMEMORY__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
+	int STRATEGYMEMORY__ATTRIBUTES = STRATEGYCOMPUTE__ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Strategy Compute Uthreshold</b></em>' attribute.
@@ -822,7 +840,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYMEMORY__STRATEGY_COMPUTE_UTHRESHOLD = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
+	int STRATEGYMEMORY__STRATEGY_COMPUTE_UTHRESHOLD = STRATEGYCOMPUTE__STRATEGY_COMPUTE_UTHRESHOLD;
 
 	/**
 	 * The feature id for the '<em><b>Strategy Compute Breath Down</b></em>' attribute.
@@ -831,7 +849,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYMEMORY__STRATEGY_COMPUTE_BREATH_DOWN = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
+	int STRATEGYMEMORY__STRATEGY_COMPUTE_BREATH_DOWN = STRATEGYCOMPUTE__STRATEGY_COMPUTE_BREATH_DOWN;
 
 	/**
 	 * The feature id for the '<em><b>Strategy Compute Breath Up</b></em>' attribute.
@@ -840,7 +858,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYMEMORY__STRATEGY_COMPUTE_BREATH_UP = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
+	int STRATEGYMEMORY__STRATEGY_COMPUTE_BREATH_UP = STRATEGYCOMPUTE__STRATEGY_COMPUTE_BREATH_UP;
 
 	/**
 	 * The feature id for the '<em><b>Strategy Compute Poll Time</b></em>' attribute.
@@ -849,7 +867,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYMEMORY__STRATEGY_COMPUTE_POLL_TIME = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
+	int STRATEGYMEMORY__STRATEGY_COMPUTE_POLL_TIME = STRATEGYCOMPUTE__STRATEGY_COMPUTE_POLL_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Strategy Compute Lthreshold</b></em>' attribute.
@@ -858,7 +876,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYMEMORY__STRATEGY_COMPUTE_LTHRESHOLD = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 4;
+	int STRATEGYMEMORY__STRATEGY_COMPUTE_LTHRESHOLD = STRATEGYCOMPUTE__STRATEGY_COMPUTE_LTHRESHOLD;
 
 	/**
 	 * The feature id for the '<em><b>Strategy Memory Mode</b></em>' attribute.
@@ -867,7 +885,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYMEMORY__STRATEGY_MEMORY_MODE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 5;
+	int STRATEGYMEMORY__STRATEGY_MEMORY_MODE = STRATEGYCOMPUTE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Strategy Memory Direction</b></em>' attribute.
@@ -876,7 +894,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYMEMORY__STRATEGY_MEMORY_DIRECTION = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 6;
+	int STRATEGYMEMORY__STRATEGY_MEMORY_DIRECTION = STRATEGYCOMPUTE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Strategy Memory Step Mem Decrease</b></em>' attribute.
@@ -885,7 +903,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYMEMORY__STRATEGY_MEMORY_STEP_MEM_DECREASE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 7;
+	int STRATEGYMEMORY__STRATEGY_MEMORY_STEP_MEM_DECREASE = STRATEGYCOMPUTE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Strategy Memory Step Mem Increase</b></em>' attribute.
@@ -894,7 +912,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYMEMORY__STRATEGY_MEMORY_STEP_MEM_INCREASE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 8;
+	int STRATEGYMEMORY__STRATEGY_MEMORY_STEP_MEM_INCREASE = STRATEGYCOMPUTE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Strategy Memory Upper Limit</b></em>' attribute.
@@ -903,7 +921,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYMEMORY__STRATEGY_MEMORY_UPPER_LIMIT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 9;
+	int STRATEGYMEMORY__STRATEGY_MEMORY_UPPER_LIMIT = STRATEGYCOMPUTE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Strategy Memory Lower Limit</b></em>' attribute.
@@ -912,7 +930,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYMEMORY__STRATEGY_MEMORY_LOWER_LIMIT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 10;
+	int STRATEGYMEMORY__STRATEGY_MEMORY_LOWER_LIMIT = STRATEGYCOMPUTE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Strategy Memory Date</b></em>' attribute.
@@ -921,7 +939,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYMEMORY__STRATEGY_MEMORY_DATE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 11;
+	int STRATEGYMEMORY__STRATEGY_MEMORY_DATE = STRATEGYCOMPUTE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Strategy Memory Increase Relational Op</b></em>' attribute.
@@ -930,7 +948,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYMEMORY__STRATEGY_MEMORY_INCREASE_RELATIONAL_OP = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 12;
+	int STRATEGYMEMORY__STRATEGY_MEMORY_INCREASE_RELATIONAL_OP = STRATEGYCOMPUTE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Strategy Memory Decrease Relational Op</b></em>' attribute.
@@ -939,7 +957,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYMEMORY__STRATEGY_MEMORY_DECREASE_RELATIONAL_OP = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 13;
+	int STRATEGYMEMORY__STRATEGY_MEMORY_DECREASE_RELATIONAL_OP = STRATEGYCOMPUTE_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Strategymemory</em>' class.
@@ -948,7 +966,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYMEMORY_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 14;
+	int STRATEGYMEMORY_FEATURE_COUNT = STRATEGYCOMPUTE_FEATURE_COUNT + 9;
 
 	/**
 	 * The operation id for the '<em>Must Be Compute</em>' operation.
@@ -957,7 +975,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYMEMORY___MUST_BE_COMPUTE__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
+	int STRATEGYMEMORY___MUST_BE_COMPUTE__DIAGNOSTICCHAIN_MAP = STRATEGYCOMPUTE___MUST_BE_COMPUTE__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Stop</em>' operation.
@@ -966,7 +984,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYMEMORY___STOP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
+	int STRATEGYMEMORY___STOP = STRATEGYCOMPUTE_OPERATION_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Start</em>' operation.
@@ -975,7 +993,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYMEMORY___START = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 3;
+	int STRATEGYMEMORY___START = STRATEGYCOMPUTE_OPERATION_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Applies Constraint</em>' operation.
@@ -984,7 +1002,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYMEMORY___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 4;
+	int STRATEGYMEMORY___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = STRATEGYCOMPUTE_OPERATION_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Strategymemory</em>' class.
@@ -993,7 +1011,7 @@ public interface ElasticocciPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGYMEMORY_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 5;
+	int STRATEGYMEMORY_OPERATION_COUNT = STRATEGYCOMPUTE_OPERATION_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.elasticocci.ModeType <em>Mode Type</em>}' enum.

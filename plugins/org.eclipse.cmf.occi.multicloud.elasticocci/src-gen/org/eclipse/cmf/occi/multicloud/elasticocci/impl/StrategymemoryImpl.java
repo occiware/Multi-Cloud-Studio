@@ -16,20 +16,15 @@ import java.lang.reflect.InvocationTargetException;
 
 import java.util.Map;
 
-import org.eclipse.cmf.occi.core.Entity;
-
-import org.eclipse.cmf.occi.core.impl.MixinBaseImpl;
-
 import org.eclipse.cmf.occi.multicloud.elasticocci.DirectionType;
 import org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciPackage;
-import org.eclipse.cmf.occi.multicloud.elasticocci.ElasticocciTables;
 import org.eclipse.cmf.occi.multicloud.elasticocci.ModeType;
 import org.eclipse.cmf.occi.multicloud.elasticocci.RelationalType;
 import org.eclipse.cmf.occi.multicloud.elasticocci.Strategy;
-import org.eclipse.cmf.occi.multicloud.elasticocci.Strategycompute;
 import org.eclipse.cmf.occi.multicloud.elasticocci.Strategymemory;
 
 import org.eclipse.cmf.occi.multicloud.elasticocci.util.ElasticocciValidator;
+
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -40,23 +35,6 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.ocl.pivot.evaluation.Executor;
-
-import org.eclipse.ocl.pivot.ids.IdResolver;
-import org.eclipse.ocl.pivot.ids.TypeId;
-
-import org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal;
-
-import org.eclipse.ocl.pivot.library.oclany.OclAnyOclIsKindOfOperation;
-import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation;
-
-import org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation;
-import org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation;
-
-import org.eclipse.ocl.pivot.utilities.ValueUtil;
-
-import org.eclipse.ocl.pivot.values.IntegerValue;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Strategymemory</b></em>'.
@@ -65,11 +43,6 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.elasticocci.impl.StrategymemoryImpl#getStrategyComputeUthreshold <em>Strategy Compute Uthreshold</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.elasticocci.impl.StrategymemoryImpl#getStrategyComputeBreathDown <em>Strategy Compute Breath Down</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.elasticocci.impl.StrategymemoryImpl#getStrategyComputeBreathUp <em>Strategy Compute Breath Up</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.elasticocci.impl.StrategymemoryImpl#getStrategyComputePollTime <em>Strategy Compute Poll Time</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.elasticocci.impl.StrategymemoryImpl#getStrategyComputeLthreshold <em>Strategy Compute Lthreshold</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.elasticocci.impl.StrategymemoryImpl#getStrategyMemoryMode <em>Strategy Memory Mode</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.elasticocci.impl.StrategymemoryImpl#getStrategyMemoryDirection <em>Strategy Memory Direction</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.elasticocci.impl.StrategymemoryImpl#getStrategyMemoryStepMemDecrease <em>Strategy Memory Step Mem Decrease</em>}</li>
@@ -83,107 +56,7 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  *
  * @generated
  */
-public class StrategymemoryImpl extends MixinBaseImpl implements Strategymemory {
-	/**
-	 * The default value of the '{@link #getStrategyComputeUthreshold() <em>Strategy Compute Uthreshold</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStrategyComputeUthreshold()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Integer STRATEGY_COMPUTE_UTHRESHOLD_EDEFAULT = new Integer(90);
-
-	/**
-	 * The cached value of the '{@link #getStrategyComputeUthreshold() <em>Strategy Compute Uthreshold</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStrategyComputeUthreshold()
-	 * @generated
-	 * @ordered
-	 */
-	protected Integer strategyComputeUthreshold = STRATEGY_COMPUTE_UTHRESHOLD_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getStrategyComputeBreathDown() <em>Strategy Compute Breath Down</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStrategyComputeBreathDown()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Integer STRATEGY_COMPUTE_BREATH_DOWN_EDEFAULT = new Integer(20000);
-
-	/**
-	 * The cached value of the '{@link #getStrategyComputeBreathDown() <em>Strategy Compute Breath Down</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStrategyComputeBreathDown()
-	 * @generated
-	 * @ordered
-	 */
-	protected Integer strategyComputeBreathDown = STRATEGY_COMPUTE_BREATH_DOWN_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getStrategyComputeBreathUp() <em>Strategy Compute Breath Up</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStrategyComputeBreathUp()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Integer STRATEGY_COMPUTE_BREATH_UP_EDEFAULT = new Integer(40000);
-
-	/**
-	 * The cached value of the '{@link #getStrategyComputeBreathUp() <em>Strategy Compute Breath Up</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStrategyComputeBreathUp()
-	 * @generated
-	 * @ordered
-	 */
-	protected Integer strategyComputeBreathUp = STRATEGY_COMPUTE_BREATH_UP_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getStrategyComputePollTime() <em>Strategy Compute Poll Time</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStrategyComputePollTime()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Integer STRATEGY_COMPUTE_POLL_TIME_EDEFAULT = new Integer(10000);
-
-	/**
-	 * The cached value of the '{@link #getStrategyComputePollTime() <em>Strategy Compute Poll Time</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStrategyComputePollTime()
-	 * @generated
-	 * @ordered
-	 */
-	protected Integer strategyComputePollTime = STRATEGY_COMPUTE_POLL_TIME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getStrategyComputeLthreshold() <em>Strategy Compute Lthreshold</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStrategyComputeLthreshold()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Integer STRATEGY_COMPUTE_LTHRESHOLD_EDEFAULT = new Integer(70);
-
-	/**
-	 * The cached value of the '{@link #getStrategyComputeLthreshold() <em>Strategy Compute Lthreshold</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStrategyComputeLthreshold()
-	 * @generated
-	 * @ordered
-	 */
-	protected Integer strategyComputeLthreshold = STRATEGY_COMPUTE_LTHRESHOLD_EDEFAULT;
-
+public class StrategymemoryImpl extends StrategycomputeImpl implements Strategymemory {
 	/**
 	 * The default value of the '{@link #getStrategyMemoryMode() <em>Strategy Memory Mode</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -381,111 +254,6 @@ public class StrategymemoryImpl extends MixinBaseImpl implements Strategymemory 
 	@Override
 	protected EClass eStaticClass() {
 		return ElasticocciPackage.Literals.STRATEGYMEMORY;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Integer getStrategyComputeUthreshold() {
-		return strategyComputeUthreshold;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setStrategyComputeUthreshold(Integer newStrategyComputeUthreshold) {
-		Integer oldStrategyComputeUthreshold = strategyComputeUthreshold;
-		strategyComputeUthreshold = newStrategyComputeUthreshold;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ElasticocciPackage.STRATEGYMEMORY__STRATEGY_COMPUTE_UTHRESHOLD, oldStrategyComputeUthreshold, strategyComputeUthreshold));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Integer getStrategyComputeBreathDown() {
-		return strategyComputeBreathDown;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setStrategyComputeBreathDown(Integer newStrategyComputeBreathDown) {
-		Integer oldStrategyComputeBreathDown = strategyComputeBreathDown;
-		strategyComputeBreathDown = newStrategyComputeBreathDown;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ElasticocciPackage.STRATEGYMEMORY__STRATEGY_COMPUTE_BREATH_DOWN, oldStrategyComputeBreathDown, strategyComputeBreathDown));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Integer getStrategyComputeBreathUp() {
-		return strategyComputeBreathUp;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setStrategyComputeBreathUp(Integer newStrategyComputeBreathUp) {
-		Integer oldStrategyComputeBreathUp = strategyComputeBreathUp;
-		strategyComputeBreathUp = newStrategyComputeBreathUp;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ElasticocciPackage.STRATEGYMEMORY__STRATEGY_COMPUTE_BREATH_UP, oldStrategyComputeBreathUp, strategyComputeBreathUp));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Integer getStrategyComputePollTime() {
-		return strategyComputePollTime;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setStrategyComputePollTime(Integer newStrategyComputePollTime) {
-		Integer oldStrategyComputePollTime = strategyComputePollTime;
-		strategyComputePollTime = newStrategyComputePollTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ElasticocciPackage.STRATEGYMEMORY__STRATEGY_COMPUTE_POLL_TIME, oldStrategyComputePollTime, strategyComputePollTime));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Integer getStrategyComputeLthreshold() {
-		return strategyComputeLthreshold;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setStrategyComputeLthreshold(Integer newStrategyComputeLthreshold) {
-		Integer oldStrategyComputeLthreshold = strategyComputeLthreshold;
-		strategyComputeLthreshold = newStrategyComputeLthreshold;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ElasticocciPackage.STRATEGYMEMORY__STRATEGY_COMPUTE_LTHRESHOLD, oldStrategyComputeLthreshold, strategyComputeLthreshold));
 	}
 
 	/**
@@ -730,36 +498,6 @@ public class StrategymemoryImpl extends MixinBaseImpl implements Strategymemory 
 	}
 
 	/**
-	 * The cached validation expression for the '{@link #MustBeCompute(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Must Be Compute</em>}' invariant operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #MustBeCompute(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String MUST_BE_COMPUTE_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "self.entity.oclAsType(occi::Resource).links->first().target.oclIsTypeOf(infrastructure::Compute)";
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean MustBeCompute(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			ElasticocciValidator.validate
-				(ElasticocciPackage.Literals.STRATEGYMEMORY,
-				 this,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 ElasticocciPackage.Literals.STRATEGYCOMPUTE___MUST_BE_COMPUTE__DIAGNOSTICCHAIN_MAP,
-				 MUST_BE_COMPUTE_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 ElasticocciValidator.DIAGNOSTIC_SOURCE,
-				 ElasticocciValidator.STRATEGYCOMPUTE__MUST_BE_COMPUTE);
-	}
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -767,16 +505,6 @@ public class StrategymemoryImpl extends MixinBaseImpl implements Strategymemory 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_COMPUTE_UTHRESHOLD:
-				return getStrategyComputeUthreshold();
-			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_COMPUTE_BREATH_DOWN:
-				return getStrategyComputeBreathDown();
-			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_COMPUTE_BREATH_UP:
-				return getStrategyComputeBreathUp();
-			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_COMPUTE_POLL_TIME:
-				return getStrategyComputePollTime();
-			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_COMPUTE_LTHRESHOLD:
-				return getStrategyComputeLthreshold();
 			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_MEMORY_MODE:
 				return getStrategyMemoryMode();
 			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_MEMORY_DIRECTION:
@@ -807,21 +535,6 @@ public class StrategymemoryImpl extends MixinBaseImpl implements Strategymemory 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_COMPUTE_UTHRESHOLD:
-				setStrategyComputeUthreshold((Integer)newValue);
-				return;
-			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_COMPUTE_BREATH_DOWN:
-				setStrategyComputeBreathDown((Integer)newValue);
-				return;
-			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_COMPUTE_BREATH_UP:
-				setStrategyComputeBreathUp((Integer)newValue);
-				return;
-			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_COMPUTE_POLL_TIME:
-				setStrategyComputePollTime((Integer)newValue);
-				return;
-			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_COMPUTE_LTHRESHOLD:
-				setStrategyComputeLthreshold((Integer)newValue);
-				return;
 			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_MEMORY_MODE:
 				setStrategyMemoryMode((ModeType)newValue);
 				return;
@@ -861,21 +574,6 @@ public class StrategymemoryImpl extends MixinBaseImpl implements Strategymemory 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_COMPUTE_UTHRESHOLD:
-				setStrategyComputeUthreshold(STRATEGY_COMPUTE_UTHRESHOLD_EDEFAULT);
-				return;
-			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_COMPUTE_BREATH_DOWN:
-				setStrategyComputeBreathDown(STRATEGY_COMPUTE_BREATH_DOWN_EDEFAULT);
-				return;
-			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_COMPUTE_BREATH_UP:
-				setStrategyComputeBreathUp(STRATEGY_COMPUTE_BREATH_UP_EDEFAULT);
-				return;
-			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_COMPUTE_POLL_TIME:
-				setStrategyComputePollTime(STRATEGY_COMPUTE_POLL_TIME_EDEFAULT);
-				return;
-			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_COMPUTE_LTHRESHOLD:
-				setStrategyComputeLthreshold(STRATEGY_COMPUTE_LTHRESHOLD_EDEFAULT);
-				return;
 			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_MEMORY_MODE:
 				setStrategyMemoryMode(STRATEGY_MEMORY_MODE_EDEFAULT);
 				return;
@@ -915,16 +613,6 @@ public class StrategymemoryImpl extends MixinBaseImpl implements Strategymemory 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_COMPUTE_UTHRESHOLD:
-				return STRATEGY_COMPUTE_UTHRESHOLD_EDEFAULT == null ? strategyComputeUthreshold != null : !STRATEGY_COMPUTE_UTHRESHOLD_EDEFAULT.equals(strategyComputeUthreshold);
-			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_COMPUTE_BREATH_DOWN:
-				return STRATEGY_COMPUTE_BREATH_DOWN_EDEFAULT == null ? strategyComputeBreathDown != null : !STRATEGY_COMPUTE_BREATH_DOWN_EDEFAULT.equals(strategyComputeBreathDown);
-			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_COMPUTE_BREATH_UP:
-				return STRATEGY_COMPUTE_BREATH_UP_EDEFAULT == null ? strategyComputeBreathUp != null : !STRATEGY_COMPUTE_BREATH_UP_EDEFAULT.equals(strategyComputeBreathUp);
-			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_COMPUTE_POLL_TIME:
-				return STRATEGY_COMPUTE_POLL_TIME_EDEFAULT == null ? strategyComputePollTime != null : !STRATEGY_COMPUTE_POLL_TIME_EDEFAULT.equals(strategyComputePollTime);
-			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_COMPUTE_LTHRESHOLD:
-				return STRATEGY_COMPUTE_LTHRESHOLD_EDEFAULT == null ? strategyComputeLthreshold != null : !STRATEGY_COMPUTE_LTHRESHOLD_EDEFAULT.equals(strategyComputeLthreshold);
 			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_MEMORY_MODE:
 				return strategyMemoryMode != STRATEGY_MEMORY_MODE_EDEFAULT;
 			case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_MEMORY_DIRECTION:
@@ -953,67 +641,11 @@ public class StrategymemoryImpl extends MixinBaseImpl implements Strategymemory 
 	 * @generated
 	 */
 	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == Strategy.class) {
-			switch (derivedFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == Strategycompute.class) {
-			switch (derivedFeatureID) {
-				case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_COMPUTE_UTHRESHOLD: return ElasticocciPackage.STRATEGYCOMPUTE__STRATEGY_COMPUTE_UTHRESHOLD;
-				case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_COMPUTE_BREATH_DOWN: return ElasticocciPackage.STRATEGYCOMPUTE__STRATEGY_COMPUTE_BREATH_DOWN;
-				case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_COMPUTE_BREATH_UP: return ElasticocciPackage.STRATEGYCOMPUTE__STRATEGY_COMPUTE_BREATH_UP;
-				case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_COMPUTE_POLL_TIME: return ElasticocciPackage.STRATEGYCOMPUTE__STRATEGY_COMPUTE_POLL_TIME;
-				case ElasticocciPackage.STRATEGYMEMORY__STRATEGY_COMPUTE_LTHRESHOLD: return ElasticocciPackage.STRATEGYCOMPUTE__STRATEGY_COMPUTE_LTHRESHOLD;
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == Strategy.class) {
-			switch (baseFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == Strategycompute.class) {
-			switch (baseFeatureID) {
-				case ElasticocciPackage.STRATEGYCOMPUTE__STRATEGY_COMPUTE_UTHRESHOLD: return ElasticocciPackage.STRATEGYMEMORY__STRATEGY_COMPUTE_UTHRESHOLD;
-				case ElasticocciPackage.STRATEGYCOMPUTE__STRATEGY_COMPUTE_BREATH_DOWN: return ElasticocciPackage.STRATEGYMEMORY__STRATEGY_COMPUTE_BREATH_DOWN;
-				case ElasticocciPackage.STRATEGYCOMPUTE__STRATEGY_COMPUTE_BREATH_UP: return ElasticocciPackage.STRATEGYMEMORY__STRATEGY_COMPUTE_BREATH_UP;
-				case ElasticocciPackage.STRATEGYCOMPUTE__STRATEGY_COMPUTE_POLL_TIME: return ElasticocciPackage.STRATEGYMEMORY__STRATEGY_COMPUTE_POLL_TIME;
-				case ElasticocciPackage.STRATEGYCOMPUTE__STRATEGY_COMPUTE_LTHRESHOLD: return ElasticocciPackage.STRATEGYMEMORY__STRATEGY_COMPUTE_LTHRESHOLD;
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
 		if (baseClass == Strategy.class) {
 			switch (baseOperationID) {
 				case ElasticocciPackage.STRATEGY___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP: return ElasticocciPackage.STRATEGYMEMORY___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP;
-				default: return -1;
-			}
-		}
-		if (baseClass == Strategycompute.class) {
-			switch (baseOperationID) {
-				case ElasticocciPackage.STRATEGYCOMPUTE___MUST_BE_COMPUTE__DIAGNOSTICCHAIN_MAP: return ElasticocciPackage.STRATEGYMEMORY___MUST_BE_COMPUTE__DIAGNOSTICCHAIN_MAP;
-				default: return -1;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
 			}
 		}
 		return super.eDerivedOperationID(baseOperationID, baseClass);
@@ -1036,8 +668,6 @@ public class StrategymemoryImpl extends MixinBaseImpl implements Strategymemory 
 				return null;
 			case ElasticocciPackage.STRATEGYMEMORY___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP:
 				return appliesConstraint((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case ElasticocciPackage.STRATEGYMEMORY___MUST_BE_COMPUTE__DIAGNOSTICCHAIN_MAP:
-				return MustBeCompute((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -1052,17 +682,7 @@ public class StrategymemoryImpl extends MixinBaseImpl implements Strategymemory 
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (StrategyComputeUthreshold: ");
-		result.append(strategyComputeUthreshold);
-		result.append(", StrategyComputeBreathDown: ");
-		result.append(strategyComputeBreathDown);
-		result.append(", StrategyComputeBreathUp: ");
-		result.append(strategyComputeBreathUp);
-		result.append(", StrategyComputePollTime: ");
-		result.append(strategyComputePollTime);
-		result.append(", StrategyComputeLthreshold: ");
-		result.append(strategyComputeLthreshold);
-		result.append(", StrategyMemoryMode: ");
+		result.append(" (StrategyMemoryMode: ");
 		result.append(strategyMemoryMode);
 		result.append(", StrategyMemoryDirection: ");
 		result.append(strategyMemoryDirection);

@@ -135,7 +135,7 @@
     </attributes>
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
   </kinds>
-  <kinds name="StepLink" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" source="//@kinds[term='simpledynamic']" target="//@kinds[term='step']">
+  <kinds name="StepLink" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" source="//@kinds[term='stepdynamic']" target="//@kinds[term='step']">
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
   </kinds>
   <mixins name="Creation" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#">

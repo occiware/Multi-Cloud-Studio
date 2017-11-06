@@ -31,6 +31,15 @@
   \hline
 \end{tabular}
 \end{center}
+\begin{center} 
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} &  \\
+  \hline  
+  \textbf{Scheme} &  \\
+  \hline
+\end{tabular}
+\end{center}
 
 
 \subsection{Types}
@@ -369,11 +378,11 @@
   \hline
   \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
   \hline  
-  manual.groupSize & String & false & true &  &  \\
+  manual.groupSize & Integer & false & true &  &  \\
   \hline
-  manual.maxGroupSize & String & false & true &  &  \\
+  manual.maxGroupSize & Integer & false & true &  &  \\
   \hline
-  manual.minGroupSize & String & false & true &  &  \\
+  manual.minGroupSize & Integer & false & true &  &  \\
   \hline
 \end{tabularx}
 \end{itemize}
@@ -546,11 +555,11 @@
 
 
 
-\subsubsection{\texttt{Action} kind}
+\subsubsection{\texttt{ActionTrigger} kind}
 \begin{center}
 \begin{tabular}{|l|l|}
   \hline
-  \textbf{Name} & Action \\
+  \textbf{Name} & ActionTrigger \\
   \hline  
   \textbf{Scheme} & http://org.eclipse.cmf.occi.multicloud.horizontalelasticity\# \\
   \hline
@@ -561,7 +570,7 @@
 \end{tabular}
 \end{center}
 \begin{itemize}
-\item \textbf{\texttt{Action} attributes}
+\item \textbf{\texttt{ActionTrigger} attributes}
 
 \begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
   \hline
@@ -616,12 +625,31 @@
   \hline
   \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
   \hline  
-  steps.lowerStepBound & Float & false & true &  &  \\
+  step.lowerStepBound & Float & false & true &  &  \\
   \hline
-  steps.upperStepBound & Float & false & true &  &  \\
+  step.upperStepBound & Float & false & true &  &  \\
+  \hline
+  step.size & Integer & false & true &  &  \\
   \hline
 \end{tabularx}
 \end{itemize}
+
+
+
+\subsubsection{\texttt{StepLink} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & StepLink \\
+  \hline  
+  \textbf{Scheme} & http://org.eclipse.cmf.occi.multicloud.horizontalelasticity\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+  \textbf{Parent} & Link (http://schemas.ogf.org/occi/core\#) \\
+  \hline
+\end{tabular}
+\end{center}
 
 
 

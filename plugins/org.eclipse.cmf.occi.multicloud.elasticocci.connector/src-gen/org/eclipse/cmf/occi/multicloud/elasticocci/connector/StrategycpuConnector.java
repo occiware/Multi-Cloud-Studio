@@ -14,24 +14,34 @@
  */
 package org.eclipse.cmf.occi.multicloud.elasticocci.connector;
 
-import org.eclipse.cmf.occi.multicloud.elasticocci.ModeType;
-import org.eclipse.cmf.occi.multicloud.vmware.Instancevmware;
+//import org.eclipse.cmf.occi.multicloud.elasticocci.ModeType;
+import org.eclipse.cmf.occi.multicloud.elasticocci.impl.ElasticcontrollerImpl;
+//import org.eclipse.cmf.occi.multicloud.elasticocci.impl.StrategycomputeImpl;
+//import org.eclipse.cmf.occi.multicloud.elasticocci.impl.StrategycpuImpl;
+import org.eclipse.cmf.occi.multicloud.occimonitoring.Zabbixinstance;
+import org.eclipse.cmf.occi.multicloud.occimonitoring.connector.CpuusageConnector;
+import org.eclipse.cmf.occi.multicloud.occimonitoring.connector.MemoryusageConnector;
+//import org.eclipse.cmf.occi.multicloud.vmware.Instancevmware;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
-import org.eclipse.jface.dialogs.ProgressMonitorDialog;
-import org.eclipse.swt.widgets.Shell;
-import org.ecplise.cmf.occi.multicloud.vmware.connector.driver.VMHelper;
+//import org.eclipse.jface.dialogs.ProgressMonitorDialog;
+//import org.eclipse.swt.widgets.Shell;
+//import org.ecplise.cmf.occi.multicloud.vmware.connector.driver.VMHelper;
+import org.eclipse.cmf.occi.core.Link;
+//import org.eclipse.cmf.occi.core.Mixin;
+//import org.eclipse.cmf.occi.core.MixinBase;
+import org.eclipse.cmf.occi.core.Resource;
 import org.eclipse.cmf.occi.infrastructure.Compute;
 import org.eclipse.cmf.occi.multicloud.elasticocci.Elasticcontroller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.vmware.vim25.mo.VirtualMachine;
+//import com.vmware.vim25.mo.VirtualMachine;
 
-import java.io.IOException;
+//import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -198,7 +208,6 @@ public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasti
                 			//vm.occiRetrieve();
                 			//vmconnector.addCPU(vmname, size); ///////////////////////////
         	        			System.out.println("you have increased your VCPUs by " + getStrategyCPUStepCPUIncrease());
-       
         	        			//ProgressMonitorDialog dialog = new ProgressMonitorDialog(null);
         	        			//dialog.close();
         	        			
@@ -251,15 +260,16 @@ public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasti
 	}
 	
 	private void dynamic(Compute vm) throws InterruptedException {
-		ZabbixMonitoring2 zabbix_obj = new ZabbixMonitoring2();
-		String zabi = zabbix_obj.connect();
-		String vmname = vm.getAttributes().get(1).getValue();
-		int hostid = zabbix_obj.getHostByName(zabi, vmname);
+		////ZabbixMonitoring2 zabbix_obj = new ZabbixMonitoring2();
+		////String zabi = zabbix_obj.connect();
+		////String vmname = vm.getAttributes().get(1).getValue();
+		////int hostid = zabbix_obj.getHostByName(zabi, vmname);
 		//System.out.print("hi, cpus used is " + cpuUsed);
 		//Vertical vmconnector = new Vertical();
 		
 		while (bool) {
-			Double cpuUsed = zabbix_obj.item_cpu_idle(zabi, hostid);
+			////Double cpuUsed = zabbix_obj.item_cpu_idle(zabi, hostid);
+			Double cpuUsed = cpuUsage();
 			System.out.println("cpu usage " + cpuUsed);
         		//int cpus = vmconnector.getCPUs(vmname);
 			int cpus = vm.getOcciComputeCores();
@@ -400,9 +410,34 @@ public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasti
 		}
 		
 		bool = false;
-		// TODO: Implement how to stop this strategycpu1.
 	}
 		// End of user code
+	protected double cpuUsage() throws InterruptedException
+	{
+		double cpuUsage = 0.0;
+		Resource res = (Resource) this.eContainer();
+		ElasticcontrollerImpl cpucontroller = (ElasticcontrollerImpl) res;
+		final TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(this);
+		
+		for (Link link:cpucontroller.getLinks()) {
+			if (link.getTarget() instanceof Zabbixinstance) {
+				if (link.getTarget() != null) {
+					Zabbixinstance zabbix = (Zabbixinstance) link.getTarget();
+					CpuusageConnector cpuUsageMetric = (CpuusageConnector) zabbix.getParts().get(0);
+					domain.getCommandStack().execute(new RecordingCommand(domain) {
+						@Override
+						protected void doExecute() {
+							cpuUsageMetric.getmetric();
+						}});
+					///System.out.println("cpu usage ..........." + cpuUsageMetric.getCpuUsageCpuUsage());
+					Thread.sleep(1000);
+					cpuUsage = cpuUsageMetric.getCpuUsageCpuUsage();
+
+				}
+			}
+		}
+		return cpuUsage;
+	}
 
 }
 

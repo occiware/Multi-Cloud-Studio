@@ -19,5 +19,8 @@ Export-Package: com.goebl.david,
  org.eclipse.cmf.occi.multicloud.elasticocci.connector,
  org.json
 Import-Package: com.vmware.vim25.mo,
+ org.eclipse.cmf.occi.multicloud.occimonitoring,
+ org.eclipse.cmf.occi.multicloud.occimonitoring.connector,
+ org.eclipse.cmf.occi.multicloud.occimonitoring.impl,
  org.eclipse.jface.dialogs,
  org.ecplise.cmf.occi.multicloud.vmware.connector.driver

@@ -14,8 +14,17 @@
  */
 package org.eclipse.cmf.occi.multicloud.elasticocci.connector;
 
+import org.eclipse.cmf.occi.core.Link;
+import org.eclipse.cmf.occi.core.Resource;
 import org.eclipse.cmf.occi.infrastructure.Compute;
 import org.eclipse.cmf.occi.multicloud.elasticocci.Elasticcontroller;
+import org.eclipse.cmf.occi.multicloud.elasticocci.impl.ElasticcontrollerImpl;
+import org.eclipse.cmf.occi.multicloud.occimonitoring.Zabbixinstance;
+import org.eclipse.cmf.occi.multicloud.occimonitoring.connector.CpuusageConnector;
+import org.eclipse.cmf.occi.multicloud.occimonitoring.connector.MemoryusageConnector;
+import org.eclipse.emf.transaction.RecordingCommand;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -137,9 +146,34 @@ public class StrategymemoryConnector extends org.eclipse.cmf.occi.multicloud.ela
 			manuel((getStrategyMemoryDirection().getName()), vm);
 			break;
 		}
-		
-			
 	}
+	
+	protected double mmemUsage()
+	{
+		double memUsage = 0.0;
+		Resource res = (Resource) this.eContainer();
+		ElasticcontrollerImpl cpucontroller = (ElasticcontrollerImpl) res;
+		final TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(this);
+		
+		for (Link link:cpucontroller.getLinks()) {
+			if (link.getTarget() instanceof Zabbixinstance) {
+				if (link.getTarget() != null) {
+					Zabbixinstance zabbix = (Zabbixinstance) link.getTarget();
+					MemoryusageConnector memUsageMetric = (MemoryusageConnector) zabbix.getParts().get(1);
+					domain.getCommandStack().execute(new RecordingCommand(domain) {
+						@Override
+						protected void doExecute() {
+							memUsageMetric.getmetric();
+						}});
+					///System.out.println("cpu usage ..........." + cpuUsageMetric.getCpuUsageCpuUsage());
+					memUsage = memUsageMetric.getMemoryUsageMemUsage();
+
+				}
+			}
+		}
+		return memUsage;
+	}
+	
 		// End of user code
 
 }	

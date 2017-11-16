@@ -22,6 +22,7 @@ import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Actiontrigger;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Rule;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Step;
+import org.eclipse.cmf.occi.multicloud.vmware.Instancevmware;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
@@ -137,16 +138,11 @@ public class SimpledynamicConnector extends org.eclipse.cmf.occi.multicloud.hori
 	public void start()
 	{
 		bool = true;
-		final TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(this);
 		MyRunnable myRunnable = new MyRunnable() {
 			public void run() {
 				//////// main code //////
 				while(bool) {
-					domain.getCommandStack().execute(new RecordingCommand(domain) {
-						@Override
-						protected void doExecute() {
-							startDynamic();
-						}});
+					startDynamic();
 					System.out.println("Wait 20 second between loop to save CPU cycles");
 					try {
 						Thread.sleep(20000);
@@ -184,8 +180,8 @@ public class SimpledynamicConnector extends org.eclipse.cmf.occi.multicloud.hori
 				String actionname = action.getAction().getName();
 				String actiontype = action.getActionType().getName();
 				Float amount = action.getAmount();
-				
-				double metrcUsage  = dp.getMetricUsage(ruleMetric, ruleperiod, consecutive);
+				double metrcUsage  =  getMetricUsage(ruleMetric, ruleperiod, consecutive);
+				//double metrcUsage  = dp.getMetricUsage(ruleMetric, ruleperiod, consecutive);
 				
 				if (actionname.equals("add")) { // Rules that have add attributes in their actions
 					if (testRule(metrcUsage, ruleoperator, threshold)) {
@@ -219,10 +215,12 @@ public class SimpledynamicConnector extends org.eclipse.cmf.occi.multicloud.hori
 	/////////////////////// action /////////////
 	public void action( String action, String actionType, float amount, int coolduration)
 	{
+		final TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(this);
 		//DynamicConnector dc = new DynamicConnector();
 		Horizontalgroup hg =  getHorzontalgroup();
 		int numberofinstances = 0;
 		int currentInstance = hg.getHorizontalGroupGroupSize();
+		final int newGroupSize;
 		if (action.equals("add")) {
 			System.out.println("You are going to add more resources");
 			if(actionType.equals("instanceCount")) {
@@ -230,15 +228,36 @@ public class SimpledynamicConnector extends org.eclipse.cmf.occi.multicloud.hori
 				numberofinstances = (int) amount;
 				System.out.println(" nubmer of instances to ba added " + numberofinstances);
 				System.out.println(" The group size will become  " + (numberofinstances + currentInstance));
-				hg.setHorizontalGroupGroupSize(numberofinstances + currentInstance);
-				hg.occiUpdate();
+				newGroupSize = numberofinstances + currentInstance;
+				domain.getCommandStack().execute(new RecordingCommand(domain) {
+					@Override
+					protected void doExecute() {
+						hg.setHorizontalGroupGroupSize(newGroupSize);
+						hg.occiUpdate();
+					}});
+				try {
+					Thread.sleep(420000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				//hg.setHorizontalGroupGroupSize(numberofinstances + currentInstance);
+				
 			} else if(actionType.equals("percent")) {
 				System.out.println("You are going to add more resources according to " + actionType);
 				System.out.print("\n current instance are :" + currentInstance);
 				numberofinstances = (int) (currentInstance * (amount/100));
-				//hg.setHorizontalGroupGroupSize(currentInstance + numberofinstances);
-				//hg.occiUpdate();
 				System.out.println("\n the number of inatances will be " + (currentInstance + numberofinstances));
+				newGroupSize = currentInstance + numberofinstances;
+				domain.getCommandStack().execute(new RecordingCommand(domain) {
+					@Override
+					protected void doExecute() {
+						hg.setHorizontalGroupGroupSize(newGroupSize);
+						hg.occiUpdate();
+						
+					}});
+				//hg.setHorizontalGroupGroupSize(currentInstance + numberofinstances);
+				
 			}
 			
 		}
@@ -251,16 +270,31 @@ public class SimpledynamicConnector extends org.eclipse.cmf.occi.multicloud.hori
 				System.out.println("You are going to remove " + amount + " instance");
 				System.out.println(" The group size will become  " + (currentInstance  - numberofinstances));
 				//hg.setHorizontalGroupGroupSize(numberofinstances + currentInstance);
-				//hg.occiUpdate();
+				newGroupSize = currentInstance  - numberofinstances;
+				domain.getCommandStack().execute(new RecordingCommand(domain) {
+					@Override
+					protected void doExecute() {
+						hg.setHorizontalGroupGroupSize(newGroupSize);
+						hg.occiUpdate();
+					}});
+				
 			} else if(actionType.equals("percent")) {
 				System.out.println("You are going to remove more resources according to " + actionType);
 				System.out.print("\n current instance are :" + currentInstance);
 				numberofinstances = (int) (currentInstance * (amount/100));
 				hg.setHorizontalGroupGroupSize(currentInstance - numberofinstances);
 				System.out.println("\n the number of instances or groupsize will be:" + (currentInstance - numberofinstances));
+				newGroupSize = currentInstance - numberofinstances;
+				domain.getCommandStack().execute(new RecordingCommand(domain) {
+					@Override
+					protected void doExecute() {
+						hg.setHorizontalGroupGroupSize(newGroupSize);
+						hg.occiUpdate();
+					}});
+				
 			}
 		}
-		System.out.print("wait, cool duration");
+		System.out.print("\n wait, cool duration");
 		try {
 			Thread.sleep(coolduration);
 		} catch (InterruptedException e) {
@@ -318,6 +352,75 @@ public class SimpledynamicConnector extends org.eclipse.cmf.occi.multicloud.hori
 	}
 	// End of user code
 		
-
-
+	/////////////////////////////////////// cpu usage ////////////////////////////////////
+	protected double CPUGroupUsage() {
+		double cpuGroupUsage = 0.0;
+		int instanceCount = 0;
+		double cputotal = 0.0;
+		
+		ZabbixMonitoring2 zabbix_obj = new ZabbixMonitoring2();
+		Horizontalgroup hg = (Horizontalgroup) this.getLinks().get(0).getTarget();
+		//ZabbixMonitoring2 zabbix_obj = new ZabbixMonitoring2();
+		int noOfLinks = 0;
+		for(Link link : hg.getLinks()) {
+			noOfLinks++;
+		}
+		System.out.println("number of links" +  noOfLinks);
+		
+		for(int i =0; i< noOfLinks; ++i) {
+			if(hg.getLinks().get(i).getTarget() instanceof Instancevmware) {
+				//System.out.println(hg.getLinks().get(i));
+				//System.out.println(hg.getLinks().get(i).getTarget().getTitle());
+				Instancevmware inst = (Instancevmware) hg.getLinks().get(i).getTarget();
+				if (!(inst.getAttributes().get(8).getValue().isEmpty())) {
+					//System.out.println(inst);
+					//System.out.println(hg.getLinks().get(i).getTarget().getTitle());
+					String instanceIp = inst.getGuestIpv4Address();
+					//String instanceIp = inst.getAttributes().get(8).getValue();
+					System.out.println("trying to connect to zabbix");
+					System.out.println("instance ip " + instanceIp);
+					String zabi = zabbix_obj.connect();
+					System.out.println("zabbi authentification " +  zabi);
+					
+					int hostid = zabbix_obj.get_host_by_ip(zabi, instanceIp);
+					//String vmname = vm.getAttributes().get(1).getValue();
+					//int hostid = zabbix_obj.getHostByName(zabi, vmname);
+					Double cpuUsed = zabbix_obj.item_cpu_idle(zabi, hostid);
+					//System.out.println("cpu used :" + cpuUsed);
+					cputotal = cputotal + cpuUsed;
+					instanceCount = instanceCount +1;
+				}
+			}
+		}
+		
+		System.out.println("number of instances in the group " + instanceCount);
+		if (instanceCount ==0) {
+			System.out.println("no instances in the group");
+		} else {
+			cpuGroupUsage = cputotal/instanceCount;
+		}
+		System.out.println("cpu average usage for the group is " + cpuGroupUsage);
+		return cpuGroupUsage;
+	}
+	
+	
+	public double getMetricUsage(String metricName, int period, int consecutive)
+	{
+		double metrcUsage = 0.0; // = 60.0;
+		if (metricName.equals("CPUtilisation")) {
+			System.out.println("\n Now, we found the accumulated " + metricName + " the metci usage ");
+			metrcUsage = CPUGroupUsage();
+		} 
+		else if(metricName.equals("MemoryUtilisation")) {
+			System.out.println("\n Now, we found the accumulated " + metricName + " the metci usage ");
+		}
+		else if(metricName.equals("AverageCpuUtilisation")) {
+			System.out.println("\n Now, we found the accumulated " + metricName + " the metci usage ");
+		}
+		
+		return metrcUsage;
+		
+	}
+	
+	
 }	

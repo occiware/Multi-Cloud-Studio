@@ -130,28 +130,6 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
         Thread thread = new Thread(runnable);
         thread.start();
     }
-	
-//	public void doEditing(EObject element) {
-//	    // Make sure your element is attached to a source, otherwise this will return null
-//	    TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(element);
-//	    domain.getCommandStack().execute(new RecordingCommand(domain) {
-//
-//	        @Override
-//	        protected void doExecute() {
-//	            // Implement your write operations here,
-//	            // for example: set a new name
-//	            //element.eSet(element.eClass().getEStructuralFeature("occiComputeCores"), size);
-//	            //element.eSet(element.eClass().getEStructuralFeature("title"), value);
-//	            //((Compute)element).setOcciComputeCores(size);
-//	        	    //((Compute)element).eGet(element.eClass().eContainingFeature());
-//	          	//element.eGet("occiRetrieve());
-//	            //((Compute)element).occiRetrieve();
-//	        		//((Compute)element).occiCreate();
-//	        		//(Compute)element).occiCreate();
-//	        		
-//	        }
-//	    });
-//	}
 
 	@Override
 	public void occiCreate()
@@ -218,18 +196,7 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 	@Override
 	public void occiRetrieve()
 	{
-		MyRunnable myRunnable = new MyRunnable() {
-			public void run() {
-				try {
-					createConfigtemp(1);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				}
-		};
-		Thread thread = new Thread(myRunnable);
-		thread.start();
+	
 		//try {
 		//	createConfigtemp(2);
 		//} catch (InterruptedException e) {
@@ -262,16 +229,41 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 		}
 		System.out.println("the old group size is  " + oldGroupSize );	
 		
+		final int olldGroupSize = oldGroupSize;
 		if (getHorizontalGroupGroupSize() > oldGroupSize) {
 			//final int  oldGroupSize1 = oldGroupSize;
 			System.out.println("The group will be increased by " + (getHorizontalGroupGroupSize() - oldGroupSize));
-			
-			try {
-				createConfigtemp(oldGroupSize);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			ArrayList<String> LlinksIds = new ArrayList<String>();
+			for (Link link : this.getLinks()) {
+				if(link.getTarget() instanceof Instancevmware) {
+					//oldGroupSize = oldGroupSize+1;
+					LlinksIds.add(link.getId());
+					
+				}
 			}
+			
+			for (String p : LlinksIds)
+			    System.out.println("existed instances : " + p );
+			final int Gsize = oldGroupSize;
+			final TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(this);	
+			domain.getCommandStack().execute(new RecordingCommand(domain) {
+				@Override
+				protected void doExecute() {
+					createInstanceandLinkConfig(Gsize);
+					
+				}});
+			//createInstanceandLinkConfig(oldGroupSize);
+			MyRunnable myRunnable = new MyRunnable() {
+				public void run() {
+					try {
+						createConfigtemp(olldGroupSize, LlinksIds);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+			};
+			Thread thread = new Thread(myRunnable);
+			thread.start();
 			
         } else if (getHorizontalGroupGroupSize() < oldGroupSize) {
         		int instancestodelete = (oldGroupSize - getHorizontalGroupGroupSize());
@@ -287,13 +279,24 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
         			}
                 }
         	}
-        
-        	
-        		 
-		
-		// TODO: Implement this callback or remove this method.
 	}
 	// End of user code
+	protected void createInstanceandLinkConfig(int oldGroupSize) {
+		for (int i=oldGroupSize+1; i <= getHorizontalGroupGroupSize(); i++) {
+			Configuration config = (Configuration)this.eContainer();
+			Instancegrouplink igl = HorizontalelasticityFactory.eINSTANCE.createInstancegrouplink();
+			Instancevmware vm = VmwareFactory.eINSTANCE.createInstancevmware();
+			config.getResources().add(vm);
+			igl.setSource(this);
+			igl.setTarget(vm);
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		System.out.println(" i= " + 1);	
+		}
+	}
 
 	// Start of user code HorizontalgroupocciDelete_method
 	/**
@@ -406,39 +409,44 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 		}
 	}
 	
-	private  void createConfigtemp(int oldGroupSize) throws InterruptedException  {
+	private  void createConfigtemp(int oldGroupSize, ArrayList<String> LlinksIds) throws InterruptedException  {
+		final TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(this);
 		//int oldGroupSize = 2;
-		ArrayList<String> linksIds = new ArrayList<String>();
-		for (Link link : this.getLinks()) {
-			if(link.getTarget() instanceof Instancevmware) {
-				//oldGroupSize = oldGroupSize+1;
-				linksIds.add(link.getId());
-				
-			}
-		}
-		
-		for (String p : linksIds)
-		    System.out.println("existed instances : " + p );
-		
-		
-		for (int i=oldGroupSize+1; i <= getHorizontalGroupGroupSize(); i++) {
-			Configuration config = (Configuration)this.eContainer();
-			Instancegrouplink igl = HorizontalelasticityFactory.eINSTANCE.createInstancegrouplink();
-			Instancevmware vm = VmwareFactory.eINSTANCE.createInstancevmware();
-			config.getResources().add(vm);
-			igl.setSource(this);
-			igl.setTarget(vm);
-			System.out.println(igl);
-			System.out.println(vm);
-			
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			i++;
-		}
+// this is for demo
+		//		ArrayList<String> linksIds = new ArrayList<String>();
+//		for (Link link : this.getLinks()) {
+//			if(link.getTarget() instanceof Instancevmware) {
+//				//oldGroupSize = oldGroupSize+1;
+//				linksIds.add(link.getId());
+//				
+//			}
+//		}
+//		
+//		for (String p : linksIds)
+//		    System.out.println("existed instances : " + p );
+//		
+//		
+//		for (int i=oldGroupSize+1; i <= getHorizontalGroupGroupSize(); i++) {
+//			Configuration config = (Configuration)this.eContainer();
+//			Instancegrouplink igl = HorizontalelasticityFactory.eINSTANCE.createInstancegrouplink();
+//			Instancevmware vm = VmwareFactory.eINSTANCE.createInstancevmware();
+//			config.getResources().add(vm);
+//			Horizontalgroup hgg = this;
+//			igl.setSource(this);
+//			igl.setTarget(vm);
+//			System.out.println(igl);
+//			System.out.println(vm);
+//			
+//			
+//			
+//			try {
+//				Thread.sleep(1000);
+//			} catch (InterruptedException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//			i++;
+//		}
 		
 		ArrayList<String> linksIds2 = new ArrayList<String>();
 		for (Link link : this.getLinks()) {
@@ -453,29 +461,24 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 		    System.out.println("hi : " + p );
 		
 		int index = oldGroupSize+1;
-		String vmname = "node"+ index;
-		TransactionalEditingDomain domain; 
+		String vmname ;
 		for (Link link : this.getLinks()) { 
 			if(link.getTarget() instanceof Instancevmware) {
-				if(!linksIds.contains(link.getId())) { // try to deploy in the new created configuratio
+				if(!LlinksIds.contains(link.getId())) { // try to deploy in the new created configuratio
+					vmname = "node"+ index;
 					System.out.println("will be deployed in the confiugration " + link.getId());
 					Instancevmware inst = (Instancevmware)link.getTarget();
 					System.out.println(" instance name " +  vmname);
-					inst.setTitle(vmname);
-					//doEditing1(inst, vmname);
-					inst.setOcciComputeState(ComputeStatus.ACTIVE);
-					//doEditing3(inst);
-					inst.setImagename("templatelast");
-					//doEditing2(inst, "template");
+					final String vmname1 = vmname;
+					domain.getCommandStack().execute(new RecordingCommand(domain) {
+						@Override
+						protected void doExecute() {
+							inst.setTitle(vmname1);
+							inst.setOcciComputeState(ComputeStatus.ACTIVE);
+							inst.setImagename("templatelast");
+						}});
 					System.out.print("instance  " + inst);
 					inst.occiCreate();
-					///domain = TransactionUtil.getEditingDomain(inst);
-					///domain.getCommandStack().execute(new RecordingCommand(domain) {
-					///   public void doExecute() {
-					///	   ((Compute)inst).occiCreate();
-					///   }
-					///});
-					
 					index++;
 					//service.submit(myRunnable);
 					try {
@@ -491,20 +494,17 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 		}
 		//service.shutdown();
 		System.out.println("hi, the system will wait until the tasks are finsined");
-//		try {
-		//Thread.sleep(300000);
-//			service.awaitTermination(420, TimeUnit.SECONDS);
-//		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
 		System.out.println("finsh, finsih finnnnnnnnnnnnsh");	
 		for (Link link : this.getLinks()) { 
 			if(link.getTarget() instanceof Instancevmware) {
-				if(!linksIds.contains(link.getId())) {
+				if(!LlinksIds.contains(link.getId())) {
 					System.out.println("link fonnddddddd " + link.getId());
 					Instancevmware inst = (Instancevmware)link.getTarget();
-					inst.occiRetrieve();
+					domain.getCommandStack().execute(new RecordingCommand(domain) {
+						@Override
+						protected void doExecute() {
+							inst.occiRetrieve();
+						}});
 					Thread.sleep(20000);
 									
 					while (inst.getAttributes().get(8).getValue().isEmpty()) { 
@@ -515,24 +515,20 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 						} else {
 							System.out.println("Waiting for the machine to reboot and to get its DHCP ip");
 						}
-						//domain = TransactionUtil.getEditingDomain(inst);
-						//domain.getCommandStack().execute(new RecordingCommand(domain) {
-						//   public void doExecute() {
-						//	   ((Compute)inst).occiRetrieve();
-						//   }
-						//});
-						
-						try {
-							inst.occiRetrieve();
-						} catch (Exception e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-
+						domain.getCommandStack().execute(new RecordingCommand(domain) {
+							@Override
+							protected void doExecute() {
+								inst.occiRetrieve();
+							}});
 						Thread.sleep(20000);
 					}
 					Loadbalancer lb = (Loadbalancer) this.getLinks().get(0).getTarget();  //register the ips in loadBlancer
-					lb.setLoadbalancerInstanceIP(inst.getAttributes().get(8).getValue());
+					domain.getCommandStack().execute(new RecordingCommand(domain) {
+						@Override
+						protected void doExecute() {
+							lb.setLoadbalancerInstanceIP(inst.getAttributes().get(8).getValue());
+						}});
+					//lb.setLoadbalancerInstanceIP(inst.getAttributes().get(8).getValue());
 					lb.addbackendserver();
 					//register the vms in the monitoring system
 					ZabbixMonitoring2 zabbix_obj = new ZabbixMonitoring2();
@@ -544,8 +540,6 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 			}
 			
 		}
-			
-	//return linksIds;
 	}
 	
 	private void createVMs() {

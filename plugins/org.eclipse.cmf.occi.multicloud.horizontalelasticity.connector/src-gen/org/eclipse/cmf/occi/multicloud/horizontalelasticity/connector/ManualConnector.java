@@ -201,7 +201,7 @@ public class ManualConnector extends org.eclipse.cmf.occi.multicloud.horizontale
 				hg.setHorizontalGroupMinimum(getManualMinGroupSize());
 			}
 			
-			//hg.occiUpdate();
+			hg.occiUpdate();
 
 		} else {
 			System.out.println("Cant find the horizontalgroup");

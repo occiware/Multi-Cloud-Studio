@@ -55,8 +55,8 @@ public class Job1 implements Job{
 				public void doExecute() {
 					if(entity instanceof ManualConnector) {
 						ManualConnector man = (ManualConnector) entity;
-						//man.start();
-						man.occiCreate();
+						man.start();
+						//man.occiCreate();
 					}
 					
 					else if (entity instanceof Simpledynamic) {

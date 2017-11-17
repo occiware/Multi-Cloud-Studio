@@ -31,6 +31,7 @@ import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalelasticity
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Instancegrouplink;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Loadbalancer;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Simpledynamic;
 import org.eclipse.cmf.occi.multicloud.vmware.Instancevmware;
 import org.eclipse.cmf.occi.multicloud.vmware.VmwareFactory;
 import org.eclipse.emf.ecore.EObject;
@@ -245,14 +246,15 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 			for (String p : LlinksIds)
 			    System.out.println("existed instances : " + p );
 			final int Gsize = oldGroupSize;
-			final TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(this);	
-			domain.getCommandStack().execute(new RecordingCommand(domain) {
-				@Override
-				protected void doExecute() {
-					createInstanceandLinkConfig(Gsize);
+			//SimpledynamicConnector sd = new SimpledynamicConnector();
+			//final TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(this);	
+			//domain.getCommandStack().execute(new RecordingCommand(domain) {
+			//	@Override
+			//	protected void doExecute() {
+			//		createInstanceandLinkConfig(Gsize);
 					
-				}});
-			//createInstanceandLinkConfig(oldGroupSize);
+			//	}});
+			createInstanceandLinkConfig(oldGroupSize);
 			MyRunnable myRunnable = new MyRunnable() {
 				public void run() {
 					try {

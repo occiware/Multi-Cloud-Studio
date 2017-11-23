@@ -393,6 +393,24 @@ litigation.
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+         <plugin
+         id="org.eclipse.cmf.occi.core.gen.alloy"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         <plugin
+         id="org.eclipse.cmf.occi.core.gen.alloy.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+         <plugin
+         id="org.eclipse.cmf.occi.core.connector.jocci"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
    <plugin
          id="org.eclipse.cmf.occi.infrastructure"
          download-size="0"
@@ -411,12 +429,12 @@ litigation.
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-   <plugin
+<!--   <plugin
          id="org.eclipse.cmf.occi.infrastructure.tests"
          download-size="0"
          install-size="0"
          version="0.0.0"
-         unpack="false"/>
+         unpack="false"/> -->
 <!--   <plugin
          id="org.eclipse.cmf.occi.infrastructure.design"
          download-size="0"
@@ -441,12 +459,12 @@ litigation.
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-   <plugin
+<!--   <plugin
          id="org.eclipse.cmf.occi.crtp.tests"
          download-size="0"
          install-size="0"
          version="0.0.0"
-         unpack="false"/>
+         unpack="false"/> -->
 <!--   <plugin
          id="org.eclipse.cmf.occi.crtp.design"
          download-size="0"
@@ -471,12 +489,12 @@ litigation.
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-   <plugin
+<!--   <plugin
          id="org.eclipse.cmf.occi.monitoring.tests"
          download-size="0"
          install-size="0"
          version="0.0.0"
-         unpack="false"/>
+         unpack="false"/> -->
 <!--   <plugin
          id="org.eclipse.cmf.occi.monitoring.design"
          download-size="0"
@@ -576,37 +594,7 @@ litigation.
         install-size="0"
         version="0.0.0"
         unpack="false"/>
-    <!-- Designed for Elastic OCCI (elasticzabbix + vmware + ElasticOCCI) -->
-    <plugin
-        id="org.eclipse.cmf.occi.multicloud.elasticzabbix"
-        download-size="0"
-        install-size="0"
-        version="0.0.0"
-        unpack="false"/>
-    <plugin
-        id="org.eclipse.cmf.occi.multicloud.elasticzabbix.edit"
-        download-size="0"
-        install-size="0"
-        version="0.0.0"
-        unpack="false"/>
-    <plugin
-        id="org.eclipse.cmf.occi.multicloud.elasticzabbix.editor"
-        download-size="0"
-        install-size="0"
-        version="0.0.0"
-        unpack="false"/>
-    <plugin
-        id="org.eclipse.cmf.occi.multicloud.elasticzabbix.design"
-        download-size="0"
-        install-size="0"
-        version="0.0.0"
-        unpack="false"/>
-    <plugin
-        id="org.eclipse.cmf.occi.multicloud.elasticzabbix.connector"
-        download-size="0"
-        install-size="0"
-        version="0.0.0"
-        unpack="false"/>
+    
         
         <!-- Merged designer extensions -->
     <plugin
@@ -615,6 +603,101 @@ litigation.
         install-size="0"
         version="0.0.0"
         unpack="false"/>
+    
+    <!-- Designed for Elastic OCCI (elasticzabbix + vmware + ElasticOCCI) -->
+<!--    <plugin
+        id="org.eclipse.cmf.occi.multicloud.occimonitoring"
+        download-size="0"
+        install-size="0"
+        version="0.0.0"
+        unpack="false"/>
+    <plugin
+        id="org.eclipse.cmf.occi.multicloud.occimonitoring.edit"
+        download-size="0"
+        install-size="0"
+        version="0.0.0"
+        unpack="false"/>
+    <plugin
+        id="org.eclipse.cmf.occi.multicloud.occimonitoring.editor"
+        download-size="0"
+        install-size="0"
+        version="0.0.0"
+        unpack="false"/>
+    <plugin
+        id="org.eclipse.cmf.occi.multicloud.occimonitoring.connector"
+        download-size="0"
+        install-size="0"
+        version="0.0.0"
+        unpack="false"/>
+    <plugin
+        id="org.eclipse.cmf.occi.multicloud.occimonitoring.design"
+        download-size="0"
+        install-size="0"
+        version="0.0.0"
+        unpack="false"/>
+    <plugin
+        id="org.eclipse.cmf.occi.multicloud.elasticocci"
+        download-size="0"
+        install-size="0"
+        version="0.0.0"
+        unpack="false"/>
+    <plugin
+        id="org.eclipse.cmf.occi.multicloud.elasticocci.edit"
+        download-size="0"
+        install-size="0"
+        version="0.0.0"
+        unpack="false"/>
+    <plugin
+        id="org.eclipse.cmf.occi.multicloud.elasticocci.editor"
+        download-size="0"
+        install-size="0"
+        version="0.0.0"
+        unpack="false"/>
+    <plugin
+        id="org.eclipse.cmf.occi.multicloud.elasticocci.connector"
+        download-size="0"
+        install-size="0"
+        version="0.0.0"
+        unpack="false"/>
+    <plugin
+        id="org.eclipse.cmf.occi.multicloud.elasticocci.design.extended"
+        download-size="0"
+        install-size="0"
+        version="0.0.0"
+        unpack="false"/>
+    <plugin
+        id=">org.eclipse.cmf.occi.multicloud.horizontalelasticity"
+        download-size="0"
+        install-size="0"
+        version="0.0.0"
+        unpack="false"/>
+    <plugin
+        id=">org.eclipse.cmf.occi.multicloud.horizontalelasticity.edit"
+        download-size="0"
+        install-size="0"
+        version="0.0.0"
+        unpack="false"/>
+    <plugin
+        id=">org.eclipse.cmf.occi.multicloud.horizontalelasticity.editor"
+        download-size="0"
+        install-size="0"
+        version="0.0.0"
+        unpack="false"/>
+    <plugin
+        id=">org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector"
+        download-size="0"
+        install-size="0"
+        version="0.0.0"
+        unpack="false"/>
+    <plugin
+        id=">org.eclipse.cmf.occi.multicloud.horizontalelasticity.design.extended"
+        download-size="0"
+        install-size="0"
+        version="0.0.0"
+        unpack="false"/> -->
+    
+
+    
   <requires>
     <!-- Eclipse Modeling Framework and tools. -->
     <import feature="org.eclipse.emf" version="2.12.0.v20160526-0356"/>
@@ -632,5 +715,9 @@ litigation.
     <import feature="org.eclipse.epsilon.core.dt.feature" version="1.4.0.201611012202"/>
     <import feature="org.eclipse.epsilon.emf.dt.feature" version="1.4.0.201611012202"/>
     <import feature="org.eclipse.epsilon.emf.feature" version="1.4.0.201611012202"/>
+    <import feature="org.eclipse.emf.ecoretools.design" version="3.3.0.201706121316"/>
+    <import feature="org.eclipse.mylyn.wikitext_feature" version="3.0.6.201703111926"/>
+    <import feature="org.eclipse.egit" version="4.8.0.201706111038-r"/>
+    <import feature="org.eclipse.emf.compare.egit" version="1.2.1.201706130827"/>
   </requires>
 </feature>

@@ -247,14 +247,20 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 			    System.out.println("existed instances : " + p );
 			final int Gsize = oldGroupSize;
 			//SimpledynamicConnector sd = new SimpledynamicConnector();
-			//final TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(this);	
-			//domain.getCommandStack().execute(new RecordingCommand(domain) {
-			//	@Override
-			//	protected void doExecute() {
-			//		createInstanceandLinkConfig(Gsize);
+			final TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(this);	
+			domain.getCommandStack().execute(new RecordingCommand(domain) {
+				@Override
+				protected void doExecute() {
+					createInstanceandLinkConfig(Gsize);
 					
-			//	}});
-			createInstanceandLinkConfig(oldGroupSize);
+				}});
+			//createInstanceandLinkConfig(oldGroupSize);
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			MyRunnable myRunnable = new MyRunnable() {
 				public void run() {
 					try {
@@ -477,7 +483,7 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 						protected void doExecute() {
 							inst.setTitle(vmname1);
 							inst.setOcciComputeState(ComputeStatus.ACTIVE);
-							inst.setImagename("templatelast");
+							inst.setImagename("elasticoccidemo"); //templatelast
 						}});
 					System.out.print("instance  " + inst);
 					inst.occiCreate();
@@ -557,7 +563,7 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 					inst.setTitle(vmName);
 					inst.setOcciComputeState(ComputeStatus.ACTIVE);
 					//doEditing2(inst, "template");
-					inst.setImagename("templatelast");
+					inst.setImagename("elasticoccidemo");
 					MyRunnable myRunnable = new MyRunnable() {
 						public void run() {
 							try { 

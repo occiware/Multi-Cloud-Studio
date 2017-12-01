@@ -106,7 +106,7 @@ public class RecurringscheduleConnector extends org.eclipse.cmf.occi.multicloud.
 				.newTrigger()
 				.withIdentity("triggerkeyname", "group1")
 				.startAt(this.getRecurringscheduleStartDate())
-				.withSchedule(CronScheduleBuilder.cronSchedule("0 0/5 * * * ?"))
+				.withSchedule(CronScheduleBuilder.cronSchedule("0 0/4 * * * ?"))
 				.build();
 			//.endAt(enddate)
 		    //schedule it

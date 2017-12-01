@@ -169,7 +169,7 @@ public class DynamicadjustmentConnector extends org.eclipse.cmf.occi.multicloud.
 			
 			Horizontalgroup hg = getHorzontalgroup();
 			int groupSize = hg.getHorizontalGroupGroupSize();
-			float decreaseIndicator = ((this.dynamicAdjustmentTarget/groupSize) - 5);  // B = (Tcpu/count) - alpha
+			float decreaseIndicator = ((this.dynamicAdjustmentTarget/groupSize) - 5);  // B = (((count-1)*Tcpu)/count) - alpha // you have not to violate the threshold (Tcpu)
 			
 			if (metrcUsage >= this.dynamicAdjustmentTarget) {
 				action( "add", "instanceCount", 1, this.getDynamicAdjustmentCoolDuration());

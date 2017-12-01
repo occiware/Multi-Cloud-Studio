@@ -123,6 +123,7 @@ public class SimpledynamicConnector extends org.eclipse.cmf.occi.multicloud.hori
 	public void stop()
 	{
 		LOGGER.debug("Action stop() called on " + this);
+		System.out.println("\n stop is called now");
 		bool = false;
 		// TODO: Implement how to stop this simpledynamic.
 	}
@@ -233,10 +234,12 @@ public class SimpledynamicConnector extends org.eclipse.cmf.occi.multicloud.hori
 					@Override
 					protected void doExecute() {
 						hg.setHorizontalGroupGroupSize(newGroupSize);
-						hg.occiUpdate();
+						//hg.occiUpdate();
 					}});
+				hg.occiUpdate();
 				try {
-					Thread.sleep(420000);
+					//Thread.sleep(300000);
+					Thread.sleep(120000);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

@@ -10,7 +10,8 @@ Bundle-ActivationPolicy: lazy
 Require-Bundle: org.slf4j.api,
  org.eclipse.cmf.occi.core,
  org.eclipse.cmf.occi.infrastructure,
- org.eclipse.cmf.occi.multicloud.vmware;bundle-version="1.0.0"
+ org.eclipse.cmf.occi.multicloud.vmware;bundle-version="1.0.0",
+ org.eclipse.cmf.occi.multicloud.occimonitoring;bundle-version="1.0.0"
 Export-Package: org.eclipse.cmf.occi.multicloud.occimonitoring.connector
 Import-Package: com.goebl.david,
  org.json

@@ -22,11 +22,20 @@ import java.util.Timer;
 
 import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamicadjustment;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalelasticcontroller;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Simpledynamic;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Stepdynamic;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
+import org.quartz.CronScheduleBuilder;
+import org.quartz.JobBuilder;
+import org.quartz.JobDetail;
+import org.quartz.SchedulerException;
+import org.quartz.SchedulerFactory;
+import org.quartz.Trigger;
+import org.quartz.TriggerBuilder;
+import org.quartz.impl.StdSchedulerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -151,7 +160,34 @@ public class UniquescheduleConnector extends org.eclipse.cmf.occi.multicloud.hor
 	        	});
         		}
         },date1); 
+        
+        
+        ///////////////////////////////// stop the timer, using quartz  
+        if ((this.getUniqueScheduleEndDate() != null)) {
+        	JobDetail job2 = JobBuilder.newJob(Job2.class)
+    				.withIdentity("dummyJobName", "group1").build();
+            
+            // Trigger the job 
+            Trigger trigger = TriggerBuilder
+    				.newTrigger()
+    				.withIdentity("triggerkeyname", "group1")
+    				.startAt(this.getUniqueScheduleEndDate())
+    				//.withSchedule(simpleSchedule())
+    				.build();
+            
+            org.quartz.Scheduler scheduler1;
+    		try {
+    			scheduler1 =  new StdSchedulerFactory().getScheduler();
+    			scheduler1.getContext().put("key", entity);
+    			scheduler1.start();
+    			scheduler1.scheduleJob(job2, trigger);
+    		} catch (SchedulerException e) {
+    			// TODO Auto-generated catch block
+    			e.printStackTrace();  
 
+    		}
+        }
+        	
     }
 
 

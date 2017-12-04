@@ -48,11 +48,11 @@
     <attributes name="ElasticityController.coolDuration" mutable="true">
       <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
     </attributes>
-    <attributes name="ElasticityController.iterationWaitTime " mutable="true">
+    <attributes name="ElasticityController.iterationWaitTime" mutable="true">
       <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
     </attributes>
-    <actions name="start" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/horizontalelasticcontroller/action#"/>
-    <actions name="stop" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/horizontalelasticcontroller/action#"/>
+    <actions name="start" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/elasticitycontroller/action#"/>
+    <actions name="stop" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/elasticitycontroller/action#"/>
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
   </kinds>
   <kinds name="InstanceGroupLink" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" source="//@kinds[term='horizontalgroup']">

@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Wed Oct 18 15:58:47 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Mon Dec 04 11:58:56 CET 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
@@ -172,11 +172,11 @@ public class DynamicadjustmentConnector extends org.eclipse.cmf.occi.multicloud.
 			float decreaseIndicator = ((this.dynamicAdjustmentTarget/groupSize) - 5);  // B = (((count-1)*Tcpu)/count) - alpha // you have not to violate the threshold (Tcpu)
 			
 			if (metrcUsage >= this.dynamicAdjustmentTarget) {
-				action( "add", "instanceCount", 1, this.getDynamicAdjustmentCoolDuration());
+				action( "add", "instanceCount", 1, this.getElasticityControllerCoolDuration());
 			}
 			
 			if(metrcUsage < decreaseIndicator) {
-				action( "remove", "instanceCount", 1, this.getDynamicAdjustmentCoolDuration());
+				action( "remove", "instanceCount", 1, this.getElasticityControllerCoolDuration());
 			}	
 		//}
 	}

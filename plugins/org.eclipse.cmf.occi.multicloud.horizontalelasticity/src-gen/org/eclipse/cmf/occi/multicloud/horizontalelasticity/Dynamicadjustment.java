@@ -26,9 +26,7 @@ package org.eclipse.cmf.occi.multicloud.horizontalelasticity;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamicadjustment#getDynamicAdjustmentName <em>Dynamic Adjustment Name</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamicadjustment#getDynamicAdjustmentMetric <em>Dynamic Adjustment Metric</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamicadjustment#getDynamicAdjustmentCoolDuration <em>Dynamic Adjustment Cool Duration</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamicadjustment#isDynamicAdjustmentDisableScaleIn <em>Dynamic Adjustment Disable Scale In</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamicadjustment#getDynamicAdjustmentTarget <em>Dynamic Adjustment Target</em>}</li>
  * </ul>
@@ -38,32 +36,6 @@ package org.eclipse.cmf.occi.multicloud.horizontalelasticity;
  * @generated
  */
 public interface Dynamicadjustment extends Dynamic {
-	/**
-	 * Returns the value of the '<em><b>Dynamic Adjustment Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * 
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Dynamic Adjustment Name</em>' attribute.
-	 * @see #setDynamicAdjustmentName(String)
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getDynamicadjustment_DynamicAdjustmentName()
-	 * @model dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Dynamicadjustment!dynamicAdjustmentName'"
-	 * @generated
-	 */
-	String getDynamicAdjustmentName();
-
-	/**
-	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamicadjustment#getDynamicAdjustmentName <em>Dynamic Adjustment Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Dynamic Adjustment Name</em>' attribute.
-	 * @see #getDynamicAdjustmentName()
-	 * @generated
-	 */
-	void setDynamicAdjustmentName(String value);
-
 	/**
 	 * Returns the value of the '<em><b>Dynamic Adjustment Metric</b></em>' attribute.
 	 * The literals are from the enumeration {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.MetricTargetTracking}.
@@ -76,7 +48,7 @@ public interface Dynamicadjustment extends Dynamic {
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.MetricTargetTracking
 	 * @see #setDynamicAdjustmentMetric(MetricTargetTracking)
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getDynamicadjustment_DynamicAdjustmentMetric()
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Dynamicadjustment!dynamicAdjustmentMetric'"
+	 * @model
 	 * @generated
 	 */
 	MetricTargetTracking getDynamicAdjustmentMetric();
@@ -93,32 +65,6 @@ public interface Dynamicadjustment extends Dynamic {
 	void setDynamicAdjustmentMetric(MetricTargetTracking value);
 
 	/**
-	 * Returns the value of the '<em><b>Dynamic Adjustment Cool Duration</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * 
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Dynamic Adjustment Cool Duration</em>' attribute.
-	 * @see #setDynamicAdjustmentCoolDuration(Integer)
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getDynamicadjustment_DynamicAdjustmentCoolDuration()
-	 * @model dataType="org.eclipse.cmf.occi.core.Integer"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Dynamicadjustment!dynamicAdjustmentCoolDuration'"
-	 * @generated
-	 */
-	Integer getDynamicAdjustmentCoolDuration();
-
-	/**
-	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamicadjustment#getDynamicAdjustmentCoolDuration <em>Dynamic Adjustment Cool Duration</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Dynamic Adjustment Cool Duration</em>' attribute.
-	 * @see #getDynamicAdjustmentCoolDuration()
-	 * @generated
-	 */
-	void setDynamicAdjustmentCoolDuration(Integer value);
-
-	/**
 	 * Returns the value of the '<em><b>Dynamic Adjustment Disable Scale In</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -129,7 +75,6 @@ public interface Dynamicadjustment extends Dynamic {
 	 * @see #setDynamicAdjustmentDisableScaleIn(boolean)
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getDynamicadjustment_DynamicAdjustmentDisableScaleIn()
 	 * @model dataType="org.eclipse.cmf.occi.core.Boolean"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Dynamicadjustment!dynamicAdjustmentDisableScaleIn'"
 	 * @generated
 	 */
 	boolean isDynamicAdjustmentDisableScaleIn();
@@ -155,7 +100,6 @@ public interface Dynamicadjustment extends Dynamic {
 	 * @see #setDynamicAdjustmentTarget(Float)
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getDynamicadjustment_DynamicAdjustmentTarget()
 	 * @model dataType="org.eclipse.cmf.occi.multicloud.horizontalelasticity.Float"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Dynamicadjustment!dynamicAdjustmentTarget'"
 	 * @generated
 	 */
 	Float getDynamicAdjustmentTarget();

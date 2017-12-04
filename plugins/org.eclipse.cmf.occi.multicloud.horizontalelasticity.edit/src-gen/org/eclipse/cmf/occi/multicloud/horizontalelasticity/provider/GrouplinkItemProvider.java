@@ -25,6 +25,8 @@ import org.eclipse.cmf.occi.infrastructure.InfrastructureFactory;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Grouplink;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityFactory;
 
+import org.eclipse.cmf.occi.multicloud.vmware.VmwareFactory;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -163,6 +165,36 @@ public class GrouplinkItemProvider extends LinkItemProvider {
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
 				 InfrastructureFactory.eINSTANCE.createUser_data()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createWindows()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createLinux()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createMacosx()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createVmwarefolders()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createOs_tpl_vmware()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createSsh_user_data()));
 	}
 
 	/**

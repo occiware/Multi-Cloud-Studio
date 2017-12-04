@@ -49,7 +49,7 @@ public interface Actiontrigger extends Resource {
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.ActionOperation
 	 * @see #setAction(ActionOperation)
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getActiontrigger_Action()
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Actiontrigger!action'"
+	 * @model
 	 * @generated
 	 */
 	ActionOperation getAction();
@@ -77,7 +77,7 @@ public interface Actiontrigger extends Resource {
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.ActionType
 	 * @see #setActionType(ActionType)
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getActiontrigger_ActionType()
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Actiontrigger!actionType'"
+	 * @model
 	 * @generated
 	 */
 	ActionType getActionType();
@@ -104,7 +104,6 @@ public interface Actiontrigger extends Resource {
 	 * @see #setAmount(Float)
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getActiontrigger_Amount()
 	 * @model dataType="org.eclipse.cmf.occi.multicloud.horizontalelasticity.Float"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Actiontrigger!amount'"
 	 * @generated
 	 */
 	Float getAmount();

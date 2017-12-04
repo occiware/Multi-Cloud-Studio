@@ -197,26 +197,26 @@ public class HorizontalelasticityItemProviderAdapterFactory extends Horizontalel
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalelasticcontroller} instances.
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Elasticitycontroller} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected HorizontalelasticcontrollerItemProvider horizontalelasticcontrollerItemProvider;
+	protected ElasticitycontrollerItemProvider elasticitycontrollerItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalelasticcontroller}.
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Elasticitycontroller}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createHorizontalelasticcontrollerAdapter() {
-		if (horizontalelasticcontrollerItemProvider == null) {
-			horizontalelasticcontrollerItemProvider = new HorizontalelasticcontrollerItemProvider(this);
+	public Adapter createElasticitycontrollerAdapter() {
+		if (elasticitycontrollerItemProvider == null) {
+			elasticitycontrollerItemProvider = new ElasticitycontrollerItemProvider(this);
 		}
 
-		return horizontalelasticcontrollerItemProvider;
+		return elasticitycontrollerItemProvider;
 	}
 
 	/**
@@ -243,26 +243,26 @@ public class HorizontalelasticityItemProviderAdapterFactory extends Horizontalel
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Linkbalancer} instances.
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Linkloadbalancer} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected LinkbalancerItemProvider linkbalancerItemProvider;
+	protected LinkloadbalancerItemProvider linkloadbalancerItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Linkbalancer}.
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Linkloadbalancer}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createLinkbalancerAdapter() {
-		if (linkbalancerItemProvider == null) {
-			linkbalancerItemProvider = new LinkbalancerItemProvider(this);
+	public Adapter createLinkloadbalancerAdapter() {
+		if (linkloadbalancerItemProvider == null) {
+			linkloadbalancerItemProvider = new LinkloadbalancerItemProvider(this);
 		}
 
-		return linkbalancerItemProvider;
+		return linkloadbalancerItemProvider;
 	}
 
 	/**
@@ -519,6 +519,29 @@ public class HorizontalelasticityItemProviderAdapterFactory extends Horizontalel
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Computelink} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ComputelinkItemProvider computelinkItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Computelink}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createComputelinkAdapter() {
+		if (computelinkItemProvider == null) {
+			computelinkItemProvider = new ComputelinkItemProvider(this);
+		}
+
+		return computelinkItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Creation} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -714,9 +737,9 @@ public class HorizontalelasticityItemProviderAdapterFactory extends Horizontalel
 		if (arrofRecStepItemProvider != null) arrofRecStepItemProvider.dispose();
 		if (horizontalgroupItemProvider != null) horizontalgroupItemProvider.dispose();
 		if (loadbalancerItemProvider != null) loadbalancerItemProvider.dispose();
-		if (horizontalelasticcontrollerItemProvider != null) horizontalelasticcontrollerItemProvider.dispose();
+		if (elasticitycontrollerItemProvider != null) elasticitycontrollerItemProvider.dispose();
 		if (instancegrouplinkItemProvider != null) instancegrouplinkItemProvider.dispose();
-		if (linkbalancerItemProvider != null) linkbalancerItemProvider.dispose();
+		if (linkloadbalancerItemProvider != null) linkloadbalancerItemProvider.dispose();
 		if (grouplinkItemProvider != null) grouplinkItemProvider.dispose();
 		if (manualItemProvider != null) manualItemProvider.dispose();
 		if (dynamicItemProvider != null) dynamicItemProvider.dispose();
@@ -728,6 +751,7 @@ public class HorizontalelasticityItemProviderAdapterFactory extends Horizontalel
 		if (dynamicpolicyItemProvider != null) dynamicpolicyItemProvider.dispose();
 		if (stepItemProvider != null) stepItemProvider.dispose();
 		if (steplinkItemProvider != null) steplinkItemProvider.dispose();
+		if (computelinkItemProvider != null) computelinkItemProvider.dispose();
 		if (creationItemProvider != null) creationItemProvider.dispose();
 		if (schedulerItemProvider != null) schedulerItemProvider.dispose();
 		if (uniquescheduleItemProvider != null) uniquescheduleItemProvider.dispose();

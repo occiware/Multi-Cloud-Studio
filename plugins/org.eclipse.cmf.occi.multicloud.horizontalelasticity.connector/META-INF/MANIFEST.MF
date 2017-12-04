@@ -16,8 +16,9 @@ Bundle-ActivationPolicy: lazy
 Require-Bundle: org.slf4j.api,
  org.eclipse.cmf.occi.core,
  org.eclipse.cmf.occi.multicloud.horizontalelasticity,
- org.eclipse.core.runtime;bundle-version="3.13.0",
- org.eclipse.emf.transaction,
- org.eclipse.cmf.occi.multicloud.elasticocci.connector;bundle-version="1.0.0",
- org.eclipse.cmf.occi.multicloud.vmware;bundle-version="1.0.0"
+ org.eclipse.cmf.occi.multicloud.elasticocci.connector,
+ org.eclipse.cmf.occi.multicloud.vmware
 Export-Package: org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector
+Import-Package: com.jcraft.jsch;version="0.1.54",
+ org.eclipse.emf.transaction,
+ org.eclipse.emf.transaction.util

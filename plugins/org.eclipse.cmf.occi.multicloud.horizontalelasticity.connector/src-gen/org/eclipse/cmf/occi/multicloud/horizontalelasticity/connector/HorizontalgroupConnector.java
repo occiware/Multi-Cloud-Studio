@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Wed Oct 18 15:58:47 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Mon Dec 04 11:58:56 CET 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
@@ -24,17 +24,14 @@ import java.util.concurrent.TimeUnit;
 
 import org.eclipse.cmf.occi.core.Configuration;
 import org.eclipse.cmf.occi.core.Link;
-import org.eclipse.cmf.occi.infrastructure.Compute;
 import org.eclipse.cmf.occi.infrastructure.ComputeStatus;
 import org.eclipse.cmf.occi.multicloud.elasticocci.connector.MyRunnable;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityFactory;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Instancegrouplink;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Loadbalancer;
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Simpledynamic;
 import org.eclipse.cmf.occi.multicloud.vmware.Instancevmware;
 import org.eclipse.cmf.occi.multicloud.vmware.VmwareFactory;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.transaction.RecordingCommand;
@@ -289,6 +286,7 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
         	}
 	}
 	// End of user code
+	
 	protected void createInstanceandLinkConfig(int oldGroupSize) {
 		for (int i=oldGroupSize+1; i <= getHorizontalGroupGroupSize(); i++) {
 			Configuration config = (Configuration)this.eContainer();
@@ -348,23 +346,6 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 
 		// top do
 	}
-	// End of user code
-
-	//
-	// Horizontalgroup actions.
-	//
-
-	// Start of user code Horizontalgroup_Kind_create_action
-	/**
-	 * Implement OCCI action:
-     * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/horizontalgroup/action#
-     * - term: create
-     * - title: 
-	 * @throws InterruptedException 
-	 * @throws Exception 
-	 */
-	
-	
 	
 	public ArrayList<String> getStatAndIP() throws InterruptedException  { // return the ips for the created VMs
 		ArrayList<String> ipList = new ArrayList<String>();
@@ -596,66 +577,6 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 		System.out.println("finsh, finsih finnnnnnnnnnnnsh");
 		
 	}
-	@Override
-	public void create()
-	{
-		createLinksAndConfig();
-		
-		//if ((this.getLinks() instanceof Instancevmware)) {
-		//	System.out.println("the links are laready created");
-		//		
-		//} else {
-		//	createLinksAndConfig();
-		//}
-		LOGGER.debug("Action create() called on " + this);
-		// TODO: Implement how to create this horizontalgroup.
-		
-	//	int index = 1;
-	//	for (Link link : this.getLinks()) {
-	//		if(link.getTarget() instanceof Instancevmware) {
-	//			String vmName = "node"+index;
-	//			Instancevmware inst = (Instancevmware)link.getTarget();
-	//			inst.occiRetrieve();
-	//			try {
-	//					Thread.sleep(10000);
-	//				} catch (InterruptedException e) {
-	//					// TODO Auto-generated catch block
-	//					e.printStackTrace();
-	//				}
-	//			String stateMessage = inst.getOcciComputeStateMessage();
-	//			System.out.println("The machine is creating " + stateMessage + "The machine name  " +inst.getTitle() + "machine state " +inst.getAttributes().get(3).getValue());
-	//			for (int n=1; n <=8; n++) {
-	//				System.out.println("name " + inst.getAttributes().get(n).getName() + " value " + inst.getAttributes().get(n).getValue());
-	//			}
-				//System.out.println();
-				//inst.setTitle(vmName);
-				
-				//MyRunnable myRunnable2 = new MyRunnable() {
-				//	public void run() {
-				//		String gueststate = inst.getAttributes().get(4).getValue();
-				//		while (!gueststate.equals("running")) {
-				//			gueststate = inst.getAttributes().get(4).getValue();
-				//			String stateMessage = inst.getOcciComputeStateMessage();
-				//			System.out.println("The machine is creating " + stateMessage);
-				//			System.out.println("The machine is  " +inst.getAttributes().get(1).getValue());
-				//			try {
-				//				Thread.sleep(10000);
-				//			} catch (InterruptedException e) {
-				//				// TODO Auto-generated catch block
-				//				e.printStackTrace();
-				//			}
-				//			doEditing(inst);
-				//			//inst.occiRetrieve();
-				//		}
-				//		
-				//	}
-				//};
-				//Thread thread = new Thread(myRunnable2);
-				//thread.start();
-				
-			
-		
-	}
 	private void updateDecrease(int instanceNum) {
 		//int instanceNum = 1;
 		int i = 1;
@@ -689,7 +610,12 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
         }
         
 	}
-		// End of user code
+	// End of user code
+
+	//
+	// Horizontalgroup actions.
+	//
+
 		
 
 

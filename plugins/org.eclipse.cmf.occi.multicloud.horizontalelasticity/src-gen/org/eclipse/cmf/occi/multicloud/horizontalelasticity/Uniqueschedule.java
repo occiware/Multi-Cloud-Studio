@@ -45,7 +45,6 @@ public interface Uniqueschedule extends Scheduler, MixinBase {
 	 * @see #setUniqueScheduleStartDate(Date)
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getUniqueschedule_UniqueScheduleStartDate()
 	 * @model dataType="org.eclipse.cmf.occi.multicloud.horizontalelasticity.Date"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Uniqueschedule!UniqueScheduleStartDate'"
 	 * @generated
 	 */
 	Date getUniqueScheduleStartDate();
@@ -71,7 +70,6 @@ public interface Uniqueschedule extends Scheduler, MixinBase {
 	 * @see #setUniqueScheduleEndDate(Date)
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getUniqueschedule_UniqueScheduleEndDate()
 	 * @model dataType="org.eclipse.cmf.occi.multicloud.horizontalelasticity.Date"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Uniqueschedule!UniqueScheduleEndDate'"
 	 * @generated
 	 */
 	Date getUniqueScheduleEndDate();

@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Wed Oct 18 15:58:47 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Mon Dec 04 11:58:56 CET 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
@@ -22,17 +22,14 @@ import java.util.Timer;
 
 import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamicadjustment;
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalelasticcontroller;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Simpledynamic;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Stepdynamic;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
-import org.quartz.CronScheduleBuilder;
 import org.quartz.JobBuilder;
 import org.quartz.JobDetail;
 import org.quartz.SchedulerException;
-import org.quartz.SchedulerFactory;
 import org.quartz.Trigger;
 import org.quartz.TriggerBuilder;
 import org.quartz.impl.StdSchedulerFactory;
@@ -54,6 +51,7 @@ public class UniquescheduleConnector extends org.eclipse.cmf.occi.multicloud.hor
 	 */
 	private static Logger LOGGER = LoggerFactory.getLogger(UniquescheduleConnector.class);
 	Timer timer = new Timer();
+
 	// Start of user code Uniquescheduleconnector_constructor
 	/**
 	 * Constructs a uniqueschedule connector.

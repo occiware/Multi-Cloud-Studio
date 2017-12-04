@@ -74,9 +74,9 @@ public class HorizontalelasticityFactoryImpl extends EFactoryImpl implements Hor
 			case HorizontalelasticityPackage.ARROF_REC_STEP: return createArrofRecStep();
 			case HorizontalelasticityPackage.HORIZONTALGROUP: return createHorizontalgroup();
 			case HorizontalelasticityPackage.LOADBALANCER: return createLoadbalancer();
-			case HorizontalelasticityPackage.HORIZONTALELASTICCONTROLLER: return createHorizontalelasticcontroller();
+			case HorizontalelasticityPackage.ELASTICITYCONTROLLER: return createElasticitycontroller();
 			case HorizontalelasticityPackage.INSTANCEGROUPLINK: return createInstancegrouplink();
-			case HorizontalelasticityPackage.LINKBALANCER: return createLinkbalancer();
+			case HorizontalelasticityPackage.LINKLOADBALANCER: return createLinkloadbalancer();
 			case HorizontalelasticityPackage.GROUPLINK: return createGrouplink();
 			case HorizontalelasticityPackage.MANUAL: return createManual();
 			case HorizontalelasticityPackage.DYNAMIC: return createDynamic();
@@ -88,6 +88,7 @@ public class HorizontalelasticityFactoryImpl extends EFactoryImpl implements Hor
 			case HorizontalelasticityPackage.DYNAMICPOLICY: return createDynamicpolicy();
 			case HorizontalelasticityPackage.STEP: return createStep();
 			case HorizontalelasticityPackage.STEPLINK: return createSteplink();
+			case HorizontalelasticityPackage.COMPUTELINK: return createComputelink();
 			case HorizontalelasticityPackage.CREATION: return createCreation();
 			case HorizontalelasticityPackage.SCHEDULER: return createScheduler();
 			case HorizontalelasticityPackage.UNIQUESCHEDULE: return createUniqueschedule();
@@ -210,9 +211,9 @@ public class HorizontalelasticityFactoryImpl extends EFactoryImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Horizontalelasticcontroller createHorizontalelasticcontroller() {
-		HorizontalelasticcontrollerImpl horizontalelasticcontroller = new HorizontalelasticcontrollerImpl();
-		return horizontalelasticcontroller;
+	public Elasticitycontroller createElasticitycontroller() {
+		ElasticitycontrollerImpl elasticitycontroller = new ElasticitycontrollerImpl();
+		return elasticitycontroller;
 	}
 
 	/**
@@ -230,9 +231,9 @@ public class HorizontalelasticityFactoryImpl extends EFactoryImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Linkbalancer createLinkbalancer() {
-		LinkbalancerImpl linkbalancer = new LinkbalancerImpl();
-		return linkbalancer;
+	public Linkloadbalancer createLinkloadbalancer() {
+		LinkloadbalancerImpl linkloadbalancer = new LinkloadbalancerImpl();
+		return linkloadbalancer;
 	}
 
 	/**
@@ -343,6 +344,16 @@ public class HorizontalelasticityFactoryImpl extends EFactoryImpl implements Hor
 	public Steplink createSteplink() {
 		SteplinkImpl steplink = new SteplinkImpl();
 		return steplink;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Computelink createComputelink() {
+		ComputelinkImpl computelink = new ComputelinkImpl();
+		return computelink;
 	}
 
 	/**

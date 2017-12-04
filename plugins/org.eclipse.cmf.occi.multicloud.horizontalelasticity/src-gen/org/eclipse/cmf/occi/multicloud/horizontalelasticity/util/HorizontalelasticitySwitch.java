@@ -115,11 +115,11 @@ public class HorizontalelasticitySwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case HorizontalelasticityPackage.HORIZONTALELASTICCONTROLLER: {
-				Horizontalelasticcontroller horizontalelasticcontroller = (Horizontalelasticcontroller)theEObject;
-				T result = caseHorizontalelasticcontroller(horizontalelasticcontroller);
-				if (result == null) result = caseResource(horizontalelasticcontroller);
-				if (result == null) result = caseEntity(horizontalelasticcontroller);
+			case HorizontalelasticityPackage.ELASTICITYCONTROLLER: {
+				Elasticitycontroller elasticitycontroller = (Elasticitycontroller)theEObject;
+				T result = caseElasticitycontroller(elasticitycontroller);
+				if (result == null) result = caseResource(elasticitycontroller);
+				if (result == null) result = caseEntity(elasticitycontroller);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -131,11 +131,11 @@ public class HorizontalelasticitySwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case HorizontalelasticityPackage.LINKBALANCER: {
-				Linkbalancer linkbalancer = (Linkbalancer)theEObject;
-				T result = caseLinkbalancer(linkbalancer);
-				if (result == null) result = caseLink(linkbalancer);
-				if (result == null) result = caseEntity(linkbalancer);
+			case HorizontalelasticityPackage.LINKLOADBALANCER: {
+				Linkloadbalancer linkloadbalancer = (Linkloadbalancer)theEObject;
+				T result = caseLinkloadbalancer(linkloadbalancer);
+				if (result == null) result = caseLink(linkloadbalancer);
+				if (result == null) result = caseEntity(linkloadbalancer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -150,7 +150,7 @@ public class HorizontalelasticitySwitch<T> extends Switch<T> {
 			case HorizontalelasticityPackage.MANUAL: {
 				Manual manual = (Manual)theEObject;
 				T result = caseManual(manual);
-				if (result == null) result = caseHorizontalelasticcontroller(manual);
+				if (result == null) result = caseElasticitycontroller(manual);
 				if (result == null) result = caseResource(manual);
 				if (result == null) result = caseEntity(manual);
 				if (result == null) result = defaultCase(theEObject);
@@ -159,7 +159,7 @@ public class HorizontalelasticitySwitch<T> extends Switch<T> {
 			case HorizontalelasticityPackage.DYNAMIC: {
 				Dynamic dynamic = (Dynamic)theEObject;
 				T result = caseDynamic(dynamic);
-				if (result == null) result = caseHorizontalelasticcontroller(dynamic);
+				if (result == null) result = caseElasticitycontroller(dynamic);
 				if (result == null) result = caseResource(dynamic);
 				if (result == null) result = caseEntity(dynamic);
 				if (result == null) result = defaultCase(theEObject);
@@ -170,7 +170,7 @@ public class HorizontalelasticitySwitch<T> extends Switch<T> {
 				T result = caseSimpledynamic(simpledynamic);
 				if (result == null) result = caseDynamicpolicy(simpledynamic);
 				if (result == null) result = caseDynamic(simpledynamic);
-				if (result == null) result = caseHorizontalelasticcontroller(simpledynamic);
+				if (result == null) result = caseElasticitycontroller(simpledynamic);
 				if (result == null) result = caseResource(simpledynamic);
 				if (result == null) result = caseEntity(simpledynamic);
 				if (result == null) result = defaultCase(theEObject);
@@ -181,7 +181,7 @@ public class HorizontalelasticitySwitch<T> extends Switch<T> {
 				T result = caseStepdynamic(stepdynamic);
 				if (result == null) result = caseDynamicpolicy(stepdynamic);
 				if (result == null) result = caseDynamic(stepdynamic);
-				if (result == null) result = caseHorizontalelasticcontroller(stepdynamic);
+				if (result == null) result = caseElasticitycontroller(stepdynamic);
 				if (result == null) result = caseResource(stepdynamic);
 				if (result == null) result = caseEntity(stepdynamic);
 				if (result == null) result = defaultCase(theEObject);
@@ -191,7 +191,7 @@ public class HorizontalelasticitySwitch<T> extends Switch<T> {
 				Dynamicadjustment dynamicadjustment = (Dynamicadjustment)theEObject;
 				T result = caseDynamicadjustment(dynamicadjustment);
 				if (result == null) result = caseDynamic(dynamicadjustment);
-				if (result == null) result = caseHorizontalelasticcontroller(dynamicadjustment);
+				if (result == null) result = caseElasticitycontroller(dynamicadjustment);
 				if (result == null) result = caseResource(dynamicadjustment);
 				if (result == null) result = caseEntity(dynamicadjustment);
 				if (result == null) result = defaultCase(theEObject);
@@ -217,7 +217,7 @@ public class HorizontalelasticitySwitch<T> extends Switch<T> {
 				Dynamicpolicy dynamicpolicy = (Dynamicpolicy)theEObject;
 				T result = caseDynamicpolicy(dynamicpolicy);
 				if (result == null) result = caseDynamic(dynamicpolicy);
-				if (result == null) result = caseHorizontalelasticcontroller(dynamicpolicy);
+				if (result == null) result = caseElasticitycontroller(dynamicpolicy);
 				if (result == null) result = caseResource(dynamicpolicy);
 				if (result == null) result = caseEntity(dynamicpolicy);
 				if (result == null) result = defaultCase(theEObject);
@@ -236,6 +236,14 @@ public class HorizontalelasticitySwitch<T> extends Switch<T> {
 				T result = caseSteplink(steplink);
 				if (result == null) result = caseLink(steplink);
 				if (result == null) result = caseEntity(steplink);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HorizontalelasticityPackage.COMPUTELINK: {
+				Computelink computelink = (Computelink)theEObject;
+				T result = caseComputelink(computelink);
+				if (result == null) result = caseLink(computelink);
+				if (result == null) result = caseEntity(computelink);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -349,17 +357,17 @@ public class HorizontalelasticitySwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Horizontalelasticcontroller</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Elasticitycontroller</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Horizontalelasticcontroller</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Elasticitycontroller</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseHorizontalelasticcontroller(Horizontalelasticcontroller object) {
+	public T caseElasticitycontroller(Elasticitycontroller object) {
 		return null;
 	}
 
@@ -379,17 +387,17 @@ public class HorizontalelasticitySwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Linkbalancer</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Linkloadbalancer</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Linkbalancer</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Linkloadbalancer</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseLinkbalancer(Linkbalancer object) {
+	public T caseLinkloadbalancer(Linkloadbalancer object) {
 		return null;
 	}
 
@@ -555,6 +563,21 @@ public class HorizontalelasticitySwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSteplink(Steplink object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Computelink</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Computelink</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseComputelink(Computelink object) {
 		return null;
 	}
 

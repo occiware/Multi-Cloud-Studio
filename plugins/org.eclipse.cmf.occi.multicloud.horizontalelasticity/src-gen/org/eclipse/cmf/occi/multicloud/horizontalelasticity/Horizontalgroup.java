@@ -51,7 +51,6 @@ public interface Horizontalgroup extends Resource {
 	 * @see #setHorizontalGroupName(String)
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getHorizontalgroup_HorizontalGroupName()
 	 * @model dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Horizontalgroup!horizontalGroupName'"
 	 * @generated
 	 */
 	String getHorizontalGroupName();
@@ -77,7 +76,6 @@ public interface Horizontalgroup extends Resource {
 	 * @see #setHorizontalGroupGroupSize(Integer)
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getHorizontalgroup_HorizontalGroupGroupSize()
 	 * @model dataType="org.eclipse.cmf.occi.core.Integer"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Horizontalgroup!horizontalGroupGroupSize'"
 	 * @generated
 	 */
 	Integer getHorizontalGroupGroupSize();
@@ -103,7 +101,6 @@ public interface Horizontalgroup extends Resource {
 	 * @see #setHorizontalGroupMaximum(Integer)
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getHorizontalgroup_HorizontalGroupMaximum()
 	 * @model dataType="org.eclipse.cmf.occi.core.Integer"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Horizontalgroup!horizontalGroupMaximum'"
 	 * @generated
 	 */
 	Integer getHorizontalGroupMaximum();
@@ -129,7 +126,6 @@ public interface Horizontalgroup extends Resource {
 	 * @see #setHorizontalGroupMinimum(Integer)
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getHorizontalgroup_HorizontalGroupMinimum()
 	 * @model dataType="org.eclipse.cmf.occi.core.Integer"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Horizontalgroup!horizontalGroupMinimum'"
 	 * @generated
 	 */
 	Integer getHorizontalGroupMinimum();
@@ -155,7 +151,6 @@ public interface Horizontalgroup extends Resource {
 	 * @see #setHorizontalGroupTemplateName(String)
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getHorizontalgroup_HorizontalGroupTemplateName()
 	 * @model dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Horizontalgroup!horizontalGroupTemplateName'"
 	 * @generated
 	 */
 	String getHorizontalGroupTemplateName();
@@ -181,7 +176,6 @@ public interface Horizontalgroup extends Resource {
 	 * @see #setHorizontalGroupLoadBalancer(String)
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getHorizontalgroup_HorizontalGroupLoadBalancer()
 	 * @model dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Horizontalgroup!horizontalGroupLoadBalancer'"
 	 * @generated
 	 */
 	String getHorizontalGroupLoadBalancer();
@@ -195,16 +189,5 @@ public interface Horizontalgroup extends Resource {
 	 * @generated
 	 */
 	void setHorizontalGroupLoadBalancer(String value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * 
-	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Horizontalgroup!create()'"
-	 * @generated
-	 */
-	void create();
 
 } // Horizontalgroup

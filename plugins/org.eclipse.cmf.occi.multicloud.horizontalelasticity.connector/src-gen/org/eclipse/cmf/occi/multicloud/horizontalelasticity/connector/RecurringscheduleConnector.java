@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Tue Oct 17 14:17:54 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Mon Dec 04 11:58:56 CET 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
@@ -62,7 +62,7 @@ public class RecurringscheduleConnector extends org.eclipse.cmf.occi.multicloud.
 	Scheduler scheduler;
 	//TriggerKey triggerKey;
 	Trigger trigger;
-	
+
 	// Start of user code Recurringscheduleconnector_constructor
 	/**
 	 * Constructs a recurringschedule connector.

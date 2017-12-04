@@ -87,7 +87,7 @@ public class StepImpl extends ResourceImpl implements Step {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Integer STEP_SIZE_EDEFAULT = null;
+	protected static final Float STEP_SIZE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getStepSize() <em>Step Size</em>}' attribute.
@@ -97,7 +97,7 @@ public class StepImpl extends ResourceImpl implements Step {
 	 * @generated
 	 * @ordered
 	 */
-	protected Integer stepSize = STEP_SIZE_EDEFAULT;
+	protected Float stepSize = STEP_SIZE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -165,7 +165,7 @@ public class StepImpl extends ResourceImpl implements Step {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Integer getStepSize() {
+	public Float getStepSize() {
 		return stepSize;
 	}
 
@@ -174,8 +174,8 @@ public class StepImpl extends ResourceImpl implements Step {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStepSize(Integer newStepSize) {
-		Integer oldStepSize = stepSize;
+	public void setStepSize(Float newStepSize) {
+		Float oldStepSize = stepSize;
 		stepSize = newStepSize;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.STEP__STEP_SIZE, oldStepSize, stepSize));
@@ -214,7 +214,7 @@ public class StepImpl extends ResourceImpl implements Step {
 				setStepUpperStepBound((Float)newValue);
 				return;
 			case HorizontalelasticityPackage.STEP__STEP_SIZE:
-				setStepSize((Integer)newValue);
+				setStepSize((Float)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

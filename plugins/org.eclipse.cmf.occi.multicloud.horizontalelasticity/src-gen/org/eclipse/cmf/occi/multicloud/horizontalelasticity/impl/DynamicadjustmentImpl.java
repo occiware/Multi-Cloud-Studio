@@ -30,9 +30,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.DynamicadjustmentImpl#getDynamicAdjustmentName <em>Dynamic Adjustment Name</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.DynamicadjustmentImpl#getDynamicAdjustmentMetric <em>Dynamic Adjustment Metric</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.DynamicadjustmentImpl#getDynamicAdjustmentCoolDuration <em>Dynamic Adjustment Cool Duration</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.DynamicadjustmentImpl#isDynamicAdjustmentDisableScaleIn <em>Dynamic Adjustment Disable Scale In</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.DynamicadjustmentImpl#getDynamicAdjustmentTarget <em>Dynamic Adjustment Target</em>}</li>
  * </ul>
@@ -40,26 +38,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class DynamicadjustmentImpl extends DynamicImpl implements Dynamicadjustment {
-	/**
-	 * The default value of the '{@link #getDynamicAdjustmentName() <em>Dynamic Adjustment Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDynamicAdjustmentName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DYNAMIC_ADJUSTMENT_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDynamicAdjustmentName() <em>Dynamic Adjustment Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDynamicAdjustmentName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String dynamicAdjustmentName = DYNAMIC_ADJUSTMENT_NAME_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getDynamicAdjustmentMetric() <em>Dynamic Adjustment Metric</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -79,26 +57,6 @@ public class DynamicadjustmentImpl extends DynamicImpl implements Dynamicadjustm
 	 * @ordered
 	 */
 	protected MetricTargetTracking dynamicAdjustmentMetric = DYNAMIC_ADJUSTMENT_METRIC_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDynamicAdjustmentCoolDuration() <em>Dynamic Adjustment Cool Duration</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDynamicAdjustmentCoolDuration()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Integer DYNAMIC_ADJUSTMENT_COOL_DURATION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDynamicAdjustmentCoolDuration() <em>Dynamic Adjustment Cool Duration</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDynamicAdjustmentCoolDuration()
-	 * @generated
-	 * @ordered
-	 */
-	protected Integer dynamicAdjustmentCoolDuration = DYNAMIC_ADJUSTMENT_COOL_DURATION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isDynamicAdjustmentDisableScaleIn() <em>Dynamic Adjustment Disable Scale In</em>}' attribute.
@@ -164,27 +122,6 @@ public class DynamicadjustmentImpl extends DynamicImpl implements Dynamicadjustm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getDynamicAdjustmentName() {
-		return dynamicAdjustmentName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDynamicAdjustmentName(String newDynamicAdjustmentName) {
-		String oldDynamicAdjustmentName = dynamicAdjustmentName;
-		dynamicAdjustmentName = newDynamicAdjustmentName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_NAME, oldDynamicAdjustmentName, dynamicAdjustmentName));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public MetricTargetTracking getDynamicAdjustmentMetric() {
 		return dynamicAdjustmentMetric;
 	}
@@ -199,27 +136,6 @@ public class DynamicadjustmentImpl extends DynamicImpl implements Dynamicadjustm
 		dynamicAdjustmentMetric = newDynamicAdjustmentMetric == null ? DYNAMIC_ADJUSTMENT_METRIC_EDEFAULT : newDynamicAdjustmentMetric;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_METRIC, oldDynamicAdjustmentMetric, dynamicAdjustmentMetric));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Integer getDynamicAdjustmentCoolDuration() {
-		return dynamicAdjustmentCoolDuration;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDynamicAdjustmentCoolDuration(Integer newDynamicAdjustmentCoolDuration) {
-		Integer oldDynamicAdjustmentCoolDuration = dynamicAdjustmentCoolDuration;
-		dynamicAdjustmentCoolDuration = newDynamicAdjustmentCoolDuration;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_COOL_DURATION, oldDynamicAdjustmentCoolDuration, dynamicAdjustmentCoolDuration));
 	}
 
 	/**
@@ -272,12 +188,8 @@ public class DynamicadjustmentImpl extends DynamicImpl implements Dynamicadjustm
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case HorizontalelasticityPackage.DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_NAME:
-				return getDynamicAdjustmentName();
 			case HorizontalelasticityPackage.DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_METRIC:
 				return getDynamicAdjustmentMetric();
-			case HorizontalelasticityPackage.DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_COOL_DURATION:
-				return getDynamicAdjustmentCoolDuration();
 			case HorizontalelasticityPackage.DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_DISABLE_SCALE_IN:
 				return isDynamicAdjustmentDisableScaleIn();
 			case HorizontalelasticityPackage.DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_TARGET:
@@ -294,14 +206,8 @@ public class DynamicadjustmentImpl extends DynamicImpl implements Dynamicadjustm
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case HorizontalelasticityPackage.DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_NAME:
-				setDynamicAdjustmentName((String)newValue);
-				return;
 			case HorizontalelasticityPackage.DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_METRIC:
 				setDynamicAdjustmentMetric((MetricTargetTracking)newValue);
-				return;
-			case HorizontalelasticityPackage.DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_COOL_DURATION:
-				setDynamicAdjustmentCoolDuration((Integer)newValue);
 				return;
 			case HorizontalelasticityPackage.DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_DISABLE_SCALE_IN:
 				setDynamicAdjustmentDisableScaleIn((Boolean)newValue);
@@ -321,14 +227,8 @@ public class DynamicadjustmentImpl extends DynamicImpl implements Dynamicadjustm
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case HorizontalelasticityPackage.DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_NAME:
-				setDynamicAdjustmentName(DYNAMIC_ADJUSTMENT_NAME_EDEFAULT);
-				return;
 			case HorizontalelasticityPackage.DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_METRIC:
 				setDynamicAdjustmentMetric(DYNAMIC_ADJUSTMENT_METRIC_EDEFAULT);
-				return;
-			case HorizontalelasticityPackage.DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_COOL_DURATION:
-				setDynamicAdjustmentCoolDuration(DYNAMIC_ADJUSTMENT_COOL_DURATION_EDEFAULT);
 				return;
 			case HorizontalelasticityPackage.DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_DISABLE_SCALE_IN:
 				setDynamicAdjustmentDisableScaleIn(DYNAMIC_ADJUSTMENT_DISABLE_SCALE_IN_EDEFAULT);
@@ -348,12 +248,8 @@ public class DynamicadjustmentImpl extends DynamicImpl implements Dynamicadjustm
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case HorizontalelasticityPackage.DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_NAME:
-				return DYNAMIC_ADJUSTMENT_NAME_EDEFAULT == null ? dynamicAdjustmentName != null : !DYNAMIC_ADJUSTMENT_NAME_EDEFAULT.equals(dynamicAdjustmentName);
 			case HorizontalelasticityPackage.DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_METRIC:
 				return dynamicAdjustmentMetric != DYNAMIC_ADJUSTMENT_METRIC_EDEFAULT;
-			case HorizontalelasticityPackage.DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_COOL_DURATION:
-				return DYNAMIC_ADJUSTMENT_COOL_DURATION_EDEFAULT == null ? dynamicAdjustmentCoolDuration != null : !DYNAMIC_ADJUSTMENT_COOL_DURATION_EDEFAULT.equals(dynamicAdjustmentCoolDuration);
 			case HorizontalelasticityPackage.DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_DISABLE_SCALE_IN:
 				return dynamicAdjustmentDisableScaleIn != DYNAMIC_ADJUSTMENT_DISABLE_SCALE_IN_EDEFAULT;
 			case HorizontalelasticityPackage.DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_TARGET:
@@ -372,12 +268,8 @@ public class DynamicadjustmentImpl extends DynamicImpl implements Dynamicadjustm
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (dynamicAdjustmentName: ");
-		result.append(dynamicAdjustmentName);
-		result.append(", dynamicAdjustmentMetric: ");
+		result.append(" (dynamicAdjustmentMetric: ");
 		result.append(dynamicAdjustmentMetric);
-		result.append(", dynamicAdjustmentCoolDuration: ");
-		result.append(dynamicAdjustmentCoolDuration);
 		result.append(", dynamicAdjustmentDisableScaleIn: ");
 		result.append(dynamicAdjustmentDisableScaleIn);
 		result.append(", dynamicAdjustmentTarget: ");

@@ -48,7 +48,6 @@ public interface Step extends Resource {
 	 * @see #setStepLowerStepBound(Float)
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getStep_StepLowerStepBound()
 	 * @model dataType="org.eclipse.cmf.occi.multicloud.horizontalelasticity.Float"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Step!stepLowerStepBound'"
 	 * @generated
 	 */
 	Float getStepLowerStepBound();
@@ -74,7 +73,6 @@ public interface Step extends Resource {
 	 * @see #setStepUpperStepBound(Float)
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getStep_StepUpperStepBound()
 	 * @model dataType="org.eclipse.cmf.occi.multicloud.horizontalelasticity.Float"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Step!stepUpperStepBound'"
 	 * @generated
 	 */
 	Float getStepUpperStepBound();
@@ -97,13 +95,12 @@ public interface Step extends Resource {
 	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Step Size</em>' attribute.
-	 * @see #setStepSize(Integer)
+	 * @see #setStepSize(Float)
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getStep_StepSize()
-	 * @model dataType="org.eclipse.cmf.occi.core.Integer"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Step!stepSize'"
+	 * @model dataType="org.eclipse.cmf.occi.multicloud.horizontalelasticity.Float"
 	 * @generated
 	 */
-	Integer getStepSize();
+	Float getStepSize();
 
 	/**
 	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Step#getStepSize <em>Step Size</em>}' attribute.
@@ -113,6 +110,6 @@ public interface Step extends Resource {
 	 * @see #getStepSize()
 	 * @generated
 	 */
-	void setStepSize(Integer value);
+	void setStepSize(Float value);
 
 } // Step

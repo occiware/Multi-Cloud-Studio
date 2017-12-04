@@ -10,6 +10,7 @@
   <eAnnotations source="http://www.eclipse.org/OCL/Import">
     <details key="occi" value="http://schemas.ogf.org/occi/core/ecore"/>
     <details key="infrastructure" value="http://schemas.ogf.org/occi/infrastructure/ecore"/>
+    <details key="vmware" value="http://occiware.org/occi/infrastructure/vmware/ecore"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EEnum" name="TypeMetric">
     <eLiterals name="CPUtilisation" literal="CPUtilisation"/>
@@ -18,11 +19,11 @@
   <eClassifiers xsi:type="ecore:EDataType" name="Float" instanceClassName="java.lang.Float"/>
   <eClassifiers xsi:type="ecore:EEnum" name="OperatorType">
     <eLiterals name="GraterThan" literal="GraterThan"/>
-    <eLiterals name="GreaterThanorEqualto" value="1" literal="GreaterThanorEqualto"/>
+    <eLiterals name="GreaterThanOrEqualTo" value="1" literal="GreaterThanOrEqualTo"/>
     <eLiterals name="LessThan" value="2" literal="LessThan"/>
-    <eLiterals name="LessThanorEqualto" value="3" literal="LessThanorEqualto"/>
-    <eLiterals name="Equalto" value="4" literal="Equalto"/>
-    <eLiterals name="NotEqualto" value="5" literal="NotEqualto"/>
+    <eLiterals name="LessThanorEqualTo" value="3" literal="LessThanorEqualTo"/>
+    <eLiterals name="EqualTo" value="4" literal="EqualTo"/>
+    <eLiterals name="NotEqualTo" value="5" literal="NotEqualTo"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ActionOperation">
     <eLiterals name="add" literal="add"/>
@@ -72,11 +73,6 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value=""/>
     </eAnnotations>
-    <eOperations name="create">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
-      </eAnnotations>
-    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="horizontalGroupName" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value=""/>
@@ -144,7 +140,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Horizontalelasticcontroller" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Resource">
+  <eClassifiers xsi:type="ecore:EClass" name="Elasticitycontroller" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Resource">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value=""/>
     </eAnnotations>
@@ -158,6 +154,30 @@
         <details key="documentation" value=""/>
       </eAnnotations>
     </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ElasticityControllerMinimumLimit"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ElasticityControllerMaximumLimit"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ElasticityControllerCoolDuration"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ElasticityControllerIterationWaitTime"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Instancegrouplink" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Link">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -170,7 +190,7 @@
       <details key="targetConstraint" value="self.target.oclIsKindOf(infrastructure::Compute)"/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Linkbalancer" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Link">
+  <eClassifiers xsi:type="ecore:EClass" name="Linkloadbalancer" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Link">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value=""/>
     </eAnnotations>
@@ -192,96 +212,37 @@
       <details key="targetConstraint" value="self.target.oclIsKindOf(horizontalelasticity::Horizontalgroup)"/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Manual" eSuperTypes="#//Horizontalelasticcontroller">
+  <eClassifiers xsi:type="ecore:EClass" name="Manual" eSuperTypes="#//Elasticitycontroller">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value=""/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="manualGroupSize" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="manualMaxGroupSize" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="manualMinGroupSize" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="manualDesiredSize" eType="#//Float">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value=""/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Dynamic" eSuperTypes="#//Horizontalelasticcontroller">
+  <eClassifiers xsi:type="ecore:EClass" name="Dynamic" eSuperTypes="#//Elasticitycontroller">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value=""/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dynamicGroupSize" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dynamicMaxGroupSize" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dynamicMinGroupSize" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
-      </eAnnotations>
-    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Simpledynamic" eSuperTypes="#//Dynamicpolicy">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value=""/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="simpleDynamicName" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="simpleDynamicCoolDuration"
-        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
-      </eAnnotations>
-    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Stepdynamic" eSuperTypes="#//Dynamicpolicy">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value=""/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stepDynamicName" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stepDynamicCoolDuration"
-        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
-      </eAnnotations>
-    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Dynamicadjustment" eSuperTypes="#//Dynamic">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value=""/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dynamicAdjustmentName"
-        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
-      </eAnnotations>
-    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dynamicAdjustmentMetric"
         eType="#//MetricTargetTracking">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dynamicAdjustmentCoolDuration"
-        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value=""/>
       </eAnnotations>
@@ -309,11 +270,6 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="targetConstraint" value="self.target.oclIsKindOf(horizontalelasticity::Actiontrigger)"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ruleName" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
-      </eAnnotations>
-    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ruleMetric" eType="#//TypeMetric">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value=""/>
@@ -379,7 +335,7 @@
         <details key="documentation" value=""/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stepSize" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stepSize" eType="#//Float">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value=""/>
       </eAnnotations>
@@ -394,6 +350,17 @@
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="targetConstraint" value="self.target.oclIsKindOf(horizontalelasticity::Step)"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Computelink" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Link">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value=""/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="targetConstraint"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="targetConstraint" value="self.target.oclIsKindOf(infrastructure::Compute)"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Creation" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
@@ -415,7 +382,7 @@
       <details key="constraints" value="appliesConstraint"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="appliesConstraint" value="self.entity.oclIsKindOf(horizontalelasticity::Horizontalelasticcontroller)"/>
+      <details key="appliesConstraint" value="self.entity.oclIsKindOf(horizontalelasticity::Elasticitycontroller)"/>
     </eAnnotations>
     <eOperations name="start">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -457,6 +424,11 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="RecurringscheduleEndDate"
         eType="#//Date">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="interval" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value=""/>
       </eAnnotations>

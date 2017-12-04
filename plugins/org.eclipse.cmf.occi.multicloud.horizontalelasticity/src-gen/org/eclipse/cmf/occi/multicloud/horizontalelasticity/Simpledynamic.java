@@ -22,69 +22,10 @@ package org.eclipse.cmf.occi.multicloud.horizontalelasticity;
  * 
  * <!-- end-model-doc -->
  *
- * <p>
- * The following features are supported:
- * </p>
- * <ul>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Simpledynamic#getSimpleDynamicName <em>Simple Dynamic Name</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Simpledynamic#getSimpleDynamicCoolDuration <em>Simple Dynamic Cool Duration</em>}</li>
- * </ul>
  *
  * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getSimpledynamic()
  * @model
  * @generated
  */
 public interface Simpledynamic extends Dynamicpolicy {
-	/**
-	 * Returns the value of the '<em><b>Simple Dynamic Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * 
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Simple Dynamic Name</em>' attribute.
-	 * @see #setSimpleDynamicName(String)
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getSimpledynamic_SimpleDynamicName()
-	 * @model dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Simpledynamic!simpleDynamicName'"
-	 * @generated
-	 */
-	String getSimpleDynamicName();
-
-	/**
-	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Simpledynamic#getSimpleDynamicName <em>Simple Dynamic Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Simple Dynamic Name</em>' attribute.
-	 * @see #getSimpleDynamicName()
-	 * @generated
-	 */
-	void setSimpleDynamicName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Simple Dynamic Cool Duration</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * 
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Simple Dynamic Cool Duration</em>' attribute.
-	 * @see #setSimpleDynamicCoolDuration(Integer)
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getSimpledynamic_SimpleDynamicCoolDuration()
-	 * @model dataType="org.eclipse.cmf.occi.core.Integer"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Simpledynamic!simpleDynamicCoolDuration'"
-	 * @generated
-	 */
-	Integer getSimpleDynamicCoolDuration();
-
-	/**
-	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Simpledynamic#getSimpleDynamicCoolDuration <em>Simple Dynamic Cool Duration</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Simple Dynamic Cool Duration</em>' attribute.
-	 * @see #getSimpleDynamicCoolDuration()
-	 * @generated
-	 */
-	void setSimpleDynamicCoolDuration(Integer value);
-
 } // Simpledynamic

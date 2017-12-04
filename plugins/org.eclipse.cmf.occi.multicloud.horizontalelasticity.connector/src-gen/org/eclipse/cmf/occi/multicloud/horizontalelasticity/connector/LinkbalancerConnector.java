@@ -25,7 +25,7 @@ import org.slf4j.LoggerFactory;
  * - term: linkbalancer
  * - title: 
  */
-public class LinkbalancerConnector extends org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.LinkbalancerImpl
+public class LinkbalancerConnector extends org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.LinkloadbalancerImpl
 {
 	/**
 	 * Initialize the logger.

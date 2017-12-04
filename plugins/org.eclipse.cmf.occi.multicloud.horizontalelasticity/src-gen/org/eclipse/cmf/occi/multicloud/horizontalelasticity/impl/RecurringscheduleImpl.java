@@ -37,6 +37,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.RecurringscheduleImpl#getRecurringscheduleRecurrence <em>Recurringschedule Recurrence</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.RecurringscheduleImpl#getRecurringscheduleStartDate <em>Recurringschedule Start Date</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.RecurringscheduleImpl#getRecurringscheduleEndDate <em>Recurringschedule End Date</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.RecurringscheduleImpl#getInterval <em>Interval</em>}</li>
  * </ul>
  *
  * @generated
@@ -91,6 +92,26 @@ public class RecurringscheduleImpl extends SchedulerImpl implements Recurringsch
 	 * @ordered
 	 */
 	protected Date recurringscheduleEndDate = RECURRINGSCHEDULE_END_DATE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getInterval() <em>Interval</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInterval()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Integer INTERVAL_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getInterval() <em>Interval</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInterval()
+	 * @generated
+	 * @ordered
+	 */
+	protected Integer interval = INTERVAL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -201,6 +222,27 @@ public class RecurringscheduleImpl extends SchedulerImpl implements Recurringsch
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Integer getInterval() {
+		return interval;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInterval(Integer newInterval) {
+		Integer oldInterval = interval;
+		interval = newInterval;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.RECURRINGSCHEDULE__INTERVAL, oldInterval, interval));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -224,6 +266,8 @@ public class RecurringscheduleImpl extends SchedulerImpl implements Recurringsch
 				return getRecurringscheduleStartDate();
 			case HorizontalelasticityPackage.RECURRINGSCHEDULE__RECURRINGSCHEDULE_END_DATE:
 				return getRecurringscheduleEndDate();
+			case HorizontalelasticityPackage.RECURRINGSCHEDULE__INTERVAL:
+				return getInterval();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -244,6 +288,9 @@ public class RecurringscheduleImpl extends SchedulerImpl implements Recurringsch
 				return;
 			case HorizontalelasticityPackage.RECURRINGSCHEDULE__RECURRINGSCHEDULE_END_DATE:
 				setRecurringscheduleEndDate((Date)newValue);
+				return;
+			case HorizontalelasticityPackage.RECURRINGSCHEDULE__INTERVAL:
+				setInterval((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -266,6 +313,9 @@ public class RecurringscheduleImpl extends SchedulerImpl implements Recurringsch
 			case HorizontalelasticityPackage.RECURRINGSCHEDULE__RECURRINGSCHEDULE_END_DATE:
 				setRecurringscheduleEndDate(RECURRINGSCHEDULE_END_DATE_EDEFAULT);
 				return;
+			case HorizontalelasticityPackage.RECURRINGSCHEDULE__INTERVAL:
+				setInterval(INTERVAL_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -284,6 +334,8 @@ public class RecurringscheduleImpl extends SchedulerImpl implements Recurringsch
 				return RECURRINGSCHEDULE_START_DATE_EDEFAULT == null ? recurringscheduleStartDate != null : !RECURRINGSCHEDULE_START_DATE_EDEFAULT.equals(recurringscheduleStartDate);
 			case HorizontalelasticityPackage.RECURRINGSCHEDULE__RECURRINGSCHEDULE_END_DATE:
 				return RECURRINGSCHEDULE_END_DATE_EDEFAULT == null ? recurringscheduleEndDate != null : !RECURRINGSCHEDULE_END_DATE_EDEFAULT.equals(recurringscheduleEndDate);
+			case HorizontalelasticityPackage.RECURRINGSCHEDULE__INTERVAL:
+				return INTERVAL_EDEFAULT == null ? interval != null : !INTERVAL_EDEFAULT.equals(interval);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -302,6 +354,8 @@ public class RecurringscheduleImpl extends SchedulerImpl implements Recurringsch
 		result.append(recurringscheduleStartDate);
 		result.append(", RecurringscheduleEndDate: ");
 		result.append(recurringscheduleEndDate);
+		result.append(", interval: ");
+		result.append(interval);
 		result.append(')');
 		return result.toString();
 	}

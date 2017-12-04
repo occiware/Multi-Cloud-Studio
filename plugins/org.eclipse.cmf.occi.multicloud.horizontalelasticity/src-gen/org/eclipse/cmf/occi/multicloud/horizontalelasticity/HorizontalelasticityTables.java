@@ -63,52 +63,6 @@ public class HorizontalelasticityTables
 	public static final /*@NonNull*/ ExecutorStandardLibrary LIBRARY = OCLstdlibTables.LIBRARY;
 
 	/**
-	 *	Constants used by auto-generated code.
-	 */
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.RootPackageId PACKid_$metamodel$ = org.eclipse.ocl.pivot.ids.IdManager.getRootPackageId("$metamodel$");
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_horizontalelasticity_s_ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore", null, org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage.eINSTANCE);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://schemas.ogf.org/occi/core/ecore", "occi", org.eclipse.cmf.occi.core.OCCIPackage.eINSTANCE);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_infrastructure_s_ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://schemas.ogf.org/occi/infrastructure/ecore", null, org.eclipse.cmf.occi.infrastructure.InfrastructurePackage.eINSTANCE);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Actiontrigger = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_horizontalelasticity_s_ecore.getClassId("Actiontrigger", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Array = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_horizontalelasticity_s_ecore.getClassId("Array", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_ArrofRecStep = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_horizontalelasticity_s_ecore.getClassId("ArrofRecStep", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Class = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_$metamodel$.getClassId("Class", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Compute = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_infrastructure_s_ecore.getClassId("Compute", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Creation = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_horizontalelasticity_s_ecore.getClassId("Creation", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Entity = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Entity", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Grouplink = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_horizontalelasticity_s_ecore.getClassId("Grouplink", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Horizontalelasticcontroller = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_horizontalelasticity_s_ecore.getClassId("Horizontalelasticcontroller", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Horizontalgroup = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_horizontalelasticity_s_ecore.getClassId("Horizontalgroup", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Instancegrouplink = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_horizontalelasticity_s_ecore.getClassId("Instancegrouplink", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Linkbalancer = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_horizontalelasticity_s_ecore.getClassId("Linkbalancer", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Loadbalancer = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_horizontalelasticity_s_ecore.getClassId("Loadbalancer", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_RecurrenceStep = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_horizontalelasticity_s_ecore.getClassId("RecurrenceStep", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Recurringschedule = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_horizontalelasticity_s_ecore.getClassId("Recurringschedule", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Resource = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Resource", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Rule = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_horizontalelasticity_s_ecore.getClassId("Rule", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Scheduler = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_horizontalelasticity_s_ecore.getClassId("Scheduler", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Step = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_horizontalelasticity_s_ecore.getClassId("Step", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Steplink = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_horizontalelasticity_s_ecore.getClassId("Steplink", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_Date = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_horizontalelasticity_s_ecore.getDataTypeId("Date", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_Float = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_horizontalelasticity_s_ecore.getDataTypeId("Float", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.EnumerationId ENUMid_ActionOperation = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_horizontalelasticity_s_ecore.getEnumerationId("ActionOperation");
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.EnumerationId ENUMid_ActionType = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_horizontalelasticity_s_ecore.getEnumerationId("ActionType");
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.EnumerationId ENUMid_MetricTargetTracking = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_horizontalelasticity_s_ecore.getEnumerationId("MetricTargetTracking");
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.EnumerationId ENUMid_OperatorType = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_horizontalelasticity_s_ecore.getEnumerationId("OperatorType");
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.EnumerationId ENUMid_TypeMetric = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_horizontalelasticity_s_ecore.getEnumerationId("TypeMetric");
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.EnumerationId ENUMid_Unit = org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.PACKid_http_c_s_s_org_eclipse_cmf_occi_multicloud_horizontalelasticity_s_ecore.getEnumerationId("Unit");
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.values.IntegerValue INT_0 = org.eclipse.ocl.pivot.utilities.ValueUtil.integerValueOf("0");
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SEQ_PRIMid_Integer = org.eclipse.ocl.pivot.ids.TypeId.SEQUENCE.getSpecializedId(org.eclipse.ocl.pivot.ids.TypeId.INTEGER);
-	public static final /*@NonInvalid*/ java.lang.String STR_Creation_c_c_appliesConstraint = "Creation::appliesConstraint";
-	public static final /*@NonInvalid*/ java.lang.String STR_Grouplink_c_c_targetConstraint = "Grouplink::targetConstraint";
-	public static final /*@NonInvalid*/ java.lang.String STR_Instancegrouplink_c_c_targetConstraint = "Instancegrouplink::targetConstraint";
-	public static final /*@NonInvalid*/ java.lang.String STR_Linkbalancer_c_c_targetConstraint = "Linkbalancer::targetConstraint";
-	public static final /*@NonInvalid*/ java.lang.String STR_Rule_c_c_targetConstraint = "Rule::targetConstraint";
-	public static final /*@NonInvalid*/ java.lang.String STR_Scheduler_c_c_appliesConstraint = "Scheduler::appliesConstraint";
-	public static final /*@NonInvalid*/ java.lang.String STR_Steplink_c_c_targetConstraint = "Steplink::targetConstraint";
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_RecurrenceStep = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables.CLSSid_RecurrenceStep);
-
-	/**
 	 *	The type parameters for templated types and operations.
 	 */
 	public static class TypeParameters {
@@ -141,17 +95,18 @@ public class HorizontalelasticityTables
 		public static final /*@NonNull*/ EcoreExecutorType _Actiontrigger = new EcoreExecutorType(HorizontalelasticityPackage.Literals.ACTIONTRIGGER, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Array = new EcoreExecutorType(HorizontalelasticityPackage.Literals.ARRAY, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _ArrofRecStep = new EcoreExecutorType(HorizontalelasticityPackage.Literals.ARROF_REC_STEP, PACKAGE, 0);
+		public static final /*@NonNull*/ EcoreExecutorType _Computelink = new EcoreExecutorType(HorizontalelasticityPackage.Literals.COMPUTELINK, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Creation = new EcoreExecutorType(HorizontalelasticityPackage.Literals.CREATION, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Date = new EcoreExecutorType("Date", PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Dynamic = new EcoreExecutorType(HorizontalelasticityPackage.Literals.DYNAMIC, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Dynamicadjustment = new EcoreExecutorType(HorizontalelasticityPackage.Literals.DYNAMICADJUSTMENT, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Dynamicpolicy = new EcoreExecutorType(HorizontalelasticityPackage.Literals.DYNAMICPOLICY, PACKAGE, 0);
+		public static final /*@NonNull*/ EcoreExecutorType _Elasticitycontroller = new EcoreExecutorType(HorizontalelasticityPackage.Literals.ELASTICITYCONTROLLER, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Float = new EcoreExecutorType("Float", PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Grouplink = new EcoreExecutorType(HorizontalelasticityPackage.Literals.GROUPLINK, PACKAGE, 0);
-		public static final /*@NonNull*/ EcoreExecutorType _Horizontalelasticcontroller = new EcoreExecutorType(HorizontalelasticityPackage.Literals.HORIZONTALELASTICCONTROLLER, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Horizontalgroup = new EcoreExecutorType(HorizontalelasticityPackage.Literals.HORIZONTALGROUP, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Instancegrouplink = new EcoreExecutorType(HorizontalelasticityPackage.Literals.INSTANCEGROUPLINK, PACKAGE, 0);
-		public static final /*@NonNull*/ EcoreExecutorType _Linkbalancer = new EcoreExecutorType(HorizontalelasticityPackage.Literals.LINKBALANCER, PACKAGE, 0);
+		public static final /*@NonNull*/ EcoreExecutorType _Linkloadbalancer = new EcoreExecutorType(HorizontalelasticityPackage.Literals.LINKLOADBALANCER, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Loadbalancer = new EcoreExecutorType(HorizontalelasticityPackage.Literals.LOADBALANCER, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Manual = new EcoreExecutorType(HorizontalelasticityPackage.Literals.MANUAL, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorEnumeration _MetricTargetTracking = new EcoreExecutorEnumeration(HorizontalelasticityPackage.Literals.METRIC_TARGET_TRACKING, PACKAGE, 0);
@@ -174,17 +129,18 @@ public class HorizontalelasticityTables
 			_Actiontrigger,
 			_Array,
 			_ArrofRecStep,
+			_Computelink,
 			_Creation,
 			_Date,
 			_Dynamic,
 			_Dynamicadjustment,
 			_Dynamicpolicy,
+			_Elasticitycontroller,
 			_Float,
 			_Grouplink,
-			_Horizontalelasticcontroller,
 			_Horizontalgroup,
 			_Instancegrouplink,
-			_Linkbalancer,
+			_Linkloadbalancer,
 			_Loadbalancer,
 			_Manual,
 			_MetricTargetTracking,
@@ -251,6 +207,12 @@ public class HorizontalelasticityTables
 		private static final /*@NonNull*/ ExecutorFragment _ArrofRecStep__OclAny = new ExecutorFragment(Types._ArrofRecStep, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _ArrofRecStep__OclElement = new ExecutorFragment(Types._ArrofRecStep, OCLstdlibTables.Types._OclElement);
 
+		private static final /*@NonNull*/ ExecutorFragment _Computelink__Computelink = new ExecutorFragment(Types._Computelink, HorizontalelasticityTables.Types._Computelink);
+		private static final /*@NonNull*/ ExecutorFragment _Computelink__Entity = new ExecutorFragment(Types._Computelink, OCCITables.Types._Entity);
+		private static final /*@NonNull*/ ExecutorFragment _Computelink__Link = new ExecutorFragment(Types._Computelink, OCCITables.Types._Link);
+		private static final /*@NonNull*/ ExecutorFragment _Computelink__OclAny = new ExecutorFragment(Types._Computelink, OCLstdlibTables.Types._OclAny);
+		private static final /*@NonNull*/ ExecutorFragment _Computelink__OclElement = new ExecutorFragment(Types._Computelink, OCLstdlibTables.Types._OclElement);
+
 		private static final /*@NonNull*/ ExecutorFragment _Creation__Creation = new ExecutorFragment(Types._Creation, HorizontalelasticityTables.Types._Creation);
 		private static final /*@NonNull*/ ExecutorFragment _Creation__MixinBase = new ExecutorFragment(Types._Creation, OCCITables.Types._MixinBase);
 		private static final /*@NonNull*/ ExecutorFragment _Creation__OclAny = new ExecutorFragment(Types._Creation, OCLstdlibTables.Types._OclAny);
@@ -261,27 +223,33 @@ public class HorizontalelasticityTables
 		private static final /*@NonNull*/ ExecutorFragment _Date__OclComparable = new ExecutorFragment(Types._Date, OCLstdlibTables.Types._OclComparable);
 
 		private static final /*@NonNull*/ ExecutorFragment _Dynamic__Dynamic = new ExecutorFragment(Types._Dynamic, HorizontalelasticityTables.Types._Dynamic);
+		private static final /*@NonNull*/ ExecutorFragment _Dynamic__Elasticitycontroller = new ExecutorFragment(Types._Dynamic, HorizontalelasticityTables.Types._Elasticitycontroller);
 		private static final /*@NonNull*/ ExecutorFragment _Dynamic__Entity = new ExecutorFragment(Types._Dynamic, OCCITables.Types._Entity);
-		private static final /*@NonNull*/ ExecutorFragment _Dynamic__Horizontalelasticcontroller = new ExecutorFragment(Types._Dynamic, HorizontalelasticityTables.Types._Horizontalelasticcontroller);
 		private static final /*@NonNull*/ ExecutorFragment _Dynamic__OclAny = new ExecutorFragment(Types._Dynamic, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _Dynamic__OclElement = new ExecutorFragment(Types._Dynamic, OCLstdlibTables.Types._OclElement);
 		private static final /*@NonNull*/ ExecutorFragment _Dynamic__Resource = new ExecutorFragment(Types._Dynamic, OCCITables.Types._Resource);
 
 		private static final /*@NonNull*/ ExecutorFragment _Dynamicadjustment__Dynamic = new ExecutorFragment(Types._Dynamicadjustment, HorizontalelasticityTables.Types._Dynamic);
 		private static final /*@NonNull*/ ExecutorFragment _Dynamicadjustment__Dynamicadjustment = new ExecutorFragment(Types._Dynamicadjustment, HorizontalelasticityTables.Types._Dynamicadjustment);
+		private static final /*@NonNull*/ ExecutorFragment _Dynamicadjustment__Elasticitycontroller = new ExecutorFragment(Types._Dynamicadjustment, HorizontalelasticityTables.Types._Elasticitycontroller);
 		private static final /*@NonNull*/ ExecutorFragment _Dynamicadjustment__Entity = new ExecutorFragment(Types._Dynamicadjustment, OCCITables.Types._Entity);
-		private static final /*@NonNull*/ ExecutorFragment _Dynamicadjustment__Horizontalelasticcontroller = new ExecutorFragment(Types._Dynamicadjustment, HorizontalelasticityTables.Types._Horizontalelasticcontroller);
 		private static final /*@NonNull*/ ExecutorFragment _Dynamicadjustment__OclAny = new ExecutorFragment(Types._Dynamicadjustment, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _Dynamicadjustment__OclElement = new ExecutorFragment(Types._Dynamicadjustment, OCLstdlibTables.Types._OclElement);
 		private static final /*@NonNull*/ ExecutorFragment _Dynamicadjustment__Resource = new ExecutorFragment(Types._Dynamicadjustment, OCCITables.Types._Resource);
 
 		private static final /*@NonNull*/ ExecutorFragment _Dynamicpolicy__Dynamic = new ExecutorFragment(Types._Dynamicpolicy, HorizontalelasticityTables.Types._Dynamic);
 		private static final /*@NonNull*/ ExecutorFragment _Dynamicpolicy__Dynamicpolicy = new ExecutorFragment(Types._Dynamicpolicy, HorizontalelasticityTables.Types._Dynamicpolicy);
+		private static final /*@NonNull*/ ExecutorFragment _Dynamicpolicy__Elasticitycontroller = new ExecutorFragment(Types._Dynamicpolicy, HorizontalelasticityTables.Types._Elasticitycontroller);
 		private static final /*@NonNull*/ ExecutorFragment _Dynamicpolicy__Entity = new ExecutorFragment(Types._Dynamicpolicy, OCCITables.Types._Entity);
-		private static final /*@NonNull*/ ExecutorFragment _Dynamicpolicy__Horizontalelasticcontroller = new ExecutorFragment(Types._Dynamicpolicy, HorizontalelasticityTables.Types._Horizontalelasticcontroller);
 		private static final /*@NonNull*/ ExecutorFragment _Dynamicpolicy__OclAny = new ExecutorFragment(Types._Dynamicpolicy, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _Dynamicpolicy__OclElement = new ExecutorFragment(Types._Dynamicpolicy, OCLstdlibTables.Types._OclElement);
 		private static final /*@NonNull*/ ExecutorFragment _Dynamicpolicy__Resource = new ExecutorFragment(Types._Dynamicpolicy, OCCITables.Types._Resource);
+
+		private static final /*@NonNull*/ ExecutorFragment _Elasticitycontroller__Elasticitycontroller = new ExecutorFragment(Types._Elasticitycontroller, HorizontalelasticityTables.Types._Elasticitycontroller);
+		private static final /*@NonNull*/ ExecutorFragment _Elasticitycontroller__Entity = new ExecutorFragment(Types._Elasticitycontroller, OCCITables.Types._Entity);
+		private static final /*@NonNull*/ ExecutorFragment _Elasticitycontroller__OclAny = new ExecutorFragment(Types._Elasticitycontroller, OCLstdlibTables.Types._OclAny);
+		private static final /*@NonNull*/ ExecutorFragment _Elasticitycontroller__OclElement = new ExecutorFragment(Types._Elasticitycontroller, OCLstdlibTables.Types._OclElement);
+		private static final /*@NonNull*/ ExecutorFragment _Elasticitycontroller__Resource = new ExecutorFragment(Types._Elasticitycontroller, OCCITables.Types._Resource);
 
 		private static final /*@NonNull*/ ExecutorFragment _Float__Float = new ExecutorFragment(Types._Float, HorizontalelasticityTables.Types._Float);
 		private static final /*@NonNull*/ ExecutorFragment _Float__OclAny = new ExecutorFragment(Types._Float, OCLstdlibTables.Types._OclAny);
@@ -291,12 +259,6 @@ public class HorizontalelasticityTables
 		private static final /*@NonNull*/ ExecutorFragment _Grouplink__Link = new ExecutorFragment(Types._Grouplink, OCCITables.Types._Link);
 		private static final /*@NonNull*/ ExecutorFragment _Grouplink__OclAny = new ExecutorFragment(Types._Grouplink, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _Grouplink__OclElement = new ExecutorFragment(Types._Grouplink, OCLstdlibTables.Types._OclElement);
-
-		private static final /*@NonNull*/ ExecutorFragment _Horizontalelasticcontroller__Entity = new ExecutorFragment(Types._Horizontalelasticcontroller, OCCITables.Types._Entity);
-		private static final /*@NonNull*/ ExecutorFragment _Horizontalelasticcontroller__Horizontalelasticcontroller = new ExecutorFragment(Types._Horizontalelasticcontroller, HorizontalelasticityTables.Types._Horizontalelasticcontroller);
-		private static final /*@NonNull*/ ExecutorFragment _Horizontalelasticcontroller__OclAny = new ExecutorFragment(Types._Horizontalelasticcontroller, OCLstdlibTables.Types._OclAny);
-		private static final /*@NonNull*/ ExecutorFragment _Horizontalelasticcontroller__OclElement = new ExecutorFragment(Types._Horizontalelasticcontroller, OCLstdlibTables.Types._OclElement);
-		private static final /*@NonNull*/ ExecutorFragment _Horizontalelasticcontroller__Resource = new ExecutorFragment(Types._Horizontalelasticcontroller, OCCITables.Types._Resource);
 
 		private static final /*@NonNull*/ ExecutorFragment _Horizontalgroup__Entity = new ExecutorFragment(Types._Horizontalgroup, OCCITables.Types._Entity);
 		private static final /*@NonNull*/ ExecutorFragment _Horizontalgroup__Horizontalgroup = new ExecutorFragment(Types._Horizontalgroup, HorizontalelasticityTables.Types._Horizontalgroup);
@@ -310,11 +272,11 @@ public class HorizontalelasticityTables
 		private static final /*@NonNull*/ ExecutorFragment _Instancegrouplink__OclAny = new ExecutorFragment(Types._Instancegrouplink, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _Instancegrouplink__OclElement = new ExecutorFragment(Types._Instancegrouplink, OCLstdlibTables.Types._OclElement);
 
-		private static final /*@NonNull*/ ExecutorFragment _Linkbalancer__Entity = new ExecutorFragment(Types._Linkbalancer, OCCITables.Types._Entity);
-		private static final /*@NonNull*/ ExecutorFragment _Linkbalancer__Link = new ExecutorFragment(Types._Linkbalancer, OCCITables.Types._Link);
-		private static final /*@NonNull*/ ExecutorFragment _Linkbalancer__Linkbalancer = new ExecutorFragment(Types._Linkbalancer, HorizontalelasticityTables.Types._Linkbalancer);
-		private static final /*@NonNull*/ ExecutorFragment _Linkbalancer__OclAny = new ExecutorFragment(Types._Linkbalancer, OCLstdlibTables.Types._OclAny);
-		private static final /*@NonNull*/ ExecutorFragment _Linkbalancer__OclElement = new ExecutorFragment(Types._Linkbalancer, OCLstdlibTables.Types._OclElement);
+		private static final /*@NonNull*/ ExecutorFragment _Linkloadbalancer__Entity = new ExecutorFragment(Types._Linkloadbalancer, OCCITables.Types._Entity);
+		private static final /*@NonNull*/ ExecutorFragment _Linkloadbalancer__Link = new ExecutorFragment(Types._Linkloadbalancer, OCCITables.Types._Link);
+		private static final /*@NonNull*/ ExecutorFragment _Linkloadbalancer__Linkloadbalancer = new ExecutorFragment(Types._Linkloadbalancer, HorizontalelasticityTables.Types._Linkloadbalancer);
+		private static final /*@NonNull*/ ExecutorFragment _Linkloadbalancer__OclAny = new ExecutorFragment(Types._Linkloadbalancer, OCLstdlibTables.Types._OclAny);
+		private static final /*@NonNull*/ ExecutorFragment _Linkloadbalancer__OclElement = new ExecutorFragment(Types._Linkloadbalancer, OCLstdlibTables.Types._OclElement);
 
 		private static final /*@NonNull*/ ExecutorFragment _Loadbalancer__Entity = new ExecutorFragment(Types._Loadbalancer, OCCITables.Types._Entity);
 		private static final /*@NonNull*/ ExecutorFragment _Loadbalancer__Loadbalancer = new ExecutorFragment(Types._Loadbalancer, HorizontalelasticityTables.Types._Loadbalancer);
@@ -322,8 +284,8 @@ public class HorizontalelasticityTables
 		private static final /*@NonNull*/ ExecutorFragment _Loadbalancer__OclElement = new ExecutorFragment(Types._Loadbalancer, OCLstdlibTables.Types._OclElement);
 		private static final /*@NonNull*/ ExecutorFragment _Loadbalancer__Resource = new ExecutorFragment(Types._Loadbalancer, OCCITables.Types._Resource);
 
+		private static final /*@NonNull*/ ExecutorFragment _Manual__Elasticitycontroller = new ExecutorFragment(Types._Manual, HorizontalelasticityTables.Types._Elasticitycontroller);
 		private static final /*@NonNull*/ ExecutorFragment _Manual__Entity = new ExecutorFragment(Types._Manual, OCCITables.Types._Entity);
-		private static final /*@NonNull*/ ExecutorFragment _Manual__Horizontalelasticcontroller = new ExecutorFragment(Types._Manual, HorizontalelasticityTables.Types._Horizontalelasticcontroller);
 		private static final /*@NonNull*/ ExecutorFragment _Manual__Manual = new ExecutorFragment(Types._Manual, HorizontalelasticityTables.Types._Manual);
 		private static final /*@NonNull*/ ExecutorFragment _Manual__OclAny = new ExecutorFragment(Types._Manual, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _Manual__OclElement = new ExecutorFragment(Types._Manual, OCLstdlibTables.Types._OclElement);
@@ -364,8 +326,8 @@ public class HorizontalelasticityTables
 
 		private static final /*@NonNull*/ ExecutorFragment _Simpledynamic__Dynamic = new ExecutorFragment(Types._Simpledynamic, HorizontalelasticityTables.Types._Dynamic);
 		private static final /*@NonNull*/ ExecutorFragment _Simpledynamic__Dynamicpolicy = new ExecutorFragment(Types._Simpledynamic, HorizontalelasticityTables.Types._Dynamicpolicy);
+		private static final /*@NonNull*/ ExecutorFragment _Simpledynamic__Elasticitycontroller = new ExecutorFragment(Types._Simpledynamic, HorizontalelasticityTables.Types._Elasticitycontroller);
 		private static final /*@NonNull*/ ExecutorFragment _Simpledynamic__Entity = new ExecutorFragment(Types._Simpledynamic, OCCITables.Types._Entity);
-		private static final /*@NonNull*/ ExecutorFragment _Simpledynamic__Horizontalelasticcontroller = new ExecutorFragment(Types._Simpledynamic, HorizontalelasticityTables.Types._Horizontalelasticcontroller);
 		private static final /*@NonNull*/ ExecutorFragment _Simpledynamic__OclAny = new ExecutorFragment(Types._Simpledynamic, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _Simpledynamic__OclElement = new ExecutorFragment(Types._Simpledynamic, OCLstdlibTables.Types._OclElement);
 		private static final /*@NonNull*/ ExecutorFragment _Simpledynamic__Resource = new ExecutorFragment(Types._Simpledynamic, OCCITables.Types._Resource);
@@ -379,8 +341,8 @@ public class HorizontalelasticityTables
 
 		private static final /*@NonNull*/ ExecutorFragment _Stepdynamic__Dynamic = new ExecutorFragment(Types._Stepdynamic, HorizontalelasticityTables.Types._Dynamic);
 		private static final /*@NonNull*/ ExecutorFragment _Stepdynamic__Dynamicpolicy = new ExecutorFragment(Types._Stepdynamic, HorizontalelasticityTables.Types._Dynamicpolicy);
+		private static final /*@NonNull*/ ExecutorFragment _Stepdynamic__Elasticitycontroller = new ExecutorFragment(Types._Stepdynamic, HorizontalelasticityTables.Types._Elasticitycontroller);
 		private static final /*@NonNull*/ ExecutorFragment _Stepdynamic__Entity = new ExecutorFragment(Types._Stepdynamic, OCCITables.Types._Entity);
-		private static final /*@NonNull*/ ExecutorFragment _Stepdynamic__Horizontalelasticcontroller = new ExecutorFragment(Types._Stepdynamic, HorizontalelasticityTables.Types._Horizontalelasticcontroller);
 		private static final /*@NonNull*/ ExecutorFragment _Stepdynamic__OclAny = new ExecutorFragment(Types._Stepdynamic, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _Stepdynamic__OclElement = new ExecutorFragment(Types._Stepdynamic, OCLstdlibTables.Types._OclElement);
 		private static final /*@NonNull*/ ExecutorFragment _Stepdynamic__Resource = new ExecutorFragment(Types._Stepdynamic, OCCITables.Types._Resource);
@@ -461,13 +423,10 @@ public class HorizontalelasticityTables
 		public static final /*@NonNull*/ ExecutorOperation _Date__compareTo = new ExecutorOperation("compareTo", Parameters._OclSelf, Types._Date,
 			0, TemplateParameters.EMPTY_LIST, null);
 
-		public static final /*@NonNull*/ ExecutorOperation _Horizontalelasticcontroller__start = new ExecutorOperation("start", TypeUtil.EMPTY_PARAMETER_TYPES, Types._Horizontalelasticcontroller,
+		public static final /*@NonNull*/ ExecutorOperation _Elasticitycontroller__start = new ExecutorOperation("start", TypeUtil.EMPTY_PARAMETER_TYPES, Types._Elasticitycontroller,
 			0, TemplateParameters.EMPTY_LIST, null);
-		public static final /*@NonNull*/ ExecutorOperation _Horizontalelasticcontroller__stop = new ExecutorOperation("stop", TypeUtil.EMPTY_PARAMETER_TYPES, Types._Horizontalelasticcontroller,
+		public static final /*@NonNull*/ ExecutorOperation _Elasticitycontroller__stop = new ExecutorOperation("stop", TypeUtil.EMPTY_PARAMETER_TYPES, Types._Elasticitycontroller,
 			1, TemplateParameters.EMPTY_LIST, null);
-
-		public static final /*@NonNull*/ ExecutorOperation _Horizontalgroup__create = new ExecutorOperation("create", TypeUtil.EMPTY_PARAMETER_TYPES, Types._Horizontalgroup,
-			0, TemplateParameters.EMPTY_LIST, null);
 
 		public static final /*@NonNull*/ ExecutorOperation _Loadbalancer__addbackendserver = new ExecutorOperation("addbackendserver", TypeUtil.EMPTY_PARAMETER_TYPES, Types._Loadbalancer,
 			0, TemplateParameters.EMPTY_LIST, null);
@@ -515,15 +474,14 @@ public class HorizontalelasticityTables
 
 		public static final /*@NonNull*/ ExecutorProperty _Creation__occiComputeCreationDate = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.CREATION__OCCI_COMPUTE_CREATION_DATE, Types._Creation, 0);
 
-		public static final /*@NonNull*/ ExecutorProperty _Dynamic__dynamicGroupSize = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.DYNAMIC__DYNAMIC_GROUP_SIZE, Types._Dynamic, 0);
-		public static final /*@NonNull*/ ExecutorProperty _Dynamic__dynamicMaxGroupSize = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.DYNAMIC__DYNAMIC_MAX_GROUP_SIZE, Types._Dynamic, 1);
-		public static final /*@NonNull*/ ExecutorProperty _Dynamic__dynamicMinGroupSize = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.DYNAMIC__DYNAMIC_MIN_GROUP_SIZE, Types._Dynamic, 2);
+		public static final /*@NonNull*/ ExecutorProperty _Dynamicadjustment__dynamicAdjustmentDisableScaleIn = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_DISABLE_SCALE_IN, Types._Dynamicadjustment, 0);
+		public static final /*@NonNull*/ ExecutorProperty _Dynamicadjustment__dynamicAdjustmentMetric = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_METRIC, Types._Dynamicadjustment, 1);
+		public static final /*@NonNull*/ ExecutorProperty _Dynamicadjustment__dynamicAdjustmentTarget = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_TARGET, Types._Dynamicadjustment, 2);
 
-		public static final /*@NonNull*/ ExecutorProperty _Dynamicadjustment__dynamicAdjustmentCoolDuration = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_COOL_DURATION, Types._Dynamicadjustment, 0);
-		public static final /*@NonNull*/ ExecutorProperty _Dynamicadjustment__dynamicAdjustmentDisableScaleIn = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_DISABLE_SCALE_IN, Types._Dynamicadjustment, 1);
-		public static final /*@NonNull*/ ExecutorProperty _Dynamicadjustment__dynamicAdjustmentMetric = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_METRIC, Types._Dynamicadjustment, 2);
-		public static final /*@NonNull*/ ExecutorProperty _Dynamicadjustment__dynamicAdjustmentName = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_NAME, Types._Dynamicadjustment, 3);
-		public static final /*@NonNull*/ ExecutorProperty _Dynamicadjustment__dynamicAdjustmentTarget = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_TARGET, Types._Dynamicadjustment, 4);
+		public static final /*@NonNull*/ ExecutorProperty _Elasticitycontroller__ElasticityControllerCoolDuration = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.ELASTICITYCONTROLLER__ELASTICITY_CONTROLLER_COOL_DURATION, Types._Elasticitycontroller, 0);
+		public static final /*@NonNull*/ ExecutorProperty _Elasticitycontroller__ElasticityControllerIterationWaitTime = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.ELASTICITYCONTROLLER__ELASTICITY_CONTROLLER_ITERATION_WAIT_TIME, Types._Elasticitycontroller, 1);
+		public static final /*@NonNull*/ ExecutorProperty _Elasticitycontroller__ElasticityControllerMaximumLimit = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.ELASTICITYCONTROLLER__ELASTICITY_CONTROLLER_MAXIMUM_LIMIT, Types._Elasticitycontroller, 2);
+		public static final /*@NonNull*/ ExecutorProperty _Elasticitycontroller__ElasticityControllerMinimumLimit = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.ELASTICITYCONTROLLER__ELASTICITY_CONTROLLER_MINIMUM_LIMIT, Types._Elasticitycontroller, 3);
 
 		public static final /*@NonNull*/ ExecutorProperty _Horizontalgroup__horizontalGroupGroupSize = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.HORIZONTALGROUP__HORIZONTAL_GROUP_GROUP_SIZE, Types._Horizontalgroup, 0);
 		public static final /*@NonNull*/ ExecutorProperty _Horizontalgroup__horizontalGroupLoadBalancer = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.HORIZONTALGROUP__HORIZONTAL_GROUP_LOAD_BALANCER, Types._Horizontalgroup, 1);
@@ -536,9 +494,7 @@ public class HorizontalelasticityTables
 		public static final /*@NonNull*/ ExecutorProperty _Loadbalancer__loadbalancerInstanceIP = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.LOADBALANCER__LOADBALANCER_INSTANCE_IP, Types._Loadbalancer, 1);
 		public static final /*@NonNull*/ ExecutorProperty _Loadbalancer__loadbalancerName = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.LOADBALANCER__LOADBALANCER_NAME, Types._Loadbalancer, 2);
 
-		public static final /*@NonNull*/ ExecutorProperty _Manual__manualGroupSize = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.MANUAL__MANUAL_GROUP_SIZE, Types._Manual, 0);
-		public static final /*@NonNull*/ ExecutorProperty _Manual__manualMaxGroupSize = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.MANUAL__MANUAL_MAX_GROUP_SIZE, Types._Manual, 1);
-		public static final /*@NonNull*/ ExecutorProperty _Manual__manualMinGroupSize = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.MANUAL__MANUAL_MIN_GROUP_SIZE, Types._Manual, 2);
+		public static final /*@NonNull*/ ExecutorProperty _Manual__manualDesiredSize = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.MANUAL__MANUAL_DESIRED_SIZE, Types._Manual, 0);
 
 		public static final /*@NonNull*/ ExecutorProperty _RecurrenceStep__unit = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.RECURRENCE_STEP__UNIT, Types._RecurrenceStep, 0);
 		public static final /*@NonNull*/ ExecutorProperty _RecurrenceStep__value = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.RECURRENCE_STEP__VALUE, Types._RecurrenceStep, 1);
@@ -547,23 +503,17 @@ public class HorizontalelasticityTables
 		public static final /*@NonNull*/ ExecutorProperty _Recurringschedule__RecurringscheduleEndDate = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.RECURRINGSCHEDULE__RECURRINGSCHEDULE_END_DATE, Types._Recurringschedule, 0);
 		public static final /*@NonNull*/ ExecutorProperty _Recurringschedule__RecurringscheduleRecurrence = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.RECURRINGSCHEDULE__RECURRINGSCHEDULE_RECURRENCE, Types._Recurringschedule, 1);
 		public static final /*@NonNull*/ ExecutorProperty _Recurringschedule__RecurringscheduleStartDate = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.RECURRINGSCHEDULE__RECURRINGSCHEDULE_START_DATE, Types._Recurringschedule, 2);
+		public static final /*@NonNull*/ ExecutorProperty _Recurringschedule__interval = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.RECURRINGSCHEDULE__INTERVAL, Types._Recurringschedule, 3);
 
 		public static final /*@NonNull*/ ExecutorProperty _Rule__ruleConsecutive = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.RULE__RULE_CONSECUTIVE, Types._Rule, 0);
 		public static final /*@NonNull*/ ExecutorProperty _Rule__ruleMetric = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.RULE__RULE_METRIC, Types._Rule, 1);
-		public static final /*@NonNull*/ ExecutorProperty _Rule__ruleName = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.RULE__RULE_NAME, Types._Rule, 2);
-		public static final /*@NonNull*/ ExecutorProperty _Rule__ruleOperator = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.RULE__RULE_OPERATOR, Types._Rule, 3);
-		public static final /*@NonNull*/ ExecutorProperty _Rule__rulePeriod = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.RULE__RULE_PERIOD, Types._Rule, 4);
-		public static final /*@NonNull*/ ExecutorProperty _Rule__ruleThreshold = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.RULE__RULE_THRESHOLD, Types._Rule, 5);
-
-		public static final /*@NonNull*/ ExecutorProperty _Simpledynamic__simpleDynamicCoolDuration = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.SIMPLEDYNAMIC__SIMPLE_DYNAMIC_COOL_DURATION, Types._Simpledynamic, 0);
-		public static final /*@NonNull*/ ExecutorProperty _Simpledynamic__simpleDynamicName = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.SIMPLEDYNAMIC__SIMPLE_DYNAMIC_NAME, Types._Simpledynamic, 1);
+		public static final /*@NonNull*/ ExecutorProperty _Rule__ruleOperator = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.RULE__RULE_OPERATOR, Types._Rule, 2);
+		public static final /*@NonNull*/ ExecutorProperty _Rule__rulePeriod = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.RULE__RULE_PERIOD, Types._Rule, 3);
+		public static final /*@NonNull*/ ExecutorProperty _Rule__ruleThreshold = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.RULE__RULE_THRESHOLD, Types._Rule, 4);
 
 		public static final /*@NonNull*/ ExecutorProperty _Step__stepLowerStepBound = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.STEP__STEP_LOWER_STEP_BOUND, Types._Step, 0);
 		public static final /*@NonNull*/ ExecutorProperty _Step__stepSize = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.STEP__STEP_SIZE, Types._Step, 1);
 		public static final /*@NonNull*/ ExecutorProperty _Step__stepUpperStepBound = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.STEP__STEP_UPPER_STEP_BOUND, Types._Step, 2);
-
-		public static final /*@NonNull*/ ExecutorProperty _Stepdynamic__stepDynamicCoolDuration = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.STEPDYNAMIC__STEP_DYNAMIC_COOL_DURATION, Types._Stepdynamic, 0);
-		public static final /*@NonNull*/ ExecutorProperty _Stepdynamic__stepDynamicName = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.STEPDYNAMIC__STEP_DYNAMIC_NAME, Types._Stepdynamic, 1);
 
 		public static final /*@NonNull*/ ExecutorProperty _Uniqueschedule__UniqueScheduleEndDate = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.UNIQUESCHEDULE__UNIQUE_SCHEDULE_END_DATE, Types._Uniqueschedule, 0);
 		public static final /*@NonNull*/ ExecutorProperty _Uniqueschedule__UniqueScheduleStartDate = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.UNIQUESCHEDULE__UNIQUE_SCHEDULE_START_DATE, Types._Uniqueschedule, 1);
@@ -632,6 +582,16 @@ public class HorizontalelasticityTables
 		};
 		private static final int /*@NonNull*/ [] __ArrofRecStep = { 1,1,1 };
 
+		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Computelink =
+		{
+			Fragments._Computelink__OclAny /* 0 */,
+			Fragments._Computelink__OclElement /* 1 */,
+			Fragments._Computelink__Entity /* 2 */,
+			Fragments._Computelink__Link /* 3 */,
+			Fragments._Computelink__Computelink /* 4 */
+		};
+		private static final int /*@NonNull*/ [] __Computelink = { 1,1,1,1,1 };
+
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Creation =
 		{
 			Fragments._Creation__OclAny /* 0 */,
@@ -655,7 +615,7 @@ public class HorizontalelasticityTables
 			Fragments._Dynamic__OclElement /* 1 */,
 			Fragments._Dynamic__Entity /* 2 */,
 			Fragments._Dynamic__Resource /* 3 */,
-			Fragments._Dynamic__Horizontalelasticcontroller /* 4 */,
+			Fragments._Dynamic__Elasticitycontroller /* 4 */,
 			Fragments._Dynamic__Dynamic /* 5 */
 		};
 		private static final int /*@NonNull*/ [] __Dynamic = { 1,1,1,1,1,1 };
@@ -666,7 +626,7 @@ public class HorizontalelasticityTables
 			Fragments._Dynamicadjustment__OclElement /* 1 */,
 			Fragments._Dynamicadjustment__Entity /* 2 */,
 			Fragments._Dynamicadjustment__Resource /* 3 */,
-			Fragments._Dynamicadjustment__Horizontalelasticcontroller /* 4 */,
+			Fragments._Dynamicadjustment__Elasticitycontroller /* 4 */,
 			Fragments._Dynamicadjustment__Dynamic /* 5 */,
 			Fragments._Dynamicadjustment__Dynamicadjustment /* 6 */
 		};
@@ -678,11 +638,21 @@ public class HorizontalelasticityTables
 			Fragments._Dynamicpolicy__OclElement /* 1 */,
 			Fragments._Dynamicpolicy__Entity /* 2 */,
 			Fragments._Dynamicpolicy__Resource /* 3 */,
-			Fragments._Dynamicpolicy__Horizontalelasticcontroller /* 4 */,
+			Fragments._Dynamicpolicy__Elasticitycontroller /* 4 */,
 			Fragments._Dynamicpolicy__Dynamic /* 5 */,
 			Fragments._Dynamicpolicy__Dynamicpolicy /* 6 */
 		};
 		private static final int /*@NonNull*/ [] __Dynamicpolicy = { 1,1,1,1,1,1,1 };
+
+		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Elasticitycontroller =
+		{
+			Fragments._Elasticitycontroller__OclAny /* 0 */,
+			Fragments._Elasticitycontroller__OclElement /* 1 */,
+			Fragments._Elasticitycontroller__Entity /* 2 */,
+			Fragments._Elasticitycontroller__Resource /* 3 */,
+			Fragments._Elasticitycontroller__Elasticitycontroller /* 4 */
+		};
+		private static final int /*@NonNull*/ [] __Elasticitycontroller = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Float =
 		{
@@ -700,16 +670,6 @@ public class HorizontalelasticityTables
 			Fragments._Grouplink__Grouplink /* 4 */
 		};
 		private static final int /*@NonNull*/ [] __Grouplink = { 1,1,1,1,1 };
-
-		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Horizontalelasticcontroller =
-		{
-			Fragments._Horizontalelasticcontroller__OclAny /* 0 */,
-			Fragments._Horizontalelasticcontroller__OclElement /* 1 */,
-			Fragments._Horizontalelasticcontroller__Entity /* 2 */,
-			Fragments._Horizontalelasticcontroller__Resource /* 3 */,
-			Fragments._Horizontalelasticcontroller__Horizontalelasticcontroller /* 4 */
-		};
-		private static final int /*@NonNull*/ [] __Horizontalelasticcontroller = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Horizontalgroup =
 		{
@@ -731,15 +691,15 @@ public class HorizontalelasticityTables
 		};
 		private static final int /*@NonNull*/ [] __Instancegrouplink = { 1,1,1,1,1 };
 
-		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Linkbalancer =
+		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Linkloadbalancer =
 		{
-			Fragments._Linkbalancer__OclAny /* 0 */,
-			Fragments._Linkbalancer__OclElement /* 1 */,
-			Fragments._Linkbalancer__Entity /* 2 */,
-			Fragments._Linkbalancer__Link /* 3 */,
-			Fragments._Linkbalancer__Linkbalancer /* 4 */
+			Fragments._Linkloadbalancer__OclAny /* 0 */,
+			Fragments._Linkloadbalancer__OclElement /* 1 */,
+			Fragments._Linkloadbalancer__Entity /* 2 */,
+			Fragments._Linkloadbalancer__Link /* 3 */,
+			Fragments._Linkloadbalancer__Linkloadbalancer /* 4 */
 		};
-		private static final int /*@NonNull*/ [] __Linkbalancer = { 1,1,1,1,1 };
+		private static final int /*@NonNull*/ [] __Linkloadbalancer = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Loadbalancer =
 		{
@@ -757,7 +717,7 @@ public class HorizontalelasticityTables
 			Fragments._Manual__OclElement /* 1 */,
 			Fragments._Manual__Entity /* 2 */,
 			Fragments._Manual__Resource /* 3 */,
-			Fragments._Manual__Horizontalelasticcontroller /* 4 */,
+			Fragments._Manual__Elasticitycontroller /* 4 */,
 			Fragments._Manual__Manual /* 5 */
 		};
 		private static final int /*@NonNull*/ [] __Manual = { 1,1,1,1,1,1 };
@@ -825,7 +785,7 @@ public class HorizontalelasticityTables
 			Fragments._Simpledynamic__OclElement /* 1 */,
 			Fragments._Simpledynamic__Entity /* 2 */,
 			Fragments._Simpledynamic__Resource /* 3 */,
-			Fragments._Simpledynamic__Horizontalelasticcontroller /* 4 */,
+			Fragments._Simpledynamic__Elasticitycontroller /* 4 */,
 			Fragments._Simpledynamic__Dynamic /* 5 */,
 			Fragments._Simpledynamic__Dynamicpolicy /* 6 */,
 			Fragments._Simpledynamic__Simpledynamic /* 7 */
@@ -848,7 +808,7 @@ public class HorizontalelasticityTables
 			Fragments._Stepdynamic__OclElement /* 1 */,
 			Fragments._Stepdynamic__Entity /* 2 */,
 			Fragments._Stepdynamic__Resource /* 3 */,
-			Fragments._Stepdynamic__Horizontalelasticcontroller /* 4 */,
+			Fragments._Stepdynamic__Elasticitycontroller /* 4 */,
 			Fragments._Stepdynamic__Dynamic /* 5 */,
 			Fragments._Stepdynamic__Dynamicpolicy /* 6 */,
 			Fragments._Stepdynamic__Stepdynamic /* 7 */
@@ -904,17 +864,18 @@ public class HorizontalelasticityTables
 			Types._Actiontrigger.initFragments(_Actiontrigger, __Actiontrigger);
 			Types._Array.initFragments(_Array, __Array);
 			Types._ArrofRecStep.initFragments(_ArrofRecStep, __ArrofRecStep);
+			Types._Computelink.initFragments(_Computelink, __Computelink);
 			Types._Creation.initFragments(_Creation, __Creation);
 			Types._Date.initFragments(_Date, __Date);
 			Types._Dynamic.initFragments(_Dynamic, __Dynamic);
 			Types._Dynamicadjustment.initFragments(_Dynamicadjustment, __Dynamicadjustment);
 			Types._Dynamicpolicy.initFragments(_Dynamicpolicy, __Dynamicpolicy);
+			Types._Elasticitycontroller.initFragments(_Elasticitycontroller, __Elasticitycontroller);
 			Types._Float.initFragments(_Float, __Float);
 			Types._Grouplink.initFragments(_Grouplink, __Grouplink);
-			Types._Horizontalelasticcontroller.initFragments(_Horizontalelasticcontroller, __Horizontalelasticcontroller);
 			Types._Horizontalgroup.initFragments(_Horizontalgroup, __Horizontalgroup);
 			Types._Instancegrouplink.initFragments(_Instancegrouplink, __Instancegrouplink);
-			Types._Linkbalancer.initFragments(_Linkbalancer, __Linkbalancer);
+			Types._Linkloadbalancer.initFragments(_Linkloadbalancer, __Linkloadbalancer);
 			Types._Loadbalancer.initFragments(_Loadbalancer, __Loadbalancer);
 			Types._Manual.initFragments(_Manual, __Manual);
 			Types._MetricTargetTracking.initFragments(_MetricTargetTracking, __MetricTargetTracking);
@@ -1020,12 +981,8 @@ public class HorizontalelasticityTables
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Actiontrigger__Actiontrigger = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Actiontrigger__Entity = {
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */,
 			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Actiontrigger__OclAny = {
@@ -1112,6 +1069,44 @@ public class HorizontalelasticityTables
 			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
 		};
 
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Computelink__Computelink = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Computelink__Entity = {
+			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
+			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
+			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
+			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Computelink__Link = {
+			OCCITables.Operations._Link__LinkSourceInvariant /* LinkSourceInvariant(Kind[?],Kind[?]) */,
+			OCCITables.Operations._Link__LinkTargetInvariant /* LinkTargetInvariant(Kind[?],Kind[?]) */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Computelink__OclAny = {
+			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
+			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
+			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
+			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
+			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
+			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
+			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
+			OCLstdlibTables.Operations._OclAny__toString /* toString() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Computelink__OclElement = {
+			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
+			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
+			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
+			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
+			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
+		};
+
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Creation__Creation = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Creation__MixinBase = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Creation__OclAny = {
@@ -1170,19 +1165,15 @@ public class HorizontalelasticityTables
 		};
 
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Dynamic__Dynamic = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Dynamic__Elasticitycontroller = {
+			HorizontalelasticityTables.Operations._Elasticitycontroller__start /* start() */,
+			HorizontalelasticityTables.Operations._Elasticitycontroller__stop /* stop() */
+		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Dynamic__Entity = {
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */,
 			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
-		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Dynamic__Horizontalelasticcontroller = {
-			HorizontalelasticityTables.Operations._Horizontalelasticcontroller__start /* start() */,
-			HorizontalelasticityTables.Operations._Horizontalelasticcontroller__stop /* stop() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Dynamic__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
@@ -1214,19 +1205,15 @@ public class HorizontalelasticityTables
 
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Dynamicadjustment__Dynamicadjustment = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Dynamicadjustment__Dynamic = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Dynamicadjustment__Elasticitycontroller = {
+			HorizontalelasticityTables.Operations._Elasticitycontroller__start /* start() */,
+			HorizontalelasticityTables.Operations._Elasticitycontroller__stop /* stop() */
+		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Dynamicadjustment__Entity = {
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */,
 			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
-		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Dynamicadjustment__Horizontalelasticcontroller = {
-			HorizontalelasticityTables.Operations._Horizontalelasticcontroller__start /* start() */,
-			HorizontalelasticityTables.Operations._Horizontalelasticcontroller__stop /* stop() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Dynamicadjustment__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
@@ -1258,19 +1245,15 @@ public class HorizontalelasticityTables
 
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Dynamicpolicy__Dynamicpolicy = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Dynamicpolicy__Dynamic = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Dynamicpolicy__Elasticitycontroller = {
+			HorizontalelasticityTables.Operations._Elasticitycontroller__start /* start() */,
+			HorizontalelasticityTables.Operations._Elasticitycontroller__stop /* stop() */
+		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Dynamicpolicy__Entity = {
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */,
 			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
-		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Dynamicpolicy__Horizontalelasticcontroller = {
-			HorizontalelasticityTables.Operations._Horizontalelasticcontroller__start /* start() */,
-			HorizontalelasticityTables.Operations._Horizontalelasticcontroller__stop /* stop() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Dynamicpolicy__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
@@ -1300,6 +1283,44 @@ public class HorizontalelasticityTables
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Dynamicpolicy__Resource = {};
 
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Elasticitycontroller__Elasticitycontroller = {
+			HorizontalelasticityTables.Operations._Elasticitycontroller__start /* start() */,
+			HorizontalelasticityTables.Operations._Elasticitycontroller__stop /* stop() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Elasticitycontroller__Entity = {
+			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
+			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
+			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
+			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Elasticitycontroller__OclAny = {
+			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
+			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
+			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
+			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
+			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
+			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
+			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
+			OCLstdlibTables.Operations._OclAny__toString /* toString() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Elasticitycontroller__OclElement = {
+			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
+			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
+			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
+			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
+			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Elasticitycontroller__Resource = {};
+
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Float__Float = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Float__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
@@ -1322,18 +1343,12 @@ public class HorizontalelasticityTables
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Grouplink__Grouplink = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Grouplink__Entity = {
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */,
 			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Grouplink__Link = {
 			OCCITables.Operations._Link__LinkSourceInvariant /* LinkSourceInvariant(Kind[?],Kind[?]) */,
-			OCCITables.Operations._Link__LinkSourceInvariant /* LinkSourceInvariant(Kind[?],Kind[?]) */,
-			OCCITables.Operations._Link__LinkTargetInvariant /* LinkTargetInvariant(Kind[?],Kind[?]) */,
 			OCCITables.Operations._Link__LinkTargetInvariant /* LinkTargetInvariant(Kind[?],Kind[?]) */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Grouplink__OclAny = {
@@ -1363,59 +1378,11 @@ public class HorizontalelasticityTables
 			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
 		};
 
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Horizontalelasticcontroller__Horizontalelasticcontroller = {
-			HorizontalelasticityTables.Operations._Horizontalelasticcontroller__start /* start() */,
-			HorizontalelasticityTables.Operations._Horizontalelasticcontroller__stop /* stop() */
-		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Horizontalelasticcontroller__Entity = {
-			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
-			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
-			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */,
-			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
-		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Horizontalelasticcontroller__OclAny = {
-			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
-			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
-			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
-			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
-			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
-			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
-			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
-			OCLstdlibTables.Operations._OclAny__toString /* toString() */
-		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Horizontalelasticcontroller__OclElement = {
-			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
-			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
-			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
-			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
-			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
-		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Horizontalelasticcontroller__Resource = {};
-
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Horizontalgroup__Horizontalgroup = {
-			HorizontalelasticityTables.Operations._Horizontalgroup__create /* create() */
-		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Horizontalgroup__Horizontalgroup = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Horizontalgroup__Entity = {
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */,
 			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Horizontalgroup__OclAny = {
@@ -1449,18 +1416,12 @@ public class HorizontalelasticityTables
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Instancegrouplink__Instancegrouplink = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Instancegrouplink__Entity = {
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */,
 			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Instancegrouplink__Link = {
 			OCCITables.Operations._Link__LinkSourceInvariant /* LinkSourceInvariant(Kind[?],Kind[?]) */,
-			OCCITables.Operations._Link__LinkSourceInvariant /* LinkSourceInvariant(Kind[?],Kind[?]) */,
-			OCCITables.Operations._Link__LinkTargetInvariant /* LinkTargetInvariant(Kind[?],Kind[?]) */,
 			OCCITables.Operations._Link__LinkTargetInvariant /* LinkTargetInvariant(Kind[?],Kind[?]) */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Instancegrouplink__OclAny = {
@@ -1490,24 +1451,18 @@ public class HorizontalelasticityTables
 			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
 		};
 
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Linkbalancer__Linkbalancer = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Linkbalancer__Entity = {
-			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Linkloadbalancer__Linkloadbalancer = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Linkloadbalancer__Entity = {
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
 			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
-			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */,
 			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
 		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Linkbalancer__Link = {
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Linkloadbalancer__Link = {
 			OCCITables.Operations._Link__LinkSourceInvariant /* LinkSourceInvariant(Kind[?],Kind[?]) */,
-			OCCITables.Operations._Link__LinkSourceInvariant /* LinkSourceInvariant(Kind[?],Kind[?]) */,
-			OCCITables.Operations._Link__LinkTargetInvariant /* LinkTargetInvariant(Kind[?],Kind[?]) */,
 			OCCITables.Operations._Link__LinkTargetInvariant /* LinkTargetInvariant(Kind[?],Kind[?]) */
 		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Linkbalancer__OclAny = {
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Linkloadbalancer__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
 			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
 			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
@@ -1524,7 +1479,7 @@ public class HorizontalelasticityTables
 			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
 			OCLstdlibTables.Operations._OclAny__toString /* toString() */
 		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Linkbalancer__OclElement = {
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Linkloadbalancer__OclElement = {
 			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
 			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
 			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
@@ -1540,12 +1495,8 @@ public class HorizontalelasticityTables
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Loadbalancer__Entity = {
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */,
 			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Loadbalancer__OclAny = {
@@ -1577,19 +1528,15 @@ public class HorizontalelasticityTables
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Loadbalancer__Resource = {};
 
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Manual__Manual = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Manual__Elasticitycontroller = {
+			HorizontalelasticityTables.Operations._Elasticitycontroller__start /* start() */,
+			HorizontalelasticityTables.Operations._Elasticitycontroller__stop /* stop() */
+		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Manual__Entity = {
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */,
 			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
-		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Manual__Horizontalelasticcontroller = {
-			HorizontalelasticityTables.Operations._Horizontalelasticcontroller__start /* start() */,
-			HorizontalelasticityTables.Operations._Horizontalelasticcontroller__stop /* stop() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Manual__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
@@ -1751,18 +1698,12 @@ public class HorizontalelasticityTables
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Rule__Rule = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Rule__Entity = {
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */,
 			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Rule__Link = {
 			OCCITables.Operations._Link__LinkSourceInvariant /* LinkSourceInvariant(Kind[?],Kind[?]) */,
-			OCCITables.Operations._Link__LinkSourceInvariant /* LinkSourceInvariant(Kind[?],Kind[?]) */,
-			OCCITables.Operations._Link__LinkTargetInvariant /* LinkTargetInvariant(Kind[?],Kind[?]) */,
 			OCCITables.Operations._Link__LinkTargetInvariant /* LinkTargetInvariant(Kind[?],Kind[?]) */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Rule__OclAny = {
@@ -1827,19 +1768,15 @@ public class HorizontalelasticityTables
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Simpledynamic__Simpledynamic = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Simpledynamic__Dynamic = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Simpledynamic__Dynamicpolicy = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Simpledynamic__Elasticitycontroller = {
+			HorizontalelasticityTables.Operations._Elasticitycontroller__start /* start() */,
+			HorizontalelasticityTables.Operations._Elasticitycontroller__stop /* stop() */
+		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Simpledynamic__Entity = {
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */,
 			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
-		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Simpledynamic__Horizontalelasticcontroller = {
-			HorizontalelasticityTables.Operations._Horizontalelasticcontroller__start /* start() */,
-			HorizontalelasticityTables.Operations._Horizontalelasticcontroller__stop /* stop() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Simpledynamic__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
@@ -1872,12 +1809,8 @@ public class HorizontalelasticityTables
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Step__Step = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Step__Entity = {
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */,
 			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Step__OclAny = {
@@ -1911,19 +1844,15 @@ public class HorizontalelasticityTables
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Stepdynamic__Stepdynamic = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Stepdynamic__Dynamic = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Stepdynamic__Dynamicpolicy = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Stepdynamic__Elasticitycontroller = {
+			HorizontalelasticityTables.Operations._Elasticitycontroller__start /* start() */,
+			HorizontalelasticityTables.Operations._Elasticitycontroller__stop /* stop() */
+		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Stepdynamic__Entity = {
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */,
 			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
-		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Stepdynamic__Horizontalelasticcontroller = {
-			HorizontalelasticityTables.Operations._Horizontalelasticcontroller__start /* start() */,
-			HorizontalelasticityTables.Operations._Horizontalelasticcontroller__stop /* stop() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Stepdynamic__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
@@ -1956,18 +1885,12 @@ public class HorizontalelasticityTables
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Steplink__Steplink = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Steplink__Entity = {
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */,
 			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Steplink__Link = {
 			OCCITables.Operations._Link__LinkSourceInvariant /* LinkSourceInvariant(Kind[?],Kind[?]) */,
-			OCCITables.Operations._Link__LinkSourceInvariant /* LinkSourceInvariant(Kind[?],Kind[?]) */,
-			OCCITables.Operations._Link__LinkTargetInvariant /* LinkTargetInvariant(Kind[?],Kind[?]) */,
 			OCCITables.Operations._Link__LinkTargetInvariant /* LinkTargetInvariant(Kind[?],Kind[?]) */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Steplink__OclAny = {
@@ -2128,6 +2051,12 @@ public class HorizontalelasticityTables
 			Fragments._ArrofRecStep__OclAny.initOperations(_ArrofRecStep__OclAny);
 			Fragments._ArrofRecStep__OclElement.initOperations(_ArrofRecStep__OclElement);
 
+			Fragments._Computelink__Computelink.initOperations(_Computelink__Computelink);
+			Fragments._Computelink__Entity.initOperations(_Computelink__Entity);
+			Fragments._Computelink__Link.initOperations(_Computelink__Link);
+			Fragments._Computelink__OclAny.initOperations(_Computelink__OclAny);
+			Fragments._Computelink__OclElement.initOperations(_Computelink__OclElement);
+
 			Fragments._Creation__Creation.initOperations(_Creation__Creation);
 			Fragments._Creation__MixinBase.initOperations(_Creation__MixinBase);
 			Fragments._Creation__OclAny.initOperations(_Creation__OclAny);
@@ -2138,27 +2067,33 @@ public class HorizontalelasticityTables
 			Fragments._Date__OclComparable.initOperations(_Date__OclComparable);
 
 			Fragments._Dynamic__Dynamic.initOperations(_Dynamic__Dynamic);
+			Fragments._Dynamic__Elasticitycontroller.initOperations(_Dynamic__Elasticitycontroller);
 			Fragments._Dynamic__Entity.initOperations(_Dynamic__Entity);
-			Fragments._Dynamic__Horizontalelasticcontroller.initOperations(_Dynamic__Horizontalelasticcontroller);
 			Fragments._Dynamic__OclAny.initOperations(_Dynamic__OclAny);
 			Fragments._Dynamic__OclElement.initOperations(_Dynamic__OclElement);
 			Fragments._Dynamic__Resource.initOperations(_Dynamic__Resource);
 
 			Fragments._Dynamicadjustment__Dynamic.initOperations(_Dynamicadjustment__Dynamic);
 			Fragments._Dynamicadjustment__Dynamicadjustment.initOperations(_Dynamicadjustment__Dynamicadjustment);
+			Fragments._Dynamicadjustment__Elasticitycontroller.initOperations(_Dynamicadjustment__Elasticitycontroller);
 			Fragments._Dynamicadjustment__Entity.initOperations(_Dynamicadjustment__Entity);
-			Fragments._Dynamicadjustment__Horizontalelasticcontroller.initOperations(_Dynamicadjustment__Horizontalelasticcontroller);
 			Fragments._Dynamicadjustment__OclAny.initOperations(_Dynamicadjustment__OclAny);
 			Fragments._Dynamicadjustment__OclElement.initOperations(_Dynamicadjustment__OclElement);
 			Fragments._Dynamicadjustment__Resource.initOperations(_Dynamicadjustment__Resource);
 
 			Fragments._Dynamicpolicy__Dynamic.initOperations(_Dynamicpolicy__Dynamic);
 			Fragments._Dynamicpolicy__Dynamicpolicy.initOperations(_Dynamicpolicy__Dynamicpolicy);
+			Fragments._Dynamicpolicy__Elasticitycontroller.initOperations(_Dynamicpolicy__Elasticitycontroller);
 			Fragments._Dynamicpolicy__Entity.initOperations(_Dynamicpolicy__Entity);
-			Fragments._Dynamicpolicy__Horizontalelasticcontroller.initOperations(_Dynamicpolicy__Horizontalelasticcontroller);
 			Fragments._Dynamicpolicy__OclAny.initOperations(_Dynamicpolicy__OclAny);
 			Fragments._Dynamicpolicy__OclElement.initOperations(_Dynamicpolicy__OclElement);
 			Fragments._Dynamicpolicy__Resource.initOperations(_Dynamicpolicy__Resource);
+
+			Fragments._Elasticitycontroller__Elasticitycontroller.initOperations(_Elasticitycontroller__Elasticitycontroller);
+			Fragments._Elasticitycontroller__Entity.initOperations(_Elasticitycontroller__Entity);
+			Fragments._Elasticitycontroller__OclAny.initOperations(_Elasticitycontroller__OclAny);
+			Fragments._Elasticitycontroller__OclElement.initOperations(_Elasticitycontroller__OclElement);
+			Fragments._Elasticitycontroller__Resource.initOperations(_Elasticitycontroller__Resource);
 
 			Fragments._Float__Float.initOperations(_Float__Float);
 			Fragments._Float__OclAny.initOperations(_Float__OclAny);
@@ -2168,12 +2103,6 @@ public class HorizontalelasticityTables
 			Fragments._Grouplink__Link.initOperations(_Grouplink__Link);
 			Fragments._Grouplink__OclAny.initOperations(_Grouplink__OclAny);
 			Fragments._Grouplink__OclElement.initOperations(_Grouplink__OclElement);
-
-			Fragments._Horizontalelasticcontroller__Entity.initOperations(_Horizontalelasticcontroller__Entity);
-			Fragments._Horizontalelasticcontroller__Horizontalelasticcontroller.initOperations(_Horizontalelasticcontroller__Horizontalelasticcontroller);
-			Fragments._Horizontalelasticcontroller__OclAny.initOperations(_Horizontalelasticcontroller__OclAny);
-			Fragments._Horizontalelasticcontroller__OclElement.initOperations(_Horizontalelasticcontroller__OclElement);
-			Fragments._Horizontalelasticcontroller__Resource.initOperations(_Horizontalelasticcontroller__Resource);
 
 			Fragments._Horizontalgroup__Entity.initOperations(_Horizontalgroup__Entity);
 			Fragments._Horizontalgroup__Horizontalgroup.initOperations(_Horizontalgroup__Horizontalgroup);
@@ -2187,11 +2116,11 @@ public class HorizontalelasticityTables
 			Fragments._Instancegrouplink__OclAny.initOperations(_Instancegrouplink__OclAny);
 			Fragments._Instancegrouplink__OclElement.initOperations(_Instancegrouplink__OclElement);
 
-			Fragments._Linkbalancer__Entity.initOperations(_Linkbalancer__Entity);
-			Fragments._Linkbalancer__Link.initOperations(_Linkbalancer__Link);
-			Fragments._Linkbalancer__Linkbalancer.initOperations(_Linkbalancer__Linkbalancer);
-			Fragments._Linkbalancer__OclAny.initOperations(_Linkbalancer__OclAny);
-			Fragments._Linkbalancer__OclElement.initOperations(_Linkbalancer__OclElement);
+			Fragments._Linkloadbalancer__Entity.initOperations(_Linkloadbalancer__Entity);
+			Fragments._Linkloadbalancer__Link.initOperations(_Linkloadbalancer__Link);
+			Fragments._Linkloadbalancer__Linkloadbalancer.initOperations(_Linkloadbalancer__Linkloadbalancer);
+			Fragments._Linkloadbalancer__OclAny.initOperations(_Linkloadbalancer__OclAny);
+			Fragments._Linkloadbalancer__OclElement.initOperations(_Linkloadbalancer__OclElement);
 
 			Fragments._Loadbalancer__Entity.initOperations(_Loadbalancer__Entity);
 			Fragments._Loadbalancer__Loadbalancer.initOperations(_Loadbalancer__Loadbalancer);
@@ -2199,8 +2128,8 @@ public class HorizontalelasticityTables
 			Fragments._Loadbalancer__OclElement.initOperations(_Loadbalancer__OclElement);
 			Fragments._Loadbalancer__Resource.initOperations(_Loadbalancer__Resource);
 
+			Fragments._Manual__Elasticitycontroller.initOperations(_Manual__Elasticitycontroller);
 			Fragments._Manual__Entity.initOperations(_Manual__Entity);
-			Fragments._Manual__Horizontalelasticcontroller.initOperations(_Manual__Horizontalelasticcontroller);
 			Fragments._Manual__Manual.initOperations(_Manual__Manual);
 			Fragments._Manual__OclAny.initOperations(_Manual__OclAny);
 			Fragments._Manual__OclElement.initOperations(_Manual__OclElement);
@@ -2241,8 +2170,8 @@ public class HorizontalelasticityTables
 
 			Fragments._Simpledynamic__Dynamic.initOperations(_Simpledynamic__Dynamic);
 			Fragments._Simpledynamic__Dynamicpolicy.initOperations(_Simpledynamic__Dynamicpolicy);
+			Fragments._Simpledynamic__Elasticitycontroller.initOperations(_Simpledynamic__Elasticitycontroller);
 			Fragments._Simpledynamic__Entity.initOperations(_Simpledynamic__Entity);
-			Fragments._Simpledynamic__Horizontalelasticcontroller.initOperations(_Simpledynamic__Horizontalelasticcontroller);
 			Fragments._Simpledynamic__OclAny.initOperations(_Simpledynamic__OclAny);
 			Fragments._Simpledynamic__OclElement.initOperations(_Simpledynamic__OclElement);
 			Fragments._Simpledynamic__Resource.initOperations(_Simpledynamic__Resource);
@@ -2256,8 +2185,8 @@ public class HorizontalelasticityTables
 
 			Fragments._Stepdynamic__Dynamic.initOperations(_Stepdynamic__Dynamic);
 			Fragments._Stepdynamic__Dynamicpolicy.initOperations(_Stepdynamic__Dynamicpolicy);
+			Fragments._Stepdynamic__Elasticitycontroller.initOperations(_Stepdynamic__Elasticitycontroller);
 			Fragments._Stepdynamic__Entity.initOperations(_Stepdynamic__Entity);
-			Fragments._Stepdynamic__Horizontalelasticcontroller.initOperations(_Stepdynamic__Horizontalelasticcontroller);
 			Fragments._Stepdynamic__OclAny.initOperations(_Stepdynamic__OclAny);
 			Fragments._Stepdynamic__OclElement.initOperations(_Stepdynamic__OclElement);
 			Fragments._Stepdynamic__Resource.initOperations(_Stepdynamic__Resource);
@@ -2323,6 +2252,8 @@ public class HorizontalelasticityTables
 			HorizontalelasticityTables.Properties._ArrofRecStep__arrofrecstepValues
 		};
 
+		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Computelink = {};
+
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Creation = {
 			HorizontalelasticityTables.Properties._Creation__occiComputeCreationDate
 		};
@@ -2330,33 +2261,39 @@ public class HorizontalelasticityTables
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Date = {};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Dynamic = {
-			HorizontalelasticityTables.Properties._Dynamic__dynamicGroupSize,
-			HorizontalelasticityTables.Properties._Dynamic__dynamicMaxGroupSize,
-			HorizontalelasticityTables.Properties._Dynamic__dynamicMinGroupSize
+			HorizontalelasticityTables.Properties._Elasticitycontroller__ElasticityControllerCoolDuration,
+			HorizontalelasticityTables.Properties._Elasticitycontroller__ElasticityControllerIterationWaitTime,
+			HorizontalelasticityTables.Properties._Elasticitycontroller__ElasticityControllerMaximumLimit,
+			HorizontalelasticityTables.Properties._Elasticitycontroller__ElasticityControllerMinimumLimit
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Dynamicadjustment = {
-			HorizontalelasticityTables.Properties._Dynamicadjustment__dynamicAdjustmentCoolDuration,
+			HorizontalelasticityTables.Properties._Elasticitycontroller__ElasticityControllerCoolDuration,
+			HorizontalelasticityTables.Properties._Elasticitycontroller__ElasticityControllerIterationWaitTime,
+			HorizontalelasticityTables.Properties._Elasticitycontroller__ElasticityControllerMaximumLimit,
+			HorizontalelasticityTables.Properties._Elasticitycontroller__ElasticityControllerMinimumLimit,
 			HorizontalelasticityTables.Properties._Dynamicadjustment__dynamicAdjustmentDisableScaleIn,
 			HorizontalelasticityTables.Properties._Dynamicadjustment__dynamicAdjustmentMetric,
-			HorizontalelasticityTables.Properties._Dynamicadjustment__dynamicAdjustmentName,
-			HorizontalelasticityTables.Properties._Dynamicadjustment__dynamicAdjustmentTarget,
-			HorizontalelasticityTables.Properties._Dynamic__dynamicGroupSize,
-			HorizontalelasticityTables.Properties._Dynamic__dynamicMaxGroupSize,
-			HorizontalelasticityTables.Properties._Dynamic__dynamicMinGroupSize
+			HorizontalelasticityTables.Properties._Dynamicadjustment__dynamicAdjustmentTarget
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Dynamicpolicy = {
-			HorizontalelasticityTables.Properties._Dynamic__dynamicGroupSize,
-			HorizontalelasticityTables.Properties._Dynamic__dynamicMaxGroupSize,
-			HorizontalelasticityTables.Properties._Dynamic__dynamicMinGroupSize
+			HorizontalelasticityTables.Properties._Elasticitycontroller__ElasticityControllerCoolDuration,
+			HorizontalelasticityTables.Properties._Elasticitycontroller__ElasticityControllerIterationWaitTime,
+			HorizontalelasticityTables.Properties._Elasticitycontroller__ElasticityControllerMaximumLimit,
+			HorizontalelasticityTables.Properties._Elasticitycontroller__ElasticityControllerMinimumLimit
+		};
+
+		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Elasticitycontroller = {
+			HorizontalelasticityTables.Properties._Elasticitycontroller__ElasticityControllerCoolDuration,
+			HorizontalelasticityTables.Properties._Elasticitycontroller__ElasticityControllerIterationWaitTime,
+			HorizontalelasticityTables.Properties._Elasticitycontroller__ElasticityControllerMaximumLimit,
+			HorizontalelasticityTables.Properties._Elasticitycontroller__ElasticityControllerMinimumLimit
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Float = {};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Grouplink = {};
-
-		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Horizontalelasticcontroller = {};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Horizontalgroup = {
 			HorizontalelasticityTables.Properties._Horizontalgroup__horizontalGroupGroupSize,
@@ -2369,7 +2306,7 @@ public class HorizontalelasticityTables
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Instancegrouplink = {};
 
-		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Linkbalancer = {};
+		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Linkloadbalancer = {};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Loadbalancer = {
 			HorizontalelasticityTables.Properties._Loadbalancer__loadbalancerAddress,
@@ -2378,9 +2315,11 @@ public class HorizontalelasticityTables
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Manual = {
-			HorizontalelasticityTables.Properties._Manual__manualGroupSize,
-			HorizontalelasticityTables.Properties._Manual__manualMaxGroupSize,
-			HorizontalelasticityTables.Properties._Manual__manualMinGroupSize
+			HorizontalelasticityTables.Properties._Elasticitycontroller__ElasticityControllerCoolDuration,
+			HorizontalelasticityTables.Properties._Elasticitycontroller__ElasticityControllerIterationWaitTime,
+			HorizontalelasticityTables.Properties._Elasticitycontroller__ElasticityControllerMaximumLimit,
+			HorizontalelasticityTables.Properties._Elasticitycontroller__ElasticityControllerMinimumLimit,
+			HorizontalelasticityTables.Properties._Manual__manualDesiredSize
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _MetricTargetTracking = {};
@@ -2395,13 +2334,13 @@ public class HorizontalelasticityTables
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Recurringschedule = {
 			HorizontalelasticityTables.Properties._Recurringschedule__RecurringscheduleEndDate,
 			HorizontalelasticityTables.Properties._Recurringschedule__RecurringscheduleRecurrence,
-			HorizontalelasticityTables.Properties._Recurringschedule__RecurringscheduleStartDate
+			HorizontalelasticityTables.Properties._Recurringschedule__RecurringscheduleStartDate,
+			HorizontalelasticityTables.Properties._Recurringschedule__interval
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Rule = {
 			HorizontalelasticityTables.Properties._Rule__ruleConsecutive,
 			HorizontalelasticityTables.Properties._Rule__ruleMetric,
-			HorizontalelasticityTables.Properties._Rule__ruleName,
 			HorizontalelasticityTables.Properties._Rule__ruleOperator,
 			HorizontalelasticityTables.Properties._Rule__rulePeriod,
 			HorizontalelasticityTables.Properties._Rule__ruleThreshold
@@ -2410,11 +2349,10 @@ public class HorizontalelasticityTables
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Scheduler = {};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Simpledynamic = {
-			HorizontalelasticityTables.Properties._Dynamic__dynamicGroupSize,
-			HorizontalelasticityTables.Properties._Dynamic__dynamicMaxGroupSize,
-			HorizontalelasticityTables.Properties._Dynamic__dynamicMinGroupSize,
-			HorizontalelasticityTables.Properties._Simpledynamic__simpleDynamicCoolDuration,
-			HorizontalelasticityTables.Properties._Simpledynamic__simpleDynamicName
+			HorizontalelasticityTables.Properties._Elasticitycontroller__ElasticityControllerCoolDuration,
+			HorizontalelasticityTables.Properties._Elasticitycontroller__ElasticityControllerIterationWaitTime,
+			HorizontalelasticityTables.Properties._Elasticitycontroller__ElasticityControllerMaximumLimit,
+			HorizontalelasticityTables.Properties._Elasticitycontroller__ElasticityControllerMinimumLimit
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Step = {
@@ -2424,11 +2362,10 @@ public class HorizontalelasticityTables
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Stepdynamic = {
-			HorizontalelasticityTables.Properties._Dynamic__dynamicGroupSize,
-			HorizontalelasticityTables.Properties._Dynamic__dynamicMaxGroupSize,
-			HorizontalelasticityTables.Properties._Dynamic__dynamicMinGroupSize,
-			HorizontalelasticityTables.Properties._Stepdynamic__stepDynamicCoolDuration,
-			HorizontalelasticityTables.Properties._Stepdynamic__stepDynamicName
+			HorizontalelasticityTables.Properties._Elasticitycontroller__ElasticityControllerCoolDuration,
+			HorizontalelasticityTables.Properties._Elasticitycontroller__ElasticityControllerIterationWaitTime,
+			HorizontalelasticityTables.Properties._Elasticitycontroller__ElasticityControllerMaximumLimit,
+			HorizontalelasticityTables.Properties._Elasticitycontroller__ElasticityControllerMinimumLimit
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Steplink = {};
@@ -2451,17 +2388,18 @@ public class HorizontalelasticityTables
 			Fragments._Actiontrigger__Actiontrigger.initProperties(_Actiontrigger);
 			Fragments._Array__Array.initProperties(_Array);
 			Fragments._ArrofRecStep__ArrofRecStep.initProperties(_ArrofRecStep);
+			Fragments._Computelink__Computelink.initProperties(_Computelink);
 			Fragments._Creation__Creation.initProperties(_Creation);
 			Fragments._Date__Date.initProperties(_Date);
 			Fragments._Dynamic__Dynamic.initProperties(_Dynamic);
 			Fragments._Dynamicadjustment__Dynamicadjustment.initProperties(_Dynamicadjustment);
 			Fragments._Dynamicpolicy__Dynamicpolicy.initProperties(_Dynamicpolicy);
+			Fragments._Elasticitycontroller__Elasticitycontroller.initProperties(_Elasticitycontroller);
 			Fragments._Float__Float.initProperties(_Float);
 			Fragments._Grouplink__Grouplink.initProperties(_Grouplink);
-			Fragments._Horizontalelasticcontroller__Horizontalelasticcontroller.initProperties(_Horizontalelasticcontroller);
 			Fragments._Horizontalgroup__Horizontalgroup.initProperties(_Horizontalgroup);
 			Fragments._Instancegrouplink__Instancegrouplink.initProperties(_Instancegrouplink);
-			Fragments._Linkbalancer__Linkbalancer.initProperties(_Linkbalancer);
+			Fragments._Linkloadbalancer__Linkloadbalancer.initProperties(_Linkloadbalancer);
 			Fragments._Loadbalancer__Loadbalancer.initProperties(_Loadbalancer);
 			Fragments._Manual__Manual.initProperties(_Manual);
 			Fragments._MetricTargetTracking__MetricTargetTracking.initProperties(_MetricTargetTracking);
@@ -2524,18 +2462,18 @@ public class HorizontalelasticityTables
 		};
 
 		public static final /*@NonNull*/ EcoreExecutorEnumerationLiteral _OperatorType__GraterThan = new EcoreExecutorEnumerationLiteral(HorizontalelasticityPackage.Literals.OPERATOR_TYPE.getEEnumLiteral("GraterThan"), Types._OperatorType, 0);
-		public static final /*@NonNull*/ EcoreExecutorEnumerationLiteral _OperatorType__GreaterThanorEqualto = new EcoreExecutorEnumerationLiteral(HorizontalelasticityPackage.Literals.OPERATOR_TYPE.getEEnumLiteral("GreaterThanorEqualto"), Types._OperatorType, 1);
+		public static final /*@NonNull*/ EcoreExecutorEnumerationLiteral _OperatorType__GreaterThanOrEqualTo = new EcoreExecutorEnumerationLiteral(HorizontalelasticityPackage.Literals.OPERATOR_TYPE.getEEnumLiteral("GreaterThanOrEqualTo"), Types._OperatorType, 1);
 		public static final /*@NonNull*/ EcoreExecutorEnumerationLiteral _OperatorType__LessThan = new EcoreExecutorEnumerationLiteral(HorizontalelasticityPackage.Literals.OPERATOR_TYPE.getEEnumLiteral("LessThan"), Types._OperatorType, 2);
-		public static final /*@NonNull*/ EcoreExecutorEnumerationLiteral _OperatorType__LessThanorEqualto = new EcoreExecutorEnumerationLiteral(HorizontalelasticityPackage.Literals.OPERATOR_TYPE.getEEnumLiteral("LessThanorEqualto"), Types._OperatorType, 3);
-		public static final /*@NonNull*/ EcoreExecutorEnumerationLiteral _OperatorType__Equalto = new EcoreExecutorEnumerationLiteral(HorizontalelasticityPackage.Literals.OPERATOR_TYPE.getEEnumLiteral("Equalto"), Types._OperatorType, 4);
-		public static final /*@NonNull*/ EcoreExecutorEnumerationLiteral _OperatorType__NotEqualto = new EcoreExecutorEnumerationLiteral(HorizontalelasticityPackage.Literals.OPERATOR_TYPE.getEEnumLiteral("NotEqualto"), Types._OperatorType, 5);
+		public static final /*@NonNull*/ EcoreExecutorEnumerationLiteral _OperatorType__LessThanorEqualTo = new EcoreExecutorEnumerationLiteral(HorizontalelasticityPackage.Literals.OPERATOR_TYPE.getEEnumLiteral("LessThanorEqualTo"), Types._OperatorType, 3);
+		public static final /*@NonNull*/ EcoreExecutorEnumerationLiteral _OperatorType__EqualTo = new EcoreExecutorEnumerationLiteral(HorizontalelasticityPackage.Literals.OPERATOR_TYPE.getEEnumLiteral("EqualTo"), Types._OperatorType, 4);
+		public static final /*@NonNull*/ EcoreExecutorEnumerationLiteral _OperatorType__NotEqualTo = new EcoreExecutorEnumerationLiteral(HorizontalelasticityPackage.Literals.OPERATOR_TYPE.getEEnumLiteral("NotEqualTo"), Types._OperatorType, 5);
 		private static final /*@NonNull*/ EcoreExecutorEnumerationLiteral /*@NonNull*/ [] _OperatorType = {
 			_OperatorType__GraterThan,
-			_OperatorType__GreaterThanorEqualto,
+			_OperatorType__GreaterThanOrEqualTo,
 			_OperatorType__LessThan,
-			_OperatorType__LessThanorEqualto,
-			_OperatorType__Equalto,
-			_OperatorType__NotEqualto
+			_OperatorType__LessThanorEqualTo,
+			_OperatorType__EqualTo,
+			_OperatorType__NotEqualTo
 		};
 
 		public static final /*@NonNull*/ EcoreExecutorEnumerationLiteral _TypeMetric__CPUtilisation = new EcoreExecutorEnumerationLiteral(HorizontalelasticityPackage.Literals.TYPE_METRIC.getEEnumLiteral("CPUtilisation"), Types._TypeMetric, 0);

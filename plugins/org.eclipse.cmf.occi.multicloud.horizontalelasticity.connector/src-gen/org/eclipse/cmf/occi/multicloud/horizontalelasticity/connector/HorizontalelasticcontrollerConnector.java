@@ -28,7 +28,7 @@ import org.slf4j.LoggerFactory;
  * - term: horizontalelasticcontroller
  * - title: 
  */
-public class HorizontalelasticcontrollerConnector extends org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.HorizontalelasticcontrollerImpl
+public class HorizontalelasticcontrollerConnector extends org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ElasticitycontrollerImpl
 {
 	/**
 	 * Initialize the logger.

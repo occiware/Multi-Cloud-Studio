@@ -61,6 +61,7 @@ public class RecurringscheduleItemProvider extends SchedulerItemProvider {
 
 			addRecurringscheduleStartDatePropertyDescriptor(object);
 			addRecurringscheduleEndDatePropertyDescriptor(object);
+			addIntervalPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -101,6 +102,28 @@ public class RecurringscheduleItemProvider extends SchedulerItemProvider {
 				 getString("_UI_Recurringschedule_RecurringscheduleEndDate_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Recurringschedule_RecurringscheduleEndDate_feature", "_UI_Recurringschedule_type"),
 				 HorizontalelasticityPackage.Literals.RECURRINGSCHEDULE__RECURRINGSCHEDULE_END_DATE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Interval feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIntervalPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Recurringschedule_interval_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Recurringschedule_interval_feature", "_UI_Recurringschedule_type"),
+				 HorizontalelasticityPackage.Literals.RECURRINGSCHEDULE__INTERVAL,
 				 true,
 				 false,
 				 false,
@@ -180,6 +203,7 @@ public class RecurringscheduleItemProvider extends SchedulerItemProvider {
 		switch (notification.getFeatureID(Recurringschedule.class)) {
 			case HorizontalelasticityPackage.RECURRINGSCHEDULE__RECURRINGSCHEDULE_START_DATE:
 			case HorizontalelasticityPackage.RECURRINGSCHEDULE__RECURRINGSCHEDULE_END_DATE:
+			case HorizontalelasticityPackage.RECURRINGSCHEDULE__INTERVAL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case HorizontalelasticityPackage.RECURRINGSCHEDULE__RECURRINGSCHEDULE_RECURRENCE:

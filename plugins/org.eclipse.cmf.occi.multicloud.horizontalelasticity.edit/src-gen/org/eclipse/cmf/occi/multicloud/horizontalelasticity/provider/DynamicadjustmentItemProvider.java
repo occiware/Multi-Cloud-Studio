@@ -55,35 +55,11 @@ public class DynamicadjustmentItemProvider extends DynamicItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addDynamicAdjustmentNamePropertyDescriptor(object);
 			addDynamicAdjustmentMetricPropertyDescriptor(object);
-			addDynamicAdjustmentCoolDurationPropertyDescriptor(object);
 			addDynamicAdjustmentDisableScaleInPropertyDescriptor(object);
 			addDynamicAdjustmentTargetPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Dynamic Adjustment Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDynamicAdjustmentNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Dynamicadjustment_dynamicAdjustmentName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Dynamicadjustment_dynamicAdjustmentName_feature", "_UI_Dynamicadjustment_type"),
-				 HorizontalelasticityPackage.Literals.DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -100,28 +76,6 @@ public class DynamicadjustmentItemProvider extends DynamicItemProvider {
 				 getString("_UI_Dynamicadjustment_dynamicAdjustmentMetric_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Dynamicadjustment_dynamicAdjustmentMetric_feature", "_UI_Dynamicadjustment_type"),
 				 HorizontalelasticityPackage.Literals.DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_METRIC,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Dynamic Adjustment Cool Duration feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDynamicAdjustmentCoolDurationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Dynamicadjustment_dynamicAdjustmentCoolDuration_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Dynamicadjustment_dynamicAdjustmentCoolDuration_feature", "_UI_Dynamicadjustment_type"),
-				 HorizontalelasticityPackage.Literals.DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_COOL_DURATION,
 				 true,
 				 false,
 				 false,
@@ -212,9 +166,7 @@ public class DynamicadjustmentItemProvider extends DynamicItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Dynamicadjustment.class)) {
-			case HorizontalelasticityPackage.DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_NAME:
 			case HorizontalelasticityPackage.DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_METRIC:
-			case HorizontalelasticityPackage.DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_COOL_DURATION:
 			case HorizontalelasticityPackage.DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_DISABLE_SCALE_IN:
 			case HorizontalelasticityPackage.DYNAMICADJUSTMENT__DYNAMIC_ADJUSTMENT_TARGET:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

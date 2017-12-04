@@ -39,14 +39,14 @@ public enum OperatorType implements Enumerator {
 	GRATER_THAN(0, "GraterThan", "GraterThan"),
 
 	/**
-	 * The '<em><b>Greater Thanor Equalto</b></em>' literal object.
+	 * The '<em><b>Greater Than Or Equal To</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #GREATER_THANOR_EQUALTO_VALUE
+	 * @see #GREATER_THAN_OR_EQUAL_TO_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	GREATER_THANOR_EQUALTO(1, "GreaterThanorEqualto", "GreaterThanorEqualto"),
+	GREATER_THAN_OR_EQUAL_TO(1, "GreaterThanOrEqualTo", "GreaterThanOrEqualTo"),
 
 	/**
 	 * The '<em><b>Less Than</b></em>' literal object.
@@ -59,34 +59,34 @@ public enum OperatorType implements Enumerator {
 	LESS_THAN(2, "LessThan", "LessThan"),
 
 	/**
-	 * The '<em><b>Less Thanor Equalto</b></em>' literal object.
+	 * The '<em><b>Less Thanor Equal To</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #LESS_THANOR_EQUALTO_VALUE
+	 * @see #LESS_THANOR_EQUAL_TO_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	LESS_THANOR_EQUALTO(3, "LessThanorEqualto", "LessThanorEqualto"),
+	LESS_THANOR_EQUAL_TO(3, "LessThanorEqualTo", "LessThanorEqualTo"),
 
 	/**
-	 * The '<em><b>Equalto</b></em>' literal object.
+	 * The '<em><b>Equal To</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #EQUALTO_VALUE
+	 * @see #EQUAL_TO_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	EQUALTO(4, "Equalto", "Equalto"),
+	EQUAL_TO(4, "EqualTo", "EqualTo"),
 
 	/**
-	 * The '<em><b>Not Equalto</b></em>' literal object.
+	 * The '<em><b>Not Equal To</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #NOT_EQUALTO_VALUE
+	 * @see #NOT_EQUAL_TO_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	NOT_EQUALTO(5, "NotEqualto", "NotEqualto");
+	NOT_EQUAL_TO(5, "NotEqualTo", "NotEqualTo");
 
 	/**
 	 * The '<em><b>Grater Than</b></em>' literal value.
@@ -104,19 +104,19 @@ public enum OperatorType implements Enumerator {
 	public static final int GRATER_THAN_VALUE = 0;
 
 	/**
-	 * The '<em><b>Greater Thanor Equalto</b></em>' literal value.
+	 * The '<em><b>Greater Than Or Equal To</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Greater Thanor Equalto</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Greater Than Or Equal To</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #GREATER_THANOR_EQUALTO
-	 * @model name="GreaterThanorEqualto"
+	 * @see #GREATER_THAN_OR_EQUAL_TO
+	 * @model name="GreaterThanOrEqualTo"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int GREATER_THANOR_EQUALTO_VALUE = 1;
+	public static final int GREATER_THAN_OR_EQUAL_TO_VALUE = 1;
 
 	/**
 	 * The '<em><b>Less Than</b></em>' literal value.
@@ -134,49 +134,49 @@ public enum OperatorType implements Enumerator {
 	public static final int LESS_THAN_VALUE = 2;
 
 	/**
-	 * The '<em><b>Less Thanor Equalto</b></em>' literal value.
+	 * The '<em><b>Less Thanor Equal To</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Less Thanor Equalto</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Less Thanor Equal To</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #LESS_THANOR_EQUALTO
-	 * @model name="LessThanorEqualto"
+	 * @see #LESS_THANOR_EQUAL_TO
+	 * @model name="LessThanorEqualTo"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int LESS_THANOR_EQUALTO_VALUE = 3;
+	public static final int LESS_THANOR_EQUAL_TO_VALUE = 3;
 
 	/**
-	 * The '<em><b>Equalto</b></em>' literal value.
+	 * The '<em><b>Equal To</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Equalto</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Equal To</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #EQUALTO
-	 * @model name="Equalto"
+	 * @see #EQUAL_TO
+	 * @model name="EqualTo"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int EQUALTO_VALUE = 4;
+	public static final int EQUAL_TO_VALUE = 4;
 
 	/**
-	 * The '<em><b>Not Equalto</b></em>' literal value.
+	 * The '<em><b>Not Equal To</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Not Equalto</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Not Equal To</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #NOT_EQUALTO
-	 * @model name="NotEqualto"
+	 * @see #NOT_EQUAL_TO
+	 * @model name="NotEqualTo"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int NOT_EQUALTO_VALUE = 5;
+	public static final int NOT_EQUAL_TO_VALUE = 5;
 
 	/**
 	 * An array of all the '<em><b>Operator Type</b></em>' enumerators.
@@ -187,11 +187,11 @@ public enum OperatorType implements Enumerator {
 	private static final OperatorType[] VALUES_ARRAY =
 		new OperatorType[] {
 			GRATER_THAN,
-			GREATER_THANOR_EQUALTO,
+			GREATER_THAN_OR_EQUAL_TO,
 			LESS_THAN,
-			LESS_THANOR_EQUALTO,
-			EQUALTO,
-			NOT_EQUALTO,
+			LESS_THANOR_EQUAL_TO,
+			EQUAL_TO,
+			NOT_EQUAL_TO,
 		};
 
 	/**
@@ -249,11 +249,11 @@ public enum OperatorType implements Enumerator {
 	public static OperatorType get(int value) {
 		switch (value) {
 			case GRATER_THAN_VALUE: return GRATER_THAN;
-			case GREATER_THANOR_EQUALTO_VALUE: return GREATER_THANOR_EQUALTO;
+			case GREATER_THAN_OR_EQUAL_TO_VALUE: return GREATER_THAN_OR_EQUAL_TO;
 			case LESS_THAN_VALUE: return LESS_THAN;
-			case LESS_THANOR_EQUALTO_VALUE: return LESS_THANOR_EQUALTO;
-			case EQUALTO_VALUE: return EQUALTO;
-			case NOT_EQUALTO_VALUE: return NOT_EQUALTO;
+			case LESS_THANOR_EQUAL_TO_VALUE: return LESS_THANOR_EQUAL_TO;
+			case EQUAL_TO_VALUE: return EQUAL_TO;
+			case NOT_EQUAL_TO_VALUE: return NOT_EQUAL_TO;
 		}
 		return null;
 	}

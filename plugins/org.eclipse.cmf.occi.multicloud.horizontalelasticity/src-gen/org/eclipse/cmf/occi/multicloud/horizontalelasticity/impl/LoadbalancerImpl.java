@@ -191,7 +191,9 @@ public class LoadbalancerImpl extends ResourceImpl implements Loadbalancer {
 	 * @generated
 	 */
 	public void addbackendserver() {
-		throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Loadbalancer!addbackendserver()
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -200,7 +202,9 @@ public class LoadbalancerImpl extends ResourceImpl implements Loadbalancer {
 	 * @generated
 	 */
 	public void removebackendserver() {
-		throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Loadbalancer!removebackendserver()
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**

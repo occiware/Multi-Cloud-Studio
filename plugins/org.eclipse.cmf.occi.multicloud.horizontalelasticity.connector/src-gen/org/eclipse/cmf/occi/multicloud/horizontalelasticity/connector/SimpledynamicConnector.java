@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Wed Oct 18 15:58:47 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Mon Dec 04 11:58:56 CET 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
@@ -21,7 +21,6 @@ import org.eclipse.cmf.occi.multicloud.elasticocci.connector.MyRunnable;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Actiontrigger;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Rule;
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Step;
 import org.eclipse.cmf.occi.multicloud.vmware.Instancevmware;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -165,7 +164,7 @@ public class SimpledynamicConnector extends org.eclipse.cmf.occi.multicloud.hori
 		int removeRulesCount = 0;
 		int removeRulesTrue = 0;
 		ArrayList<Rule> actionList = new ArrayList<Rule>();
-		int coolduration = this.getSimpleDynamicCoolDuration();
+		int coolduration = this.getElasticityControllerCoolDuration();
 		for (Link link : this.getLinks()) {
 			if (link instanceof Rule) {
 				Rule myRule = (Rule) link;
@@ -353,9 +352,7 @@ public class SimpledynamicConnector extends org.eclipse.cmf.occi.multicloud.hori
 		
 	return testoutput;	
 	}
-	// End of user code
-		
-	/////////////////////////////////////// cpu usage ////////////////////////////////////
+	
 	protected double CPUGroupUsage() {
 		double cpuGroupUsage = 0.0;
 		int instanceCount = 0;
@@ -425,5 +422,8 @@ public class SimpledynamicConnector extends org.eclipse.cmf.occi.multicloud.hori
 		
 	}
 	
-	
+	// End of user code
+		
+
+
 }	

@@ -60,7 +60,6 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.RuleImpl#getRuleName <em>Rule Name</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.RuleImpl#getRuleMetric <em>Rule Metric</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.RuleImpl#getRuleOperator <em>Rule Operator</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.RuleImpl#getRuleThreshold <em>Rule Threshold</em>}</li>
@@ -71,26 +70,6 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  * @generated
  */
 public class RuleImpl extends LinkImpl implements Rule {
-	/**
-	 * The default value of the '{@link #getRuleName() <em>Rule Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRuleName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String RULE_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRuleName() <em>Rule Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRuleName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String ruleName = RULE_NAME_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getRuleMetric() <em>Rule Metric</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -215,27 +194,6 @@ public class RuleImpl extends LinkImpl implements Rule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getRuleName() {
-		return ruleName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRuleName(String newRuleName) {
-		String oldRuleName = ruleName;
-		ruleName = newRuleName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.RULE__RULE_NAME, oldRuleName, ruleName));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public TypeMetric getRuleMetric() {
 		return ruleMetric;
 	}
@@ -341,49 +299,9 @@ public class RuleImpl extends LinkImpl implements Rule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean targetConstraint(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		/**
-		 *
-		 * inv targetConstraint:
-		 *   let severity : Integer[1] = 'Rule::targetConstraint'.getSeverity()
-		 *   in
-		 *     if severity <= 0
-		 *     then true
-		 *     else
-		 *       let
-		 *         result : occi::Boolean[1] = self.target.oclIsKindOf(Actiontrigger)
-		 *       in
-		 *         'Rule::targetConstraint'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
-		 *     endif
-		 */
-		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
-		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
-		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, HorizontalelasticityTables.STR_Rule_c_c_targetConstraint);
-		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, HorizontalelasticityTables.INT_0).booleanValue();
-		/*@NonInvalid*/ boolean symbol_0;
-		if (le) {
-			symbol_0 = ValueUtil.TRUE_VALUE;
-		}
-		else {
-			final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_horizontalelasticity_c_c_Actiontrigger = idResolver.getClass(HorizontalelasticityTables.CLSSid_Actiontrigger, null);
-			final /*@NonInvalid*/ Resource target = this.getTarget();
-			final /*@NonInvalid*/ boolean result = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, target, TYP_horizontalelasticity_c_c_Actiontrigger).booleanValue();
-			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, HorizontalelasticityTables.STR_Rule_c_c_targetConstraint, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, HorizontalelasticityTables.INT_0).booleanValue();
-			symbol_0 = logDiagnostic;
-		}
-		return Boolean.TRUE == symbol_0;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case HorizontalelasticityPackage.RULE__RULE_NAME:
-				return getRuleName();
 			case HorizontalelasticityPackage.RULE__RULE_METRIC:
 				return getRuleMetric();
 			case HorizontalelasticityPackage.RULE__RULE_OPERATOR:
@@ -406,9 +324,6 @@ public class RuleImpl extends LinkImpl implements Rule {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case HorizontalelasticityPackage.RULE__RULE_NAME:
-				setRuleName((String)newValue);
-				return;
 			case HorizontalelasticityPackage.RULE__RULE_METRIC:
 				setRuleMetric((TypeMetric)newValue);
 				return;
@@ -436,9 +351,6 @@ public class RuleImpl extends LinkImpl implements Rule {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case HorizontalelasticityPackage.RULE__RULE_NAME:
-				setRuleName(RULE_NAME_EDEFAULT);
-				return;
 			case HorizontalelasticityPackage.RULE__RULE_METRIC:
 				setRuleMetric(RULE_METRIC_EDEFAULT);
 				return;
@@ -466,8 +378,6 @@ public class RuleImpl extends LinkImpl implements Rule {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case HorizontalelasticityPackage.RULE__RULE_NAME:
-				return RULE_NAME_EDEFAULT == null ? ruleName != null : !RULE_NAME_EDEFAULT.equals(ruleName);
 			case HorizontalelasticityPackage.RULE__RULE_METRIC:
 				return ruleMetric != RULE_METRIC_EDEFAULT;
 			case HorizontalelasticityPackage.RULE__RULE_OPERATOR:
@@ -488,28 +398,11 @@ public class RuleImpl extends LinkImpl implements Rule {
 	 * @generated
 	 */
 	@Override
-	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case HorizontalelasticityPackage.RULE___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP:
-				return targetConstraint((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-		}
-		return super.eInvoke(operationID, arguments);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (ruleName: ");
-		result.append(ruleName);
-		result.append(", ruleMetric: ");
+		result.append(" (ruleMetric: ");
 		result.append(ruleMetric);
 		result.append(", ruleOperator: ");
 		result.append(ruleOperator);

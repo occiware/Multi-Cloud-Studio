@@ -12,16 +12,12 @@
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl;
 
-import java.lang.reflect.InvocationTargetException;
-
 import org.eclipse.cmf.occi.core.impl.ResourceImpl;
 
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup;
 
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -316,15 +312,6 @@ public class HorizontalgroupImpl extends ResourceImpl implements Horizontalgroup
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void create() {
-		throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Horizontalgroup!create()
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -426,21 +413,6 @@ public class HorizontalgroupImpl extends ResourceImpl implements Horizontalgroup
 				return HORIZONTAL_GROUP_LOAD_BALANCER_EDEFAULT == null ? horizontalGroupLoadBalancer != null : !HORIZONTAL_GROUP_LOAD_BALANCER_EDEFAULT.equals(horizontalGroupLoadBalancer);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case HorizontalelasticityPackage.HORIZONTALGROUP___CREATE:
-				create();
-				return null;
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

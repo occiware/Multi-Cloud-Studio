@@ -45,7 +45,6 @@ public interface RecurrenceStep extends EObject {
 	 * @see #setUnit(Unit)
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getRecurrenceStep_Unit()
 	 * @model required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!RecurrenceStep!unit'"
 	 * @generated
 	 */
 	Unit getUnit();
@@ -72,7 +71,6 @@ public interface RecurrenceStep extends EObject {
 	 * @see #setValue(Array)
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getRecurrenceStep_Value()
 	 * @model containment="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!RecurrenceStep!value'"
 	 * @generated
 	 */
 	Array getValue();

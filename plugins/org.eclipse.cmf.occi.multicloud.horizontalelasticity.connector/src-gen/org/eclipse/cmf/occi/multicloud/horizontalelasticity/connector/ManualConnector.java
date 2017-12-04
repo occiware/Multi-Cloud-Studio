@@ -10,15 +10,13 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Wed Oct 18 15:58:47 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Mon Dec 04 11:58:56 CET 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
 import org.eclipse.cmf.occi.core.Link;
-import org.eclipse.cmf.occi.multicloud.elasticocci.connector.MyRunnable;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
@@ -187,18 +185,19 @@ public class ManualConnector extends org.eclipse.cmf.occi.multicloud.horizontale
 		   hg = (Horizontalgroup) linkedGroup.getTarget();
 		   //System.out.println("hg "+ hg);
 		   //System.out.println("getManualGroupSize() "+getManualGroupSize());
-		   if ((getManualGroupSize() != 0) && (getManualGroupSize() != null)) {
+		   if ((getManualDesiredSize() != 0) && (getManualDesiredSize() != null)) {
 			   System.out.println("toto");
 			  // doEditing(hg, getManualGroupSize());
 			  // ((HorizontalgroupConnector) hg).doEditing22(getManualGroupSize());
-				hg.setHorizontalGroupGroupSize(getManualGroupSize());
+			   float manualDesiredSize = getManualDesiredSize();
+				hg.setHorizontalGroupGroupSize((int)manualDesiredSize);
 			}		   
-		   if ((getManualMaxGroupSize() != 0) && (getManualMaxGroupSize() != null)) {
-				hg.setHorizontalGroupMaximum(getManualMaxGroupSize());
+		   if ((getElasticityControllerMaximumLimit() != 0) && (getElasticityControllerMaximumLimit() != null)) {
+				hg.setHorizontalGroupMaximum(getElasticityControllerMaximumLimit());
 			}
 	   
-			if ((getManualMinGroupSize() != 0) && (getManualMinGroupSize() != null)) {
-				hg.setHorizontalGroupMinimum(getManualMinGroupSize());
+			if ((getElasticityControllerMinimumLimit() != 0) && (getElasticityControllerMinimumLimit() != null)) {
+				hg.setHorizontalGroupMinimum(getElasticityControllerMinimumLimit());
 			}
 			
 			hg.occiUpdate();
@@ -208,4 +207,7 @@ public class ManualConnector extends org.eclipse.cmf.occi.multicloud.horizontale
 		  }
 	}
 	// End of user code
+		
+
+
 }	

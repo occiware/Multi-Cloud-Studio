@@ -19,6 +19,7 @@ import org.eclipse.cmf.occi.core.util.OCCIValidator;
 
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.*;
 
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 
@@ -53,68 +54,12 @@ public class HorizontalelasticityValidator extends EObjectValidator {
 	public static final String DIAGNOSTIC_SOURCE = "org.eclipse.cmf.occi.multicloud.horizontalelasticity";
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Target Constraint' of 'Instancegrouplink'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int INSTANCEGROUPLINK__TARGET_CONSTRAINT = 1;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Target Constraint' of 'Linkbalancer'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int LINKBALANCER__TARGET_CONSTRAINT = 2;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Target Constraint' of 'Grouplink'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int GROUPLINK__TARGET_CONSTRAINT = 3;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Target Constraint' of 'Rule'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int RULE__TARGET_CONSTRAINT = 4;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Target Constraint' of 'Steplink'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int STEPLINK__TARGET_CONSTRAINT = 5;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Creation'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int CREATION__APPLIES_CONSTRAINT = 6;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Scheduler'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int SCHEDULER__APPLIES_CONSTRAINT = 7;
-
-	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 7;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 0;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -173,12 +118,12 @@ public class HorizontalelasticityValidator extends EObjectValidator {
 				return validateHorizontalgroup((Horizontalgroup)value, diagnostics, context);
 			case HorizontalelasticityPackage.LOADBALANCER:
 				return validateLoadbalancer((Loadbalancer)value, diagnostics, context);
-			case HorizontalelasticityPackage.HORIZONTALELASTICCONTROLLER:
-				return validateHorizontalelasticcontroller((Horizontalelasticcontroller)value, diagnostics, context);
+			case HorizontalelasticityPackage.ELASTICITYCONTROLLER:
+				return validateElasticitycontroller((Elasticitycontroller)value, diagnostics, context);
 			case HorizontalelasticityPackage.INSTANCEGROUPLINK:
 				return validateInstancegrouplink((Instancegrouplink)value, diagnostics, context);
-			case HorizontalelasticityPackage.LINKBALANCER:
-				return validateLinkbalancer((Linkbalancer)value, diagnostics, context);
+			case HorizontalelasticityPackage.LINKLOADBALANCER:
+				return validateLinkloadbalancer((Linkloadbalancer)value, diagnostics, context);
 			case HorizontalelasticityPackage.GROUPLINK:
 				return validateGrouplink((Grouplink)value, diagnostics, context);
 			case HorizontalelasticityPackage.MANUAL:
@@ -201,6 +146,8 @@ public class HorizontalelasticityValidator extends EObjectValidator {
 				return validateStep((Step)value, diagnostics, context);
 			case HorizontalelasticityPackage.STEPLINK:
 				return validateSteplink((Steplink)value, diagnostics, context);
+			case HorizontalelasticityPackage.COMPUTELINK:
+				return validateComputelink((Computelink)value, diagnostics, context);
 			case HorizontalelasticityPackage.CREATION:
 				return validateCreation((Creation)value, diagnostics, context);
 			case HorizontalelasticityPackage.SCHEDULER:
@@ -306,20 +253,20 @@ public class HorizontalelasticityValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateHorizontalelasticcontroller(Horizontalelasticcontroller horizontalelasticcontroller, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(horizontalelasticcontroller, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(horizontalelasticcontroller, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(horizontalelasticcontroller, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(horizontalelasticcontroller, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(horizontalelasticcontroller, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(horizontalelasticcontroller, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(horizontalelasticcontroller, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(horizontalelasticcontroller, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(horizontalelasticcontroller, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(horizontalelasticcontroller, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(horizontalelasticcontroller, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(horizontalelasticcontroller, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateResource_ResourceKindIsInParent(horizontalelasticcontroller, diagnostics, context);
+	public boolean validateElasticitycontroller(Elasticitycontroller elasticitycontroller, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(elasticitycontroller, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(elasticitycontroller, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(elasticitycontroller, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(elasticitycontroller, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(elasticitycontroller, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(elasticitycontroller, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(elasticitycontroller, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(elasticitycontroller, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(elasticitycontroller, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(elasticitycontroller, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(elasticitycontroller, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(elasticitycontroller, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateResource_ResourceKindIsInParent(elasticitycontroller, diagnostics, context);
 		return result;
 	}
 
@@ -349,13 +296,32 @@ public class HorizontalelasticityValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the targetConstraint constraint of '<em>Instancegrouplink</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String INSTANCEGROUPLINK__TARGET_CONSTRAINT__EEXPRESSION = "self.target.oclIsKindOf(infrastructure::Compute)";
+
+	/**
 	 * Validates the targetConstraint constraint of '<em>Instancegrouplink</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateInstancegrouplink_targetConstraint(Instancegrouplink instancegrouplink, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return instancegrouplink.targetConstraint(diagnostics, context);
+		return
+			validate
+				(HorizontalelasticityPackage.Literals.INSTANCEGROUPLINK,
+				 instancegrouplink,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "targetConstraint",
+				 INSTANCEGROUPLINK__TARGET_CONSTRAINT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -363,34 +329,53 @@ public class HorizontalelasticityValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateLinkbalancer(Linkbalancer linkbalancer, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(linkbalancer, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(linkbalancer, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(linkbalancer, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(linkbalancer, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(linkbalancer, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(linkbalancer, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(linkbalancer, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(linkbalancer, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(linkbalancer, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(linkbalancer, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(linkbalancer, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(linkbalancer, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateLink_LinkKindIsInParent(linkbalancer, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateLink_sourceReferenceInvariant(linkbalancer, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateLink_targetReferenceInvariant(linkbalancer, diagnostics, context);
-		if (result || diagnostics != null) result &= validateLinkbalancer_targetConstraint(linkbalancer, diagnostics, context);
+	public boolean validateLinkloadbalancer(Linkloadbalancer linkloadbalancer, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(linkloadbalancer, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(linkloadbalancer, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(linkloadbalancer, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(linkloadbalancer, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(linkloadbalancer, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(linkloadbalancer, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(linkloadbalancer, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(linkloadbalancer, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(linkloadbalancer, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(linkloadbalancer, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(linkloadbalancer, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(linkloadbalancer, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateLink_LinkKindIsInParent(linkloadbalancer, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateLink_sourceReferenceInvariant(linkloadbalancer, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateLink_targetReferenceInvariant(linkloadbalancer, diagnostics, context);
+		if (result || diagnostics != null) result &= validateLinkloadbalancer_targetConstraint(linkloadbalancer, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the targetConstraint constraint of '<em>Linkbalancer</em>'.
+	 * The cached validation expression for the targetConstraint constraint of '<em>Linkloadbalancer</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateLinkbalancer_targetConstraint(Linkbalancer linkbalancer, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return linkbalancer.targetConstraint(diagnostics, context);
+	protected static final String LINKLOADBALANCER__TARGET_CONSTRAINT__EEXPRESSION = "self.target.oclIsKindOf(horizontalelasticity::Loadbalancer)";
+
+	/**
+	 * Validates the targetConstraint constraint of '<em>Linkloadbalancer</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateLinkloadbalancer_targetConstraint(Linkloadbalancer linkloadbalancer, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(HorizontalelasticityPackage.Literals.LINKLOADBALANCER,
+				 linkloadbalancer,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "targetConstraint",
+				 LINKLOADBALANCER__TARGET_CONSTRAINT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -419,13 +404,32 @@ public class HorizontalelasticityValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the targetConstraint constraint of '<em>Grouplink</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String GROUPLINK__TARGET_CONSTRAINT__EEXPRESSION = "self.target.oclIsKindOf(horizontalelasticity::Horizontalgroup)";
+
+	/**
 	 * Validates the targetConstraint constraint of '<em>Grouplink</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateGrouplink_targetConstraint(Grouplink grouplink, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return grouplink.targetConstraint(diagnostics, context);
+		return
+			validate
+				(HorizontalelasticityPackage.Literals.GROUPLINK,
+				 grouplink,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "targetConstraint",
+				 GROUPLINK__TARGET_CONSTRAINT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -564,13 +568,32 @@ public class HorizontalelasticityValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the targetConstraint constraint of '<em>Rule</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String RULE__TARGET_CONSTRAINT__EEXPRESSION = "self.target.oclIsKindOf(horizontalelasticity::Actiontrigger)";
+
+	/**
 	 * Validates the targetConstraint constraint of '<em>Rule</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateRule_targetConstraint(Rule rule, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return rule.targetConstraint(diagnostics, context);
+		return
+			validate
+				(HorizontalelasticityPackage.Literals.RULE,
+				 rule,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "targetConstraint",
+				 RULE__TARGET_CONSTRAINT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -665,13 +688,86 @@ public class HorizontalelasticityValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the targetConstraint constraint of '<em>Steplink</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String STEPLINK__TARGET_CONSTRAINT__EEXPRESSION = "self.target.oclIsKindOf(horizontalelasticity::Step)";
+
+	/**
 	 * Validates the targetConstraint constraint of '<em>Steplink</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateSteplink_targetConstraint(Steplink steplink, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return steplink.targetConstraint(diagnostics, context);
+		return
+			validate
+				(HorizontalelasticityPackage.Literals.STEPLINK,
+				 steplink,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "targetConstraint",
+				 STEPLINK__TARGET_CONSTRAINT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateComputelink(Computelink computelink, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(computelink, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(computelink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(computelink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(computelink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(computelink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(computelink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(computelink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(computelink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(computelink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(computelink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(computelink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(computelink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateLink_LinkKindIsInParent(computelink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateLink_sourceReferenceInvariant(computelink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateLink_targetReferenceInvariant(computelink, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComputelink_targetConstraint(computelink, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the targetConstraint constraint of '<em>Computelink</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String COMPUTELINK__TARGET_CONSTRAINT__EEXPRESSION = "self.target.oclIsKindOf(infrastructure::Compute)";
+
+	/**
+	 * Validates the targetConstraint constraint of '<em>Computelink</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateComputelink_targetConstraint(Computelink computelink, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(HorizontalelasticityPackage.Literals.COMPUTELINK,
+				 computelink,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "targetConstraint",
+				 COMPUTELINK__TARGET_CONSTRAINT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -694,13 +790,32 @@ public class HorizontalelasticityValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>Creation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String CREATION__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(infrastructure::Compute)";
+
+	/**
 	 * Validates the appliesConstraint constraint of '<em>Creation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateCreation_appliesConstraint(Creation creation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return creation.appliesConstraint(diagnostics, context);
+		return
+			validate
+				(HorizontalelasticityPackage.Literals.CREATION,
+				 creation,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "appliesConstraint",
+				 CREATION__APPLIES_CONSTRAINT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -723,13 +838,32 @@ public class HorizontalelasticityValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>Scheduler</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String SCHEDULER__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(horizontalelasticity::Elasticitycontroller)";
+
+	/**
 	 * Validates the appliesConstraint constraint of '<em>Scheduler</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateScheduler_appliesConstraint(Scheduler scheduler, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return scheduler.appliesConstraint(diagnostics, context);
+		return
+			validate
+				(HorizontalelasticityPackage.Literals.SCHEDULER,
+				 scheduler,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "appliesConstraint",
+				 SCHEDULER__APPLIES_CONSTRAINT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

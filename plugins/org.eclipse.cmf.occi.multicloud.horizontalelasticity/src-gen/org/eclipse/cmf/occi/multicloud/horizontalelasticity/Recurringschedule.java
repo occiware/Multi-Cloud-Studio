@@ -28,6 +28,7 @@ import org.eclipse.cmf.occi.core.MixinBase;
  *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Recurringschedule#getRecurringscheduleRecurrence <em>Recurringschedule Recurrence</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Recurringschedule#getRecurringscheduleStartDate <em>Recurringschedule Start Date</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Recurringschedule#getRecurringscheduleEndDate <em>Recurringschedule End Date</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Recurringschedule#getInterval <em>Interval</em>}</li>
  * </ul>
  *
  * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getRecurringschedule()
@@ -46,7 +47,6 @@ public interface Recurringschedule extends Scheduler, MixinBase {
 	 * @see #setRecurringscheduleRecurrence(ArrofRecStep)
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getRecurringschedule_RecurringscheduleRecurrence()
 	 * @model containment="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Recurringschedule!RecurringscheduleRecurrence'"
 	 * @generated
 	 */
 	ArrofRecStep getRecurringscheduleRecurrence();
@@ -72,7 +72,6 @@ public interface Recurringschedule extends Scheduler, MixinBase {
 	 * @see #setRecurringscheduleStartDate(Date)
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getRecurringschedule_RecurringscheduleStartDate()
 	 * @model dataType="org.eclipse.cmf.occi.multicloud.horizontalelasticity.Date"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Recurringschedule!RecurringscheduleStartDate'"
 	 * @generated
 	 */
 	Date getRecurringscheduleStartDate();
@@ -98,7 +97,6 @@ public interface Recurringschedule extends Scheduler, MixinBase {
 	 * @see #setRecurringscheduleEndDate(Date)
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getRecurringschedule_RecurringscheduleEndDate()
 	 * @model dataType="org.eclipse.cmf.occi.multicloud.horizontalelasticity.Date"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Recurringschedule!RecurringscheduleEndDate'"
 	 * @generated
 	 */
 	Date getRecurringscheduleEndDate();
@@ -112,5 +110,30 @@ public interface Recurringschedule extends Scheduler, MixinBase {
 	 * @generated
 	 */
 	void setRecurringscheduleEndDate(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Interval</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Interval</em>' attribute.
+	 * @see #setInterval(Integer)
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getRecurringschedule_Interval()
+	 * @model dataType="org.eclipse.cmf.occi.core.Integer"
+	 * @generated
+	 */
+	Integer getInterval();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Recurringschedule#getInterval <em>Interval</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Interval</em>' attribute.
+	 * @see #getInterval()
+	 * @generated
+	 */
+	void setInterval(Integer value);
 
 } // Recurringschedule

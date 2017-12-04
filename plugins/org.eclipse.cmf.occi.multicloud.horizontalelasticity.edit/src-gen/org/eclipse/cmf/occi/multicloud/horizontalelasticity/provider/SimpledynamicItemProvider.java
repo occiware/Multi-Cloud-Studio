@@ -16,16 +16,12 @@ package org.eclipse.cmf.occi.multicloud.horizontalelasticity.provider;
 import java.util.Collection;
 import java.util.List;
 
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Simpledynamic;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Simpledynamic} object.
@@ -55,54 +51,8 @@ public class SimpledynamicItemProvider extends DynamicpolicyItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSimpleDynamicNamePropertyDescriptor(object);
-			addSimpleDynamicCoolDurationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Simple Dynamic Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSimpleDynamicNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Simpledynamic_simpleDynamicName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Simpledynamic_simpleDynamicName_feature", "_UI_Simpledynamic_type"),
-				 HorizontalelasticityPackage.Literals.SIMPLEDYNAMIC__SIMPLE_DYNAMIC_NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Simple Dynamic Cool Duration feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSimpleDynamicCoolDurationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Simpledynamic_simpleDynamicCoolDuration_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Simpledynamic_simpleDynamicCoolDuration_feature", "_UI_Simpledynamic_type"),
-				 HorizontalelasticityPackage.Literals.SIMPLEDYNAMIC__SIMPLE_DYNAMIC_COOL_DURATION,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -141,13 +91,6 @@ public class SimpledynamicItemProvider extends DynamicpolicyItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(Simpledynamic.class)) {
-			case HorizontalelasticityPackage.SIMPLEDYNAMIC__SIMPLE_DYNAMIC_NAME:
-			case HorizontalelasticityPackage.SIMPLEDYNAMIC__SIMPLE_DYNAMIC_COOL_DURATION:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 

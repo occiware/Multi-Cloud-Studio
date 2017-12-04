@@ -26,6 +26,8 @@ import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalelasticity
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Rule;
 
+import org.eclipse.cmf.occi.multicloud.vmware.VmwareFactory;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -64,7 +66,6 @@ public class RuleItemProvider extends LinkItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addRuleNamePropertyDescriptor(object);
 			addRuleMetricPropertyDescriptor(object);
 			addRuleOperatorPropertyDescriptor(object);
 			addRuleThresholdPropertyDescriptor(object);
@@ -72,28 +73,6 @@ public class RuleItemProvider extends LinkItemProvider {
 			addRuleConsecutivePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Rule Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRuleNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Rule_ruleName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Rule_ruleName_feature", "_UI_Rule_type"),
-				 HorizontalelasticityPackage.Literals.RULE__RULE_NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -244,7 +223,6 @@ public class RuleItemProvider extends LinkItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Rule.class)) {
-			case HorizontalelasticityPackage.RULE__RULE_NAME:
 			case HorizontalelasticityPackage.RULE__RULE_METRIC:
 			case HorizontalelasticityPackage.RULE__RULE_OPERATOR:
 			case HorizontalelasticityPackage.RULE__RULE_THRESHOLD:
@@ -316,6 +294,36 @@ public class RuleItemProvider extends LinkItemProvider {
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
 				 InfrastructureFactory.eINSTANCE.createUser_data()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createWindows()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createLinux()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createMacosx()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createVmwarefolders()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createOs_tpl_vmware()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createSsh_user_data()));
 	}
 
 	/**

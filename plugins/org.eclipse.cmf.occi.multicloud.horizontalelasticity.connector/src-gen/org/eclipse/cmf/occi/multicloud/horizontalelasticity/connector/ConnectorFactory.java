@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Wed Oct 18 15:58:47 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Mon Dec 04 11:58:56 CET 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
@@ -46,12 +46,12 @@ public class ConnectorFactory extends org.eclipse.cmf.occi.multicloud.horizontal
 	/**
 	 * EFactory method for OCCI kind:
 	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
-	 * - term: horizontalelasticcontroller
+	 * - term: elasticitycontroller
 	 * - title: 
 	 */
 	@Override
-	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalelasticcontroller createHorizontalelasticcontroller() {
-		return new HorizontalelasticcontrollerConnector();
+	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Elasticitycontroller createElasticitycontroller() {
+		return new ElasticitycontrollerConnector();
 	}
 
 	/**
@@ -68,12 +68,12 @@ public class ConnectorFactory extends org.eclipse.cmf.occi.multicloud.horizontal
 	/**
 	 * EFactory method for OCCI kind:
 	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
-	 * - term: linkbalancer
+	 * - term: linkloadbalancer
 	 * - title: 
 	 */
 	@Override
-	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Linkbalancer createLinkbalancer() {
-		return new LinkbalancerConnector();
+	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Linkloadbalancer createLinkloadbalancer() {
+		return new LinkloadbalancerConnector();
 	}
 
 	/**
@@ -195,6 +195,17 @@ public class ConnectorFactory extends org.eclipse.cmf.occi.multicloud.horizontal
 	@Override
 	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Steplink createSteplink() {
 		return new SteplinkConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
+	 * - term: computelink
+	 * - title: 
+	 */
+	@Override
+	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Computelink createComputelink() {
+		return new ComputelinkConnector();
 	}
 
 	/**

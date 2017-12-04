@@ -26,6 +26,8 @@ import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalelasticity
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup;
 
+import org.eclipse.cmf.occi.multicloud.vmware.VmwareFactory;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -319,13 +321,43 @@ public class HorizontalgroupItemProvider extends ResourceItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createWindows()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createLinux()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createMacosx()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createVmwarefolders()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createOs_tpl_vmware()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createSsh_user_data()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(OCCIPackage.Literals.RESOURCE__LINKS,
 				 HorizontalelasticityFactory.eINSTANCE.createInstancegrouplink()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.RESOURCE__LINKS,
-				 HorizontalelasticityFactory.eINSTANCE.createLinkbalancer()));
+				 HorizontalelasticityFactory.eINSTANCE.createLinkloadbalancer()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -345,12 +377,27 @@ public class HorizontalgroupItemProvider extends ResourceItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.RESOURCE__LINKS,
+				 HorizontalelasticityFactory.eINSTANCE.createComputelink()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.RESOURCE__LINKS,
 				 InfrastructureFactory.eINSTANCE.createStoragelink()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.RESOURCE__LINKS,
 				 InfrastructureFactory.eINSTANCE.createNetworkinterface()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.RESOURCE__LINKS,
+				 VmwareFactory.eINSTANCE.createStoragelinkvmware()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.RESOURCE__LINKS,
+				 VmwareFactory.eINSTANCE.createNetworkadapter()));
 	}
 
 	/**

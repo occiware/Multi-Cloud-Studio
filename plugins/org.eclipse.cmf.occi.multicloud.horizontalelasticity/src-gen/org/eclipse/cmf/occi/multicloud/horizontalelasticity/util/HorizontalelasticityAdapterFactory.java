@@ -103,16 +103,16 @@ public class HorizontalelasticityAdapterFactory extends AdapterFactoryImpl {
 				return createLoadbalancerAdapter();
 			}
 			@Override
-			public Adapter caseHorizontalelasticcontroller(Horizontalelasticcontroller object) {
-				return createHorizontalelasticcontrollerAdapter();
+			public Adapter caseElasticitycontroller(Elasticitycontroller object) {
+				return createElasticitycontrollerAdapter();
 			}
 			@Override
 			public Adapter caseInstancegrouplink(Instancegrouplink object) {
 				return createInstancegrouplinkAdapter();
 			}
 			@Override
-			public Adapter caseLinkbalancer(Linkbalancer object) {
-				return createLinkbalancerAdapter();
+			public Adapter caseLinkloadbalancer(Linkloadbalancer object) {
+				return createLinkloadbalancerAdapter();
 			}
 			@Override
 			public Adapter caseGrouplink(Grouplink object) {
@@ -157,6 +157,10 @@ public class HorizontalelasticityAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseSteplink(Steplink object) {
 				return createSteplinkAdapter();
+			}
+			@Override
+			public Adapter caseComputelink(Computelink object) {
+				return createComputelinkAdapter();
 			}
 			@Override
 			public Adapter caseCreation(Creation object) {
@@ -281,16 +285,16 @@ public class HorizontalelasticityAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalelasticcontroller <em>Horizontalelasticcontroller</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Elasticitycontroller <em>Elasticitycontroller</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalelasticcontroller
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Elasticitycontroller
 	 * @generated
 	 */
-	public Adapter createHorizontalelasticcontrollerAdapter() {
+	public Adapter createElasticitycontrollerAdapter() {
 		return null;
 	}
 
@@ -309,16 +313,16 @@ public class HorizontalelasticityAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Linkbalancer <em>Linkbalancer</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Linkloadbalancer <em>Linkloadbalancer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Linkbalancer
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Linkloadbalancer
 	 * @generated
 	 */
-	public Adapter createLinkbalancerAdapter() {
+	public Adapter createLinkloadbalancerAdapter() {
 		return null;
 	}
 
@@ -473,6 +477,20 @@ public class HorizontalelasticityAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSteplinkAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Computelink <em>Computelink</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Computelink
+	 * @generated
+	 */
+	public Adapter createComputelinkAdapter() {
 		return null;
 	}
 

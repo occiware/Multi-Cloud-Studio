@@ -10,9 +10,11 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Wed Oct 18 15:58:47 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Mon Dec 04 11:58:56 CET 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
+
+import java.util.ArrayList;
 
 import org.eclipse.cmf.occi.core.Link;
 import org.eclipse.cmf.occi.multicloud.elasticocci.connector.MyRunnable;
@@ -26,7 +28,6 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import java.util.ArrayList;
 
 
 
@@ -145,7 +146,6 @@ public class StepdynamicConnector extends org.eclipse.cmf.occi.multicloud.horizo
 		thread.start();	
 	}
 	// End of user code
-	
 	protected void startstepdynamic() {
 		Rule myRule = null;
 		ArrayList<Step> arrlistofsteps= new ArrayList<Step>();
@@ -173,7 +173,7 @@ public class StepdynamicConnector extends org.eclipse.cmf.occi.multicloud.horizo
 				String actionname = action.getAction().getName();
 				String actiontype = action.getActionType().getName();
 				Float amount = action.getAmount();
-				int coolduration = this.getStepDynamicCoolDuration();
+				int coolduration = this.getElasticityControllerCoolDuration();
 				
 				////////////////////here call the action according to Rule and steps///////////////
 				double metrcUsage  = dp.getMetricUsage(ruleMetric, ruleperiod, consecutive); // get the metric utilization on an interval of (period) for a consecutive of (consecutive),
@@ -190,7 +190,7 @@ public class StepdynamicConnector extends org.eclipse.cmf.occi.multicloud.horizo
 							float lower = element.getStepLowerStepBound() + threshold ;
 							float upper = element.getStepUpperStepBound() + threshold;
 							if (metrcUsage >=lower && metrcUsage <= upper) {
-								int size1 = element.getStepSize();
+								Float size1 = element.getStepSize();
 								action(actionname, actiontype, size1, coolduration);
 							}
 							System.out.print(50 + element.getStepLowerStepBound());
@@ -332,6 +332,7 @@ public class StepdynamicConnector extends org.eclipse.cmf.occi.multicloud.horizo
 		}			
 		
 	return testoutput;	
-	}
+	}	
+
 
 }	

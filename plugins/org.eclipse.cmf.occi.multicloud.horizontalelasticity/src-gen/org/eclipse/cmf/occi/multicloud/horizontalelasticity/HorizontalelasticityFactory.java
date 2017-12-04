@@ -77,13 +77,13 @@ public interface HorizontalelasticityFactory extends EFactory {
 	Loadbalancer createLoadbalancer();
 
 	/**
-	 * Returns a new object of class '<em>Horizontalelasticcontroller</em>'.
+	 * Returns a new object of class '<em>Elasticitycontroller</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Horizontalelasticcontroller</em>'.
+	 * @return a new object of class '<em>Elasticitycontroller</em>'.
 	 * @generated
 	 */
-	Horizontalelasticcontroller createHorizontalelasticcontroller();
+	Elasticitycontroller createElasticitycontroller();
 
 	/**
 	 * Returns a new object of class '<em>Instancegrouplink</em>'.
@@ -95,13 +95,13 @@ public interface HorizontalelasticityFactory extends EFactory {
 	Instancegrouplink createInstancegrouplink();
 
 	/**
-	 * Returns a new object of class '<em>Linkbalancer</em>'.
+	 * Returns a new object of class '<em>Linkloadbalancer</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Linkbalancer</em>'.
+	 * @return a new object of class '<em>Linkloadbalancer</em>'.
 	 * @generated
 	 */
-	Linkbalancer createLinkbalancer();
+	Linkloadbalancer createLinkloadbalancer();
 
 	/**
 	 * Returns a new object of class '<em>Grouplink</em>'.
@@ -201,6 +201,15 @@ public interface HorizontalelasticityFactory extends EFactory {
 	 * @generated
 	 */
 	Steplink createSteplink();
+
+	/**
+	 * Returns a new object of class '<em>Computelink</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Computelink</em>'.
+	 * @generated
+	 */
+	Computelink createComputelink();
 
 	/**
 	 * Returns a new object of class '<em>Creation</em>'.

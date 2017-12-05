@@ -3,6 +3,7 @@
   <import href="http://schemas.ogf.org/occi/core#/"/>
   <import href="http://schemas.ogf.org/occi/infrastructure#/"/>
   <import href="http://occiware.org/occi/infrastructure/vmware#/"/>
+  <import href="../../org.eclipse.cmf.occi.multicloud.vmware/model/vmware.occie#/"/>
   <kinds name="HorizontalGroup" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#">
     <attributes name="horizontalGroup.name" mutable="true">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>

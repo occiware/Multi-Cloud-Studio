@@ -170,6 +170,8 @@ import org.eclipse.cmf.occi.core.provider.OCCIItemProviderAdapterFactory;
 
 import org.eclipse.cmf.occi.infrastructure.provider.InfrastructureItemProviderAdapterFactory;
 
+import org.eclipse.cmf.occi.multicloud.vmware.provider.VmwareItemProviderAdapterFactory;
+
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
 
@@ -714,6 +716,7 @@ public class HorizontalelasticityEditor
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new HorizontalelasticityItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new InfrastructureItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new VmwareItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new OCCIItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 

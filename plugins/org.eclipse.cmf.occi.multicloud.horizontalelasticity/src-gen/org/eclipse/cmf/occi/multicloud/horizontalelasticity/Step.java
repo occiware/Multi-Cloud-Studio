@@ -48,6 +48,7 @@ public interface Step extends Resource {
 	 * @see #setStepLowerStepBound(Float)
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getStep_StepLowerStepBound()
 	 * @model dataType="org.eclipse.cmf.occi.multicloud.horizontalelasticity.Float"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Step!stepLowerStepBound'"
 	 * @generated
 	 */
 	Float getStepLowerStepBound();
@@ -73,6 +74,7 @@ public interface Step extends Resource {
 	 * @see #setStepUpperStepBound(Float)
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getStep_StepUpperStepBound()
 	 * @model dataType="org.eclipse.cmf.occi.multicloud.horizontalelasticity.Float"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Step!stepUpperStepBound'"
 	 * @generated
 	 */
 	Float getStepUpperStepBound();
@@ -98,6 +100,7 @@ public interface Step extends Resource {
 	 * @see #setStepSize(Float)
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getStep_StepSize()
 	 * @model dataType="org.eclipse.cmf.occi.multicloud.horizontalelasticity.Float"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Step!stepSize'"
 	 * @generated
 	 */
 	Float getStepSize();

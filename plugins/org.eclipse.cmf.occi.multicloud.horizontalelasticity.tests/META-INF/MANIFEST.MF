@@ -11,6 +11,7 @@ Export-Package: org.eclipse.cmf.occi.multicloud.horizontalelasticity.tests
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.cmf.occi.multicloud.horizontalelasticity;visibility:=reexport,
  org.eclipse.cmf.occi.infrastructure;visibility:=reexport,
+ org.eclipse.cmf.occi.multicloud.vmware;visibility:=reexport,
  org.eclipse.cmf.occi.core;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.junit;visibility:=reexport

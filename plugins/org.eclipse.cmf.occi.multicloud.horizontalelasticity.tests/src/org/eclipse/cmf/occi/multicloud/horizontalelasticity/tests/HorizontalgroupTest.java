@@ -23,12 +23,6 @@ import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Horizontalgroup</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * The following operations are tested:
- * <ul>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup#create() <em>Create</em>}</li>
- * </ul>
- * </p>
  * @generated
  */
 public class HorizontalgroupTest extends TestCase {
@@ -100,19 +94,6 @@ public class HorizontalgroupTest extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
-	}
-
-	/**
-	 * Tests the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup#create() <em>Create</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup#create()
-	 * @generated
-	 */
-	public void testCreate() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
 	}
 
 } //HorizontalgroupTest

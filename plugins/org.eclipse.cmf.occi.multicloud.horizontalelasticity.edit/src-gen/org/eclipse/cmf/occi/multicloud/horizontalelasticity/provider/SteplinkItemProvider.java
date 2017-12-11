@@ -124,17 +124,62 @@ public class SteplinkItemProvider extends LinkItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
-				 HorizontalelasticityFactory.eINSTANCE.createScheduler()));
+				 HorizontalelasticityFactory.eINSTANCE.createSchedulingpolicy()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
-				 HorizontalelasticityFactory.eINSTANCE.createUniqueschedule()));
+				 HorizontalelasticityFactory.eINSTANCE.createUniqueschedulingpolicy()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
-				 HorizontalelasticityFactory.eINSTANCE.createRecurringschedule()));
+				 HorizontalelasticityFactory.eINSTANCE.createRecurringschedulingpolicy()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createScalingpolicy()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createDynamicscalingpolicy()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createDynamicadjustmentscalingpolicy()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createSimpledynamicscalingpolicy()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createStepdynamicscalingpolicy()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createManualscalingpolicy()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createMetric()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createCpuutilisation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createMemoryutilisation()));
 
 		newChildDescriptors.add
 			(createChildParameter

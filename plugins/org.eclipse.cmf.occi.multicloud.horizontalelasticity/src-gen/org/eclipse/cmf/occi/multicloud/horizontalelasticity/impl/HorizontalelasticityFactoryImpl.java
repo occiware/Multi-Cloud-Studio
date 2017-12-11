@@ -76,23 +76,25 @@ public class HorizontalelasticityFactoryImpl extends EFactoryImpl implements Hor
 			case HorizontalelasticityPackage.LOADBALANCER: return createLoadbalancer();
 			case HorizontalelasticityPackage.ELASTICITYCONTROLLER: return createElasticitycontroller();
 			case HorizontalelasticityPackage.INSTANCEGROUPLINK: return createInstancegrouplink();
-			case HorizontalelasticityPackage.LINKLOADBALANCER: return createLinkloadbalancer();
-			case HorizontalelasticityPackage.GROUPLINK: return createGrouplink();
-			case HorizontalelasticityPackage.MANUAL: return createManual();
-			case HorizontalelasticityPackage.DYNAMIC: return createDynamic();
-			case HorizontalelasticityPackage.SIMPLEDYNAMIC: return createSimpledynamic();
-			case HorizontalelasticityPackage.STEPDYNAMIC: return createStepdynamic();
-			case HorizontalelasticityPackage.DYNAMICADJUSTMENT: return createDynamicadjustment();
+			case HorizontalelasticityPackage.LOADBALANCERLINK: return createLoadbalancerlink();
+			case HorizontalelasticityPackage.ELASTICLINK: return createElasticlink();
 			case HorizontalelasticityPackage.RULE: return createRule();
 			case HorizontalelasticityPackage.ACTIONTRIGGER: return createActiontrigger();
-			case HorizontalelasticityPackage.DYNAMICPOLICY: return createDynamicpolicy();
 			case HorizontalelasticityPackage.STEP: return createStep();
 			case HorizontalelasticityPackage.STEPLINK: return createSteplink();
-			case HorizontalelasticityPackage.COMPUTELINK: return createComputelink();
 			case HorizontalelasticityPackage.CREATION: return createCreation();
-			case HorizontalelasticityPackage.SCHEDULER: return createScheduler();
-			case HorizontalelasticityPackage.UNIQUESCHEDULE: return createUniqueschedule();
-			case HorizontalelasticityPackage.RECURRINGSCHEDULE: return createRecurringschedule();
+			case HorizontalelasticityPackage.SCHEDULINGPOLICY: return createSchedulingpolicy();
+			case HorizontalelasticityPackage.UNIQUESCHEDULINGPOLICY: return createUniqueschedulingpolicy();
+			case HorizontalelasticityPackage.RECURRINGSCHEDULINGPOLICY: return createRecurringschedulingpolicy();
+			case HorizontalelasticityPackage.SCALINGPOLICY: return createScalingpolicy();
+			case HorizontalelasticityPackage.DYNAMICSCALINGPOLICY: return createDynamicscalingpolicy();
+			case HorizontalelasticityPackage.DYNAMICADJUSTMENTSCALINGPOLICY: return createDynamicadjustmentscalingpolicy();
+			case HorizontalelasticityPackage.SIMPLEDYNAMICSCALINGPOLICY: return createSimpledynamicscalingpolicy();
+			case HorizontalelasticityPackage.STEPDYNAMICSCALINGPOLICY: return createStepdynamicscalingpolicy();
+			case HorizontalelasticityPackage.MANUALSCALINGPOLICY: return createManualscalingpolicy();
+			case HorizontalelasticityPackage.METRIC: return createMetric();
+			case HorizontalelasticityPackage.CPUUTILISATION: return createCpuutilisation();
+			case HorizontalelasticityPackage.MEMORYUTILISATION: return createMemoryutilisation();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -231,9 +233,9 @@ public class HorizontalelasticityFactoryImpl extends EFactoryImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Linkloadbalancer createLinkloadbalancer() {
-		LinkloadbalancerImpl linkloadbalancer = new LinkloadbalancerImpl();
-		return linkloadbalancer;
+	public Loadbalancerlink createLoadbalancerlink() {
+		LoadbalancerlinkImpl loadbalancerlink = new LoadbalancerlinkImpl();
+		return loadbalancerlink;
 	}
 
 	/**
@@ -241,59 +243,9 @@ public class HorizontalelasticityFactoryImpl extends EFactoryImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Grouplink createGrouplink() {
-		GrouplinkImpl grouplink = new GrouplinkImpl();
-		return grouplink;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Manual createManual() {
-		ManualImpl manual = new ManualImpl();
-		return manual;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamic createDynamic() {
-		DynamicImpl dynamic = new DynamicImpl();
-		return dynamic;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Simpledynamic createSimpledynamic() {
-		SimpledynamicImpl simpledynamic = new SimpledynamicImpl();
-		return simpledynamic;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Stepdynamic createStepdynamic() {
-		StepdynamicImpl stepdynamic = new StepdynamicImpl();
-		return stepdynamic;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Dynamicadjustment createDynamicadjustment() {
-		DynamicadjustmentImpl dynamicadjustment = new DynamicadjustmentImpl();
-		return dynamicadjustment;
+	public Elasticlink createElasticlink() {
+		ElasticlinkImpl elasticlink = new ElasticlinkImpl();
+		return elasticlink;
 	}
 
 	/**
@@ -321,16 +273,6 @@ public class HorizontalelasticityFactoryImpl extends EFactoryImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Dynamicpolicy createDynamicpolicy() {
-		DynamicpolicyImpl dynamicpolicy = new DynamicpolicyImpl();
-		return dynamicpolicy;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Step createStep() {
 		StepImpl step = new StepImpl();
 		return step;
@@ -351,16 +293,6 @@ public class HorizontalelasticityFactoryImpl extends EFactoryImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Computelink createComputelink() {
-		ComputelinkImpl computelink = new ComputelinkImpl();
-		return computelink;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Creation createCreation() {
 		CreationImpl creation = new CreationImpl();
 		return creation;
@@ -371,9 +303,9 @@ public class HorizontalelasticityFactoryImpl extends EFactoryImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Scheduler createScheduler() {
-		SchedulerImpl scheduler = new SchedulerImpl();
-		return scheduler;
+	public Schedulingpolicy createSchedulingpolicy() {
+		SchedulingpolicyImpl schedulingpolicy = new SchedulingpolicyImpl();
+		return schedulingpolicy;
 	}
 
 	/**
@@ -381,9 +313,9 @@ public class HorizontalelasticityFactoryImpl extends EFactoryImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Uniqueschedule createUniqueschedule() {
-		UniquescheduleImpl uniqueschedule = new UniquescheduleImpl();
-		return uniqueschedule;
+	public Uniqueschedulingpolicy createUniqueschedulingpolicy() {
+		UniqueschedulingpolicyImpl uniqueschedulingpolicy = new UniqueschedulingpolicyImpl();
+		return uniqueschedulingpolicy;
 	}
 
 	/**
@@ -391,9 +323,99 @@ public class HorizontalelasticityFactoryImpl extends EFactoryImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Recurringschedule createRecurringschedule() {
-		RecurringscheduleImpl recurringschedule = new RecurringscheduleImpl();
-		return recurringschedule;
+	public Recurringschedulingpolicy createRecurringschedulingpolicy() {
+		RecurringschedulingpolicyImpl recurringschedulingpolicy = new RecurringschedulingpolicyImpl();
+		return recurringschedulingpolicy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Scalingpolicy createScalingpolicy() {
+		ScalingpolicyImpl scalingpolicy = new ScalingpolicyImpl();
+		return scalingpolicy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Dynamicscalingpolicy createDynamicscalingpolicy() {
+		DynamicscalingpolicyImpl dynamicscalingpolicy = new DynamicscalingpolicyImpl();
+		return dynamicscalingpolicy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Dynamicadjustmentscalingpolicy createDynamicadjustmentscalingpolicy() {
+		DynamicadjustmentscalingpolicyImpl dynamicadjustmentscalingpolicy = new DynamicadjustmentscalingpolicyImpl();
+		return dynamicadjustmentscalingpolicy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Simpledynamicscalingpolicy createSimpledynamicscalingpolicy() {
+		SimpledynamicscalingpolicyImpl simpledynamicscalingpolicy = new SimpledynamicscalingpolicyImpl();
+		return simpledynamicscalingpolicy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Stepdynamicscalingpolicy createStepdynamicscalingpolicy() {
+		StepdynamicscalingpolicyImpl stepdynamicscalingpolicy = new StepdynamicscalingpolicyImpl();
+		return stepdynamicscalingpolicy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Manualscalingpolicy createManualscalingpolicy() {
+		ManualscalingpolicyImpl manualscalingpolicy = new ManualscalingpolicyImpl();
+		return manualscalingpolicy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Metric createMetric() {
+		MetricImpl metric = new MetricImpl();
+		return metric;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Cpuutilisation createCpuutilisation() {
+		CpuutilisationImpl cpuutilisation = new CpuutilisationImpl();
+		return cpuutilisation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Memoryutilisation createMemoryutilisation() {
+		MemoryutilisationImpl memoryutilisation = new MemoryutilisationImpl();
+		return memoryutilisation;
 	}
 
 	/**

@@ -66,35 +66,12 @@ public class RuleItemProvider extends LinkItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addRuleMetricPropertyDescriptor(object);
 			addRuleOperatorPropertyDescriptor(object);
 			addRuleThresholdPropertyDescriptor(object);
 			addRulePeriodPropertyDescriptor(object);
 			addRuleConsecutivePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Rule Metric feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRuleMetricPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Rule_ruleMetric_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Rule_ruleMetric_feature", "_UI_Rule_type"),
-				 HorizontalelasticityPackage.Literals.RULE__RULE_METRIC,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -223,7 +200,6 @@ public class RuleItemProvider extends LinkItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Rule.class)) {
-			case HorizontalelasticityPackage.RULE__RULE_METRIC:
 			case HorizontalelasticityPackage.RULE__RULE_OPERATOR:
 			case HorizontalelasticityPackage.RULE__RULE_THRESHOLD:
 			case HorizontalelasticityPackage.RULE__RULE_PERIOD:
@@ -253,17 +229,62 @@ public class RuleItemProvider extends LinkItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
-				 HorizontalelasticityFactory.eINSTANCE.createScheduler()));
+				 HorizontalelasticityFactory.eINSTANCE.createSchedulingpolicy()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
-				 HorizontalelasticityFactory.eINSTANCE.createUniqueschedule()));
+				 HorizontalelasticityFactory.eINSTANCE.createUniqueschedulingpolicy()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
-				 HorizontalelasticityFactory.eINSTANCE.createRecurringschedule()));
+				 HorizontalelasticityFactory.eINSTANCE.createRecurringschedulingpolicy()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createScalingpolicy()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createDynamicscalingpolicy()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createDynamicadjustmentscalingpolicy()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createSimpledynamicscalingpolicy()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createStepdynamicscalingpolicy()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createManualscalingpolicy()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createMetric()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createCpuutilisation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createMemoryutilisation()));
 
 		newChildDescriptors.add
 			(createChildParameter

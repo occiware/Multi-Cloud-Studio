@@ -45,6 +45,7 @@ public interface Array extends EObject {
 	 * @return the value of the '<em>Values</em>' attribute list.
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getArray_Values()
 	 * @model unique="false" dataType="org.eclipse.cmf.occi.core.Integer"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Array!values'"
 	 * @generated
 	 */
 	EList<Integer> getValues();

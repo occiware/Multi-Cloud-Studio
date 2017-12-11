@@ -5,15 +5,12 @@ package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 import java.util.Date;
 
 import org.eclipse.cmf.occi.core.Entity;
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector.RecurringscheduleConnector;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamicadjustmentscalingpolicy;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Simpledynamicscalingpolicy;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Stepdynamicscalingpolicy;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamicadjustment;
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Recurringschedule;
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Simpledynamic;
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Stepdynamic;
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector.ManualConnector;
 import org.quartz.Job;
 import org.quartz.JobDataMap;
 import org.quartz.JobExecutionContext;
@@ -30,7 +27,7 @@ public class Job2 implements Job{
 	      try {
 			SchedulerContext schedulerContext = context.getScheduler().getContext();
 			Entity entity = (Entity) schedulerContext.get("key");
-			RecurringscheduleConnector rs = new RecurringscheduleConnector();
+			RecurringschedulingpolicyConnector rs = new RecurringschedulingpolicyConnector();
 			final TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(entity);
 			System.out.println("domain     " + domain);
 			domain.getCommandStack().execute(new RecordingCommand(domain) {
@@ -42,18 +39,18 @@ public class Job2 implements Job{
 					//	//man.occiCreate();
 					//}
 					
-					if (entity instanceof Simpledynamic) {
-						SimpledynamicConnector man = (SimpledynamicConnector) entity;
+					if (entity instanceof Simpledynamicscalingpolicy) {
+						SimpledynamicscalingpolicyConnector man = (SimpledynamicscalingpolicyConnector) entity;
 						man.stop();
 					}
 					
-					else if (entity instanceof Stepdynamic) {
-						StepdynamicConnector man = (StepdynamicConnector) entity;
+					else if (entity instanceof Stepdynamicscalingpolicy) {
+						StepdynamicscalingpolicyConnector man = (StepdynamicscalingpolicyConnector) entity;
 						man.stop();
 					}
 					
-					else if (entity instanceof Dynamicadjustment) {
-						DynamicadjustmentConnector man = (DynamicadjustmentConnector) entity;
+					else if (entity instanceof Dynamicadjustmentscalingpolicy) {
+						DynamicadjustmentscalingpolicyConnector man = (DynamicadjustmentscalingpolicyConnector) entity;
 						man.stop();
 					}
 					

@@ -24,7 +24,6 @@ import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalelasticity
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityTables;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.OperatorType;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Rule;
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.TypeMetric;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -60,7 +59,6 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.RuleImpl#getRuleMetric <em>Rule Metric</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.RuleImpl#getRuleOperator <em>Rule Operator</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.RuleImpl#getRuleThreshold <em>Rule Threshold</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.RuleImpl#getRulePeriod <em>Rule Period</em>}</li>
@@ -70,26 +68,6 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  * @generated
  */
 public class RuleImpl extends LinkImpl implements Rule {
-	/**
-	 * The default value of the '{@link #getRuleMetric() <em>Rule Metric</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRuleMetric()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final TypeMetric RULE_METRIC_EDEFAULT = TypeMetric.CP_UTILISATION;
-
-	/**
-	 * The cached value of the '{@link #getRuleMetric() <em>Rule Metric</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRuleMetric()
-	 * @generated
-	 * @ordered
-	 */
-	protected TypeMetric ruleMetric = RULE_METRIC_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getRuleOperator() <em>Rule Operator</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -194,27 +172,6 @@ public class RuleImpl extends LinkImpl implements Rule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TypeMetric getRuleMetric() {
-		return ruleMetric;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRuleMetric(TypeMetric newRuleMetric) {
-		TypeMetric oldRuleMetric = ruleMetric;
-		ruleMetric = newRuleMetric == null ? RULE_METRIC_EDEFAULT : newRuleMetric;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.RULE__RULE_METRIC, oldRuleMetric, ruleMetric));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public OperatorType getRuleOperator() {
 		return ruleOperator;
 	}
@@ -299,11 +256,47 @@ public class RuleImpl extends LinkImpl implements Rule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean targetConstraint(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		/**
+		 *
+		 * inv targetConstraint:
+		 *   let severity : Integer[1] = 'Rule::targetConstraint'.getSeverity()
+		 *   in
+		 *     if severity <= 0
+		 *     then true
+		 *     else
+		 *       let
+		 *         result : occi::Boolean[1] = self.target.oclIsKindOf(Actiontrigger)
+		 *       in
+		 *         'Rule::targetConstraint'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+		 *     endif
+		 */
+		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
+		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
+		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, HorizontalelasticityTables.STR_Rule_c_c_targetConstraint);
+		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, HorizontalelasticityTables.INT_0).booleanValue();
+		/*@NonInvalid*/ boolean symbol_0;
+		if (le) {
+			symbol_0 = ValueUtil.TRUE_VALUE;
+		}
+		else {
+			final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_horizontalelasticity_c_c_Actiontrigger = idResolver.getClass(HorizontalelasticityTables.CLSSid_Actiontrigger, null);
+			final /*@NonInvalid*/ Resource target = this.getTarget();
+			final /*@NonInvalid*/ boolean result = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, target, TYP_horizontalelasticity_c_c_Actiontrigger).booleanValue();
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, HorizontalelasticityTables.STR_Rule_c_c_targetConstraint, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, HorizontalelasticityTables.INT_0).booleanValue();
+			symbol_0 = logDiagnostic;
+		}
+		return Boolean.TRUE == symbol_0;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case HorizontalelasticityPackage.RULE__RULE_METRIC:
-				return getRuleMetric();
 			case HorizontalelasticityPackage.RULE__RULE_OPERATOR:
 				return getRuleOperator();
 			case HorizontalelasticityPackage.RULE__RULE_THRESHOLD:
@@ -324,9 +317,6 @@ public class RuleImpl extends LinkImpl implements Rule {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case HorizontalelasticityPackage.RULE__RULE_METRIC:
-				setRuleMetric((TypeMetric)newValue);
-				return;
 			case HorizontalelasticityPackage.RULE__RULE_OPERATOR:
 				setRuleOperator((OperatorType)newValue);
 				return;
@@ -351,9 +341,6 @@ public class RuleImpl extends LinkImpl implements Rule {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case HorizontalelasticityPackage.RULE__RULE_METRIC:
-				setRuleMetric(RULE_METRIC_EDEFAULT);
-				return;
 			case HorizontalelasticityPackage.RULE__RULE_OPERATOR:
 				setRuleOperator(RULE_OPERATOR_EDEFAULT);
 				return;
@@ -378,8 +365,6 @@ public class RuleImpl extends LinkImpl implements Rule {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case HorizontalelasticityPackage.RULE__RULE_METRIC:
-				return ruleMetric != RULE_METRIC_EDEFAULT;
 			case HorizontalelasticityPackage.RULE__RULE_OPERATOR:
 				return ruleOperator != RULE_OPERATOR_EDEFAULT;
 			case HorizontalelasticityPackage.RULE__RULE_THRESHOLD:
@@ -398,13 +383,26 @@ public class RuleImpl extends LinkImpl implements Rule {
 	 * @generated
 	 */
 	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case HorizontalelasticityPackage.RULE___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP:
+				return targetConstraint((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (ruleMetric: ");
-		result.append(ruleMetric);
-		result.append(", ruleOperator: ");
+		result.append(" (ruleOperator: ");
 		result.append(ruleOperator);
 		result.append(", ruleThreshold: ");
 		result.append(ruleThreshold);

@@ -27,9 +27,9 @@ import org.eclipse.cmf.occi.core.Resource;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Actiontrigger#getAction <em>Action</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Actiontrigger#getActionType <em>Action Type</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Actiontrigger#getAmount <em>Amount</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Actiontrigger#getActiontriggerAction <em>Actiontrigger Action</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Actiontrigger#getActiontriggerActionType <em>Actiontrigger Action Type</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Actiontrigger#getActiontriggerAmount <em>Actiontrigger Amount</em>}</li>
  * </ul>
  *
  * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getActiontrigger()
@@ -38,84 +38,85 @@ import org.eclipse.cmf.occi.core.Resource;
  */
 public interface Actiontrigger extends Resource {
 	/**
-	 * Returns the value of the '<em><b>Action</b></em>' attribute.
+	 * Returns the value of the '<em><b>Actiontrigger Action</b></em>' attribute.
 	 * The literals are from the enumeration {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.ActionOperation}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * 
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Action</em>' attribute.
+	 * @return the value of the '<em>Actiontrigger Action</em>' attribute.
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.ActionOperation
-	 * @see #setAction(ActionOperation)
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getActiontrigger_Action()
-	 * @model
+	 * @see #setActiontriggerAction(ActionOperation)
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getActiontrigger_ActiontriggerAction()
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Actiontrigger!actiontriggerAction'"
 	 * @generated
 	 */
-	ActionOperation getAction();
+	ActionOperation getActiontriggerAction();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Actiontrigger#getAction <em>Action</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Actiontrigger#getActiontriggerAction <em>Actiontrigger Action</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Action</em>' attribute.
+	 * @param value the new value of the '<em>Actiontrigger Action</em>' attribute.
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.ActionOperation
-	 * @see #getAction()
+	 * @see #getActiontriggerAction()
 	 * @generated
 	 */
-	void setAction(ActionOperation value);
+	void setActiontriggerAction(ActionOperation value);
 
 	/**
-	 * Returns the value of the '<em><b>Action Type</b></em>' attribute.
+	 * Returns the value of the '<em><b>Actiontrigger Action Type</b></em>' attribute.
 	 * The literals are from the enumeration {@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.ActionType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * 
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Action Type</em>' attribute.
+	 * @return the value of the '<em>Actiontrigger Action Type</em>' attribute.
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.ActionType
-	 * @see #setActionType(ActionType)
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getActiontrigger_ActionType()
-	 * @model
+	 * @see #setActiontriggerActionType(ActionType)
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getActiontrigger_ActiontriggerActionType()
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Actiontrigger!actiontriggerActionType'"
 	 * @generated
 	 */
-	ActionType getActionType();
+	ActionType getActiontriggerActionType();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Actiontrigger#getActionType <em>Action Type</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Actiontrigger#getActiontriggerActionType <em>Actiontrigger Action Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Action Type</em>' attribute.
+	 * @param value the new value of the '<em>Actiontrigger Action Type</em>' attribute.
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.ActionType
-	 * @see #getActionType()
+	 * @see #getActiontriggerActionType()
 	 * @generated
 	 */
-	void setActionType(ActionType value);
+	void setActiontriggerActionType(ActionType value);
 
 	/**
-	 * Returns the value of the '<em><b>Amount</b></em>' attribute.
+	 * Returns the value of the '<em><b>Actiontrigger Amount</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * 
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Amount</em>' attribute.
-	 * @see #setAmount(Float)
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getActiontrigger_Amount()
+	 * @return the value of the '<em>Actiontrigger Amount</em>' attribute.
+	 * @see #setActiontriggerAmount(Float)
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getActiontrigger_ActiontriggerAmount()
 	 * @model dataType="org.eclipse.cmf.occi.multicloud.horizontalelasticity.Float"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Actiontrigger!actiontriggerAmount'"
 	 * @generated
 	 */
-	Float getAmount();
+	Float getActiontriggerAmount();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Actiontrigger#getAmount <em>Amount</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Actiontrigger#getActiontriggerAmount <em>Actiontrigger Amount</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Amount</em>' attribute.
-	 * @see #getAmount()
+	 * @param value the new value of the '<em>Actiontrigger Amount</em>' attribute.
+	 * @see #getActiontriggerAmount()
 	 * @generated
 	 */
-	void setAmount(Float value);
+	void setActiontriggerAmount(Float value);
 
 } // Actiontrigger

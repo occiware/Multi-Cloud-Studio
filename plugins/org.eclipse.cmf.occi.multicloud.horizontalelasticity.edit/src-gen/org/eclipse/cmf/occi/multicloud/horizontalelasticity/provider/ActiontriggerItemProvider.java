@@ -66,27 +66,27 @@ public class ActiontriggerItemProvider extends ResourceItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addActionPropertyDescriptor(object);
-			addActionTypePropertyDescriptor(object);
-			addAmountPropertyDescriptor(object);
+			addActiontriggerActionPropertyDescriptor(object);
+			addActiontriggerActionTypePropertyDescriptor(object);
+			addActiontriggerAmountPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Action feature.
+	 * This adds a property descriptor for the Actiontrigger Action feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addActionPropertyDescriptor(Object object) {
+	protected void addActiontriggerActionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Actiontrigger_action_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Actiontrigger_action_feature", "_UI_Actiontrigger_type"),
-				 HorizontalelasticityPackage.Literals.ACTIONTRIGGER__ACTION,
+				 getString("_UI_Actiontrigger_actiontriggerAction_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Actiontrigger_actiontriggerAction_feature", "_UI_Actiontrigger_type"),
+				 HorizontalelasticityPackage.Literals.ACTIONTRIGGER__ACTIONTRIGGER_ACTION,
 				 true,
 				 false,
 				 false,
@@ -96,19 +96,19 @@ public class ActiontriggerItemProvider extends ResourceItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Action Type feature.
+	 * This adds a property descriptor for the Actiontrigger Action Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addActionTypePropertyDescriptor(Object object) {
+	protected void addActiontriggerActionTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Actiontrigger_actionType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Actiontrigger_actionType_feature", "_UI_Actiontrigger_type"),
-				 HorizontalelasticityPackage.Literals.ACTIONTRIGGER__ACTION_TYPE,
+				 getString("_UI_Actiontrigger_actiontriggerActionType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Actiontrigger_actiontriggerActionType_feature", "_UI_Actiontrigger_type"),
+				 HorizontalelasticityPackage.Literals.ACTIONTRIGGER__ACTIONTRIGGER_ACTION_TYPE,
 				 true,
 				 false,
 				 false,
@@ -118,19 +118,19 @@ public class ActiontriggerItemProvider extends ResourceItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Amount feature.
+	 * This adds a property descriptor for the Actiontrigger Amount feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addAmountPropertyDescriptor(Object object) {
+	protected void addActiontriggerAmountPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Actiontrigger_amount_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Actiontrigger_amount_feature", "_UI_Actiontrigger_type"),
-				 HorizontalelasticityPackage.Literals.ACTIONTRIGGER__AMOUNT,
+				 getString("_UI_Actiontrigger_actiontriggerAmount_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Actiontrigger_actiontriggerAmount_feature", "_UI_Actiontrigger_type"),
+				 HorizontalelasticityPackage.Literals.ACTIONTRIGGER__ACTIONTRIGGER_AMOUNT,
 				 true,
 				 false,
 				 false,
@@ -177,9 +177,9 @@ public class ActiontriggerItemProvider extends ResourceItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Actiontrigger.class)) {
-			case HorizontalelasticityPackage.ACTIONTRIGGER__ACTION:
-			case HorizontalelasticityPackage.ACTIONTRIGGER__ACTION_TYPE:
-			case HorizontalelasticityPackage.ACTIONTRIGGER__AMOUNT:
+			case HorizontalelasticityPackage.ACTIONTRIGGER__ACTIONTRIGGER_ACTION:
+			case HorizontalelasticityPackage.ACTIONTRIGGER__ACTIONTRIGGER_ACTION_TYPE:
+			case HorizontalelasticityPackage.ACTIONTRIGGER__ACTIONTRIGGER_AMOUNT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -205,17 +205,62 @@ public class ActiontriggerItemProvider extends ResourceItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
-				 HorizontalelasticityFactory.eINSTANCE.createScheduler()));
+				 HorizontalelasticityFactory.eINSTANCE.createSchedulingpolicy()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
-				 HorizontalelasticityFactory.eINSTANCE.createUniqueschedule()));
+				 HorizontalelasticityFactory.eINSTANCE.createUniqueschedulingpolicy()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
-				 HorizontalelasticityFactory.eINSTANCE.createRecurringschedule()));
+				 HorizontalelasticityFactory.eINSTANCE.createRecurringschedulingpolicy()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createScalingpolicy()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createDynamicscalingpolicy()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createDynamicadjustmentscalingpolicy()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createSimpledynamicscalingpolicy()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createStepdynamicscalingpolicy()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createManualscalingpolicy()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createMetric()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createCpuutilisation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createMemoryutilisation()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -285,12 +330,12 @@ public class ActiontriggerItemProvider extends ResourceItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.RESOURCE__LINKS,
-				 HorizontalelasticityFactory.eINSTANCE.createLinkloadbalancer()));
+				 HorizontalelasticityFactory.eINSTANCE.createLoadbalancerlink()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.RESOURCE__LINKS,
-				 HorizontalelasticityFactory.eINSTANCE.createGrouplink()));
+				 HorizontalelasticityFactory.eINSTANCE.createElasticlink()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -301,11 +346,6 @@ public class ActiontriggerItemProvider extends ResourceItemProvider {
 			(createChildParameter
 				(OCCIPackage.Literals.RESOURCE__LINKS,
 				 HorizontalelasticityFactory.eINSTANCE.createSteplink()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.RESOURCE__LINKS,
-				 HorizontalelasticityFactory.eINSTANCE.createComputelink()));
 
 		newChildDescriptors.add
 			(createChildParameter

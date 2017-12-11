@@ -27,12 +27,12 @@ import org.eclipse.cmf.occi.core.Resource;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup#getHorizontalGroupName <em>Horizontal Group Name</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup#getHorizontalGroupGroupSize <em>Horizontal Group Group Size</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup#getHorizontalGroupMaximum <em>Horizontal Group Maximum</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup#getHorizontalGroupMinimum <em>Horizontal Group Minimum</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup#getHorizontalGroupTemplateName <em>Horizontal Group Template Name</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup#getHorizontalGroupLoadBalancer <em>Horizontal Group Load Balancer</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup#getHorizontalgroupName <em>Horizontalgroup Name</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup#getHorizontalgroupGroupSize <em>Horizontalgroup Group Size</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup#getHorizontalgroupMaximum <em>Horizontalgroup Maximum</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup#getHorizontalgroupMinimum <em>Horizontalgroup Minimum</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup#getHorizontalgroupTemplateName <em>Horizontalgroup Template Name</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup#getHorizontalgroupLoadBalancer <em>Horizontalgroup Load Balancer</em>}</li>
  * </ul>
  *
  * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getHorizontalgroup()
@@ -41,153 +41,159 @@ import org.eclipse.cmf.occi.core.Resource;
  */
 public interface Horizontalgroup extends Resource {
 	/**
-	 * Returns the value of the '<em><b>Horizontal Group Name</b></em>' attribute.
+	 * Returns the value of the '<em><b>Horizontalgroup Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * 
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Horizontal Group Name</em>' attribute.
-	 * @see #setHorizontalGroupName(String)
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getHorizontalgroup_HorizontalGroupName()
+	 * @return the value of the '<em>Horizontalgroup Name</em>' attribute.
+	 * @see #setHorizontalgroupName(String)
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getHorizontalgroup_HorizontalgroupName()
 	 * @model dataType="org.eclipse.cmf.occi.core.String"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Horizontalgroup!horizontalgroupName'"
 	 * @generated
 	 */
-	String getHorizontalGroupName();
+	String getHorizontalgroupName();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup#getHorizontalGroupName <em>Horizontal Group Name</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup#getHorizontalgroupName <em>Horizontalgroup Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Horizontal Group Name</em>' attribute.
-	 * @see #getHorizontalGroupName()
+	 * @param value the new value of the '<em>Horizontalgroup Name</em>' attribute.
+	 * @see #getHorizontalgroupName()
 	 * @generated
 	 */
-	void setHorizontalGroupName(String value);
+	void setHorizontalgroupName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Horizontal Group Group Size</b></em>' attribute.
+	 * Returns the value of the '<em><b>Horizontalgroup Group Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * 
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Horizontal Group Group Size</em>' attribute.
-	 * @see #setHorizontalGroupGroupSize(Integer)
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getHorizontalgroup_HorizontalGroupGroupSize()
+	 * @return the value of the '<em>Horizontalgroup Group Size</em>' attribute.
+	 * @see #setHorizontalgroupGroupSize(Integer)
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getHorizontalgroup_HorizontalgroupGroupSize()
 	 * @model dataType="org.eclipse.cmf.occi.core.Integer"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Horizontalgroup!horizontalgroupGroupSize'"
 	 * @generated
 	 */
-	Integer getHorizontalGroupGroupSize();
+	Integer getHorizontalgroupGroupSize();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup#getHorizontalGroupGroupSize <em>Horizontal Group Group Size</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup#getHorizontalgroupGroupSize <em>Horizontalgroup Group Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Horizontal Group Group Size</em>' attribute.
-	 * @see #getHorizontalGroupGroupSize()
+	 * @param value the new value of the '<em>Horizontalgroup Group Size</em>' attribute.
+	 * @see #getHorizontalgroupGroupSize()
 	 * @generated
 	 */
-	void setHorizontalGroupGroupSize(Integer value);
+	void setHorizontalgroupGroupSize(Integer value);
 
 	/**
-	 * Returns the value of the '<em><b>Horizontal Group Maximum</b></em>' attribute.
+	 * Returns the value of the '<em><b>Horizontalgroup Maximum</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * 
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Horizontal Group Maximum</em>' attribute.
-	 * @see #setHorizontalGroupMaximum(Integer)
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getHorizontalgroup_HorizontalGroupMaximum()
+	 * @return the value of the '<em>Horizontalgroup Maximum</em>' attribute.
+	 * @see #setHorizontalgroupMaximum(Integer)
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getHorizontalgroup_HorizontalgroupMaximum()
 	 * @model dataType="org.eclipse.cmf.occi.core.Integer"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Horizontalgroup!horizontalgroupMaximum'"
 	 * @generated
 	 */
-	Integer getHorizontalGroupMaximum();
+	Integer getHorizontalgroupMaximum();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup#getHorizontalGroupMaximum <em>Horizontal Group Maximum</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup#getHorizontalgroupMaximum <em>Horizontalgroup Maximum</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Horizontal Group Maximum</em>' attribute.
-	 * @see #getHorizontalGroupMaximum()
+	 * @param value the new value of the '<em>Horizontalgroup Maximum</em>' attribute.
+	 * @see #getHorizontalgroupMaximum()
 	 * @generated
 	 */
-	void setHorizontalGroupMaximum(Integer value);
+	void setHorizontalgroupMaximum(Integer value);
 
 	/**
-	 * Returns the value of the '<em><b>Horizontal Group Minimum</b></em>' attribute.
+	 * Returns the value of the '<em><b>Horizontalgroup Minimum</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * 
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Horizontal Group Minimum</em>' attribute.
-	 * @see #setHorizontalGroupMinimum(Integer)
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getHorizontalgroup_HorizontalGroupMinimum()
+	 * @return the value of the '<em>Horizontalgroup Minimum</em>' attribute.
+	 * @see #setHorizontalgroupMinimum(Integer)
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getHorizontalgroup_HorizontalgroupMinimum()
 	 * @model dataType="org.eclipse.cmf.occi.core.Integer"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Horizontalgroup!horizontalgroupMinimum'"
 	 * @generated
 	 */
-	Integer getHorizontalGroupMinimum();
+	Integer getHorizontalgroupMinimum();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup#getHorizontalGroupMinimum <em>Horizontal Group Minimum</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup#getHorizontalgroupMinimum <em>Horizontalgroup Minimum</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Horizontal Group Minimum</em>' attribute.
-	 * @see #getHorizontalGroupMinimum()
+	 * @param value the new value of the '<em>Horizontalgroup Minimum</em>' attribute.
+	 * @see #getHorizontalgroupMinimum()
 	 * @generated
 	 */
-	void setHorizontalGroupMinimum(Integer value);
+	void setHorizontalgroupMinimum(Integer value);
 
 	/**
-	 * Returns the value of the '<em><b>Horizontal Group Template Name</b></em>' attribute.
+	 * Returns the value of the '<em><b>Horizontalgroup Template Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * 
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Horizontal Group Template Name</em>' attribute.
-	 * @see #setHorizontalGroupTemplateName(String)
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getHorizontalgroup_HorizontalGroupTemplateName()
+	 * @return the value of the '<em>Horizontalgroup Template Name</em>' attribute.
+	 * @see #setHorizontalgroupTemplateName(String)
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getHorizontalgroup_HorizontalgroupTemplateName()
 	 * @model dataType="org.eclipse.cmf.occi.core.String"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Horizontalgroup!horizontalgroupTemplateName'"
 	 * @generated
 	 */
-	String getHorizontalGroupTemplateName();
+	String getHorizontalgroupTemplateName();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup#getHorizontalGroupTemplateName <em>Horizontal Group Template Name</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup#getHorizontalgroupTemplateName <em>Horizontalgroup Template Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Horizontal Group Template Name</em>' attribute.
-	 * @see #getHorizontalGroupTemplateName()
+	 * @param value the new value of the '<em>Horizontalgroup Template Name</em>' attribute.
+	 * @see #getHorizontalgroupTemplateName()
 	 * @generated
 	 */
-	void setHorizontalGroupTemplateName(String value);
+	void setHorizontalgroupTemplateName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Horizontal Group Load Balancer</b></em>' attribute.
+	 * Returns the value of the '<em><b>Horizontalgroup Load Balancer</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * 
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Horizontal Group Load Balancer</em>' attribute.
-	 * @see #setHorizontalGroupLoadBalancer(String)
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getHorizontalgroup_HorizontalGroupLoadBalancer()
+	 * @return the value of the '<em>Horizontalgroup Load Balancer</em>' attribute.
+	 * @see #setHorizontalgroupLoadBalancer(String)
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getHorizontalgroup_HorizontalgroupLoadBalancer()
 	 * @model dataType="org.eclipse.cmf.occi.core.String"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Horizontalgroup!horizontalgroupLoadBalancer'"
 	 * @generated
 	 */
-	String getHorizontalGroupLoadBalancer();
+	String getHorizontalgroupLoadBalancer();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup#getHorizontalGroupLoadBalancer <em>Horizontal Group Load Balancer</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Horizontalgroup#getHorizontalgroupLoadBalancer <em>Horizontalgroup Load Balancer</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Horizontal Group Load Balancer</em>' attribute.
-	 * @see #getHorizontalGroupLoadBalancer()
+	 * @param value the new value of the '<em>Horizontalgroup Load Balancer</em>' attribute.
+	 * @see #getHorizontalgroupLoadBalancer()
 	 * @generated
 	 */
-	void setHorizontalGroupLoadBalancer(String value);
+	void setHorizontalgroupLoadBalancer(String value);
 
 } // Horizontalgroup

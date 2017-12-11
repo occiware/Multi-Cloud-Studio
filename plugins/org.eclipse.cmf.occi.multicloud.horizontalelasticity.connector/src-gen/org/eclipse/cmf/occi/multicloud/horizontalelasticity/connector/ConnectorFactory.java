@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Mon Dec 04 11:58:56 CET 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Fri Dec 08 17:51:34 CET 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
@@ -68,78 +68,23 @@ public class ConnectorFactory extends org.eclipse.cmf.occi.multicloud.horizontal
 	/**
 	 * EFactory method for OCCI kind:
 	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
-	 * - term: linkloadbalancer
+	 * - term: loadbalancerlink
 	 * - title: 
 	 */
 	@Override
-	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Linkloadbalancer createLinkloadbalancer() {
-		return new LinkloadbalancerConnector();
+	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Loadbalancerlink createLoadbalancerlink() {
+		return new LoadbalancerlinkConnector();
 	}
 
 	/**
 	 * EFactory method for OCCI kind:
 	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
-	 * - term: grouplink
+	 * - term: elasticlink
 	 * - title: 
 	 */
 	@Override
-	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Grouplink createGrouplink() {
-		return new GrouplinkConnector();
-	}
-
-	/**
-	 * EFactory method for OCCI kind:
-	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
-	 * - term: manual
-	 * - title: 
-	 */
-	@Override
-	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Manual createManual() {
-		return new ManualConnector();
-	}
-
-	/**
-	 * EFactory method for OCCI kind:
-	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
-	 * - term: dynamic
-	 * - title: 
-	 */
-	@Override
-	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamic createDynamic() {
-		return new DynamicConnector();
-	}
-
-	/**
-	 * EFactory method for OCCI kind:
-	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
-	 * - term: simpledynamic
-	 * - title: 
-	 */
-	@Override
-	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Simpledynamic createSimpledynamic() {
-		return new SimpledynamicConnector();
-	}
-
-	/**
-	 * EFactory method for OCCI kind:
-	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
-	 * - term: stepdynamic
-	 * - title: 
-	 */
-	@Override
-	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Stepdynamic createStepdynamic() {
-		return new StepdynamicConnector();
-	}
-
-	/**
-	 * EFactory method for OCCI kind:
-	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
-	 * - term: dynamicadjustment
-	 * - title: 
-	 */
-	@Override
-	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamicadjustment createDynamicadjustment() {
-		return new DynamicadjustmentConnector();
+	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Elasticlink createElasticlink() {
+		return new ElasticlinkConnector();
 	}
 
 	/**
@@ -167,17 +112,6 @@ public class ConnectorFactory extends org.eclipse.cmf.occi.multicloud.horizontal
 	/**
 	 * EFactory method for OCCI kind:
 	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
-	 * - term: dynamicpolicy
-	 * - title: 
-	 */
-	@Override
-	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamicpolicy createDynamicpolicy() {
-		return new DynamicpolicyConnector();
-	}
-
-	/**
-	 * EFactory method for OCCI kind:
-	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
 	 * - term: step
 	 * - title: 
 	 */
@@ -200,17 +134,6 @@ public class ConnectorFactory extends org.eclipse.cmf.occi.multicloud.horizontal
 	/**
 	 * EFactory method for OCCI kind:
 	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
-	 * - term: computelink
-	 * - title: 
-	 */
-	@Override
-	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Computelink createComputelink() {
-		return new ComputelinkConnector();
-	}
-
-	/**
-	 * EFactory method for OCCI kind:
-	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
 	 * - term: creation
 	 * - title: 
 	 */
@@ -222,34 +145,133 @@ public class ConnectorFactory extends org.eclipse.cmf.occi.multicloud.horizontal
 	/**
 	 * EFactory method for OCCI kind:
 	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
-	 * - term: scheduler
+	 * - term: schedulingpolicy
 	 * - title: 
 	 */
 	@Override
-	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Scheduler createScheduler() {
-		return new SchedulerConnector();
+	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Schedulingpolicy createSchedulingpolicy() {
+		return new SchedulingpolicyConnector();
 	}
 
 	/**
 	 * EFactory method for OCCI kind:
 	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
-	 * - term: uniqueschedule
+	 * - term: uniqueschedulingpolicy
 	 * - title: 
 	 */
 	@Override
-	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Uniqueschedule createUniqueschedule() {
-		return new UniquescheduleConnector();
+	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Uniqueschedulingpolicy createUniqueschedulingpolicy() {
+		return new UniqueschedulingpolicyConnector();
 	}
 
 	/**
 	 * EFactory method for OCCI kind:
 	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
-	 * - term: recurringschedule
+	 * - term: recurringschedulingpolicy
 	 * - title: 
 	 */
 	@Override
-	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Recurringschedule createRecurringschedule() {
-		return new RecurringscheduleConnector();
+	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Recurringschedulingpolicy createRecurringschedulingpolicy() {
+		return new RecurringschedulingpolicyConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
+	 * - term: scalingpolicy
+	 * - title: 
+	 */
+	@Override
+	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Scalingpolicy createScalingpolicy() {
+		return new ScalingpolicyConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
+	 * - term: dynamicscalingpolicy
+	 * - title: 
+	 */
+	@Override
+	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamicscalingpolicy createDynamicscalingpolicy() {
+		return new DynamicscalingpolicyConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
+	 * - term: dynamicadjustmentscalingpolicy
+	 * - title: 
+	 */
+	@Override
+	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamicadjustmentscalingpolicy createDynamicadjustmentscalingpolicy() {
+		return new DynamicadjustmentscalingpolicyConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
+	 * - term: simpledynamicscalingpolicy
+	 * - title: 
+	 */
+	@Override
+	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Simpledynamicscalingpolicy createSimpledynamicscalingpolicy() {
+		return new SimpledynamicscalingpolicyConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
+	 * - term: stepdynamicscalingpolicy
+	 * - title: 
+	 */
+	@Override
+	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Stepdynamicscalingpolicy createStepdynamicscalingpolicy() {
+		return new StepdynamicscalingpolicyConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
+	 * - term: manualscalingpolicy
+	 * - title: 
+	 */
+	@Override
+	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Manualscalingpolicy createManualscalingpolicy() {
+		return new ManualscalingpolicyConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
+	 * - term: metric
+	 * - title: 
+	 */
+	@Override
+	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Metric createMetric() {
+		return new MetricConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
+	 * - term: cpuutilisation
+	 * - title: 
+	 */
+	@Override
+	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Cpuutilisation createCpuutilisation() {
+		return new CpuutilisationConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#
+	 * - term: memoryutilisation
+	 * - title: 
+	 */
+	@Override
+	public org.eclipse.cmf.occi.multicloud.horizontalelasticity.Memoryutilisation createMemoryutilisation() {
+		return new MemoryutilisationConnector();
 	}
 
 }

@@ -3,29 +3,28 @@
   <import href="http://schemas.ogf.org/occi/core#/"/>
   <import href="http://schemas.ogf.org/occi/infrastructure#/"/>
   <import href="http://occiware.org/occi/infrastructure/vmware#/"/>
-  <import href="../../org.eclipse.cmf.occi.multicloud.vmware/model/vmware.occie#/"/>
   <kinds name="HorizontalGroup" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#">
-    <attributes name="horizontalGroup.name" mutable="true">
+    <attributes name="horizontalgroup.name" mutable="true">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="horizontalGroup.groupSize" mutable="true">
+    <attributes name="horizontalgroup.groupSize" mutable="true">
       <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
     </attributes>
-    <attributes name="horizontalGroup.maximum" mutable="true">
+    <attributes name="horizontalgroup.maximum" mutable="true">
       <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
     </attributes>
-    <attributes name="horizontalGroup.minimum" mutable="true">
+    <attributes name="horizontalgroup.minimum" mutable="true">
       <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
     </attributes>
-    <attributes name="horizontalGroup.templateName" mutable="true">
+    <attributes name="horizontalgroup.templateName" mutable="true">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="horizontalGroup.loadBalancer" mutable="true">
+    <attributes name="horizontalgroup.loadBalancer" mutable="true">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
   </kinds>
-  <kinds name="Loadbalancer" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#">
+  <kinds name="LoadBalancer" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#">
     <attributes name="loadbalancer.name" mutable="true">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
@@ -40,47 +39,33 @@
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
   </kinds>
   <kinds name="ElasticityController" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#">
-    <attributes name="ElasticityController.minimumLimit" mutable="true">
+    <attributes name="Elasticitycontroller.minimumLimit" mutable="true">
       <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
     </attributes>
-    <attributes name="ElasticityController.maximumLimit" mutable="true">
+    <attributes name="Elasticitycontroller.maximumLimit" mutable="true">
       <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
     </attributes>
-    <attributes name="ElasticityController.coolDuration" mutable="true">
+    <attributes name="Elasticitycontroller.coolDuration" mutable="true">
       <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
     </attributes>
     <attributes name="ElasticityController.iterationWaitTime" mutable="true">
       <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
     </attributes>
-    <actions name="start" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/elasticitycontroller/action#"/>
-    <actions name="stop" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/elasticitycontroller/action#"/>
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
   </kinds>
   <kinds name="InstanceGroupLink" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" source="//@kinds[term='horizontalgroup']">
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
     <target href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
   </kinds>
-  <kinds name="LinkLoadBalancer" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" source="//@kinds[term='horizontalgroup']" target="//@kinds[term='loadbalancer']">
+  <kinds name="LoadBalancerLink" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" source="//@kinds[term='horizontalgroup']" target="//@kinds[term='loadbalancer']">
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
   </kinds>
-  <kinds name="GroupLink" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" source="//@kinds[term='elasticitycontroller']" target="//@kinds[term='horizontalgroup']">
+  <kinds name="ElasticLink" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" source="//@kinds[term='elasticitycontroller']">
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
+    <target href="#//@kinds[term='horizontalgroup']"/>
+    <target href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
   </kinds>
-  <kinds name="Manual" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" parent="//@kinds[term='elasticitycontroller']">
-    <attributes name="manual.desiredSize" mutable="true" type="//@types.1"/>
-  </kinds>
-  <kinds name="Dynamic" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" parent="//@kinds[term='elasticitycontroller']"/>
-  <kinds name="SimpleDynamic" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" parent="//@kinds[term='dynamicpolicy']"/>
-  <kinds name="StepDynamic" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" parent="//@kinds[term='dynamicpolicy']"/>
-  <kinds name="DynamicAdjustment" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" parent="//@kinds[term='dynamic']">
-    <attributes name="dynamicAdjustment.metric" mutable="true" type="//@types.5"/>
-    <attributes name="dynamicAdjustment.disableScaleIn" mutable="true">
-      <type xsi:type="occi:BooleanType" href="http://schemas.ogf.org/occi/core#//@types.1"/>
-    </attributes>
-    <attributes name="dynamicAdjustment.Target" mutable="true" type="//@types.1"/>
-  </kinds>
-  <kinds name="Rule" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" source="//@kinds[term='dynamicpolicy']" target="//@kinds[term='actiontrigger']">
-    <attributes name="rule.metric" mutable="true" type="//@types.0"/>
+  <kinds name="Rule" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" source="//@kinds[term='elasticitycontroller']" target="//@kinds[term='actiontrigger']">
     <attributes name="rule.operator" mutable="true" type="//@types.2"/>
     <attributes name="rule.threshold" mutable="true" type="//@types.1"/>
     <attributes name="rule.period" mutable="true">
@@ -92,45 +77,71 @@
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
   </kinds>
   <kinds name="ActionTrigger" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#">
-    <attributes name="action" mutable="true" type="//@types.3"/>
-    <attributes name="actionType" mutable="true" type="//@types.4"/>
-    <attributes name="amount" mutable="true" type="//@types.1"/>
+    <attributes name="actiontrigger.action" mutable="true" type="//@types.3"/>
+    <attributes name="actiontrigger.actionType" mutable="true" type="//@types.4"/>
+    <attributes name="actiontrigger.amount" mutable="true" type="//@types.1"/>
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
   </kinds>
-  <kinds name="DynamicPolicy" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" parent="//@kinds[term='dynamic']"/>
   <kinds name="Step" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#">
     <attributes name="step.lowerStepBound" mutable="true" type="//@types.1"/>
     <attributes name="step.upperStepBound" mutable="true" type="//@types.1"/>
     <attributes name="step.size" mutable="true" type="//@types.1"/>
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
   </kinds>
-  <kinds name="StepLink" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" source="//@kinds[term='stepdynamic']" target="//@kinds[term='step']">
+  <kinds name="StepLink" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" source="//@kinds[term='elasticitycontroller']" target="//@kinds[term='step']">
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
-  </kinds>
-  <kinds name="ComputeLink" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" source="//@kinds[term='elasticitycontroller']">
-    <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
-    <target href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
   </kinds>
   <mixins name="Creation" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#">
     <attributes name="occi.compute.creation.date" mutable="true" type="//@types.9"/>
     <applies href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
   </mixins>
-  <mixins name="Scheduler" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" title="" applies="//@kinds[term='elasticitycontroller']">
+  <mixins name="SchedulingPolicy" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" title="" applies="//@kinds[term='elasticitycontroller']">
     <actions name="Start" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/scheduler/action#"/>
     <actions name="Stop" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/scheduler/action#"/>
   </mixins>
-  <mixins name="UniqueSchedule" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" depends="//@mixins[term='scheduler']">
-    <attributes name="UniqueSchedule.startDate" mutable="true" type="//@types.9"/>
-    <attributes name="UniqueSchedule.endDate" mutable="true" type="//@types.9"/>
+  <mixins name="UniqueSchedulingPolicy" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" depends="//@mixins[term='schedulingpolicy']">
+    <attributes name="uniqueschedulingpolicy.startDate" mutable="true" type="//@types.9"/>
+    <attributes name="uniqueschedulingpolicy.endDate" mutable="true" type="//@types.9"/>
   </mixins>
-  <mixins name="Recurringschedule" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" depends="//@mixins[term='scheduler']">
-    <attributes name="Recurringschedule.recurrence" mutable="true" type="//@types.10"/>
-    <attributes name="Recurringschedule.startDate" mutable="true" type="//@types.9"/>
-    <attributes name="Recurringschedule.endDate" mutable="true" type="//@types.9"/>
-    <attributes name="interval" mutable="true">
+  <mixins name="RecurringSchedulingPolicy" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" depends="//@mixins[term='schedulingpolicy']">
+    <attributes name="recurringschedulingpolicy.recurrence" mutable="true" type="//@types.10"/>
+    <attributes name="recurringschedulingpolicy.startDate" mutable="true" type="//@types.9"/>
+    <attributes name="recurringschedulingpolicy.endDate" mutable="true" type="//@types.9"/>
+    <attributes name="recurringschedulingpolicy.interval" mutable="true">
       <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
     </attributes>
   </mixins>
+  <mixins name="ScalingPolicy" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" applies="//@kinds[term='elasticitycontroller']">
+    <actions name="start" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/policy/action#"/>
+    <actions name="stop" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/policy/action#"/>
+  </mixins>
+  <mixins name="DynamicScalingPolicy" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" depends="//@mixins[term='scalingpolicy']">
+    <attributes name="dynamicscalingpolicy.coolDuration" mutable="true">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
+    </attributes>
+    <attributes name="dynamicscalingpolicy.iterationWaitTime" mutable="true">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
+    </attributes>
+  </mixins>
+  <mixins name="DynamicAdjustmentScalingPolicy" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" depends="//@mixins[term='dynamicscalingpolicy']">
+    <attributes name="dynamicadjustmentscalingpolicy.metric" mutable="true" type="//@types.5"/>
+    <attributes name="dynamicadjustmentscalingpolicy.disableScaleIn" mutable="true">
+      <type xsi:type="occi:BooleanType" href="http://schemas.ogf.org/occi/core#//@types.1"/>
+    </attributes>
+    <attributes name="dynamicadjustmentscalingpolicy.Target" mutable="true" type="//@types.1"/>
+  </mixins>
+  <mixins name="SimpleDynamicScalingPolicy" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" depends="//@mixins[term='dynamicscalingpolicy']"/>
+  <mixins name="StepDynamicScalingPolicy" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" depends="//@mixins[term='dynamicscalingpolicy']"/>
+  <mixins name="ManualScalingPolicy" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" depends="//@mixins[term='scalingpolicy']">
+    <attributes name="manualscalingpolicy.desiredSize" mutable="true" type="//@types.1"/>
+  </mixins>
+  <mixins name="Metric" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" applies="//@kinds[term='rule']">
+    <attributes name="name" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+  </mixins>
+  <mixins name="CPUUtilisation" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" depends="//@mixins[term='metric']"/>
+  <mixins name="MemoryUtilisation" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" depends="//@mixins[term='metric']"/>
   <types xsi:type="occi:EnumerationType" name="TypeMetric">
     <literals name="CPUtilisation"/>
     <literals name="MemoryUtilisation"/>
@@ -156,8 +167,8 @@
   <types xsi:type="occi:EnumerationType" name="MetricTargetTracking">
     <literals name="AverageCpuUtilisation"/>
     <literals name="LBRequestCountperTarget"/>
-    <literals name="AverageNetworkin"/>
-    <literals name="AverageNetworkout"/>
+    <literals name="AverageNetworkIn"/>
+    <literals name="AverageNetworkOut"/>
   </types>
   <types xsi:type="occi:RecordType" name="RecurrenceStep">
     <recordFields name="unit" mutable="true" type="//@types.7"/>

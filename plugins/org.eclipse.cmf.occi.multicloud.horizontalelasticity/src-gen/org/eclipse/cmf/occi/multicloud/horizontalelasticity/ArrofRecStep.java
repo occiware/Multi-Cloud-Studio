@@ -45,6 +45,7 @@ public interface ArrofRecStep extends EObject {
 	 * @return the value of the '<em>Arrofrecstep Values</em>' containment reference list.
 	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getArrofRecStep_ArrofrecstepValues()
 	 * @model containment="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!ArrofRecStep!arrofrecstepValues'"
 	 * @generated
 	 */
 	EList<RecurrenceStep> getArrofrecstepValues();

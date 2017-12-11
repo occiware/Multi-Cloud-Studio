@@ -33,73 +33,73 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ActiontriggerImpl#getAction <em>Action</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ActiontriggerImpl#getActionType <em>Action Type</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ActiontriggerImpl#getAmount <em>Amount</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ActiontriggerImpl#getActiontriggerAction <em>Actiontrigger Action</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ActiontriggerImpl#getActiontriggerActionType <em>Actiontrigger Action Type</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ActiontriggerImpl#getActiontriggerAmount <em>Actiontrigger Amount</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ActiontriggerImpl extends ResourceImpl implements Actiontrigger {
 	/**
-	 * The default value of the '{@link #getAction() <em>Action</em>}' attribute.
+	 * The default value of the '{@link #getActiontriggerAction() <em>Actiontrigger Action</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAction()
+	 * @see #getActiontriggerAction()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ActionOperation ACTION_EDEFAULT = ActionOperation.ADD;
+	protected static final ActionOperation ACTIONTRIGGER_ACTION_EDEFAULT = ActionOperation.ADD;
 
 	/**
-	 * The cached value of the '{@link #getAction() <em>Action</em>}' attribute.
+	 * The cached value of the '{@link #getActiontriggerAction() <em>Actiontrigger Action</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAction()
+	 * @see #getActiontriggerAction()
 	 * @generated
 	 * @ordered
 	 */
-	protected ActionOperation action = ACTION_EDEFAULT;
+	protected ActionOperation actiontriggerAction = ACTIONTRIGGER_ACTION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getActionType() <em>Action Type</em>}' attribute.
+	 * The default value of the '{@link #getActiontriggerActionType() <em>Actiontrigger Action Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getActionType()
+	 * @see #getActiontriggerActionType()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ActionType ACTION_TYPE_EDEFAULT = ActionType.INSTANCE_COUNT;
+	protected static final ActionType ACTIONTRIGGER_ACTION_TYPE_EDEFAULT = ActionType.INSTANCE_COUNT;
 
 	/**
-	 * The cached value of the '{@link #getActionType() <em>Action Type</em>}' attribute.
+	 * The cached value of the '{@link #getActiontriggerActionType() <em>Actiontrigger Action Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getActionType()
+	 * @see #getActiontriggerActionType()
 	 * @generated
 	 * @ordered
 	 */
-	protected ActionType actionType = ACTION_TYPE_EDEFAULT;
+	protected ActionType actiontriggerActionType = ACTIONTRIGGER_ACTION_TYPE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getAmount() <em>Amount</em>}' attribute.
+	 * The default value of the '{@link #getActiontriggerAmount() <em>Actiontrigger Amount</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAmount()
+	 * @see #getActiontriggerAmount()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Float AMOUNT_EDEFAULT = null;
+	protected static final Float ACTIONTRIGGER_AMOUNT_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getAmount() <em>Amount</em>}' attribute.
+	 * The cached value of the '{@link #getActiontriggerAmount() <em>Actiontrigger Amount</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAmount()
+	 * @see #getActiontriggerAmount()
 	 * @generated
 	 * @ordered
 	 */
-	protected Float amount = AMOUNT_EDEFAULT;
+	protected Float actiontriggerAmount = ACTIONTRIGGER_AMOUNT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -125,8 +125,8 @@ public class ActiontriggerImpl extends ResourceImpl implements Actiontrigger {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ActionOperation getAction() {
-		return action;
+	public ActionOperation getActiontriggerAction() {
+		return actiontriggerAction;
 	}
 
 	/**
@@ -134,11 +134,11 @@ public class ActiontriggerImpl extends ResourceImpl implements Actiontrigger {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAction(ActionOperation newAction) {
-		ActionOperation oldAction = action;
-		action = newAction == null ? ACTION_EDEFAULT : newAction;
+	public void setActiontriggerAction(ActionOperation newActiontriggerAction) {
+		ActionOperation oldActiontriggerAction = actiontriggerAction;
+		actiontriggerAction = newActiontriggerAction == null ? ACTIONTRIGGER_ACTION_EDEFAULT : newActiontriggerAction;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.ACTIONTRIGGER__ACTION, oldAction, action));
+			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.ACTIONTRIGGER__ACTIONTRIGGER_ACTION, oldActiontriggerAction, actiontriggerAction));
 	}
 
 	/**
@@ -146,8 +146,8 @@ public class ActiontriggerImpl extends ResourceImpl implements Actiontrigger {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ActionType getActionType() {
-		return actionType;
+	public ActionType getActiontriggerActionType() {
+		return actiontriggerActionType;
 	}
 
 	/**
@@ -155,11 +155,11 @@ public class ActiontriggerImpl extends ResourceImpl implements Actiontrigger {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setActionType(ActionType newActionType) {
-		ActionType oldActionType = actionType;
-		actionType = newActionType == null ? ACTION_TYPE_EDEFAULT : newActionType;
+	public void setActiontriggerActionType(ActionType newActiontriggerActionType) {
+		ActionType oldActiontriggerActionType = actiontriggerActionType;
+		actiontriggerActionType = newActiontriggerActionType == null ? ACTIONTRIGGER_ACTION_TYPE_EDEFAULT : newActiontriggerActionType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.ACTIONTRIGGER__ACTION_TYPE, oldActionType, actionType));
+			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.ACTIONTRIGGER__ACTIONTRIGGER_ACTION_TYPE, oldActiontriggerActionType, actiontriggerActionType));
 	}
 
 	/**
@@ -167,8 +167,8 @@ public class ActiontriggerImpl extends ResourceImpl implements Actiontrigger {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Float getAmount() {
-		return amount;
+	public Float getActiontriggerAmount() {
+		return actiontriggerAmount;
 	}
 
 	/**
@@ -176,11 +176,11 @@ public class ActiontriggerImpl extends ResourceImpl implements Actiontrigger {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAmount(Float newAmount) {
-		Float oldAmount = amount;
-		amount = newAmount;
+	public void setActiontriggerAmount(Float newActiontriggerAmount) {
+		Float oldActiontriggerAmount = actiontriggerAmount;
+		actiontriggerAmount = newActiontriggerAmount;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.ACTIONTRIGGER__AMOUNT, oldAmount, amount));
+			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.ACTIONTRIGGER__ACTIONTRIGGER_AMOUNT, oldActiontriggerAmount, actiontriggerAmount));
 	}
 
 	/**
@@ -191,12 +191,12 @@ public class ActiontriggerImpl extends ResourceImpl implements Actiontrigger {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case HorizontalelasticityPackage.ACTIONTRIGGER__ACTION:
-				return getAction();
-			case HorizontalelasticityPackage.ACTIONTRIGGER__ACTION_TYPE:
-				return getActionType();
-			case HorizontalelasticityPackage.ACTIONTRIGGER__AMOUNT:
-				return getAmount();
+			case HorizontalelasticityPackage.ACTIONTRIGGER__ACTIONTRIGGER_ACTION:
+				return getActiontriggerAction();
+			case HorizontalelasticityPackage.ACTIONTRIGGER__ACTIONTRIGGER_ACTION_TYPE:
+				return getActiontriggerActionType();
+			case HorizontalelasticityPackage.ACTIONTRIGGER__ACTIONTRIGGER_AMOUNT:
+				return getActiontriggerAmount();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -209,14 +209,14 @@ public class ActiontriggerImpl extends ResourceImpl implements Actiontrigger {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case HorizontalelasticityPackage.ACTIONTRIGGER__ACTION:
-				setAction((ActionOperation)newValue);
+			case HorizontalelasticityPackage.ACTIONTRIGGER__ACTIONTRIGGER_ACTION:
+				setActiontriggerAction((ActionOperation)newValue);
 				return;
-			case HorizontalelasticityPackage.ACTIONTRIGGER__ACTION_TYPE:
-				setActionType((ActionType)newValue);
+			case HorizontalelasticityPackage.ACTIONTRIGGER__ACTIONTRIGGER_ACTION_TYPE:
+				setActiontriggerActionType((ActionType)newValue);
 				return;
-			case HorizontalelasticityPackage.ACTIONTRIGGER__AMOUNT:
-				setAmount((Float)newValue);
+			case HorizontalelasticityPackage.ACTIONTRIGGER__ACTIONTRIGGER_AMOUNT:
+				setActiontriggerAmount((Float)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -230,14 +230,14 @@ public class ActiontriggerImpl extends ResourceImpl implements Actiontrigger {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case HorizontalelasticityPackage.ACTIONTRIGGER__ACTION:
-				setAction(ACTION_EDEFAULT);
+			case HorizontalelasticityPackage.ACTIONTRIGGER__ACTIONTRIGGER_ACTION:
+				setActiontriggerAction(ACTIONTRIGGER_ACTION_EDEFAULT);
 				return;
-			case HorizontalelasticityPackage.ACTIONTRIGGER__ACTION_TYPE:
-				setActionType(ACTION_TYPE_EDEFAULT);
+			case HorizontalelasticityPackage.ACTIONTRIGGER__ACTIONTRIGGER_ACTION_TYPE:
+				setActiontriggerActionType(ACTIONTRIGGER_ACTION_TYPE_EDEFAULT);
 				return;
-			case HorizontalelasticityPackage.ACTIONTRIGGER__AMOUNT:
-				setAmount(AMOUNT_EDEFAULT);
+			case HorizontalelasticityPackage.ACTIONTRIGGER__ACTIONTRIGGER_AMOUNT:
+				setActiontriggerAmount(ACTIONTRIGGER_AMOUNT_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -251,12 +251,12 @@ public class ActiontriggerImpl extends ResourceImpl implements Actiontrigger {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case HorizontalelasticityPackage.ACTIONTRIGGER__ACTION:
-				return action != ACTION_EDEFAULT;
-			case HorizontalelasticityPackage.ACTIONTRIGGER__ACTION_TYPE:
-				return actionType != ACTION_TYPE_EDEFAULT;
-			case HorizontalelasticityPackage.ACTIONTRIGGER__AMOUNT:
-				return AMOUNT_EDEFAULT == null ? amount != null : !AMOUNT_EDEFAULT.equals(amount);
+			case HorizontalelasticityPackage.ACTIONTRIGGER__ACTIONTRIGGER_ACTION:
+				return actiontriggerAction != ACTIONTRIGGER_ACTION_EDEFAULT;
+			case HorizontalelasticityPackage.ACTIONTRIGGER__ACTIONTRIGGER_ACTION_TYPE:
+				return actiontriggerActionType != ACTIONTRIGGER_ACTION_TYPE_EDEFAULT;
+			case HorizontalelasticityPackage.ACTIONTRIGGER__ACTIONTRIGGER_AMOUNT:
+				return ACTIONTRIGGER_AMOUNT_EDEFAULT == null ? actiontriggerAmount != null : !ACTIONTRIGGER_AMOUNT_EDEFAULT.equals(actiontriggerAmount);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -271,12 +271,12 @@ public class ActiontriggerImpl extends ResourceImpl implements Actiontrigger {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (action: ");
-		result.append(action);
-		result.append(", actionType: ");
-		result.append(actionType);
-		result.append(", amount: ");
-		result.append(amount);
+		result.append(" (actiontriggerAction: ");
+		result.append(actiontriggerAction);
+		result.append(", actiontriggerActionType: ");
+		result.append(actiontriggerActionType);
+		result.append(", actiontriggerAmount: ");
+		result.append(actiontriggerAmount);
 		result.append(')');
 		return result.toString();
 	}

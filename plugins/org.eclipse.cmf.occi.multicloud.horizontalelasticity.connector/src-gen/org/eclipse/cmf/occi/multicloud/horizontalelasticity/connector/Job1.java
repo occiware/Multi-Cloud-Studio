@@ -5,15 +5,12 @@ package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 import java.util.Date;
 
 import org.eclipse.cmf.occi.core.Entity;
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector.RecurringscheduleConnector;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamicadjustmentscalingpolicy;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Simpledynamicscalingpolicy;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Stepdynamicscalingpolicy;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamicadjustment;
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Recurringschedule;
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Simpledynamic;
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Stepdynamic;
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector.ManualConnector;
 import org.quartz.Job;
 import org.quartz.JobDataMap;
 import org.quartz.JobExecutionContext;
@@ -47,20 +44,20 @@ public class Job1 implements Job{
 	      try {
 			SchedulerContext schedulerContext = context.getScheduler().getContext();
 			Entity entity = (Entity) schedulerContext.get("key");
-			RecurringscheduleConnector rs = new RecurringscheduleConnector();
+			RecurringschedulingpolicyConnector rs = new RecurringschedulingpolicyConnector();
 			final TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(entity);
 			System.out.println("domain     " + domain);
 			domain.getCommandStack().execute(new RecordingCommand(domain) {
 				@Override
 				public void doExecute() {
-					if(entity instanceof ManualConnector) {
-						ManualConnector man = (ManualConnector) entity;
+					if(entity instanceof ManualscalingpolicyConnector) {
+						ManualscalingpolicyConnector man = (ManualscalingpolicyConnector) entity;
 						man.start();
 						//man.occiCreate();
 					}
 					
-					else if (entity instanceof Simpledynamic) {
-						SimpledynamicConnector man = (SimpledynamicConnector) entity;
+					else if (entity instanceof Simpledynamicscalingpolicy) {
+						Simpledynamicscalingpolicy man = (Simpledynamicscalingpolicy) entity;
 						man.start();
 						//// interval to wait before stopping
 						try {
@@ -72,14 +69,22 @@ public class Job1 implements Job{
 						man.stop();
 					}
 					
-					else if (entity instanceof Stepdynamic) {
-						StepdynamicConnector man = (StepdynamicConnector) entity;
+					else if (entity instanceof Stepdynamicscalingpolicy) {
+						Stepdynamicscalingpolicy man = (Stepdynamicscalingpolicy) entity;
 						man.start();
 					}
 					
-					else if (entity instanceof Dynamicadjustment) {
-						DynamicadjustmentConnector man = (DynamicadjustmentConnector) entity;
+					else if (entity instanceof Dynamicadjustmentscalingpolicy) {
+						Dynamicadjustmentscalingpolicy man = (Dynamicadjustmentscalingpolicy) entity;
 						man.start();
+						//// interval to wait before stopping
+						try {
+							Thread.sleep(120000);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						man.stop();
 					}
 					
 				}});

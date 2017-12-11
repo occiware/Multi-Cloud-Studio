@@ -95,67 +95,22 @@ public interface HorizontalelasticityFactory extends EFactory {
 	Instancegrouplink createInstancegrouplink();
 
 	/**
-	 * Returns a new object of class '<em>Linkloadbalancer</em>'.
+	 * Returns a new object of class '<em>Loadbalancerlink</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Linkloadbalancer</em>'.
+	 * @return a new object of class '<em>Loadbalancerlink</em>'.
 	 * @generated
 	 */
-	Linkloadbalancer createLinkloadbalancer();
+	Loadbalancerlink createLoadbalancerlink();
 
 	/**
-	 * Returns a new object of class '<em>Grouplink</em>'.
+	 * Returns a new object of class '<em>Elasticlink</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Grouplink</em>'.
+	 * @return a new object of class '<em>Elasticlink</em>'.
 	 * @generated
 	 */
-	Grouplink createGrouplink();
-
-	/**
-	 * Returns a new object of class '<em>Manual</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Manual</em>'.
-	 * @generated
-	 */
-	Manual createManual();
-
-	/**
-	 * Returns a new object of class '<em>Dynamic</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Dynamic</em>'.
-	 * @generated
-	 */
-	Dynamic createDynamic();
-
-	/**
-	 * Returns a new object of class '<em>Simpledynamic</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Simpledynamic</em>'.
-	 * @generated
-	 */
-	Simpledynamic createSimpledynamic();
-
-	/**
-	 * Returns a new object of class '<em>Stepdynamic</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Stepdynamic</em>'.
-	 * @generated
-	 */
-	Stepdynamic createStepdynamic();
-
-	/**
-	 * Returns a new object of class '<em>Dynamicadjustment</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Dynamicadjustment</em>'.
-	 * @generated
-	 */
-	Dynamicadjustment createDynamicadjustment();
+	Elasticlink createElasticlink();
 
 	/**
 	 * Returns a new object of class '<em>Rule</em>'.
@@ -176,15 +131,6 @@ public interface HorizontalelasticityFactory extends EFactory {
 	Actiontrigger createActiontrigger();
 
 	/**
-	 * Returns a new object of class '<em>Dynamicpolicy</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Dynamicpolicy</em>'.
-	 * @generated
-	 */
-	Dynamicpolicy createDynamicpolicy();
-
-	/**
 	 * Returns a new object of class '<em>Step</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -203,15 +149,6 @@ public interface HorizontalelasticityFactory extends EFactory {
 	Steplink createSteplink();
 
 	/**
-	 * Returns a new object of class '<em>Computelink</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Computelink</em>'.
-	 * @generated
-	 */
-	Computelink createComputelink();
-
-	/**
 	 * Returns a new object of class '<em>Creation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -221,31 +158,112 @@ public interface HorizontalelasticityFactory extends EFactory {
 	Creation createCreation();
 
 	/**
-	 * Returns a new object of class '<em>Scheduler</em>'.
+	 * Returns a new object of class '<em>Schedulingpolicy</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Scheduler</em>'.
+	 * @return a new object of class '<em>Schedulingpolicy</em>'.
 	 * @generated
 	 */
-	Scheduler createScheduler();
+	Schedulingpolicy createSchedulingpolicy();
 
 	/**
-	 * Returns a new object of class '<em>Uniqueschedule</em>'.
+	 * Returns a new object of class '<em>Uniqueschedulingpolicy</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Uniqueschedule</em>'.
+	 * @return a new object of class '<em>Uniqueschedulingpolicy</em>'.
 	 * @generated
 	 */
-	Uniqueschedule createUniqueschedule();
+	Uniqueschedulingpolicy createUniqueschedulingpolicy();
 
 	/**
-	 * Returns a new object of class '<em>Recurringschedule</em>'.
+	 * Returns a new object of class '<em>Recurringschedulingpolicy</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Recurringschedule</em>'.
+	 * @return a new object of class '<em>Recurringschedulingpolicy</em>'.
 	 * @generated
 	 */
-	Recurringschedule createRecurringschedule();
+	Recurringschedulingpolicy createRecurringschedulingpolicy();
+
+	/**
+	 * Returns a new object of class '<em>Scalingpolicy</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Scalingpolicy</em>'.
+	 * @generated
+	 */
+	Scalingpolicy createScalingpolicy();
+
+	/**
+	 * Returns a new object of class '<em>Dynamicscalingpolicy</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Dynamicscalingpolicy</em>'.
+	 * @generated
+	 */
+	Dynamicscalingpolicy createDynamicscalingpolicy();
+
+	/**
+	 * Returns a new object of class '<em>Dynamicadjustmentscalingpolicy</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Dynamicadjustmentscalingpolicy</em>'.
+	 * @generated
+	 */
+	Dynamicadjustmentscalingpolicy createDynamicadjustmentscalingpolicy();
+
+	/**
+	 * Returns a new object of class '<em>Simpledynamicscalingpolicy</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Simpledynamicscalingpolicy</em>'.
+	 * @generated
+	 */
+	Simpledynamicscalingpolicy createSimpledynamicscalingpolicy();
+
+	/**
+	 * Returns a new object of class '<em>Stepdynamicscalingpolicy</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Stepdynamicscalingpolicy</em>'.
+	 * @generated
+	 */
+	Stepdynamicscalingpolicy createStepdynamicscalingpolicy();
+
+	/**
+	 * Returns a new object of class '<em>Manualscalingpolicy</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Manualscalingpolicy</em>'.
+	 * @generated
+	 */
+	Manualscalingpolicy createManualscalingpolicy();
+
+	/**
+	 * Returns a new object of class '<em>Metric</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Metric</em>'.
+	 * @generated
+	 */
+	Metric createMetric();
+
+	/**
+	 * Returns a new object of class '<em>Cpuutilisation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Cpuutilisation</em>'.
+	 * @generated
+	 */
+	Cpuutilisation createCpuutilisation();
+
+	/**
+	 * Returns a new object of class '<em>Memoryutilisation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Memoryutilisation</em>'.
+	 * @generated
+	 */
+	Memoryutilisation createMemoryutilisation();
 
 	/**
 	 * Returns the package supported by this factory.

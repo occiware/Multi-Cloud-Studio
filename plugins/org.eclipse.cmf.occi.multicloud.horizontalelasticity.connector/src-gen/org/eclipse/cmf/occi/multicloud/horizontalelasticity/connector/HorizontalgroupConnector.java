@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Mon Dec 04 11:58:56 CET 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Fri Dec 08 17:51:34 CET 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
@@ -24,6 +24,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.eclipse.cmf.occi.core.Configuration;
 import org.eclipse.cmf.occi.core.Link;
+import org.eclipse.cmf.occi.core.util.OcciHelper;
 import org.eclipse.cmf.occi.infrastructure.ComputeStatus;
 import org.eclipse.cmf.occi.multicloud.elasticocci.connector.MyRunnable;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityFactory;
@@ -119,7 +120,7 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
                 	{
                  @Override
                  protected void doExecute() {
-                	 hg.setHorizontalGroupGroupSize(value);
+                	 hg.setHorizontalgroupGroupSize(value);
                 	 //hg.eSet(hg.eClass().getEStructuralFeature("horizontalGroupGroupSize"), value);
                 }
                 });
@@ -134,12 +135,12 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 	{
 		LOGGER.debug("occiCreate() called on " + this);
 		// TODO: Implement this callback or remove this method.
-		if (getHorizontalGroupGroupSize() > getHorizontalGroupMaximum()) {
-			setHorizontalGroupGroupSize(getHorizontalGroupMaximum());
+		if (getHorizontalgroupGroupSize() > getHorizontalgroupMaximum()) {
+			setHorizontalgroupGroupSize(getHorizontalgroupMaximum());
 		}
 		
-		if (getHorizontalGroupGroupSize() < getHorizontalGroupMinimum()) {
-			setHorizontalGroupGroupSize(getHorizontalGroupMinimum());
+		if (getHorizontalgroupGroupSize() < getHorizontalgroupMinimum()) {
+			setHorizontalgroupGroupSize(getHorizontalgroupMinimum());
 		}
 						
 		//ArrayList<Instancevmware> array = new ArrayList<Instancevmware>();
@@ -194,16 +195,8 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 	@Override
 	public void occiRetrieve()
 	{
-	
-		//try {
-		//	createConfigtemp(2);
-		//} catch (InterruptedException e) {
-		//	// TODO Auto-generated catch block
-		//	e.printStackTrace();
-		//}
-		//
 		LOGGER.debug("occiRetrieve() called on " + this);
-		// TODO: Implement this callback or remove this method.
+		createLinksAndConfig();
 	}
 	// End of user code
 
@@ -228,9 +221,9 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 		System.out.println("the old group size is  " + oldGroupSize );	
 		
 		final int olldGroupSize = oldGroupSize;
-		if (getHorizontalGroupGroupSize() > oldGroupSize) {
+		if (getHorizontalgroupGroupSize() > oldGroupSize) {
 			//final int  oldGroupSize1 = oldGroupSize;
-			System.out.println("The group will be increased by " + (getHorizontalGroupGroupSize() - oldGroupSize));
+			System.out.println("The group will be increased by " + (getHorizontalgroupGroupSize() - oldGroupSize));
 			ArrayList<String> LlinksIds = new ArrayList<String>();
 			for (Link link : this.getLinks()) {
 				if(link.getTarget() instanceof Instancevmware) {
@@ -270,8 +263,8 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 			Thread thread = new Thread(myRunnable);
 			thread.start();
 			
-        } else if (getHorizontalGroupGroupSize() < oldGroupSize) {
-        		int instancestodelete = (oldGroupSize - getHorizontalGroupGroupSize());
+        } else if (getHorizontalgroupGroupSize() < oldGroupSize) {
+        		int instancestodelete = (oldGroupSize - getHorizontalgroupGroupSize());
         		System.out.println("The group will be decreased by " + instancestodelete);
         		updateDecrease(instancestodelete);
 
@@ -286,23 +279,6 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
         	}
 	}
 	// End of user code
-	
-	protected void createInstanceandLinkConfig(int oldGroupSize) {
-		for (int i=oldGroupSize+1; i <= getHorizontalGroupGroupSize(); i++) {
-			Configuration config = (Configuration)this.eContainer();
-			Instancegrouplink igl = HorizontalelasticityFactory.eINSTANCE.createInstancegrouplink();
-			Instancevmware vm = VmwareFactory.eINSTANCE.createInstancevmware();
-			config.getResources().add(vm);
-			igl.setSource(this);
-			igl.setTarget(vm);
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		System.out.println(" i= " + 1);	
-		}
-	}
 
 	// Start of user code HorizontalgroupocciDelete_method
 	/**
@@ -312,40 +288,97 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 	public void occiDelete()
 	{
 		LOGGER.debug("occiDelete() called on " + this);
-		// TODO: Implement this callback or remove this method.
-		try {
-			ArrayList<String>  ips = getStatAndIP();
-			for(int n=0;n<ips.size();n++) {
-				String ip = ips.get(n);
-				System.out.println(ip);
-				//delete the ips from loadBlancer
-				Loadbalancer lb = (Loadbalancer) this.getLinks().get(0).getTarget();  
-				lb.setLoadbalancerInstanceIP(ip);
-				lb.removebackendserver();
-				System.out.println("Instance with " + ip + " is deregistered from the LoadBalancer" );
-				//delete the vms from the monitoring system
-				ZabbixMonitoring2 zabbix_obj = new ZabbixMonitoring2();
-				String zabi = zabbix_obj.connect();
-				zabbix_obj.host_delete(zabi, ip);
-				System.out.println("Instance with " + ip + " is deregistered from the MonitoringSystem" );
+		int i=0;
+		int y =0;
+		for (Link link1 : this.getLinks()) {
+			++i;
+			System.out.println("out of the loop" + i);
+			if(link1.getTarget() instanceof Instancevmware) {
+				++y;
+				try {
+					System.out.println("vmware link found" + i);
+					Instancevmware instance = (Instancevmware)link1.getTarget();
+					// Remove from model.
+					Configuration config = OcciHelper.getConfiguration(instance);
+					
+					org.eclipse.cmf.occi.core.Resource src = link1.getSource();
+					org.eclipse.cmf.occi.core.Resource target = link1.getTarget();
+					
+					if (src != null) {
+						src.getLinks().remove(link1);
+					} else {
+						System.out.println("Warning, the link : " + link1.getKind().getName() + " has no source !");
+					}
+					if (target != null) {
+						target.getLinks().remove(link1);
+					} else {
+						System.out.println("Warning, the link : " + link1.getKind().getName() + " has no target !");
+					}
+					System.out.println("the link is removed");
+					config.getResources().remove(instance);
+					System.out.println("the instance configuration is removed");
+				} catch ( Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		
-		// delete the instances
-		for (Link link : this.getLinks()) {
-			if(link.getTarget() instanceof Instancevmware) {
-				Instancevmware inst = (Instancevmware)link.getTarget();
-				System.out.println("instance " + inst.getAttributes().get(1).getValue() + " is deleted from Vcenter");
-				inst.occiDelete();
+			try {
+				System.out.println("sleep between loop iterations");
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 		}
-		
-		// delete the links and configurations
-
-		// top do
 	}
+	
+	protected void deleteInstance(Link link1) {
+		Instancevmware instance = (Instancevmware)link1.getTarget();
+		// get the ip of the instance
+		String ip = instance.getAttributes().get(8).getValue(); 
+		// get LB
+		Loadbalancer lb = null;
+		for (Link link : this.getLinks()) {	
+			if(link.getTarget() instanceof Loadbalancer) {
+				lb = (Loadbalancer)link.getTarget();
+				break;
+			}
+		}
+		//delete the ips from loadBlancer
+		lb.setLoadbalancerInstanceIP(ip);
+		lb.removebackendserver();
+		System.out.println("Instance with " + ip + " is deregistered from the LoadBalancer" );
+		
+		//delete the vms from the monitoring system
+		ZabbixMonitoring2 zabbix_obj = new ZabbixMonitoring2();
+		String zabi = zabbix_obj.connect();
+		zabbix_obj.host_delete(zabi, ip);
+		System.out.println("Instance with " + ip + " is deregistered from the MonitoringSystem" );
+		
+		instance.occiDelete();
+		System.out.println("instance " + instance.getAttributes().get(1).getValue() + " is deleted from Vcenter");
+	
+		// Remove from model.
+		Configuration config = OcciHelper.getConfiguration(instance);
+		
+		org.eclipse.cmf.occi.core.Resource src = link1.getSource();
+		org.eclipse.cmf.occi.core.Resource target = link1.getTarget();
+		
+		if (src != null) {
+			src.getLinks().remove(link1);
+		} else {
+			System.out.println("Warning, the link : " + link1.getKind().getName() + " has no source !");
+		}
+		if (target != null) {
+			target.getLinks().remove(link1);
+		} else {
+			System.out.println("Warning, the link : " + link1.getKind().getName() + " has no target !");
+		}
+		System.out.println("the link is removed");
+		config.getResources().remove(instance);
+		System.out.println("the instance configuration is removed");
+	}
+	
 	
 	public ArrayList<String> getStatAndIP() throws InterruptedException  { // return the ips for the created VMs
 		ArrayList<String> ipList = new ArrayList<String>();
@@ -379,7 +412,7 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 	}
 	
 	private void createLinksAndConfig() {
-		for (int i=1; i <= getHorizontalGroupGroupSize(); i++) {
+		for (int i=1; i <= getHorizontalgroupGroupSize(); i++) {
 			Configuration config = (Configuration)this.eContainer();
 			Instancegrouplink igl = HorizontalelasticityFactory.eINSTANCE.createInstancegrouplink();
 			Instancevmware vm = VmwareFactory.eINSTANCE.createInstancevmware();
@@ -599,16 +632,33 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 		}
 
 	private void initializGroupSize() {
-		if (getHorizontalGroupGroupSize() > getHorizontalGroupMaximum()) {
+		if (getHorizontalgroupGroupSize() > getHorizontalgroupMaximum()) {
 			System.out.println("The group size is bigger than the maximum limit of the group, the group size is set to the maximum group size" );
-			setHorizontalGroupGroupSize(getHorizontalGroupMaximum());
-        } else if (getHorizontalGroupGroupSize() < getHorizontalGroupMinimum()) {
+			setHorizontalgroupGroupSize(getHorizontalgroupMaximum());
+        } else if (getHorizontalgroupGroupSize() < getHorizontalgroupMinimum()) {
         		System.out.println("The group size is smaller than the minimum limit of the group, the group size is set to the minimum group size" );
 
         } else {
         	System.out.println("it is ok, the groupSize is in the correct range" );
         }
         
+	}
+	
+	protected void createInstanceandLinkConfig(int oldGroupSize) {
+		for (int i=oldGroupSize+1; i <= getHorizontalgroupGroupSize(); i++) {
+			Configuration config = (Configuration)this.eContainer();
+			Instancegrouplink igl = HorizontalelasticityFactory.eINSTANCE.createInstancegrouplink();
+			Instancevmware vm = VmwareFactory.eINSTANCE.createInstancevmware();
+			config.getResources().add(vm);
+			igl.setSource(this);
+			igl.setTarget(vm);
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		System.out.println(" i= " + 1);	
+		}
 	}
 	// End of user code
 

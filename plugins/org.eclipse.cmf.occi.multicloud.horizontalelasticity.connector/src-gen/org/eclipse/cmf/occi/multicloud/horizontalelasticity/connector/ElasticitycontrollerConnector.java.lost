@@ -1,0 +1,33 @@
+
+Fri Dec 08 17:51:34 CET 2017
+================================================================================
+Start of user code Elasticitycontroller_Kind_stop_action
+	/**
+	 * Implement OCCI action:
+     * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/elasticitycontroller/action#
+     * - term: stop
+     * - title: 
+	 */
+	@Override
+	public void stop()
+	{
+		LOGGER.debug("Action stop() called on " + this);
+
+		// TODO: Implement how to stop this elasticitycontroller.
+	}
+	// End of user code
+Start of user code Elasticitycontroller_Kind_start_action
+	/**
+	 * Implement OCCI action:
+     * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/elasticitycontroller/action#
+     * - term: start
+     * - title: 
+	 */
+	@Override
+	public void start()
+	{
+		LOGGER.debug("Action start() called on " + this);
+
+		// TODO: Implement how to start this elasticitycontroller.
+	}
+	// End of user code

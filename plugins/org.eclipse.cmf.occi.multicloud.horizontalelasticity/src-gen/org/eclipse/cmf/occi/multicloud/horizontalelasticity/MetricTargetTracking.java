@@ -49,24 +49,24 @@ public enum MetricTargetTracking implements Enumerator {
 	LB_REQUEST_COUNTPER_TARGET(1, "LBRequestCountperTarget", "LBRequestCountperTarget"),
 
 	/**
-	 * The '<em><b>Average Networkin</b></em>' literal object.
+	 * The '<em><b>Average Network In</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #AVERAGE_NETWORKIN_VALUE
+	 * @see #AVERAGE_NETWORK_IN_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	AVERAGE_NETWORKIN(2, "AverageNetworkin", "AverageNetworkin"),
+	AVERAGE_NETWORK_IN(2, "AverageNetworkIn", "AverageNetworkIn"),
 
 	/**
-	 * The '<em><b>Average Networkout</b></em>' literal object.
+	 * The '<em><b>Average Network Out</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #AVERAGE_NETWORKOUT_VALUE
+	 * @see #AVERAGE_NETWORK_OUT_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	AVERAGE_NETWORKOUT(3, "AverageNetworkout", "AverageNetworkout");
+	AVERAGE_NETWORK_OUT(3, "AverageNetworkOut", "AverageNetworkOut");
 
 	/**
 	 * The '<em><b>Average Cpu Utilisation</b></em>' literal value.
@@ -99,34 +99,34 @@ public enum MetricTargetTracking implements Enumerator {
 	public static final int LB_REQUEST_COUNTPER_TARGET_VALUE = 1;
 
 	/**
-	 * The '<em><b>Average Networkin</b></em>' literal value.
+	 * The '<em><b>Average Network In</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Average Networkin</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Average Network In</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #AVERAGE_NETWORKIN
-	 * @model name="AverageNetworkin"
+	 * @see #AVERAGE_NETWORK_IN
+	 * @model name="AverageNetworkIn"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int AVERAGE_NETWORKIN_VALUE = 2;
+	public static final int AVERAGE_NETWORK_IN_VALUE = 2;
 
 	/**
-	 * The '<em><b>Average Networkout</b></em>' literal value.
+	 * The '<em><b>Average Network Out</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Average Networkout</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Average Network Out</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #AVERAGE_NETWORKOUT
-	 * @model name="AverageNetworkout"
+	 * @see #AVERAGE_NETWORK_OUT
+	 * @model name="AverageNetworkOut"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int AVERAGE_NETWORKOUT_VALUE = 3;
+	public static final int AVERAGE_NETWORK_OUT_VALUE = 3;
 
 	/**
 	 * An array of all the '<em><b>Metric Target Tracking</b></em>' enumerators.
@@ -138,8 +138,8 @@ public enum MetricTargetTracking implements Enumerator {
 		new MetricTargetTracking[] {
 			AVERAGE_CPU_UTILISATION,
 			LB_REQUEST_COUNTPER_TARGET,
-			AVERAGE_NETWORKIN,
-			AVERAGE_NETWORKOUT,
+			AVERAGE_NETWORK_IN,
+			AVERAGE_NETWORK_OUT,
 		};
 
 	/**
@@ -198,8 +198,8 @@ public enum MetricTargetTracking implements Enumerator {
 		switch (value) {
 			case AVERAGE_CPU_UTILISATION_VALUE: return AVERAGE_CPU_UTILISATION;
 			case LB_REQUEST_COUNTPER_TARGET_VALUE: return LB_REQUEST_COUNTPER_TARGET;
-			case AVERAGE_NETWORKIN_VALUE: return AVERAGE_NETWORKIN;
-			case AVERAGE_NETWORKOUT_VALUE: return AVERAGE_NETWORKOUT;
+			case AVERAGE_NETWORK_IN_VALUE: return AVERAGE_NETWORK_IN;
+			case AVERAGE_NETWORK_OUT_VALUE: return AVERAGE_NETWORK_OUT;
 		}
 		return null;
 	}

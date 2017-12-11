@@ -66,30 +66,30 @@ public class HorizontalgroupItemProvider extends ResourceItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addHorizontalGroupNamePropertyDescriptor(object);
-			addHorizontalGroupGroupSizePropertyDescriptor(object);
-			addHorizontalGroupMaximumPropertyDescriptor(object);
-			addHorizontalGroupMinimumPropertyDescriptor(object);
-			addHorizontalGroupTemplateNamePropertyDescriptor(object);
-			addHorizontalGroupLoadBalancerPropertyDescriptor(object);
+			addHorizontalgroupNamePropertyDescriptor(object);
+			addHorizontalgroupGroupSizePropertyDescriptor(object);
+			addHorizontalgroupMaximumPropertyDescriptor(object);
+			addHorizontalgroupMinimumPropertyDescriptor(object);
+			addHorizontalgroupTemplateNamePropertyDescriptor(object);
+			addHorizontalgroupLoadBalancerPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Horizontal Group Name feature.
+	 * This adds a property descriptor for the Horizontalgroup Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addHorizontalGroupNamePropertyDescriptor(Object object) {
+	protected void addHorizontalgroupNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Horizontalgroup_horizontalGroupName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Horizontalgroup_horizontalGroupName_feature", "_UI_Horizontalgroup_type"),
-				 HorizontalelasticityPackage.Literals.HORIZONTALGROUP__HORIZONTAL_GROUP_NAME,
+				 getString("_UI_Horizontalgroup_horizontalgroupName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Horizontalgroup_horizontalgroupName_feature", "_UI_Horizontalgroup_type"),
+				 HorizontalelasticityPackage.Literals.HORIZONTALGROUP__HORIZONTALGROUP_NAME,
 				 true,
 				 false,
 				 false,
@@ -99,19 +99,19 @@ public class HorizontalgroupItemProvider extends ResourceItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Horizontal Group Group Size feature.
+	 * This adds a property descriptor for the Horizontalgroup Group Size feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addHorizontalGroupGroupSizePropertyDescriptor(Object object) {
+	protected void addHorizontalgroupGroupSizePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Horizontalgroup_horizontalGroupGroupSize_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Horizontalgroup_horizontalGroupGroupSize_feature", "_UI_Horizontalgroup_type"),
-				 HorizontalelasticityPackage.Literals.HORIZONTALGROUP__HORIZONTAL_GROUP_GROUP_SIZE,
+				 getString("_UI_Horizontalgroup_horizontalgroupGroupSize_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Horizontalgroup_horizontalgroupGroupSize_feature", "_UI_Horizontalgroup_type"),
+				 HorizontalelasticityPackage.Literals.HORIZONTALGROUP__HORIZONTALGROUP_GROUP_SIZE,
 				 true,
 				 false,
 				 false,
@@ -121,19 +121,19 @@ public class HorizontalgroupItemProvider extends ResourceItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Horizontal Group Maximum feature.
+	 * This adds a property descriptor for the Horizontalgroup Maximum feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addHorizontalGroupMaximumPropertyDescriptor(Object object) {
+	protected void addHorizontalgroupMaximumPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Horizontalgroup_horizontalGroupMaximum_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Horizontalgroup_horizontalGroupMaximum_feature", "_UI_Horizontalgroup_type"),
-				 HorizontalelasticityPackage.Literals.HORIZONTALGROUP__HORIZONTAL_GROUP_MAXIMUM,
+				 getString("_UI_Horizontalgroup_horizontalgroupMaximum_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Horizontalgroup_horizontalgroupMaximum_feature", "_UI_Horizontalgroup_type"),
+				 HorizontalelasticityPackage.Literals.HORIZONTALGROUP__HORIZONTALGROUP_MAXIMUM,
 				 true,
 				 false,
 				 false,
@@ -143,19 +143,19 @@ public class HorizontalgroupItemProvider extends ResourceItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Horizontal Group Minimum feature.
+	 * This adds a property descriptor for the Horizontalgroup Minimum feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addHorizontalGroupMinimumPropertyDescriptor(Object object) {
+	protected void addHorizontalgroupMinimumPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Horizontalgroup_horizontalGroupMinimum_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Horizontalgroup_horizontalGroupMinimum_feature", "_UI_Horizontalgroup_type"),
-				 HorizontalelasticityPackage.Literals.HORIZONTALGROUP__HORIZONTAL_GROUP_MINIMUM,
+				 getString("_UI_Horizontalgroup_horizontalgroupMinimum_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Horizontalgroup_horizontalgroupMinimum_feature", "_UI_Horizontalgroup_type"),
+				 HorizontalelasticityPackage.Literals.HORIZONTALGROUP__HORIZONTALGROUP_MINIMUM,
 				 true,
 				 false,
 				 false,
@@ -165,19 +165,19 @@ public class HorizontalgroupItemProvider extends ResourceItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Horizontal Group Template Name feature.
+	 * This adds a property descriptor for the Horizontalgroup Template Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addHorizontalGroupTemplateNamePropertyDescriptor(Object object) {
+	protected void addHorizontalgroupTemplateNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Horizontalgroup_horizontalGroupTemplateName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Horizontalgroup_horizontalGroupTemplateName_feature", "_UI_Horizontalgroup_type"),
-				 HorizontalelasticityPackage.Literals.HORIZONTALGROUP__HORIZONTAL_GROUP_TEMPLATE_NAME,
+				 getString("_UI_Horizontalgroup_horizontalgroupTemplateName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Horizontalgroup_horizontalgroupTemplateName_feature", "_UI_Horizontalgroup_type"),
+				 HorizontalelasticityPackage.Literals.HORIZONTALGROUP__HORIZONTALGROUP_TEMPLATE_NAME,
 				 true,
 				 false,
 				 false,
@@ -187,19 +187,19 @@ public class HorizontalgroupItemProvider extends ResourceItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Horizontal Group Load Balancer feature.
+	 * This adds a property descriptor for the Horizontalgroup Load Balancer feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addHorizontalGroupLoadBalancerPropertyDescriptor(Object object) {
+	protected void addHorizontalgroupLoadBalancerPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Horizontalgroup_horizontalGroupLoadBalancer_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Horizontalgroup_horizontalGroupLoadBalancer_feature", "_UI_Horizontalgroup_type"),
-				 HorizontalelasticityPackage.Literals.HORIZONTALGROUP__HORIZONTAL_GROUP_LOAD_BALANCER,
+				 getString("_UI_Horizontalgroup_horizontalgroupLoadBalancer_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Horizontalgroup_horizontalgroupLoadBalancer_feature", "_UI_Horizontalgroup_type"),
+				 HorizontalelasticityPackage.Literals.HORIZONTALGROUP__HORIZONTALGROUP_LOAD_BALANCER,
 				 true,
 				 false,
 				 false,
@@ -246,12 +246,12 @@ public class HorizontalgroupItemProvider extends ResourceItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Horizontalgroup.class)) {
-			case HorizontalelasticityPackage.HORIZONTALGROUP__HORIZONTAL_GROUP_NAME:
-			case HorizontalelasticityPackage.HORIZONTALGROUP__HORIZONTAL_GROUP_GROUP_SIZE:
-			case HorizontalelasticityPackage.HORIZONTALGROUP__HORIZONTAL_GROUP_MAXIMUM:
-			case HorizontalelasticityPackage.HORIZONTALGROUP__HORIZONTAL_GROUP_MINIMUM:
-			case HorizontalelasticityPackage.HORIZONTALGROUP__HORIZONTAL_GROUP_TEMPLATE_NAME:
-			case HorizontalelasticityPackage.HORIZONTALGROUP__HORIZONTAL_GROUP_LOAD_BALANCER:
+			case HorizontalelasticityPackage.HORIZONTALGROUP__HORIZONTALGROUP_NAME:
+			case HorizontalelasticityPackage.HORIZONTALGROUP__HORIZONTALGROUP_GROUP_SIZE:
+			case HorizontalelasticityPackage.HORIZONTALGROUP__HORIZONTALGROUP_MAXIMUM:
+			case HorizontalelasticityPackage.HORIZONTALGROUP__HORIZONTALGROUP_MINIMUM:
+			case HorizontalelasticityPackage.HORIZONTALGROUP__HORIZONTALGROUP_TEMPLATE_NAME:
+			case HorizontalelasticityPackage.HORIZONTALGROUP__HORIZONTALGROUP_LOAD_BALANCER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -277,17 +277,62 @@ public class HorizontalgroupItemProvider extends ResourceItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
-				 HorizontalelasticityFactory.eINSTANCE.createScheduler()));
+				 HorizontalelasticityFactory.eINSTANCE.createSchedulingpolicy()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
-				 HorizontalelasticityFactory.eINSTANCE.createUniqueschedule()));
+				 HorizontalelasticityFactory.eINSTANCE.createUniqueschedulingpolicy()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
-				 HorizontalelasticityFactory.eINSTANCE.createRecurringschedule()));
+				 HorizontalelasticityFactory.eINSTANCE.createRecurringschedulingpolicy()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createScalingpolicy()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createDynamicscalingpolicy()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createDynamicadjustmentscalingpolicy()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createSimpledynamicscalingpolicy()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createStepdynamicscalingpolicy()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createManualscalingpolicy()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createMetric()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createCpuutilisation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 HorizontalelasticityFactory.eINSTANCE.createMemoryutilisation()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -357,12 +402,12 @@ public class HorizontalgroupItemProvider extends ResourceItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.RESOURCE__LINKS,
-				 HorizontalelasticityFactory.eINSTANCE.createLinkloadbalancer()));
+				 HorizontalelasticityFactory.eINSTANCE.createLoadbalancerlink()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.RESOURCE__LINKS,
-				 HorizontalelasticityFactory.eINSTANCE.createGrouplink()));
+				 HorizontalelasticityFactory.eINSTANCE.createElasticlink()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -373,11 +418,6 @@ public class HorizontalgroupItemProvider extends ResourceItemProvider {
 			(createChildParameter
 				(OCCIPackage.Literals.RESOURCE__LINKS,
 				 HorizontalelasticityFactory.eINSTANCE.createSteplink()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.RESOURCE__LINKS,
-				 HorizontalelasticityFactory.eINSTANCE.createComputelink()));
 
 		newChildDescriptors.add
 			(createChildParameter

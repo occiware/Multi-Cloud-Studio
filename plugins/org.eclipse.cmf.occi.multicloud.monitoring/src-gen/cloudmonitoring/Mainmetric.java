@@ -38,7 +38,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='appliesConstraint'"
  * @generated
  */
-public interface Mainmetric extends MixinBase, Metric {
+public interface Mainmetric extends Metric, MixinBase {
 	/**
 	 * Returns the value of the '<em><b>Threshold Usage</b></em>' attribute.
 	 * The default value is <code>"80.0"</code>.

@@ -37,7 +37,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='appliesConstraint'"
  * @generated
  */
-public interface Disk extends MixinBase, Mainmetric {
+public interface Disk extends Mainmetric, MixinBase {
 	/**
 	 * Returns the value of the '<em><b>Swap</b></em>' attribute.
 	 * <!-- begin-user-doc -->

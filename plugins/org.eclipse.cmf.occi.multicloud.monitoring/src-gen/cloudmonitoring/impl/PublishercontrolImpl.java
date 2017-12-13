@@ -25,6 +25,7 @@ import org.eclipse.cmf.occi.core.Entity;
 
 import org.eclipse.cmf.occi.core.impl.MixinBaseImpl;
 
+import org.eclipse.cmf.occi.monitoring.impl.PublisherImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
@@ -64,7 +65,7 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  *
  * @generated
  */
-public class PublishercontrolImpl extends MixinBaseImpl implements Publishercontrol {
+public class PublishercontrolImpl extends PublisherImpl implements Publishercontrol {
 	/**
 	 * The default value of the '{@link #getPublisherState() <em>Publisher State</em>}' attribute.
 	 * <!-- begin-user-doc -->

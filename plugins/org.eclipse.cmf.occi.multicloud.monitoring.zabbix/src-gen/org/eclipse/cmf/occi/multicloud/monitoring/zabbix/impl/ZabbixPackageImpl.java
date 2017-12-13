@@ -246,8 +246,8 @@ public class ZabbixPackageImpl extends EPackageImpl implements ZabbixPackage {
 
 		// Obtain other dependent packages
 		MonitoringPackage theMonitoringPackage = (MonitoringPackage)EPackage.Registry.INSTANCE.getEPackage(MonitoringPackage.eNS_URI);
-		OCCIPackage theOCCIPackage = (OCCIPackage)EPackage.Registry.INSTANCE.getEPackage(OCCIPackage.eNS_URI);
 		CloudmonitoringPackage theCloudmonitoringPackage = (CloudmonitoringPackage)EPackage.Registry.INSTANCE.getEPackage(CloudmonitoringPackage.eNS_URI);
+		OCCIPackage theOCCIPackage = (OCCIPackage)EPackage.Registry.INSTANCE.getEPackage(OCCIPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -255,8 +255,8 @@ public class ZabbixPackageImpl extends EPackageImpl implements ZabbixPackage {
 
 		// Add supertypes to classes
 		zabbixcollectorEClass.getESuperTypes().add(theMonitoringPackage.getCollector());
-		zabbixapiconnectEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		zabbixapiconnectEClass.getESuperTypes().add(theCloudmonitoringPackage.getSupervisorapiconnect());
+		zabbixapiconnectEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(zabbixcollectorEClass, Zabbixcollector.class, "Zabbixcollector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

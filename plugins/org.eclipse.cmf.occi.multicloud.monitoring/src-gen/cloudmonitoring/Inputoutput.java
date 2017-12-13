@@ -36,7 +36,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='appliesConstraint'"
  * @generated
  */
-public interface Inputoutput extends MixinBase, Metric {
+public interface Inputoutput extends Metric, MixinBase {
 	/**
 	 * Returns the value of the '<em><b>Unit</b></em>' attribute.
 	 * The literals are from the enumeration {@link cloudmonitoring.IOUnit}.

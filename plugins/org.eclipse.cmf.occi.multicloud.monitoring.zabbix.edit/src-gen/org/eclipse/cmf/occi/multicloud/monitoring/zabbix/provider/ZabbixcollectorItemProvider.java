@@ -122,7 +122,17 @@ public class ZabbixcollectorItemProvider extends CollectorItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
+				 CloudmonitoringFactory.eINSTANCE.createMainmetric()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
 				 CloudmonitoringFactory.eINSTANCE.createCpu()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 CloudmonitoringFactory.eINSTANCE.createInputoutput()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -142,12 +152,12 @@ public class ZabbixcollectorItemProvider extends CollectorItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
-				 CloudmonitoringFactory.eINSTANCE.createInputoutput()));
+				 CloudmonitoringFactory.eINSTANCE.createSensorcontrol()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
-				 CloudmonitoringFactory.eINSTANCE.createSensorcontrol()));
+				 CloudmonitoringFactory.eINSTANCE.createPublishercontrol()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -162,22 +172,12 @@ public class ZabbixcollectorItemProvider extends CollectorItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
-				 CloudmonitoringFactory.eINSTANCE.createPublishercontrol()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.ENTITY__PARTS,
 				 CloudmonitoringFactory.eINSTANCE.createDisk()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
 				 CloudmonitoringFactory.eINSTANCE.createMailpublisher()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.ENTITY__PARTS,
-				 CloudmonitoringFactory.eINSTANCE.createMainmetric()));
 
 		newChildDescriptors.add
 			(createChildParameter

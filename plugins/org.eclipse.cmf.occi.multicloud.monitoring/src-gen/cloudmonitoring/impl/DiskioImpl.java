@@ -62,34 +62,13 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link cloudmonitoring.impl.DiskioImpl#getUnit <em>Unit</em>}</li>
  *   <li>{@link cloudmonitoring.impl.DiskioImpl#getDiskWrite <em>Disk Write</em>}</li>
  *   <li>{@link cloudmonitoring.impl.DiskioImpl#getDiskRead <em>Disk Read</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class DiskioImpl extends MixinBaseImpl implements Diskio {
-	/**
-	 * The default value of the '{@link #getUnit() <em>Unit</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUnit()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final IOUnit UNIT_EDEFAULT = IOUnit.BYTE_PER_SEC;
-
-	/**
-	 * The cached value of the '{@link #getUnit() <em>Unit</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUnit()
-	 * @generated
-	 * @ordered
-	 */
-	protected IOUnit unit = UNIT_EDEFAULT;
-
+public class DiskioImpl extends InputoutputImpl implements Diskio {
 	/**
 	 * The default value of the '{@link #getDiskWrite() <em>Disk Write</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -147,27 +126,6 @@ public class DiskioImpl extends MixinBaseImpl implements Diskio {
 	@Override
 	protected EClass eStaticClass() {
 		return CloudmonitoringPackage.Literals.DISKIO;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public IOUnit getUnit() {
-		return unit;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setUnit(IOUnit newUnit) {
-		IOUnit oldUnit = unit;
-		unit = newUnit == null ? UNIT_EDEFAULT : newUnit;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CloudmonitoringPackage.DISKIO__UNIT, oldUnit, unit));
 	}
 
 	/**
@@ -258,8 +216,6 @@ public class DiskioImpl extends MixinBaseImpl implements Diskio {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CloudmonitoringPackage.DISKIO__UNIT:
-				return getUnit();
 			case CloudmonitoringPackage.DISKIO__DISK_WRITE:
 				return getDiskWrite();
 			case CloudmonitoringPackage.DISKIO__DISK_READ:
@@ -276,9 +232,6 @@ public class DiskioImpl extends MixinBaseImpl implements Diskio {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CloudmonitoringPackage.DISKIO__UNIT:
-				setUnit((IOUnit)newValue);
-				return;
 			case CloudmonitoringPackage.DISKIO__DISK_WRITE:
 				setDiskWrite((Double)newValue);
 				return;
@@ -297,9 +250,6 @@ public class DiskioImpl extends MixinBaseImpl implements Diskio {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CloudmonitoringPackage.DISKIO__UNIT:
-				setUnit(UNIT_EDEFAULT);
-				return;
 			case CloudmonitoringPackage.DISKIO__DISK_WRITE:
 				setDiskWrite(DISK_WRITE_EDEFAULT);
 				return;
@@ -318,8 +268,6 @@ public class DiskioImpl extends MixinBaseImpl implements Diskio {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CloudmonitoringPackage.DISKIO__UNIT:
-				return unit != UNIT_EDEFAULT;
 			case CloudmonitoringPackage.DISKIO__DISK_WRITE:
 				return DISK_WRITE_EDEFAULT == null ? diskWrite != null : !DISK_WRITE_EDEFAULT.equals(diskWrite);
 			case CloudmonitoringPackage.DISKIO__DISK_READ:
@@ -334,58 +282,11 @@ public class DiskioImpl extends MixinBaseImpl implements Diskio {
 	 * @generated
 	 */
 	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == Metric.class) {
-			switch (derivedFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == Inputoutput.class) {
-			switch (derivedFeatureID) {
-				case CloudmonitoringPackage.DISKIO__UNIT: return CloudmonitoringPackage.INPUTOUTPUT__UNIT;
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == Metric.class) {
-			switch (baseFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == Inputoutput.class) {
-			switch (baseFeatureID) {
-				case CloudmonitoringPackage.INPUTOUTPUT__UNIT: return CloudmonitoringPackage.DISKIO__UNIT;
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
-		if (baseClass == Metric.class) {
-			switch (baseOperationID) {
-				default: return -1;
-			}
-		}
 		if (baseClass == Inputoutput.class) {
 			switch (baseOperationID) {
 				case CloudmonitoringPackage.INPUTOUTPUT___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP: return CloudmonitoringPackage.DISKIO___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP;
-				default: return -1;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
 			}
 		}
 		return super.eDerivedOperationID(baseOperationID, baseClass);
@@ -416,9 +317,7 @@ public class DiskioImpl extends MixinBaseImpl implements Diskio {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (unit: ");
-		result.append(unit);
-		result.append(", diskWrite: ");
+		result.append(" (diskWrite: ");
 		result.append(diskWrite);
 		result.append(", diskRead: ");
 		result.append(diskRead);

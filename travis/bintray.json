@@ -1,0 +1,44 @@
+{
+    "package": {
+        "name": "update-site",
+        "repo": "Multi-Cloud-Studio",
+        "subject": "occiware",
+        "desc": "I was pushed completely automatically",
+        "website_url": "www.occiware.org",
+        "issue_tracker_url": "https://github.com/occiware/Multi-Cloud-Studio/issues",
+        "vcs_url": "https://github.com/occiware/Multi-Cloud-Studio.git",
+        "github_use_tag_release_notes": false,
+        "github_release_notes_file": "RELEASE.txt",
+        "licenses": ["EPL-1.0"],
+        "labels": [],
+        "public_download_numbers": true,
+        "public_stats": true,
+        "attributes": []
+    },
+
+    "version": {
+        "name": "current-release",
+        "desc": "Current release",
+        "released": "2017-12-01",
+         "vcs_tag": "current",
+         "attributes": [],
+         "gpgSign": false
+    },
+
+    "files": [
+        {
+            "includePattern": "repositories/org.eclipse.cmf.occi.multicloud.repository/target/repository/(.*)",
+            "uploadPattern": "/$1",
+            "matrixParams": {"override": 1}
+        }, {
+            "includePattern": "repositories/org.eclipse.cmf.occi.multicloud.repository/target/repository/features/(.*)",
+            "uploadPattern": "/update-site/current-release/features/$1",
+            "matrixParams": {"override": 1}
+        }, {
+            "includePattern": "repositories/org.eclipse.cmf.occi.multicloud.repository/target/repository/plugins/(.*)",
+            "uploadPattern": "/update-site/current-release/plugins/$1",
+            "matrixParams": {"override": 1}
+        }
+    ],
+    "publish": true
+}

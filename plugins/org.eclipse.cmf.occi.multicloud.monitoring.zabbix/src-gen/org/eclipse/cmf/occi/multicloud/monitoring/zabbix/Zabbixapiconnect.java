@@ -38,7 +38,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='appliesConstraint'"
  * @generated
  */
-public interface Zabbixapiconnect extends MixinBase, Supervisorapiconnect {
+public interface Zabbixapiconnect extends Supervisorapiconnect, MixinBase {
 	/**
 	 * Returns the value of the '<em><b>Template Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

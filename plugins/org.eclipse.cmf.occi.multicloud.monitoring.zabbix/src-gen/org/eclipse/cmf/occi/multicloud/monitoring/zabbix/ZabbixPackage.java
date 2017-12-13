@@ -12,6 +12,7 @@
  */
 package org.eclipse.cmf.occi.multicloud.monitoring.zabbix;
 
+import cloudmonitoring.CloudmonitoringPackage;
 import org.eclipse.cmf.occi.core.OCCIPackage;
 
 import org.eclipse.cmf.occi.monitoring.MonitoringPackage;
@@ -259,7 +260,7 @@ public interface ZabbixPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ZABBIXAPICONNECT__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
+	int ZABBIXAPICONNECT__MIXIN = CloudmonitoringPackage.SUPERVISORAPICONNECT__MIXIN;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' container reference.
@@ -268,7 +269,7 @@ public interface ZabbixPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ZABBIXAPICONNECT__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
+	int ZABBIXAPICONNECT__ENTITY = CloudmonitoringPackage.SUPERVISORAPICONNECT__ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -277,7 +278,7 @@ public interface ZabbixPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ZABBIXAPICONNECT__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
+	int ZABBIXAPICONNECT__ATTRIBUTES = CloudmonitoringPackage.SUPERVISORAPICONNECT__ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Username</b></em>' attribute.
@@ -286,7 +287,7 @@ public interface ZabbixPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ZABBIXAPICONNECT__USERNAME = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
+	int ZABBIXAPICONNECT__USERNAME = CloudmonitoringPackage.SUPERVISORAPICONNECT__USERNAME;
 
 	/**
 	 * The feature id for the '<em><b>Password</b></em>' attribute.
@@ -295,7 +296,7 @@ public interface ZabbixPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ZABBIXAPICONNECT__PASSWORD = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
+	int ZABBIXAPICONNECT__PASSWORD = CloudmonitoringPackage.SUPERVISORAPICONNECT__PASSWORD;
 
 	/**
 	 * The feature id for the '<em><b>Http Api Address</b></em>' attribute.
@@ -304,7 +305,7 @@ public interface ZabbixPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ZABBIXAPICONNECT__HTTP_API_ADDRESS = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
+	int ZABBIXAPICONNECT__HTTP_API_ADDRESS = CloudmonitoringPackage.SUPERVISORAPICONNECT__HTTP_API_ADDRESS;
 
 	/**
 	 * The feature id for the '<em><b>Template Name</b></em>' attribute.
@@ -313,7 +314,7 @@ public interface ZabbixPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ZABBIXAPICONNECT__TEMPLATE_NAME = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
+	int ZABBIXAPICONNECT__TEMPLATE_NAME = CloudmonitoringPackage.SUPERVISORAPICONNECT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Host Group Name</b></em>' attribute.
@@ -322,7 +323,7 @@ public interface ZabbixPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ZABBIXAPICONNECT__HOST_GROUP_NAME = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 4;
+	int ZABBIXAPICONNECT__HOST_GROUP_NAME = CloudmonitoringPackage.SUPERVISORAPICONNECT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Port</b></em>' attribute.
@@ -331,7 +332,7 @@ public interface ZabbixPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ZABBIXAPICONNECT__PORT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 5;
+	int ZABBIXAPICONNECT__PORT = CloudmonitoringPackage.SUPERVISORAPICONNECT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Zabbixapiconnect</em>' class.
@@ -340,7 +341,7 @@ public interface ZabbixPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ZABBIXAPICONNECT_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 6;
+	int ZABBIXAPICONNECT_FEATURE_COUNT = CloudmonitoringPackage.SUPERVISORAPICONNECT_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Applies Constraint</em>' operation.
@@ -349,7 +350,7 @@ public interface ZabbixPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ZABBIXAPICONNECT___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
+	int ZABBIXAPICONNECT___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = CloudmonitoringPackage.SUPERVISORAPICONNECT_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Zabbixapiconnect</em>' class.
@@ -358,7 +359,7 @@ public interface ZabbixPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ZABBIXAPICONNECT_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
+	int ZABBIXAPICONNECT_OPERATION_COUNT = CloudmonitoringPackage.SUPERVISORAPICONNECT_OPERATION_COUNT + 1;
 
 
 	/**

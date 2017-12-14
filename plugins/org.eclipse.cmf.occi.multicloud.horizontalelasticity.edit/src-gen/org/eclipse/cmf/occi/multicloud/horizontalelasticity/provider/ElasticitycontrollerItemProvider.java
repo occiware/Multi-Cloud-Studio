@@ -68,8 +68,6 @@ public class ElasticitycontrollerItemProvider extends ResourceItemProvider {
 
 			addElasticitycontrollerMinimumLimitPropertyDescriptor(object);
 			addElasticitycontrollerMaximumLimitPropertyDescriptor(object);
-			addElasticitycontrollerCoolDurationPropertyDescriptor(object);
-			addElasticityControllerIterationWaitTimePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -119,50 +117,6 @@ public class ElasticitycontrollerItemProvider extends ResourceItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Elasticitycontroller Cool Duration feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addElasticitycontrollerCoolDurationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Elasticitycontroller_ElasticitycontrollerCoolDuration_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Elasticitycontroller_ElasticitycontrollerCoolDuration_feature", "_UI_Elasticitycontroller_type"),
-				 HorizontalelasticityPackage.Literals.ELASTICITYCONTROLLER__ELASTICITYCONTROLLER_COOL_DURATION,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Elasticity Controller Iteration Wait Time feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addElasticityControllerIterationWaitTimePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Elasticitycontroller_ElasticityControllerIterationWaitTime_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Elasticitycontroller_ElasticityControllerIterationWaitTime_feature", "_UI_Elasticitycontroller_type"),
-				 HorizontalelasticityPackage.Literals.ELASTICITYCONTROLLER__ELASTICITY_CONTROLLER_ITERATION_WAIT_TIME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This returns Elasticitycontroller.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -202,8 +156,6 @@ public class ElasticitycontrollerItemProvider extends ResourceItemProvider {
 		switch (notification.getFeatureID(Elasticitycontroller.class)) {
 			case HorizontalelasticityPackage.ELASTICITYCONTROLLER__ELASTICITYCONTROLLER_MINIMUM_LIMIT:
 			case HorizontalelasticityPackage.ELASTICITYCONTROLLER__ELASTICITYCONTROLLER_MAXIMUM_LIMIT:
-			case HorizontalelasticityPackage.ELASTICITYCONTROLLER__ELASTICITYCONTROLLER_COOL_DURATION:
-			case HorizontalelasticityPackage.ELASTICITYCONTROLLER__ELASTICITY_CONTROLLER_ITERATION_WAIT_TIME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

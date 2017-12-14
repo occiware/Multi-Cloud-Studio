@@ -164,12 +164,6 @@
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Elasticitycontroller/ElasticitycontrollerMaximumLimit"/>
       </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Elasticitycontroller/ElasticitycontrollerCoolDuration"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Elasticitycontroller/ElasticityControllerIterationWaitTime"/>
-      </genFeatures>
     </genClasses>
     <genClasses>
       <ecoreClass href="horizontalelasticity.ecore#//Instancegrouplink"/>
@@ -301,6 +295,9 @@
       <ecoreClass href="horizontalelasticity.ecore#//Manualscalingpolicy"/>
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Manualscalingpolicy/manualscalingpolicyDesiredSize"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="horizontalelasticity.ecore#//Manualscalingpolicy/manualscalingpolicyComputeUnit"/>
       </genFeatures>
     </genClasses>
     <genClasses>

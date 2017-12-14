@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ManualscalingpolicyImpl#getManualscalingpolicyDesiredSize <em>Manualscalingpolicy Desired Size</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ManualscalingpolicyImpl#getManualscalingpolicyComputeUnit <em>Manualscalingpolicy Compute Unit</em>}</li>
  * </ul>
  *
  * @generated
@@ -54,6 +55,26 @@ public class ManualscalingpolicyImpl extends ScalingpolicyImpl implements Manual
 	 * @ordered
 	 */
 	protected Float manualscalingpolicyDesiredSize = MANUALSCALINGPOLICY_DESIRED_SIZE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getManualscalingpolicyComputeUnit() <em>Manualscalingpolicy Compute Unit</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getManualscalingpolicyComputeUnit()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String MANUALSCALINGPOLICY_COMPUTE_UNIT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getManualscalingpolicyComputeUnit() <em>Manualscalingpolicy Compute Unit</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getManualscalingpolicyComputeUnit()
+	 * @generated
+	 * @ordered
+	 */
+	protected String manualscalingpolicyComputeUnit = MANUALSCALINGPOLICY_COMPUTE_UNIT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -100,11 +121,34 @@ public class ManualscalingpolicyImpl extends ScalingpolicyImpl implements Manual
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getManualscalingpolicyComputeUnit() {
+		return manualscalingpolicyComputeUnit;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setManualscalingpolicyComputeUnit(String newManualscalingpolicyComputeUnit) {
+		String oldManualscalingpolicyComputeUnit = manualscalingpolicyComputeUnit;
+		manualscalingpolicyComputeUnit = newManualscalingpolicyComputeUnit;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.MANUALSCALINGPOLICY__MANUALSCALINGPOLICY_COMPUTE_UNIT, oldManualscalingpolicyComputeUnit, manualscalingpolicyComputeUnit));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case HorizontalelasticityPackage.MANUALSCALINGPOLICY__MANUALSCALINGPOLICY_DESIRED_SIZE:
 				return getManualscalingpolicyDesiredSize();
+			case HorizontalelasticityPackage.MANUALSCALINGPOLICY__MANUALSCALINGPOLICY_COMPUTE_UNIT:
+				return getManualscalingpolicyComputeUnit();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -119,6 +163,9 @@ public class ManualscalingpolicyImpl extends ScalingpolicyImpl implements Manual
 		switch (featureID) {
 			case HorizontalelasticityPackage.MANUALSCALINGPOLICY__MANUALSCALINGPOLICY_DESIRED_SIZE:
 				setManualscalingpolicyDesiredSize((Float)newValue);
+				return;
+			case HorizontalelasticityPackage.MANUALSCALINGPOLICY__MANUALSCALINGPOLICY_COMPUTE_UNIT:
+				setManualscalingpolicyComputeUnit((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -135,6 +182,9 @@ public class ManualscalingpolicyImpl extends ScalingpolicyImpl implements Manual
 			case HorizontalelasticityPackage.MANUALSCALINGPOLICY__MANUALSCALINGPOLICY_DESIRED_SIZE:
 				setManualscalingpolicyDesiredSize(MANUALSCALINGPOLICY_DESIRED_SIZE_EDEFAULT);
 				return;
+			case HorizontalelasticityPackage.MANUALSCALINGPOLICY__MANUALSCALINGPOLICY_COMPUTE_UNIT:
+				setManualscalingpolicyComputeUnit(MANUALSCALINGPOLICY_COMPUTE_UNIT_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -149,6 +199,8 @@ public class ManualscalingpolicyImpl extends ScalingpolicyImpl implements Manual
 		switch (featureID) {
 			case HorizontalelasticityPackage.MANUALSCALINGPOLICY__MANUALSCALINGPOLICY_DESIRED_SIZE:
 				return MANUALSCALINGPOLICY_DESIRED_SIZE_EDEFAULT == null ? manualscalingpolicyDesiredSize != null : !MANUALSCALINGPOLICY_DESIRED_SIZE_EDEFAULT.equals(manualscalingpolicyDesiredSize);
+			case HorizontalelasticityPackage.MANUALSCALINGPOLICY__MANUALSCALINGPOLICY_COMPUTE_UNIT:
+				return MANUALSCALINGPOLICY_COMPUTE_UNIT_EDEFAULT == null ? manualscalingpolicyComputeUnit != null : !MANUALSCALINGPOLICY_COMPUTE_UNIT_EDEFAULT.equals(manualscalingpolicyComputeUnit);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -165,6 +217,8 @@ public class ManualscalingpolicyImpl extends ScalingpolicyImpl implements Manual
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (manualscalingpolicyDesiredSize: ");
 		result.append(manualscalingpolicyDesiredSize);
+		result.append(", manualscalingpolicyComputeUnit: ");
+		result.append(manualscalingpolicyComputeUnit);
 		result.append(')');
 		return result.toString();
 	}

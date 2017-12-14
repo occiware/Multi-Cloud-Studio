@@ -3,8 +3,10 @@ package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
 
 import java.util.Date;
+import java.util.List;
 
 import org.eclipse.cmf.occi.core.Entity;
+import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Dynamicadjustmentscalingpolicy;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Simpledynamicscalingpolicy;
 import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Stepdynamicscalingpolicy;
@@ -43,50 +45,55 @@ public class Job1 implements Job{
 			//res.start();
 	      try {
 			SchedulerContext schedulerContext = context.getScheduler().getContext();
-			Entity entity = (Entity) schedulerContext.get("key");
+			List<MixinBase> mixinsBase =  (List<MixinBase>) schedulerContext.get("key");
+			Entity entity = (Entity) schedulerContext.get("key2");
+			int interval = (int) schedulerContext.get("key3"); 
+			ElasticitycontrollerConnector ec = (ElasticitycontrollerConnector)entity;
 			RecurringschedulingpolicyConnector rs = new RecurringschedulingpolicyConnector();
-			final TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(entity);
+			final TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(ec);
 			System.out.println("domain     " + domain);
 			domain.getCommandStack().execute(new RecordingCommand(domain) {
 				@Override
 				public void doExecute() {
-					if(entity instanceof ManualscalingpolicyConnector) {
-						ManualscalingpolicyConnector man = (ManualscalingpolicyConnector) entity;
-						man.start();
-						//man.occiCreate();
-					}
-					
-					else if (entity instanceof Simpledynamicscalingpolicy) {
-						Simpledynamicscalingpolicy man = (Simpledynamicscalingpolicy) entity;
-						man.start();
-						//// interval to wait before stopping
-						try {
-							Thread.sleep(120000);
-						} catch (InterruptedException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
+					for (MixinBase mixinB : mixinsBase) {
+						if(mixinB instanceof ManualscalingpolicyConnector) {
+							ManualscalingpolicyConnector man = (ManualscalingpolicyConnector) mixinB;
+							man.start();
+							//man.occiCreate();
 						}
-						man.stop();
-					}
-					
-					else if (entity instanceof Stepdynamicscalingpolicy) {
-						Stepdynamicscalingpolicy man = (Stepdynamicscalingpolicy) entity;
-						man.start();
-					}
-					
-					else if (entity instanceof Dynamicadjustmentscalingpolicy) {
-						Dynamicadjustmentscalingpolicy man = (Dynamicadjustmentscalingpolicy) entity;
-						man.start();
-						//// interval to wait before stopping
-						try {
-							Thread.sleep(120000);
-						} catch (InterruptedException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
+						
+						else if (mixinB instanceof Simpledynamicscalingpolicy) {
+							Simpledynamicscalingpolicy man = (Simpledynamicscalingpolicy) mixinB;
+							man.start();
+							//// interval to wait before stopping
+							try {
+								Thread.sleep(interval);
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+							man.stop();
 						}
-						man.stop();
+						
+						else if (mixinB instanceof Stepdynamicscalingpolicy) {
+							Stepdynamicscalingpolicy man = (Stepdynamicscalingpolicy) mixinB;
+							man.start();
+						}
+						
+						else if (mixinB instanceof Dynamicadjustmentscalingpolicy) {
+							Dynamicadjustmentscalingpolicy man = (Dynamicadjustmentscalingpolicy) mixinB;
+							man.start();
+							//// interval to wait before stopping
+							try {
+								Thread.sleep(interval);
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+							man.stop();
+						}
+						
 					}
-					
 				}});
 		} catch (SchedulerException e) {
 			e.printStackTrace();

@@ -10,10 +10,19 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Fri Dec 08 17:51:34 CET 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Mon Dec 11 12:24:18 CET 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
+import java.util.List;
+
+import org.eclipse.cmf.occi.core.Entity;
+import org.eclipse.cmf.occi.core.MixinBase;
+import org.eclipse.cmf.occi.core.Resource;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.Cpuutilisation;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ElasticitycontrollerImpl;
+import org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.RuleImpl;
+import org.eclipse.emf.common.util.EList;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -54,6 +63,29 @@ public class RuleConnector extends org.eclipse.cmf.occi.multicloud.horizontalela
 	public void occiCreate()
 	{
 		LOGGER.debug("occiCreate() called on " + this);
+		System.out.println("This has nothing with the implementation, just a test");
+		//Resource res = (Resource) this.eContainer();
+		//RuleImpl rule = (RuleImpl) res;
+		//RuleConnector ruleconnector = (RuleConnector)rule;
+		
+		//List<MixinBase> mixinsBase = ruleconnector.getParts();
+		String metric = "";
+		EList<MixinBase> mixinsBase =this.getParts();
+		for (MixinBase mixin:mixinsBase) {
+			System.out.println("mixin " + mixin);
+			
+			System.out.println("mixin.getClass().getName() " + mixin.getClass().getName().substring(63).toLowerCase());
+	
+		}
+		System.out.println("mixinsBase" + mixinsBase);
+	///	if (mixinsBase instanceof Cpuutilisation) {
+	///		Cpuutilisation cpu = (Cpuutilisation) mixinsBase;
+	///		System.out.println(" cpuutilisationm" + cpu);
+	///	}
+		
+		///metric = mixinsBase.getClass().getName();
+		///System.out.println("mixinsBase.getClass().getName()" + mixinsBase.getClass().getName());
+		
 		// TODO: Implement this callback or remove this method.
 	}
 	// End of user code

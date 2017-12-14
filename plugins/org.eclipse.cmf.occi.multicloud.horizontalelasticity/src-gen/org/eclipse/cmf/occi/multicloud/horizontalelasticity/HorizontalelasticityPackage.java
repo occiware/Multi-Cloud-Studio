@@ -717,31 +717,13 @@ public interface HorizontalelasticityPackage extends EPackage {
 	int ELASTICITYCONTROLLER__ELASTICITYCONTROLLER_MAXIMUM_LIMIT = OCCIPackage.RESOURCE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Elasticitycontroller Cool Duration</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ELASTICITYCONTROLLER__ELASTICITYCONTROLLER_COOL_DURATION = OCCIPackage.RESOURCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Elasticity Controller Iteration Wait Time</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ELASTICITYCONTROLLER__ELASTICITY_CONTROLLER_ITERATION_WAIT_TIME = OCCIPackage.RESOURCE_FEATURE_COUNT + 3;
-
-	/**
 	 * The number of structural features of the '<em>Elasticitycontroller</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ELASTICITYCONTROLLER_FEATURE_COUNT = OCCIPackage.RESOURCE_FEATURE_COUNT + 4;
+	int ELASTICITYCONTROLLER_FEATURE_COUNT = OCCIPackage.RESOURCE_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Occi Create</em>' operation.
@@ -2975,13 +2957,22 @@ public interface HorizontalelasticityPackage extends EPackage {
 	int MANUALSCALINGPOLICY__MANUALSCALINGPOLICY_DESIRED_SIZE = SCALINGPOLICY_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Manualscalingpolicy Compute Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANUALSCALINGPOLICY__MANUALSCALINGPOLICY_COMPUTE_UNIT = SCALINGPOLICY_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Manualscalingpolicy</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MANUALSCALINGPOLICY_FEATURE_COUNT = SCALINGPOLICY_FEATURE_COUNT + 1;
+	int MANUALSCALINGPOLICY_FEATURE_COUNT = SCALINGPOLICY_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Start</em>' operation.
@@ -3565,28 +3556,6 @@ public interface HorizontalelasticityPackage extends EPackage {
 	EAttribute getElasticitycontroller_ElasticitycontrollerMaximumLimit();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Elasticitycontroller#getElasticitycontrollerCoolDuration <em>Elasticitycontroller Cool Duration</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Elasticitycontroller Cool Duration</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Elasticitycontroller#getElasticitycontrollerCoolDuration()
-	 * @see #getElasticitycontroller()
-	 * @generated
-	 */
-	EAttribute getElasticitycontroller_ElasticitycontrollerCoolDuration();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Elasticitycontroller#getElasticityControllerIterationWaitTime <em>Elasticity Controller Iteration Wait Time</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Elasticity Controller Iteration Wait Time</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Elasticitycontroller#getElasticityControllerIterationWaitTime()
-	 * @see #getElasticitycontroller()
-	 * @generated
-	 */
-	EAttribute getElasticitycontroller_ElasticityControllerIterationWaitTime();
-
-	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Instancegrouplink <em>Instancegrouplink</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4130,6 +4099,17 @@ public interface HorizontalelasticityPackage extends EPackage {
 	EAttribute getManualscalingpolicy_ManualscalingpolicyDesiredSize();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Manualscalingpolicy#getManualscalingpolicyComputeUnit <em>Manualscalingpolicy Compute Unit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Manualscalingpolicy Compute Unit</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.Manualscalingpolicy#getManualscalingpolicyComputeUnit()
+	 * @see #getManualscalingpolicy()
+	 * @generated
+	 */
+	EAttribute getManualscalingpolicy_ManualscalingpolicyComputeUnit();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Metric <em>Metric</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4480,22 +4460,6 @@ public interface HorizontalelasticityPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ELASTICITYCONTROLLER__ELASTICITYCONTROLLER_MAXIMUM_LIMIT = eINSTANCE.getElasticitycontroller_ElasticitycontrollerMaximumLimit();
-
-		/**
-		 * The meta object literal for the '<em><b>Elasticitycontroller Cool Duration</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ELASTICITYCONTROLLER__ELASTICITYCONTROLLER_COOL_DURATION = eINSTANCE.getElasticitycontroller_ElasticitycontrollerCoolDuration();
-
-		/**
-		 * The meta object literal for the '<em><b>Elasticity Controller Iteration Wait Time</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ELASTICITYCONTROLLER__ELASTICITY_CONTROLLER_ITERATION_WAIT_TIME = eINSTANCE.getElasticitycontroller_ElasticityControllerIterationWaitTime();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.InstancegrouplinkImpl <em>Instancegrouplink</em>}' class.
@@ -4946,6 +4910,14 @@ public interface HorizontalelasticityPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MANUALSCALINGPOLICY__MANUALSCALINGPOLICY_DESIRED_SIZE = eINSTANCE.getManualscalingpolicy_ManualscalingpolicyDesiredSize();
+
+		/**
+		 * The meta object literal for the '<em><b>Manualscalingpolicy Compute Unit</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MANUALSCALINGPOLICY__MANUALSCALINGPOLICY_COMPUTE_UNIT = eINSTANCE.getManualscalingpolicy_ManualscalingpolicyComputeUnit();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.MetricImpl <em>Metric</em>}' class.

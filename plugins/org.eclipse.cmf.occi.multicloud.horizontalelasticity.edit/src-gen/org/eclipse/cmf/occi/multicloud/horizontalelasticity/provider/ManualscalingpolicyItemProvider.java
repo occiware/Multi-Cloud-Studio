@@ -56,6 +56,7 @@ public class ManualscalingpolicyItemProvider extends ScalingpolicyItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addManualscalingpolicyDesiredSizePropertyDescriptor(object);
+			addManualscalingpolicyComputeUnitPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -74,6 +75,28 @@ public class ManualscalingpolicyItemProvider extends ScalingpolicyItemProvider {
 				 getString("_UI_Manualscalingpolicy_manualscalingpolicyDesiredSize_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Manualscalingpolicy_manualscalingpolicyDesiredSize_feature", "_UI_Manualscalingpolicy_type"),
 				 HorizontalelasticityPackage.Literals.MANUALSCALINGPOLICY__MANUALSCALINGPOLICY_DESIRED_SIZE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Manualscalingpolicy Compute Unit feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addManualscalingpolicyComputeUnitPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Manualscalingpolicy_manualscalingpolicyComputeUnit_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Manualscalingpolicy_manualscalingpolicyComputeUnit_feature", "_UI_Manualscalingpolicy_type"),
+				 HorizontalelasticityPackage.Literals.MANUALSCALINGPOLICY__MANUALSCALINGPOLICY_COMPUTE_UNIT,
 				 true,
 				 false,
 				 false,
@@ -122,6 +145,7 @@ public class ManualscalingpolicyItemProvider extends ScalingpolicyItemProvider {
 
 		switch (notification.getFeatureID(Manualscalingpolicy.class)) {
 			case HorizontalelasticityPackage.MANUALSCALINGPOLICY__MANUALSCALINGPOLICY_DESIRED_SIZE:
+			case HorizontalelasticityPackage.MANUALSCALINGPOLICY__MANUALSCALINGPOLICY_COMPUTE_UNIT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

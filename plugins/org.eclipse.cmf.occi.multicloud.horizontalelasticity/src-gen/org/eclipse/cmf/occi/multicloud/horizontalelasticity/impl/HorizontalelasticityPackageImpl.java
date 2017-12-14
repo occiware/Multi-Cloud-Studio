@@ -601,24 +601,6 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getElasticitycontroller_ElasticitycontrollerCoolDuration() {
-		return (EAttribute)elasticitycontrollerEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getElasticitycontroller_ElasticityControllerIterationWaitTime() {
-		return (EAttribute)elasticitycontrollerEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getInstancegrouplink() {
 		return instancegrouplinkEClass;
 	}
@@ -1087,6 +1069,15 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getManualscalingpolicy_ManualscalingpolicyComputeUnit() {
+		return (EAttribute)manualscalingpolicyEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getMetric() {
 		return metricEClass;
 	}
@@ -1255,8 +1246,6 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 		elasticitycontrollerEClass = createEClass(ELASTICITYCONTROLLER);
 		createEAttribute(elasticitycontrollerEClass, ELASTICITYCONTROLLER__ELASTICITYCONTROLLER_MINIMUM_LIMIT);
 		createEAttribute(elasticitycontrollerEClass, ELASTICITYCONTROLLER__ELASTICITYCONTROLLER_MAXIMUM_LIMIT);
-		createEAttribute(elasticitycontrollerEClass, ELASTICITYCONTROLLER__ELASTICITYCONTROLLER_COOL_DURATION);
-		createEAttribute(elasticitycontrollerEClass, ELASTICITYCONTROLLER__ELASTICITY_CONTROLLER_ITERATION_WAIT_TIME);
 
 		instancegrouplinkEClass = createEClass(INSTANCEGROUPLINK);
 		createEOperation(instancegrouplinkEClass, INSTANCEGROUPLINK___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
@@ -1326,6 +1315,7 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 
 		manualscalingpolicyEClass = createEClass(MANUALSCALINGPOLICY);
 		createEAttribute(manualscalingpolicyEClass, MANUALSCALINGPOLICY__MANUALSCALINGPOLICY_DESIRED_SIZE);
+		createEAttribute(manualscalingpolicyEClass, MANUALSCALINGPOLICY__MANUALSCALINGPOLICY_COMPUTE_UNIT);
 
 		metricEClass = createEClass(METRIC);
 		createEAttribute(metricEClass, METRIC__NAME);
@@ -1443,8 +1433,6 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 		initEClass(elasticitycontrollerEClass, Elasticitycontroller.class, "Elasticitycontroller", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getElasticitycontroller_ElasticitycontrollerMinimumLimit(), theOCCIPackage.getInteger(), "ElasticitycontrollerMinimumLimit", null, 0, 1, Elasticitycontroller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getElasticitycontroller_ElasticitycontrollerMaximumLimit(), theOCCIPackage.getInteger(), "ElasticitycontrollerMaximumLimit", null, 0, 1, Elasticitycontroller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getElasticitycontroller_ElasticitycontrollerCoolDuration(), theOCCIPackage.getInteger(), "ElasticitycontrollerCoolDuration", null, 0, 1, Elasticitycontroller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getElasticitycontroller_ElasticityControllerIterationWaitTime(), theOCCIPackage.getInteger(), "ElasticityControllerIterationWaitTime", null, 0, 1, Elasticitycontroller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(instancegrouplinkEClass, Instancegrouplink.class, "Instancegrouplink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1582,6 +1570,7 @@ public class HorizontalelasticityPackageImpl extends EPackageImpl implements Hor
 
 		initEClass(manualscalingpolicyEClass, Manualscalingpolicy.class, "Manualscalingpolicy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getManualscalingpolicy_ManualscalingpolicyDesiredSize(), this.getFloat(), "manualscalingpolicyDesiredSize", null, 0, 1, Manualscalingpolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getManualscalingpolicy_ManualscalingpolicyComputeUnit(), theOCCIPackage.getString(), "manualscalingpolicyComputeUnit", null, 0, 1, Manualscalingpolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(metricEClass, Metric.class, "Metric", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMetric_Name(), theOCCIPackage.getString(), "name", null, 0, 1, Metric.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

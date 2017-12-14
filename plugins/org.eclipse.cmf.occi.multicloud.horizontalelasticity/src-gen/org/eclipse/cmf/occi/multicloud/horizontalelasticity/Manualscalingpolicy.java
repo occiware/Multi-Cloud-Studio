@@ -24,6 +24,7 @@ import org.eclipse.cmf.occi.core.MixinBase;
  * </p>
  * <ul>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Manualscalingpolicy#getManualscalingpolicyDesiredSize <em>Manualscalingpolicy Desired Size</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Manualscalingpolicy#getManualscalingpolicyComputeUnit <em>Manualscalingpolicy Compute Unit</em>}</li>
  * </ul>
  *
  * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getManualscalingpolicy()
@@ -56,5 +57,31 @@ public interface Manualscalingpolicy extends Scalingpolicy, MixinBase {
 	 * @generated
 	 */
 	void setManualscalingpolicyDesiredSize(Float value);
+
+	/**
+	 * Returns the value of the '<em><b>Manualscalingpolicy Compute Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Manualscalingpolicy Compute Unit</em>' attribute.
+	 * @see #setManualscalingpolicyComputeUnit(String)
+	 * @see org.eclipse.cmf.occi.multicloud.horizontalelasticity.HorizontalelasticityPackage#getManualscalingpolicy_ManualscalingpolicyComputeUnit()
+	 * @model dataType="org.eclipse.cmf.occi.core.String"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore!Manualscalingpolicy!manualscalingpolicyComputeUnit'"
+	 * @generated
+	 */
+	String getManualscalingpolicyComputeUnit();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.Manualscalingpolicy#getManualscalingpolicyComputeUnit <em>Manualscalingpolicy Compute Unit</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Manualscalingpolicy Compute Unit</em>' attribute.
+	 * @see #getManualscalingpolicyComputeUnit()
+	 * @generated
+	 */
+	void setManualscalingpolicyComputeUnit(String value);
 
 } // Manualscalingpolicy

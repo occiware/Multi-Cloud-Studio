@@ -45,12 +45,6 @@
     <attributes name="Elasticitycontroller.maximumLimit" mutable="true">
       <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
     </attributes>
-    <attributes name="Elasticitycontroller.coolDuration" mutable="true">
-      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
-    </attributes>
-    <attributes name="ElasticityController.iterationWaitTime" mutable="true">
-      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
-    </attributes>
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
   </kinds>
   <kinds name="InstanceGroupLink" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" source="//@kinds[term='horizontalgroup']">
@@ -134,6 +128,9 @@
   <mixins name="StepDynamicScalingPolicy" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" depends="//@mixins[term='dynamicscalingpolicy']"/>
   <mixins name="ManualScalingPolicy" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" depends="//@mixins[term='scalingpolicy']">
     <attributes name="manualscalingpolicy.desiredSize" mutable="true" type="//@types.1"/>
+    <attributes name="manualscalingpolicy.computeUnit" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
   </mixins>
   <mixins name="Metric" scheme="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity#" applies="//@kinds[term='rule']">
     <attributes name="name" mutable="true">

@@ -33,8 +33,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ElasticitycontrollerImpl#getElasticitycontrollerMinimumLimit <em>Elasticitycontroller Minimum Limit</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ElasticitycontrollerImpl#getElasticitycontrollerMaximumLimit <em>Elasticitycontroller Maximum Limit</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ElasticitycontrollerImpl#getElasticitycontrollerCoolDuration <em>Elasticitycontroller Cool Duration</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.horizontalelasticity.impl.ElasticitycontrollerImpl#getElasticityControllerIterationWaitTime <em>Elasticity Controller Iteration Wait Time</em>}</li>
  * </ul>
  *
  * @generated
@@ -79,46 +77,6 @@ public class ElasticitycontrollerImpl extends ResourceImpl implements Elasticity
 	 * @ordered
 	 */
 	protected Integer elasticitycontrollerMaximumLimit = ELASTICITYCONTROLLER_MAXIMUM_LIMIT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getElasticitycontrollerCoolDuration() <em>Elasticitycontroller Cool Duration</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getElasticitycontrollerCoolDuration()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Integer ELASTICITYCONTROLLER_COOL_DURATION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getElasticitycontrollerCoolDuration() <em>Elasticitycontroller Cool Duration</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getElasticitycontrollerCoolDuration()
-	 * @generated
-	 * @ordered
-	 */
-	protected Integer elasticitycontrollerCoolDuration = ELASTICITYCONTROLLER_COOL_DURATION_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getElasticityControllerIterationWaitTime() <em>Elasticity Controller Iteration Wait Time</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getElasticityControllerIterationWaitTime()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Integer ELASTICITY_CONTROLLER_ITERATION_WAIT_TIME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getElasticityControllerIterationWaitTime() <em>Elasticity Controller Iteration Wait Time</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getElasticityControllerIterationWaitTime()
-	 * @generated
-	 * @ordered
-	 */
-	protected Integer elasticityControllerIterationWaitTime = ELASTICITY_CONTROLLER_ITERATION_WAIT_TIME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -186,48 +144,6 @@ public class ElasticitycontrollerImpl extends ResourceImpl implements Elasticity
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Integer getElasticitycontrollerCoolDuration() {
-		return elasticitycontrollerCoolDuration;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setElasticitycontrollerCoolDuration(Integer newElasticitycontrollerCoolDuration) {
-		Integer oldElasticitycontrollerCoolDuration = elasticitycontrollerCoolDuration;
-		elasticitycontrollerCoolDuration = newElasticitycontrollerCoolDuration;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.ELASTICITYCONTROLLER__ELASTICITYCONTROLLER_COOL_DURATION, oldElasticitycontrollerCoolDuration, elasticitycontrollerCoolDuration));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Integer getElasticityControllerIterationWaitTime() {
-		return elasticityControllerIterationWaitTime;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setElasticityControllerIterationWaitTime(Integer newElasticityControllerIterationWaitTime) {
-		Integer oldElasticityControllerIterationWaitTime = elasticityControllerIterationWaitTime;
-		elasticityControllerIterationWaitTime = newElasticityControllerIterationWaitTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HorizontalelasticityPackage.ELASTICITYCONTROLLER__ELASTICITY_CONTROLLER_ITERATION_WAIT_TIME, oldElasticityControllerIterationWaitTime, elasticityControllerIterationWaitTime));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -235,10 +151,6 @@ public class ElasticitycontrollerImpl extends ResourceImpl implements Elasticity
 				return getElasticitycontrollerMinimumLimit();
 			case HorizontalelasticityPackage.ELASTICITYCONTROLLER__ELASTICITYCONTROLLER_MAXIMUM_LIMIT:
 				return getElasticitycontrollerMaximumLimit();
-			case HorizontalelasticityPackage.ELASTICITYCONTROLLER__ELASTICITYCONTROLLER_COOL_DURATION:
-				return getElasticitycontrollerCoolDuration();
-			case HorizontalelasticityPackage.ELASTICITYCONTROLLER__ELASTICITY_CONTROLLER_ITERATION_WAIT_TIME:
-				return getElasticityControllerIterationWaitTime();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -256,12 +168,6 @@ public class ElasticitycontrollerImpl extends ResourceImpl implements Elasticity
 				return;
 			case HorizontalelasticityPackage.ELASTICITYCONTROLLER__ELASTICITYCONTROLLER_MAXIMUM_LIMIT:
 				setElasticitycontrollerMaximumLimit((Integer)newValue);
-				return;
-			case HorizontalelasticityPackage.ELASTICITYCONTROLLER__ELASTICITYCONTROLLER_COOL_DURATION:
-				setElasticitycontrollerCoolDuration((Integer)newValue);
-				return;
-			case HorizontalelasticityPackage.ELASTICITYCONTROLLER__ELASTICITY_CONTROLLER_ITERATION_WAIT_TIME:
-				setElasticityControllerIterationWaitTime((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -281,12 +187,6 @@ public class ElasticitycontrollerImpl extends ResourceImpl implements Elasticity
 			case HorizontalelasticityPackage.ELASTICITYCONTROLLER__ELASTICITYCONTROLLER_MAXIMUM_LIMIT:
 				setElasticitycontrollerMaximumLimit(ELASTICITYCONTROLLER_MAXIMUM_LIMIT_EDEFAULT);
 				return;
-			case HorizontalelasticityPackage.ELASTICITYCONTROLLER__ELASTICITYCONTROLLER_COOL_DURATION:
-				setElasticitycontrollerCoolDuration(ELASTICITYCONTROLLER_COOL_DURATION_EDEFAULT);
-				return;
-			case HorizontalelasticityPackage.ELASTICITYCONTROLLER__ELASTICITY_CONTROLLER_ITERATION_WAIT_TIME:
-				setElasticityControllerIterationWaitTime(ELASTICITY_CONTROLLER_ITERATION_WAIT_TIME_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -303,10 +203,6 @@ public class ElasticitycontrollerImpl extends ResourceImpl implements Elasticity
 				return ELASTICITYCONTROLLER_MINIMUM_LIMIT_EDEFAULT == null ? elasticitycontrollerMinimumLimit != null : !ELASTICITYCONTROLLER_MINIMUM_LIMIT_EDEFAULT.equals(elasticitycontrollerMinimumLimit);
 			case HorizontalelasticityPackage.ELASTICITYCONTROLLER__ELASTICITYCONTROLLER_MAXIMUM_LIMIT:
 				return ELASTICITYCONTROLLER_MAXIMUM_LIMIT_EDEFAULT == null ? elasticitycontrollerMaximumLimit != null : !ELASTICITYCONTROLLER_MAXIMUM_LIMIT_EDEFAULT.equals(elasticitycontrollerMaximumLimit);
-			case HorizontalelasticityPackage.ELASTICITYCONTROLLER__ELASTICITYCONTROLLER_COOL_DURATION:
-				return ELASTICITYCONTROLLER_COOL_DURATION_EDEFAULT == null ? elasticitycontrollerCoolDuration != null : !ELASTICITYCONTROLLER_COOL_DURATION_EDEFAULT.equals(elasticitycontrollerCoolDuration);
-			case HorizontalelasticityPackage.ELASTICITYCONTROLLER__ELASTICITY_CONTROLLER_ITERATION_WAIT_TIME:
-				return ELASTICITY_CONTROLLER_ITERATION_WAIT_TIME_EDEFAULT == null ? elasticityControllerIterationWaitTime != null : !ELASTICITY_CONTROLLER_ITERATION_WAIT_TIME_EDEFAULT.equals(elasticityControllerIterationWaitTime);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -325,10 +221,6 @@ public class ElasticitycontrollerImpl extends ResourceImpl implements Elasticity
 		result.append(elasticitycontrollerMinimumLimit);
 		result.append(", ElasticitycontrollerMaximumLimit: ");
 		result.append(elasticitycontrollerMaximumLimit);
-		result.append(", ElasticitycontrollerCoolDuration: ");
-		result.append(elasticitycontrollerCoolDuration);
-		result.append(", ElasticityControllerIterationWaitTime: ");
-		result.append(elasticityControllerIterationWaitTime);
 		result.append(')');
 		return result.toString();
 	}

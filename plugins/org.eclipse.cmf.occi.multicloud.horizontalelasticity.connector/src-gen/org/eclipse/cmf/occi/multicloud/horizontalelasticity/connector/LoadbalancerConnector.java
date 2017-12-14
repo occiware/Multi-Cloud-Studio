@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Fri Dec 08 17:51:34 CET 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Mon Dec 11 12:24:18 CET 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.horizontalelasticity/model/horizontalelasticity.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
@@ -108,6 +108,74 @@ public class LoadbalancerConnector extends org.eclipse.cmf.occi.multicloud.horiz
 	// Loadbalancer actions.
 	//
 
+	// Start of user code Loadbalancer_Kind_RemoveBackendServer_action
+	/**
+	 * Implement OCCI action:
+     * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/loadbalancer/action#
+     * - term: removebackendserver
+     * - title: 
+	 */
+	@Override
+	public void removebackendserver()
+	{
+		LOGGER.debug("Action removebackendserver() called on " + this);
+
+		// TODO: Implement how to removebackendserver this loadbalancer.
+		JSch jsch = new JSch();
+	    Session session = null;
+	    String privateKeyPath = "/Users/spirals/.ssh/id_rsa";
+	    try {
+	        jsch.addIdentity(privateKeyPath);        
+	        session = jsch.getSession("root", getLoadbalancerAddress(), 22);
+	        session.setConfig("PreferredAuthentications", "publickey,keyboard-interactive,password");
+	        java.util.Properties config = new java.util.Properties(); 
+	        config.put("StrictHostKeyChecking", "no");
+	        session.setConfig(config);
+	    } catch (JSchException e) {
+	        throw new RuntimeException("Failed to create Jsch Session object.", e);
+	    }
+	    Path path = Paths.get("/etc/haproxy/haproxy.cfg");
+	    String cmd1 = "sed -i " + File.separator + getLoadbalancerInstanceIP() + File.separator + "d " + path; 
+	    String cmd2 = " service haproxy reload";
+	    System.out.println(cmd1);
+	    try {
+			session.connect();
+		} catch (JSchException e) {
+			e.printStackTrace();
+		}
+	    System.out.println("session connected.....");
+	    
+	    Channel channel;
+	    Channel channel2;
+		try {
+			channel = session.openChannel("exec");
+			((ChannelExec) channel).setCommand(cmd1);
+			((ChannelExec) channel).setPty(false);
+			channel.connect();
+			channel.disconnect();
+			
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			
+			channel2 = session.openChannel("exec");
+			((ChannelExec) channel2).setCommand(cmd2);
+			((ChannelExec) channel2).setPty(false);
+			channel2.connect();
+			channel2.disconnect();
+		} catch (JSchException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	    session.disconnect();
+	    System.out.println("session disconnected.....");
+
+	}
+		// End of user code
 	// Start of user code Loadbalancer_Kind_addBackendServer_action
 	/**
 	 * Implement OCCI action:
@@ -181,74 +249,6 @@ public class LoadbalancerConnector extends org.eclipse.cmf.occi.multicloud.horiz
 	    session.disconnect();
 	    System.out.println("session disconnected.....");
 		
-	}
-		// End of user code
-	// Start of user code Loadbalancer_Kind_RemoveBackendServer_action
-	/**
-	 * Implement OCCI action:
-     * - scheme: http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/loadbalancer/action#
-     * - term: removebackendserver
-     * - title: 
-	 */
-	@Override
-	public void removebackendserver()
-	{
-		LOGGER.debug("Action removebackendserver() called on " + this);
-
-		// TODO: Implement how to removebackendserver this loadbalancer.
-		JSch jsch = new JSch();
-	    Session session = null;
-	    String privateKeyPath = "/Users/spirals/.ssh/id_rsa";
-	    try {
-	        jsch.addIdentity(privateKeyPath);        
-	        session = jsch.getSession("root", getLoadbalancerAddress(), 22);
-	        session.setConfig("PreferredAuthentications", "publickey,keyboard-interactive,password");
-	        java.util.Properties config = new java.util.Properties(); 
-	        config.put("StrictHostKeyChecking", "no");
-	        session.setConfig(config);
-	    } catch (JSchException e) {
-	        throw new RuntimeException("Failed to create Jsch Session object.", e);
-	    }
-	    Path path = Paths.get("/etc/haproxy/haproxy.cfg");
-	    String cmd1 = "sed -i " + File.separator + getLoadbalancerInstanceIP() + File.separator + "d " + path; 
-	    String cmd2 = " service haproxy reload";
-	    System.out.println(cmd1);
-	    try {
-			session.connect();
-		} catch (JSchException e) {
-			e.printStackTrace();
-		}
-	    System.out.println("session connected.....");
-	    
-	    Channel channel;
-	    Channel channel2;
-		try {
-			channel = session.openChannel("exec");
-			((ChannelExec) channel).setCommand(cmd1);
-			((ChannelExec) channel).setPty(false);
-			channel.connect();
-			channel.disconnect();
-			
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-			
-			channel2 = session.openChannel("exec");
-			((ChannelExec) channel2).setCommand(cmd2);
-			((ChannelExec) channel2).setPty(false);
-			channel2.connect();
-			channel2.disconnect();
-		} catch (JSchException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-	    session.disconnect();
-	    System.out.println("session disconnected.....");
-
 	}
 		// End of user code
 		

@@ -535,10 +535,8 @@ public class HorizontalelasticityTables
 		public static final /*@NonNull*/ ExecutorProperty _Dynamicscalingpolicy__dynamicscalingpolicyCoolDuration = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.DYNAMICSCALINGPOLICY__DYNAMICSCALINGPOLICY_COOL_DURATION, Types._Dynamicscalingpolicy, 0);
 		public static final /*@NonNull*/ ExecutorProperty _Dynamicscalingpolicy__dynamicscalingpolicyIterationWaitTime = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.DYNAMICSCALINGPOLICY__DYNAMICSCALINGPOLICY_ITERATION_WAIT_TIME, Types._Dynamicscalingpolicy, 1);
 
-		public static final /*@NonNull*/ ExecutorProperty _Elasticitycontroller__ElasticityControllerIterationWaitTime = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.ELASTICITYCONTROLLER__ELASTICITY_CONTROLLER_ITERATION_WAIT_TIME, Types._Elasticitycontroller, 0);
-		public static final /*@NonNull*/ ExecutorProperty _Elasticitycontroller__ElasticitycontrollerCoolDuration = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.ELASTICITYCONTROLLER__ELASTICITYCONTROLLER_COOL_DURATION, Types._Elasticitycontroller, 1);
-		public static final /*@NonNull*/ ExecutorProperty _Elasticitycontroller__ElasticitycontrollerMaximumLimit = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.ELASTICITYCONTROLLER__ELASTICITYCONTROLLER_MAXIMUM_LIMIT, Types._Elasticitycontroller, 2);
-		public static final /*@NonNull*/ ExecutorProperty _Elasticitycontroller__ElasticitycontrollerMinimumLimit = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.ELASTICITYCONTROLLER__ELASTICITYCONTROLLER_MINIMUM_LIMIT, Types._Elasticitycontroller, 3);
+		public static final /*@NonNull*/ ExecutorProperty _Elasticitycontroller__ElasticitycontrollerMaximumLimit = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.ELASTICITYCONTROLLER__ELASTICITYCONTROLLER_MAXIMUM_LIMIT, Types._Elasticitycontroller, 0);
+		public static final /*@NonNull*/ ExecutorProperty _Elasticitycontroller__ElasticitycontrollerMinimumLimit = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.ELASTICITYCONTROLLER__ELASTICITYCONTROLLER_MINIMUM_LIMIT, Types._Elasticitycontroller, 1);
 
 		public static final /*@NonNull*/ ExecutorProperty _Horizontalgroup__horizontalgroupGroupSize = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.HORIZONTALGROUP__HORIZONTALGROUP_GROUP_SIZE, Types._Horizontalgroup, 0);
 		public static final /*@NonNull*/ ExecutorProperty _Horizontalgroup__horizontalgroupLoadBalancer = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.HORIZONTALGROUP__HORIZONTALGROUP_LOAD_BALANCER, Types._Horizontalgroup, 1);
@@ -551,7 +549,8 @@ public class HorizontalelasticityTables
 		public static final /*@NonNull*/ ExecutorProperty _Loadbalancer__loadbalancerInstanceIP = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.LOADBALANCER__LOADBALANCER_INSTANCE_IP, Types._Loadbalancer, 1);
 		public static final /*@NonNull*/ ExecutorProperty _Loadbalancer__loadbalancerName = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.LOADBALANCER__LOADBALANCER_NAME, Types._Loadbalancer, 2);
 
-		public static final /*@NonNull*/ ExecutorProperty _Manualscalingpolicy__manualscalingpolicyDesiredSize = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.MANUALSCALINGPOLICY__MANUALSCALINGPOLICY_DESIRED_SIZE, Types._Manualscalingpolicy, 0);
+		public static final /*@NonNull*/ ExecutorProperty _Manualscalingpolicy__manualscalingpolicyComputeUnit = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.MANUALSCALINGPOLICY__MANUALSCALINGPOLICY_COMPUTE_UNIT, Types._Manualscalingpolicy, 0);
+		public static final /*@NonNull*/ ExecutorProperty _Manualscalingpolicy__manualscalingpolicyDesiredSize = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.MANUALSCALINGPOLICY__MANUALSCALINGPOLICY_DESIRED_SIZE, Types._Manualscalingpolicy, 1);
 
 		public static final /*@NonNull*/ ExecutorProperty _Metric__name = new EcoreExecutorProperty(HorizontalelasticityPackage.Literals.METRIC__NAME, Types._Metric, 0);
 
@@ -2404,8 +2403,6 @@ public class HorizontalelasticityTables
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Elasticitycontroller = {
-			HorizontalelasticityTables.Properties._Elasticitycontroller__ElasticityControllerIterationWaitTime,
-			HorizontalelasticityTables.Properties._Elasticitycontroller__ElasticitycontrollerCoolDuration,
 			HorizontalelasticityTables.Properties._Elasticitycontroller__ElasticitycontrollerMaximumLimit,
 			HorizontalelasticityTables.Properties._Elasticitycontroller__ElasticitycontrollerMinimumLimit
 		};
@@ -2434,6 +2431,7 @@ public class HorizontalelasticityTables
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Loadbalancerlink = {};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Manualscalingpolicy = {
+			HorizontalelasticityTables.Properties._Manualscalingpolicy__manualscalingpolicyComputeUnit,
 			HorizontalelasticityTables.Properties._Manualscalingpolicy__manualscalingpolicyDesiredSize
 		};
 

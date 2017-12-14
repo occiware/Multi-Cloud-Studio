@@ -58,36 +58,10 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Systemoutpublisher</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * The following features are implemented:
- * </p>
- * <ul>
- *   <li>{@link cloudmonitoring.impl.SystemoutpublisherImpl#getPublisherState <em>Publisher State</em>}</li>
- * </ul>
  *
  * @generated
  */
-public class SystemoutpublisherImpl extends MixinBaseImpl implements Systemoutpublisher {
-	/**
-	 * The default value of the '{@link #getPublisherState() <em>Publisher State</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPublisherState()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final MonitorState PUBLISHER_STATE_EDEFAULT = MonitorState.ON;
-
-	/**
-	 * The cached value of the '{@link #getPublisherState() <em>Publisher State</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPublisherState()
-	 * @generated
-	 * @ordered
-	 */
-	protected MonitorState publisherState = PUBLISHER_STATE_EDEFAULT;
-
+public class SystemoutpublisherImpl extends PublishercontrolImpl implements Systemoutpublisher {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -105,27 +79,6 @@ public class SystemoutpublisherImpl extends MixinBaseImpl implements Systemoutpu
 	@Override
 	protected EClass eStaticClass() {
 		return CloudmonitoringPackage.Literals.SYSTEMOUTPUBLISHER;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MonitorState getPublisherState() {
-		return publisherState;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPublisherState(MonitorState newPublisherState) {
-		MonitorState oldPublisherState = publisherState;
-		publisherState = newPublisherState == null ? PUBLISHER_STATE_EDEFAULT : newPublisherState;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CloudmonitoringPackage.SYSTEMOUTPUBLISHER__PUBLISHER_STATE, oldPublisherState, publisherState));
 	}
 
 	/**
@@ -182,137 +135,12 @@ public class SystemoutpublisherImpl extends MixinBaseImpl implements Systemoutpu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void enable() {
-		throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/monitoring/ecore!Publishercontrol!enable()
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void disable() {
-		throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/monitoring/ecore!Publishercontrol!disable()
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case CloudmonitoringPackage.SYSTEMOUTPUBLISHER__PUBLISHER_STATE:
-				return getPublisherState();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case CloudmonitoringPackage.SYSTEMOUTPUBLISHER__PUBLISHER_STATE:
-				setPublisherState((MonitorState)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case CloudmonitoringPackage.SYSTEMOUTPUBLISHER__PUBLISHER_STATE:
-				setPublisherState(PUBLISHER_STATE_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case CloudmonitoringPackage.SYSTEMOUTPUBLISHER__PUBLISHER_STATE:
-				return publisherState != PUBLISHER_STATE_EDEFAULT;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == Publisher.class) {
-			switch (derivedFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == Publishercontrol.class) {
-			switch (derivedFeatureID) {
-				case CloudmonitoringPackage.SYSTEMOUTPUBLISHER__PUBLISHER_STATE: return CloudmonitoringPackage.PUBLISHERCONTROL__PUBLISHER_STATE;
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == Publisher.class) {
-			switch (baseFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == Publishercontrol.class) {
-			switch (baseFeatureID) {
-				case CloudmonitoringPackage.PUBLISHERCONTROL__PUBLISHER_STATE: return CloudmonitoringPackage.SYSTEMOUTPUBLISHER__PUBLISHER_STATE;
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
-		if (baseClass == Publisher.class) {
-			switch (baseOperationID) {
-				default: return -1;
-			}
-		}
 		if (baseClass == Publishercontrol.class) {
 			switch (baseOperationID) {
-				case CloudmonitoringPackage.PUBLISHERCONTROL___ENABLE: return CloudmonitoringPackage.SYSTEMOUTPUBLISHER___ENABLE;
-				case CloudmonitoringPackage.PUBLISHERCONTROL___DISABLE: return CloudmonitoringPackage.SYSTEMOUTPUBLISHER___DISABLE;
 				case CloudmonitoringPackage.PUBLISHERCONTROL___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP: return CloudmonitoringPackage.SYSTEMOUTPUBLISHER___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP;
-				default: return -1;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
 			}
 		}
 		return super.eDerivedOperationID(baseOperationID, baseClass);
@@ -329,30 +157,8 @@ public class SystemoutpublisherImpl extends MixinBaseImpl implements Systemoutpu
 		switch (operationID) {
 			case CloudmonitoringPackage.SYSTEMOUTPUBLISHER___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP:
 				return appliesConstraint((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case CloudmonitoringPackage.SYSTEMOUTPUBLISHER___ENABLE:
-				enable();
-				return null;
-			case CloudmonitoringPackage.SYSTEMOUTPUBLISHER___DISABLE:
-				disable();
-				return null;
 		}
 		return super.eInvoke(operationID, arguments);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (publisherState: ");
-		result.append(publisherState);
-		result.append(')');
-		return result.toString();
 	}
 
 } //SystemoutpublisherImpl

@@ -15,6 +15,7 @@ package org.eclipse.cmf.occi.multicloud.monitoring.zabbix.provider;
 
 import cloudmonitoring.CloudmonitoringPackage;
 
+import cloudmonitoring.provider.SupervisorapiconnectItemProvider;
 import java.util.Collection;
 import java.util.List;
 
@@ -39,7 +40,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ZabbixapiconnectItemProvider extends MixinBaseItemProvider {
+public class ZabbixapiconnectItemProvider extends SupervisorapiconnectItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -61,80 +62,11 @@ public class ZabbixapiconnectItemProvider extends MixinBaseItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addUsernamePropertyDescriptor(object);
-			addPasswordPropertyDescriptor(object);
-			addHttpApiAddressPropertyDescriptor(object);
 			addTemplateNamePropertyDescriptor(object);
 			addHostGroupNamePropertyDescriptor(object);
 			addPortPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Username feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUsernamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Supervisorapiconnect_username_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Supervisorapiconnect_username_feature", "_UI_Supervisorapiconnect_type"),
-				 CloudmonitoringPackage.Literals.SUPERVISORAPICONNECT__USERNAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Password feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPasswordPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Supervisorapiconnect_password_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Supervisorapiconnect_password_feature", "_UI_Supervisorapiconnect_type"),
-				 CloudmonitoringPackage.Literals.SUPERVISORAPICONNECT__PASSWORD,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Http Api Address feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHttpApiAddressPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Supervisorapiconnect_httpApiAddress_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Supervisorapiconnect_httpApiAddress_feature", "_UI_Supervisorapiconnect_type"),
-				 CloudmonitoringPackage.Literals.SUPERVISORAPICONNECT__HTTP_API_ADDRESS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -241,9 +173,6 @@ public class ZabbixapiconnectItemProvider extends MixinBaseItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Zabbixapiconnect.class)) {
-			case ZabbixPackage.ZABBIXAPICONNECT__USERNAME:
-			case ZabbixPackage.ZABBIXAPICONNECT__PASSWORD:
-			case ZabbixPackage.ZABBIXAPICONNECT__HTTP_API_ADDRESS:
 			case ZabbixPackage.ZABBIXAPICONNECT__TEMPLATE_NAME:
 			case ZabbixPackage.ZABBIXAPICONNECT__HOST_GROUP_NAME:
 			case ZabbixPackage.ZABBIXAPICONNECT__PORT:

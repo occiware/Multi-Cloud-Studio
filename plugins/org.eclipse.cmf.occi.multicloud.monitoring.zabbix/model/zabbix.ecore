@@ -7,12 +7,17 @@
     <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
     <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
   </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/OCL/Import">
+    <details key="occi" value="http://schemas.ogf.org/occi/core/ecore"/>
+    <details key="monitoring" value="http://schemas.ogf.org/occi/monitoring/ecore"/>
+    <details key="cloudmonitoring" value="http://occiware.org/occi/multicloud/monitoring/ecore"/>
+  </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Zabbixcollector" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.monitoring/model/monitoring.ecore#//Collector">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value=""/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Zabbixapiconnect" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase platform:/resource/org.eclipse.cmf.occi.multicloud.monitoring/model/cloudmonitoring.ecore#//Supervisorapiconnect">
+  <eClassifiers xsi:type="ecore:EClass" name="Zabbixapiconnect" eSuperTypes="platform:/resource/org.eclipse.cmf.occi.multicloud.monitoring/model/cloudmonitoring.ecore#//Supervisorapiconnect platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="appliesConstraint"/>
     </eAnnotations>

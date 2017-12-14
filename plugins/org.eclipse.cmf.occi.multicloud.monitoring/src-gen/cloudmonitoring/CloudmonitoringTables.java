@@ -714,8 +714,12 @@ public class CloudmonitoringTables
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cloudsensor__Cloudsensor = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cloudsensor__Entity = {
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
+			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
+			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
+			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
+			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */,
 			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cloudsensor__OclAny = {

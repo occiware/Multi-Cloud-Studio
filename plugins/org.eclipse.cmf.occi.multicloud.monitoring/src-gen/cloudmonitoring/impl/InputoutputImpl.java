@@ -25,6 +25,7 @@ import org.eclipse.cmf.occi.core.Entity;
 
 import org.eclipse.cmf.occi.core.impl.MixinBaseImpl;
 
+import org.eclipse.cmf.occi.monitoring.impl.MetricImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
@@ -64,7 +65,7 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  *
  * @generated
  */
-public class InputoutputImpl extends MixinBaseImpl implements Inputoutput {
+public class InputoutputImpl extends MetricImpl implements Inputoutput {
 	/**
 	 * The default value of the '{@link #getUnit() <em>Unit</em>}' attribute.
 	 * <!-- begin-user-doc -->

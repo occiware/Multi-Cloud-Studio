@@ -36,7 +36,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='appliesConstraint'"
  * @generated
  */
-public interface Ram extends MixinBase, Mainmetric {
+public interface Ram extends Mainmetric, MixinBase {
 	/**
 	 * Returns the value of the '<em><b>Free</b></em>' attribute.
 	 * <!-- begin-user-doc -->

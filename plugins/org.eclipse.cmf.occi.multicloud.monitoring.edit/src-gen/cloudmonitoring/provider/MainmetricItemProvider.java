@@ -21,6 +21,7 @@ import java.util.List;
 
 import org.eclipse.cmf.occi.core.provider.MixinBaseItemProvider;
 
+import org.eclipse.cmf.occi.monitoring.provider.MetricItemProvider;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -37,7 +38,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class MainmetricItemProvider extends MixinBaseItemProvider {
+public class MainmetricItemProvider extends MetricItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

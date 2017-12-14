@@ -38,7 +38,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class NetworkioItemProvider extends MixinBaseItemProvider {
+public class NetworkioItemProvider extends InputoutputItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -60,33 +60,10 @@ public class NetworkioItemProvider extends MixinBaseItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addUnitPropertyDescriptor(object);
 			addNetworkInPropertyDescriptor(object);
 			addNetworkOutPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Unit feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUnitPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Inputoutput_unit_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Inputoutput_unit_feature", "_UI_Inputoutput_type"),
-				 CloudmonitoringPackage.Literals.INPUTOUTPUT__UNIT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -172,7 +149,6 @@ public class NetworkioItemProvider extends MixinBaseItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Networkio.class)) {
-			case CloudmonitoringPackage.NETWORKIO__UNIT:
 			case CloudmonitoringPackage.NETWORKIO__NETWORK_IN:
 			case CloudmonitoringPackage.NETWORKIO__NETWORK_OUT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
@@ -191,17 +167,6 @@ public class NetworkioItemProvider extends MixinBaseItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return CloudmonitoringEditPlugin.INSTANCE;
 	}
 
 }

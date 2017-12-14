@@ -62,7 +62,6 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link cloudmonitoring.impl.MailpublisherImpl#getPublisherState <em>Publisher State</em>}</li>
  *   <li>{@link cloudmonitoring.impl.MailpublisherImpl#getMailAddress <em>Mail Address</em>}</li>
  *   <li>{@link cloudmonitoring.impl.MailpublisherImpl#isPostOnCpuAlert <em>Post On Cpu Alert</em>}</li>
  *   <li>{@link cloudmonitoring.impl.MailpublisherImpl#isPostOnRamAlert <em>Post On Ram Alert</em>}</li>
@@ -73,27 +72,7 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  *
  * @generated
  */
-public class MailpublisherImpl extends MixinBaseImpl implements Mailpublisher {
-	/**
-	 * The default value of the '{@link #getPublisherState() <em>Publisher State</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPublisherState()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final MonitorState PUBLISHER_STATE_EDEFAULT = MonitorState.ON;
-
-	/**
-	 * The cached value of the '{@link #getPublisherState() <em>Publisher State</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPublisherState()
-	 * @generated
-	 * @ordered
-	 */
-	protected MonitorState publisherState = PUBLISHER_STATE_EDEFAULT;
-
+public class MailpublisherImpl extends PublishercontrolImpl implements Mailpublisher {
 	/**
 	 * The default value of the '{@link #getMailAddress() <em>Mail Address</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -231,27 +210,6 @@ public class MailpublisherImpl extends MixinBaseImpl implements Mailpublisher {
 	@Override
 	protected EClass eStaticClass() {
 		return CloudmonitoringPackage.Literals.MAILPUBLISHER;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MonitorState getPublisherState() {
-		return publisherState;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPublisherState(MonitorState newPublisherState) {
-		MonitorState oldPublisherState = publisherState;
-		publisherState = newPublisherState == null ? PUBLISHER_STATE_EDEFAULT : newPublisherState;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CloudmonitoringPackage.MAILPUBLISHER__PUBLISHER_STATE, oldPublisherState, publisherState));
 	}
 
 	/**
@@ -433,29 +391,9 @@ public class MailpublisherImpl extends MixinBaseImpl implements Mailpublisher {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void enable() {
-		throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/monitoring/ecore!Publishercontrol!enable()
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void disable() {
-		throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/multicloud/monitoring/ecore!Publishercontrol!disable()
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CloudmonitoringPackage.MAILPUBLISHER__PUBLISHER_STATE:
-				return getPublisherState();
 			case CloudmonitoringPackage.MAILPUBLISHER__MAIL_ADDRESS:
 				return getMailAddress();
 			case CloudmonitoringPackage.MAILPUBLISHER__POST_ON_CPU_ALERT:
@@ -480,9 +418,6 @@ public class MailpublisherImpl extends MixinBaseImpl implements Mailpublisher {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CloudmonitoringPackage.MAILPUBLISHER__PUBLISHER_STATE:
-				setPublisherState((MonitorState)newValue);
-				return;
 			case CloudmonitoringPackage.MAILPUBLISHER__MAIL_ADDRESS:
 				setMailAddress((String)newValue);
 				return;
@@ -513,9 +448,6 @@ public class MailpublisherImpl extends MixinBaseImpl implements Mailpublisher {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CloudmonitoringPackage.MAILPUBLISHER__PUBLISHER_STATE:
-				setPublisherState(PUBLISHER_STATE_EDEFAULT);
-				return;
 			case CloudmonitoringPackage.MAILPUBLISHER__MAIL_ADDRESS:
 				setMailAddress(MAIL_ADDRESS_EDEFAULT);
 				return;
@@ -546,8 +478,6 @@ public class MailpublisherImpl extends MixinBaseImpl implements Mailpublisher {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CloudmonitoringPackage.MAILPUBLISHER__PUBLISHER_STATE:
-				return publisherState != PUBLISHER_STATE_EDEFAULT;
 			case CloudmonitoringPackage.MAILPUBLISHER__MAIL_ADDRESS:
 				return MAIL_ADDRESS_EDEFAULT == null ? mailAddress != null : !MAIL_ADDRESS_EDEFAULT.equals(mailAddress);
 			case CloudmonitoringPackage.MAILPUBLISHER__POST_ON_CPU_ALERT:
@@ -570,60 +500,11 @@ public class MailpublisherImpl extends MixinBaseImpl implements Mailpublisher {
 	 * @generated
 	 */
 	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == Publisher.class) {
-			switch (derivedFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == Publishercontrol.class) {
-			switch (derivedFeatureID) {
-				case CloudmonitoringPackage.MAILPUBLISHER__PUBLISHER_STATE: return CloudmonitoringPackage.PUBLISHERCONTROL__PUBLISHER_STATE;
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == Publisher.class) {
-			switch (baseFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == Publishercontrol.class) {
-			switch (baseFeatureID) {
-				case CloudmonitoringPackage.PUBLISHERCONTROL__PUBLISHER_STATE: return CloudmonitoringPackage.MAILPUBLISHER__PUBLISHER_STATE;
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
-		if (baseClass == Publisher.class) {
-			switch (baseOperationID) {
-				default: return -1;
-			}
-		}
 		if (baseClass == Publishercontrol.class) {
 			switch (baseOperationID) {
-				case CloudmonitoringPackage.PUBLISHERCONTROL___ENABLE: return CloudmonitoringPackage.MAILPUBLISHER___ENABLE;
-				case CloudmonitoringPackage.PUBLISHERCONTROL___DISABLE: return CloudmonitoringPackage.MAILPUBLISHER___DISABLE;
 				case CloudmonitoringPackage.PUBLISHERCONTROL___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP: return CloudmonitoringPackage.MAILPUBLISHER___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP;
-				default: return -1;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
 			}
 		}
 		return super.eDerivedOperationID(baseOperationID, baseClass);
@@ -640,12 +521,6 @@ public class MailpublisherImpl extends MixinBaseImpl implements Mailpublisher {
 		switch (operationID) {
 			case CloudmonitoringPackage.MAILPUBLISHER___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP:
 				return appliesConstraint((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case CloudmonitoringPackage.MAILPUBLISHER___ENABLE:
-				enable();
-				return null;
-			case CloudmonitoringPackage.MAILPUBLISHER___DISABLE:
-				disable();
-				return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -660,9 +535,7 @@ public class MailpublisherImpl extends MixinBaseImpl implements Mailpublisher {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (publisherState: ");
-		result.append(publisherState);
-		result.append(", mailAddress: ");
+		result.append(" (mailAddress: ");
 		result.append(mailAddress);
 		result.append(", postOnCpuAlert: ");
 		result.append(postOnCpuAlert);

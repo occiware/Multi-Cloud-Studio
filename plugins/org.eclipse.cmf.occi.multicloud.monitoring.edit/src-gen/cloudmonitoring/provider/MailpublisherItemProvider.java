@@ -38,7 +38,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class MailpublisherItemProvider extends MixinBaseItemProvider {
+public class MailpublisherItemProvider extends PublishercontrolItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -60,7 +60,6 @@ public class MailpublisherItemProvider extends MixinBaseItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addPublisherStatePropertyDescriptor(object);
 			addMailAddressPropertyDescriptor(object);
 			addPostOnCpuAlertPropertyDescriptor(object);
 			addPostOnRamAlertPropertyDescriptor(object);
@@ -69,28 +68,6 @@ public class MailpublisherItemProvider extends MixinBaseItemProvider {
 			addNbEmailPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Publisher State feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPublisherStatePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Publishercontrol_publisherState_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Publishercontrol_publisherState_feature", "_UI_Publishercontrol_type"),
-				 CloudmonitoringPackage.Literals.PUBLISHERCONTROL__PUBLISHER_STATE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -264,7 +241,6 @@ public class MailpublisherItemProvider extends MixinBaseItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Mailpublisher.class)) {
-			case CloudmonitoringPackage.MAILPUBLISHER__PUBLISHER_STATE:
 			case CloudmonitoringPackage.MAILPUBLISHER__MAIL_ADDRESS:
 			case CloudmonitoringPackage.MAILPUBLISHER__POST_ON_CPU_ALERT:
 			case CloudmonitoringPackage.MAILPUBLISHER__POST_ON_RAM_ALERT:
@@ -287,17 +263,6 @@ public class MailpublisherItemProvider extends MixinBaseItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return CloudmonitoringEditPlugin.INSTANCE;
 	}
 
 }

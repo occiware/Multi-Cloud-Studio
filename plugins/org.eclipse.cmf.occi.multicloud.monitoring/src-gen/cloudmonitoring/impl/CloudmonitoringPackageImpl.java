@@ -999,29 +999,29 @@ public class CloudmonitoringPackageImpl extends EPackageImpl implements Cloudmon
 
 		// Add supertypes to classes
 		cloudsensorEClass.getESuperTypes().add(theMonitoringPackage.getSensor());
-		cpuEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		cpuEClass.getESuperTypes().add(this.getMainmetric());
-		diskioEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		cpuEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		diskioEClass.getESuperTypes().add(this.getInputoutput());
-		ramEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		diskioEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		ramEClass.getESuperTypes().add(this.getMainmetric());
-		networkioEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		ramEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		networkioEClass.getESuperTypes().add(this.getInputoutput());
-		inputoutputEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		networkioEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		inputoutputEClass.getESuperTypes().add(theMonitoringPackage.getMetric());
+		inputoutputEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		sensorcontrolEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
-		emfpublisherEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		emfpublisherEClass.getESuperTypes().add(this.getPublishercontrol());
-		systemoutpublisherEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		emfpublisherEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		systemoutpublisherEClass.getESuperTypes().add(this.getPublishercontrol());
-		publishercontrolEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		systemoutpublisherEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		publishercontrolEClass.getESuperTypes().add(theMonitoringPackage.getPublisher());
-		diskEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		publishercontrolEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		diskEClass.getESuperTypes().add(this.getMainmetric());
-		mailpublisherEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		diskEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		mailpublisherEClass.getESuperTypes().add(this.getPublishercontrol());
-		mainmetricEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		mailpublisherEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		mainmetricEClass.getESuperTypes().add(theMonitoringPackage.getMetric());
+		mainmetricEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		supervisorapiconnectEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 
 		// Initialize classes, features, and operations; add parameters

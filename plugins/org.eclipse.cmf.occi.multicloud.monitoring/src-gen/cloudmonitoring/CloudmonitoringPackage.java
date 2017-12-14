@@ -291,105 +291,6 @@ public interface CloudmonitoringPackage extends EPackage {
 	int CPU = 1;
 
 	/**
-	 * The feature id for the '<em><b>Mixin</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CPU__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CPU__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CPU__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Threshold Usage</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CPU__THRESHOLD_USAGE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Temperature</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CPU__TEMPERATURE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Threshold Temperature</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CPU__THRESHOLD_TEMPERATURE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Load Avg</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CPU__LOAD_AVG = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Cpu Used</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CPU__CPU_USED = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 4;
-
-	/**
-	 * The number of structural features of the '<em>Cpu</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CPU_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 5;
-
-	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CPU___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Cpu</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CPU_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
-
-	/**
 	 * The meta object id for the '{@link cloudmonitoring.impl.DiskioImpl <em>Diskio</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -398,87 +299,6 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @generated
 	 */
 	int DISKIO = 2;
-
-	/**
-	 * The feature id for the '<em><b>Mixin</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISKIO__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISKIO__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISKIO__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Unit</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISKIO__UNIT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Disk Write</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISKIO__DISK_WRITE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Disk Read</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISKIO__DISK_READ = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Diskio</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISKIO_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISKIO___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Diskio</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISKIO_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link cloudmonitoring.impl.RamImpl <em>Ram</em>}' class.
@@ -491,114 +311,6 @@ public interface CloudmonitoringPackage extends EPackage {
 	int RAM = 3;
 
 	/**
-	 * The feature id for the '<em><b>Mixin</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RAM__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RAM__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RAM__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Threshold Usage</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RAM__THRESHOLD_USAGE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Temperature</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RAM__TEMPERATURE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Threshold Temperature</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RAM__THRESHOLD_TEMPERATURE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Free</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RAM__FREE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Swap</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RAM__SWAP = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Ram Used</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RAM__RAM_USED = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 5;
-
-	/**
-	 * The number of structural features of the '<em>Ram</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RAM_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 6;
-
-	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RAM___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Ram</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RAM_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
-
-	/**
 	 * The meta object id for the '{@link cloudmonitoring.impl.NetworkioImpl <em>Networkio</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -607,87 +319,6 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @generated
 	 */
 	int NETWORKIO = 4;
-
-	/**
-	 * The feature id for the '<em><b>Mixin</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORKIO__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORKIO__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORKIO__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Unit</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORKIO__UNIT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Network In</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORKIO__NETWORK_IN = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Network Out</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORKIO__NETWORK_OUT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Networkio</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORKIO_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORKIO___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Networkio</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORKIO_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link cloudmonitoring.impl.InputoutputImpl <em>Inputoutput</em>}' class.
@@ -700,69 +331,6 @@ public interface CloudmonitoringPackage extends EPackage {
 	int INPUTOUTPUT = 5;
 
 	/**
-	 * The feature id for the '<em><b>Mixin</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUTOUTPUT__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUTOUTPUT__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUTOUTPUT__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Unit</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUTOUTPUT__UNIT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Inputoutput</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUTOUTPUT_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUTOUTPUT___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Inputoutput</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUTOUTPUT_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
-
-	/**
 	 * The meta object id for the '{@link cloudmonitoring.impl.SensorcontrolImpl <em>Sensorcontrol</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -771,6 +339,579 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @generated
 	 */
 	int SENSORCONTROL = 6;
+
+	/**
+	 * The meta object id for the '{@link cloudmonitoring.impl.EmfpublisherImpl <em>Emfpublisher</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see cloudmonitoring.impl.EmfpublisherImpl
+	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getEmfpublisher()
+	 * @generated
+	 */
+	int EMFPUBLISHER = 7;
+
+	/**
+	 * The meta object id for the '{@link cloudmonitoring.impl.SystemoutpublisherImpl <em>Systemoutpublisher</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see cloudmonitoring.impl.SystemoutpublisherImpl
+	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getSystemoutpublisher()
+	 * @generated
+	 */
+	int SYSTEMOUTPUBLISHER = 8;
+
+	/**
+	 * The meta object id for the '{@link cloudmonitoring.impl.PublishercontrolImpl <em>Publishercontrol</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see cloudmonitoring.impl.PublishercontrolImpl
+	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getPublishercontrol()
+	 * @generated
+	 */
+	int PUBLISHERCONTROL = 9;
+
+	/**
+	 * The meta object id for the '{@link cloudmonitoring.impl.DiskImpl <em>Disk</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see cloudmonitoring.impl.DiskImpl
+	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getDisk()
+	 * @generated
+	 */
+	int DISK = 10;
+
+	/**
+	 * The meta object id for the '{@link cloudmonitoring.impl.MailpublisherImpl <em>Mailpublisher</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see cloudmonitoring.impl.MailpublisherImpl
+	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getMailpublisher()
+	 * @generated
+	 */
+	int MAILPUBLISHER = 11;
+
+	/**
+	 * The meta object id for the '{@link cloudmonitoring.impl.MainmetricImpl <em>Mainmetric</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see cloudmonitoring.impl.MainmetricImpl
+	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getMainmetric()
+	 * @generated
+	 */
+	int MAINMETRIC = 12;
+
+	/**
+	 * The feature id for the '<em><b>Mixin</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAINMETRIC__MIXIN = MonitoringPackage.METRIC__MIXIN;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAINMETRIC__ENTITY = MonitoringPackage.METRIC__ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAINMETRIC__ATTRIBUTES = MonitoringPackage.METRIC__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Threshold Usage</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAINMETRIC__THRESHOLD_USAGE = MonitoringPackage.METRIC_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Temperature</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAINMETRIC__TEMPERATURE = MonitoringPackage.METRIC_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Threshold Temperature</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAINMETRIC__THRESHOLD_TEMPERATURE = MonitoringPackage.METRIC_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Mainmetric</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAINMETRIC_FEATURE_COUNT = MonitoringPackage.METRIC_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Applies Constraint</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAINMETRIC___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = MonitoringPackage.METRIC_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Mainmetric</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAINMETRIC_OPERATION_COUNT = MonitoringPackage.METRIC_OPERATION_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Mixin</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CPU__MIXIN = MAINMETRIC__MIXIN;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CPU__ENTITY = MAINMETRIC__ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CPU__ATTRIBUTES = MAINMETRIC__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Threshold Usage</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CPU__THRESHOLD_USAGE = MAINMETRIC__THRESHOLD_USAGE;
+
+	/**
+	 * The feature id for the '<em><b>Temperature</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CPU__TEMPERATURE = MAINMETRIC__TEMPERATURE;
+
+	/**
+	 * The feature id for the '<em><b>Threshold Temperature</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CPU__THRESHOLD_TEMPERATURE = MAINMETRIC__THRESHOLD_TEMPERATURE;
+
+	/**
+	 * The feature id for the '<em><b>Load Avg</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CPU__LOAD_AVG = MAINMETRIC_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Cpu Used</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CPU__CPU_USED = MAINMETRIC_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Cpu</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CPU_FEATURE_COUNT = MAINMETRIC_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Applies Constraint</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CPU___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = MAINMETRIC_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Cpu</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CPU_OPERATION_COUNT = MAINMETRIC_OPERATION_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Mixin</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUTOUTPUT__MIXIN = MonitoringPackage.METRIC__MIXIN;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUTOUTPUT__ENTITY = MonitoringPackage.METRIC__ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUTOUTPUT__ATTRIBUTES = MonitoringPackage.METRIC__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUTOUTPUT__UNIT = MonitoringPackage.METRIC_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Inputoutput</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUTOUTPUT_FEATURE_COUNT = MonitoringPackage.METRIC_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Applies Constraint</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUTOUTPUT___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = MonitoringPackage.METRIC_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Inputoutput</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUTOUTPUT_OPERATION_COUNT = MonitoringPackage.METRIC_OPERATION_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Mixin</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISKIO__MIXIN = INPUTOUTPUT__MIXIN;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISKIO__ENTITY = INPUTOUTPUT__ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISKIO__ATTRIBUTES = INPUTOUTPUT__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISKIO__UNIT = INPUTOUTPUT__UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Disk Write</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISKIO__DISK_WRITE = INPUTOUTPUT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Disk Read</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISKIO__DISK_READ = INPUTOUTPUT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Diskio</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISKIO_FEATURE_COUNT = INPUTOUTPUT_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Applies Constraint</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISKIO___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = INPUTOUTPUT_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Diskio</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISKIO_OPERATION_COUNT = INPUTOUTPUT_OPERATION_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Mixin</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RAM__MIXIN = MAINMETRIC__MIXIN;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RAM__ENTITY = MAINMETRIC__ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RAM__ATTRIBUTES = MAINMETRIC__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Threshold Usage</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RAM__THRESHOLD_USAGE = MAINMETRIC__THRESHOLD_USAGE;
+
+	/**
+	 * The feature id for the '<em><b>Temperature</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RAM__TEMPERATURE = MAINMETRIC__TEMPERATURE;
+
+	/**
+	 * The feature id for the '<em><b>Threshold Temperature</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RAM__THRESHOLD_TEMPERATURE = MAINMETRIC__THRESHOLD_TEMPERATURE;
+
+	/**
+	 * The feature id for the '<em><b>Free</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RAM__FREE = MAINMETRIC_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Swap</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RAM__SWAP = MAINMETRIC_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Ram Used</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RAM__RAM_USED = MAINMETRIC_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Ram</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RAM_FEATURE_COUNT = MAINMETRIC_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Applies Constraint</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RAM___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = MAINMETRIC_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Ram</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RAM_OPERATION_COUNT = MAINMETRIC_OPERATION_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Mixin</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORKIO__MIXIN = INPUTOUTPUT__MIXIN;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORKIO__ENTITY = INPUTOUTPUT__ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORKIO__ATTRIBUTES = INPUTOUTPUT__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORKIO__UNIT = INPUTOUTPUT__UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Network In</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORKIO__NETWORK_IN = INPUTOUTPUT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Network Out</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORKIO__NETWORK_OUT = INPUTOUTPUT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Networkio</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORKIO_FEATURE_COUNT = INPUTOUTPUT_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Applies Constraint</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORKIO___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = INPUTOUTPUT_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Networkio</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORKIO_OPERATION_COUNT = INPUTOUTPUT_OPERATION_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -854,23 +995,13 @@ public interface CloudmonitoringPackage extends EPackage {
 	int SENSORCONTROL_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 3;
 
 	/**
-	 * The meta object id for the '{@link cloudmonitoring.impl.EmfpublisherImpl <em>Emfpublisher</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see cloudmonitoring.impl.EmfpublisherImpl
-	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getEmfpublisher()
-	 * @generated
-	 */
-	int EMFPUBLISHER = 7;
-
-	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EMFPUBLISHER__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
+	int PUBLISHERCONTROL__MIXIN = MonitoringPackage.PUBLISHER__MIXIN;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' container reference.
@@ -879,7 +1010,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMFPUBLISHER__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
+	int PUBLISHERCONTROL__ENTITY = MonitoringPackage.PUBLISHER__ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -888,7 +1019,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMFPUBLISHER__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
+	int PUBLISHERCONTROL__ATTRIBUTES = MonitoringPackage.PUBLISHER__ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Publisher State</b></em>' attribute.
@@ -897,189 +1028,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EMFPUBLISHER__PUBLISHER_STATE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Emfpublisher</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMFPUBLISHER_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Enable</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMFPUBLISHER___ENABLE = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Disable</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMFPUBLISHER___DISABLE = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMFPUBLISHER___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 3;
-
-	/**
-	 * The number of operations of the '<em>Emfpublisher</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMFPUBLISHER_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 4;
-
-	/**
-	 * The meta object id for the '{@link cloudmonitoring.impl.SystemoutpublisherImpl <em>Systemoutpublisher</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see cloudmonitoring.impl.SystemoutpublisherImpl
-	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getSystemoutpublisher()
-	 * @generated
-	 */
-	int SYSTEMOUTPUBLISHER = 8;
-
-	/**
-	 * The feature id for the '<em><b>Mixin</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYSTEMOUTPUBLISHER__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYSTEMOUTPUBLISHER__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYSTEMOUTPUBLISHER__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Publisher State</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYSTEMOUTPUBLISHER__PUBLISHER_STATE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Systemoutpublisher</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYSTEMOUTPUBLISHER_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Enable</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYSTEMOUTPUBLISHER___ENABLE = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Disable</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYSTEMOUTPUBLISHER___DISABLE = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYSTEMOUTPUBLISHER___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 3;
-
-	/**
-	 * The number of operations of the '<em>Systemoutpublisher</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYSTEMOUTPUBLISHER_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 4;
-
-	/**
-	 * The meta object id for the '{@link cloudmonitoring.impl.PublishercontrolImpl <em>Publishercontrol</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see cloudmonitoring.impl.PublishercontrolImpl
-	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getPublishercontrol()
-	 * @generated
-	 */
-	int PUBLISHERCONTROL = 9;
-
-	/**
-	 * The feature id for the '<em><b>Mixin</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PUBLISHERCONTROL__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PUBLISHERCONTROL__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PUBLISHERCONTROL__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Publisher State</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PUBLISHERCONTROL__PUBLISHER_STATE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
+	int PUBLISHERCONTROL__PUBLISHER_STATE = MonitoringPackage.PUBLISHER_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Publishercontrol</em>' class.
@@ -1088,7 +1037,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PUBLISHERCONTROL_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
+	int PUBLISHERCONTROL_FEATURE_COUNT = MonitoringPackage.PUBLISHER_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Enable</em>' operation.
@@ -1097,7 +1046,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PUBLISHERCONTROL___ENABLE = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
+	int PUBLISHERCONTROL___ENABLE = MonitoringPackage.PUBLISHER_OPERATION_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Disable</em>' operation.
@@ -1106,7 +1055,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PUBLISHERCONTROL___DISABLE = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
+	int PUBLISHERCONTROL___DISABLE = MonitoringPackage.PUBLISHER_OPERATION_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Applies Constraint</em>' operation.
@@ -1115,7 +1064,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PUBLISHERCONTROL___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
+	int PUBLISHERCONTROL___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = MonitoringPackage.PUBLISHER_OPERATION_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Publishercontrol</em>' class.
@@ -1124,17 +1073,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PUBLISHERCONTROL_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 3;
-
-	/**
-	 * The meta object id for the '{@link cloudmonitoring.impl.DiskImpl <em>Disk</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see cloudmonitoring.impl.DiskImpl
-	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getDisk()
-	 * @generated
-	 */
-	int DISK = 10;
+	int PUBLISHERCONTROL_OPERATION_COUNT = MonitoringPackage.PUBLISHER_OPERATION_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -1143,7 +1082,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISK__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
+	int EMFPUBLISHER__MIXIN = PUBLISHERCONTROL__MIXIN;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' container reference.
@@ -1152,7 +1091,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISK__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
+	int EMFPUBLISHER__ENTITY = PUBLISHERCONTROL__ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -1161,134 +1100,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISK__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Threshold Usage</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISK__THRESHOLD_USAGE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Temperature</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISK__TEMPERATURE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Threshold Temperature</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISK__THRESHOLD_TEMPERATURE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Swap</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISK__SWAP = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Free</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISK__FREE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Volume Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISK__VOLUME_NAME = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Disk Used</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISK__DISK_USED = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 6;
-
-	/**
-	 * The number of structural features of the '<em>Disk</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISK_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 7;
-
-	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISK___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Disk</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISK_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
-
-	/**
-	 * The meta object id for the '{@link cloudmonitoring.impl.MailpublisherImpl <em>Mailpublisher</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see cloudmonitoring.impl.MailpublisherImpl
-	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getMailpublisher()
-	 * @generated
-	 */
-	int MAILPUBLISHER = 11;
-
-	/**
-	 * The feature id for the '<em><b>Mixin</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAILPUBLISHER__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAILPUBLISHER__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAILPUBLISHER__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
+	int EMFPUBLISHER__ATTRIBUTES = PUBLISHERCONTROL__ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Publisher State</b></em>' attribute.
@@ -1297,70 +1109,16 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAILPUBLISHER__PUBLISHER_STATE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
+	int EMFPUBLISHER__PUBLISHER_STATE = PUBLISHERCONTROL__PUBLISHER_STATE;
 
 	/**
-	 * The feature id for the '<em><b>Mail Address</b></em>' attribute.
+	 * The number of structural features of the '<em>Emfpublisher</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAILPUBLISHER__MAIL_ADDRESS = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Post On Cpu Alert</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAILPUBLISHER__POST_ON_CPU_ALERT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Post On Ram Alert</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAILPUBLISHER__POST_ON_RAM_ALERT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Post On Network IO Alert</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAILPUBLISHER__POST_ON_NETWORK_IO_ALERT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Post On Disk IO Alert</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAILPUBLISHER__POST_ON_DISK_IO_ALERT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Nb Email</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAILPUBLISHER__NB_EMAIL = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 6;
-
-	/**
-	 * The number of structural features of the '<em>Mailpublisher</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAILPUBLISHER_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 7;
+	int EMFPUBLISHER_FEATURE_COUNT = PUBLISHERCONTROL_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Enable</em>' operation.
@@ -1369,7 +1127,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAILPUBLISHER___ENABLE = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
+	int EMFPUBLISHER___ENABLE = PUBLISHERCONTROL___ENABLE;
 
 	/**
 	 * The operation id for the '<em>Disable</em>' operation.
@@ -1378,7 +1136,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAILPUBLISHER___DISABLE = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
+	int EMFPUBLISHER___DISABLE = PUBLISHERCONTROL___DISABLE;
 
 	/**
 	 * The operation id for the '<em>Applies Constraint</em>' operation.
@@ -1387,26 +1145,16 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAILPUBLISHER___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 3;
+	int EMFPUBLISHER___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = PUBLISHERCONTROL_OPERATION_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>Mailpublisher</em>' class.
+	 * The number of operations of the '<em>Emfpublisher</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAILPUBLISHER_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 4;
-
-	/**
-	 * The meta object id for the '{@link cloudmonitoring.impl.MainmetricImpl <em>Mainmetric</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see cloudmonitoring.impl.MainmetricImpl
-	 * @see cloudmonitoring.impl.CloudmonitoringPackageImpl#getMainmetric()
-	 * @generated
-	 */
-	int MAINMETRIC = 12;
+	int EMFPUBLISHER_OPERATION_COUNT = PUBLISHERCONTROL_OPERATION_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -1415,7 +1163,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAINMETRIC__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
+	int SYSTEMOUTPUBLISHER__MIXIN = PUBLISHERCONTROL__MIXIN;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' container reference.
@@ -1424,7 +1172,7 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAINMETRIC__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
+	int SYSTEMOUTPUBLISHER__ENTITY = PUBLISHERCONTROL__ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -1433,43 +1181,43 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAINMETRIC__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
+	int SYSTEMOUTPUBLISHER__ATTRIBUTES = PUBLISHERCONTROL__ATTRIBUTES;
 
 	/**
-	 * The feature id for the '<em><b>Threshold Usage</b></em>' attribute.
+	 * The feature id for the '<em><b>Publisher State</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAINMETRIC__THRESHOLD_USAGE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
+	int SYSTEMOUTPUBLISHER__PUBLISHER_STATE = PUBLISHERCONTROL__PUBLISHER_STATE;
 
 	/**
-	 * The feature id for the '<em><b>Temperature</b></em>' attribute.
+	 * The number of structural features of the '<em>Systemoutpublisher</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAINMETRIC__TEMPERATURE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
+	int SYSTEMOUTPUBLISHER_FEATURE_COUNT = PUBLISHERCONTROL_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Threshold Temperature</b></em>' attribute.
+	 * The operation id for the '<em>Enable</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAINMETRIC__THRESHOLD_TEMPERATURE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
+	int SYSTEMOUTPUBLISHER___ENABLE = PUBLISHERCONTROL___ENABLE;
 
 	/**
-	 * The number of structural features of the '<em>Mainmetric</em>' class.
+	 * The operation id for the '<em>Disable</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAINMETRIC_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
+	int SYSTEMOUTPUBLISHER___DISABLE = PUBLISHERCONTROL___DISABLE;
 
 	/**
 	 * The operation id for the '<em>Applies Constraint</em>' operation.
@@ -1478,16 +1226,268 @@ public interface CloudmonitoringPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAINMETRIC___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
+	int SYSTEMOUTPUBLISHER___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = PUBLISHERCONTROL_OPERATION_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>Mainmetric</em>' class.
+	 * The number of operations of the '<em>Systemoutpublisher</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAINMETRIC_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
+	int SYSTEMOUTPUBLISHER_OPERATION_COUNT = PUBLISHERCONTROL_OPERATION_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Mixin</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISK__MIXIN = MAINMETRIC__MIXIN;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISK__ENTITY = MAINMETRIC__ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISK__ATTRIBUTES = MAINMETRIC__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Threshold Usage</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISK__THRESHOLD_USAGE = MAINMETRIC__THRESHOLD_USAGE;
+
+	/**
+	 * The feature id for the '<em><b>Temperature</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISK__TEMPERATURE = MAINMETRIC__TEMPERATURE;
+
+	/**
+	 * The feature id for the '<em><b>Threshold Temperature</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISK__THRESHOLD_TEMPERATURE = MAINMETRIC__THRESHOLD_TEMPERATURE;
+
+	/**
+	 * The feature id for the '<em><b>Swap</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISK__SWAP = MAINMETRIC_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Free</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISK__FREE = MAINMETRIC_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Volume Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISK__VOLUME_NAME = MAINMETRIC_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Disk Used</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISK__DISK_USED = MAINMETRIC_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Disk</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISK_FEATURE_COUNT = MAINMETRIC_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Applies Constraint</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISK___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = MAINMETRIC_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Disk</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISK_OPERATION_COUNT = MAINMETRIC_OPERATION_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Mixin</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAILPUBLISHER__MIXIN = PUBLISHERCONTROL__MIXIN;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAILPUBLISHER__ENTITY = PUBLISHERCONTROL__ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAILPUBLISHER__ATTRIBUTES = PUBLISHERCONTROL__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Publisher State</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAILPUBLISHER__PUBLISHER_STATE = PUBLISHERCONTROL__PUBLISHER_STATE;
+
+	/**
+	 * The feature id for the '<em><b>Mail Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAILPUBLISHER__MAIL_ADDRESS = PUBLISHERCONTROL_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Post On Cpu Alert</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAILPUBLISHER__POST_ON_CPU_ALERT = PUBLISHERCONTROL_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Post On Ram Alert</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAILPUBLISHER__POST_ON_RAM_ALERT = PUBLISHERCONTROL_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Post On Network IO Alert</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAILPUBLISHER__POST_ON_NETWORK_IO_ALERT = PUBLISHERCONTROL_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Post On Disk IO Alert</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAILPUBLISHER__POST_ON_DISK_IO_ALERT = PUBLISHERCONTROL_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Nb Email</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAILPUBLISHER__NB_EMAIL = PUBLISHERCONTROL_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of structural features of the '<em>Mailpublisher</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAILPUBLISHER_FEATURE_COUNT = PUBLISHERCONTROL_FEATURE_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Enable</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAILPUBLISHER___ENABLE = PUBLISHERCONTROL___ENABLE;
+
+	/**
+	 * The operation id for the '<em>Disable</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAILPUBLISHER___DISABLE = PUBLISHERCONTROL___DISABLE;
+
+	/**
+	 * The operation id for the '<em>Applies Constraint</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAILPUBLISHER___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = PUBLISHERCONTROL_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Mailpublisher</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAILPUBLISHER_OPERATION_COUNT = PUBLISHERCONTROL_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link cloudmonitoring.impl.SupervisorapiconnectImpl <em>Supervisorapiconnect</em>}' class.

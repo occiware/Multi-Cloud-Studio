@@ -39,7 +39,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='appliesConstraint'"
  * @generated
  */
-public interface Mailpublisher extends MixinBase, Publishercontrol {
+public interface Mailpublisher extends Publishercontrol, MixinBase {
 	/**
 	 * Returns the value of the '<em><b>Mail Address</b></em>' attribute.
 	 * <!-- begin-user-doc -->

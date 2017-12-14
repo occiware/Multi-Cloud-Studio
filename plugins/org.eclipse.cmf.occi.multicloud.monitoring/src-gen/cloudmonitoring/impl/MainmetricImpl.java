@@ -24,6 +24,7 @@ import org.eclipse.cmf.occi.core.Entity;
 
 import org.eclipse.cmf.occi.core.impl.MixinBaseImpl;
 
+import org.eclipse.cmf.occi.monitoring.impl.MetricImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
@@ -65,7 +66,7 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  *
  * @generated
  */
-public class MainmetricImpl extends MixinBaseImpl implements Mainmetric {
+public class MainmetricImpl extends MetricImpl implements Mainmetric {
 	/**
 	 * The default value of the '{@link #getThresholdUsage() <em>Threshold Usage</em>}' attribute.
 	 * <!-- begin-user-doc -->

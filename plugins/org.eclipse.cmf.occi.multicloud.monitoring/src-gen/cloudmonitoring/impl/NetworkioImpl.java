@@ -62,34 +62,13 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link cloudmonitoring.impl.NetworkioImpl#getUnit <em>Unit</em>}</li>
  *   <li>{@link cloudmonitoring.impl.NetworkioImpl#getNetworkIn <em>Network In</em>}</li>
  *   <li>{@link cloudmonitoring.impl.NetworkioImpl#getNetworkOut <em>Network Out</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class NetworkioImpl extends MixinBaseImpl implements Networkio {
-	/**
-	 * The default value of the '{@link #getUnit() <em>Unit</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUnit()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final IOUnit UNIT_EDEFAULT = IOUnit.BYTE_PER_SEC;
-
-	/**
-	 * The cached value of the '{@link #getUnit() <em>Unit</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUnit()
-	 * @generated
-	 * @ordered
-	 */
-	protected IOUnit unit = UNIT_EDEFAULT;
-
+public class NetworkioImpl extends InputoutputImpl implements Networkio {
 	/**
 	 * The default value of the '{@link #getNetworkIn() <em>Network In</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -147,27 +126,6 @@ public class NetworkioImpl extends MixinBaseImpl implements Networkio {
 	@Override
 	protected EClass eStaticClass() {
 		return CloudmonitoringPackage.Literals.NETWORKIO;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public IOUnit getUnit() {
-		return unit;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setUnit(IOUnit newUnit) {
-		IOUnit oldUnit = unit;
-		unit = newUnit == null ? UNIT_EDEFAULT : newUnit;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CloudmonitoringPackage.NETWORKIO__UNIT, oldUnit, unit));
 	}
 
 	/**
@@ -258,8 +216,6 @@ public class NetworkioImpl extends MixinBaseImpl implements Networkio {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CloudmonitoringPackage.NETWORKIO__UNIT:
-				return getUnit();
 			case CloudmonitoringPackage.NETWORKIO__NETWORK_IN:
 				return getNetworkIn();
 			case CloudmonitoringPackage.NETWORKIO__NETWORK_OUT:
@@ -276,9 +232,6 @@ public class NetworkioImpl extends MixinBaseImpl implements Networkio {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CloudmonitoringPackage.NETWORKIO__UNIT:
-				setUnit((IOUnit)newValue);
-				return;
 			case CloudmonitoringPackage.NETWORKIO__NETWORK_IN:
 				setNetworkIn((Double)newValue);
 				return;
@@ -297,9 +250,6 @@ public class NetworkioImpl extends MixinBaseImpl implements Networkio {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CloudmonitoringPackage.NETWORKIO__UNIT:
-				setUnit(UNIT_EDEFAULT);
-				return;
 			case CloudmonitoringPackage.NETWORKIO__NETWORK_IN:
 				setNetworkIn(NETWORK_IN_EDEFAULT);
 				return;
@@ -318,8 +268,6 @@ public class NetworkioImpl extends MixinBaseImpl implements Networkio {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CloudmonitoringPackage.NETWORKIO__UNIT:
-				return unit != UNIT_EDEFAULT;
 			case CloudmonitoringPackage.NETWORKIO__NETWORK_IN:
 				return NETWORK_IN_EDEFAULT == null ? networkIn != null : !NETWORK_IN_EDEFAULT.equals(networkIn);
 			case CloudmonitoringPackage.NETWORKIO__NETWORK_OUT:
@@ -334,58 +282,11 @@ public class NetworkioImpl extends MixinBaseImpl implements Networkio {
 	 * @generated
 	 */
 	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == Metric.class) {
-			switch (derivedFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == Inputoutput.class) {
-			switch (derivedFeatureID) {
-				case CloudmonitoringPackage.NETWORKIO__UNIT: return CloudmonitoringPackage.INPUTOUTPUT__UNIT;
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == Metric.class) {
-			switch (baseFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == Inputoutput.class) {
-			switch (baseFeatureID) {
-				case CloudmonitoringPackage.INPUTOUTPUT__UNIT: return CloudmonitoringPackage.NETWORKIO__UNIT;
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
-		if (baseClass == Metric.class) {
-			switch (baseOperationID) {
-				default: return -1;
-			}
-		}
 		if (baseClass == Inputoutput.class) {
 			switch (baseOperationID) {
 				case CloudmonitoringPackage.INPUTOUTPUT___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP: return CloudmonitoringPackage.NETWORKIO___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP;
-				default: return -1;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
 			}
 		}
 		return super.eDerivedOperationID(baseOperationID, baseClass);
@@ -416,9 +317,7 @@ public class NetworkioImpl extends MixinBaseImpl implements Networkio {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (unit: ");
-		result.append(unit);
-		result.append(", networkIn: ");
+		result.append(" (networkIn: ");
 		result.append(networkIn);
 		result.append(", networkOut: ");
 		result.append(networkOut);

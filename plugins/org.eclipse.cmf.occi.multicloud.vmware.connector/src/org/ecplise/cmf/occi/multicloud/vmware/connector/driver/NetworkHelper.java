@@ -161,15 +161,20 @@ public class NetworkHelper {
 	 * @param vm
 	 * @return
 	 */
-	public static List<VirtualEthernetCard> getNetworkAdaptersForVM(String vmName) {
+	public static List<VirtualEthernetCard> getNetworkAdaptersForVM(String vmName, Folder rootFolder) {
 		List<VirtualEthernetCard> vEths = new ArrayList<VirtualEthernetCard>();
 		if (vmName == null) {
+			return vEths;
+		}
+		if (rootFolder == null) {
+			LOGGER.error("No root folder to get Network adapters for vm : " + vmName);
 			return vEths;
 		}
 
 		VirtualEthernetCard vEth;
 
-		Folder rootFolder = VCenterClient.getServiceInstance().getRootFolder();
+		
+		// Folder rootFolder = VCenterClient.getServiceInstance().getRootFolder();
 
 		VirtualMachine vm = VMHelper.findVMForName(rootFolder, vmName);
 

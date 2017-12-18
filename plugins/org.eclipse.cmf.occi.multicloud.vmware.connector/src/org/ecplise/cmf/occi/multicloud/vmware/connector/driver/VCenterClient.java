@@ -22,6 +22,9 @@ import java.net.URL;
 import java.rmi.RemoteException;
 import java.util.Properties;
 
+import org.eclipse.cmf.occi.core.Entity;
+import org.eclipse.cmf.occi.multicloud.vmware.Vcentercredential;
+import org.eclipse.cmf.occi.multicloud.vmware.connector.utils.thread.MixinBaseUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -35,23 +38,37 @@ import com.vmware.vim25.mo.ServiceInstance;
  */
 public class VCenterClient {
 
-	private static String url = null;
-	private static String login = null;
-	private static String password = null;
+	private String url = null;
+	private String login = null;
+	private String password = null;
 	private static Logger LOGGER = LoggerFactory.getLogger(VCenterClient.class);
-	private static ServiceInstance serviceInstance = null;
+	private ServiceInstance serviceInstance = null;
+
+	
+	
+	/**
+	 * @param login
+	 * @param password
+	 * @param url
+	 */
+	public VCenterClient(String login, String password, String url) {
+		this.login = login;
+		this.password = password;
+		this.url = url;
+	}
 
 	/**
-	 * Init credentials from property file object.
+	 * Read credentials from property file object.
 	 * 
 	 * @throws IOException
 	 */
-	public static void init() throws IOException {
+	public void loadFromPropertyFile() throws IOException {
 		if (url == null) {
 			Properties prop = new Properties();
-			
+
 			// String credentialFile = "/resources/credential.properties";
-			// String homePath = System.getProperty("user.home") + FileSystems.getDefault().getSeparator();
+			// String homePath = System.getProperty("user.home") +
+			// FileSystems.getDefault().getSeparator();
 			String homePath = System.getProperty("user.home") + File.separator;
 			InputStream in = new FileInputStream(homePath + "vmware-credential.properties");
 
@@ -59,51 +76,60 @@ public class VCenterClient {
 			if (in != null) {
 				try {
 					in.close();
-					
+
 				} catch (IOException ex) {
 					// no op.
 				}
 			}
-			// VCenterClient.class.getClassLoader().getResourceAsStream(credentialFile);
 			if (prop.containsKey("vcenter.url")) {
-				// prop.load(in);
-				login = prop.getProperty("vcenter.login");
-				password = prop.getProperty("vcenter.password");
-				url = prop.getProperty("vcenter.url");
-
+				LOGGER.info("Setting vcenter credential...");
+				this.login = prop.getProperty("vcenter.login");
+				this.password = prop.getProperty("vcenter.password");
+				this.url = prop.getProperty("vcenter.url");
+			
 			} else {
 				throw new FileNotFoundException("credential property file not found !");
 			}
 		}
 	}
+	
+	/**
+	 * Read login, password and url from a vcenter credential mixin.
+	 * @param vcenterCred
+	 */
+	public void loadFromCredentialMixin(Vcentercredential vcenterCred) {
+		this.login = vcenterCred.getUsername();
+		this.password = vcenterCred.getPassword();
+		this.url = vcenterCred.getUrl();
+	}
+	
 
-	public static String getLogin() {
+	public String getLogin() {
 		return login;
 	}
 
-	public static String getPassword() {
+	public String getPassword() {
 		return password;
 	}
 
-	public static String getUrl() {
+	public String getUrl() {
 		return url;
 	}
 
-	public static void setUrl(String url) {
-		VCenterClient.url = url;
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
-	public static void setLogin(String login) {
-		VCenterClient.login = login;
+	public void setLogin(String login) {
+		this.login = login;
 	}
 
-	public static void setPassword(String password) {
-		VCenterClient.password = password;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	/**
-	 * Connect to vcenter and ready to go for action with ServiceInstance
-	 * object.
+	 * Connect to vcenter and ready to go for action with ServiceInstance object.
 	 * 
 	 * @param url
 	 * @param login
@@ -112,15 +138,15 @@ public class VCenterClient {
 	 * @throws RemoteException
 	 * @throws MalformedURLException
 	 */
-	public static ServiceInstance initServiceInstance(final String url, final String login, final String password)
+	public ServiceInstance initServiceInstance(final String url, final String login, final String password)
 			throws RemoteException, MalformedURLException {
-		serviceInstance = new ServiceInstance(new URL(url), login, password, true); 
+		serviceInstance = new ServiceInstance(new URL(url), login, password, true);
 		// TODO: add a parameter for certificate support -->
-				// false on last parameter.
+		// false on last parameter.
 		return serviceInstance;
 	}
 
-	public static ServiceInstance getServiceInstance() {
+	public ServiceInstance getServiceInstance() {
 		return serviceInstance;
 	}
 
@@ -130,7 +156,7 @@ public class VCenterClient {
 	 * @throws RemoteException
 	 * @throws MalformedURLException
 	 */
-	public static void connect() throws RemoteException, MalformedURLException {
+	public void connect() throws RemoteException, MalformedURLException {
 		if (serviceInstance == null && login != null) {
 			initServiceInstance(url, login, password);
 		} else {
@@ -151,7 +177,7 @@ public class VCenterClient {
 	 * @throws RemoteException
 	 * @throws MalformedURLException
 	 */
-	public static void disconnect() {
+	public void disconnect() {
 
 		if (serviceInstance != null && login != null) {
 			LOGGER.info("Logging out from vcenter in progress...");
@@ -165,7 +191,7 @@ public class VCenterClient {
 	 * 
 	 * @return
 	 */
-	public static boolean isConnected() {
+	public boolean isConnected() {
 		boolean result = false;
 		if (serviceInstance != null && serviceInstance.getAboutInfo().getApiVersion() != null) {
 			if (serviceInstance.getSessionManager().getCurrentSession() != null) {
@@ -176,15 +202,24 @@ public class VCenterClient {
 	}
 
 	/**
-	 * if vcenter client connection is not set, this method will connect to
-	 * vcenter.
+	 * if vcenter client connection is not set, this method will connect to vcenter.
 	 */
-	public static boolean checkConnection() {
+	public boolean checkConnection(Entity entity) {
+		
 		if (!isConnected()) {
-			LOGGER.info("Not connected, connection in progress...");
-
+			LOGGER.info("Not connected, connection in progress, checking model...");
+			
 			try {
-				init();
+				// Read vCenter credential mixin if any, if none this will load login/pass from a property file.
+				Vcentercredential credMixin = MixinBaseUtils.getVcenterCredMixin(entity);
+				if (credMixin == null) {
+					System.out.println("vCenter credential mixin is not set, reading credentials from property file !");
+					
+					loadFromPropertyFile();
+				} else {
+					System.out.println("vCenter credential mixin is set on this compute !");
+					loadFromCredentialMixin(credMixin);
+				}
 				connect();
 				LOGGER.info("Connected to vcenter.");
 				return true;

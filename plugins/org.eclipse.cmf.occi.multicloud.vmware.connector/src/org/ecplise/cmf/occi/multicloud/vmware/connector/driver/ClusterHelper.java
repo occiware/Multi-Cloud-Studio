@@ -54,10 +54,14 @@ public class ClusterHelper {
 	 * @param dc
 	 * @return a cluster object, if not found, null value is returned.
 	 */
-	public static ClusterComputeResource findFirstCluster(final Datacenter dc) {
+	public static ClusterComputeResource findFirstCluster(final Datacenter dc, ServiceInstance si) {
 		ClusterComputeResource cluster = null;
+		if (si == null) {
+			LOGGER.error("no service instance to process on vmware.");
+			return cluster;
+		}
 		try {
-			ServiceInstance si = VCenterClient.getServiceInstance();
+			// ServiceInstance si = VCenterClient.getServiceInstance();
 			Folder rootFolder = si.getRootFolder();	
 			ManagedEntity[] clusters = null;
 			if (dc != null) {

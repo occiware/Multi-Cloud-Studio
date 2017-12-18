@@ -197,6 +197,29 @@ public class VmwareItemProviderAdapterFactory extends VmwareAdapterFactory imple
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.vmware.Vcenteraccount} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected VcenteraccountItemProvider vcenteraccountItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.vmware.Vcenteraccount}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createVcenteraccountAdapter() {
+		if (vcenteraccountItemProvider == null) {
+			vcenteraccountItemProvider = new VcenteraccountItemProvider(this);
+		}
+
+		return vcenteraccountItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.vmware.Windows} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -335,6 +358,29 @@ public class VmwareItemProviderAdapterFactory extends VmwareAdapterFactory imple
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.vmware.Vcentercredential} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected VcentercredentialItemProvider vcentercredentialItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.vmware.Vcentercredential}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createVcentercredentialAdapter() {
+		if (vcentercredentialItemProvider == null) {
+			vcentercredentialItemProvider = new VcentercredentialItemProvider(this);
+		}
+
+		return vcentercredentialItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -438,12 +484,14 @@ public class VmwareItemProviderAdapterFactory extends VmwareAdapterFactory imple
 		if (storagelinkvmwareItemProvider != null) storagelinkvmwareItemProvider.dispose();
 		if (vswitchItemProvider != null) vswitchItemProvider.dispose();
 		if (networkadapterItemProvider != null) networkadapterItemProvider.dispose();
+		if (vcenteraccountItemProvider != null) vcenteraccountItemProvider.dispose();
 		if (windowsItemProvider != null) windowsItemProvider.dispose();
 		if (linuxItemProvider != null) linuxItemProvider.dispose();
 		if (macosxItemProvider != null) macosxItemProvider.dispose();
 		if (vmwarefoldersItemProvider != null) vmwarefoldersItemProvider.dispose();
 		if (os_tpl_vmwareItemProvider != null) os_tpl_vmwareItemProvider.dispose();
 		if (ssh_user_dataItemProvider != null) ssh_user_dataItemProvider.dispose();
+		if (vcentercredentialItemProvider != null) vcentercredentialItemProvider.dispose();
 	}
 
 }

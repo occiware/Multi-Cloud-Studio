@@ -18,13 +18,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Connector implementation for the OCCI kind:
- * - scheme: http://occiware.org/occi/infrastructure/vmware#
- * - term: vmwarefolders
- * - title: This mixin add global attributes like datacentername, clustername, hostsystem name etc.
+ * Connector implementation for the OCCI kind: - scheme:
+ * http://occiware.org/occi/infrastructure/vmware# - term: vmwarefolders -
+ * title: This mixin add global attributes like datacentername, clustername,
+ * hostsystem name etc.
  */
-public class VmwarefoldersConnector extends org.eclipse.cmf.occi.multicloud.vmware.impl.VmwarefoldersImpl
-{
+public class VmwarefoldersConnector extends org.eclipse.cmf.occi.multicloud.vmware.impl.VmwarefoldersImpl {
 	/**
 	 * Initialize the logger.
 	 */
@@ -34,11 +33,10 @@ public class VmwarefoldersConnector extends org.eclipse.cmf.occi.multicloud.vmwa
 	/**
 	 * Constructs a vmwarefolders connector.
 	 */
-	VmwarefoldersConnector()
-	{
+	VmwarefoldersConnector() {
 		LOGGER.debug("Constructor called on " + this);
 		// TODO: Implement this constructor.
 	}
 	// End of user code
-	
-}	
+
+}

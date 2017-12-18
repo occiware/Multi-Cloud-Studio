@@ -18,13 +18,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Connector implementation for the OCCI kind:
- * - scheme: http://occiware.org/occi/infrastructure/vmware#
- * - term: macosx
- * - title: Mixin os_tpl for mac os x systems
+ * Connector implementation for the OCCI kind: - scheme:
+ * http://occiware.org/occi/infrastructure/vmware# - term: macosx - title: Mixin
+ * os_tpl for mac os x systems
  */
-public class MacosxConnector extends org.eclipse.cmf.occi.multicloud.vmware.impl.MacosxImpl
-{
+public class MacosxConnector extends org.eclipse.cmf.occi.multicloud.vmware.impl.MacosxImpl {
 	/**
 	 * Initialize the logger.
 	 */
@@ -34,10 +32,9 @@ public class MacosxConnector extends org.eclipse.cmf.occi.multicloud.vmware.impl
 	/**
 	 * Constructs a macosx connector.
 	 */
-	MacosxConnector()
-	{
+	MacosxConnector() {
 		LOGGER.debug("Constructor called on " + this);
 		// TODO: Implement this constructor.
 	}
 	// End of user code
-}	
+}

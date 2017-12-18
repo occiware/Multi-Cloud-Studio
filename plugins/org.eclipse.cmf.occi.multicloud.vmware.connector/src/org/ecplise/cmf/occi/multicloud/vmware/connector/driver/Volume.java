@@ -60,6 +60,7 @@ import com.vmware.vim25.mo.Datastore;
 import com.vmware.vim25.mo.FileManager;
 import com.vmware.vim25.mo.Folder;
 import com.vmware.vim25.mo.HostDatastoreBrowser;
+import com.vmware.vim25.mo.ServiceInstance;
 import com.vmware.vim25.mo.Task;
 import com.vmware.vim25.mo.VirtualDiskManager;
 import com.vmware.vim25.mo.VirtualMachine;
@@ -110,6 +111,8 @@ public class Volume {
 	 */
 	private String volumeState = null;
 
+	private VCenterClient vCenterClient = null;
+	
 	/**
 	 * VMWare controller type of this volume like : VirtualSCSIController,
 	 * VirtualIDEController, VirtualSATAController.
@@ -131,11 +134,12 @@ public class Volume {
 	 * @param ds
 	 * @param dc
 	 */
-	public Volume(final String volumeName, final String dsName, final String dcName, final String vmName) {
+	public Volume(final String volumeName, final String dsName, final String dcName, final String vmName, VCenterClient vCenterClient) {
 		this.volumeName = volumeName;
 		this.dsName = dsName;
 		this.dcName = dcName;
 		this.vmName = vmName;
+		this.vCenterClient = vCenterClient;
 	}
 
 	/**
@@ -220,7 +224,15 @@ public class Volume {
 	 * vm instance.
 	 */
 	public void loadVirtualDisk() {
-		VirtualMachine vm = VMHelper.loadVirtualMachine(vmName);
+		
+		if (vCenterClient == null) {
+			LOGGER.error("Cannot load virtual disk, no vcenter client set !");
+			vdisk = null;
+			attached = false;
+			return;
+		}
+		
+		VirtualMachine vm = VMHelper.loadVirtualMachine(vmName, vCenterClient.getServiceInstance().getRootFolder());
 		if (vm == null) {
 			LOGGER.warn("The attached virtual machine doesnt exist, cant load virtual disk information.");
 			vdisk = null;
@@ -267,6 +279,11 @@ public class Volume {
 	 * @throws CreateDiskException
 	 */
 	public void createEmptyVolume() throws CreateDiskException {
+		
+		if (vCenterClient == null) {
+			LOGGER.error("Cant create empty volume, no VCenter client is set !");
+			return;
+		}
 		Datacenter dc;
 		Datastore ds;
 		try {
@@ -305,7 +322,7 @@ public class Volume {
 		// Create an empty, unformatted and unpartitionned VMDK virtual disk
 		// file.
 		try {
-			VirtualDiskManager diskManager = VCenterClient.getServiceInstance().getVirtualDiskManager();
+			VirtualDiskManager diskManager = vCenterClient.getServiceInstance().getVirtualDiskManager();
 			FileBackedVirtualDiskSpec fbvspec = new FileBackedVirtualDiskSpec();
 			fbvspec.setAdapterType(VirtualDiskAdapterType.lsiLogic.name());
 			fbvspec.setCapacityKb(size.longValue() * (1024 * 1024));
@@ -365,7 +382,7 @@ public class Volume {
 		if (size == 0.0f) {
 			throw new CreateDiskException("The size must be set (in GB), cant create the attached disk.");
 		}
-		VirtualMachine vm = VMHelper.loadVirtualMachine(vmName);
+		VirtualMachine vm = VMHelper.loadVirtualMachine(vmName, vCenterClient.getServiceInstance().getRootFolder());
 		if (vm == null) {
 			throw new CreateDiskException(
 					"The virtual machine : " + vmName + " doesnt exist anymore, cant create the attached disk.");
@@ -489,7 +506,7 @@ public class Volume {
 			throw new DeleteDiskException(ex);
 		}
 
-		FileManager fileManager = VCenterClient.getServiceInstance().getFileManager();
+		FileManager fileManager = vCenterClient.getServiceInstance().getFileManager();
 
 		if (fileManager == null) {
 
@@ -596,7 +613,8 @@ public class Volume {
 			// Reuse the disk.
 
 			// Load the virtual machine.
-			VirtualMachine vm = VMHelper.loadVirtualMachine(vmName);
+			Folder rootFolder = vCenterClient.getServiceInstance().getRootFolder();
+			VirtualMachine vm = VMHelper.loadVirtualMachine(vmName, rootFolder);
 
 			if (vm == null) {
 				throw new AttachDiskException("The virtual machine doesnt exist anymore. Cant attach the disk "
@@ -665,7 +683,7 @@ public class Volume {
 			attached = false;
 			throw new DetachDiskException("The disk is already detached, no vm found for this disk.");
 		}
-		Folder rootFolder = VCenterClient.getServiceInstance().getRootFolder();
+		Folder rootFolder = vCenterClient.getServiceInstance().getRootFolder();
 		VirtualMachine machine = VMHelper.findVMForName(rootFolder, vmName);
 
 		loadVirtualDisk();
@@ -749,7 +767,7 @@ public class Volume {
 			LOGGER.debug("Full path: " + fullPath);
 		}
 
-		VirtualDiskManager vdiskManager = VCenterClient.getServiceInstance().getVirtualDiskManager();
+		VirtualDiskManager vdiskManager = vCenterClient.getServiceInstance().getVirtualDiskManager();
 		if (vdiskManager != null) {
 			// Launch the task.
 			Task task;
@@ -780,7 +798,7 @@ public class Volume {
 			if (isAttached() && vdisk != null) {
 				vdisk.setCapacityInKB(sizeKB);
 				// Load the virtual machine
-				Folder rootFolder = VCenterClient.getServiceInstance().getRootFolder();
+				Folder rootFolder = vCenterClient.getServiceInstance().getRootFolder();
 				VirtualMachine vm = VMHelper.findVMForName(rootFolder, vmName);
 				VirtualDeviceConfigSpec vdcs = new VirtualDeviceConfigSpec();
 				vdcs.setDevice(vdisk);
@@ -840,7 +858,7 @@ public class Volume {
 		// Check if we must power off the vm, only if the disk is attached..
 		if (isAttached()) {
 			// Load the vm.
-			Folder rootFolder = VCenterClient.getServiceInstance().getRootFolder();
+			Folder rootFolder = vCenterClient.getServiceInstance().getRootFolder();
 			VirtualMachine vm = VMHelper.findVMForName(rootFolder, vmName);
 			if (vm != null) {
 				if (!vm.getRuntime().getPowerState().equals(VirtualMachinePowerState.poweredOff)) {
@@ -865,7 +883,7 @@ public class Volume {
 		LOGGER.debug("Moving disk vmdk : " + fullPath + " --< to: " + newPath);
 		Task task;
 		try {
-			VirtualDiskManager vdiskManager = VCenterClient.getServiceInstance().getVirtualDiskManager();
+			VirtualDiskManager vdiskManager = vCenterClient.getServiceInstance().getVirtualDiskManager();
 			task = vdiskManager.moveVirtualDisk_Task(fullPath, dc, newPath, dc, true);
 			task.waitForTask();
 		} catch (RemoteException | InterruptedException ex) {
@@ -903,7 +921,7 @@ public class Volume {
 			LOGGER.error(ex.getMessage());
 			return null;
 		}
-		VirtualDiskManager virtDiskMgr = VCenterClient.getServiceInstance().getVirtualDiskManager();
+		VirtualDiskManager virtDiskMgr = vCenterClient.getServiceInstance().getVirtualDiskManager();
 		
 		uuid = virtDiskMgr.queryVirtualDiskUuid(fullPath, dc);
 		
@@ -921,11 +939,11 @@ public class Volume {
 	 * @return
 	 * @throws IOException
 	 */
-	private static boolean mkdir(final Datacenter dc, final Datastore ds, String destFolder) throws IOException {
+	private boolean mkdir(final Datacenter dc, final Datastore ds, String destFolder) throws IOException {
 		String dsName = ds.getName();
 		destFolder = "[" + dsName + "]" + destFolder;
 
-		FileManager fileManager = VCenterClient.getServiceInstance().getFileManager();
+		FileManager fileManager = vCenterClient.getServiceInstance().getFileManager();
 
 		if (fileManager == null) {
 			LOGGER.warn("File manager is not available on this vcenter server !");
@@ -1140,7 +1158,7 @@ public class Volume {
 		if (dsName == null) {
 			throw new DatastoreNotFoundException("Datastore name is not set, cant locate a datastore by its name.");
 		}
-		Folder rootFolder = VCenterClient.getServiceInstance().getRootFolder();
+		Folder rootFolder = vCenterClient.getServiceInstance().getRootFolder();
 		Datastore ds = DatastoreHelper.findDatastoreForName(rootFolder, dsName);
 		if (ds == null) {
 			throw new DatastoreNotFoundException();
@@ -1161,7 +1179,7 @@ public class Volume {
 			throw new DatacenterNotFoundException(
 					"Datastore name is not set, cant locate datacenter from datastore name.");
 		}
-		Folder rootFolder = VCenterClient.getServiceInstance().getRootFolder();
+		Folder rootFolder = vCenterClient.getServiceInstance().getRootFolder();
 		Datacenter dc = DatacenterHelper.findDatacenterFromDatastore(rootFolder, dsName);
 		if (dc == null) {
 			throw new DatacenterNotFoundException("Cant locate datacenter from datastore name: " + dsName);

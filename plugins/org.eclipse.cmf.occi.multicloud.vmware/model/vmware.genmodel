@@ -445,6 +445,9 @@
       <ecoreClass href="vmware.ecore#//Networkadapter"/>
     </genClasses>
     <genClasses>
+      <ecoreClass href="vmware.ecore#//Vcenteraccount"/>
+    </genClasses>
+    <genClasses>
       <ecoreClass href="vmware.ecore#//Windows"/>
     </genClasses>
     <genClasses>
@@ -492,8 +495,12 @@
         <ecoreFeature xsi:type="ecore:EAttribute" href="vmware.ecore#//Ssh_user_data/user"/>
       </genFeatures>
     </genClasses>
+    <genClasses>
+      <ecoreClass href="vmware.ecore#//Vcentercredential"/>
+    </genClasses>
   </genPackages>
   <usedGenPackages href="platform:/plugin/org.eclipse.cmf.occi.crtp/model/crtp.genmodel#//crtp"/>
   <usedGenPackages href="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.genmodel#//infrastructure"/>
+  <usedGenPackages href="platform:/resource/org.eclipse.cmf.occi.multicloud.accounts/model/accounts.genmodel#//accounts"/>
   <usedGenPackages href="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.genmodel#//occi"/>
 </genmodel:GenModel>

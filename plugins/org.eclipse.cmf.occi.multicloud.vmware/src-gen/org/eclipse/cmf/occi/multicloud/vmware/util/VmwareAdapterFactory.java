@@ -25,6 +25,8 @@ import org.eclipse.cmf.occi.infrastructure.Storage;
 import org.eclipse.cmf.occi.infrastructure.Storagelink;
 import org.eclipse.cmf.occi.infrastructure.User_data;
 
+import org.eclipse.cmf.occi.multicloud.accounts.Basiccredential;
+import org.eclipse.cmf.occi.multicloud.accounts.Cloudaccount;
 import org.eclipse.cmf.occi.multicloud.vmware.*;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -111,6 +113,10 @@ public class VmwareAdapterFactory extends AdapterFactoryImpl {
 				return createNetworkadapterAdapter();
 			}
 			@Override
+			public Adapter caseVcenteraccount(Vcenteraccount object) {
+				return createVcenteraccountAdapter();
+			}
+			@Override
 			public Adapter caseWindows(Windows object) {
 				return createWindowsAdapter();
 			}
@@ -133,6 +139,10 @@ public class VmwareAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseSsh_user_data(Ssh_user_data object) {
 				return createSsh_user_dataAdapter();
+			}
+			@Override
+			public Adapter caseVcentercredential(Vcentercredential object) {
+				return createVcentercredentialAdapter();
 			}
 			@Override
 			public Adapter caseEntity(Entity object) {
@@ -167,6 +177,10 @@ public class VmwareAdapterFactory extends AdapterFactoryImpl {
 				return createNetworkinterfaceAdapter();
 			}
 			@Override
+			public Adapter caseCloudaccount(Cloudaccount object) {
+				return createCloudaccountAdapter();
+			}
+			@Override
 			public Adapter caseMixinBase(MixinBase object) {
 				return createMixinBaseAdapter();
 			}
@@ -177,6 +191,10 @@ public class VmwareAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseUser_data(User_data object) {
 				return createUser_dataAdapter();
+			}
+			@Override
+			public Adapter caseBasiccredential(Basiccredential object) {
+				return createBasiccredentialAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -269,6 +287,20 @@ public class VmwareAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.vmware.Vcenteraccount <em>Vcenteraccount</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.vmware.Vcenteraccount
+	 * @generated
+	 */
+	public Adapter createVcenteraccountAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.vmware.Windows <em>Windows</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -349,6 +381,20 @@ public class VmwareAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSsh_user_dataAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.vmware.Vcentercredential <em>Vcentercredential</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.vmware.Vcentercredential
+	 * @generated
+	 */
+	public Adapter createVcentercredentialAdapter() {
 		return null;
 	}
 
@@ -465,6 +511,20 @@ public class VmwareAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.accounts.Cloudaccount <em>Cloudaccount</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.accounts.Cloudaccount
+	 * @generated
+	 */
+	public Adapter createCloudaccountAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.MixinBase <em>Mixin Base</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -503,6 +563,20 @@ public class VmwareAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createUser_dataAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.accounts.Basiccredential <em>Basiccredential</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.accounts.Basiccredential
+	 * @generated
+	 */
+	public Adapter createBasiccredentialAdapter() {
 		return null;
 	}
 

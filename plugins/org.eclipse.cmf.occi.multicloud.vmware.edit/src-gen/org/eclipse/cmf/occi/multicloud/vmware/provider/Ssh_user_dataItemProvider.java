@@ -20,6 +20,7 @@ import org.eclipse.cmf.occi.core.provider.MixinBaseItemProvider;
 
 import org.eclipse.cmf.occi.infrastructure.InfrastructurePackage;
 
+import org.eclipse.cmf.occi.infrastructure.provider.User_dataItemProvider;
 import org.eclipse.cmf.occi.multicloud.vmware.Ssh_user_data;
 import org.eclipse.cmf.occi.multicloud.vmware.VmwarePackage;
 
@@ -39,7 +40,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class Ssh_user_dataItemProvider extends MixinBaseItemProvider {
+public class Ssh_user_dataItemProvider extends User_dataItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -61,34 +62,11 @@ public class Ssh_user_dataItemProvider extends MixinBaseItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addOcciComputeUserdataPropertyDescriptor(object);
 			addPasswordPropertyDescriptor(object);
 			addOcciComputeUserdataFilePropertyDescriptor(object);
 			addUserPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Occi Compute Userdata feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addOcciComputeUserdataPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_User_data_occiComputeUserdata_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_User_data_occiComputeUserdata_feature", "_UI_User_data_type"),
-				 InfrastructurePackage.Literals.USER_DATA__OCCI_COMPUTE_USERDATA,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -195,7 +173,6 @@ public class Ssh_user_dataItemProvider extends MixinBaseItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Ssh_user_data.class)) {
-			case VmwarePackage.SSH_USER_DATA__OCCI_COMPUTE_USERDATA:
 			case VmwarePackage.SSH_USER_DATA__PASSWORD:
 			case VmwarePackage.SSH_USER_DATA__OCCI_COMPUTE_USERDATA_FILE:
 			case VmwarePackage.SSH_USER_DATA__USER:

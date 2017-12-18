@@ -994,12 +994,11 @@ public class VMHelper {
 	 * Load a vm object from vcenter with his name.
 	 * 
 	 * @param vmName
+	 * @param rootFolder
 	 * @return a virtual machine object loaded from vcenter and rootFolder.
 	 */
-	public static VirtualMachine loadVirtualMachine(final String vmName) {
+	public static VirtualMachine loadVirtualMachine(final String vmName, Folder rootFolder) {
 		// Load vm information to check if the vm is already started.
-		ServiceInstance si = VCenterClient.getServiceInstance();
-		Folder rootFolder = si.getRootFolder();
 		if (vmName == null) {
 			LOGGER.error("The title must be set, as it is used as the VM name (unique).");
 			return null;

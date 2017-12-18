@@ -20,13 +20,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Connector implementation for the OCCI kind:
- * - scheme: http://occiware.org/occi/infrastructure/vmware#
- * - term: ssh_user_data
- * - title: 
+ * Connector implementation for the OCCI kind: - scheme:
+ * http://occiware.org/occi/infrastructure/vmware# - term: ssh_user_data -
+ * title:
  */
-public class Ssh_user_dataConnector extends org.eclipse.cmf.occi.multicloud.vmware.impl.Ssh_user_dataImpl
-{
+public class Ssh_user_dataConnector extends org.eclipse.cmf.occi.multicloud.vmware.impl.Ssh_user_dataImpl {
 	/**
 	 * Initialize the logger.
 	 */
@@ -36,8 +34,7 @@ public class Ssh_user_dataConnector extends org.eclipse.cmf.occi.multicloud.vmwa
 	/**
 	 * Constructs a ssh_user_data connector.
 	 */
-	Ssh_user_dataConnector()
-	{
+	Ssh_user_dataConnector() {
 		LOGGER.debug("Constructor called on " + this);
 		// TODO: Implement this constructor.
 	}
@@ -45,17 +42,21 @@ public class Ssh_user_dataConnector extends org.eclipse.cmf.occi.multicloud.vmwa
 
 	/**
 	 * Apply user data with thread management.
+	 * 
 	 * @param instanceId
 	 * @param vmName
 	 * @param monitor
 	 */
 	public void applyUserData(final String instanceId, final String vmName, IProgressMonitor monitor) {
-		
+
 		if (occiComputeUserdata != null && !occiComputeUserdata.trim().isEmpty()) {
-			LOGGER.info("applying user datas, to file : " + occiComputeUserdataFile + " in vm : " + vmName + " with content : "
-					+ occiComputeUserdata);
-			UserDataHelper userDataHelper = new UserDataHelper(instanceId, vmName, occiComputeUserdata, user,
-					password, getOcciComputeUserdataFile());
+			LOGGER.info("applying user datas, to file : " + occiComputeUserdataFile + " in vm : " + vmName
+					+ " with content : " + occiComputeUserdata);
+			UserDataHelper userDataHelper = new UserDataHelper(instanceId, vmName, occiComputeUserdata, user, password,
+					getOcciComputeUserdataFile(), this.getEntity());
+			
+			
+			
 			try {
 				if (monitor != null) {
 					// Run directly the operation within this eclipse thread.
@@ -72,11 +73,7 @@ public class Ssh_user_dataConnector extends org.eclipse.cmf.occi.multicloud.vmwa
 				LOGGER.error("Message: " + ex.getMessage());
 			}
 		}
-		
-		
+
 	}
-	
-	
-	
-	
-}	
+
+}

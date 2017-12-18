@@ -23,6 +23,7 @@ import org.eclipse.cmf.occi.core.impl.MixinBaseImpl;
 import org.eclipse.cmf.occi.infrastructure.InfrastructurePackage;
 import org.eclipse.cmf.occi.infrastructure.User_data;
 
+import org.eclipse.cmf.occi.infrastructure.impl.User_dataImpl;
 import org.eclipse.cmf.occi.multicloud.vmware.Ssh_user_data;
 import org.eclipse.cmf.occi.multicloud.vmware.VmwarePackage;
 import org.eclipse.cmf.occi.multicloud.vmware.VmwareTables;
@@ -61,7 +62,6 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.vmware.impl.Ssh_user_dataImpl#getOcciComputeUserdata <em>Occi Compute Userdata</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.vmware.impl.Ssh_user_dataImpl#getPassword <em>Password</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.vmware.impl.Ssh_user_dataImpl#getOcciComputeUserdataFile <em>Occi Compute Userdata File</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.vmware.impl.Ssh_user_dataImpl#getUser <em>User</em>}</li>
@@ -69,27 +69,7 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  *
  * @generated
  */
-public class Ssh_user_dataImpl extends MixinBaseImpl implements Ssh_user_data {
-	/**
-	 * The default value of the '{@link #getOcciComputeUserdata() <em>Occi Compute Userdata</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOcciComputeUserdata()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String OCCI_COMPUTE_USERDATA_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOcciComputeUserdata() <em>Occi Compute Userdata</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOcciComputeUserdata()
-	 * @generated
-	 * @ordered
-	 */
-	protected String occiComputeUserdata = OCCI_COMPUTE_USERDATA_EDEFAULT;
-
+public class Ssh_user_dataImpl extends User_dataImpl implements Ssh_user_data {
 	/**
 	 * The default value of the '{@link #getPassword() <em>Password</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -167,27 +147,6 @@ public class Ssh_user_dataImpl extends MixinBaseImpl implements Ssh_user_data {
 	@Override
 	protected EClass eStaticClass() {
 		return VmwarePackage.Literals.SSH_USER_DATA;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getOcciComputeUserdata() {
-		return occiComputeUserdata;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOcciComputeUserdata(String newOcciComputeUserdata) {
-		String oldOcciComputeUserdata = occiComputeUserdata;
-		occiComputeUserdata = newOcciComputeUserdata;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VmwarePackage.SSH_USER_DATA__OCCI_COMPUTE_USERDATA, oldOcciComputeUserdata, occiComputeUserdata));
 	}
 
 	/**
@@ -299,8 +258,6 @@ public class Ssh_user_dataImpl extends MixinBaseImpl implements Ssh_user_data {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case VmwarePackage.SSH_USER_DATA__OCCI_COMPUTE_USERDATA:
-				return getOcciComputeUserdata();
 			case VmwarePackage.SSH_USER_DATA__PASSWORD:
 				return getPassword();
 			case VmwarePackage.SSH_USER_DATA__OCCI_COMPUTE_USERDATA_FILE:
@@ -319,9 +276,6 @@ public class Ssh_user_dataImpl extends MixinBaseImpl implements Ssh_user_data {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case VmwarePackage.SSH_USER_DATA__OCCI_COMPUTE_USERDATA:
-				setOcciComputeUserdata((String)newValue);
-				return;
 			case VmwarePackage.SSH_USER_DATA__PASSWORD:
 				setPassword((String)newValue);
 				return;
@@ -343,9 +297,6 @@ public class Ssh_user_dataImpl extends MixinBaseImpl implements Ssh_user_data {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case VmwarePackage.SSH_USER_DATA__OCCI_COMPUTE_USERDATA:
-				setOcciComputeUserdata(OCCI_COMPUTE_USERDATA_EDEFAULT);
-				return;
 			case VmwarePackage.SSH_USER_DATA__PASSWORD:
 				setPassword(PASSWORD_EDEFAULT);
 				return;
@@ -367,8 +318,6 @@ public class Ssh_user_dataImpl extends MixinBaseImpl implements Ssh_user_data {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case VmwarePackage.SSH_USER_DATA__OCCI_COMPUTE_USERDATA:
-				return OCCI_COMPUTE_USERDATA_EDEFAULT == null ? occiComputeUserdata != null : !OCCI_COMPUTE_USERDATA_EDEFAULT.equals(occiComputeUserdata);
 			case VmwarePackage.SSH_USER_DATA__PASSWORD:
 				return PASSWORD_EDEFAULT == null ? password != null : !PASSWORD_EDEFAULT.equals(password);
 			case VmwarePackage.SSH_USER_DATA__OCCI_COMPUTE_USERDATA_FILE:
@@ -377,38 +326,6 @@ public class Ssh_user_dataImpl extends MixinBaseImpl implements Ssh_user_data {
 				return USER_EDEFAULT == null ? user != null : !USER_EDEFAULT.equals(user);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == User_data.class) {
-			switch (derivedFeatureID) {
-				case VmwarePackage.SSH_USER_DATA__OCCI_COMPUTE_USERDATA: return InfrastructurePackage.USER_DATA__OCCI_COMPUTE_USERDATA;
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == User_data.class) {
-			switch (baseFeatureID) {
-				case InfrastructurePackage.USER_DATA__OCCI_COMPUTE_USERDATA: return VmwarePackage.SSH_USER_DATA__OCCI_COMPUTE_USERDATA;
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**
@@ -436,9 +353,7 @@ public class Ssh_user_dataImpl extends MixinBaseImpl implements Ssh_user_data {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (occiComputeUserdata: ");
-		result.append(occiComputeUserdata);
-		result.append(", password: ");
+		result.append(" (password: ");
 		result.append(password);
 		result.append(", occiComputeUserdataFile: ");
 		result.append(occiComputeUserdataFile);

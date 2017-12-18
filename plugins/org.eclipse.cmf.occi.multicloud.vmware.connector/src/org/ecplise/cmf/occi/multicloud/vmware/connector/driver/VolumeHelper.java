@@ -48,12 +48,13 @@ public class VolumeHelper {
 	 * @param volumeName
 	 * @param dcName
 	 * @param vmName
+	 * @param vCenterClient
 	 *            (may be null if volume is not attached.)
 	 * @throws LoadVolumeException 
 	 */
-	public static void loadVolumeInformation(String dsName, String volumeName, String dcName, String vmName) throws LoadVolumeException {
+	public static void loadVolumeInformation(String dsName, String volumeName, String dcName, String vmName, VCenterClient vCenterClient) throws LoadVolumeException {
 		// Load a volume.
-		volume = new Volume(volumeName, dsName, dcName, vmName);
+		volume = new Volume(volumeName, dsName, dcName, vmName, vCenterClient);
 		volume.loadVolume();
 	}
 
@@ -65,15 +66,16 @@ public class VolumeHelper {
 	 * @param dcName
 	 * @param vmName
 	 *            (may be null if volume is not attached).
+	 * @param vCenterClient
 	 * @return true if volume exist, else false.
 	 * @throws LoadVolumeException 
 	 */
-	public static boolean isExistVolumeForName(String dsName, String volumeName, String dcName, String vmName) {
+	public static boolean isExistVolumeForName(String dsName, String volumeName, String dcName, String vmName, VCenterClient vCenterClient) {
 		// Search the volume on datastore.
 		if (!checkVolume(volumeName)) {
 			// Load the volume.
 			try {
-				loadVolumeInformation(dsName, volumeName, dcName, vmName);
+				loadVolumeInformation(dsName, volumeName, dcName, vmName, vCenterClient);
 			} catch (LoadVolumeException ex) {
 			}
 		}
@@ -91,14 +93,15 @@ public class VolumeHelper {
 	 *            (Datastore name)
 	 * @param volumeName
 	 * @param volumeSize
+	 * @param vCenterClient
 	 * @throws LoadVolumeException 
 	 * @throws CreateDiskException 
 	 */
 	public static void createVolume(final String dcName, final String dsName, final String volumeName,
-			final Float volumeSize) throws LoadVolumeException, CreateDiskException {
+			final Float volumeSize, VCenterClient vCenterClient) throws LoadVolumeException, CreateDiskException {
 		// build a new disk.
 		if (!checkVolume(volumeName)) {
-			loadVolumeInformation(dsName, volumeName, dcName, null);
+			loadVolumeInformation(dsName, volumeName, dcName, null, vCenterClient);
 		}
 		if (volume.isExist()) {
 			LOGGER.warn("The disk " + volumeName + " already exist, cant create it.");
@@ -227,12 +230,13 @@ public class VolumeHelper {
 	 * @param dcName
 	 * @param dsName
 	 * @param vmName
+	 * @param vCenterClient
 	 * @throws DetachDiskException
 	 * @throws DeleteDiskException 
 	 * @throws LoadVolumeException 
 	 */
 	public static void destroyDisk(final String volumeName, final String dcName, final String dsName,
-			final String vmName) throws DetachDiskException, DeleteDiskException, LoadVolumeException {
+			final String vmName, VCenterClient vCenterClient) throws DetachDiskException, DeleteDiskException, LoadVolumeException {
 		
 		if (checkVolume(volumeName)) {
 			// The volume is loaded
@@ -244,7 +248,7 @@ public class VolumeHelper {
 			volume.destroyVolume();
 
 		} else {
-			if (isExistVolumeForName(dsName, volumeName, dcName, vmName)) {
+			if (isExistVolumeForName(dsName, volumeName, dcName, vmName, vCenterClient)) {
 				// disk is reloaded successfully, destroy the vmdk.
 				volume.destroyVolume();
 			}

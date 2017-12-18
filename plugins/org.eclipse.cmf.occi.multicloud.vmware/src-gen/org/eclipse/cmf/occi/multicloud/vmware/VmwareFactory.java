@@ -77,6 +77,15 @@ public interface VmwareFactory extends EFactory {
 	Networkadapter createNetworkadapter();
 
 	/**
+	 * Returns a new object of class '<em>Vcenteraccount</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Vcenteraccount</em>'.
+	 * @generated
+	 */
+	Vcenteraccount createVcenteraccount();
+
+	/**
 	 * Returns a new object of class '<em>Windows</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -129,6 +138,15 @@ public interface VmwareFactory extends EFactory {
 	 * @generated
 	 */
 	Ssh_user_data createSsh_user_data();
+
+	/**
+	 * Returns a new object of class '<em>Vcentercredential</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Vcentercredential</em>'.
+	 * @generated
+	 */
+	Vcentercredential createVcentercredential();
 
 	/**
 	 * Returns the package supported by this factory.

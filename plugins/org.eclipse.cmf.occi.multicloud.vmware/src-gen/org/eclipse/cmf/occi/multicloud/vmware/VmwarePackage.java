@@ -16,6 +16,7 @@ import org.eclipse.cmf.occi.core.OCCIPackage;
 
 import org.eclipse.cmf.occi.infrastructure.InfrastructurePackage;
 
+import org.eclipse.cmf.occi.multicloud.accounts.AccountsPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -1211,32 +1212,50 @@ public interface VmwarePackage extends EPackage {
 	int NETWORKADAPTER_OPERATION_COUNT = InfrastructurePackage.NETWORKINTERFACE_OPERATION_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.vmware.impl.WindowsImpl <em>Windows</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.vmware.impl.VcenteraccountImpl <em>Vcenteraccount</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.vmware.impl.WindowsImpl
-	 * @see org.eclipse.cmf.occi.multicloud.vmware.impl.VmwarePackageImpl#getWindows()
+	 * @see org.eclipse.cmf.occi.multicloud.vmware.impl.VcenteraccountImpl
+	 * @see org.eclipse.cmf.occi.multicloud.vmware.impl.VmwarePackageImpl#getVcenteraccount()
 	 * @generated
 	 */
-	int WINDOWS = 5;
+	int VCENTERACCOUNT = 5;
 
 	/**
-	 * The feature id for the '<em><b>Mixin</b></em>' reference.
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WINDOWS__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
+	int VCENTERACCOUNT__ID = AccountsPackage.CLOUDACCOUNT__ID;
 
 	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WINDOWS__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
+	int VCENTERACCOUNT__TITLE = AccountsPackage.CLOUDACCOUNT__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VCENTERACCOUNT__KIND = AccountsPackage.CLOUDACCOUNT__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Location</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VCENTERACCOUNT__LOCATION = AccountsPackage.CLOUDACCOUNT__LOCATION;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -1245,52 +1264,116 @@ public interface VmwarePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WINDOWS__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
+	int VCENTERACCOUNT__ATTRIBUTES = AccountsPackage.CLOUDACCOUNT__ATTRIBUTES;
 
 	/**
-	 * The feature id for the '<em><b>Datastoreisopath</b></em>' attribute.
+	 * The feature id for the '<em><b>Mixins</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WINDOWS__DATASTOREISOPATH = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
+	int VCENTERACCOUNT__MIXINS = AccountsPackage.CLOUDACCOUNT__MIXINS;
 
 	/**
-	 * The feature id for the '<em><b>Guestid</b></em>' attribute.
+	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WINDOWS__GUESTID = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
+	int VCENTERACCOUNT__PARTS = AccountsPackage.CLOUDACCOUNT__PARTS;
 
 	/**
-	 * The number of structural features of the '<em>Windows</em>' class.
+	 * The feature id for the '<em><b>Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WINDOWS_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
+	int VCENTERACCOUNT__SUMMARY = AccountsPackage.CLOUDACCOUNT__SUMMARY;
 
 	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
+	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WINDOWS___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
+	int VCENTERACCOUNT__LINKS = AccountsPackage.CLOUDACCOUNT__LINKS;
 
 	/**
-	 * The number of operations of the '<em>Windows</em>' class.
+	 * The feature id for the '<em><b>Rlinks</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WINDOWS_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
+	int VCENTERACCOUNT__RLINKS = AccountsPackage.CLOUDACCOUNT__RLINKS;
+
+	/**
+	 * The number of structural features of the '<em>Vcenteraccount</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VCENTERACCOUNT_FEATURE_COUNT = AccountsPackage.CLOUDACCOUNT_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Occi Create</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VCENTERACCOUNT___OCCI_CREATE = AccountsPackage.CLOUDACCOUNT___OCCI_CREATE;
+
+	/**
+	 * The operation id for the '<em>Occi Retrieve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VCENTERACCOUNT___OCCI_RETRIEVE = AccountsPackage.CLOUDACCOUNT___OCCI_RETRIEVE;
+
+	/**
+	 * The operation id for the '<em>Occi Update</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VCENTERACCOUNT___OCCI_UPDATE = AccountsPackage.CLOUDACCOUNT___OCCI_UPDATE;
+
+	/**
+	 * The operation id for the '<em>Occi Delete</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VCENTERACCOUNT___OCCI_DELETE = AccountsPackage.CLOUDACCOUNT___OCCI_DELETE;
+
+	/**
+	 * The number of operations of the '<em>Vcenteraccount</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VCENTERACCOUNT_OPERATION_COUNT = AccountsPackage.CLOUDACCOUNT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.vmware.impl.WindowsImpl <em>Windows</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.multicloud.vmware.impl.WindowsImpl
+	 * @see org.eclipse.cmf.occi.multicloud.vmware.impl.VmwarePackageImpl#getWindows()
+	 * @generated
+	 */
+	int WINDOWS = 6;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.vmware.impl.LinuxImpl <em>Linux</em>}' class.
@@ -1300,79 +1383,7 @@ public interface VmwarePackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.vmware.impl.VmwarePackageImpl#getLinux()
 	 * @generated
 	 */
-	int LINUX = 6;
-
-	/**
-	 * The feature id for the '<em><b>Mixin</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINUX__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINUX__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINUX__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Datastoreisopath</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINUX__DATASTOREISOPATH = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Guestid</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINUX__GUESTID = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Linux</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINUX_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINUX___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Linux</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINUX_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
+	int LINUX = 7;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.vmware.impl.MacosxImpl <em>Macosx</em>}' class.
@@ -1382,79 +1393,7 @@ public interface VmwarePackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.vmware.impl.VmwarePackageImpl#getMacosx()
 	 * @generated
 	 */
-	int MACOSX = 7;
-
-	/**
-	 * The feature id for the '<em><b>Mixin</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MACOSX__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MACOSX__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MACOSX__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Datastoreisopath</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MACOSX__DATASTOREISOPATH = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Guestid</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MACOSX__GUESTID = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Macosx</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MACOSX_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MACOSX___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Macosx</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MACOSX_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
+	int MACOSX = 8;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.vmware.impl.VmwarefoldersImpl <em>Vmwarefolders</em>}' class.
@@ -1464,7 +1403,305 @@ public interface VmwarePackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.vmware.impl.VmwarePackageImpl#getVmwarefolders()
 	 * @generated
 	 */
-	int VMWAREFOLDERS = 8;
+	int VMWAREFOLDERS = 9;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.vmware.impl.Os_tpl_vmwareImpl <em>Os tpl vmware</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.multicloud.vmware.impl.Os_tpl_vmwareImpl
+	 * @see org.eclipse.cmf.occi.multicloud.vmware.impl.VmwarePackageImpl#getOs_tpl_vmware()
+	 * @generated
+	 */
+	int OS_TPL_VMWARE = 10;
+
+	/**
+	 * The feature id for the '<em><b>Mixin</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OS_TPL_VMWARE__MIXIN = InfrastructurePackage.OS_TPL__MIXIN;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OS_TPL_VMWARE__ENTITY = InfrastructurePackage.OS_TPL__ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OS_TPL_VMWARE__ATTRIBUTES = InfrastructurePackage.OS_TPL__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Datastoreisopath</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OS_TPL_VMWARE__DATASTOREISOPATH = InfrastructurePackage.OS_TPL_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Guestid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OS_TPL_VMWARE__GUESTID = InfrastructurePackage.OS_TPL_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Os tpl vmware</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OS_TPL_VMWARE_FEATURE_COUNT = InfrastructurePackage.OS_TPL_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Applies Constraint</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OS_TPL_VMWARE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = InfrastructurePackage.OS_TPL_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Os tpl vmware</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OS_TPL_VMWARE_OPERATION_COUNT = InfrastructurePackage.OS_TPL_OPERATION_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Mixin</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WINDOWS__MIXIN = OS_TPL_VMWARE__MIXIN;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WINDOWS__ENTITY = OS_TPL_VMWARE__ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WINDOWS__ATTRIBUTES = OS_TPL_VMWARE__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Datastoreisopath</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WINDOWS__DATASTOREISOPATH = OS_TPL_VMWARE__DATASTOREISOPATH;
+
+	/**
+	 * The feature id for the '<em><b>Guestid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WINDOWS__GUESTID = OS_TPL_VMWARE__GUESTID;
+
+	/**
+	 * The number of structural features of the '<em>Windows</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WINDOWS_FEATURE_COUNT = OS_TPL_VMWARE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Applies Constraint</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WINDOWS___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OS_TPL_VMWARE_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Windows</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WINDOWS_OPERATION_COUNT = OS_TPL_VMWARE_OPERATION_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Mixin</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINUX__MIXIN = OS_TPL_VMWARE__MIXIN;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINUX__ENTITY = OS_TPL_VMWARE__ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINUX__ATTRIBUTES = OS_TPL_VMWARE__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Datastoreisopath</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINUX__DATASTOREISOPATH = OS_TPL_VMWARE__DATASTOREISOPATH;
+
+	/**
+	 * The feature id for the '<em><b>Guestid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINUX__GUESTID = OS_TPL_VMWARE__GUESTID;
+
+	/**
+	 * The number of structural features of the '<em>Linux</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINUX_FEATURE_COUNT = OS_TPL_VMWARE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Applies Constraint</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINUX___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OS_TPL_VMWARE_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Linux</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINUX_OPERATION_COUNT = OS_TPL_VMWARE_OPERATION_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Mixin</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MACOSX__MIXIN = OS_TPL_VMWARE__MIXIN;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MACOSX__ENTITY = OS_TPL_VMWARE__ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MACOSX__ATTRIBUTES = OS_TPL_VMWARE__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Datastoreisopath</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MACOSX__DATASTOREISOPATH = OS_TPL_VMWARE__DATASTOREISOPATH;
+
+	/**
+	 * The feature id for the '<em><b>Guestid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MACOSX__GUESTID = OS_TPL_VMWARE__GUESTID;
+
+	/**
+	 * The number of structural features of the '<em>Macosx</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MACOSX_FEATURE_COUNT = OS_TPL_VMWARE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Applies Constraint</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MACOSX___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OS_TPL_VMWARE_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Macosx</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MACOSX_OPERATION_COUNT = OS_TPL_VMWARE_OPERATION_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -1566,88 +1803,6 @@ public interface VmwarePackage extends EPackage {
 	int VMWAREFOLDERS_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.vmware.impl.Os_tpl_vmwareImpl <em>Os tpl vmware</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.vmware.impl.Os_tpl_vmwareImpl
-	 * @see org.eclipse.cmf.occi.multicloud.vmware.impl.VmwarePackageImpl#getOs_tpl_vmware()
-	 * @generated
-	 */
-	int OS_TPL_VMWARE = 9;
-
-	/**
-	 * The feature id for the '<em><b>Mixin</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OS_TPL_VMWARE__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OS_TPL_VMWARE__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OS_TPL_VMWARE__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Datastoreisopath</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OS_TPL_VMWARE__DATASTOREISOPATH = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Guestid</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OS_TPL_VMWARE__GUESTID = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Os tpl vmware</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OS_TPL_VMWARE_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OS_TPL_VMWARE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Os tpl vmware</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OS_TPL_VMWARE_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
-
-	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.vmware.impl.Ssh_user_dataImpl <em>Ssh user data</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1655,7 +1810,7 @@ public interface VmwarePackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.vmware.impl.VmwarePackageImpl#getSsh_user_data()
 	 * @generated
 	 */
-	int SSH_USER_DATA = 10;
+	int SSH_USER_DATA = 11;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -1664,7 +1819,7 @@ public interface VmwarePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SSH_USER_DATA__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
+	int SSH_USER_DATA__MIXIN = InfrastructurePackage.USER_DATA__MIXIN;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' container reference.
@@ -1673,7 +1828,7 @@ public interface VmwarePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SSH_USER_DATA__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
+	int SSH_USER_DATA__ENTITY = InfrastructurePackage.USER_DATA__ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -1682,7 +1837,7 @@ public interface VmwarePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SSH_USER_DATA__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
+	int SSH_USER_DATA__ATTRIBUTES = InfrastructurePackage.USER_DATA__ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Occi Compute Userdata</b></em>' attribute.
@@ -1691,7 +1846,7 @@ public interface VmwarePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SSH_USER_DATA__OCCI_COMPUTE_USERDATA = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
+	int SSH_USER_DATA__OCCI_COMPUTE_USERDATA = InfrastructurePackage.USER_DATA__OCCI_COMPUTE_USERDATA;
 
 	/**
 	 * The feature id for the '<em><b>Password</b></em>' attribute.
@@ -1700,7 +1855,7 @@ public interface VmwarePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SSH_USER_DATA__PASSWORD = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
+	int SSH_USER_DATA__PASSWORD = InfrastructurePackage.USER_DATA_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Occi Compute Userdata File</b></em>' attribute.
@@ -1709,7 +1864,7 @@ public interface VmwarePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SSH_USER_DATA__OCCI_COMPUTE_USERDATA_FILE = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
+	int SSH_USER_DATA__OCCI_COMPUTE_USERDATA_FILE = InfrastructurePackage.USER_DATA_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>User</b></em>' attribute.
@@ -1718,7 +1873,7 @@ public interface VmwarePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SSH_USER_DATA__USER = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
+	int SSH_USER_DATA__USER = InfrastructurePackage.USER_DATA_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Ssh user data</em>' class.
@@ -1727,7 +1882,7 @@ public interface VmwarePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SSH_USER_DATA_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 4;
+	int SSH_USER_DATA_FEATURE_COUNT = InfrastructurePackage.USER_DATA_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Applies Constraint</em>' operation.
@@ -1736,7 +1891,7 @@ public interface VmwarePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SSH_USER_DATA___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
+	int SSH_USER_DATA___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = InfrastructurePackage.USER_DATA_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Ssh user data</em>' class.
@@ -1745,7 +1900,107 @@ public interface VmwarePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SSH_USER_DATA_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
+	int SSH_USER_DATA_OPERATION_COUNT = InfrastructurePackage.USER_DATA_OPERATION_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.vmware.impl.VcentercredentialImpl <em>Vcentercredential</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.multicloud.vmware.impl.VcentercredentialImpl
+	 * @see org.eclipse.cmf.occi.multicloud.vmware.impl.VmwarePackageImpl#getVcentercredential()
+	 * @generated
+	 */
+	int VCENTERCREDENTIAL = 12;
+
+	/**
+	 * The feature id for the '<em><b>Mixin</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VCENTERCREDENTIAL__MIXIN = AccountsPackage.BASICCREDENTIAL__MIXIN;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VCENTERCREDENTIAL__ENTITY = AccountsPackage.BASICCREDENTIAL__ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VCENTERCREDENTIAL__ATTRIBUTES = AccountsPackage.BASICCREDENTIAL__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Username</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VCENTERCREDENTIAL__USERNAME = AccountsPackage.BASICCREDENTIAL__USERNAME;
+
+	/**
+	 * The feature id for the '<em><b>Password</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VCENTERCREDENTIAL__PASSWORD = AccountsPackage.BASICCREDENTIAL__PASSWORD;
+
+	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VCENTERCREDENTIAL__URL = AccountsPackage.BASICCREDENTIAL__URL;
+
+	/**
+	 * The number of structural features of the '<em>Vcentercredential</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VCENTERCREDENTIAL_FEATURE_COUNT = AccountsPackage.BASICCREDENTIAL_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Updatepassword</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VCENTERCREDENTIAL___UPDATEPASSWORD = AccountsPackage.BASICCREDENTIAL___UPDATEPASSWORD;
+
+	/**
+	 * The operation id for the '<em>Applies Constraint</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VCENTERCREDENTIAL___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = AccountsPackage.BASICCREDENTIAL_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Vcentercredential</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VCENTERCREDENTIAL_OPERATION_COUNT = AccountsPackage.BASICCREDENTIAL_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.vmware.GuestOsIdentifiers <em>Guest Os Identifiers</em>}' enum.
@@ -1755,7 +2010,7 @@ public interface VmwarePackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.vmware.impl.VmwarePackageImpl#getGuestOsIdentifiers()
 	 * @generated
 	 */
-	int GUEST_OS_IDENTIFIERS = 11;
+	int GUEST_OS_IDENTIFIERS = 13;
 
 
 	/**
@@ -1926,6 +2181,16 @@ public interface VmwarePackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getNetworkadapter__TargetConstraint__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.vmware.Vcenteraccount <em>Vcenteraccount</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Vcenteraccount</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.vmware.Vcenteraccount
+	 * @generated
+	 */
+	EClass getVcenteraccount();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.vmware.Windows <em>Windows</em>}'.
@@ -2158,6 +2423,26 @@ public interface VmwarePackage extends EPackage {
 	EOperation getSsh_user_data__AppliesConstraint__DiagnosticChain_Map();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.vmware.Vcentercredential <em>Vcentercredential</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Vcentercredential</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.vmware.Vcentercredential
+	 * @generated
+	 */
+	EClass getVcentercredential();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.vmware.Vcentercredential#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
+	 * @see org.eclipse.cmf.occi.multicloud.vmware.Vcentercredential#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getVcentercredential__AppliesConstraint__DiagnosticChain_Map();
+
+	/**
 	 * Returns the meta object for enum '{@link org.eclipse.cmf.occi.multicloud.vmware.GuestOsIdentifiers <em>Guest Os Identifiers</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2327,6 +2612,16 @@ public interface VmwarePackage extends EPackage {
 		 * @generated
 		 */
 		EOperation NETWORKADAPTER___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getNetworkadapter__TargetConstraint__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.vmware.impl.VcenteraccountImpl <em>Vcenteraccount</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.cmf.occi.multicloud.vmware.impl.VcenteraccountImpl
+		 * @see org.eclipse.cmf.occi.multicloud.vmware.impl.VmwarePackageImpl#getVcenteraccount()
+		 * @generated
+		 */
+		EClass VCENTERACCOUNT = eINSTANCE.getVcenteraccount();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.vmware.impl.WindowsImpl <em>Windows</em>}' class.
@@ -2515,6 +2810,24 @@ public interface VmwarePackage extends EPackage {
 		 * @generated
 		 */
 		EOperation SSH_USER_DATA___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getSsh_user_data__AppliesConstraint__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.vmware.impl.VcentercredentialImpl <em>Vcentercredential</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.cmf.occi.multicloud.vmware.impl.VcentercredentialImpl
+		 * @see org.eclipse.cmf.occi.multicloud.vmware.impl.VmwarePackageImpl#getVcentercredential()
+		 * @generated
+		 */
+		EClass VCENTERCREDENTIAL = eINSTANCE.getVcentercredential();
+
+		/**
+		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation VCENTERCREDENTIAL___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getVcentercredential__AppliesConstraint__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.vmware.GuestOsIdentifiers <em>Guest Os Identifiers</em>}' enum.

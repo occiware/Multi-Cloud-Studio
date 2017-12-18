@@ -18,6 +18,7 @@ import org.eclipse.cmf.occi.crtp.provider.CrtpEditPlugin;
 
 import org.eclipse.cmf.occi.infrastructure.provider.InfrastructureEditPlugin;
 
+import org.eclipse.cmf.occi.multicloud.accounts.provider.AccountsEditPlugin;
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -56,6 +57,7 @@ public final class VmwareEditPlugin extends EMFPlugin {
 		  (new ResourceLocator [] {
 		     CrtpEditPlugin.INSTANCE,
 		     InfrastructureEditPlugin.INSTANCE,
+		     AccountsEditPlugin.INSTANCE,
 		     OCCIEditPlugin.INSTANCE,
 		   });
 	}

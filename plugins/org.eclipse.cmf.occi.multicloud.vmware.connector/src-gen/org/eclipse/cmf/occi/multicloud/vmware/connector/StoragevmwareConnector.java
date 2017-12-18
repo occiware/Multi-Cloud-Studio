@@ -85,6 +85,11 @@ public class StoragevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmwa
 	private String globalMessage = "";
 	private Level levelMessage = null;
 
+	/**
+	 * Main vmware client to manage this instance on provider.
+	 */
+	private VCenterClient vCenterClient = new VCenterClient(null, null, null);
+	
 	// Start of user code Storagevmwareconnector_constructor
 	/**
 	 * Constructs a storagevmware connector.
@@ -431,7 +436,7 @@ public class StoragevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmwa
 	 */
 	private void loadDatastoreAndDatacenter() throws DatastoreNotFoundException, DatacenterNotFoundException {
 
-		Folder rootFolder = VCenterClient.getServiceInstance().getRootFolder();
+		Folder rootFolder = vCenterClient.getServiceInstance().getRootFolder();
 
 		// Search for linked computes.
 
@@ -564,7 +569,7 @@ public class StoragevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmwa
 	 * @param monitor
 	 */
 	public void createStorage(IProgressMonitor monitor) {
-		if (!VCenterClient.checkConnection()) {
+		if (!vCenterClient.checkConnection(this)) {
 			// Must return true if connection is established.
 			globalMessage = "No connection to Vcenter has been established.";
 			levelMessage = Level.ERROR;
@@ -580,7 +585,7 @@ public class StoragevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmwa
 			subMonitor = SubMonitor.convert(monitor, 100);
 			subMonitor.worked(10);
 		}
-		ServiceInstance si = VCenterClient.getServiceInstance();
+		ServiceInstance si = vCenterClient.getServiceInstance();
 		Folder rootFolder = si.getRootFolder();
 
 		AllocatorImpl allocator = new AllocatorImpl(rootFolder);
@@ -622,14 +627,14 @@ public class StoragevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmwa
 				globalMessage = ex.getMessage();
 				levelMessage = Level.ERROR;
 				LOGGER.error(globalMessage);
-				VCenterClient.disconnect();
+				vCenterClient.disconnect();
 				return;
 			}
 			if (datacenter == null) {
 				globalMessage = ex.getMessage();
 				levelMessage = Level.ERROR;
 				LOGGER.error(globalMessage);
-				VCenterClient.disconnect();
+				vCenterClient.disconnect();
 				return;
 			}
 		}
@@ -641,19 +646,19 @@ public class StoragevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmwa
 		// volume object will have default value.
 
 		try {
-			VolumeHelper.loadVolumeInformation(datastoreName, volumeName, datacenterName, vmName);
+			VolumeHelper.loadVolumeInformation(datastoreName, volumeName, datacenterName, vmName, vCenterClient);
 			if (monitor != null) {
 				subMonitor.worked(60);
 			}
 		} catch (LoadVolumeException ex) {
 		}
 		// Check if the volume already exist in the vcenter.
-		if (VolumeHelper.isExistVolumeForName(datastoreName, volumeName, datacenterName, vmName)) {
+		if (VolumeHelper.isExistVolumeForName(datastoreName, volumeName, datacenterName, vmName, vCenterClient)) {
 			// The volume already exist.
 			globalMessage = "Virtual disk : " + volumeName + " already exist in datacenter.";
 			levelMessage = Level.WARN;
 			LOGGER.warn(globalMessage);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		}
 		if (monitor != null) {
@@ -664,7 +669,7 @@ public class StoragevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmwa
 			globalMessage = "The disk size is not setted, please set this attributes in GB float value.";
 			levelMessage = Level.ERROR;
 			LOGGER.error(globalMessage);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		}
 		VolumeHelper.setSize(volumeName, getOcciStorageSize());
@@ -673,7 +678,7 @@ public class StoragevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmwa
 			if (monitor != null) {
 				subMonitor.worked(80);
 			}
-			VolumeHelper.createVolume(datacenterName, datastoreName, volumeName, getOcciStorageSize());
+			VolumeHelper.createVolume(datacenterName, datastoreName, volumeName, getOcciStorageSize(), vCenterClient);
 			if (monitor != null) {
 				subMonitor.worked(100);
 			}
@@ -693,7 +698,7 @@ public class StoragevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmwa
 		}
 
 		// In all case invoke a disconnect from vcenter.
-		VCenterClient.disconnect();
+		vCenterClient.disconnect();
 	}
 
 	/**
@@ -702,7 +707,7 @@ public class StoragevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmwa
 	 * @param monitor
 	 */
 	public void retrieveStorage(IProgressMonitor monitor) {
-		if (!VCenterClient.checkConnection()) {
+		if (!vCenterClient.checkConnection(this)) {
 			// Must return true if connection is established.
 			globalMessage = "No connection to Vcenter has been established.";
 			levelMessage = Level.ERROR;
@@ -751,18 +756,18 @@ public class StoragevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmwa
 		// Check if disk name has changed.
 		if (!oldDiskName.equals(volumeName)) {
 			// Volume name has changed.
-			if (VolumeHelper.isExistVolumeForName(datastoreName, volumeName, datacenterName, vmName)) {
+			if (VolumeHelper.isExistVolumeForName(datastoreName, volumeName, datacenterName, vmName, vCenterClient)) {
 				// All ok.
 				oldDiskName = volumeName;
 				LOGGER.info("The disk " + oldDiskName + " name has changed to : " + volumeName);
 
-			} else if (VolumeHelper.isExistVolumeForName(datastoreName, oldDiskName, datacenterName, vmName)) {
+			} else if (VolumeHelper.isExistVolumeForName(datastoreName, oldDiskName, datacenterName, vmName, vCenterClient)) {
 				volumeName = oldDiskName;
 			}
 		} else {
 			// Load the volume object.
 			try {
-				VolumeHelper.loadVolumeInformation(datastoreName, volumeName, datacenterName, vmName);
+				VolumeHelper.loadVolumeInformation(datastoreName, volumeName, datacenterName, vmName, vCenterClient);
 			} catch (LoadVolumeException ex) {
 				globalMessage = ex.getMessage();
 				levelMessage = Level.ERROR;
@@ -775,7 +780,7 @@ public class StoragevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmwa
 		}
 		// Update disk information on screen.
 		try {
-			if (!VolumeHelper.isExistVolumeForName(datastoreName, volumeName, datacenterName, vmName)) {
+			if (!VolumeHelper.isExistVolumeForName(datastoreName, volumeName, datacenterName, vmName, vCenterClient)) {
 				globalMessage = "Cant find the disk on vcenter, there's no disk with the name : " + volumeName;
 				levelMessage = Level.ERROR;
 				LOGGER.error(globalMessage);
@@ -796,7 +801,7 @@ public class StoragevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmwa
 		}
 
 		// In all case invoke a disconnect from vcenter.
-		VCenterClient.disconnect();
+		vCenterClient.disconnect();
 	}
 
 	/**
@@ -805,7 +810,7 @@ public class StoragevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmwa
 	 * @param monitor
 	 */
 	public void updateStorage(IProgressMonitor monitor) {
-		if (!VCenterClient.checkConnection()) {
+		if (!vCenterClient.checkConnection(this)) {
 			// Must return true if connection is established.
 			globalMessage = "No connection to Vcenter has been established.";
 			levelMessage = Level.ERROR;
@@ -833,14 +838,14 @@ public class StoragevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmwa
 				globalMessage = "Cant locate a datastore for this storage disk.";
 				levelMessage = Level.ERROR;
 				LOGGER.error(globalMessage);
-				VCenterClient.disconnect();
+				vCenterClient.disconnect();
 				return;
 			}
 			if (datacenter == null) {
 				globalMessage = "Cant locate a datacenter for this storage disk.";
 				levelMessage = Level.ERROR;
 				LOGGER.error(globalMessage);
-				VCenterClient.disconnect();
+				vCenterClient.disconnect();
 				return;
 			}
 		}
@@ -891,7 +896,7 @@ public class StoragevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmwa
 			subMonitor.worked(100);
 		}
 		// In all case invoke a disconnect from vcenter.
-		VCenterClient.disconnect();
+		vCenterClient.disconnect();
 	}
 
 	/**
@@ -900,7 +905,7 @@ public class StoragevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmwa
 	 * @param monitor
 	 */
 	public void deleteStorage(IProgressMonitor monitor) {
-		if (!VCenterClient.checkConnection()) {
+		if (!vCenterClient.checkConnection(this)) {
 			// Must return true if connection is established.
 			globalMessage = "No connection to Vcenter has been established.";
 			levelMessage = Level.ERROR;
@@ -933,14 +938,14 @@ public class StoragevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmwa
 				globalMessage = "Cant locate a datastore for this storage disk.";
 				levelMessage = Level.ERROR;
 				LOGGER.error(globalMessage);
-				VCenterClient.disconnect();
+				vCenterClient.disconnect();
 				return;
 			}
 			if (datacenter == null) {
 				globalMessage = "Cant locate a datacenter for this storage disk.";
 				levelMessage = Level.ERROR;
 				LOGGER.error(globalMessage);
-				VCenterClient.disconnect();
+				vCenterClient.disconnect();
 				return;
 			}
 		}
@@ -948,7 +953,7 @@ public class StoragevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmwa
 			subMonitor.worked(60);
 		}
 		try {
-			VolumeHelper.destroyDisk(volumeName, datacenterName, datastoreName, vmName);
+			VolumeHelper.destroyDisk(volumeName, datacenterName, datastoreName, vmName, vCenterClient);
 			globalMessage = "Delete disk operation success";
 			levelMessage = Level.INFO;
 			LOGGER.error(globalMessage);
@@ -961,7 +966,7 @@ public class StoragevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmwa
 			subMonitor.worked(100);
 		}
 		// In all case invoke a disconnect from vcenter.
-		VCenterClient.disconnect();
+		vCenterClient.disconnect();
 	}
 
 	/**
@@ -970,7 +975,7 @@ public class StoragevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmwa
 	 * @param monitor
 	 */
 	public void attachStorage(IProgressMonitor monitor) {
-		if (!VCenterClient.checkConnection()) {
+		if (!vCenterClient.checkConnection(this)) {
 			// Must return true if connection is established.
 			globalMessage = "No connection to Vcenter has been established.";
 			levelMessage = Level.ERROR;
@@ -997,14 +1002,14 @@ public class StoragevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmwa
 				globalMessage = "Cant locate a datastore for this storage disk.";
 				levelMessage = Level.ERROR;
 				LOGGER.error(globalMessage);
-				VCenterClient.disconnect();
+				vCenterClient.disconnect();
 				return;
 			}
 			if (datacenter == null) {
 				globalMessage = "Cant locate a datacenter for this storage disk.";
 				levelMessage = Level.ERROR;
 				LOGGER.error(globalMessage);
-				VCenterClient.disconnect();
+				vCenterClient.disconnect();
 				return;
 			}
 		}
@@ -1063,7 +1068,7 @@ public class StoragevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmwa
 			LOGGER.error(globalMessage);
 		}
 		// In all case invoke a disconnect from vcenter.
-		VCenterClient.disconnect();
+		vCenterClient.disconnect();
 	}
 
 	/**
@@ -1073,7 +1078,7 @@ public class StoragevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmwa
 	 */
 	public void detachStorage(IProgressMonitor monitor) {
 		volumeName = getTitle();
-		if (!VCenterClient.checkConnection()) {
+		if (!vCenterClient.checkConnection(this)) {
 			// Must return true if connection is established.
 			globalMessage = "No connection to Vcenter has been established.";
 			levelMessage = Level.WARN;
@@ -1098,14 +1103,14 @@ public class StoragevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmwa
 				globalMessage = "Cant locate a datastore for this storage disk.";
 				levelMessage = Level.ERROR;
 				LOGGER.error(globalMessage);
-				VCenterClient.disconnect();
+				vCenterClient.disconnect();
 				return;
 			}
 			if (datacenter == null) {
 				globalMessage = "Cant locate a datacenter for this storage disk.";
 				levelMessage = Level.ERROR;
 				LOGGER.error(globalMessage);
-				VCenterClient.disconnect();
+				vCenterClient.disconnect();
 				return;
 			}
 		}
@@ -1153,7 +1158,7 @@ public class StoragevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmwa
 			subMonitor.worked(100);
 		}
 		// In all case invoke a disconnect from vcenter.
-		VCenterClient.disconnect();
+		vCenterClient.disconnect();
 	}
 
 	/**

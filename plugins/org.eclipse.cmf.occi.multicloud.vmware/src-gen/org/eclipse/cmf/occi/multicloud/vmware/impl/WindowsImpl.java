@@ -58,57 +58,10 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Windows</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * The following features are implemented:
- * </p>
- * <ul>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.vmware.impl.WindowsImpl#getDatastoreisopath <em>Datastoreisopath</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.vmware.impl.WindowsImpl#getGuestid <em>Guestid</em>}</li>
- * </ul>
  *
  * @generated
  */
-public class WindowsImpl extends MixinBaseImpl implements Windows {
-	/**
-	 * The default value of the '{@link #getDatastoreisopath() <em>Datastoreisopath</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDatastoreisopath()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DATASTOREISOPATH_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDatastoreisopath() <em>Datastoreisopath</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDatastoreisopath()
-	 * @generated
-	 * @ordered
-	 */
-	protected String datastoreisopath = DATASTOREISOPATH_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getGuestid() <em>Guestid</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGuestid()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final GuestOsIdentifiers GUESTID_EDEFAULT = GuestOsIdentifiers.DOS_GUEST;
-
-	/**
-	 * The cached value of the '{@link #getGuestid() <em>Guestid</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGuestid()
-	 * @generated
-	 * @ordered
-	 */
-	protected GuestOsIdentifiers guestid = GUESTID_EDEFAULT;
-
+public class WindowsImpl extends Os_tpl_vmwareImpl implements Windows {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -126,48 +79,6 @@ public class WindowsImpl extends MixinBaseImpl implements Windows {
 	@Override
 	protected EClass eStaticClass() {
 		return VmwarePackage.Literals.WINDOWS;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getDatastoreisopath() {
-		return datastoreisopath;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDatastoreisopath(String newDatastoreisopath) {
-		String oldDatastoreisopath = datastoreisopath;
-		datastoreisopath = newDatastoreisopath;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VmwarePackage.WINDOWS__DATASTOREISOPATH, oldDatastoreisopath, datastoreisopath));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public GuestOsIdentifiers getGuestid() {
-		return guestid;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setGuestid(GuestOsIdentifiers newGuestid) {
-		GuestOsIdentifiers oldGuestid = guestid;
-		guestid = newGuestid == null ? GUESTID_EDEFAULT : newGuestid;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VmwarePackage.WINDOWS__GUESTID, oldGuestid, guestid));
 	}
 
 	/**
@@ -214,128 +125,11 @@ public class WindowsImpl extends MixinBaseImpl implements Windows {
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case VmwarePackage.WINDOWS__DATASTOREISOPATH:
-				return getDatastoreisopath();
-			case VmwarePackage.WINDOWS__GUESTID:
-				return getGuestid();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case VmwarePackage.WINDOWS__DATASTOREISOPATH:
-				setDatastoreisopath((String)newValue);
-				return;
-			case VmwarePackage.WINDOWS__GUESTID:
-				setGuestid((GuestOsIdentifiers)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case VmwarePackage.WINDOWS__DATASTOREISOPATH:
-				setDatastoreisopath(DATASTOREISOPATH_EDEFAULT);
-				return;
-			case VmwarePackage.WINDOWS__GUESTID:
-				setGuestid(GUESTID_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case VmwarePackage.WINDOWS__DATASTOREISOPATH:
-				return DATASTOREISOPATH_EDEFAULT == null ? datastoreisopath != null : !DATASTOREISOPATH_EDEFAULT.equals(datastoreisopath);
-			case VmwarePackage.WINDOWS__GUESTID:
-				return guestid != GUESTID_EDEFAULT;
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == Os_tpl.class) {
-			switch (derivedFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == Os_tpl_vmware.class) {
-			switch (derivedFeatureID) {
-				case VmwarePackage.WINDOWS__DATASTOREISOPATH: return VmwarePackage.OS_TPL_VMWARE__DATASTOREISOPATH;
-				case VmwarePackage.WINDOWS__GUESTID: return VmwarePackage.OS_TPL_VMWARE__GUESTID;
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == Os_tpl.class) {
-			switch (baseFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == Os_tpl_vmware.class) {
-			switch (baseFeatureID) {
-				case VmwarePackage.OS_TPL_VMWARE__DATASTOREISOPATH: return VmwarePackage.WINDOWS__DATASTOREISOPATH;
-				case VmwarePackage.OS_TPL_VMWARE__GUESTID: return VmwarePackage.WINDOWS__GUESTID;
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
-		if (baseClass == Os_tpl.class) {
-			switch (baseOperationID) {
-				default: return -1;
-			}
-		}
 		if (baseClass == Os_tpl_vmware.class) {
 			switch (baseOperationID) {
 				case VmwarePackage.OS_TPL_VMWARE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP: return VmwarePackage.WINDOWS___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP;
-				default: return -1;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
 			}
 		}
 		return super.eDerivedOperationID(baseOperationID, baseClass);
@@ -354,24 +148,6 @@ public class WindowsImpl extends MixinBaseImpl implements Windows {
 				return appliesConstraint((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (datastoreisopath: ");
-		result.append(datastoreisopath);
-		result.append(", guestid: ");
-		result.append(guestid);
-		result.append(')');
-		return result.toString();
 	}
 
 } //WindowsImpl

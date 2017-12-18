@@ -18,6 +18,7 @@ import org.eclipse.cmf.occi.crtp.CrtpPackage;
 
 import org.eclipse.cmf.occi.infrastructure.InfrastructurePackage;
 
+import org.eclipse.cmf.occi.multicloud.accounts.AccountsPackage;
 import org.eclipse.cmf.occi.multicloud.vmware.GuestOsIdentifiers;
 import org.eclipse.cmf.occi.multicloud.vmware.Instancevmware;
 import org.eclipse.cmf.occi.multicloud.vmware.Linux;
@@ -27,6 +28,8 @@ import org.eclipse.cmf.occi.multicloud.vmware.Os_tpl_vmware;
 import org.eclipse.cmf.occi.multicloud.vmware.Ssh_user_data;
 import org.eclipse.cmf.occi.multicloud.vmware.Storagelinkvmware;
 import org.eclipse.cmf.occi.multicloud.vmware.Storagevmware;
+import org.eclipse.cmf.occi.multicloud.vmware.Vcenteraccount;
+import org.eclipse.cmf.occi.multicloud.vmware.Vcentercredential;
 import org.eclipse.cmf.occi.multicloud.vmware.VmwareFactory;
 import org.eclipse.cmf.occi.multicloud.vmware.VmwarePackage;
 import org.eclipse.cmf.occi.multicloud.vmware.Vmwarefolders;
@@ -92,6 +95,13 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass vcenteraccountEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass windowsEClass = null;
 
 	/**
@@ -128,6 +138,13 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 	 * @generated
 	 */
 	private EClass ssh_user_dataEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass vcentercredentialEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -185,6 +202,7 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 		// Initialize simple dependencies
 		CrtpPackage.eINSTANCE.eClass();
 		InfrastructurePackage.eINSTANCE.eClass();
+		AccountsPackage.eINSTANCE.eClass();
 		OCCIPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
@@ -353,6 +371,15 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 	 */
 	public EOperation getNetworkadapter__TargetConstraint__DiagnosticChain_Map() {
 		return networkadapterEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getVcenteraccount() {
+		return vcenteraccountEClass;
 	}
 
 	/**
@@ -558,6 +585,24 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getVcentercredential() {
+		return vcentercredentialEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getVcentercredential__AppliesConstraint__DiagnosticChain_Map() {
+		return vcentercredentialEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getGuestOsIdentifiers() {
 		return guestOsIdentifiersEEnum;
 	}
@@ -611,6 +656,8 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 		networkadapterEClass = createEClass(NETWORKADAPTER);
 		createEOperation(networkadapterEClass, NETWORKADAPTER___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
+		vcenteraccountEClass = createEClass(VCENTERACCOUNT);
+
 		windowsEClass = createEClass(WINDOWS);
 		createEOperation(windowsEClass, WINDOWS___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
@@ -638,6 +685,9 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 		createEAttribute(ssh_user_dataEClass, SSH_USER_DATA__OCCI_COMPUTE_USERDATA_FILE);
 		createEAttribute(ssh_user_dataEClass, SSH_USER_DATA__USER);
 		createEOperation(ssh_user_dataEClass, SSH_USER_DATA___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
+
+		vcentercredentialEClass = createEClass(VCENTERCREDENTIAL);
+		createEOperation(vcentercredentialEClass, VCENTERCREDENTIAL___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
 		// Create enums
 		guestOsIdentifiersEEnum = createEEnum(GUEST_OS_IDENTIFIERS);
@@ -669,6 +719,7 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 		// Obtain other dependent packages
 		InfrastructurePackage theInfrastructurePackage = (InfrastructurePackage)EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI);
 		OCCIPackage theOCCIPackage = (OCCIPackage)EPackage.Registry.INSTANCE.getEPackage(OCCIPackage.eNS_URI);
+		AccountsPackage theAccountsPackage = (AccountsPackage)EPackage.Registry.INSTANCE.getEPackage(AccountsPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -680,17 +731,20 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 		storagelinkvmwareEClass.getESuperTypes().add(theInfrastructurePackage.getStoragelink());
 		vswitchEClass.getESuperTypes().add(theInfrastructurePackage.getNetwork());
 		networkadapterEClass.getESuperTypes().add(theInfrastructurePackage.getNetworkinterface());
-		windowsEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		vcenteraccountEClass.getESuperTypes().add(theAccountsPackage.getCloudaccount());
 		windowsEClass.getESuperTypes().add(this.getOs_tpl_vmware());
-		linuxEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		windowsEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		linuxEClass.getESuperTypes().add(this.getOs_tpl_vmware());
-		macosxEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		linuxEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		macosxEClass.getESuperTypes().add(this.getOs_tpl_vmware());
+		macosxEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		vmwarefoldersEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
-		os_tpl_vmwareEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		os_tpl_vmwareEClass.getESuperTypes().add(theInfrastructurePackage.getOs_tpl());
-		ssh_user_dataEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		os_tpl_vmwareEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		ssh_user_dataEClass.getESuperTypes().add(theInfrastructurePackage.getUser_data());
+		ssh_user_dataEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		vcentercredentialEClass.getESuperTypes().add(theAccountsPackage.getBasiccredential());
+		vcentercredentialEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(instancevmwareEClass, Instancevmware.class, "Instancevmware", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -729,6 +783,8 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(vcenteraccountEClass, Vcenteraccount.class, "Vcenteraccount", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(windowsEClass, Windows.class, "Windows", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -798,6 +854,17 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 		initEAttribute(getSsh_user_data_User(), theOCCIPackage.getString(), "user", null, 0, 1, Ssh_user_data.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = initEOperation(getSsh_user_data__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(vcentercredentialEClass, Vcentercredential.class, "Vcentercredential", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = initEOperation(getVcentercredential__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -1005,6 +1072,12 @@ public class VmwarePackageImpl extends EPackageImpl implements VmwarePackage {
 		   });	
 		addAnnotation
 		  (ssh_user_dataEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (vcentercredentialEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "appliesConstraint"

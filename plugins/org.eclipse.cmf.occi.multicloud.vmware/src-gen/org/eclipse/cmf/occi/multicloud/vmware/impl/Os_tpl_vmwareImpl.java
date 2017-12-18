@@ -20,6 +20,7 @@ import org.eclipse.cmf.occi.core.Entity;
 
 import org.eclipse.cmf.occi.core.impl.MixinBaseImpl;
 
+import org.eclipse.cmf.occi.infrastructure.impl.Os_tplImpl;
 import org.eclipse.cmf.occi.multicloud.vmware.GuestOsIdentifiers;
 import org.eclipse.cmf.occi.multicloud.vmware.Os_tpl_vmware;
 import org.eclipse.cmf.occi.multicloud.vmware.VmwarePackage;
@@ -65,7 +66,7 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  *
  * @generated
  */
-public class Os_tpl_vmwareImpl extends MixinBaseImpl implements Os_tpl_vmware {
+public class Os_tpl_vmwareImpl extends Os_tplImpl implements Os_tpl_vmware {
 	/**
 	 * The default value of the '{@link #getDatastoreisopath() <em>Datastoreisopath</em>}' attribute.
 	 * <!-- begin-user-doc -->

@@ -15,7 +15,6 @@ Require-Bundle: org.slf4j.api,
  org.eclipse.cmf.occi.multicloud.vmware,
  org.eclipse.emf.transaction,
  org.eclipse.swt,
- org.eclipse.cmf.occi.multicloud.occimonitoring.connector;bundle-version="1.0.0",
  org.eclipse.cmf.occi.multicloud.vmware.connector;bundle-version="1.0.0",
  org.eclipse.cmf.occi.multicloud.occimonitoring
 Export-Package: com.goebl.david,

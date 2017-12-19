@@ -21,58 +21,58 @@
     <packaging>pom</packaging>
     
     <modules>
+        <!-- Multi-Account modules -->
+        <module>plugins/org.eclipse.cmf.occi.multicloud.accounts</module>
+        <module>plugins/org.eclipse.cmf.occi.multicloud.accounts.edit</module>
+        
         <!-- VMware modules -->
         <module>plugins/org.eclipse.cmf.occi.multicloud.vmware</module>
         <module>plugins/org.eclipse.cmf.occi.multicloud.vmware.edit</module>
         <module>plugins/org.eclipse.cmf.occi.multicloud.vmware.editor</module>
         <module>plugins/org.eclipse.cmf.occi.multicloud.vmware.tests</module>
         <module>plugins/org.eclipse.cmf.occi.multicloud.vmware.connector</module>
-        <!-- <module>plugins/org.eclipse.cmf.occi.multicloud.vmware.design</module> -->
+
         <!-- multicloud monitoring modules -->
         <module>plugins/org.eclipse.cmf.occi.multicloud.monitoring</module>
         <module>plugins/org.eclipse.cmf.occi.multicloud.monitoring.edit</module>
         <module>plugins/org.eclipse.cmf.occi.multicloud.monitoring.editor</module>
         <module>plugins/org.eclipse.cmf.occi.multicloud.monitoring.tests</module>
         <module>plugins/org.eclipse.cmf.occi.multicloud.monitoring.connector</module>
-        <!-- <module>plugins/org.eclipse.cmf.occi.multicloud.monitoring.design</module> -->
+
         <!-- multicloud zabbix monitoring modules -->
         <module>plugins/org.eclipse.cmf.occi.multicloud.monitoring.zabbix</module>
         <module>plugins/org.eclipse.cmf.occi.multicloud.monitoring.zabbix.edit</module>
         <module>plugins/org.eclipse.cmf.occi.multicloud.monitoring.zabbix.editor</module>
         <module>plugins/org.eclipse.cmf.occi.multicloud.monitoring.zabbix.tests</module>
         <module>plugins/org.eclipse.cmf.occi.multicloud.monitoring.zabbix.connector</module>
-        <!-- <module>plugins/org.eclipse.cmf.occi.multicloud.monitoring.zabbix.design</module> -->
         
         <!-- Modules for elasticOCCI -->
-        <!--    
-        <module>org.eclipse.cmf.occi.multicloud.occimonitoring</module>
-        <module>org.eclipse.cmf.occi.multicloud.occimonitoring.edit</module>
-        <module>org.eclipse.cmf.occi.multicloud.occimonitoring.editor</module>
-        <module>org.eclipse.cmf.occi.multicloud.occimonitoring.connector</module>
-        <module>oorg.eclipse.cmf.occi.multicloud.occimonitoring.tests</module>
-        <module>oorg.eclipse.cmf.occi.multicloud.occimonitoring.design</module>
+        
+        <module>plugins/org.eclipse.cmf.occi.multicloud.occimonitoring</module>
+        <module>plugins/org.eclipse.cmf.occi.multicloud.occimonitoring.edit</module>
+        <module>plugins/org.eclipse.cmf.occi.multicloud.occimonitoring.editor</module>
+        <module>plugins/org.eclipse.cmf.occi.multicloud.occimonitoring.connector</module>
+        <module>plugins/org.eclipse.cmf.occi.multicloud.occimonitoring.tests</module>
+        <module>plugins/org.eclipse.cmf.occi.multicloud.occimonitoring.design</module>
         
         <module>plugins/org.eclipse.cmf.occi.multicloud.elasticocci</module>
         <module>plugins/org.eclipse.cmf.occi.multicloud.elasticocci.edit</module>
         <module>plugins/org.eclipse.cmf.occi.multicloud.elasticocci.editor</module>
         <module>plugins/org.eclipse.cmf.occi.multicloud.elasticocci.connector</module>
-        <module>plugins/org.eclipse.cmf.occi.multicloud.elasticocci.tests</module>
-        <module>plugins/org.eclipse.cmf.occi.multicloud.elasticocci.design</module>
-        <module>plugins/org.eclipse.cmf.occi.multicloud.elasticocci.design.extended</module>
         
-        <module>org.eclipse.cmf.occi.multicloud.horizontalelasticity</module>
-        <module>org.eclipse.cmf.occi.multicloud.horizontalelasticity.edit</module>
-        <module>org.eclipse.cmf.occi.multicloud.horizontalelasticity.editor</module>
-        <module>org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector</module>
-        <module>org.eclipse.cmf.occi.multicloud.horizontalelasticity.tests</module>
-        <module>org.eclipse.cmf.occi.multicloud.horizontalelasticity.design</module>
-        <module>org.eclipse.cmf.occi.multicloud.horizontalelasticity.design.extended</module>
         
-         -->
+        <module>plugins/org.eclipse.cmf.occi.multicloud.horizontalelasticity</module>
+        <module>plugins/org.eclipse.cmf.occi.multicloud.horizontalelasticity.edit</module>
+        <module>plugins/org.eclipse.cmf.occi.multicloud.horizontalelasticity.editor</module>
+        <module>plugins/org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector</module>
+        <module>plugins/org.eclipse.cmf.occi.multicloud.horizontalelasticity.tests</module>
         
         
         <!-- designer for multiple extension (merged designers and customs) -->
         <module>plugins/org.eclipse.cmf.occi.multicloud.vmware.monitoring.design</module>
+        <module>plugins/org.eclipse.cmf.occi.multicloud.vmware.design.extended</module>
+        <module>plugins/org.eclipse.cmf.occi.multicloud.elasticocci.design.extended</module>
+        <module>plugins/org.eclipse.cmf.occi.multicloud.horizontalelasticity.design.extended</module>
         
         <!-- Releng -->
         <module>features/org.eclipse.cmf.occi.multicloud</module>

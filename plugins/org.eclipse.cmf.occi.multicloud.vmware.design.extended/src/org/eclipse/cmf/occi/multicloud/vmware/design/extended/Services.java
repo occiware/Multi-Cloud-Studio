@@ -1,4 +1,4 @@
-package org.eclipse.cmf.occi.multicloud.monitoring.design;
+package org.eclipse.cmf.occi.multicloud.vmware.design.extended;
 
 import org.eclipse.emf.ecore.EObject;
 

@@ -20,8 +20,8 @@ import org.eclipse.cmf.occi.infrastructure.Compute;
 import org.eclipse.cmf.occi.multicloud.elasticocci.Elasticcontroller;
 import org.eclipse.cmf.occi.multicloud.elasticocci.impl.ElasticcontrollerImpl;
 import org.eclipse.cmf.occi.multicloud.occimonitoring.Zabbixinstance;
-import org.eclipse.cmf.occi.multicloud.occimonitoring.connector.CpuusageConnector;
-import org.eclipse.cmf.occi.multicloud.occimonitoring.connector.MemoryusageConnector;
+import org.eclipse.cmf.occi.multicloud.occimonitoring.Cpuusage;
+import org.eclipse.cmf.occi.multicloud.occimonitoring.Memoryusage;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
@@ -159,7 +159,7 @@ public class StrategymemoryConnector extends org.eclipse.cmf.occi.multicloud.ela
 			if (link.getTarget() instanceof Zabbixinstance) {
 				if (link.getTarget() != null) {
 					Zabbixinstance zabbix = (Zabbixinstance) link.getTarget();
-					MemoryusageConnector memUsageMetric = (MemoryusageConnector) zabbix.getParts().get(1);
+					Memoryusage memUsageMetric = (Memoryusage) zabbix.getParts().get(1);
 					domain.getCommandStack().execute(new RecordingCommand(domain) {
 						@Override
 						protected void doExecute() {

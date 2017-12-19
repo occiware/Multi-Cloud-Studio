@@ -11,18 +11,18 @@
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *******************************************************************************/
 
-package org.eclipse.cmf.occi.multicloud.monitoring.design.wizard;
+package org.eclipse.cmf.occi.multicloud.vmware.design.extended.wizard;
 
 import org.eclipse.cmf.occi.core.design.utils.NewDiagramWizard;
 
 /**
- * This is a simple wizard for creating a new cloudmonitoring model file.
+ * This is a simple wizard for creating a new vmware model file.
  */
 
 public class NewConfigurationWizard extends NewDiagramWizard
 {
 	public NewConfigurationWizard()
 	{
-		super("http://occiware.org/occi/multicloud/monitoring#", "viewpoint:/org.eclipse.cmf.occi.multicloud.monitoring.design/CloudmonitoringConfiguration", "cloudmonitoring", "CloudmonitoringConfiguration Diagram");
+		super("http://occiware.org/occi/infrastructure/vmware#", "viewpoint:/org.eclipse.cmf.occi.multicloud.vmware.design.extended/VmwareConfiguration", "vmware", "VmwareConfiguration Diagram");
 	}
 }

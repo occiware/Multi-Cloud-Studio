@@ -30,8 +30,8 @@ deploy:
     secure: "iTFMImbfERKwxcGifBoTM9lgHxfM5PnOBDBcOU8V5aGOD9KwAl4DwO+o2ZqWazH2W1WAemgtB6w64uYUkcdS4lWfYMgoUIwFGjV/oq9aQXBLjmeH1WuakNkHl0i/Jq7YmCy2cyoENBbWnqNi+ToQjCD9OY2Ox678opLNtRicQjeSIOcVoZu9PL/TZMrJNNVyPujVFcdCIQF3HKWvS8HAcU/d0HRIv2IFgGUa53LGdPfIg7iBMd+DecyHBADFDdLZ8cGKEGYi6qVmbUrWPjvhTc3s4TZWqHDFbLOyOpwhYl86SJeCpVlEnkV5IhuAcQAuSJxPo//HcO04nobAFspDLgWIjmglLp91q5K8DY/8+0imjYD9ciXwSNo+1Z23i++zXChr5BEww+QKB54lH/ck7+y3rBFUCZRUmMy5YLIaiaOhmvFIn99Bqw+BEj3O6cnH1GNbG2Fl/2Fp35zvU/9NPXmI+Gb9aJForLQWROhpmef1sIViGXmipwzlVoMWzujnJJ6fu6OMaBmfKTEa1Lws5PIcTrrEknUGPl6JNYeFluaGLOUGSvCmXb8jG8rjzFZlBA0pI8ubz4l5GlGw04/P8GdU4jRRxID1QcNAwh0JjxpuvEwrZEDmAtnQPN1axIZ1xA+rw3yd595GsmcYhLH++MqJQT3hSLShuzWmopHaLkA="
     file:
         - "repositories/org.eclipse.cmf.occi.multicloud.product/target/products/org.eclipse.cmf.occi.multicloud.product-linux.gtk.x86_64.zip"
-        - "repositories/org.eclipse.cmf.occi.product/target/products/org.eclipse.cmf.occi.multicloud.product-macosx.cocoa.x86_64.zip"
-        - "repositories/org.eclipse.cmf.occi.product/target/products/org.eclipse.cmf.occi.multicloud.product-win32.win32.x86_64.zip"
+        - "repositories/org.eclipse.cmf.occi.multicloud.product/target/products/org.eclipse.cmf.occi.multicloud.product-macosx.cocoa.x86_64.zip"
+        - "repositories/org.eclipse.cmf.occi.multicloud.product/target/products/org.eclipse.cmf.occi.multicloud.product-win32.win32.x86_64.zip"
     skip_cleanup: true
     overwrite: true
     on:

@@ -1,5 +1,5 @@
 # Inspired from http://szagurskii.com/blog/how-to-deploy-apk-to-github-releases-with-travis-ci/
-echo "Tag release in progress...";
+
 # Are we on the right branch?
 if [ "$TRAVIS_BRANCH" = "master" ]; then
   

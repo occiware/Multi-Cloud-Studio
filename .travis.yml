@@ -1,3 +1,4 @@
+# Don't use the Travis Container-Based Infrastructure
 sudo: true
 
 language: java
@@ -9,10 +10,6 @@ matrix:
     jdk: oraclejdk8
     env: DISPLAY=:99.0
 
-# install: true
-# before_install:
-# - echo "MAVEN_OPTS='-Xmx2048m -XX:MaxPermSize=512m'" > ~/.mavenrc
-
 cache:
   directories:
   - $HOME/.m2
@@ -21,13 +18,16 @@ script:
 - sh travis/build.sh
 
 # Actions to perform after the build.
-# after_success:
-# - sh travis/tag_current_release.sh
+after_success:
+- sh travis/tag_current_release.sh
 
 deploy:
-  provider: releases
+  - provider: releases
   api_key:
     secure: "iTFMImbfERKwxcGifBoTM9lgHxfM5PnOBDBcOU8V5aGOD9KwAl4DwO+o2ZqWazH2W1WAemgtB6w64uYUkcdS4lWfYMgoUIwFGjV/oq9aQXBLjmeH1WuakNkHl0i/Jq7YmCy2cyoENBbWnqNi+ToQjCD9OY2Ox678opLNtRicQjeSIOcVoZu9PL/TZMrJNNVyPujVFcdCIQF3HKWvS8HAcU/d0HRIv2IFgGUa53LGdPfIg7iBMd+DecyHBADFDdLZ8cGKEGYi6qVmbUrWPjvhTc3s4TZWqHDFbLOyOpwhYl86SJeCpVlEnkV5IhuAcQAuSJxPo//HcO04nobAFspDLgWIjmglLp91q5K8DY/8+0imjYD9ciXwSNo+1Z23i++zXChr5BEww+QKB54lH/ck7+y3rBFUCZRUmMy5YLIaiaOhmvFIn99Bqw+BEj3O6cnH1GNbG2Fl/2Fp35zvU/9NPXmI+Gb9aJForLQWROhpmef1sIViGXmipwzlVoMWzujnJJ6fu6OMaBmfKTEa1Lws5PIcTrrEknUGPl6JNYeFluaGLOUGSvCmXb8jG8rjzFZlBA0pI8ubz4l5GlGw04/P8GdU4jRRxID1QcNAwh0JjxpuvEwrZEDmAtnQPN1axIZ1xA+rw3yd595GsmcYhLH++MqJQT3hSLShuzWmopHaLkA="
+#secure: "XLkwDRTePseucK/+aDGvPC7k/gt0c1PKJP/FAWRDbIaTQ8aBQD5T8g3QXGQqRwCBiCGhGNK4ph2BxM3Yl54oJzVmWe+K2faBdD3GdPb7cLWee0qepbPPAZR9LP9sh+qZb6eZWHOrLiLc6A+rXqpZXB/OgjF7itSFO9t3XF4F+c1YALJ7/Qc9nMIMi5+XHNnXmUvkhf8TtBqsUh1TR6b7yMuvVR0kRJnxm9Zg5NYJbeuu8RHjBTroRxFRsdjt4S9GBH+Vh21s4E7GLYZCYHuI3lJXRyqjXkluBxZeqyKH9k0wghtq9twicYDPOQ6mqbIFL4+noT/jOqsAWHRpMGsuWpVNDpdE18iYCnK93J+I3W6SvjjL2/CfxMMxDXFBSQu8Rsm/t/R2Fz7todniy2aE8uUbHspmOcXtnKCTsTjJf/BZeC+zibbEByy8fBUVAC42+TbXQHdwbHz+4wZ3qF5F0Ue74yL9V/oTj+teoE49eJeebT+K/ZgiV7PyG+3y4yJPniPXpvZPnJbAT4steqII/K0jO+Z/tfmawNlpvR/Te0wpNd/DTtr/1w/JKzP3quB0Vj71VG8GpwXJ6YXZtTLLc5HcVx09CXxrUBQldMKPC9nAA6NHDS+mp9CA30dVONjp4g1bKINxjXckS0B38TWYId0EpO39dcSnb2HcK0H03mw="
+# "zP8xzt2R7mNIaq5vjBx86KKW6O9zodADGgoimnEhF8MkHRuGwm73TiwLe877xqXAme2ODBIbVclw6L8AHwrqKC9z7Qvgsm5SJUhDVzTmp5vrSq2E39NxTrSm+tsoP+Zp9zcLPMSVx5YhsKKdXj0D2XgRN0C+lges8kz6xIo/ZeNG6Wbf3YhRXom8OHHCyTiFPnpJIuJy2vTS3mQuaqzBdp0Qol9HxfrW3SQKcadWpvnuirCCMeRtQoVjt12v3Zqkvtrpmi4wIlrS8PGooXX2ZLSiEnmhZmkyRcFkHbVmN8uaYRQarKSKYU39MgOXwG3x8ntUNsrgWaQHOxP6JQmS548hpWM6DbzpZRpf6Rp/JfWVrR7VogNYb17Aq+Nm1eo3x9lWk99fX4aRNELZYqu0hcBl7T8/aMUW7v7Z9M99z7iPEvha+aKyK9/YTV+/HjtRxrKWx2HZiMqGV+34tMqBer2j8LEMl/7o5wjaBtbYyUzz/+lrNHpKd156D7SaxMeiQCiz9Q41r5Y3KdxNZYY0lcvYhYHg2EURFh2ctViM4bgOInrSfePSGomSausQ9rUT9G8llBrarauUpBo1uY3+NH9omx41aQAyRqH9UgKUNortZcgmZ9kkRU+fBylpFm5QMyHB9R/IggUMBjojQvSm+pnFARVWS5wRsahqOCtq3WU="
+  #  - secure: "hlhysRbcAfKbY9ymcEkN9NR8TLOLyOkVZ9J3FyK3qbKZHE8jgkPyRpafqpkz5fhjzqDtdbkmq0a+uJoAlooDGUZE0udFHJugm8IfIwuHd0oYRyC7nSjYzaLwXWIexJgrwd76ujT5/3Ew0R5eZfwFD9i0Dc/SfwxdWgddlYflkjmIt0k8tyhZ6n13c2ks2qeq+/wRHZP3VWDVv6fKF+0y8TihtVebxufq0VF8+l3hh73RvZHgk8WX5LiMHInoM9c1rCeixE2wCgL2A4WU33uZT3DsMqdXvZTA8kKzE7ypGVO1J6IQlGl3ptQio07LmOWkiWGGqiOtER8TO2juUuZr68imcA77xZPIn0QSWbHKFMCRtRIE3EaVoJJe20iSqCEroLPJTQeD/JJFIPjR/nMLL0rc7YC+EEOkkwJ4w3EziwhrzAW/9EEOS+Tqa9u6y63smO6dKqIHkpd7TLPx61JHkn/e35VJSxN7LOobPjI0eQRALGK3PfY9LOZluUcYBTG3oNbpYzyJX8ujvUaXnvcr1ZlypVJZxdk1Jn5aVPMt+E+NW0xnqbE9E9hPuGrulXkEzBWjmngBZwt2+h10houOVOEu/mvhhbH6sU1U1yB4vuwhweW/XUseuQnmof+1sMjcr9abc9x49BpMpMbpGCXAjiuEoPalGVwQtdEm+Zy5Bnk="
     file:
         - "repositories/org.eclipse.cmf.occi.multicloud.product/target/products/org.eclipse.cmf.occi.multicloud.product-linux.gtk.x86_64.zip"
         - "repositories/org.eclipse.cmf.occi.multicloud.product/target/products/org.eclipse.cmf.occi.multicloud.product-macosx.cocoa.x86_64.zip"
@@ -37,10 +37,21 @@ deploy:
     on:
         branch : master
         repo: occiware/Multi-Cloud-Studio
+ - provider: bintray
+    file: "travis/bintray.json"
+    user: "occiware"
+    key:
+    - secure: "0y1nU+cBPYMDHyDj+df8DdRVyZv8LzIkOitDMofEujyZ8Fr4o39E0VBXIBUV5yjMeSkI9iyvAq2FeqOmX11GRVbRlq9w64pTCD3rHtcLXHD+GcaxqfDBdPr1xopgNX7rjqfrWfHDTxgVzHNvhYBUys36ubWgFbGCBKi1i0Ra7BcAIIoLF4zcH3nwzIQrLh5cSdF9jSTPZHexzxvNvXg/hNhk2KU/DmlOalCGlb7sT2jWrUzyzQaAW0IMaHqSa9p37CKUbICOd7GI2vKCkz44LZVBkVhQC5lhlQ00t/cv2NydNEkr1YDJww9fHWW80zDvo6enVH/0LsiM/idXJA7nD97hc0MaUboW4aXzrIahRmwdBn5SspRPWwYIQSBY7RQXtx3l2FxHfGt788PTuXNzof8Gat98vR0XIq9C/hwOEXdV1FpqA+qLFRe2vkua35oF7IoOLZJV76N02cUW1QKTIOsZeOIDvZf8QXG01Luq67mZBkuW+3MSm7hSTlnBeO3+9TalNuqbwfXYHFlK8Fl19kSVjmpyEIFgp5ZqcGgBqi/U2QotpiDFtxp5gwlf22RPxLacd6Bq7s7hw4cuwxlQowDPvPjG3lUzFXKHHLpPIzlmD1u/wCKiX1HgYYz1Jk+8P3Xbif/V3Qd0QS1nqM8H2NQ8T+OUjcbXa/9c6GGwv28="
 
-# after_deploy:
-#   - sh travis/deploy-maven-artifacts.sh
+    # passphrase: "Optional. In case a passphrase is configured on Bintray and GPG signing is used"
+    # dry-run: "Optional. If true, skips sending requests to Bintray. Useful for testing your configuration"
+    
+after_deploy:
+    - sh travis/deploy-maven-artifacts.sh
 
 env:
   global:
-  secure: "hlhysRbcAfKbY9ymcEkN9NR8TLOLyOkVZ9J3FyK3qbKZHE8jgkPyRpafqpkz5fhjzqDtdbkmq0a+uJoAlooDGUZE0udFHJugm8IfIwuHd0oYRyC7nSjYzaLwXWIexJgrwd76ujT5/3Ew0R5eZfwFD9i0Dc/SfwxdWgddlYflkjmIt0k8tyhZ6n13c2ks2qeq+/wRHZP3VWDVv6fKF+0y8TihtVebxufq0VF8+l3hh73RvZHgk8WX5LiMHInoM9c1rCeixE2wCgL2A4WU33uZT3DsMqdXvZTA8kKzE7ypGVO1J6IQlGl3ptQio07LmOWkiWGGqiOtER8TO2juUuZr68imcA77xZPIn0QSWbHKFMCRtRIE3EaVoJJe20iSqCEroLPJTQeD/JJFIPjR/nMLL0rc7YC+EEOkkwJ4w3EziwhrzAW/9EEOS+Tqa9u6y63smO6dKqIHkpd7TLPx61JHkn/e35VJSxN7LOobPjI0eQRALGK3PfY9LOZluUcYBTG3oNbpYzyJX8ujvUaXnvcr1ZlypVJZxdk1Jn5aVPMt+E+NW0xnqbE9E9hPuGrulXkEzBWjmngBZwt2+h10houOVOEu/mvhhbH6sU1U1yB4vuwhweW/XUseuQnmof+1sMjcr9abc9x49BpMpMbpGCXAjiuEoPalGVwQtdEm+Zy5Bnk="
+  - secure: "R7bwIFP57UXHlWNDZFybUzbp4D7SgpOh1osQd8AQJb1oXSle/cYOGg8wzDOnotSbEoXEk6WiWf0ipI2QzALEgmjCf6T1m8z2ir6+B8NbA4p4BStzvIHJLogIngsOqha7uuhc7tfHo2/wVlR6EZDeeKdRw4ddEyFzWulqD5B3dzVrvI+hck86etPizxHcY5qd1endS7JDjMYtBHNDtkwTXEzzpoxypnL2+pAciGSij5XSql4IeNHAgHG3iHUzuuq+UTqKN0nBjmqFU7rTSYm2Yp3cA3JUkIcUhYu4N+cRYwsBxEWsp8treRKeX6sW2W+1DvEQ3fhOFnhChOrBg0L6Gq8UW9/Y+MpP0JqIgyOPxYKJ2Yf0uzLUY8wy06G/dkbB4Lol2ZY76ZpSyyp76HnI+SWZ/rKQuPpI/ThU3CoCRG68dIc0MOGaonmsed3EmQox73HU4xi5E5HlxRmJVM+TR1sowEwUE2lsClsJJZe1RgaXbM32mvwsZPGuEShKKndBWBdvzSZIXsg7MOX5p6rZqaMwcVydUmjF5LOs7KS0XE+NnFT2IfNZFGfjsfDKV4xGEUmJQOFHI/MhPlP5Q2gpX0fXJFQtMZhRVcYQjNUIv9xnzv6l5V2oUlIZPg6lJp5D7rWQYTUQIRMfnHg3N+G2KCM275hLZpyBByHbXoEzF/k="
+  - secure: "M9F3c0nj+u2bIOUDNeKOXcgEAs8YMSNWWP00vPbH3hM6WMJauidKGn0ut5LcNVzHdZD5aFh1Q/PZDcomp8rCnZXdD2N7QfKksfbHOnsnkcxEzKjymb8KwVfJLjcl16JPDTLDzs0oZoq7L1eDIceitv/WdHrvf2/hMGPL+1JvbsoL+WlNrWVbRSUuRFHIUZaxbzuN9UPDKQgc7czTOfRZoqAc0m1CBzDZxE5EvJ6x8zSez3+EyBfGHdtO7Ua1nbvyelm+E6Hkzl7vok8aGCtRjPf2gTc5T9aq2gCBSa/ElNnBJK1TJScy/lVFQSrG1+OruTiNSIrRxKJ5JXpN+n/a9olh9U2UJc7AYsXmEIxo80PVs8f4Kdmp2s5QvcKfzlsvPB7CMIUPBKYRJtVhsD1DDEk/p3AmLDgYeXazEg94fAfvq/YgbtAkt5Y7+5HtkCY3X6txa3LHrcWiMM/c+dDy638ch2nlMjM6cbuSZLgRuEvk7sGSPXXCl9Eu38lFKKhr8NfIELsHBw2Y6RWUD5Lt7pWiSMd4UkzIBB0dMFo46X6Rfr/hdk+odBkxPgqNmz+sEIAxSkyoxmyqkuvCU1P6Xn0ScfmOjoFJEes+CU2gMNcFVd04cpF8Rnpxgo9jOcz6qFgqAt+2Ld5mC+hK/sLKMzxeD0OMbmltu3at7xTnnhw="
+
+  

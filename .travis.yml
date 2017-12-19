@@ -21,8 +21,8 @@ script:
 - sh travis/build.sh
 
 # Actions to perform after the build.
-after_success:
-- sh travis/tag_current_release.sh
+# after_success:
+# - sh travis/tag_current_release.sh
 
 deploy:
   provider: releases
@@ -38,8 +38,8 @@ deploy:
         branch : master
         repo: occiware/Multi-Cloud-Studio
 
-after_deploy:
-    - sh travis/deploy-maven-artifacts.sh
+# after_deploy:
+#   - sh travis/deploy-maven-artifacts.sh
 
 env:
   global:

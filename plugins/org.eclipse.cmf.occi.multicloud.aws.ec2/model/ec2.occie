@@ -46,6 +46,7 @@
       <ownedState literal="//@types.0/@literals.1" initial="false" final="false">
         <outgoingTransition target="//@kinds[term='instanceec2']/@fsm/@ownedState.3" action="//@kinds[term='instanceec2']/@actions.1"/>
         <outgoingTransition target="//@kinds[term='instanceec2']/@fsm/@ownedState.4" action="//@kinds[term='instanceec2']/@actions.3"/>
+        <outgoingTransition target="//@kinds[term='instanceec2']/@fsm/@ownedState.7" action="//@kinds[term='instanceec2']/@actions.0"/>
       </ownedState>
       <ownedState literal="//@types.0/@literals.7" initial="false" final="false">
         <outgoingTransition target="//@kinds[term='instanceec2']/@fsm/@ownedState.2" action="//@kinds[term='instanceec2']/@actions.1"/>
@@ -58,6 +59,9 @@
         <outgoingTransition target="//@kinds[term='instanceec2']/@fsm/@ownedState.1" action="//@kinds[term='instanceec2']/@actions.2"/>
       </ownedState>
       <ownedState literal="//@types.0/@literals.5" initial="false" final="true"/>
+      <ownedState literal="//@types.0/@literals.2" initial="false" final="false">
+        <outgoingTransition target="//@kinds[term='instanceec2']/@fsm/@ownedState.6" action="//@kinds[term='instanceec2']/@actions.0"/>
+      </ownedState>
     </fsm>
     <parent href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
   </kinds>
@@ -1418,7 +1422,7 @@
   <types xsi:type="occi:EnumerationType" name="AWSInstanceState">
     <literals name="pending"/>
     <literals name="running"/>
-    <literals name="shutting-down"/>
+    <literals name="shuttingdown"/>
     <literals name="stopping"/>
     <literals name="stopped"/>
     <literals name="terminated"/>

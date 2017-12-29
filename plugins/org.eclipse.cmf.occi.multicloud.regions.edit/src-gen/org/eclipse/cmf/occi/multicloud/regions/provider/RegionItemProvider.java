@@ -59,123 +59,8 @@ public class RegionItemProvider extends MixinBaseItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addRegionNamePropertyDescriptor(object);
-			addRegionIdPropertyDescriptor(object);
-			addCityPropertyDescriptor(object);
-			addCountryPropertyDescriptor(object);
-			addRegionEndpointPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Region Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRegionNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Region_regionName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Region_regionName_feature", "_UI_Region_type"),
-				 RegionsPackage.Literals.REGION__REGION_NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Region Id feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRegionIdPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Region_regionId_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Region_regionId_feature", "_UI_Region_type"),
-				 RegionsPackage.Literals.REGION__REGION_ID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the City feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Region_city_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Region_city_feature", "_UI_Region_type"),
-				 RegionsPackage.Literals.REGION__CITY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Country feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCountryPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Region_country_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Region_country_feature", "_UI_Region_type"),
-				 RegionsPackage.Literals.REGION__COUNTRY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Region Endpoint feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRegionEndpointPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Region_regionEndpoint_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Region_regionEndpoint_feature", "_UI_Region_type"),
-				 RegionsPackage.Literals.REGION__REGION_ENDPOINT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -197,10 +82,7 @@ public class RegionItemProvider extends MixinBaseItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Region)object).getRegionName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Region_type") :
-			getString("_UI_Region_type") + " " + label;
+		return getString("_UI_Region_type");
 	}
 	
 
@@ -214,16 +96,6 @@ public class RegionItemProvider extends MixinBaseItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(Region.class)) {
-			case RegionsPackage.REGION__REGION_NAME:
-			case RegionsPackage.REGION__REGION_ID:
-			case RegionsPackage.REGION__CITY:
-			case RegionsPackage.REGION__COUNTRY:
-			case RegionsPackage.REGION__REGION_ENDPOINT:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 

@@ -1,0 +1,1430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ec2" nsURI="http://occiware.org/occi/infrastructure/aws/ecore"
+    nsPrefix="ec2">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="AWSInstanceState">
+    <eLiterals name="pending" literal="pending"/>
+    <eLiterals name="running" value="1" literal="running"/>
+    <eLiterals name="shuttingdown" value="2" literal="shuttingdown"/>
+    <eLiterals name="stopping" value="3" literal="stopping"/>
+    <eLiterals name="stopped" value="4" literal="stopped"/>
+    <eLiterals name="terminated" value="5" literal="terminated"/>
+    <eLiterals name="notexist" value="6" literal="notexist"/>
+    <eLiterals name="rebooting" value="7" literal="rebooting"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="HypervisorType">
+    <eLiterals name="Ovm" literal="Ovm"/>
+    <eLiterals name="Xen" value="1" literal="Xen"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="InstanceLifeCycleType">
+    <eLiterals name="Scheduled" literal="Scheduled"/>
+    <eLiterals name="Spot" value="1" literal="Spot"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MonitoringState">
+    <eLiterals name="Disabled" literal="Disabled"/>
+    <eLiterals name="Disabling" value="1" literal="Disabling"/>
+    <eLiterals name="Enabled" value="2" literal="Enabled"/>
+    <eLiterals name="Pending" value="3" literal="Pending"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="VirtualizationType">
+    <eLiterals name="Hvm" literal="Hvm"/>
+    <eLiterals name="Paravirtual" value="1" literal="Paravirtual"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Instanceec2" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Compute">
+    <eOperations name="terminate"/>
+    <eOperations name="restart">
+      <eParameters name="method" eType="ecore:EEnum platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//RestartMethod"/>
+    </eOperations>
+    <eOperations name="start"/>
+    <eOperations name="stop">
+      <eParameters name="method" eType="ecore:EEnum platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//StopMethod"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceId" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" lowerBound="1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="t2.nano"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionId" lowerBound="1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="eu-west-3"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="zoneName" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="imageId" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="awsInstanceStatus" eType="#//AWSInstanceState"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="launchTime" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="amiLaunchIndex" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ebsOptimizedIO" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Boolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enaSupport" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Boolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hypervisor" eType="#//HypervisorType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceLifeCycle" eType="#//InstanceLifeCycleType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kernelId" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyPairName" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="monitoringState" eType="#//MonitoringState"
+        defaultValueLiteral="Disabled"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="platform" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="privateDNSName" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="privateIpV4Address" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="publicDNSName" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="publicIpv4Address" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ramDiskId" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sriovNetSupport" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Boolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="virtualizationType" eType="#//VirtualizationType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Awsaccount" eSuperTypes="http://occiware.org/occi/infrastructure/security/ecore#//Cloudaccount"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Awscredential" eSuperTypes="http://occiware.org/occi/infrastructure/security/ecore#//Cloudcredential platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="appliesConstraint"/>
+    </eAnnotations>
+    <eOperations name="appliesConstraint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
+      <eParameters name="context">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="T2_nano" eSuperTypes="#//Generalpurpose platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="0.5"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="t2.nano"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="T2_micro" eSuperTypes="#//Generalpurpose platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="t2.micro"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="T2_small" eSuperTypes="#//Generalpurpose platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="2"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="t2.small"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="T2_medium" eSuperTypes="#//Generalpurpose platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="4"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="t2.medium"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="T2_large" eSuperTypes="#//Generalpurpose platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="8"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="t2.large"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="T2_xlarge" eSuperTypes="#//Generalpurpose platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="16"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="t2.xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="T2_2xlarge" eSuperTypes="#//Generalpurpose platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="32"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="t2.2xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="8"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="M5_large" eSuperTypes="#//Generalpurpose platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="8"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="m5.large"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="M5_xlarge" eSuperTypes="#//Generalpurpose platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="16"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="m5.xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="M5_2xlarge" eSuperTypes="#//Generalpurpose platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="32"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="m5.2xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="8"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="M5_4xlarge" eSuperTypes="#//Generalpurpose platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="64"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="m5.4xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="16"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="M5_12xlarge" eSuperTypes="#//Generalpurpose platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="192"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="m5.12xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="48"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="M5_24xlarge" eSuperTypes="#//Generalpurpose platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="384"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="m5.24xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="96"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="M4_large" eSuperTypes="#//Generalpurpose platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="8"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="m4.large"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="M4_xlarge" eSuperTypes="#//Generalpurpose platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="16"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="m4.xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="M4_2xlarge" eSuperTypes="#//Generalpurpose platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="32"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="m4.2xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="8"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="M4_10xlarge" eSuperTypes="#//Generalpurpose platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="160"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="m4.10xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="40"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="M4_16xlarge" eSuperTypes="#//Generalpurpose platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="256"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="m4.16xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="64"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="M3_medium" eSuperTypes="#//Generalpurpose platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="3.75"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="m3.medium"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="4.0"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="M3_large" eSuperTypes="#//Generalpurpose platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="7.5"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="m3.large"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="2"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="32"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="M3_xlarge" eSuperTypes="#//Generalpurpose platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="15"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="m3.xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="4"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="80"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="M3_2xlarge" eSuperTypes="#//Generalpurpose platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="30"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="m3.2xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="8"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="160"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="C5_large" eSuperTypes="#//Computeoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="4"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="c5.large"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="C5_xlarge" eSuperTypes="#//Computeoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="8"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="c5.xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="C5_2xlarge" eSuperTypes="#//Computeoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="16"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="c5.2xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="8"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="C5_4xlarge" eSuperTypes="#//Computeoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="32"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="c5.4xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="16"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="C5_9xlarge" eSuperTypes="#//Computeoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="72"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="c5.9xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="36"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="C5_18xlarge" eSuperTypes="#//Computeoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="144"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="c5.18xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="72"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="C4_large" eSuperTypes="#//Computeoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="3.75"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="c4.large"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="C4_xlarge" eSuperTypes="#//Computeoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="7.5"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="c4.xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="C4_2xlarge" eSuperTypes="#//Computeoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="15"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="c4.2xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="8"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="C4_4xlarge" eSuperTypes="#//Computeoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="30"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="c4.2xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="16"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="C4_8xlarge" eSuperTypes="#//Computeoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="60"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="c4.2xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="36"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="C3_large" eSuperTypes="#//Computeoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="3.75"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="c3.large"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="2"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="32"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="C3_xlarge" eSuperTypes="#//Computeoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="7.5"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="c3.xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="4"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="80"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="C3_2xlarge" eSuperTypes="#//Computeoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="15"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="c3.2xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="8"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="160"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="C3_4xlarge" eSuperTypes="#//Computeoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="30"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="c3.4xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="16"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="160"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="C3_8xlarge" eSuperTypes="#//Computeoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="60"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="c3.8xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="32"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="640"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="X1e_xlarge" eSuperTypes="#//Memoryoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="122"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="x1e.xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="4"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="120"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="X1e_2xlarge" eSuperTypes="#//Memoryoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="244"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="x1e.2xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="8"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="240"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="X1e_4xlarge" eSuperTypes="#//Memoryoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="488"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="x1e.4xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="16"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="480"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="X1e_8xlarge" eSuperTypes="#//Memoryoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="976"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="x1e.8xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="32"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="960"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="X1e_16xlarge" eSuperTypes="#//Memoryoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="1952"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="x1e.16xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="64"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="1920"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="X1e_32xlarge" eSuperTypes="#//Memoryoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="1952"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="x1e.32xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="128"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="3840"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="X1_16xlarge" eSuperTypes="#//Memoryoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="976"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="x1.16xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="64"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="1920"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="X1_32xlarge" eSuperTypes="#//Memoryoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="1952"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="x1.32xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="128"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="3840"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="R4_large" eSuperTypes="#//Memoryoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="15.25"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="r4.large"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="R4_xlarge" eSuperTypes="#//Memoryoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="30.5"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="r4.xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="R4_2xlarge" eSuperTypes="#//Memoryoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="61"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="r4.2xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="8"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="R4_4xlarge" eSuperTypes="#//Memoryoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="122"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="r4.4xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="16"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="R4_8xlarge" eSuperTypes="#//Memoryoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="244"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="r4.8xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="32"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="R4_16xlarge" eSuperTypes="#//Memoryoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="488"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="r4.16xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="64"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="R3_large" eSuperTypes="#//Memoryoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="15.25"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="r3.large"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="2"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="32"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="R3_xlarge" eSuperTypes="#//Memoryoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="30.5"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="r3.xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="4"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="80"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="R3_2xlarge" eSuperTypes="#//Memoryoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="61"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="r3.2xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="8"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="160"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="R3_4xlarge" eSuperTypes="#//Memoryoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="122"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="r3.4xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="16"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="320"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="R3_8xlarge" eSuperTypes="#//Memoryoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="244"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="r3.8xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="32"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="640"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="P3_2xlarge" eSuperTypes="#//Acceleratedcomputing platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="61"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="p3.2xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="8"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gpus" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gpuMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="16"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gpuP2P" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="None"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="P3_8xlarge" eSuperTypes="#//Acceleratedcomputing platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="244"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="p3.8xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="32"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gpus" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="4"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gpuMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="64"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gpuP2P" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="NVLink"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="P3_16xlarge" eSuperTypes="#//Acceleratedcomputing platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="488"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="p3.16xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="64"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gpus" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="8"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gpuMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="128"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gpuP2P" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="NVLink"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="P2_xlarge" eSuperTypes="#//Acceleratedcomputing platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="61"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="p2.xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="4"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gpus" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gpuMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="12"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gpuP2P" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="GPUDirect"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="P2_8xlarge" eSuperTypes="#//Acceleratedcomputing platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="488"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="p2.8xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="32"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gpus" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="8"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gpuMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="96"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gpuP2P" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="GPUDirect"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="P2_16xlarge" eSuperTypes="#//Acceleratedcomputing platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="732"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="p2.8xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="64"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gpus" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="16"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gpuMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="192"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gpuP2P" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="GPUDirect"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Generalpurpose" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Resource_tpl platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Computeoptimized" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Resource_tpl platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="appliesConstraint"/>
+    </eAnnotations>
+    <eOperations name="appliesConstraint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
+      <eParameters name="context">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Memoryoptimized" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Resource_tpl platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="appliesConstraint"/>
+    </eAnnotations>
+    <eOperations name="appliesConstraint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
+      <eParameters name="context">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Acceleratedcomputing" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Resource_tpl platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="appliesConstraint"/>
+    </eAnnotations>
+    <eOperations name="appliesConstraint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
+      <eParameters name="context">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Storageoptimized" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Resource_tpl platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="appliesConstraint"/>
+    </eAnnotations>
+    <eOperations name="appliesConstraint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
+      <eParameters name="context">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="G3_4xlarge" eSuperTypes="#//Acceleratedcomputing platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="122"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="g3.4xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="16"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gpus" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gpuMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="8"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="G3_8xlarge" eSuperTypes="#//Acceleratedcomputing platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="244"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="g3.8xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="32"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gpus" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="4"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gpuMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="32"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="G3_16xlarge" eSuperTypes="#//Acceleratedcomputing platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="488"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="g3.16xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="64"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gpus" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="4"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gpuMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="32"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="F1_2xlarge" eSuperTypes="#//Acceleratedcomputing platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="122"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="f1.2xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="8"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fpga" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Integer"
+        defaultValueLiteral="1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="470"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="F1_16xlarge" eSuperTypes="#//Acceleratedcomputing platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="976"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="f1.16xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="64"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fpga" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="8"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="3760"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="H1_2xlarge" eSuperTypes="#//Storageoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="32"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="h1.2xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="8"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="2000"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="H1_4xlarge" eSuperTypes="#//Storageoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="64"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="h1.4xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="16"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="4000"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="H1_8xlarge" eSuperTypes="#//Storageoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="128"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="h1.8xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="32"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="8000"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="H1_16xlarge" eSuperTypes="#//Storageoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="256"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="h1.16xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="64"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="16000"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="I3_large" eSuperTypes="#//Storageoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="15.25"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="i3.large"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="2"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="475"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="I3_xlarge" eSuperTypes="#//Storageoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="30.5"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="i3.xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="4"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="950"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="I3_2xlarge" eSuperTypes="#//Storageoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="61"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="i3.2xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="8"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="1900"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="I3_4xlarge" eSuperTypes="#//Storageoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="122"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="i3.4xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="16"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="3800"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="I3_8xlarge" eSuperTypes="#//Storageoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="244"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="i3.8xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="32"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="7600"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="I3_16xlarge" eSuperTypes="#//Storageoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="488"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="i3.16xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="64"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="15200"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="I3_metal" eSuperTypes="#//Storageoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="512"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="i3.metal"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="15200"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="D2_xlarge" eSuperTypes="#//Storageoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="30.5"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="d2.xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="4"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="6000"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="D2_2xlarge" eSuperTypes="#//Storageoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="61"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="d2.2xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="8"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="12000"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="D2_4xlarge" eSuperTypes="#//Storageoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="122"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="d2.4xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="16"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="24000"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="D2_8xlarge" eSuperTypes="#//Storageoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="244"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="d2.8xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="36"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="48000"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Us_east_1" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionName" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="US East (N. Virginia)"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="country" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="USA"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionId" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="us-east-1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="city" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="Ashburn, Sterling, Charlottesville"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Us_east_2" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionName" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="US East (Ohio)"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="country" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="USA"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionId" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="us-east-2"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="city" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="Columbus"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Us_west_1" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionName" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="US West (N. California)"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="country" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="USA"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionId" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="us-west-1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="city" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="Palo Alto"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Us_west_2" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionName" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="US West (Oregon)"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="country" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="USA"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionId" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="us-west-2"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="city" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="Oregon"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Ca_central_1" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionName" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="Canada (Central)"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="country" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="Canada"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionId" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="ca-central-1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="city" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="Toronto"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Eu_central_1" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="country" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="Germany"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionId" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="eu-central-1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="city" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="Frankfurt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionName" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="EU (Frankfurt)"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Eu_west_1" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionName" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="EU (Ireland)"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="country" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="Ireland"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionId" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="eu-west-1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="city" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="Dublin"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Eu_west_2" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionName" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="EU (London)"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="country" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="United Kingdom"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionId" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="eu-west-2"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="city" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="London"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Eu_west_3" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionName" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="EU (Paris)"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="country" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="France"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionId" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="eu-west-3"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="city" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="Paris"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Ap_northeast_1" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="country" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="Japan"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionName" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="Asia Pacific (Tokyo)"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionId" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="ap-northeast-1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="city" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="Tokyo"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Ap_northeast_2" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="country" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="South Korea"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionName" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="Asia Pacific (Seoul)"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionId" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="ap-northeast-2"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="city" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="Seoul"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Ap_southeast_1" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="country" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="Singapore"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionName" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="Asia Pacific (Singapore)"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionId" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="ap-southeast-1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="city" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="Singapore"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Ap_south_east2" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="country" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="Australia"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionName" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="Asia Pacific (Sydney)"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionId" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="ap-southeast-2"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="city" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="Sydney"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Ap_south_1" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="country" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="India"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionName" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="Asia Pacific (Mumbai)"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionId" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="ap-south-1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="city" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="Bombay"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Sa_east_1" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="country" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="Brazil"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionName" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="South America (São Paulo)"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regionId" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="sa-east-1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="city" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="São Paulo"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="M1_small" eSuperTypes="#//Generalpurpose platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="1.7"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="m1.small"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="160"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="T1_micro" eSuperTypes="#//Generalpurpose platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="0.613"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="t1.micro"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="M1_medium" eSuperTypes="#//Generalpurpose platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="3.75"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="m1.medium"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="410"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="M1_large" eSuperTypes="#//Generalpurpose platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="7.5"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="m1.large"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="2"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="840"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="M1_xlarge" eSuperTypes="#//Generalpurpose platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="15"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="m1.xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="4"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="1680"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="C1_medium" eSuperTypes="#//Computeoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="1.7"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="c1.medium"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="2"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="350"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="C1_xlarge" eSuperTypes="#//Computeoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="7"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="c1.xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="8"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="1680"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Cc2_8xlarge" eSuperTypes="#//Computeoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="60.5"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="c1.xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="32"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="3360"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="G2_2xlarge" eSuperTypes="#//Acceleratedcomputing platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="15"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="g2.2xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="8"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="60"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="G2_8xlarge" eSuperTypes="#//Acceleratedcomputing platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="60"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="g2.8xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="32"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="240"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Cg1_4xlarge" eSuperTypes="#//Acceleratedcomputing platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="22.5"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="g2.2xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="16"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="1680"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="M2_xlarge" eSuperTypes="#//Memoryoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="17.1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="m2.xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="2"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="420"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="M2_2xlarge" eSuperTypes="#//Memoryoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="34.2"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="m2.2xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="4"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="850"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="M2_4xlarge" eSuperTypes="#//Memoryoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="68.4"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="m2.4xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="8"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="1680"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Cr1_8xlarge" eSuperTypes="#//Memoryoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="244"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="cr1_8xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="32"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="240"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="I2_xlarge" eSuperTypes="#//Storageoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="30.5"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="i2.xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="4"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="800"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="I2_2xlarge" eSuperTypes="#//Storageoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="61"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="i2.2xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="8"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="1600"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="I2_4xlarge" eSuperTypes="#//Storageoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="122"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="i2.4xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="16"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="3200"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="I2_8xlarge" eSuperTypes="#//Storageoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="244"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="i2.8xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="32"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="6400"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Hs1_8xlarge" eSuperTypes="#//Storageoptimized platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeMemory" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="117"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
+        defaultValueLiteral="i2.8xlarge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeCores" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core"
+        defaultValueLiteral="16"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occiComputeEphemeralStorageSize"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB"
+        defaultValueLiteral="48000"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Placementgroup" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="appliesConstraint"/>
+    </eAnnotations>
+    <eOperations name="appliesConstraint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
+      <eParameters name="context">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="groupName" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="affinity" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostId" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="spreadDomain" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tenancy" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="zoneName" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Rootdevicevolume" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="appliesConstraint"/>
+    </eAnnotations>
+    <eOperations name="appliesConstraint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
+      <eParameters name="context">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rootDeviceName" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rootDeviceType" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Statustransitionreason" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="appliesConstraint"/>
+    </eAnnotations>
+    <eOperations name="appliesConstraint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
+      <eParameters name="context">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stateTransitionCode" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stateTransitionMessage"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Tags" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="appliesConstraint"/>
+    </eAnnotations>
+    <eOperations name="appliesConstraint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
+      <eParameters name="context">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Instancevpcinfo" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="appliesConstraint"/>
+    </eAnnotations>
+    <eOperations name="appliesConstraint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
+      <eParameters name="context">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vpcId" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="subnetId" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceDestCheck" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//Boolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Europe" eSuperTypes="http://occiware.org/occi/infrastructure/locations/ecore#//Region platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
+</ecore:EPackage>

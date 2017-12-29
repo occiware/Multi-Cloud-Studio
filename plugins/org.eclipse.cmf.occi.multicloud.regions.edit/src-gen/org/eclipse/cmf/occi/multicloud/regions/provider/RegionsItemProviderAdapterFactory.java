@@ -128,6 +128,29 @@ public class RegionsItemProviderAdapterFactory extends RegionsAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.regions.Europe} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EuropeItemProvider europeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.regions.Europe}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEuropeAdapter() {
+		if (europeItemProvider == null) {
+			europeItemProvider = new EuropeItemProvider(this);
+		}
+
+		return europeItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.regions.Northamerica} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -194,29 +217,6 @@ public class RegionsItemProviderAdapterFactory extends RegionsAdapterFactory imp
 		}
 
 		return asiapacificItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.regions.Europe} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected EuropeItemProvider europeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.regions.Europe}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createEuropeAdapter() {
-		if (europeItemProvider == null) {
-			europeItemProvider = new EuropeItemProvider(this);
-		}
-
-		return europeItemProvider;
 	}
 
 	/**
@@ -343,10 +343,10 @@ public class RegionsItemProviderAdapterFactory extends RegionsAdapterFactory imp
 	public void dispose() {
 		if (regionItemProvider != null) regionItemProvider.dispose();
 		if (availabilityzoneItemProvider != null) availabilityzoneItemProvider.dispose();
+		if (europeItemProvider != null) europeItemProvider.dispose();
 		if (northamericaItemProvider != null) northamericaItemProvider.dispose();
 		if (southamericaItemProvider != null) southamericaItemProvider.dispose();
 		if (asiapacificItemProvider != null) asiapacificItemProvider.dispose();
-		if (europeItemProvider != null) europeItemProvider.dispose();
 		if (africaItemProvider != null) africaItemProvider.dispose();
 	}
 

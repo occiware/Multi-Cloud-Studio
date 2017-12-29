@@ -61,6 +61,13 @@ public class RegionsPackageImpl extends EPackageImpl implements RegionsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass europeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass northamericaEClass = null;
 
 	/**
@@ -76,13 +83,6 @@ public class RegionsPackageImpl extends EPackageImpl implements RegionsPackage {
 	 * @generated
 	 */
 	private EClass asiapacificEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass europeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -178,51 +178,6 @@ public class RegionsPackageImpl extends EPackageImpl implements RegionsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRegion_RegionName() {
-		return (EAttribute)regionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRegion_RegionId() {
-		return (EAttribute)regionEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRegion_City() {
-		return (EAttribute)regionEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRegion_Country() {
-		return (EAttribute)regionEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRegion_RegionEndpoint() {
-		return (EAttribute)regionEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EOperation getRegion__AppliesConstraint__DiagnosticChain_Map() {
 		return regionEClass.getEOperations().get(0);
 	}
@@ -277,8 +232,35 @@ public class RegionsPackageImpl extends EPackageImpl implements RegionsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getEurope() {
+		return europeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getEurope__AppliesConstraint__DiagnosticChain_Map() {
+		return europeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getNorthamerica() {
 		return northamericaEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getNorthamerica__AppliesConstraint__DiagnosticChain_Map() {
+		return northamericaEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -295,6 +277,15 @@ public class RegionsPackageImpl extends EPackageImpl implements RegionsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getSouthamerica__AppliesConstraint__DiagnosticChain_Map() {
+		return southamericaEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAsiapacific() {
 		return asiapacificEClass;
 	}
@@ -304,8 +295,8 @@ public class RegionsPackageImpl extends EPackageImpl implements RegionsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getEurope() {
-		return europeEClass;
+	public EOperation getAsiapacific__AppliesConstraint__DiagnosticChain_Map() {
+		return asiapacificEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -315,6 +306,15 @@ public class RegionsPackageImpl extends EPackageImpl implements RegionsPackage {
 	 */
 	public EClass getAfrica() {
 		return africaEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getAfrica__AppliesConstraint__DiagnosticChain_Map() {
+		return africaEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -346,11 +346,6 @@ public class RegionsPackageImpl extends EPackageImpl implements RegionsPackage {
 
 		// Create classes and their features
 		regionEClass = createEClass(REGION);
-		createEAttribute(regionEClass, REGION__REGION_NAME);
-		createEAttribute(regionEClass, REGION__REGION_ID);
-		createEAttribute(regionEClass, REGION__CITY);
-		createEAttribute(regionEClass, REGION__COUNTRY);
-		createEAttribute(regionEClass, REGION__REGION_ENDPOINT);
 		createEOperation(regionEClass, REGION___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
 		availabilityzoneEClass = createEClass(AVAILABILITYZONE);
@@ -359,15 +354,20 @@ public class RegionsPackageImpl extends EPackageImpl implements RegionsPackage {
 		createEAttribute(availabilityzoneEClass, AVAILABILITYZONE__AVAILABLE);
 		createEOperation(availabilityzoneEClass, AVAILABILITYZONE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
+		europeEClass = createEClass(EUROPE);
+		createEOperation(europeEClass, EUROPE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
+
 		northamericaEClass = createEClass(NORTHAMERICA);
+		createEOperation(northamericaEClass, NORTHAMERICA___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
 		southamericaEClass = createEClass(SOUTHAMERICA);
+		createEOperation(southamericaEClass, SOUTHAMERICA___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
 		asiapacificEClass = createEClass(ASIAPACIFIC);
-
-		europeEClass = createEClass(EUROPE);
+		createEOperation(asiapacificEClass, ASIAPACIFIC___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
 		africaEClass = createEClass(AFRICA);
+		createEOperation(africaEClass, AFRICA___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 	}
 
 	/**
@@ -403,24 +403,19 @@ public class RegionsPackageImpl extends EPackageImpl implements RegionsPackage {
 		// Add supertypes to classes
 		regionEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		availabilityzoneEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		europeEClass.getESuperTypes().add(this.getRegion());
+		europeEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		northamericaEClass.getESuperTypes().add(this.getRegion());
 		northamericaEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		southamericaEClass.getESuperTypes().add(this.getRegion());
 		southamericaEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		asiapacificEClass.getESuperTypes().add(this.getRegion());
 		asiapacificEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
-		europeEClass.getESuperTypes().add(this.getRegion());
-		europeEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		africaEClass.getESuperTypes().add(this.getRegion());
 		africaEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(regionEClass, Region.class, "Region", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRegion_RegionName(), theOCCIPackage.getString(), "regionName", null, 1, 1, Region.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRegion_RegionId(), theOCCIPackage.getString(), "regionId", null, 1, 1, Region.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRegion_City(), theOCCIPackage.getString(), "city", null, 0, 1, Region.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRegion_Country(), theOCCIPackage.getString(), "country", null, 0, 1, Region.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRegion_RegionEndpoint(), theOCCIPackage.getString(), "regionEndpoint", null, 0, 1, Region.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = initEOperation(getRegion__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -445,15 +440,60 @@ public class RegionsPackageImpl extends EPackageImpl implements RegionsPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		initEClass(europeEClass, Europe.class, "Europe", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = initEOperation(getEurope__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(northamericaEClass, Northamerica.class, "Northamerica", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = initEOperation(getNorthamerica__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(southamericaEClass, Southamerica.class, "Southamerica", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		op = initEOperation(getSouthamerica__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(asiapacificEClass, Asiapacific.class, "Asiapacific", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(europeEClass, Europe.class, "Europe", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		op = initEOperation(getAsiapacific__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(africaEClass, Africa.class, "Africa", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = initEOperation(getAfrica__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -484,6 +524,36 @@ public class RegionsPackageImpl extends EPackageImpl implements RegionsPackage {
 		   });	
 		addAnnotation
 		  (availabilityzoneEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (europeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (northamericaEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (southamericaEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (asiapacificEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (africaEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "appliesConstraint"

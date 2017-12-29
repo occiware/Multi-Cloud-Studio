@@ -16,11 +16,13 @@ package org.eclipse.cmf.occi.multicloud.regions.provider;
 import java.util.Collection;
 import java.util.List;
 
+import org.eclipse.cmf.occi.core.provider.MixinBaseItemProvider;
 import org.eclipse.cmf.occi.multicloud.regions.Southamerica;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
@@ -74,10 +76,7 @@ public class SouthamericaItemProvider extends RegionItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Southamerica)object).getRegionName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Southamerica_type") :
-			getString("_UI_Southamerica_type") + " " + label;
+		return getString("_UI_Southamerica_type");
 	}
 	
 

@@ -52,12 +52,20 @@ public class AccountsValidator extends EObjectValidator {
 	public static final String DIAGNOSTIC_SOURCE = "org.eclipse.cmf.occi.multicloud.accounts";
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Source Constraint' of 'Cloudaccountlink'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int CLOUDACCOUNTLINK__SOURCE_CONSTRAINT = 1;
+
+	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Basiccredential'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int BASICCREDENTIAL__APPLIES_CONSTRAINT = 1;
+	public static final int BASICCREDENTIAL__APPLIES_CONSTRAINT = 2;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Certificatecredential'.
@@ -65,7 +73,7 @@ public class AccountsValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CERTIFICATECREDENTIAL__APPLIES_CONSTRAINT = 2;
+	public static final int CERTIFICATECREDENTIAL__APPLIES_CONSTRAINT = 3;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Keypaircredential'.
@@ -73,7 +81,7 @@ public class AccountsValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int KEYPAIRCREDENTIAL__APPLIES_CONSTRAINT = 3;
+	public static final int KEYPAIRCREDENTIAL__APPLIES_CONSTRAINT = 4;
 
 	/**
 	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Cloudcredential'.
@@ -81,7 +89,7 @@ public class AccountsValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final int CLOUDCREDENTIAL__APPLIES_CONSTRAINT = 4;
+	public static final int CLOUDCREDENTIAL__APPLIES_CONSTRAINT = 5;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -89,7 +97,7 @@ public class AccountsValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 4;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 5;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -200,7 +208,18 @@ public class AccountsValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= occiValidator.validateLink_LinkKindIsInParent(cloudaccountlink, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateLink_sourceReferenceInvariant(cloudaccountlink, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateLink_targetReferenceInvariant(cloudaccountlink, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCloudaccountlink_sourceConstraint(cloudaccountlink, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * Validates the sourceConstraint constraint of '<em>Cloudaccountlink</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCloudaccountlink_sourceConstraint(Cloudaccountlink cloudaccountlink, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return cloudaccountlink.sourceConstraint(diagnostics, context);
 	}
 
 	/**

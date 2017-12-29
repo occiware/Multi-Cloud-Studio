@@ -106,58 +106,13 @@ public interface RegionsPackage extends EPackage {
 	int REGION__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
 
 	/**
-	 * The feature id for the '<em><b>Region Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION__REGION_NAME = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Region Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION__REGION_ID = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>City</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION__CITY = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Country</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION__COUNTRY = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Region Endpoint</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION__REGION_ENDPOINT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 4;
-
-	/**
 	 * The number of structural features of the '<em>Region</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REGION_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 5;
+	int REGION_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Applies Constraint</em>' operation.
@@ -270,333 +225,6 @@ public interface RegionsPackage extends EPackage {
 
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.regions.impl.NorthamericaImpl <em>Northamerica</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.regions.impl.NorthamericaImpl
-	 * @see org.eclipse.cmf.occi.multicloud.regions.impl.RegionsPackageImpl#getNorthamerica()
-	 * @generated
-	 */
-	int NORTHAMERICA = 2;
-
-	/**
-	 * The feature id for the '<em><b>Mixin</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NORTHAMERICA__MIXIN = REGION__MIXIN;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NORTHAMERICA__ENTITY = REGION__ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NORTHAMERICA__ATTRIBUTES = REGION__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Region Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NORTHAMERICA__REGION_NAME = REGION__REGION_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Region Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NORTHAMERICA__REGION_ID = REGION__REGION_ID;
-
-	/**
-	 * The feature id for the '<em><b>City</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NORTHAMERICA__CITY = REGION__CITY;
-
-	/**
-	 * The feature id for the '<em><b>Country</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NORTHAMERICA__COUNTRY = REGION__COUNTRY;
-
-	/**
-	 * The feature id for the '<em><b>Region Endpoint</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NORTHAMERICA__REGION_ENDPOINT = REGION__REGION_ENDPOINT;
-
-	/**
-	 * The number of structural features of the '<em>Northamerica</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NORTHAMERICA_FEATURE_COUNT = REGION_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NORTHAMERICA___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = REGION___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The number of operations of the '<em>Northamerica</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NORTHAMERICA_OPERATION_COUNT = REGION_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.regions.impl.SouthamericaImpl <em>Southamerica</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.regions.impl.SouthamericaImpl
-	 * @see org.eclipse.cmf.occi.multicloud.regions.impl.RegionsPackageImpl#getSouthamerica()
-	 * @generated
-	 */
-	int SOUTHAMERICA = 3;
-
-	/**
-	 * The feature id for the '<em><b>Mixin</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOUTHAMERICA__MIXIN = REGION__MIXIN;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOUTHAMERICA__ENTITY = REGION__ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOUTHAMERICA__ATTRIBUTES = REGION__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Region Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOUTHAMERICA__REGION_NAME = REGION__REGION_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Region Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOUTHAMERICA__REGION_ID = REGION__REGION_ID;
-
-	/**
-	 * The feature id for the '<em><b>City</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOUTHAMERICA__CITY = REGION__CITY;
-
-	/**
-	 * The feature id for the '<em><b>Country</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOUTHAMERICA__COUNTRY = REGION__COUNTRY;
-
-	/**
-	 * The feature id for the '<em><b>Region Endpoint</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOUTHAMERICA__REGION_ENDPOINT = REGION__REGION_ENDPOINT;
-
-	/**
-	 * The number of structural features of the '<em>Southamerica</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOUTHAMERICA_FEATURE_COUNT = REGION_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOUTHAMERICA___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = REGION___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The number of operations of the '<em>Southamerica</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOUTHAMERICA_OPERATION_COUNT = REGION_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.regions.impl.AsiapacificImpl <em>Asiapacific</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.regions.impl.AsiapacificImpl
-	 * @see org.eclipse.cmf.occi.multicloud.regions.impl.RegionsPackageImpl#getAsiapacific()
-	 * @generated
-	 */
-	int ASIAPACIFIC = 4;
-
-	/**
-	 * The feature id for the '<em><b>Mixin</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASIAPACIFIC__MIXIN = REGION__MIXIN;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASIAPACIFIC__ENTITY = REGION__ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASIAPACIFIC__ATTRIBUTES = REGION__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Region Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASIAPACIFIC__REGION_NAME = REGION__REGION_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Region Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASIAPACIFIC__REGION_ID = REGION__REGION_ID;
-
-	/**
-	 * The feature id for the '<em><b>City</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASIAPACIFIC__CITY = REGION__CITY;
-
-	/**
-	 * The feature id for the '<em><b>Country</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASIAPACIFIC__COUNTRY = REGION__COUNTRY;
-
-	/**
-	 * The feature id for the '<em><b>Region Endpoint</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASIAPACIFIC__REGION_ENDPOINT = REGION__REGION_ENDPOINT;
-
-	/**
-	 * The number of structural features of the '<em>Asiapacific</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASIAPACIFIC_FEATURE_COUNT = REGION_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASIAPACIFIC___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = REGION___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The number of operations of the '<em>Asiapacific</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASIAPACIFIC_OPERATION_COUNT = REGION_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.regions.impl.EuropeImpl <em>Europe</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -604,7 +232,7 @@ public interface RegionsPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.regions.impl.RegionsPackageImpl#getEurope()
 	 * @generated
 	 */
-	int EUROPE = 5;
+	int EUROPE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -634,51 +262,6 @@ public interface RegionsPackage extends EPackage {
 	int EUROPE__ATTRIBUTES = REGION__ATTRIBUTES;
 
 	/**
-	 * The feature id for the '<em><b>Region Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EUROPE__REGION_NAME = REGION__REGION_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Region Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EUROPE__REGION_ID = REGION__REGION_ID;
-
-	/**
-	 * The feature id for the '<em><b>City</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EUROPE__CITY = REGION__CITY;
-
-	/**
-	 * The feature id for the '<em><b>Country</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EUROPE__COUNTRY = REGION__COUNTRY;
-
-	/**
-	 * The feature id for the '<em><b>Region Endpoint</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EUROPE__REGION_ENDPOINT = REGION__REGION_ENDPOINT;
-
-	/**
 	 * The number of structural features of the '<em>Europe</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -694,7 +277,7 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EUROPE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = REGION___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP;
+	int EUROPE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = REGION_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Europe</em>' class.
@@ -703,7 +286,199 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EUROPE_OPERATION_COUNT = REGION_OPERATION_COUNT + 0;
+	int EUROPE_OPERATION_COUNT = REGION_OPERATION_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.regions.impl.NorthamericaImpl <em>Northamerica</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.multicloud.regions.impl.NorthamericaImpl
+	 * @see org.eclipse.cmf.occi.multicloud.regions.impl.RegionsPackageImpl#getNorthamerica()
+	 * @generated
+	 */
+	int NORTHAMERICA = 3;
+
+	/**
+	 * The feature id for the '<em><b>Mixin</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORTHAMERICA__MIXIN = REGION__MIXIN;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORTHAMERICA__ENTITY = REGION__ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORTHAMERICA__ATTRIBUTES = REGION__ATTRIBUTES;
+
+	/**
+	 * The number of structural features of the '<em>Northamerica</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORTHAMERICA_FEATURE_COUNT = REGION_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Applies Constraint</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORTHAMERICA___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = REGION_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Northamerica</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORTHAMERICA_OPERATION_COUNT = REGION_OPERATION_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.regions.impl.SouthamericaImpl <em>Southamerica</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.multicloud.regions.impl.SouthamericaImpl
+	 * @see org.eclipse.cmf.occi.multicloud.regions.impl.RegionsPackageImpl#getSouthamerica()
+	 * @generated
+	 */
+	int SOUTHAMERICA = 4;
+
+	/**
+	 * The feature id for the '<em><b>Mixin</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOUTHAMERICA__MIXIN = REGION__MIXIN;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOUTHAMERICA__ENTITY = REGION__ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOUTHAMERICA__ATTRIBUTES = REGION__ATTRIBUTES;
+
+	/**
+	 * The number of structural features of the '<em>Southamerica</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOUTHAMERICA_FEATURE_COUNT = REGION_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Applies Constraint</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOUTHAMERICA___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = REGION_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Southamerica</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOUTHAMERICA_OPERATION_COUNT = REGION_OPERATION_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.regions.impl.AsiapacificImpl <em>Asiapacific</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.multicloud.regions.impl.AsiapacificImpl
+	 * @see org.eclipse.cmf.occi.multicloud.regions.impl.RegionsPackageImpl#getAsiapacific()
+	 * @generated
+	 */
+	int ASIAPACIFIC = 5;
+
+	/**
+	 * The feature id for the '<em><b>Mixin</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASIAPACIFIC__MIXIN = REGION__MIXIN;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASIAPACIFIC__ENTITY = REGION__ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASIAPACIFIC__ATTRIBUTES = REGION__ATTRIBUTES;
+
+	/**
+	 * The number of structural features of the '<em>Asiapacific</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASIAPACIFIC_FEATURE_COUNT = REGION_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Applies Constraint</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASIAPACIFIC___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = REGION_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Asiapacific</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASIAPACIFIC_OPERATION_COUNT = REGION_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.regions.impl.AfricaImpl <em>Africa</em>}' class.
@@ -743,51 +518,6 @@ public interface RegionsPackage extends EPackage {
 	int AFRICA__ATTRIBUTES = REGION__ATTRIBUTES;
 
 	/**
-	 * The feature id for the '<em><b>Region Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AFRICA__REGION_NAME = REGION__REGION_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Region Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AFRICA__REGION_ID = REGION__REGION_ID;
-
-	/**
-	 * The feature id for the '<em><b>City</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AFRICA__CITY = REGION__CITY;
-
-	/**
-	 * The feature id for the '<em><b>Country</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AFRICA__COUNTRY = REGION__COUNTRY;
-
-	/**
-	 * The feature id for the '<em><b>Region Endpoint</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AFRICA__REGION_ENDPOINT = REGION__REGION_ENDPOINT;
-
-	/**
 	 * The number of structural features of the '<em>Africa</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -803,7 +533,7 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AFRICA___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = REGION___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP;
+	int AFRICA___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = REGION_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Africa</em>' class.
@@ -812,7 +542,7 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AFRICA_OPERATION_COUNT = REGION_OPERATION_COUNT + 0;
+	int AFRICA_OPERATION_COUNT = REGION_OPERATION_COUNT + 1;
 
 
 	/**
@@ -824,61 +554,6 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getRegion();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.regions.Region#getRegionName <em>Region Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Region Name</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.regions.Region#getRegionName()
-	 * @see #getRegion()
-	 * @generated
-	 */
-	EAttribute getRegion_RegionName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.regions.Region#getRegionId <em>Region Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Region Id</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.regions.Region#getRegionId()
-	 * @see #getRegion()
-	 * @generated
-	 */
-	EAttribute getRegion_RegionId();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.regions.Region#getCity <em>City</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>City</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.regions.Region#getCity()
-	 * @see #getRegion()
-	 * @generated
-	 */
-	EAttribute getRegion_City();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.regions.Region#getCountry <em>Country</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Country</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.regions.Region#getCountry()
-	 * @see #getRegion()
-	 * @generated
-	 */
-	EAttribute getRegion_Country();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.regions.Region#getRegionEndpoint <em>Region Endpoint</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Region Endpoint</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.regions.Region#getRegionEndpoint()
-	 * @see #getRegion()
-	 * @generated
-	 */
-	EAttribute getRegion_RegionEndpoint();
 
 	/**
 	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.regions.Region#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
@@ -944,6 +619,26 @@ public interface RegionsPackage extends EPackage {
 	EOperation getAvailabilityzone__AppliesConstraint__DiagnosticChain_Map();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.regions.Europe <em>Europe</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Europe</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.regions.Europe
+	 * @generated
+	 */
+	EClass getEurope();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.regions.Europe#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
+	 * @see org.eclipse.cmf.occi.multicloud.regions.Europe#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getEurope__AppliesConstraint__DiagnosticChain_Map();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.regions.Northamerica <em>Northamerica</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -952,6 +647,16 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getNorthamerica();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.regions.Northamerica#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
+	 * @see org.eclipse.cmf.occi.multicloud.regions.Northamerica#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getNorthamerica__AppliesConstraint__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.regions.Southamerica <em>Southamerica</em>}'.
@@ -964,6 +669,16 @@ public interface RegionsPackage extends EPackage {
 	EClass getSouthamerica();
 
 	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.regions.Southamerica#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
+	 * @see org.eclipse.cmf.occi.multicloud.regions.Southamerica#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getSouthamerica__AppliesConstraint__DiagnosticChain_Map();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.regions.Asiapacific <em>Asiapacific</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -974,14 +689,14 @@ public interface RegionsPackage extends EPackage {
 	EClass getAsiapacific();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.regions.Europe <em>Europe</em>}'.
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.regions.Asiapacific#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Europe</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.regions.Europe
+	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
+	 * @see org.eclipse.cmf.occi.multicloud.regions.Asiapacific#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EClass getEurope();
+	EOperation getAsiapacific__AppliesConstraint__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.regions.Africa <em>Africa</em>}'.
@@ -992,6 +707,16 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getAfrica();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.regions.Africa#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
+	 * @see org.eclipse.cmf.occi.multicloud.regions.Africa#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getAfrica__AppliesConstraint__DiagnosticChain_Map();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1025,46 +750,6 @@ public interface RegionsPackage extends EPackage {
 		 * @generated
 		 */
 		EClass REGION = eINSTANCE.getRegion();
-
-		/**
-		 * The meta object literal for the '<em><b>Region Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute REGION__REGION_NAME = eINSTANCE.getRegion_RegionName();
-
-		/**
-		 * The meta object literal for the '<em><b>Region Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute REGION__REGION_ID = eINSTANCE.getRegion_RegionId();
-
-		/**
-		 * The meta object literal for the '<em><b>City</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute REGION__CITY = eINSTANCE.getRegion_City();
-
-		/**
-		 * The meta object literal for the '<em><b>Country</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute REGION__COUNTRY = eINSTANCE.getRegion_Country();
-
-		/**
-		 * The meta object literal for the '<em><b>Region Endpoint</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute REGION__REGION_ENDPOINT = eINSTANCE.getRegion_RegionEndpoint();
 
 		/**
 		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
@@ -1117,6 +802,24 @@ public interface RegionsPackage extends EPackage {
 		EOperation AVAILABILITYZONE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getAvailabilityzone__AppliesConstraint__DiagnosticChain_Map();
 
 		/**
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.regions.impl.EuropeImpl <em>Europe</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.cmf.occi.multicloud.regions.impl.EuropeImpl
+		 * @see org.eclipse.cmf.occi.multicloud.regions.impl.RegionsPackageImpl#getEurope()
+		 * @generated
+		 */
+		EClass EUROPE = eINSTANCE.getEurope();
+
+		/**
+		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation EUROPE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getEurope__AppliesConstraint__DiagnosticChain_Map();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.regions.impl.NorthamericaImpl <em>Northamerica</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1125,6 +828,14 @@ public interface RegionsPackage extends EPackage {
 		 * @generated
 		 */
 		EClass NORTHAMERICA = eINSTANCE.getNorthamerica();
+
+		/**
+		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation NORTHAMERICA___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getNorthamerica__AppliesConstraint__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.regions.impl.SouthamericaImpl <em>Southamerica</em>}' class.
@@ -1137,6 +848,14 @@ public interface RegionsPackage extends EPackage {
 		EClass SOUTHAMERICA = eINSTANCE.getSouthamerica();
 
 		/**
+		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SOUTHAMERICA___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getSouthamerica__AppliesConstraint__DiagnosticChain_Map();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.regions.impl.AsiapacificImpl <em>Asiapacific</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1147,14 +866,12 @@ public interface RegionsPackage extends EPackage {
 		EClass ASIAPACIFIC = eINSTANCE.getAsiapacific();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.regions.impl.EuropeImpl <em>Europe</em>}' class.
+		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.multicloud.regions.impl.EuropeImpl
-		 * @see org.eclipse.cmf.occi.multicloud.regions.impl.RegionsPackageImpl#getEurope()
 		 * @generated
 		 */
-		EClass EUROPE = eINSTANCE.getEurope();
+		EOperation ASIAPACIFIC___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getAsiapacific__AppliesConstraint__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.regions.impl.AfricaImpl <em>Africa</em>}' class.
@@ -1165,6 +882,14 @@ public interface RegionsPackage extends EPackage {
 		 * @generated
 		 */
 		EClass AFRICA = eINSTANCE.getAfrica();
+
+		/**
+		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation AFRICA___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getAfrica__AppliesConstraint__DiagnosticChain_Map();
 
 	}
 

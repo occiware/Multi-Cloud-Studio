@@ -88,6 +88,10 @@ public class RegionsAdapterFactory extends AdapterFactoryImpl {
 				return createAvailabilityzoneAdapter();
 			}
 			@Override
+			public Adapter caseEurope(Europe object) {
+				return createEuropeAdapter();
+			}
+			@Override
 			public Adapter caseNorthamerica(Northamerica object) {
 				return createNorthamericaAdapter();
 			}
@@ -98,10 +102,6 @@ public class RegionsAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseAsiapacific(Asiapacific object) {
 				return createAsiapacificAdapter();
-			}
-			@Override
-			public Adapter caseEurope(Europe object) {
-				return createEuropeAdapter();
 			}
 			@Override
 			public Adapter caseAfrica(Africa object) {
@@ -160,6 +160,20 @@ public class RegionsAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.regions.Europe <em>Europe</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.regions.Europe
+	 * @generated
+	 */
+	public Adapter createEuropeAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.regions.Northamerica <em>Northamerica</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -198,20 +212,6 @@ public class RegionsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAsiapacificAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.regions.Europe <em>Europe</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.regions.Europe
-	 * @generated
-	 */
-	public Adapter createEuropeAdapter() {
 		return null;
 	}
 

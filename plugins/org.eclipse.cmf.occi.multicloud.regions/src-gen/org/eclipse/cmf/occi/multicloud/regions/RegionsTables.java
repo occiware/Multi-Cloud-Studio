@@ -61,15 +61,25 @@ public class RegionsTables
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.RootPackageId PACKid_$metamodel$ = org.eclipse.ocl.pivot.ids.IdManager.getRootPackageId("$metamodel$");
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_occiware_org_s_occi_s_infrastructure_s_locations_s_ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://occiware.org/occi/infrastructure/locations/ecore", null, org.eclipse.cmf.occi.multicloud.regions.RegionsPackage.eINSTANCE);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://schemas.ogf.org/occi/core/ecore", "occi", org.eclipse.cmf.occi.core.OCCIPackage.eINSTANCE);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Africa = org.eclipse.cmf.occi.multicloud.regions.RegionsTables.PACKid_http_c_s_s_occiware_org_s_occi_s_infrastructure_s_locations_s_ecore.getClassId("Africa", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Asiapacific = org.eclipse.cmf.occi.multicloud.regions.RegionsTables.PACKid_http_c_s_s_occiware_org_s_occi_s_infrastructure_s_locations_s_ecore.getClassId("Asiapacific", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Availabilityzone = org.eclipse.cmf.occi.multicloud.regions.RegionsTables.PACKid_http_c_s_s_occiware_org_s_occi_s_infrastructure_s_locations_s_ecore.getClassId("Availabilityzone", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Class = org.eclipse.cmf.occi.multicloud.regions.RegionsTables.PACKid_$metamodel$.getClassId("Class", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Entity = org.eclipse.cmf.occi.multicloud.regions.RegionsTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Entity", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Europe = org.eclipse.cmf.occi.multicloud.regions.RegionsTables.PACKid_http_c_s_s_occiware_org_s_occi_s_infrastructure_s_locations_s_ecore.getClassId("Europe", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Link = org.eclipse.cmf.occi.multicloud.regions.RegionsTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Link", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Northamerica = org.eclipse.cmf.occi.multicloud.regions.RegionsTables.PACKid_http_c_s_s_occiware_org_s_occi_s_infrastructure_s_locations_s_ecore.getClassId("Northamerica", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Region = org.eclipse.cmf.occi.multicloud.regions.RegionsTables.PACKid_http_c_s_s_occiware_org_s_occi_s_infrastructure_s_locations_s_ecore.getClassId("Region", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Resource = org.eclipse.cmf.occi.multicloud.regions.RegionsTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Resource", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Southamerica = org.eclipse.cmf.occi.multicloud.regions.RegionsTables.PACKid_http_c_s_s_occiware_org_s_occi_s_infrastructure_s_locations_s_ecore.getClassId("Southamerica", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.values.IntegerValue INT_0 = org.eclipse.ocl.pivot.utilities.ValueUtil.integerValueOf("0");
+	public static final /*@NonInvalid*/ java.lang.String STR_Africa_c_c_appliesConstraint = "Africa::appliesConstraint";
+	public static final /*@NonInvalid*/ java.lang.String STR_Asiapacific_c_c_appliesConstraint = "Asiapacific::appliesConstraint";
 	public static final /*@NonInvalid*/ java.lang.String STR_Availabilityzone_c_c_appliesConstraint = "Availabilityzone::appliesConstraint";
+	public static final /*@NonInvalid*/ java.lang.String STR_Europe_c_c_appliesConstraint = "Europe::appliesConstraint";
+	public static final /*@NonInvalid*/ java.lang.String STR_Northamerica_c_c_appliesConstraint = "Northamerica::appliesConstraint";
 	public static final /*@NonInvalid*/ java.lang.String STR_Region_c_c_appliesConstraint = "Region::appliesConstraint";
+	public static final /*@NonInvalid*/ java.lang.String STR_Southamerica_c_c_appliesConstraint = "Southamerica::appliesConstraint";
 
 	/**
 	 *	The type parameters for templated types and operations.
@@ -254,12 +264,6 @@ public class RegionsTables
 		public static final /*@NonNull*/ ExecutorProperty _Availabilityzone__available = new EcoreExecutorProperty(RegionsPackage.Literals.AVAILABILITYZONE__AVAILABLE, Types._Availabilityzone, 0);
 		public static final /*@NonNull*/ ExecutorProperty _Availabilityzone__zoneMessage = new EcoreExecutorProperty(RegionsPackage.Literals.AVAILABILITYZONE__ZONE_MESSAGE, Types._Availabilityzone, 1);
 		public static final /*@NonNull*/ ExecutorProperty _Availabilityzone__zoneName = new EcoreExecutorProperty(RegionsPackage.Literals.AVAILABILITYZONE__ZONE_NAME, Types._Availabilityzone, 2);
-
-		public static final /*@NonNull*/ ExecutorProperty _Region__city = new EcoreExecutorProperty(RegionsPackage.Literals.REGION__CITY, Types._Region, 0);
-		public static final /*@NonNull*/ ExecutorProperty _Region__country = new EcoreExecutorProperty(RegionsPackage.Literals.REGION__COUNTRY, Types._Region, 1);
-		public static final /*@NonNull*/ ExecutorProperty _Region__regionEndpoint = new EcoreExecutorProperty(RegionsPackage.Literals.REGION__REGION_ENDPOINT, Types._Region, 2);
-		public static final /*@NonNull*/ ExecutorProperty _Region__regionId = new EcoreExecutorProperty(RegionsPackage.Literals.REGION__REGION_ID, Types._Region, 3);
-		public static final /*@NonNull*/ ExecutorProperty _Region__regionName = new EcoreExecutorProperty(RegionsPackage.Literals.REGION__REGION_NAME, Types._Region, 4);
 		static {
 			Init.initEnd();
 		}
@@ -647,21 +651,9 @@ public class RegionsTables
 			FragmentOperations.init();
 		}
 
-		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Africa = {
-			RegionsTables.Properties._Region__city,
-			RegionsTables.Properties._Region__country,
-			RegionsTables.Properties._Region__regionEndpoint,
-			RegionsTables.Properties._Region__regionId,
-			RegionsTables.Properties._Region__regionName
-		};
+		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Africa = {};
 
-		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Asiapacific = {
-			RegionsTables.Properties._Region__city,
-			RegionsTables.Properties._Region__country,
-			RegionsTables.Properties._Region__regionEndpoint,
-			RegionsTables.Properties._Region__regionId,
-			RegionsTables.Properties._Region__regionName
-		};
+		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Asiapacific = {};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Availabilityzone = {
 			RegionsTables.Properties._Availabilityzone__available,
@@ -669,37 +661,13 @@ public class RegionsTables
 			RegionsTables.Properties._Availabilityzone__zoneName
 		};
 
-		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Europe = {
-			RegionsTables.Properties._Region__city,
-			RegionsTables.Properties._Region__country,
-			RegionsTables.Properties._Region__regionEndpoint,
-			RegionsTables.Properties._Region__regionId,
-			RegionsTables.Properties._Region__regionName
-		};
+		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Europe = {};
 
-		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Northamerica = {
-			RegionsTables.Properties._Region__city,
-			RegionsTables.Properties._Region__country,
-			RegionsTables.Properties._Region__regionEndpoint,
-			RegionsTables.Properties._Region__regionId,
-			RegionsTables.Properties._Region__regionName
-		};
+		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Northamerica = {};
 
-		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Region = {
-			RegionsTables.Properties._Region__city,
-			RegionsTables.Properties._Region__country,
-			RegionsTables.Properties._Region__regionEndpoint,
-			RegionsTables.Properties._Region__regionId,
-			RegionsTables.Properties._Region__regionName
-		};
+		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Region = {};
 
-		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Southamerica = {
-			RegionsTables.Properties._Region__city,
-			RegionsTables.Properties._Region__country,
-			RegionsTables.Properties._Region__regionEndpoint,
-			RegionsTables.Properties._Region__regionId,
-			RegionsTables.Properties._Region__regionName
-		};
+		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Southamerica = {};
 
 		/**
 		 *	Install the property descriptors in the fragment descriptors.

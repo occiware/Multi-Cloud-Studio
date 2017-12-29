@@ -18,9 +18,24 @@
     <applies href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
     <applies href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
   </mixins>
-  <mixins name="NorthAmerica" scheme="http://occiware.org/occi/infrastructure/locations#" depends="//@mixins[term='region']"/>
-  <mixins name="SouthAmerica" scheme="http://occiware.org/occi/infrastructure/locations#" depends="//@mixins[term='region']"/>
-  <mixins name="AsiaPacific" scheme="http://occiware.org/occi/infrastructure/locations#" depends="//@mixins[term='region']"/>
-  <mixins name="Europe" scheme="http://occiware.org/occi/infrastructure/locations#" depends="//@mixins[term='region']"/>
-  <mixins name="Africa" scheme="http://occiware.org/occi/infrastructure/locations#" depends="//@mixins[term='region']"/>
+  <mixins name="Europe" scheme="http://occiware.org/occi/infrastructure/locations#" depends="//@mixins[term='region']">
+    <applies href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
+    <applies href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
+  </mixins>
+  <mixins name="NorthAmerica" scheme="http://occiware.org/occi/infrastructure/locations#" depends="//@mixins[term='region']">
+    <applies href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
+    <applies href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
+  </mixins>
+  <mixins name="SouthAmerica" scheme="http://occiware.org/occi/infrastructure/locations#" depends="//@mixins[term='region']">
+    <applies href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
+    <applies href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
+  </mixins>
+  <mixins name="AsiaPacific" scheme="http://occiware.org/occi/infrastructure/locations#" depends="//@mixins[term='region']">
+    <applies href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
+    <applies href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
+  </mixins>
+  <mixins name="Africa" scheme="http://occiware.org/occi/infrastructure/locations#" depends="//@mixins[term='region']">
+    <applies href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
+    <applies href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
+  </mixins>
 </occi:Extension>

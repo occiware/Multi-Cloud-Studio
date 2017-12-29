@@ -8,21 +8,6 @@
     <ecorePackage href="regions.ecore#/"/>
     <genClasses>
       <ecoreClass href="regions.ecore#//Region"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="regions.ecore#//Region/regionName"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="regions.ecore#//Region/regionId"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="regions.ecore#//Region/city"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="regions.ecore#//Region/country"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="regions.ecore#//Region/regionEndpoint"/>
-      </genFeatures>
     </genClasses>
     <genClasses>
       <ecoreClass href="regions.ecore#//Availabilityzone"/>
@@ -37,6 +22,9 @@
       </genFeatures>
     </genClasses>
     <genClasses>
+      <ecoreClass href="regions.ecore#//Europe"/>
+    </genClasses>
+    <genClasses>
       <ecoreClass href="regions.ecore#//Northamerica"/>
     </genClasses>
     <genClasses>
@@ -44,9 +32,6 @@
     </genClasses>
     <genClasses>
       <ecoreClass href="regions.ecore#//Asiapacific"/>
-    </genClasses>
-    <genClasses>
-      <ecoreClass href="regions.ecore#//Europe"/>
     </genClasses>
     <genClasses>
       <ecoreClass href="regions.ecore#//Africa"/>

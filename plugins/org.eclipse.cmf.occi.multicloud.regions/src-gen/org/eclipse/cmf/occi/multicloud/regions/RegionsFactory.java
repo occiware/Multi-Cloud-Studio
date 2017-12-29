@@ -50,6 +50,15 @@ public interface RegionsFactory extends EFactory {
 	Availabilityzone createAvailabilityzone();
 
 	/**
+	 * Returns a new object of class '<em>Europe</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Europe</em>'.
+	 * @generated
+	 */
+	Europe createEurope();
+
+	/**
 	 * Returns a new object of class '<em>Northamerica</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -75,15 +84,6 @@ public interface RegionsFactory extends EFactory {
 	 * @generated
 	 */
 	Asiapacific createAsiapacific();
-
-	/**
-	 * Returns a new object of class '<em>Europe</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Europe</em>'.
-	 * @generated
-	 */
-	Europe createEurope();
 
 	/**
 	 * Returns a new object of class '<em>Africa</em>'.

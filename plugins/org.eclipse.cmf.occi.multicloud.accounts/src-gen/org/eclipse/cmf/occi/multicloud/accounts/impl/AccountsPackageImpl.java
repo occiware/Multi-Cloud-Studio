@@ -179,6 +179,15 @@ public class AccountsPackageImpl extends EPackageImpl implements AccountsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getCloudaccountlink__SourceConstraint__DiagnosticChain_Map() {
+		return cloudaccountlinkEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getBasiccredential() {
 		return basiccredentialEClass;
 	}
@@ -394,6 +403,7 @@ public class AccountsPackageImpl extends EPackageImpl implements AccountsPackage
 		cloudaccountEClass = createEClass(CLOUDACCOUNT);
 
 		cloudaccountlinkEClass = createEClass(CLOUDACCOUNTLINK);
+		createEOperation(cloudaccountlinkEClass, CLOUDACCOUNTLINK___SOURCE_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
 		basiccredentialEClass = createEClass(BASICCREDENTIAL);
 		createEAttribute(basiccredentialEClass, BASICCREDENTIAL__USERNAME);
@@ -464,6 +474,15 @@ public class AccountsPackageImpl extends EPackageImpl implements AccountsPackage
 
 		initEClass(cloudaccountlinkEClass, Cloudaccountlink.class, "Cloudaccountlink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		EOperation op = initEOperation(getCloudaccountlink__SourceConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "sourceConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
+		EGenericType g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(basiccredentialEClass, Basiccredential.class, "Basiccredential", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBasiccredential_Username(), theOCCIPackage.getString(), "username", null, 0, 1, Basiccredential.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBasiccredential_Password(), theOCCIPackage.getString(), "password", null, 0, 1, Basiccredential.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -471,10 +490,10 @@ public class AccountsPackageImpl extends EPackageImpl implements AccountsPackage
 
 		initEOperation(getBasiccredential__Updatepassword(), null, "updatepassword", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		EOperation op = initEOperation(getBasiccredential__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getBasiccredential__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
-		EGenericType g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
@@ -544,6 +563,12 @@ public class AccountsPackageImpl extends EPackageImpl implements AccountsPackage
 		  (this, 
 		   source, 
 		   new String[] {
+		   });	
+		addAnnotation
+		  (cloudaccountlinkEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "sourceConstraint"
 		   });	
 		addAnnotation
 		  (basiccredentialEClass, 

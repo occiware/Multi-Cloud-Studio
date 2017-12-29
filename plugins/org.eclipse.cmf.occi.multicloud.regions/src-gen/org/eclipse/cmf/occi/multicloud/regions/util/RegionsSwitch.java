@@ -92,6 +92,14 @@ public class RegionsSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case RegionsPackage.EUROPE: {
+				Europe europe = (Europe)theEObject;
+				T result = caseEurope(europe);
+				if (result == null) result = caseRegion(europe);
+				if (result == null) result = caseMixinBase(europe);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case RegionsPackage.NORTHAMERICA: {
 				Northamerica northamerica = (Northamerica)theEObject;
 				T result = caseNorthamerica(northamerica);
@@ -113,14 +121,6 @@ public class RegionsSwitch<T> extends Switch<T> {
 				T result = caseAsiapacific(asiapacific);
 				if (result == null) result = caseRegion(asiapacific);
 				if (result == null) result = caseMixinBase(asiapacific);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case RegionsPackage.EUROPE: {
-				Europe europe = (Europe)theEObject;
-				T result = caseEurope(europe);
-				if (result == null) result = caseRegion(europe);
-				if (result == null) result = caseMixinBase(europe);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -167,6 +167,21 @@ public class RegionsSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Europe</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Europe</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEurope(Europe object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Northamerica</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -208,21 +223,6 @@ public class RegionsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAsiapacific(Asiapacific object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Europe</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Europe</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseEurope(Europe object) {
 		return null;
 	}
 

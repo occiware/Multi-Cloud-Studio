@@ -67,12 +67,15 @@ public class AccountsTables
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Certificatecredential = org.eclipse.cmf.occi.multicloud.accounts.AccountsTables.PACKid_http_c_s_s_occiware_org_s_occi_s_infrastructure_s_security_s_ecore.getClassId("Certificatecredential", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Class = org.eclipse.cmf.occi.multicloud.accounts.AccountsTables.PACKid_$metamodel$.getClassId("Class", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Cloudaccount = org.eclipse.cmf.occi.multicloud.accounts.AccountsTables.PACKid_http_c_s_s_occiware_org_s_occi_s_infrastructure_s_security_s_ecore.getClassId("Cloudaccount", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Cloudaccountlink = org.eclipse.cmf.occi.multicloud.accounts.AccountsTables.PACKid_http_c_s_s_occiware_org_s_occi_s_infrastructure_s_security_s_ecore.getClassId("Cloudaccountlink", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Cloudcredential = org.eclipse.cmf.occi.multicloud.accounts.AccountsTables.PACKid_http_c_s_s_occiware_org_s_occi_s_infrastructure_s_security_s_ecore.getClassId("Cloudcredential", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Entity = org.eclipse.cmf.occi.multicloud.accounts.AccountsTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Entity", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Keypaircredential = org.eclipse.cmf.occi.multicloud.accounts.AccountsTables.PACKid_http_c_s_s_occiware_org_s_occi_s_infrastructure_s_security_s_ecore.getClassId("Keypaircredential", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Resource = org.eclipse.cmf.occi.multicloud.accounts.AccountsTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Resource", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.values.IntegerValue INT_0 = org.eclipse.ocl.pivot.utilities.ValueUtil.integerValueOf("0");
 	public static final /*@NonInvalid*/ java.lang.String STR_Basiccredential_c_c_appliesConstraint = "Basiccredential::appliesConstraint";
 	public static final /*@NonInvalid*/ java.lang.String STR_Certificatecredential_c_c_appliesConstraint = "Certificatecredential::appliesConstraint";
+	public static final /*@NonInvalid*/ java.lang.String STR_Cloudaccountlink_c_c_sourceConstraint = "Cloudaccountlink::sourceConstraint";
 	public static final /*@NonInvalid*/ java.lang.String STR_Cloudcredential_c_c_appliesConstraint = "Cloudcredential::appliesConstraint";
 	public static final /*@NonInvalid*/ java.lang.String STR_Keypaircredential_c_c_appliesConstraint = "Keypaircredential::appliesConstraint";
 

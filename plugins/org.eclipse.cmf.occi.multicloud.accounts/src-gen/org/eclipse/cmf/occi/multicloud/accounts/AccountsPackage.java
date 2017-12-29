@@ -377,13 +377,22 @@ public interface AccountsPackage extends EPackage {
 	int CLOUDACCOUNTLINK___LINK_SOURCE_INVARIANT__KIND_KIND = OCCIPackage.LINK___LINK_SOURCE_INVARIANT__KIND_KIND;
 
 	/**
+	 * The operation id for the '<em>Source Constraint</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOUDACCOUNTLINK___SOURCE_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.LINK_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Cloudaccountlink</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLOUDACCOUNTLINK_OPERATION_COUNT = OCCIPackage.LINK_OPERATION_COUNT + 0;
+	int CLOUDACCOUNTLINK_OPERATION_COUNT = OCCIPackage.LINK_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.accounts.impl.BasiccredentialImpl <em>Basiccredential</em>}' class.
@@ -780,6 +789,16 @@ public interface AccountsPackage extends EPackage {
 	EClass getCloudaccountlink();
 
 	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.accounts.Cloudaccountlink#sourceConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Source Constraint</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Source Constraint</em>' operation.
+	 * @see org.eclipse.cmf.occi.multicloud.accounts.Cloudaccountlink#sourceConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getCloudaccountlink__SourceConstraint__DiagnosticChain_Map();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.accounts.Basiccredential <em>Basiccredential</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1041,6 +1060,14 @@ public interface AccountsPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CLOUDACCOUNTLINK = eINSTANCE.getCloudaccountlink();
+
+		/**
+		 * The meta object literal for the '<em><b>Source Constraint</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CLOUDACCOUNTLINK___SOURCE_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getCloudaccountlink__SourceConstraint__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.accounts.impl.BasiccredentialImpl <em>Basiccredential</em>}' class.

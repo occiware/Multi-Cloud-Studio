@@ -68,10 +68,10 @@ public class RegionsFactoryImpl extends EFactoryImpl implements RegionsFactory {
 		switch (eClass.getClassifierID()) {
 			case RegionsPackage.REGION: return createRegion();
 			case RegionsPackage.AVAILABILITYZONE: return createAvailabilityzone();
+			case RegionsPackage.EUROPE: return createEurope();
 			case RegionsPackage.NORTHAMERICA: return createNorthamerica();
 			case RegionsPackage.SOUTHAMERICA: return createSouthamerica();
 			case RegionsPackage.ASIAPACIFIC: return createAsiapacific();
-			case RegionsPackage.EUROPE: return createEurope();
 			case RegionsPackage.AFRICA: return createAfrica();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -103,6 +103,16 @@ public class RegionsFactoryImpl extends EFactoryImpl implements RegionsFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Europe createEurope() {
+		EuropeImpl europe = new EuropeImpl();
+		return europe;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Northamerica createNorthamerica() {
 		NorthamericaImpl northamerica = new NorthamericaImpl();
 		return northamerica;
@@ -126,16 +136,6 @@ public class RegionsFactoryImpl extends EFactoryImpl implements RegionsFactory {
 	public Asiapacific createAsiapacific() {
 		AsiapacificImpl asiapacific = new AsiapacificImpl();
 		return asiapacific;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Europe createEurope() {
-		EuropeImpl europe = new EuropeImpl();
-		return europe;
 	}
 
 	/**

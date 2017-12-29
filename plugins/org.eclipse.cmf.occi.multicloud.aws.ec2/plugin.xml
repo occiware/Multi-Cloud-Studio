@@ -50,4 +50,11 @@
          </action>
       </objectContribution>
    </extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated ec2 -->
+      <package
+            uri="http://occiware.org/occi/infrastructure/aws/ecore"
+            class="org.eclipse.cmf.occi.multicloud.aws.ec2.Ec2Package"/>
+   </extension>
+
 </plugin>

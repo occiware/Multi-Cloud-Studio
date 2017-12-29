@@ -247,9 +247,9 @@ public class BasiccredentialImpl extends MixinBaseImpl implements Basiccredentia
 			symbol_0 = ValueUtil.TRUE_VALUE;
 		}
 		else {
-			final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_accounts_c_c_Cloudaccount = idResolver.getClass(AccountsTables.CLSSid_Cloudaccount, null);
+			final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_accounts_c_c_Cloudaccount_0 = idResolver.getClass(AccountsTables.CLSSid_Cloudaccount, null);
 			final /*@NonInvalid*/ Entity entity = this.getEntity();
-			final /*@NonInvalid*/ boolean result = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity, TYP_accounts_c_c_Cloudaccount).booleanValue();
+			final /*@NonInvalid*/ boolean result = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity, TYP_accounts_c_c_Cloudaccount_0).booleanValue();
 			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, AccountsTables.STR_Basiccredential_c_c_appliesConstraint, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, AccountsTables.INT_0).booleanValue();
 			symbol_0 = logDiagnostic;
 		}

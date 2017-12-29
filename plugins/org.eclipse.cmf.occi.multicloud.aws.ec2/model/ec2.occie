@@ -11,7 +11,7 @@
     <attributes name="instanceId" mutable="true" description="AWS instance id (i-xxxxxx)">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="instanceType" mutable="true" default="t2.nano">
+    <attributes name="instanceType" mutable="true" required="true" default="t2.nano">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
     <attributes name="regionId" mutable="true" required="true" default="eu-west-3" description="regionId is the id of this region given by the provider &#xA;Default is eu-west-3 (France - Paris)">
@@ -20,10 +20,31 @@
     <attributes name="zoneName" mutable="true" description="The datacenter part. The number and mapping of Availability Zones per region may vary between AWS accounts&#xA;If null, the provider will choose the best to fit with this instance.&#xA;Zone : a, b, c, d, e">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="imageId" mutable="true" description="Image provider Id, like ami-1a962263 for example. It may be your own private ami or a market place ami.">
+    <attributes name="imageId" mutable="true" description="The ID of the AMI used to launch the instance.&#xA;Image provider Id, like ami-1a962263 for example. &#xA;It may be your own private ami or a market place ami.">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
     <attributes name="awsInstanceStatus" mutable="true" type="//@types.0"/>
+    <attributes name="launchTime" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="amiLaunchIndex" mutable="true" description="The AMI launch index, which can be used to find this instance in the launch group.">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
+    </attributes>
+    <attributes name="ebsOptimizedIO" mutable="true">
+      <type xsi:type="occi:BooleanType" href="http://schemas.ogf.org/occi/core#//@types.1"/>
+    </attributes>
+    <attributes name="enaSupport" mutable="true" description="Specifies whether enhanced networking with ENA is enabled.">
+      <type xsi:type="occi:BooleanType" href="http://schemas.ogf.org/occi/core#//@types.1"/>
+    </attributes>
+    <attributes name="hypervisor" mutable="true" description="The hypervisor type of the instance." type="//@types.1"/>
+    <attributes name="instanceLifeCycle" mutable="true" description="Indicates whether this is a Spot Instance or a Scheduled Instance." type="//@types.2"/>
+    <attributes name="kernelId" mutable="true" description="The kernel associated with this instance, if applicable.">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="keyPairName" mutable="true" description="The name of the key pair, if this instance was launched with an associated key pair.">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="monitoringState" mutable="true" default="Disabled" description="Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled." type="//@types.3"/>
     <actions name="terminate" scheme="http://occiware.org/occi/infrastructure/aws/instanceec2/action#" title="Terminate - delete the instance on provider"/>
     <actions name="Restart" scheme="http://occiware.org/occi/infrastructure/aws/instanceec2/action#" title="Restart the system (graceful, warm or cold)">
       <attributes name="method" mutable="false">
@@ -1419,6 +1440,303 @@
     </attributes>
     <depends href="http://occiware.org/occi/infrastructure/locations#//@mixins[term='southamerica']"/>
   </mixins>
+  <mixins name="m1_small" scheme="http://occiware.org/occi/infrastructure/aws#" depends="//@mixins[term='generalpurpose']">
+    <attributes name="occi.compute.memory" mutable="true" default="1.7" description="Maximum RAM in gigabytes allocated to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.15"/>
+    </attributes>
+    <attributes name="instanceType" mutable="true" default="m1.small">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="occi.compute.cores" mutable="true" default="1" description="Number of CPU cores assigned to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.13"/>
+    </attributes>
+    <attributes name="occi.compute.ephemeral.storage.size" mutable="false" default="160" description="Ephemeral storage provisioned for the associated Compute instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.15"/>
+    </attributes>
+  </mixins>
+  <mixins name="t1_micro" scheme="http://occiware.org/occi/infrastructure/aws#" depends="//@mixins[term='generalpurpose']">
+    <attributes name="occi.compute.memory" mutable="true" default="0.613" description="Maximum RAM in gigabytes allocated to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.15"/>
+    </attributes>
+    <attributes name="instanceType" mutable="true" default="t1.micro">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="occi.compute.cores" mutable="true" default="1" description="Number of CPU cores assigned to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.13"/>
+    </attributes>
+  </mixins>
+  <mixins name="m1_medium" scheme="http://occiware.org/occi/infrastructure/aws#" depends="//@mixins[term='generalpurpose']">
+    <attributes name="occi.compute.memory" mutable="true" default="3.75" description="Maximum RAM in gigabytes allocated to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.15"/>
+    </attributes>
+    <attributes name="instanceType" mutable="true" default="m1.medium">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="occi.compute.cores" mutable="true" default="1" description="Number of CPU cores assigned to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.13"/>
+    </attributes>
+    <attributes name="occi.compute.ephemeral.storage.size" mutable="false" default="410" description="Ephemeral storage provisioned for the associated Compute instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.15"/>
+    </attributes>
+  </mixins>
+  <mixins name="m1_large" scheme="http://occiware.org/occi/infrastructure/aws#" depends="//@mixins[term='generalpurpose']">
+    <attributes name="occi.compute.memory" mutable="true" default="7.5" description="Maximum RAM in gigabytes allocated to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.15"/>
+    </attributes>
+    <attributes name="instanceType" mutable="true" default="m1.large">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="occi.compute.cores" mutable="true" default="2" description="Number of CPU cores assigned to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.13"/>
+    </attributes>
+    <attributes name="occi.compute.ephemeral.storage.size" mutable="false" default="840" description="Ephemeral storage provisioned for the associated Compute instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.15"/>
+    </attributes>
+  </mixins>
+  <mixins name="m1_xlarge" scheme="http://occiware.org/occi/infrastructure/aws#" depends="//@mixins[term='generalpurpose']">
+    <attributes name="occi.compute.memory" mutable="true" default="15" description="Maximum RAM in gigabytes allocated to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.15"/>
+    </attributes>
+    <attributes name="instanceType" mutable="true" default="m1.xlarge">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="occi.compute.cores" mutable="true" default="4" description="Number of CPU cores assigned to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.13"/>
+    </attributes>
+    <attributes name="occi.compute.ephemeral.storage.size" mutable="false" default="1680" description="Ephemeral storage provisioned for the associated Compute instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.15"/>
+    </attributes>
+  </mixins>
+  <mixins name="c1_medium" scheme="http://occiware.org/occi/infrastructure/aws#" depends="//@mixins[term='computeoptimized']">
+    <attributes name="occi.compute.memory" mutable="true" default="1.7" description="Maximum RAM in gigabytes allocated to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.15"/>
+    </attributes>
+    <attributes name="instanceType" mutable="true" default="c1.medium">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="occi.compute.cores" mutable="true" default="2" description="Number of CPU cores assigned to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.13"/>
+    </attributes>
+    <attributes name="occi.compute.ephemeral.storage.size" mutable="false" default="350" description="Ephemeral storage provisioned for the associated Compute instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.15"/>
+    </attributes>
+  </mixins>
+  <mixins name="c1_xlarge" scheme="http://occiware.org/occi/infrastructure/aws#" depends="//@mixins[term='computeoptimized']">
+    <attributes name="occi.compute.memory" mutable="true" default="7" description="Maximum RAM in gigabytes allocated to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.15"/>
+    </attributes>
+    <attributes name="instanceType" mutable="true" default="c1.xlarge">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="occi.compute.cores" mutable="true" default="8" description="Number of CPU cores assigned to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.13"/>
+    </attributes>
+    <attributes name="occi.compute.ephemeral.storage.size" mutable="false" default="1680" description="Ephemeral storage provisioned for the associated Compute instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.15"/>
+    </attributes>
+  </mixins>
+  <mixins name="cc2_8xlarge" scheme="http://occiware.org/occi/infrastructure/aws#" depends="//@mixins[term='computeoptimized']">
+    <attributes name="occi.compute.memory" mutable="true" default="60.5" description="Maximum RAM in gigabytes allocated to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.15"/>
+    </attributes>
+    <attributes name="instanceType" mutable="true" default="c1.xlarge">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="occi.compute.cores" mutable="true" default="32" description="Number of CPU cores assigned to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.13"/>
+    </attributes>
+    <attributes name="occi.compute.ephemeral.storage.size" mutable="false" default="3360" description="Ephemeral storage provisioned for the associated Compute instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.15"/>
+    </attributes>
+  </mixins>
+  <mixins name="g2_2xlarge" scheme="http://occiware.org/occi/infrastructure/aws#" depends="//@mixins[term='acceleratedcomputing']">
+    <attributes name="occi.compute.memory" mutable="true" default="15" description="Maximum RAM in gigabytes allocated to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.15"/>
+    </attributes>
+    <attributes name="instanceType" mutable="true" default="g2.2xlarge">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="occi.compute.cores" mutable="true" default="8" description="Number of CPU cores assigned to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.13"/>
+    </attributes>
+    <attributes name="occi.compute.ephemeral.storage.size" mutable="false" default="60" description="Ephemeral storage provisioned for the associated Compute instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.15"/>
+    </attributes>
+  </mixins>
+  <mixins name="g2_8xlarge" scheme="http://occiware.org/occi/infrastructure/aws#" depends="//@mixins[term='acceleratedcomputing']">
+    <attributes name="occi.compute.memory" mutable="true" default="60" description="Maximum RAM in gigabytes allocated to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.15"/>
+    </attributes>
+    <attributes name="instanceType" mutable="true" default="g2.8xlarge">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="occi.compute.cores" mutable="true" default="32" description="Number of CPU cores assigned to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.13"/>
+    </attributes>
+    <attributes name="occi.compute.ephemeral.storage.size" mutable="false" default="240" description="Ephemeral storage provisioned for the associated Compute instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.15"/>
+    </attributes>
+  </mixins>
+  <mixins name="cg1_4xlarge" scheme="http://occiware.org/occi/infrastructure/aws#" depends="//@mixins[term='acceleratedcomputing']">
+    <attributes name="occi.compute.memory" mutable="true" default="22.5" description="Maximum RAM in gigabytes allocated to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.15"/>
+    </attributes>
+    <attributes name="instanceType" mutable="true" default="g2.2xlarge">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="occi.compute.cores" mutable="true" default="16" description="Number of CPU cores assigned to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.13"/>
+    </attributes>
+    <attributes name="occi.compute.ephemeral.storage.size" mutable="false" default="1680" description="Ephemeral storage provisioned for the associated Compute instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.15"/>
+    </attributes>
+  </mixins>
+  <mixins name="m2_xlarge" scheme="http://occiware.org/occi/infrastructure/aws#" depends="//@mixins[term='memoryoptimized']">
+    <attributes name="occi.compute.memory" mutable="true" default="17.1" description="Maximum RAM in gigabytes allocated to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.15"/>
+    </attributes>
+    <attributes name="instanceType" mutable="true" default="m2.xlarge">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="occi.compute.cores" mutable="true" default="2" description="Number of CPU cores assigned to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.13"/>
+    </attributes>
+    <attributes name="occi.compute.ephemeral.storage.size" mutable="false" default="420" description="Ephemeral storage provisioned for the associated Compute instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.15"/>
+    </attributes>
+  </mixins>
+  <mixins name="m2_2xlarge" scheme="http://occiware.org/occi/infrastructure/aws#" depends="//@mixins[term='memoryoptimized']">
+    <attributes name="occi.compute.memory" mutable="true" default="34.2" description="Maximum RAM in gigabytes allocated to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.15"/>
+    </attributes>
+    <attributes name="instanceType" mutable="true" default="m2.2xlarge">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="occi.compute.cores" mutable="true" default="4" description="Number of CPU cores assigned to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.13"/>
+    </attributes>
+    <attributes name="occi.compute.ephemeral.storage.size" mutable="false" default="850" description="Ephemeral storage provisioned for the associated Compute instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.15"/>
+    </attributes>
+  </mixins>
+  <mixins name="m2_4xlarge" scheme="http://occiware.org/occi/infrastructure/aws#" depends="//@mixins[term='memoryoptimized']">
+    <attributes name="occi.compute.memory" mutable="true" default="68.4" description="Maximum RAM in gigabytes allocated to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.15"/>
+    </attributes>
+    <attributes name="instanceType" mutable="true" default="m2.4xlarge">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="occi.compute.cores" mutable="true" default="8" description="Number of CPU cores assigned to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.13"/>
+    </attributes>
+    <attributes name="occi.compute.ephemeral.storage.size" mutable="false" default="1680" description="Ephemeral storage provisioned for the associated Compute instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.15"/>
+    </attributes>
+  </mixins>
+  <mixins name="cr1_8xlarge" scheme="http://occiware.org/occi/infrastructure/aws#" depends="//@mixins[term='memoryoptimized']">
+    <attributes name="occi.compute.memory" mutable="true" default="244" description="Maximum RAM in gigabytes allocated to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.15"/>
+    </attributes>
+    <attributes name="instanceType" mutable="true" default="cr1_8xlarge">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="occi.compute.cores" mutable="true" default="32" description="Number of CPU cores assigned to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.13"/>
+    </attributes>
+    <attributes name="occi.compute.ephemeral.storage.size" mutable="false" default="240" description="Ephemeral storage provisioned for the associated Compute instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.15"/>
+    </attributes>
+  </mixins>
+  <mixins name="i2_xlarge" scheme="http://occiware.org/occi/infrastructure/aws#" depends="//@mixins[term='storageoptimized']">
+    <attributes name="occi.compute.memory" mutable="true" default="30.5" description="Maximum RAM in gigabytes allocated to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.15"/>
+    </attributes>
+    <attributes name="instanceType" mutable="true" default="i2.xlarge">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="occi.compute.cores" mutable="true" default="4" description="Number of CPU cores assigned to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.13"/>
+    </attributes>
+    <attributes name="occi.compute.ephemeral.storage.size" mutable="false" default="800" description="Ephemeral storage provisioned for the associated Compute instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.15"/>
+    </attributes>
+  </mixins>
+  <mixins name="i2_2xlarge" scheme="http://occiware.org/occi/infrastructure/aws#" depends="//@mixins[term='storageoptimized']">
+    <attributes name="occi.compute.memory" mutable="true" default="61" description="Maximum RAM in gigabytes allocated to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.15"/>
+    </attributes>
+    <attributes name="instanceType" mutable="true" default="i2.2xlarge">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="occi.compute.cores" mutable="true" default="8" description="Number of CPU cores assigned to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.13"/>
+    </attributes>
+    <attributes name="occi.compute.ephemeral.storage.size" mutable="false" default="1600" description="Ephemeral storage provisioned for the associated Compute instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.15"/>
+    </attributes>
+  </mixins>
+  <mixins name="i2_4xlarge" scheme="http://occiware.org/occi/infrastructure/aws#" depends="//@mixins[term='storageoptimized']">
+    <attributes name="occi.compute.memory" mutable="true" default="122" description="Maximum RAM in gigabytes allocated to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.15"/>
+    </attributes>
+    <attributes name="instanceType" mutable="true" default="i2.4xlarge">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="occi.compute.cores" mutable="true" default="16" description="Number of CPU cores assigned to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.13"/>
+    </attributes>
+    <attributes name="occi.compute.ephemeral.storage.size" mutable="false" default="3200" description="Ephemeral storage provisioned for the associated Compute instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.15"/>
+    </attributes>
+  </mixins>
+  <mixins name="i2_8xlarge" scheme="http://occiware.org/occi/infrastructure/aws#" depends="//@mixins[term='storageoptimized']">
+    <attributes name="occi.compute.memory" mutable="true" default="244" description="Maximum RAM in gigabytes allocated to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.15"/>
+    </attributes>
+    <attributes name="instanceType" mutable="true" default="i2.8xlarge">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="occi.compute.cores" mutable="true" default="32" description="Number of CPU cores assigned to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.13"/>
+    </attributes>
+    <attributes name="occi.compute.ephemeral.storage.size" mutable="false" default="6400" description="Ephemeral storage provisioned for the associated Compute instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.15"/>
+    </attributes>
+  </mixins>
+  <mixins name="hs1_8xlarge" scheme="http://occiware.org/occi/infrastructure/aws#" depends="//@mixins[term='storageoptimized']">
+    <attributes name="occi.compute.memory" mutable="true" default="117" description="Maximum RAM in gigabytes allocated to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.15"/>
+    </attributes>
+    <attributes name="instanceType" mutable="true" default="i2.8xlarge">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="occi.compute.cores" mutable="true" default="16" description="Number of CPU cores assigned to the instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.13"/>
+    </attributes>
+    <attributes name="occi.compute.ephemeral.storage.size" mutable="false" default="48000" description="Ephemeral storage provisioned for the associated Compute instance">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/infrastructure#//@types.15"/>
+    </attributes>
+  </mixins>
+  <mixins name="PlacementGroup" scheme="http://occiware.org/occi/infrastructure/aws#" applies="//@kinds[term='instanceec2']">
+    <attributes name="groupName" mutable="true" description="The name of the placement group the instance is in (for cluster compute instances).">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="affinity" mutable="true" description="The affinity setting for the instance on the Dedicated Host.">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="hostId" mutable="true" description="The ID of the Dedicated Host on which the instance resides.">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="spreadDomain" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="tenancy" mutable="true" description="The tenancy of the instance (if the instance is running in a VPC).">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="zoneName" mutable="true" description="The datacenter part. The number and mapping of Availability Zones per region may vary between AWS accounts&#xA;If null, the provider will choose the best to fit with this instance.&#xA;Zone : a, b, c, d, e">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+  </mixins>
   <types xsi:type="occi:EnumerationType" name="AWSInstanceState">
     <literals name="pending"/>
     <literals name="running"/>
@@ -1428,5 +1746,19 @@
     <literals name="terminated"/>
     <literals name="notexist" documentation="Instance state doesnt exist on provider for this region"/>
     <literals name="rebooting"/>
+  </types>
+  <types xsi:type="occi:EnumerationType" name="HypervisorType">
+    <literals name="Ovm"/>
+    <literals name="Xen"/>
+  </types>
+  <types xsi:type="occi:EnumerationType" name="InstanceLifeCycleType">
+    <literals name="Scheduled"/>
+    <literals name="Spot"/>
+  </types>
+  <types xsi:type="occi:EnumerationType" name="MonitoringState">
+    <literals name="Disabled"/>
+    <literals name="Disabling"/>
+    <literals name="Enabled"/>
+    <literals name="Pending"/>
   </types>
 </occi:Extension>

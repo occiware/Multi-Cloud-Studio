@@ -24,13 +24,13 @@
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
     <attributes name="awsInstanceStatus" mutable="true" type="//@types.0"/>
-    <attributes name="launchTime" mutable="true">
+    <attributes name="launchTime" mutable="true" description="The time the instance was launched.">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
     <attributes name="amiLaunchIndex" mutable="true" description="The AMI launch index, which can be used to find this instance in the launch group.">
       <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
     </attributes>
-    <attributes name="ebsOptimizedIO" mutable="true">
+    <attributes name="ebsOptimizedIO" mutable="true" description="Indicates whether the instance is optimized for Amazon EBS I/O.">
       <type xsi:type="occi:BooleanType" href="http://schemas.ogf.org/occi/core#//@types.1"/>
     </attributes>
     <attributes name="enaSupport" mutable="true" description="Specifies whether enhanced networking with ENA is enabled.">
@@ -63,6 +63,10 @@
     <attributes name="ramDiskId" mutable="true" description="The RAM disk associated with this instance, if applicable.">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
+    <attributes name="sriovNetSupport" mutable="true" description="Specifies whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.">
+      <type xsi:type="occi:BooleanType" href="http://schemas.ogf.org/occi/core#//@types.1"/>
+    </attributes>
+    <attributes name="virtualizationType" mutable="true" description="The virtualization type of the instance." type="//@types.4"/>
     <actions name="terminate" scheme="http://occiware.org/occi/infrastructure/aws/instanceec2/action#" title="Terminate - delete the instance on provider"/>
     <actions name="Restart" scheme="http://occiware.org/occi/infrastructure/aws/instanceec2/action#" title="Restart the system (graceful, warm or cold)">
       <attributes name="method" mutable="false">
@@ -1450,7 +1454,7 @@
     <attributes name="regionName" mutable="true" required="true" default="South America (S&#xe3;o Paulo)" description="Region name give an intelligible name on this region">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="regionId" mutable="true" required="true" default="ap-northeast-1" description="regionId is the id of this region given by the provider ">
+    <attributes name="regionId" mutable="true" required="true" default="sa-east-1" description="regionId is the id of this region given by the provider ">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
     <attributes name="city" mutable="true" default="S&#xe3;o Paulo" description="The city where this resource or link is available">
@@ -1763,6 +1767,26 @@
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
   </mixins>
+  <mixins name="StatusTransitionReason" scheme="http://occiware.org/occi/infrastructure/aws#" applies="//@kinds[term='instanceec2']">
+    <attributes name="stateTransitionCode" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="stateTransitionMessage" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+  </mixins>
+  <mixins name="Tags" scheme="http://occiware.org/occi/infrastructure/aws#" applies="//@kinds[term='instanceec2']"/>
+  <mixins name="InstanceVPCInfo" scheme="http://occiware.org/occi/infrastructure/aws#" applies="//@kinds[term='instanceec2']">
+    <attributes name="vpcId" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="subnetId" mutable="true" description="[EC2-VPC] The ID of the subnet in which the instance is running.">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="sourceDestCheck" mutable="true" description="Specifies whether to enable an instance launched in a VPC to perform NAT. &#xA;This controls whether source/destination checking is enabled on the instance. &#xA;A value of true means that checking is enabled, and false means that checking is disabled. &#xA;The value must be false for the instance to perform NAT. &#xA;For more information, see NAT Instances in the Amazon Virtual Private Cloud User Guide">
+      <type xsi:type="occi:BooleanType" href="http://schemas.ogf.org/occi/core#//@types.1"/>
+    </attributes>
+  </mixins>
   <types xsi:type="occi:EnumerationType" name="AWSInstanceState">
     <literals name="pending"/>
     <literals name="running"/>
@@ -1786,5 +1810,9 @@
     <literals name="Disabling"/>
     <literals name="Enabled"/>
     <literals name="Pending"/>
+  </types>
+  <types xsi:type="occi:EnumerationType" name="VirtualizationType">
+    <literals name="Hvm"/>
+    <literals name="Paravirtual"/>
   </types>
 </occi:Extension>

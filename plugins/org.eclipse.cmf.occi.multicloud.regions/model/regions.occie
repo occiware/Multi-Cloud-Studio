@@ -2,32 +2,17 @@
 <occi:Extension xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:occi="http://schemas.ogf.org/occi/core/ecore" name="regions" scheme="http://occiware.org/occi/infrastructure/locations#">
   <import href="http://schemas.ogf.org/occi/core#/"/>
   <mixins name="Region" scheme="http://occiware.org/occi/infrastructure/locations#" title="General region to locate the resource and link geographicaly">
-    <attributes name="regionName" required="true" description="Region name give an intelligible name on this region">
-      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
-    </attributes>
-    <attributes name="regionId" required="true" description="regionId is the id of this region given by the provider ">
-      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
-    </attributes>
-    <attributes name="city" description="The city where this resource or link is available">
-      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
-    </attributes>
-    <attributes name="country" description="the country where this resource or link is available">
-      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
-    </attributes>
-    <attributes name="regionEndpoint" description="Region service endpoint">
-      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
-    </attributes>
     <applies href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
     <applies href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
   </mixins>
   <mixins name="AvailabilityZone" scheme="http://occiware.org/occi/infrastructure/locations#" title="This mixin is used to locate a resource or link in a datacenter part">
-    <attributes name="zoneName" required="true">
+    <attributes name="zoneName" mutable="true" required="true">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="zoneMessage">
+    <attributes name="zoneMessage" mutable="true">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="available" default="true">
+    <attributes name="available" mutable="true" default="true">
       <type xsi:type="occi:BooleanType" href="http://schemas.ogf.org/occi/core#//@types.1"/>
     </attributes>
     <applies href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>

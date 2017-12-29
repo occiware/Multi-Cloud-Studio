@@ -45,6 +45,24 @@
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
     <attributes name="monitoringState" mutable="true" default="Disabled" description="Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled." type="//@types.3"/>
+    <attributes name="platform" mutable="true" description="The value is Windows for Windows instances; otherwise blank.">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="privateDNSName" mutable="true" description="(IPv4 only) The private DNS hostname name assigned to the instance.">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="privateIpV4Address" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="publicDNSName" mutable="true" description="(IPv4 only) The public DNS name assigned to the instance.">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="publicIpv4Address" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="ramDiskId" mutable="true" description="The RAM disk associated with this instance, if applicable.">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
     <actions name="terminate" scheme="http://occiware.org/occi/infrastructure/aws/instanceec2/action#" title="Terminate - delete the instance on provider"/>
     <actions name="Restart" scheme="http://occiware.org/occi/infrastructure/aws/instanceec2/action#" title="Restart the system (graceful, warm or cold)">
       <attributes name="method" mutable="false">
@@ -1734,6 +1752,14 @@
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
     <attributes name="zoneName" mutable="true" description="The datacenter part. The number and mapping of Availability Zones per region may vary between AWS accounts&#xA;If null, the provider will choose the best to fit with this instance.&#xA;Zone : a, b, c, d, e">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+  </mixins>
+  <mixins name="RootDeviceVolume" scheme="http://occiware.org/occi/infrastructure/aws#" applies="//@kinds[term='instanceec2']">
+    <attributes name="rootDeviceName" mutable="true" description="The device name of the root device volume (for example, /dev/sda1).">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="rootDeviceType" mutable="true" description="The root device type used by the AMI. &#xA;The AMI can use an EBS volume or an instance store volume.">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
   </mixins>

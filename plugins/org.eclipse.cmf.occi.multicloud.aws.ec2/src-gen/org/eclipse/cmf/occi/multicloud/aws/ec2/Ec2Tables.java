@@ -25,7 +25,6 @@ import org.eclipse.cmf.occi.core.OCCITables;
 import org.eclipse.cmf.occi.infrastructure.InfrastructureTables;
 import org.eclipse.cmf.occi.multicloud.accounts.AccountsTables;
 import org.eclipse.cmf.occi.multicloud.aws.ec2.Ec2Tables;
-import org.eclipse.cmf.occi.multicloud.regions.RegionsTables;
 import org.eclipse.ocl.pivot.ParameterTypes;
 import org.eclipse.ocl.pivot.TemplateParameters;
 import org.eclipse.ocl.pivot.internal.library.ecore.EcoreExecutorEnumeration;
@@ -133,11 +132,6 @@ public class Ec2Tables
 
 		public static final /*@NonNull*/ EcoreExecutorEnumeration _AWSInstanceState = new EcoreExecutorEnumeration(Ec2Package.Literals.AWS_INSTANCE_STATE, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Acceleratedcomputing = new EcoreExecutorType(Ec2Package.Literals.ACCELERATEDCOMPUTING, PACKAGE, 0);
-		public static final /*@NonNull*/ EcoreExecutorType _Ap_northeast_1 = new EcoreExecutorType(Ec2Package.Literals.AP_NORTHEAST_1, PACKAGE, 0);
-		public static final /*@NonNull*/ EcoreExecutorType _Ap_northeast_2 = new EcoreExecutorType(Ec2Package.Literals.AP_NORTHEAST_2, PACKAGE, 0);
-		public static final /*@NonNull*/ EcoreExecutorType _Ap_south_1 = new EcoreExecutorType(Ec2Package.Literals.AP_SOUTH_1, PACKAGE, 0);
-		public static final /*@NonNull*/ EcoreExecutorType _Ap_south_east2 = new EcoreExecutorType(Ec2Package.Literals.AP_SOUTH_EAST2, PACKAGE, 0);
-		public static final /*@NonNull*/ EcoreExecutorType _Ap_southeast_1 = new EcoreExecutorType(Ec2Package.Literals.AP_SOUTHEAST_1, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Awsaccount = new EcoreExecutorType(Ec2Package.Literals.AWSACCOUNT, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Awscredential = new EcoreExecutorType(Ec2Package.Literals.AWSCREDENTIAL, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _C1_medium = new EcoreExecutorType(Ec2Package.Literals.C1_MEDIUM, PACKAGE, 0);
@@ -158,7 +152,6 @@ public class Ec2Tables
 		public static final /*@NonNull*/ EcoreExecutorType _C5_9xlarge = new EcoreExecutorType(Ec2Package.Literals.C5_9XLARGE, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _C5_large = new EcoreExecutorType(Ec2Package.Literals.C5_LARGE, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _C5_xlarge = new EcoreExecutorType(Ec2Package.Literals.C5_XLARGE, PACKAGE, 0);
-		public static final /*@NonNull*/ EcoreExecutorType _Ca_central_1 = new EcoreExecutorType(Ec2Package.Literals.CA_CENTRAL_1, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Cc2_8xlarge = new EcoreExecutorType(Ec2Package.Literals.CC2_8XLARGE, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Cg1_4xlarge = new EcoreExecutorType(Ec2Package.Literals.CG1_4XLARGE, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Computeoptimized = new EcoreExecutorType(Ec2Package.Literals.COMPUTEOPTIMIZED, PACKAGE, 0);
@@ -167,11 +160,6 @@ public class Ec2Tables
 		public static final /*@NonNull*/ EcoreExecutorType _D2_4xlarge = new EcoreExecutorType(Ec2Package.Literals.D2_4XLARGE, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _D2_8xlarge = new EcoreExecutorType(Ec2Package.Literals.D2_8XLARGE, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _D2_xlarge = new EcoreExecutorType(Ec2Package.Literals.D2_XLARGE, PACKAGE, 0);
-		public static final /*@NonNull*/ EcoreExecutorType _Eu_central_1 = new EcoreExecutorType(Ec2Package.Literals.EU_CENTRAL_1, PACKAGE, 0);
-		public static final /*@NonNull*/ EcoreExecutorType _Eu_west_1 = new EcoreExecutorType(Ec2Package.Literals.EU_WEST_1, PACKAGE, 0);
-		public static final /*@NonNull*/ EcoreExecutorType _Eu_west_2 = new EcoreExecutorType(Ec2Package.Literals.EU_WEST_2, PACKAGE, 0);
-		public static final /*@NonNull*/ EcoreExecutorType _Eu_west_3 = new EcoreExecutorType(Ec2Package.Literals.EU_WEST_3, PACKAGE, 0);
-		public static final /*@NonNull*/ EcoreExecutorType _Europe = new EcoreExecutorType(Ec2Package.Literals.EUROPE, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _F1_16xlarge = new EcoreExecutorType(Ec2Package.Literals.F1_16XLARGE, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _F1_2xlarge = new EcoreExecutorType(Ec2Package.Literals.F1_2XLARGE, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _G2_2xlarge = new EcoreExecutorType(Ec2Package.Literals.G2_2XLARGE, PACKAGE, 0);
@@ -243,7 +231,6 @@ public class Ec2Tables
 		public static final /*@NonNull*/ EcoreExecutorType _R4_large = new EcoreExecutorType(Ec2Package.Literals.R4_LARGE, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _R4_xlarge = new EcoreExecutorType(Ec2Package.Literals.R4_XLARGE, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Rootdevicevolume = new EcoreExecutorType(Ec2Package.Literals.ROOTDEVICEVOLUME, PACKAGE, 0);
-		public static final /*@NonNull*/ EcoreExecutorType _Sa_east_1 = new EcoreExecutorType(Ec2Package.Literals.SA_EAST_1, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Statustransitionreason = new EcoreExecutorType(Ec2Package.Literals.STATUSTRANSITIONREASON, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Storageoptimized = new EcoreExecutorType(Ec2Package.Literals.STORAGEOPTIMIZED, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _T1_micro = new EcoreExecutorType(Ec2Package.Literals.T1_MICRO, PACKAGE, 0);
@@ -255,10 +242,6 @@ public class Ec2Tables
 		public static final /*@NonNull*/ EcoreExecutorType _T2_small = new EcoreExecutorType(Ec2Package.Literals.T2_SMALL, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _T2_xlarge = new EcoreExecutorType(Ec2Package.Literals.T2_XLARGE, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Tags = new EcoreExecutorType(Ec2Package.Literals.TAGS, PACKAGE, 0);
-		public static final /*@NonNull*/ EcoreExecutorType _Us_east_1 = new EcoreExecutorType(Ec2Package.Literals.US_EAST_1, PACKAGE, 0);
-		public static final /*@NonNull*/ EcoreExecutorType _Us_east_2 = new EcoreExecutorType(Ec2Package.Literals.US_EAST_2, PACKAGE, 0);
-		public static final /*@NonNull*/ EcoreExecutorType _Us_west_1 = new EcoreExecutorType(Ec2Package.Literals.US_WEST_1, PACKAGE, 0);
-		public static final /*@NonNull*/ EcoreExecutorType _Us_west_2 = new EcoreExecutorType(Ec2Package.Literals.US_WEST_2, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorEnumeration _VirtualizationType = new EcoreExecutorEnumeration(Ec2Package.Literals.VIRTUALIZATION_TYPE, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _X1_16xlarge = new EcoreExecutorType(Ec2Package.Literals.X1_16XLARGE, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _X1_32xlarge = new EcoreExecutorType(Ec2Package.Literals.X1_32XLARGE, PACKAGE, 0);
@@ -272,11 +255,6 @@ public class Ec2Tables
 		private static final /*@NonNull*/ EcoreExecutorType /*@NonNull*/ [] types = {
 			_AWSInstanceState,
 			_Acceleratedcomputing,
-			_Ap_northeast_1,
-			_Ap_northeast_2,
-			_Ap_south_1,
-			_Ap_south_east2,
-			_Ap_southeast_1,
 			_Awsaccount,
 			_Awscredential,
 			_C1_medium,
@@ -297,7 +275,6 @@ public class Ec2Tables
 			_C5_9xlarge,
 			_C5_large,
 			_C5_xlarge,
-			_Ca_central_1,
 			_Cc2_8xlarge,
 			_Cg1_4xlarge,
 			_Computeoptimized,
@@ -306,11 +283,6 @@ public class Ec2Tables
 			_D2_4xlarge,
 			_D2_8xlarge,
 			_D2_xlarge,
-			_Eu_central_1,
-			_Eu_west_1,
-			_Eu_west_2,
-			_Eu_west_3,
-			_Europe,
 			_F1_16xlarge,
 			_F1_2xlarge,
 			_G2_2xlarge,
@@ -382,7 +354,6 @@ public class Ec2Tables
 			_R4_large,
 			_R4_xlarge,
 			_Rootdevicevolume,
-			_Sa_east_1,
 			_Statustransitionreason,
 			_Storageoptimized,
 			_T1_micro,
@@ -394,10 +365,6 @@ public class Ec2Tables
 			_T2_small,
 			_T2_xlarge,
 			_Tags,
-			_Us_east_1,
-			_Us_east_2,
-			_Us_west_1,
-			_Us_west_2,
 			_VirtualizationType,
 			_X1_16xlarge,
 			_X1_32xlarge,
@@ -443,31 +410,6 @@ public class Ec2Tables
 		private static final /*@NonNull*/ ExecutorFragment _Acceleratedcomputing__OclAny = new ExecutorFragment(Types._Acceleratedcomputing, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _Acceleratedcomputing__OclElement = new ExecutorFragment(Types._Acceleratedcomputing, OCLstdlibTables.Types._OclElement);
 		private static final /*@NonNull*/ ExecutorFragment _Acceleratedcomputing__Resource_tpl = new ExecutorFragment(Types._Acceleratedcomputing, InfrastructureTables.Types._Resource_tpl);
-
-		private static final /*@NonNull*/ ExecutorFragment _Ap_northeast_1__Ap_northeast_1 = new ExecutorFragment(Types._Ap_northeast_1, Ec2Tables.Types._Ap_northeast_1);
-		private static final /*@NonNull*/ ExecutorFragment _Ap_northeast_1__MixinBase = new ExecutorFragment(Types._Ap_northeast_1, OCCITables.Types._MixinBase);
-		private static final /*@NonNull*/ ExecutorFragment _Ap_northeast_1__OclAny = new ExecutorFragment(Types._Ap_northeast_1, OCLstdlibTables.Types._OclAny);
-		private static final /*@NonNull*/ ExecutorFragment _Ap_northeast_1__OclElement = new ExecutorFragment(Types._Ap_northeast_1, OCLstdlibTables.Types._OclElement);
-
-		private static final /*@NonNull*/ ExecutorFragment _Ap_northeast_2__Ap_northeast_2 = new ExecutorFragment(Types._Ap_northeast_2, Ec2Tables.Types._Ap_northeast_2);
-		private static final /*@NonNull*/ ExecutorFragment _Ap_northeast_2__MixinBase = new ExecutorFragment(Types._Ap_northeast_2, OCCITables.Types._MixinBase);
-		private static final /*@NonNull*/ ExecutorFragment _Ap_northeast_2__OclAny = new ExecutorFragment(Types._Ap_northeast_2, OCLstdlibTables.Types._OclAny);
-		private static final /*@NonNull*/ ExecutorFragment _Ap_northeast_2__OclElement = new ExecutorFragment(Types._Ap_northeast_2, OCLstdlibTables.Types._OclElement);
-
-		private static final /*@NonNull*/ ExecutorFragment _Ap_south_1__Ap_south_1 = new ExecutorFragment(Types._Ap_south_1, Ec2Tables.Types._Ap_south_1);
-		private static final /*@NonNull*/ ExecutorFragment _Ap_south_1__MixinBase = new ExecutorFragment(Types._Ap_south_1, OCCITables.Types._MixinBase);
-		private static final /*@NonNull*/ ExecutorFragment _Ap_south_1__OclAny = new ExecutorFragment(Types._Ap_south_1, OCLstdlibTables.Types._OclAny);
-		private static final /*@NonNull*/ ExecutorFragment _Ap_south_1__OclElement = new ExecutorFragment(Types._Ap_south_1, OCLstdlibTables.Types._OclElement);
-
-		private static final /*@NonNull*/ ExecutorFragment _Ap_south_east2__Ap_south_east2 = new ExecutorFragment(Types._Ap_south_east2, Ec2Tables.Types._Ap_south_east2);
-		private static final /*@NonNull*/ ExecutorFragment _Ap_south_east2__MixinBase = new ExecutorFragment(Types._Ap_south_east2, OCCITables.Types._MixinBase);
-		private static final /*@NonNull*/ ExecutorFragment _Ap_south_east2__OclAny = new ExecutorFragment(Types._Ap_south_east2, OCLstdlibTables.Types._OclAny);
-		private static final /*@NonNull*/ ExecutorFragment _Ap_south_east2__OclElement = new ExecutorFragment(Types._Ap_south_east2, OCLstdlibTables.Types._OclElement);
-
-		private static final /*@NonNull*/ ExecutorFragment _Ap_southeast_1__Ap_southeast_1 = new ExecutorFragment(Types._Ap_southeast_1, Ec2Tables.Types._Ap_southeast_1);
-		private static final /*@NonNull*/ ExecutorFragment _Ap_southeast_1__MixinBase = new ExecutorFragment(Types._Ap_southeast_1, OCCITables.Types._MixinBase);
-		private static final /*@NonNull*/ ExecutorFragment _Ap_southeast_1__OclAny = new ExecutorFragment(Types._Ap_southeast_1, OCLstdlibTables.Types._OclAny);
-		private static final /*@NonNull*/ ExecutorFragment _Ap_southeast_1__OclElement = new ExecutorFragment(Types._Ap_southeast_1, OCLstdlibTables.Types._OclElement);
 
 		private static final /*@NonNull*/ ExecutorFragment _Awsaccount__Awsaccount = new ExecutorFragment(Types._Awsaccount, Ec2Tables.Types._Awsaccount);
 		private static final /*@NonNull*/ ExecutorFragment _Awsaccount__Cloudaccount = new ExecutorFragment(Types._Awsaccount, AccountsTables.Types._Cloudaccount);
@@ -608,11 +550,6 @@ public class Ec2Tables
 		private static final /*@NonNull*/ ExecutorFragment _C5_xlarge__OclElement = new ExecutorFragment(Types._C5_xlarge, OCLstdlibTables.Types._OclElement);
 		private static final /*@NonNull*/ ExecutorFragment _C5_xlarge__Resource_tpl = new ExecutorFragment(Types._C5_xlarge, InfrastructureTables.Types._Resource_tpl);
 
-		private static final /*@NonNull*/ ExecutorFragment _Ca_central_1__Ca_central_1 = new ExecutorFragment(Types._Ca_central_1, Ec2Tables.Types._Ca_central_1);
-		private static final /*@NonNull*/ ExecutorFragment _Ca_central_1__MixinBase = new ExecutorFragment(Types._Ca_central_1, OCCITables.Types._MixinBase);
-		private static final /*@NonNull*/ ExecutorFragment _Ca_central_1__OclAny = new ExecutorFragment(Types._Ca_central_1, OCLstdlibTables.Types._OclAny);
-		private static final /*@NonNull*/ ExecutorFragment _Ca_central_1__OclElement = new ExecutorFragment(Types._Ca_central_1, OCLstdlibTables.Types._OclElement);
-
 		private static final /*@NonNull*/ ExecutorFragment _Cc2_8xlarge__Cc2_8xlarge = new ExecutorFragment(Types._Cc2_8xlarge, Ec2Tables.Types._Cc2_8xlarge);
 		private static final /*@NonNull*/ ExecutorFragment _Cc2_8xlarge__Computeoptimized = new ExecutorFragment(Types._Cc2_8xlarge, Ec2Tables.Types._Computeoptimized);
 		private static final /*@NonNull*/ ExecutorFragment _Cc2_8xlarge__MixinBase = new ExecutorFragment(Types._Cc2_8xlarge, OCCITables.Types._MixinBase);
@@ -667,32 +604,6 @@ public class Ec2Tables
 		private static final /*@NonNull*/ ExecutorFragment _D2_xlarge__OclElement = new ExecutorFragment(Types._D2_xlarge, OCLstdlibTables.Types._OclElement);
 		private static final /*@NonNull*/ ExecutorFragment _D2_xlarge__Resource_tpl = new ExecutorFragment(Types._D2_xlarge, InfrastructureTables.Types._Resource_tpl);
 		private static final /*@NonNull*/ ExecutorFragment _D2_xlarge__Storageoptimized = new ExecutorFragment(Types._D2_xlarge, Ec2Tables.Types._Storageoptimized);
-
-		private static final /*@NonNull*/ ExecutorFragment _Eu_central_1__Eu_central_1 = new ExecutorFragment(Types._Eu_central_1, Ec2Tables.Types._Eu_central_1);
-		private static final /*@NonNull*/ ExecutorFragment _Eu_central_1__MixinBase = new ExecutorFragment(Types._Eu_central_1, OCCITables.Types._MixinBase);
-		private static final /*@NonNull*/ ExecutorFragment _Eu_central_1__OclAny = new ExecutorFragment(Types._Eu_central_1, OCLstdlibTables.Types._OclAny);
-		private static final /*@NonNull*/ ExecutorFragment _Eu_central_1__OclElement = new ExecutorFragment(Types._Eu_central_1, OCLstdlibTables.Types._OclElement);
-
-		private static final /*@NonNull*/ ExecutorFragment _Eu_west_1__Eu_west_1 = new ExecutorFragment(Types._Eu_west_1, Ec2Tables.Types._Eu_west_1);
-		private static final /*@NonNull*/ ExecutorFragment _Eu_west_1__MixinBase = new ExecutorFragment(Types._Eu_west_1, OCCITables.Types._MixinBase);
-		private static final /*@NonNull*/ ExecutorFragment _Eu_west_1__OclAny = new ExecutorFragment(Types._Eu_west_1, OCLstdlibTables.Types._OclAny);
-		private static final /*@NonNull*/ ExecutorFragment _Eu_west_1__OclElement = new ExecutorFragment(Types._Eu_west_1, OCLstdlibTables.Types._OclElement);
-
-		private static final /*@NonNull*/ ExecutorFragment _Eu_west_2__Eu_west_2 = new ExecutorFragment(Types._Eu_west_2, Ec2Tables.Types._Eu_west_2);
-		private static final /*@NonNull*/ ExecutorFragment _Eu_west_2__MixinBase = new ExecutorFragment(Types._Eu_west_2, OCCITables.Types._MixinBase);
-		private static final /*@NonNull*/ ExecutorFragment _Eu_west_2__OclAny = new ExecutorFragment(Types._Eu_west_2, OCLstdlibTables.Types._OclAny);
-		private static final /*@NonNull*/ ExecutorFragment _Eu_west_2__OclElement = new ExecutorFragment(Types._Eu_west_2, OCLstdlibTables.Types._OclElement);
-
-		private static final /*@NonNull*/ ExecutorFragment _Eu_west_3__Eu_west_3 = new ExecutorFragment(Types._Eu_west_3, Ec2Tables.Types._Eu_west_3);
-		private static final /*@NonNull*/ ExecutorFragment _Eu_west_3__MixinBase = new ExecutorFragment(Types._Eu_west_3, OCCITables.Types._MixinBase);
-		private static final /*@NonNull*/ ExecutorFragment _Eu_west_3__OclAny = new ExecutorFragment(Types._Eu_west_3, OCLstdlibTables.Types._OclAny);
-		private static final /*@NonNull*/ ExecutorFragment _Eu_west_3__OclElement = new ExecutorFragment(Types._Eu_west_3, OCLstdlibTables.Types._OclElement);
-
-		private static final /*@NonNull*/ ExecutorFragment _Europe__Europe = new ExecutorFragment(Types._Europe, Ec2Tables.Types._Europe);
-		private static final /*@NonNull*/ ExecutorFragment _Europe__MixinBase = new ExecutorFragment(Types._Europe, OCCITables.Types._MixinBase);
-		private static final /*@NonNull*/ ExecutorFragment _Europe__OclAny = new ExecutorFragment(Types._Europe, OCLstdlibTables.Types._OclAny);
-		private static final /*@NonNull*/ ExecutorFragment _Europe__OclElement = new ExecutorFragment(Types._Europe, OCLstdlibTables.Types._OclElement);
-		private static final /*@NonNull*/ ExecutorFragment _Europe__Region = new ExecutorFragment(Types._Europe, RegionsTables.Types._Region);
 
 		private static final /*@NonNull*/ ExecutorFragment _F1_16xlarge__Acceleratedcomputing = new ExecutorFragment(Types._F1_16xlarge, Ec2Tables.Types._Acceleratedcomputing);
 		private static final /*@NonNull*/ ExecutorFragment _F1_16xlarge__F1_16xlarge = new ExecutorFragment(Types._F1_16xlarge, Ec2Tables.Types._F1_16xlarge);
@@ -1180,11 +1091,6 @@ public class Ec2Tables
 		private static final /*@NonNull*/ ExecutorFragment _Rootdevicevolume__OclElement = new ExecutorFragment(Types._Rootdevicevolume, OCLstdlibTables.Types._OclElement);
 		private static final /*@NonNull*/ ExecutorFragment _Rootdevicevolume__Rootdevicevolume = new ExecutorFragment(Types._Rootdevicevolume, Ec2Tables.Types._Rootdevicevolume);
 
-		private static final /*@NonNull*/ ExecutorFragment _Sa_east_1__MixinBase = new ExecutorFragment(Types._Sa_east_1, OCCITables.Types._MixinBase);
-		private static final /*@NonNull*/ ExecutorFragment _Sa_east_1__OclAny = new ExecutorFragment(Types._Sa_east_1, OCLstdlibTables.Types._OclAny);
-		private static final /*@NonNull*/ ExecutorFragment _Sa_east_1__OclElement = new ExecutorFragment(Types._Sa_east_1, OCLstdlibTables.Types._OclElement);
-		private static final /*@NonNull*/ ExecutorFragment _Sa_east_1__Sa_east_1 = new ExecutorFragment(Types._Sa_east_1, Ec2Tables.Types._Sa_east_1);
-
 		private static final /*@NonNull*/ ExecutorFragment _Statustransitionreason__MixinBase = new ExecutorFragment(Types._Statustransitionreason, OCCITables.Types._MixinBase);
 		private static final /*@NonNull*/ ExecutorFragment _Statustransitionreason__OclAny = new ExecutorFragment(Types._Statustransitionreason, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _Statustransitionreason__OclElement = new ExecutorFragment(Types._Statustransitionreason, OCLstdlibTables.Types._OclElement);
@@ -1256,26 +1162,6 @@ public class Ec2Tables
 		private static final /*@NonNull*/ ExecutorFragment _Tags__OclAny = new ExecutorFragment(Types._Tags, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _Tags__OclElement = new ExecutorFragment(Types._Tags, OCLstdlibTables.Types._OclElement);
 		private static final /*@NonNull*/ ExecutorFragment _Tags__Tags = new ExecutorFragment(Types._Tags, Ec2Tables.Types._Tags);
-
-		private static final /*@NonNull*/ ExecutorFragment _Us_east_1__MixinBase = new ExecutorFragment(Types._Us_east_1, OCCITables.Types._MixinBase);
-		private static final /*@NonNull*/ ExecutorFragment _Us_east_1__OclAny = new ExecutorFragment(Types._Us_east_1, OCLstdlibTables.Types._OclAny);
-		private static final /*@NonNull*/ ExecutorFragment _Us_east_1__OclElement = new ExecutorFragment(Types._Us_east_1, OCLstdlibTables.Types._OclElement);
-		private static final /*@NonNull*/ ExecutorFragment _Us_east_1__Us_east_1 = new ExecutorFragment(Types._Us_east_1, Ec2Tables.Types._Us_east_1);
-
-		private static final /*@NonNull*/ ExecutorFragment _Us_east_2__MixinBase = new ExecutorFragment(Types._Us_east_2, OCCITables.Types._MixinBase);
-		private static final /*@NonNull*/ ExecutorFragment _Us_east_2__OclAny = new ExecutorFragment(Types._Us_east_2, OCLstdlibTables.Types._OclAny);
-		private static final /*@NonNull*/ ExecutorFragment _Us_east_2__OclElement = new ExecutorFragment(Types._Us_east_2, OCLstdlibTables.Types._OclElement);
-		private static final /*@NonNull*/ ExecutorFragment _Us_east_2__Us_east_2 = new ExecutorFragment(Types._Us_east_2, Ec2Tables.Types._Us_east_2);
-
-		private static final /*@NonNull*/ ExecutorFragment _Us_west_1__MixinBase = new ExecutorFragment(Types._Us_west_1, OCCITables.Types._MixinBase);
-		private static final /*@NonNull*/ ExecutorFragment _Us_west_1__OclAny = new ExecutorFragment(Types._Us_west_1, OCLstdlibTables.Types._OclAny);
-		private static final /*@NonNull*/ ExecutorFragment _Us_west_1__OclElement = new ExecutorFragment(Types._Us_west_1, OCLstdlibTables.Types._OclElement);
-		private static final /*@NonNull*/ ExecutorFragment _Us_west_1__Us_west_1 = new ExecutorFragment(Types._Us_west_1, Ec2Tables.Types._Us_west_1);
-
-		private static final /*@NonNull*/ ExecutorFragment _Us_west_2__MixinBase = new ExecutorFragment(Types._Us_west_2, OCCITables.Types._MixinBase);
-		private static final /*@NonNull*/ ExecutorFragment _Us_west_2__OclAny = new ExecutorFragment(Types._Us_west_2, OCLstdlibTables.Types._OclAny);
-		private static final /*@NonNull*/ ExecutorFragment _Us_west_2__OclElement = new ExecutorFragment(Types._Us_west_2, OCLstdlibTables.Types._OclElement);
-		private static final /*@NonNull*/ ExecutorFragment _Us_west_2__Us_west_2 = new ExecutorFragment(Types._Us_west_2, Ec2Tables.Types._Us_west_2);
 
 		private static final /*@NonNull*/ ExecutorFragment _VirtualizationType__OclAny = new ExecutorFragment(Types._VirtualizationType, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _VirtualizationType__OclElement = new ExecutorFragment(Types._VirtualizationType, OCLstdlibTables.Types._OclElement);
@@ -1421,31 +1307,6 @@ public class Ec2Tables
 		}
 
 
-		public static final /*@NonNull*/ ExecutorProperty _Ap_northeast_1__city = new EcoreExecutorProperty(Ec2Package.Literals.AP_NORTHEAST_1__CITY, Types._Ap_northeast_1, 0);
-		public static final /*@NonNull*/ ExecutorProperty _Ap_northeast_1__country = new EcoreExecutorProperty(Ec2Package.Literals.AP_NORTHEAST_1__COUNTRY, Types._Ap_northeast_1, 1);
-		public static final /*@NonNull*/ ExecutorProperty _Ap_northeast_1__regionId = new EcoreExecutorProperty(Ec2Package.Literals.AP_NORTHEAST_1__REGION_ID, Types._Ap_northeast_1, 2);
-		public static final /*@NonNull*/ ExecutorProperty _Ap_northeast_1__regionName = new EcoreExecutorProperty(Ec2Package.Literals.AP_NORTHEAST_1__REGION_NAME, Types._Ap_northeast_1, 3);
-
-		public static final /*@NonNull*/ ExecutorProperty _Ap_northeast_2__city = new EcoreExecutorProperty(Ec2Package.Literals.AP_NORTHEAST_2__CITY, Types._Ap_northeast_2, 0);
-		public static final /*@NonNull*/ ExecutorProperty _Ap_northeast_2__country = new EcoreExecutorProperty(Ec2Package.Literals.AP_NORTHEAST_2__COUNTRY, Types._Ap_northeast_2, 1);
-		public static final /*@NonNull*/ ExecutorProperty _Ap_northeast_2__regionId = new EcoreExecutorProperty(Ec2Package.Literals.AP_NORTHEAST_2__REGION_ID, Types._Ap_northeast_2, 2);
-		public static final /*@NonNull*/ ExecutorProperty _Ap_northeast_2__regionName = new EcoreExecutorProperty(Ec2Package.Literals.AP_NORTHEAST_2__REGION_NAME, Types._Ap_northeast_2, 3);
-
-		public static final /*@NonNull*/ ExecutorProperty _Ap_south_1__city = new EcoreExecutorProperty(Ec2Package.Literals.AP_SOUTH_1__CITY, Types._Ap_south_1, 0);
-		public static final /*@NonNull*/ ExecutorProperty _Ap_south_1__country = new EcoreExecutorProperty(Ec2Package.Literals.AP_SOUTH_1__COUNTRY, Types._Ap_south_1, 1);
-		public static final /*@NonNull*/ ExecutorProperty _Ap_south_1__regionId = new EcoreExecutorProperty(Ec2Package.Literals.AP_SOUTH_1__REGION_ID, Types._Ap_south_1, 2);
-		public static final /*@NonNull*/ ExecutorProperty _Ap_south_1__regionName = new EcoreExecutorProperty(Ec2Package.Literals.AP_SOUTH_1__REGION_NAME, Types._Ap_south_1, 3);
-
-		public static final /*@NonNull*/ ExecutorProperty _Ap_south_east2__city = new EcoreExecutorProperty(Ec2Package.Literals.AP_SOUTH_EAST2__CITY, Types._Ap_south_east2, 0);
-		public static final /*@NonNull*/ ExecutorProperty _Ap_south_east2__country = new EcoreExecutorProperty(Ec2Package.Literals.AP_SOUTH_EAST2__COUNTRY, Types._Ap_south_east2, 1);
-		public static final /*@NonNull*/ ExecutorProperty _Ap_south_east2__regionId = new EcoreExecutorProperty(Ec2Package.Literals.AP_SOUTH_EAST2__REGION_ID, Types._Ap_south_east2, 2);
-		public static final /*@NonNull*/ ExecutorProperty _Ap_south_east2__regionName = new EcoreExecutorProperty(Ec2Package.Literals.AP_SOUTH_EAST2__REGION_NAME, Types._Ap_south_east2, 3);
-
-		public static final /*@NonNull*/ ExecutorProperty _Ap_southeast_1__city = new EcoreExecutorProperty(Ec2Package.Literals.AP_SOUTHEAST_1__CITY, Types._Ap_southeast_1, 0);
-		public static final /*@NonNull*/ ExecutorProperty _Ap_southeast_1__country = new EcoreExecutorProperty(Ec2Package.Literals.AP_SOUTHEAST_1__COUNTRY, Types._Ap_southeast_1, 1);
-		public static final /*@NonNull*/ ExecutorProperty _Ap_southeast_1__regionId = new EcoreExecutorProperty(Ec2Package.Literals.AP_SOUTHEAST_1__REGION_ID, Types._Ap_southeast_1, 2);
-		public static final /*@NonNull*/ ExecutorProperty _Ap_southeast_1__regionName = new EcoreExecutorProperty(Ec2Package.Literals.AP_SOUTHEAST_1__REGION_NAME, Types._Ap_southeast_1, 3);
-
 		public static final /*@NonNull*/ ExecutorProperty _C1_medium__instanceType = new EcoreExecutorProperty(Ec2Package.Literals.C1_MEDIUM__INSTANCE_TYPE, Types._C1_medium, 0);
 		public static final /*@NonNull*/ ExecutorProperty _C1_medium__occiComputeCores = new EcoreExecutorProperty(Ec2Package.Literals.C1_MEDIUM__OCCI_COMPUTE_CORES, Types._C1_medium, 1);
 		public static final /*@NonNull*/ ExecutorProperty _C1_medium__occiComputeEphemeralStorageSize = new EcoreExecutorProperty(Ec2Package.Literals.C1_MEDIUM__OCCI_COMPUTE_EPHEMERAL_STORAGE_SIZE, Types._C1_medium, 2);
@@ -1525,11 +1386,6 @@ public class Ec2Tables
 		public static final /*@NonNull*/ ExecutorProperty _C5_xlarge__occiComputeCores = new EcoreExecutorProperty(Ec2Package.Literals.C5_XLARGE__OCCI_COMPUTE_CORES, Types._C5_xlarge, 1);
 		public static final /*@NonNull*/ ExecutorProperty _C5_xlarge__occiComputeMemory = new EcoreExecutorProperty(Ec2Package.Literals.C5_XLARGE__OCCI_COMPUTE_MEMORY, Types._C5_xlarge, 2);
 
-		public static final /*@NonNull*/ ExecutorProperty _Ca_central_1__city = new EcoreExecutorProperty(Ec2Package.Literals.CA_CENTRAL_1__CITY, Types._Ca_central_1, 0);
-		public static final /*@NonNull*/ ExecutorProperty _Ca_central_1__country = new EcoreExecutorProperty(Ec2Package.Literals.CA_CENTRAL_1__COUNTRY, Types._Ca_central_1, 1);
-		public static final /*@NonNull*/ ExecutorProperty _Ca_central_1__regionId = new EcoreExecutorProperty(Ec2Package.Literals.CA_CENTRAL_1__REGION_ID, Types._Ca_central_1, 2);
-		public static final /*@NonNull*/ ExecutorProperty _Ca_central_1__regionName = new EcoreExecutorProperty(Ec2Package.Literals.CA_CENTRAL_1__REGION_NAME, Types._Ca_central_1, 3);
-
 		public static final /*@NonNull*/ ExecutorProperty _Cc2_8xlarge__instanceType = new EcoreExecutorProperty(Ec2Package.Literals.CC2_8XLARGE__INSTANCE_TYPE, Types._Cc2_8xlarge, 0);
 		public static final /*@NonNull*/ ExecutorProperty _Cc2_8xlarge__occiComputeCores = new EcoreExecutorProperty(Ec2Package.Literals.CC2_8XLARGE__OCCI_COMPUTE_CORES, Types._Cc2_8xlarge, 1);
 		public static final /*@NonNull*/ ExecutorProperty _Cc2_8xlarge__occiComputeEphemeralStorageSize = new EcoreExecutorProperty(Ec2Package.Literals.CC2_8XLARGE__OCCI_COMPUTE_EPHEMERAL_STORAGE_SIZE, Types._Cc2_8xlarge, 2);
@@ -1564,26 +1420,6 @@ public class Ec2Tables
 		public static final /*@NonNull*/ ExecutorProperty _D2_xlarge__occiComputeCores = new EcoreExecutorProperty(Ec2Package.Literals.D2_XLARGE__OCCI_COMPUTE_CORES, Types._D2_xlarge, 1);
 		public static final /*@NonNull*/ ExecutorProperty _D2_xlarge__occiComputeEphemeralStorageSize = new EcoreExecutorProperty(Ec2Package.Literals.D2_XLARGE__OCCI_COMPUTE_EPHEMERAL_STORAGE_SIZE, Types._D2_xlarge, 2);
 		public static final /*@NonNull*/ ExecutorProperty _D2_xlarge__occiComputeMemory = new EcoreExecutorProperty(Ec2Package.Literals.D2_XLARGE__OCCI_COMPUTE_MEMORY, Types._D2_xlarge, 3);
-
-		public static final /*@NonNull*/ ExecutorProperty _Eu_central_1__city = new EcoreExecutorProperty(Ec2Package.Literals.EU_CENTRAL_1__CITY, Types._Eu_central_1, 0);
-		public static final /*@NonNull*/ ExecutorProperty _Eu_central_1__country = new EcoreExecutorProperty(Ec2Package.Literals.EU_CENTRAL_1__COUNTRY, Types._Eu_central_1, 1);
-		public static final /*@NonNull*/ ExecutorProperty _Eu_central_1__regionId = new EcoreExecutorProperty(Ec2Package.Literals.EU_CENTRAL_1__REGION_ID, Types._Eu_central_1, 2);
-		public static final /*@NonNull*/ ExecutorProperty _Eu_central_1__regionName = new EcoreExecutorProperty(Ec2Package.Literals.EU_CENTRAL_1__REGION_NAME, Types._Eu_central_1, 3);
-
-		public static final /*@NonNull*/ ExecutorProperty _Eu_west_1__city = new EcoreExecutorProperty(Ec2Package.Literals.EU_WEST_1__CITY, Types._Eu_west_1, 0);
-		public static final /*@NonNull*/ ExecutorProperty _Eu_west_1__country = new EcoreExecutorProperty(Ec2Package.Literals.EU_WEST_1__COUNTRY, Types._Eu_west_1, 1);
-		public static final /*@NonNull*/ ExecutorProperty _Eu_west_1__regionId = new EcoreExecutorProperty(Ec2Package.Literals.EU_WEST_1__REGION_ID, Types._Eu_west_1, 2);
-		public static final /*@NonNull*/ ExecutorProperty _Eu_west_1__regionName = new EcoreExecutorProperty(Ec2Package.Literals.EU_WEST_1__REGION_NAME, Types._Eu_west_1, 3);
-
-		public static final /*@NonNull*/ ExecutorProperty _Eu_west_2__city = new EcoreExecutorProperty(Ec2Package.Literals.EU_WEST_2__CITY, Types._Eu_west_2, 0);
-		public static final /*@NonNull*/ ExecutorProperty _Eu_west_2__country = new EcoreExecutorProperty(Ec2Package.Literals.EU_WEST_2__COUNTRY, Types._Eu_west_2, 1);
-		public static final /*@NonNull*/ ExecutorProperty _Eu_west_2__regionId = new EcoreExecutorProperty(Ec2Package.Literals.EU_WEST_2__REGION_ID, Types._Eu_west_2, 2);
-		public static final /*@NonNull*/ ExecutorProperty _Eu_west_2__regionName = new EcoreExecutorProperty(Ec2Package.Literals.EU_WEST_2__REGION_NAME, Types._Eu_west_2, 3);
-
-		public static final /*@NonNull*/ ExecutorProperty _Eu_west_3__city = new EcoreExecutorProperty(Ec2Package.Literals.EU_WEST_3__CITY, Types._Eu_west_3, 0);
-		public static final /*@NonNull*/ ExecutorProperty _Eu_west_3__country = new EcoreExecutorProperty(Ec2Package.Literals.EU_WEST_3__COUNTRY, Types._Eu_west_3, 1);
-		public static final /*@NonNull*/ ExecutorProperty _Eu_west_3__regionId = new EcoreExecutorProperty(Ec2Package.Literals.EU_WEST_3__REGION_ID, Types._Eu_west_3, 2);
-		public static final /*@NonNull*/ ExecutorProperty _Eu_west_3__regionName = new EcoreExecutorProperty(Ec2Package.Literals.EU_WEST_3__REGION_NAME, Types._Eu_west_3, 3);
 
 		public static final /*@NonNull*/ ExecutorProperty _F1_16xlarge__fpga = new EcoreExecutorProperty(Ec2Package.Literals.F1_16XLARGE__FPGA, Types._F1_16xlarge, 0);
 		public static final /*@NonNull*/ ExecutorProperty _F1_16xlarge__instanceType = new EcoreExecutorProperty(Ec2Package.Literals.F1_16XLARGE__INSTANCE_TYPE, Types._F1_16xlarge, 1);
@@ -1934,11 +1770,6 @@ public class Ec2Tables
 		public static final /*@NonNull*/ ExecutorProperty _Rootdevicevolume__rootDeviceName = new EcoreExecutorProperty(Ec2Package.Literals.ROOTDEVICEVOLUME__ROOT_DEVICE_NAME, Types._Rootdevicevolume, 0);
 		public static final /*@NonNull*/ ExecutorProperty _Rootdevicevolume__rootDeviceType = new EcoreExecutorProperty(Ec2Package.Literals.ROOTDEVICEVOLUME__ROOT_DEVICE_TYPE, Types._Rootdevicevolume, 1);
 
-		public static final /*@NonNull*/ ExecutorProperty _Sa_east_1__city = new EcoreExecutorProperty(Ec2Package.Literals.SA_EAST_1__CITY, Types._Sa_east_1, 0);
-		public static final /*@NonNull*/ ExecutorProperty _Sa_east_1__country = new EcoreExecutorProperty(Ec2Package.Literals.SA_EAST_1__COUNTRY, Types._Sa_east_1, 1);
-		public static final /*@NonNull*/ ExecutorProperty _Sa_east_1__regionId = new EcoreExecutorProperty(Ec2Package.Literals.SA_EAST_1__REGION_ID, Types._Sa_east_1, 2);
-		public static final /*@NonNull*/ ExecutorProperty _Sa_east_1__regionName = new EcoreExecutorProperty(Ec2Package.Literals.SA_EAST_1__REGION_NAME, Types._Sa_east_1, 3);
-
 		public static final /*@NonNull*/ ExecutorProperty _Statustransitionreason__stateTransitionCode = new EcoreExecutorProperty(Ec2Package.Literals.STATUSTRANSITIONREASON__STATE_TRANSITION_CODE, Types._Statustransitionreason, 0);
 		public static final /*@NonNull*/ ExecutorProperty _Statustransitionreason__stateTransitionMessage = new EcoreExecutorProperty(Ec2Package.Literals.STATUSTRANSITIONREASON__STATE_TRANSITION_MESSAGE, Types._Statustransitionreason, 1);
 
@@ -1973,26 +1804,6 @@ public class Ec2Tables
 		public static final /*@NonNull*/ ExecutorProperty _T2_xlarge__instanceType = new EcoreExecutorProperty(Ec2Package.Literals.T2_XLARGE__INSTANCE_TYPE, Types._T2_xlarge, 0);
 		public static final /*@NonNull*/ ExecutorProperty _T2_xlarge__occiComputeCores = new EcoreExecutorProperty(Ec2Package.Literals.T2_XLARGE__OCCI_COMPUTE_CORES, Types._T2_xlarge, 1);
 		public static final /*@NonNull*/ ExecutorProperty _T2_xlarge__occiComputeMemory = new EcoreExecutorProperty(Ec2Package.Literals.T2_XLARGE__OCCI_COMPUTE_MEMORY, Types._T2_xlarge, 2);
-
-		public static final /*@NonNull*/ ExecutorProperty _Us_east_1__city = new EcoreExecutorProperty(Ec2Package.Literals.US_EAST_1__CITY, Types._Us_east_1, 0);
-		public static final /*@NonNull*/ ExecutorProperty _Us_east_1__country = new EcoreExecutorProperty(Ec2Package.Literals.US_EAST_1__COUNTRY, Types._Us_east_1, 1);
-		public static final /*@NonNull*/ ExecutorProperty _Us_east_1__regionId = new EcoreExecutorProperty(Ec2Package.Literals.US_EAST_1__REGION_ID, Types._Us_east_1, 2);
-		public static final /*@NonNull*/ ExecutorProperty _Us_east_1__regionName = new EcoreExecutorProperty(Ec2Package.Literals.US_EAST_1__REGION_NAME, Types._Us_east_1, 3);
-
-		public static final /*@NonNull*/ ExecutorProperty _Us_east_2__city = new EcoreExecutorProperty(Ec2Package.Literals.US_EAST_2__CITY, Types._Us_east_2, 0);
-		public static final /*@NonNull*/ ExecutorProperty _Us_east_2__country = new EcoreExecutorProperty(Ec2Package.Literals.US_EAST_2__COUNTRY, Types._Us_east_2, 1);
-		public static final /*@NonNull*/ ExecutorProperty _Us_east_2__regionId = new EcoreExecutorProperty(Ec2Package.Literals.US_EAST_2__REGION_ID, Types._Us_east_2, 2);
-		public static final /*@NonNull*/ ExecutorProperty _Us_east_2__regionName = new EcoreExecutorProperty(Ec2Package.Literals.US_EAST_2__REGION_NAME, Types._Us_east_2, 3);
-
-		public static final /*@NonNull*/ ExecutorProperty _Us_west_1__city = new EcoreExecutorProperty(Ec2Package.Literals.US_WEST_1__CITY, Types._Us_west_1, 0);
-		public static final /*@NonNull*/ ExecutorProperty _Us_west_1__country = new EcoreExecutorProperty(Ec2Package.Literals.US_WEST_1__COUNTRY, Types._Us_west_1, 1);
-		public static final /*@NonNull*/ ExecutorProperty _Us_west_1__regionId = new EcoreExecutorProperty(Ec2Package.Literals.US_WEST_1__REGION_ID, Types._Us_west_1, 2);
-		public static final /*@NonNull*/ ExecutorProperty _Us_west_1__regionName = new EcoreExecutorProperty(Ec2Package.Literals.US_WEST_1__REGION_NAME, Types._Us_west_1, 3);
-
-		public static final /*@NonNull*/ ExecutorProperty _Us_west_2__city = new EcoreExecutorProperty(Ec2Package.Literals.US_WEST_2__CITY, Types._Us_west_2, 0);
-		public static final /*@NonNull*/ ExecutorProperty _Us_west_2__country = new EcoreExecutorProperty(Ec2Package.Literals.US_WEST_2__COUNTRY, Types._Us_west_2, 1);
-		public static final /*@NonNull*/ ExecutorProperty _Us_west_2__regionId = new EcoreExecutorProperty(Ec2Package.Literals.US_WEST_2__REGION_ID, Types._Us_west_2, 2);
-		public static final /*@NonNull*/ ExecutorProperty _Us_west_2__regionName = new EcoreExecutorProperty(Ec2Package.Literals.US_WEST_2__REGION_NAME, Types._Us_west_2, 3);
 
 		public static final /*@NonNull*/ ExecutorProperty _X1_16xlarge__instanceType = new EcoreExecutorProperty(Ec2Package.Literals.X1_16XLARGE__INSTANCE_TYPE, Types._X1_16xlarge, 0);
 		public static final /*@NonNull*/ ExecutorProperty _X1_16xlarge__occiComputeCores = new EcoreExecutorProperty(Ec2Package.Literals.X1_16XLARGE__OCCI_COMPUTE_CORES, Types._X1_16xlarge, 1);
@@ -2071,51 +1882,6 @@ public class Ec2Tables
 			Fragments._Acceleratedcomputing__Acceleratedcomputing /* 4 */
 		};
 		private static final int /*@NonNull*/ [] __Acceleratedcomputing = { 1,1,1,1,1 };
-
-		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Ap_northeast_1 =
-		{
-			Fragments._Ap_northeast_1__OclAny /* 0 */,
-			Fragments._Ap_northeast_1__OclElement /* 1 */,
-			Fragments._Ap_northeast_1__MixinBase /* 2 */,
-			Fragments._Ap_northeast_1__Ap_northeast_1 /* 3 */
-		};
-		private static final int /*@NonNull*/ [] __Ap_northeast_1 = { 1,1,1,1 };
-
-		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Ap_northeast_2 =
-		{
-			Fragments._Ap_northeast_2__OclAny /* 0 */,
-			Fragments._Ap_northeast_2__OclElement /* 1 */,
-			Fragments._Ap_northeast_2__MixinBase /* 2 */,
-			Fragments._Ap_northeast_2__Ap_northeast_2 /* 3 */
-		};
-		private static final int /*@NonNull*/ [] __Ap_northeast_2 = { 1,1,1,1 };
-
-		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Ap_south_1 =
-		{
-			Fragments._Ap_south_1__OclAny /* 0 */,
-			Fragments._Ap_south_1__OclElement /* 1 */,
-			Fragments._Ap_south_1__MixinBase /* 2 */,
-			Fragments._Ap_south_1__Ap_south_1 /* 3 */
-		};
-		private static final int /*@NonNull*/ [] __Ap_south_1 = { 1,1,1,1 };
-
-		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Ap_south_east2 =
-		{
-			Fragments._Ap_south_east2__OclAny /* 0 */,
-			Fragments._Ap_south_east2__OclElement /* 1 */,
-			Fragments._Ap_south_east2__MixinBase /* 2 */,
-			Fragments._Ap_south_east2__Ap_south_east2 /* 3 */
-		};
-		private static final int /*@NonNull*/ [] __Ap_south_east2 = { 1,1,1,1 };
-
-		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Ap_southeast_1 =
-		{
-			Fragments._Ap_southeast_1__OclAny /* 0 */,
-			Fragments._Ap_southeast_1__OclElement /* 1 */,
-			Fragments._Ap_southeast_1__MixinBase /* 2 */,
-			Fragments._Ap_southeast_1__Ap_southeast_1 /* 3 */
-		};
-		private static final int /*@NonNull*/ [] __Ap_southeast_1 = { 1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Awsaccount =
 		{
@@ -2336,15 +2102,6 @@ public class Ec2Tables
 		};
 		private static final int /*@NonNull*/ [] __C5_xlarge = { 1,1,1,1,1,1 };
 
-		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Ca_central_1 =
-		{
-			Fragments._Ca_central_1__OclAny /* 0 */,
-			Fragments._Ca_central_1__OclElement /* 1 */,
-			Fragments._Ca_central_1__MixinBase /* 2 */,
-			Fragments._Ca_central_1__Ca_central_1 /* 3 */
-		};
-		private static final int /*@NonNull*/ [] __Ca_central_1 = { 1,1,1,1 };
-
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Cc2_8xlarge =
 		{
 			Fragments._Cc2_8xlarge__OclAny /* 0 */,
@@ -2431,52 +2188,6 @@ public class Ec2Tables
 			Fragments._D2_xlarge__D2_xlarge /* 5 */
 		};
 		private static final int /*@NonNull*/ [] __D2_xlarge = { 1,1,1,1,1,1 };
-
-		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Eu_central_1 =
-		{
-			Fragments._Eu_central_1__OclAny /* 0 */,
-			Fragments._Eu_central_1__OclElement /* 1 */,
-			Fragments._Eu_central_1__MixinBase /* 2 */,
-			Fragments._Eu_central_1__Eu_central_1 /* 3 */
-		};
-		private static final int /*@NonNull*/ [] __Eu_central_1 = { 1,1,1,1 };
-
-		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Eu_west_1 =
-		{
-			Fragments._Eu_west_1__OclAny /* 0 */,
-			Fragments._Eu_west_1__OclElement /* 1 */,
-			Fragments._Eu_west_1__MixinBase /* 2 */,
-			Fragments._Eu_west_1__Eu_west_1 /* 3 */
-		};
-		private static final int /*@NonNull*/ [] __Eu_west_1 = { 1,1,1,1 };
-
-		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Eu_west_2 =
-		{
-			Fragments._Eu_west_2__OclAny /* 0 */,
-			Fragments._Eu_west_2__OclElement /* 1 */,
-			Fragments._Eu_west_2__MixinBase /* 2 */,
-			Fragments._Eu_west_2__Eu_west_2 /* 3 */
-		};
-		private static final int /*@NonNull*/ [] __Eu_west_2 = { 1,1,1,1 };
-
-		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Eu_west_3 =
-		{
-			Fragments._Eu_west_3__OclAny /* 0 */,
-			Fragments._Eu_west_3__OclElement /* 1 */,
-			Fragments._Eu_west_3__MixinBase /* 2 */,
-			Fragments._Eu_west_3__Eu_west_3 /* 3 */
-		};
-		private static final int /*@NonNull*/ [] __Eu_west_3 = { 1,1,1,1 };
-
-		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Europe =
-		{
-			Fragments._Europe__OclAny /* 0 */,
-			Fragments._Europe__OclElement /* 1 */,
-			Fragments._Europe__MixinBase /* 2 */,
-			Fragments._Europe__Region /* 3 */,
-			Fragments._Europe__Europe /* 4 */
-		};
-		private static final int /*@NonNull*/ [] __Europe = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _F1_16xlarge =
 		{
@@ -3248,15 +2959,6 @@ public class Ec2Tables
 		};
 		private static final int /*@NonNull*/ [] __Rootdevicevolume = { 1,1,1,1 };
 
-		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Sa_east_1 =
-		{
-			Fragments._Sa_east_1__OclAny /* 0 */,
-			Fragments._Sa_east_1__OclElement /* 1 */,
-			Fragments._Sa_east_1__MixinBase /* 2 */,
-			Fragments._Sa_east_1__Sa_east_1 /* 3 */
-		};
-		private static final int /*@NonNull*/ [] __Sa_east_1 = { 1,1,1,1 };
-
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Statustransitionreason =
 		{
 			Fragments._Statustransitionreason__OclAny /* 0 */,
@@ -3373,42 +3075,6 @@ public class Ec2Tables
 		};
 		private static final int /*@NonNull*/ [] __Tags = { 1,1,1,1 };
 
-		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Us_east_1 =
-		{
-			Fragments._Us_east_1__OclAny /* 0 */,
-			Fragments._Us_east_1__OclElement /* 1 */,
-			Fragments._Us_east_1__MixinBase /* 2 */,
-			Fragments._Us_east_1__Us_east_1 /* 3 */
-		};
-		private static final int /*@NonNull*/ [] __Us_east_1 = { 1,1,1,1 };
-
-		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Us_east_2 =
-		{
-			Fragments._Us_east_2__OclAny /* 0 */,
-			Fragments._Us_east_2__OclElement /* 1 */,
-			Fragments._Us_east_2__MixinBase /* 2 */,
-			Fragments._Us_east_2__Us_east_2 /* 3 */
-		};
-		private static final int /*@NonNull*/ [] __Us_east_2 = { 1,1,1,1 };
-
-		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Us_west_1 =
-		{
-			Fragments._Us_west_1__OclAny /* 0 */,
-			Fragments._Us_west_1__OclElement /* 1 */,
-			Fragments._Us_west_1__MixinBase /* 2 */,
-			Fragments._Us_west_1__Us_west_1 /* 3 */
-		};
-		private static final int /*@NonNull*/ [] __Us_west_1 = { 1,1,1,1 };
-
-		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Us_west_2 =
-		{
-			Fragments._Us_west_2__OclAny /* 0 */,
-			Fragments._Us_west_2__OclElement /* 1 */,
-			Fragments._Us_west_2__MixinBase /* 2 */,
-			Fragments._Us_west_2__Us_west_2 /* 3 */
-		};
-		private static final int /*@NonNull*/ [] __Us_west_2 = { 1,1,1,1 };
-
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _VirtualizationType =
 		{
 			Fragments._VirtualizationType__OclAny /* 0 */,
@@ -3513,11 +3179,6 @@ public class Ec2Tables
 		static {
 			Types._AWSInstanceState.initFragments(_AWSInstanceState, __AWSInstanceState);
 			Types._Acceleratedcomputing.initFragments(_Acceleratedcomputing, __Acceleratedcomputing);
-			Types._Ap_northeast_1.initFragments(_Ap_northeast_1, __Ap_northeast_1);
-			Types._Ap_northeast_2.initFragments(_Ap_northeast_2, __Ap_northeast_2);
-			Types._Ap_south_1.initFragments(_Ap_south_1, __Ap_south_1);
-			Types._Ap_south_east2.initFragments(_Ap_south_east2, __Ap_south_east2);
-			Types._Ap_southeast_1.initFragments(_Ap_southeast_1, __Ap_southeast_1);
 			Types._Awsaccount.initFragments(_Awsaccount, __Awsaccount);
 			Types._Awscredential.initFragments(_Awscredential, __Awscredential);
 			Types._C1_medium.initFragments(_C1_medium, __C1_medium);
@@ -3538,7 +3199,6 @@ public class Ec2Tables
 			Types._C5_9xlarge.initFragments(_C5_9xlarge, __C5_9xlarge);
 			Types._C5_large.initFragments(_C5_large, __C5_large);
 			Types._C5_xlarge.initFragments(_C5_xlarge, __C5_xlarge);
-			Types._Ca_central_1.initFragments(_Ca_central_1, __Ca_central_1);
 			Types._Cc2_8xlarge.initFragments(_Cc2_8xlarge, __Cc2_8xlarge);
 			Types._Cg1_4xlarge.initFragments(_Cg1_4xlarge, __Cg1_4xlarge);
 			Types._Computeoptimized.initFragments(_Computeoptimized, __Computeoptimized);
@@ -3547,11 +3207,6 @@ public class Ec2Tables
 			Types._D2_4xlarge.initFragments(_D2_4xlarge, __D2_4xlarge);
 			Types._D2_8xlarge.initFragments(_D2_8xlarge, __D2_8xlarge);
 			Types._D2_xlarge.initFragments(_D2_xlarge, __D2_xlarge);
-			Types._Eu_central_1.initFragments(_Eu_central_1, __Eu_central_1);
-			Types._Eu_west_1.initFragments(_Eu_west_1, __Eu_west_1);
-			Types._Eu_west_2.initFragments(_Eu_west_2, __Eu_west_2);
-			Types._Eu_west_3.initFragments(_Eu_west_3, __Eu_west_3);
-			Types._Europe.initFragments(_Europe, __Europe);
 			Types._F1_16xlarge.initFragments(_F1_16xlarge, __F1_16xlarge);
 			Types._F1_2xlarge.initFragments(_F1_2xlarge, __F1_2xlarge);
 			Types._G2_2xlarge.initFragments(_G2_2xlarge, __G2_2xlarge);
@@ -3623,7 +3278,6 @@ public class Ec2Tables
 			Types._R4_large.initFragments(_R4_large, __R4_large);
 			Types._R4_xlarge.initFragments(_R4_xlarge, __R4_xlarge);
 			Types._Rootdevicevolume.initFragments(_Rootdevicevolume, __Rootdevicevolume);
-			Types._Sa_east_1.initFragments(_Sa_east_1, __Sa_east_1);
 			Types._Statustransitionreason.initFragments(_Statustransitionreason, __Statustransitionreason);
 			Types._Storageoptimized.initFragments(_Storageoptimized, __Storageoptimized);
 			Types._T1_micro.initFragments(_T1_micro, __T1_micro);
@@ -3635,10 +3289,6 @@ public class Ec2Tables
 			Types._T2_small.initFragments(_T2_small, __T2_small);
 			Types._T2_xlarge.initFragments(_T2_xlarge, __T2_xlarge);
 			Types._Tags.initFragments(_Tags, __Tags);
-			Types._Us_east_1.initFragments(_Us_east_1, __Us_east_1);
-			Types._Us_east_2.initFragments(_Us_east_2, __Us_east_2);
-			Types._Us_west_1.initFragments(_Us_west_1, __Us_west_1);
-			Types._Us_west_2.initFragments(_Us_west_2, __Us_west_2);
 			Types._VirtualizationType.initFragments(_VirtualizationType, __VirtualizationType);
 			Types._X1_16xlarge.initFragments(_X1_16xlarge, __X1_16xlarge);
 			Types._X1_32xlarge.initFragments(_X1_32xlarge, __X1_32xlarge);
@@ -3730,151 +3380,6 @@ public class Ec2Tables
 			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Acceleratedcomputing__Resource_tpl = {};
-
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Ap_northeast_1__Ap_northeast_1 = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Ap_northeast_1__MixinBase = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Ap_northeast_1__OclAny = {
-			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
-			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
-			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
-			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
-			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
-			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
-			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
-			OCLstdlibTables.Operations._OclAny__toString /* toString() */
-		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Ap_northeast_1__OclElement = {
-			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
-			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
-			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
-			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
-			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
-		};
-
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Ap_northeast_2__Ap_northeast_2 = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Ap_northeast_2__MixinBase = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Ap_northeast_2__OclAny = {
-			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
-			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
-			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
-			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
-			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
-			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
-			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
-			OCLstdlibTables.Operations._OclAny__toString /* toString() */
-		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Ap_northeast_2__OclElement = {
-			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
-			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
-			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
-			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
-			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
-		};
-
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Ap_south_1__Ap_south_1 = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Ap_south_1__MixinBase = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Ap_south_1__OclAny = {
-			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
-			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
-			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
-			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
-			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
-			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
-			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
-			OCLstdlibTables.Operations._OclAny__toString /* toString() */
-		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Ap_south_1__OclElement = {
-			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
-			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
-			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
-			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
-			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
-		};
-
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Ap_south_east2__Ap_south_east2 = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Ap_south_east2__MixinBase = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Ap_south_east2__OclAny = {
-			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
-			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
-			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
-			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
-			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
-			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
-			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
-			OCLstdlibTables.Operations._OclAny__toString /* toString() */
-		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Ap_south_east2__OclElement = {
-			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
-			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
-			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
-			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
-			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
-		};
-
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Ap_southeast_1__Ap_southeast_1 = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Ap_southeast_1__MixinBase = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Ap_southeast_1__OclAny = {
-			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
-			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
-			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
-			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
-			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
-			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
-			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
-			OCLstdlibTables.Operations._OclAny__toString /* toString() */
-		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Ap_southeast_1__OclElement = {
-			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
-			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
-			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
-			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
-			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
-		};
 
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Awsaccount__Awsaccount = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Awsaccount__Cloudaccount = {};
@@ -4504,35 +4009,6 @@ public class Ec2Tables
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _C5_xlarge__Resource_tpl = {};
 
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Ca_central_1__Ca_central_1 = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Ca_central_1__MixinBase = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Ca_central_1__OclAny = {
-			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
-			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
-			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
-			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
-			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
-			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
-			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
-			OCLstdlibTables.Operations._OclAny__toString /* toString() */
-		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Ca_central_1__OclElement = {
-			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
-			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
-			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
-			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
-			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
-		};
-
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cc2_8xlarge__Cc2_8xlarge = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cc2_8xlarge__Computeoptimized = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cc2_8xlarge__MixinBase = {};
@@ -4779,152 +4255,6 @@ public class Ec2Tables
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _D2_xlarge__Resource_tpl = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _D2_xlarge__Storageoptimized = {};
-
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Eu_central_1__Eu_central_1 = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Eu_central_1__MixinBase = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Eu_central_1__OclAny = {
-			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
-			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
-			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
-			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
-			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
-			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
-			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
-			OCLstdlibTables.Operations._OclAny__toString /* toString() */
-		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Eu_central_1__OclElement = {
-			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
-			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
-			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
-			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
-			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
-		};
-
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Eu_west_1__Eu_west_1 = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Eu_west_1__MixinBase = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Eu_west_1__OclAny = {
-			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
-			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
-			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
-			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
-			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
-			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
-			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
-			OCLstdlibTables.Operations._OclAny__toString /* toString() */
-		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Eu_west_1__OclElement = {
-			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
-			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
-			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
-			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
-			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
-		};
-
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Eu_west_2__Eu_west_2 = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Eu_west_2__MixinBase = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Eu_west_2__OclAny = {
-			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
-			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
-			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
-			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
-			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
-			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
-			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
-			OCLstdlibTables.Operations._OclAny__toString /* toString() */
-		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Eu_west_2__OclElement = {
-			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
-			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
-			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
-			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
-			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
-		};
-
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Eu_west_3__Eu_west_3 = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Eu_west_3__MixinBase = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Eu_west_3__OclAny = {
-			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
-			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
-			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
-			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
-			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
-			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
-			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
-			OCLstdlibTables.Operations._OclAny__toString /* toString() */
-		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Eu_west_3__OclElement = {
-			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
-			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
-			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
-			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
-			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
-		};
-
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Europe__Europe = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Europe__MixinBase = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Europe__OclAny = {
-			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
-			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
-			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
-			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
-			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
-			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
-			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
-			OCLstdlibTables.Operations._OclAny__toString /* toString() */
-		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Europe__OclElement = {
-			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
-			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
-			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
-			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
-			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
-		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Europe__Region = {};
 
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _F1_16xlarge__F1_16xlarge = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _F1_16xlarge__Acceleratedcomputing = {};
@@ -7153,35 +6483,6 @@ public class Ec2Tables
 			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
 		};
 
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Sa_east_1__Sa_east_1 = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Sa_east_1__MixinBase = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Sa_east_1__OclAny = {
-			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
-			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
-			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
-			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
-			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
-			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
-			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
-			OCLstdlibTables.Operations._OclAny__toString /* toString() */
-		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Sa_east_1__OclElement = {
-			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
-			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
-			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
-			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
-			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
-		};
-
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Statustransitionreason__Statustransitionreason = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Statustransitionreason__MixinBase = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Statustransitionreason__OclAny = {
@@ -7518,122 +6819,6 @@ public class Ec2Tables
 			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
 		};
 
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Us_east_1__Us_east_1 = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Us_east_1__MixinBase = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Us_east_1__OclAny = {
-			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
-			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
-			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
-			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
-			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
-			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
-			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
-			OCLstdlibTables.Operations._OclAny__toString /* toString() */
-		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Us_east_1__OclElement = {
-			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
-			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
-			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
-			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
-			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
-		};
-
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Us_east_2__Us_east_2 = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Us_east_2__MixinBase = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Us_east_2__OclAny = {
-			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
-			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
-			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
-			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
-			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
-			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
-			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
-			OCLstdlibTables.Operations._OclAny__toString /* toString() */
-		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Us_east_2__OclElement = {
-			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
-			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
-			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
-			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
-			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
-		};
-
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Us_west_1__Us_west_1 = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Us_west_1__MixinBase = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Us_west_1__OclAny = {
-			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
-			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
-			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
-			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
-			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
-			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
-			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
-			OCLstdlibTables.Operations._OclAny__toString /* toString() */
-		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Us_west_1__OclElement = {
-			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
-			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
-			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
-			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
-			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
-		};
-
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Us_west_2__Us_west_2 = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Us_west_2__MixinBase = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Us_west_2__OclAny = {
-			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
-			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
-			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
-			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
-			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
-			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
-			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
-			OCLstdlibTables.Operations._OclAny__toString /* toString() */
-		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Us_west_2__OclElement = {
-			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
-			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
-			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
-			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
-			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
-		};
-
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _VirtualizationType__VirtualizationType = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _VirtualizationType__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
@@ -7932,31 +7117,6 @@ public class Ec2Tables
 			Fragments._Acceleratedcomputing__OclElement.initOperations(_Acceleratedcomputing__OclElement);
 			Fragments._Acceleratedcomputing__Resource_tpl.initOperations(_Acceleratedcomputing__Resource_tpl);
 
-			Fragments._Ap_northeast_1__Ap_northeast_1.initOperations(_Ap_northeast_1__Ap_northeast_1);
-			Fragments._Ap_northeast_1__MixinBase.initOperations(_Ap_northeast_1__MixinBase);
-			Fragments._Ap_northeast_1__OclAny.initOperations(_Ap_northeast_1__OclAny);
-			Fragments._Ap_northeast_1__OclElement.initOperations(_Ap_northeast_1__OclElement);
-
-			Fragments._Ap_northeast_2__Ap_northeast_2.initOperations(_Ap_northeast_2__Ap_northeast_2);
-			Fragments._Ap_northeast_2__MixinBase.initOperations(_Ap_northeast_2__MixinBase);
-			Fragments._Ap_northeast_2__OclAny.initOperations(_Ap_northeast_2__OclAny);
-			Fragments._Ap_northeast_2__OclElement.initOperations(_Ap_northeast_2__OclElement);
-
-			Fragments._Ap_south_1__Ap_south_1.initOperations(_Ap_south_1__Ap_south_1);
-			Fragments._Ap_south_1__MixinBase.initOperations(_Ap_south_1__MixinBase);
-			Fragments._Ap_south_1__OclAny.initOperations(_Ap_south_1__OclAny);
-			Fragments._Ap_south_1__OclElement.initOperations(_Ap_south_1__OclElement);
-
-			Fragments._Ap_south_east2__Ap_south_east2.initOperations(_Ap_south_east2__Ap_south_east2);
-			Fragments._Ap_south_east2__MixinBase.initOperations(_Ap_south_east2__MixinBase);
-			Fragments._Ap_south_east2__OclAny.initOperations(_Ap_south_east2__OclAny);
-			Fragments._Ap_south_east2__OclElement.initOperations(_Ap_south_east2__OclElement);
-
-			Fragments._Ap_southeast_1__Ap_southeast_1.initOperations(_Ap_southeast_1__Ap_southeast_1);
-			Fragments._Ap_southeast_1__MixinBase.initOperations(_Ap_southeast_1__MixinBase);
-			Fragments._Ap_southeast_1__OclAny.initOperations(_Ap_southeast_1__OclAny);
-			Fragments._Ap_southeast_1__OclElement.initOperations(_Ap_southeast_1__OclElement);
-
 			Fragments._Awsaccount__Awsaccount.initOperations(_Awsaccount__Awsaccount);
 			Fragments._Awsaccount__Cloudaccount.initOperations(_Awsaccount__Cloudaccount);
 			Fragments._Awsaccount__Entity.initOperations(_Awsaccount__Entity);
@@ -8096,11 +7256,6 @@ public class Ec2Tables
 			Fragments._C5_xlarge__OclElement.initOperations(_C5_xlarge__OclElement);
 			Fragments._C5_xlarge__Resource_tpl.initOperations(_C5_xlarge__Resource_tpl);
 
-			Fragments._Ca_central_1__Ca_central_1.initOperations(_Ca_central_1__Ca_central_1);
-			Fragments._Ca_central_1__MixinBase.initOperations(_Ca_central_1__MixinBase);
-			Fragments._Ca_central_1__OclAny.initOperations(_Ca_central_1__OclAny);
-			Fragments._Ca_central_1__OclElement.initOperations(_Ca_central_1__OclElement);
-
 			Fragments._Cc2_8xlarge__Cc2_8xlarge.initOperations(_Cc2_8xlarge__Cc2_8xlarge);
 			Fragments._Cc2_8xlarge__Computeoptimized.initOperations(_Cc2_8xlarge__Computeoptimized);
 			Fragments._Cc2_8xlarge__MixinBase.initOperations(_Cc2_8xlarge__MixinBase);
@@ -8155,32 +7310,6 @@ public class Ec2Tables
 			Fragments._D2_xlarge__OclElement.initOperations(_D2_xlarge__OclElement);
 			Fragments._D2_xlarge__Resource_tpl.initOperations(_D2_xlarge__Resource_tpl);
 			Fragments._D2_xlarge__Storageoptimized.initOperations(_D2_xlarge__Storageoptimized);
-
-			Fragments._Eu_central_1__Eu_central_1.initOperations(_Eu_central_1__Eu_central_1);
-			Fragments._Eu_central_1__MixinBase.initOperations(_Eu_central_1__MixinBase);
-			Fragments._Eu_central_1__OclAny.initOperations(_Eu_central_1__OclAny);
-			Fragments._Eu_central_1__OclElement.initOperations(_Eu_central_1__OclElement);
-
-			Fragments._Eu_west_1__Eu_west_1.initOperations(_Eu_west_1__Eu_west_1);
-			Fragments._Eu_west_1__MixinBase.initOperations(_Eu_west_1__MixinBase);
-			Fragments._Eu_west_1__OclAny.initOperations(_Eu_west_1__OclAny);
-			Fragments._Eu_west_1__OclElement.initOperations(_Eu_west_1__OclElement);
-
-			Fragments._Eu_west_2__Eu_west_2.initOperations(_Eu_west_2__Eu_west_2);
-			Fragments._Eu_west_2__MixinBase.initOperations(_Eu_west_2__MixinBase);
-			Fragments._Eu_west_2__OclAny.initOperations(_Eu_west_2__OclAny);
-			Fragments._Eu_west_2__OclElement.initOperations(_Eu_west_2__OclElement);
-
-			Fragments._Eu_west_3__Eu_west_3.initOperations(_Eu_west_3__Eu_west_3);
-			Fragments._Eu_west_3__MixinBase.initOperations(_Eu_west_3__MixinBase);
-			Fragments._Eu_west_3__OclAny.initOperations(_Eu_west_3__OclAny);
-			Fragments._Eu_west_3__OclElement.initOperations(_Eu_west_3__OclElement);
-
-			Fragments._Europe__Europe.initOperations(_Europe__Europe);
-			Fragments._Europe__MixinBase.initOperations(_Europe__MixinBase);
-			Fragments._Europe__OclAny.initOperations(_Europe__OclAny);
-			Fragments._Europe__OclElement.initOperations(_Europe__OclElement);
-			Fragments._Europe__Region.initOperations(_Europe__Region);
 
 			Fragments._F1_16xlarge__Acceleratedcomputing.initOperations(_F1_16xlarge__Acceleratedcomputing);
 			Fragments._F1_16xlarge__F1_16xlarge.initOperations(_F1_16xlarge__F1_16xlarge);
@@ -8668,11 +7797,6 @@ public class Ec2Tables
 			Fragments._Rootdevicevolume__OclElement.initOperations(_Rootdevicevolume__OclElement);
 			Fragments._Rootdevicevolume__Rootdevicevolume.initOperations(_Rootdevicevolume__Rootdevicevolume);
 
-			Fragments._Sa_east_1__MixinBase.initOperations(_Sa_east_1__MixinBase);
-			Fragments._Sa_east_1__OclAny.initOperations(_Sa_east_1__OclAny);
-			Fragments._Sa_east_1__OclElement.initOperations(_Sa_east_1__OclElement);
-			Fragments._Sa_east_1__Sa_east_1.initOperations(_Sa_east_1__Sa_east_1);
-
 			Fragments._Statustransitionreason__MixinBase.initOperations(_Statustransitionreason__MixinBase);
 			Fragments._Statustransitionreason__OclAny.initOperations(_Statustransitionreason__OclAny);
 			Fragments._Statustransitionreason__OclElement.initOperations(_Statustransitionreason__OclElement);
@@ -8744,26 +7868,6 @@ public class Ec2Tables
 			Fragments._Tags__OclAny.initOperations(_Tags__OclAny);
 			Fragments._Tags__OclElement.initOperations(_Tags__OclElement);
 			Fragments._Tags__Tags.initOperations(_Tags__Tags);
-
-			Fragments._Us_east_1__MixinBase.initOperations(_Us_east_1__MixinBase);
-			Fragments._Us_east_1__OclAny.initOperations(_Us_east_1__OclAny);
-			Fragments._Us_east_1__OclElement.initOperations(_Us_east_1__OclElement);
-			Fragments._Us_east_1__Us_east_1.initOperations(_Us_east_1__Us_east_1);
-
-			Fragments._Us_east_2__MixinBase.initOperations(_Us_east_2__MixinBase);
-			Fragments._Us_east_2__OclAny.initOperations(_Us_east_2__OclAny);
-			Fragments._Us_east_2__OclElement.initOperations(_Us_east_2__OclElement);
-			Fragments._Us_east_2__Us_east_2.initOperations(_Us_east_2__Us_east_2);
-
-			Fragments._Us_west_1__MixinBase.initOperations(_Us_west_1__MixinBase);
-			Fragments._Us_west_1__OclAny.initOperations(_Us_west_1__OclAny);
-			Fragments._Us_west_1__OclElement.initOperations(_Us_west_1__OclElement);
-			Fragments._Us_west_1__Us_west_1.initOperations(_Us_west_1__Us_west_1);
-
-			Fragments._Us_west_2__MixinBase.initOperations(_Us_west_2__MixinBase);
-			Fragments._Us_west_2__OclAny.initOperations(_Us_west_2__OclAny);
-			Fragments._Us_west_2__OclElement.initOperations(_Us_west_2__OclElement);
-			Fragments._Us_west_2__Us_west_2.initOperations(_Us_west_2__Us_west_2);
 
 			Fragments._VirtualizationType__OclAny.initOperations(_VirtualizationType__OclAny);
 			Fragments._VirtualizationType__OclElement.initOperations(_VirtualizationType__OclElement);
@@ -8848,41 +7952,6 @@ public class Ec2Tables
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _AWSInstanceState = {};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Acceleratedcomputing = {};
-
-		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Ap_northeast_1 = {
-			Ec2Tables.Properties._Ap_northeast_1__city,
-			Ec2Tables.Properties._Ap_northeast_1__country,
-			Ec2Tables.Properties._Ap_northeast_1__regionId,
-			Ec2Tables.Properties._Ap_northeast_1__regionName
-		};
-
-		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Ap_northeast_2 = {
-			Ec2Tables.Properties._Ap_northeast_2__city,
-			Ec2Tables.Properties._Ap_northeast_2__country,
-			Ec2Tables.Properties._Ap_northeast_2__regionId,
-			Ec2Tables.Properties._Ap_northeast_2__regionName
-		};
-
-		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Ap_south_1 = {
-			Ec2Tables.Properties._Ap_south_1__city,
-			Ec2Tables.Properties._Ap_south_1__country,
-			Ec2Tables.Properties._Ap_south_1__regionId,
-			Ec2Tables.Properties._Ap_south_1__regionName
-		};
-
-		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Ap_south_east2 = {
-			Ec2Tables.Properties._Ap_south_east2__city,
-			Ec2Tables.Properties._Ap_south_east2__country,
-			Ec2Tables.Properties._Ap_south_east2__regionId,
-			Ec2Tables.Properties._Ap_south_east2__regionName
-		};
-
-		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Ap_southeast_1 = {
-			Ec2Tables.Properties._Ap_southeast_1__city,
-			Ec2Tables.Properties._Ap_southeast_1__country,
-			Ec2Tables.Properties._Ap_southeast_1__regionId,
-			Ec2Tables.Properties._Ap_southeast_1__regionName
-		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Awsaccount = {};
 
@@ -9003,13 +8072,6 @@ public class Ec2Tables
 			Ec2Tables.Properties._C5_xlarge__occiComputeMemory
 		};
 
-		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Ca_central_1 = {
-			Ec2Tables.Properties._Ca_central_1__city,
-			Ec2Tables.Properties._Ca_central_1__country,
-			Ec2Tables.Properties._Ca_central_1__regionId,
-			Ec2Tables.Properties._Ca_central_1__regionName
-		};
-
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Cc2_8xlarge = {
 			Ec2Tables.Properties._Cc2_8xlarge__instanceType,
 			Ec2Tables.Properties._Cc2_8xlarge__occiComputeCores,
@@ -9060,36 +8122,6 @@ public class Ec2Tables
 			Ec2Tables.Properties._D2_xlarge__occiComputeEphemeralStorageSize,
 			Ec2Tables.Properties._D2_xlarge__occiComputeMemory
 		};
-
-		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Eu_central_1 = {
-			Ec2Tables.Properties._Eu_central_1__city,
-			Ec2Tables.Properties._Eu_central_1__country,
-			Ec2Tables.Properties._Eu_central_1__regionId,
-			Ec2Tables.Properties._Eu_central_1__regionName
-		};
-
-		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Eu_west_1 = {
-			Ec2Tables.Properties._Eu_west_1__city,
-			Ec2Tables.Properties._Eu_west_1__country,
-			Ec2Tables.Properties._Eu_west_1__regionId,
-			Ec2Tables.Properties._Eu_west_1__regionName
-		};
-
-		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Eu_west_2 = {
-			Ec2Tables.Properties._Eu_west_2__city,
-			Ec2Tables.Properties._Eu_west_2__country,
-			Ec2Tables.Properties._Eu_west_2__regionId,
-			Ec2Tables.Properties._Eu_west_2__regionName
-		};
-
-		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Eu_west_3 = {
-			Ec2Tables.Properties._Eu_west_3__city,
-			Ec2Tables.Properties._Eu_west_3__country,
-			Ec2Tables.Properties._Eu_west_3__regionId,
-			Ec2Tables.Properties._Eu_west_3__regionName
-		};
-
-		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Europe = {};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _F1_16xlarge = {
 			Ec2Tables.Properties._F1_16xlarge__fpga,
@@ -9582,13 +8614,6 @@ public class Ec2Tables
 			Ec2Tables.Properties._Rootdevicevolume__rootDeviceType
 		};
 
-		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Sa_east_1 = {
-			Ec2Tables.Properties._Sa_east_1__city,
-			Ec2Tables.Properties._Sa_east_1__country,
-			Ec2Tables.Properties._Sa_east_1__regionId,
-			Ec2Tables.Properties._Sa_east_1__regionName
-		};
-
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Statustransitionreason = {
 			Ec2Tables.Properties._Statustransitionreason__stateTransitionCode,
 			Ec2Tables.Properties._Statustransitionreason__stateTransitionMessage
@@ -9645,34 +8670,6 @@ public class Ec2Tables
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Tags = {};
-
-		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Us_east_1 = {
-			Ec2Tables.Properties._Us_east_1__city,
-			Ec2Tables.Properties._Us_east_1__country,
-			Ec2Tables.Properties._Us_east_1__regionId,
-			Ec2Tables.Properties._Us_east_1__regionName
-		};
-
-		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Us_east_2 = {
-			Ec2Tables.Properties._Us_east_2__city,
-			Ec2Tables.Properties._Us_east_2__country,
-			Ec2Tables.Properties._Us_east_2__regionId,
-			Ec2Tables.Properties._Us_east_2__regionName
-		};
-
-		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Us_west_1 = {
-			Ec2Tables.Properties._Us_west_1__city,
-			Ec2Tables.Properties._Us_west_1__country,
-			Ec2Tables.Properties._Us_west_1__regionId,
-			Ec2Tables.Properties._Us_west_1__regionName
-		};
-
-		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Us_west_2 = {
-			Ec2Tables.Properties._Us_west_2__city,
-			Ec2Tables.Properties._Us_west_2__country,
-			Ec2Tables.Properties._Us_west_2__regionId,
-			Ec2Tables.Properties._Us_west_2__regionName
-		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _VirtualizationType = {};
 
@@ -9738,11 +8735,6 @@ public class Ec2Tables
 		static {
 			Fragments._AWSInstanceState__AWSInstanceState.initProperties(_AWSInstanceState);
 			Fragments._Acceleratedcomputing__Acceleratedcomputing.initProperties(_Acceleratedcomputing);
-			Fragments._Ap_northeast_1__Ap_northeast_1.initProperties(_Ap_northeast_1);
-			Fragments._Ap_northeast_2__Ap_northeast_2.initProperties(_Ap_northeast_2);
-			Fragments._Ap_south_1__Ap_south_1.initProperties(_Ap_south_1);
-			Fragments._Ap_south_east2__Ap_south_east2.initProperties(_Ap_south_east2);
-			Fragments._Ap_southeast_1__Ap_southeast_1.initProperties(_Ap_southeast_1);
 			Fragments._Awsaccount__Awsaccount.initProperties(_Awsaccount);
 			Fragments._Awscredential__Awscredential.initProperties(_Awscredential);
 			Fragments._C1_medium__C1_medium.initProperties(_C1_medium);
@@ -9763,7 +8755,6 @@ public class Ec2Tables
 			Fragments._C5_9xlarge__C5_9xlarge.initProperties(_C5_9xlarge);
 			Fragments._C5_large__C5_large.initProperties(_C5_large);
 			Fragments._C5_xlarge__C5_xlarge.initProperties(_C5_xlarge);
-			Fragments._Ca_central_1__Ca_central_1.initProperties(_Ca_central_1);
 			Fragments._Cc2_8xlarge__Cc2_8xlarge.initProperties(_Cc2_8xlarge);
 			Fragments._Cg1_4xlarge__Cg1_4xlarge.initProperties(_Cg1_4xlarge);
 			Fragments._Computeoptimized__Computeoptimized.initProperties(_Computeoptimized);
@@ -9772,11 +8763,6 @@ public class Ec2Tables
 			Fragments._D2_4xlarge__D2_4xlarge.initProperties(_D2_4xlarge);
 			Fragments._D2_8xlarge__D2_8xlarge.initProperties(_D2_8xlarge);
 			Fragments._D2_xlarge__D2_xlarge.initProperties(_D2_xlarge);
-			Fragments._Eu_central_1__Eu_central_1.initProperties(_Eu_central_1);
-			Fragments._Eu_west_1__Eu_west_1.initProperties(_Eu_west_1);
-			Fragments._Eu_west_2__Eu_west_2.initProperties(_Eu_west_2);
-			Fragments._Eu_west_3__Eu_west_3.initProperties(_Eu_west_3);
-			Fragments._Europe__Europe.initProperties(_Europe);
 			Fragments._F1_16xlarge__F1_16xlarge.initProperties(_F1_16xlarge);
 			Fragments._F1_2xlarge__F1_2xlarge.initProperties(_F1_2xlarge);
 			Fragments._G2_2xlarge__G2_2xlarge.initProperties(_G2_2xlarge);
@@ -9848,7 +8834,6 @@ public class Ec2Tables
 			Fragments._R4_large__R4_large.initProperties(_R4_large);
 			Fragments._R4_xlarge__R4_xlarge.initProperties(_R4_xlarge);
 			Fragments._Rootdevicevolume__Rootdevicevolume.initProperties(_Rootdevicevolume);
-			Fragments._Sa_east_1__Sa_east_1.initProperties(_Sa_east_1);
 			Fragments._Statustransitionreason__Statustransitionreason.initProperties(_Statustransitionreason);
 			Fragments._Storageoptimized__Storageoptimized.initProperties(_Storageoptimized);
 			Fragments._T1_micro__T1_micro.initProperties(_T1_micro);
@@ -9860,10 +8845,6 @@ public class Ec2Tables
 			Fragments._T2_small__T2_small.initProperties(_T2_small);
 			Fragments._T2_xlarge__T2_xlarge.initProperties(_T2_xlarge);
 			Fragments._Tags__Tags.initProperties(_Tags);
-			Fragments._Us_east_1__Us_east_1.initProperties(_Us_east_1);
-			Fragments._Us_east_2__Us_east_2.initProperties(_Us_east_2);
-			Fragments._Us_west_1__Us_west_1.initProperties(_Us_west_1);
-			Fragments._Us_west_2__Us_west_2.initProperties(_Us_west_2);
 			Fragments._VirtualizationType__VirtualizationType.initProperties(_VirtualizationType);
 			Fragments._X1_16xlarge__X1_16xlarge.initProperties(_X1_16xlarge);
 			Fragments._X1_32xlarge__X1_32xlarge.initProperties(_X1_32xlarge);

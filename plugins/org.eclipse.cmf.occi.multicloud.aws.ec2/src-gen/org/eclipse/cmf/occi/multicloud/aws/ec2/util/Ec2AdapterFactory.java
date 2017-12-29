@@ -24,8 +24,6 @@ import org.eclipse.cmf.occi.multicloud.accounts.Cloudcredential;
 
 import org.eclipse.cmf.occi.multicloud.aws.ec2.*;
 
-import org.eclipse.cmf.occi.multicloud.regions.Region;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
@@ -454,66 +452,6 @@ public class Ec2AdapterFactory extends AdapterFactoryImpl {
 				return createD2_8xlargeAdapter();
 			}
 			@Override
-			public Adapter caseUs_east_1(Us_east_1 object) {
-				return createUs_east_1Adapter();
-			}
-			@Override
-			public Adapter caseUs_east_2(Us_east_2 object) {
-				return createUs_east_2Adapter();
-			}
-			@Override
-			public Adapter caseUs_west_1(Us_west_1 object) {
-				return createUs_west_1Adapter();
-			}
-			@Override
-			public Adapter caseUs_west_2(Us_west_2 object) {
-				return createUs_west_2Adapter();
-			}
-			@Override
-			public Adapter caseCa_central_1(Ca_central_1 object) {
-				return createCa_central_1Adapter();
-			}
-			@Override
-			public Adapter caseEu_central_1(Eu_central_1 object) {
-				return createEu_central_1Adapter();
-			}
-			@Override
-			public Adapter caseEu_west_1(Eu_west_1 object) {
-				return createEu_west_1Adapter();
-			}
-			@Override
-			public Adapter caseEu_west_2(Eu_west_2 object) {
-				return createEu_west_2Adapter();
-			}
-			@Override
-			public Adapter caseEu_west_3(Eu_west_3 object) {
-				return createEu_west_3Adapter();
-			}
-			@Override
-			public Adapter caseAp_northeast_1(Ap_northeast_1 object) {
-				return createAp_northeast_1Adapter();
-			}
-			@Override
-			public Adapter caseAp_northeast_2(Ap_northeast_2 object) {
-				return createAp_northeast_2Adapter();
-			}
-			@Override
-			public Adapter caseAp_southeast_1(Ap_southeast_1 object) {
-				return createAp_southeast_1Adapter();
-			}
-			@Override
-			public Adapter caseAp_south_east2(Ap_south_east2 object) {
-				return createAp_south_east2Adapter();
-			}
-			@Override
-			public Adapter caseAp_south_1(Ap_south_1 object) {
-				return createAp_south_1Adapter();
-			}
-			@Override
-			public Adapter caseSa_east_1(Sa_east_1 object) {
-				return createSa_east_1Adapter();
-			}
-			@Override
 			public Adapter caseM1_small(M1_small object) {
 				return createM1_smallAdapter();
 			}
@@ -614,10 +552,6 @@ public class Ec2AdapterFactory extends AdapterFactoryImpl {
 				return createInstancevpcinfoAdapter();
 			}
 			@Override
-			public Adapter caseEurope(Europe object) {
-				return createEuropeAdapter();
-			}
-			@Override
 			public Adapter caseEntity(Entity object) {
 				return createEntityAdapter();
 			}
@@ -644,10 +578,6 @@ public class Ec2AdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseResource_tpl(Resource_tpl object) {
 				return createResource_tplAdapter();
-			}
-			@Override
-			public Adapter caseRegion(Region object) {
-				return createRegionAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -1944,216 +1874,6 @@ public class Ec2AdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Us_east_1 <em>Us east 1</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Us_east_1
-	 * @generated
-	 */
-	public Adapter createUs_east_1Adapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Us_east_2 <em>Us east 2</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Us_east_2
-	 * @generated
-	 */
-	public Adapter createUs_east_2Adapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Us_west_1 <em>Us west 1</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Us_west_1
-	 * @generated
-	 */
-	public Adapter createUs_west_1Adapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Us_west_2 <em>Us west 2</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Us_west_2
-	 * @generated
-	 */
-	public Adapter createUs_west_2Adapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ca_central_1 <em>Ca central 1</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ca_central_1
-	 * @generated
-	 */
-	public Adapter createCa_central_1Adapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_central_1 <em>Eu central 1</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_central_1
-	 * @generated
-	 */
-	public Adapter createEu_central_1Adapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_west_1 <em>Eu west 1</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_west_1
-	 * @generated
-	 */
-	public Adapter createEu_west_1Adapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_west_2 <em>Eu west 2</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_west_2
-	 * @generated
-	 */
-	public Adapter createEu_west_2Adapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_west_3 <em>Eu west 3</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_west_3
-	 * @generated
-	 */
-	public Adapter createEu_west_3Adapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_northeast_1 <em>Ap northeast 1</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_northeast_1
-	 * @generated
-	 */
-	public Adapter createAp_northeast_1Adapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_northeast_2 <em>Ap northeast 2</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_northeast_2
-	 * @generated
-	 */
-	public Adapter createAp_northeast_2Adapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_southeast_1 <em>Ap southeast 1</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_southeast_1
-	 * @generated
-	 */
-	public Adapter createAp_southeast_1Adapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_south_east2 <em>Ap south east2</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_south_east2
-	 * @generated
-	 */
-	public Adapter createAp_south_east2Adapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_south_1 <em>Ap south 1</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_south_1
-	 * @generated
-	 */
-	public Adapter createAp_south_1Adapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Sa_east_1 <em>Sa east 1</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Sa_east_1
-	 * @generated
-	 */
-	public Adapter createSa_east_1Adapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.M1_small <em>M1 small</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -2504,20 +2224,6 @@ public class Ec2AdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Europe <em>Europe</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Europe
-	 * @generated
-	 */
-	public Adapter createEuropeAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.Entity <em>Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -2612,20 +2318,6 @@ public class Ec2AdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createResource_tplAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.regions.Region <em>Region</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.regions.Region
-	 * @generated
-	 */
-	public Adapter createRegionAdapter() {
 		return null;
 	}
 

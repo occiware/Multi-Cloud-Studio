@@ -22,8 +22,6 @@ import org.eclipse.cmf.occi.multicloud.accounts.util.AccountsValidator;
 
 import org.eclipse.cmf.occi.multicloud.aws.ec2.*;
 
-import org.eclipse.cmf.occi.multicloud.regions.util.RegionsValidator;
-
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 
@@ -178,14 +176,6 @@ public class Ec2Validator extends EObjectValidator {
 	protected InfrastructureValidator infrastructureValidator;
 
 	/**
-	 * The cached base package validator.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RegionsValidator regionsValidator;
-
-	/**
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -196,7 +186,6 @@ public class Ec2Validator extends EObjectValidator {
 		occiValidator = OCCIValidator.INSTANCE;
 		accountsValidator = AccountsValidator.INSTANCE;
 		infrastructureValidator = InfrastructureValidator.INSTANCE;
-		regionsValidator = RegionsValidator.INSTANCE;
 	}
 
 	/**
@@ -401,36 +390,6 @@ public class Ec2Validator extends EObjectValidator {
 				return validateD2_4xlarge((D2_4xlarge)value, diagnostics, context);
 			case Ec2Package.D2_8XLARGE:
 				return validateD2_8xlarge((D2_8xlarge)value, diagnostics, context);
-			case Ec2Package.US_EAST_1:
-				return validateUs_east_1((Us_east_1)value, diagnostics, context);
-			case Ec2Package.US_EAST_2:
-				return validateUs_east_2((Us_east_2)value, diagnostics, context);
-			case Ec2Package.US_WEST_1:
-				return validateUs_west_1((Us_west_1)value, diagnostics, context);
-			case Ec2Package.US_WEST_2:
-				return validateUs_west_2((Us_west_2)value, diagnostics, context);
-			case Ec2Package.CA_CENTRAL_1:
-				return validateCa_central_1((Ca_central_1)value, diagnostics, context);
-			case Ec2Package.EU_CENTRAL_1:
-				return validateEu_central_1((Eu_central_1)value, diagnostics, context);
-			case Ec2Package.EU_WEST_1:
-				return validateEu_west_1((Eu_west_1)value, diagnostics, context);
-			case Ec2Package.EU_WEST_2:
-				return validateEu_west_2((Eu_west_2)value, diagnostics, context);
-			case Ec2Package.EU_WEST_3:
-				return validateEu_west_3((Eu_west_3)value, diagnostics, context);
-			case Ec2Package.AP_NORTHEAST_1:
-				return validateAp_northeast_1((Ap_northeast_1)value, diagnostics, context);
-			case Ec2Package.AP_NORTHEAST_2:
-				return validateAp_northeast_2((Ap_northeast_2)value, diagnostics, context);
-			case Ec2Package.AP_SOUTHEAST_1:
-				return validateAp_southeast_1((Ap_southeast_1)value, diagnostics, context);
-			case Ec2Package.AP_SOUTH_EAST2:
-				return validateAp_south_east2((Ap_south_east2)value, diagnostics, context);
-			case Ec2Package.AP_SOUTH_1:
-				return validateAp_south_1((Ap_south_1)value, diagnostics, context);
-			case Ec2Package.SA_EAST_1:
-				return validateSa_east_1((Sa_east_1)value, diagnostics, context);
 			case Ec2Package.M1_SMALL:
 				return validateM1_small((M1_small)value, diagnostics, context);
 			case Ec2Package.T1_MICRO:
@@ -481,8 +440,6 @@ public class Ec2Validator extends EObjectValidator {
 				return validateTags((Tags)value, diagnostics, context);
 			case Ec2Package.INSTANCEVPCINFO:
 				return validateInstancevpcinfo((Instancevpcinfo)value, diagnostics, context);
-			case Ec2Package.EUROPE:
-				return validateEurope((Europe)value, diagnostics, context);
 			case Ec2Package.AWS_INSTANCE_STATE:
 				return validateAWSInstanceState((AWSInstanceState)value, diagnostics, context);
 			case Ec2Package.HYPERVISOR_TYPE:
@@ -2290,141 +2247,6 @@ public class Ec2Validator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateUs_east_1(Us_east_1 us_east_1, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(us_east_1, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateUs_east_2(Us_east_2 us_east_2, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(us_east_2, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateUs_west_1(Us_west_1 us_west_1, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(us_west_1, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateUs_west_2(Us_west_2 us_west_2, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(us_west_2, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateCa_central_1(Ca_central_1 ca_central_1, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(ca_central_1, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateEu_central_1(Eu_central_1 eu_central_1, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(eu_central_1, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateEu_west_1(Eu_west_1 eu_west_1, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(eu_west_1, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateEu_west_2(Eu_west_2 eu_west_2, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(eu_west_2, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateEu_west_3(Eu_west_3 eu_west_3, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(eu_west_3, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateAp_northeast_1(Ap_northeast_1 ap_northeast_1, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(ap_northeast_1, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateAp_northeast_2(Ap_northeast_2 ap_northeast_2, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(ap_northeast_2, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateAp_southeast_1(Ap_southeast_1 ap_southeast_1, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(ap_southeast_1, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateAp_south_east2(Ap_south_east2 ap_south_east2, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(ap_south_east2, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateAp_south_1(Ap_south_1 ap_south_1, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(ap_south_1, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateSa_east_1(Sa_east_1 sa_east_1, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(sa_east_1, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateM1_small(M1_small m1_small, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(m1_small, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(m1_small, diagnostics, context);
@@ -2943,25 +2765,6 @@ public class Ec2Validator extends EObjectValidator {
 	 */
 	public boolean validateInstancevpcinfo_appliesConstraint(Instancevpcinfo instancevpcinfo, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return instancevpcinfo.appliesConstraint(diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateEurope(Europe europe, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(europe, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(europe, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(europe, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(europe, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(europe, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(europe, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(europe, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(europe, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(europe, diagnostics, context);
-		if (result || diagnostics != null) result &= regionsValidator.validateRegion_appliesConstraint(europe, diagnostics, context);
-		return result;
 	}
 
 	/**

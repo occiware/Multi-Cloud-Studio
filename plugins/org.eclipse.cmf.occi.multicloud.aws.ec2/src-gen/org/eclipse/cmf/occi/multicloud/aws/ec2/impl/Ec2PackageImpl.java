@@ -12,6 +12,8 @@
  */
 package org.eclipse.cmf.occi.multicloud.aws.ec2.impl;
 
+import awsregions.AwsregionsPackage;
+
 import java.io.IOException;
 
 import java.net.URL;
@@ -702,111 +704,6 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass us_east_1EClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass us_east_2EClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass us_west_1EClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass us_west_2EClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass ca_central_1EClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass eu_central_1EClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass eu_west_1EClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass eu_west_2EClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass eu_west_3EClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass ap_northeast_1EClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass ap_northeast_2EClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass ap_southeast_1EClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass ap_south_east2EClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass ap_south_1EClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass sa_east_1EClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass m1_smallEClass = null;
 
 	/**
@@ -982,13 +879,6 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass europeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EEnum awsInstanceStateEEnum = null;
 
 	/**
@@ -1067,6 +957,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 		RegionsPackage.eINSTANCE.eClass();
 		InfrastructurePackage.eINSTANCE.eClass();
 		AccountsPackage.eINSTANCE.eClass();
+		AwsregionsPackage.eINSTANCE.eClass();
 		OCCIPackage.eINSTANCE.eClass();
 
 		// Load packages
@@ -5313,729 +5204,9 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getUs_east_1() {
-		if (us_east_1EClass == null) {
-			us_east_1EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(96);
-		}
-		return us_east_1EClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getUs_east_1_RegionName() {
-        return (EAttribute)getUs_east_1().getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getUs_east_1_Country() {
-        return (EAttribute)getUs_east_1().getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getUs_east_1_RegionId() {
-        return (EAttribute)getUs_east_1().getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getUs_east_1_City() {
-        return (EAttribute)getUs_east_1().getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getUs_east_2() {
-		if (us_east_2EClass == null) {
-			us_east_2EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(97);
-		}
-		return us_east_2EClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getUs_east_2_RegionName() {
-        return (EAttribute)getUs_east_2().getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getUs_east_2_Country() {
-        return (EAttribute)getUs_east_2().getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getUs_east_2_RegionId() {
-        return (EAttribute)getUs_east_2().getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getUs_east_2_City() {
-        return (EAttribute)getUs_east_2().getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getUs_west_1() {
-		if (us_west_1EClass == null) {
-			us_west_1EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(98);
-		}
-		return us_west_1EClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getUs_west_1_RegionName() {
-        return (EAttribute)getUs_west_1().getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getUs_west_1_Country() {
-        return (EAttribute)getUs_west_1().getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getUs_west_1_RegionId() {
-        return (EAttribute)getUs_west_1().getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getUs_west_1_City() {
-        return (EAttribute)getUs_west_1().getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getUs_west_2() {
-		if (us_west_2EClass == null) {
-			us_west_2EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(99);
-		}
-		return us_west_2EClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getUs_west_2_RegionName() {
-        return (EAttribute)getUs_west_2().getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getUs_west_2_Country() {
-        return (EAttribute)getUs_west_2().getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getUs_west_2_RegionId() {
-        return (EAttribute)getUs_west_2().getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getUs_west_2_City() {
-        return (EAttribute)getUs_west_2().getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getCa_central_1() {
-		if (ca_central_1EClass == null) {
-			ca_central_1EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(100);
-		}
-		return ca_central_1EClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getCa_central_1_RegionName() {
-        return (EAttribute)getCa_central_1().getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getCa_central_1_Country() {
-        return (EAttribute)getCa_central_1().getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getCa_central_1_RegionId() {
-        return (EAttribute)getCa_central_1().getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getCa_central_1_City() {
-        return (EAttribute)getCa_central_1().getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getEu_central_1() {
-		if (eu_central_1EClass == null) {
-			eu_central_1EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(101);
-		}
-		return eu_central_1EClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getEu_central_1_Country() {
-        return (EAttribute)getEu_central_1().getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getEu_central_1_RegionId() {
-        return (EAttribute)getEu_central_1().getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getEu_central_1_City() {
-        return (EAttribute)getEu_central_1().getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getEu_central_1_RegionName() {
-        return (EAttribute)getEu_central_1().getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getEu_west_1() {
-		if (eu_west_1EClass == null) {
-			eu_west_1EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(102);
-		}
-		return eu_west_1EClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getEu_west_1_RegionName() {
-        return (EAttribute)getEu_west_1().getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getEu_west_1_Country() {
-        return (EAttribute)getEu_west_1().getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getEu_west_1_RegionId() {
-        return (EAttribute)getEu_west_1().getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getEu_west_1_City() {
-        return (EAttribute)getEu_west_1().getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getEu_west_2() {
-		if (eu_west_2EClass == null) {
-			eu_west_2EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(103);
-		}
-		return eu_west_2EClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getEu_west_2_RegionName() {
-        return (EAttribute)getEu_west_2().getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getEu_west_2_Country() {
-        return (EAttribute)getEu_west_2().getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getEu_west_2_RegionId() {
-        return (EAttribute)getEu_west_2().getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getEu_west_2_City() {
-        return (EAttribute)getEu_west_2().getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getEu_west_3() {
-		if (eu_west_3EClass == null) {
-			eu_west_3EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(104);
-		}
-		return eu_west_3EClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getEu_west_3_RegionName() {
-        return (EAttribute)getEu_west_3().getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getEu_west_3_Country() {
-        return (EAttribute)getEu_west_3().getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getEu_west_3_RegionId() {
-        return (EAttribute)getEu_west_3().getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getEu_west_3_City() {
-        return (EAttribute)getEu_west_3().getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getAp_northeast_1() {
-		if (ap_northeast_1EClass == null) {
-			ap_northeast_1EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(105);
-		}
-		return ap_northeast_1EClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAp_northeast_1_Country() {
-        return (EAttribute)getAp_northeast_1().getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAp_northeast_1_RegionName() {
-        return (EAttribute)getAp_northeast_1().getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAp_northeast_1_RegionId() {
-        return (EAttribute)getAp_northeast_1().getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAp_northeast_1_City() {
-        return (EAttribute)getAp_northeast_1().getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getAp_northeast_2() {
-		if (ap_northeast_2EClass == null) {
-			ap_northeast_2EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(106);
-		}
-		return ap_northeast_2EClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAp_northeast_2_Country() {
-        return (EAttribute)getAp_northeast_2().getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAp_northeast_2_RegionName() {
-        return (EAttribute)getAp_northeast_2().getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAp_northeast_2_RegionId() {
-        return (EAttribute)getAp_northeast_2().getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAp_northeast_2_City() {
-        return (EAttribute)getAp_northeast_2().getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getAp_southeast_1() {
-		if (ap_southeast_1EClass == null) {
-			ap_southeast_1EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(107);
-		}
-		return ap_southeast_1EClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAp_southeast_1_Country() {
-        return (EAttribute)getAp_southeast_1().getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAp_southeast_1_RegionName() {
-        return (EAttribute)getAp_southeast_1().getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAp_southeast_1_RegionId() {
-        return (EAttribute)getAp_southeast_1().getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAp_southeast_1_City() {
-        return (EAttribute)getAp_southeast_1().getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getAp_south_east2() {
-		if (ap_south_east2EClass == null) {
-			ap_south_east2EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(108);
-		}
-		return ap_south_east2EClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAp_south_east2_Country() {
-        return (EAttribute)getAp_south_east2().getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAp_south_east2_RegionName() {
-        return (EAttribute)getAp_south_east2().getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAp_south_east2_RegionId() {
-        return (EAttribute)getAp_south_east2().getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAp_south_east2_City() {
-        return (EAttribute)getAp_south_east2().getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getAp_south_1() {
-		if (ap_south_1EClass == null) {
-			ap_south_1EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(109);
-		}
-		return ap_south_1EClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAp_south_1_Country() {
-        return (EAttribute)getAp_south_1().getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAp_south_1_RegionName() {
-        return (EAttribute)getAp_south_1().getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAp_south_1_RegionId() {
-        return (EAttribute)getAp_south_1().getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAp_south_1_City() {
-        return (EAttribute)getAp_south_1().getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getSa_east_1() {
-		if (sa_east_1EClass == null) {
-			sa_east_1EClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(110);
-		}
-		return sa_east_1EClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getSa_east_1_Country() {
-        return (EAttribute)getSa_east_1().getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getSa_east_1_RegionName() {
-        return (EAttribute)getSa_east_1().getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getSa_east_1_RegionId() {
-        return (EAttribute)getSa_east_1().getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getSa_east_1_City() {
-        return (EAttribute)getSa_east_1().getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getM1_small() {
 		if (m1_smallEClass == null) {
-			m1_smallEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(111);
+			m1_smallEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(96);
 		}
 		return m1_smallEClass;
 	}
@@ -6083,7 +5254,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 */
 	public EClass getT1_micro() {
 		if (t1_microEClass == null) {
-			t1_microEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(112);
+			t1_microEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(97);
 		}
 		return t1_microEClass;
 	}
@@ -6122,7 +5293,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 */
 	public EClass getM1_medium() {
 		if (m1_mediumEClass == null) {
-			m1_mediumEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(113);
+			m1_mediumEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(98);
 		}
 		return m1_mediumEClass;
 	}
@@ -6170,7 +5341,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 */
 	public EClass getM1_large() {
 		if (m1_largeEClass == null) {
-			m1_largeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(114);
+			m1_largeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(99);
 		}
 		return m1_largeEClass;
 	}
@@ -6218,7 +5389,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 */
 	public EClass getM1_xlarge() {
 		if (m1_xlargeEClass == null) {
-			m1_xlargeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(115);
+			m1_xlargeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(100);
 		}
 		return m1_xlargeEClass;
 	}
@@ -6266,7 +5437,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 */
 	public EClass getC1_medium() {
 		if (c1_mediumEClass == null) {
-			c1_mediumEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(116);
+			c1_mediumEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(101);
 		}
 		return c1_mediumEClass;
 	}
@@ -6314,7 +5485,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 */
 	public EClass getC1_xlarge() {
 		if (c1_xlargeEClass == null) {
-			c1_xlargeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(117);
+			c1_xlargeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(102);
 		}
 		return c1_xlargeEClass;
 	}
@@ -6362,7 +5533,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 */
 	public EClass getCc2_8xlarge() {
 		if (cc2_8xlargeEClass == null) {
-			cc2_8xlargeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(118);
+			cc2_8xlargeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(103);
 		}
 		return cc2_8xlargeEClass;
 	}
@@ -6410,7 +5581,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 */
 	public EClass getG2_2xlarge() {
 		if (g2_2xlargeEClass == null) {
-			g2_2xlargeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(119);
+			g2_2xlargeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(104);
 		}
 		return g2_2xlargeEClass;
 	}
@@ -6458,7 +5629,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 */
 	public EClass getG2_8xlarge() {
 		if (g2_8xlargeEClass == null) {
-			g2_8xlargeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(120);
+			g2_8xlargeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(105);
 		}
 		return g2_8xlargeEClass;
 	}
@@ -6506,7 +5677,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 */
 	public EClass getCg1_4xlarge() {
 		if (cg1_4xlargeEClass == null) {
-			cg1_4xlargeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(121);
+			cg1_4xlargeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(106);
 		}
 		return cg1_4xlargeEClass;
 	}
@@ -6554,7 +5725,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 */
 	public EClass getM2_xlarge() {
 		if (m2_xlargeEClass == null) {
-			m2_xlargeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(122);
+			m2_xlargeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(107);
 		}
 		return m2_xlargeEClass;
 	}
@@ -6602,7 +5773,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 */
 	public EClass getM2_2xlarge() {
 		if (m2_2xlargeEClass == null) {
-			m2_2xlargeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(123);
+			m2_2xlargeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(108);
 		}
 		return m2_2xlargeEClass;
 	}
@@ -6650,7 +5821,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 */
 	public EClass getM2_4xlarge() {
 		if (m2_4xlargeEClass == null) {
-			m2_4xlargeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(124);
+			m2_4xlargeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(109);
 		}
 		return m2_4xlargeEClass;
 	}
@@ -6698,7 +5869,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 */
 	public EClass getCr1_8xlarge() {
 		if (cr1_8xlargeEClass == null) {
-			cr1_8xlargeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(125);
+			cr1_8xlargeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(110);
 		}
 		return cr1_8xlargeEClass;
 	}
@@ -6746,7 +5917,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 */
 	public EClass getI2_xlarge() {
 		if (i2_xlargeEClass == null) {
-			i2_xlargeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(126);
+			i2_xlargeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(111);
 		}
 		return i2_xlargeEClass;
 	}
@@ -6794,7 +5965,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 */
 	public EClass getI2_2xlarge() {
 		if (i2_2xlargeEClass == null) {
-			i2_2xlargeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(127);
+			i2_2xlargeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(112);
 		}
 		return i2_2xlargeEClass;
 	}
@@ -6842,7 +6013,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 */
 	public EClass getI2_4xlarge() {
 		if (i2_4xlargeEClass == null) {
-			i2_4xlargeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(128);
+			i2_4xlargeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(113);
 		}
 		return i2_4xlargeEClass;
 	}
@@ -6890,7 +6061,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 */
 	public EClass getI2_8xlarge() {
 		if (i2_8xlargeEClass == null) {
-			i2_8xlargeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(129);
+			i2_8xlargeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(114);
 		}
 		return i2_8xlargeEClass;
 	}
@@ -6938,7 +6109,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 */
 	public EClass getHs1_8xlarge() {
 		if (hs1_8xlargeEClass == null) {
-			hs1_8xlargeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(130);
+			hs1_8xlargeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(115);
 		}
 		return hs1_8xlargeEClass;
 	}
@@ -6986,7 +6157,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 */
 	public EClass getPlacementgroup() {
 		if (placementgroupEClass == null) {
-			placementgroupEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(131);
+			placementgroupEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(116);
 		}
 		return placementgroupEClass;
 	}
@@ -7061,7 +6232,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 */
 	public EClass getRootdevicevolume() {
 		if (rootdevicevolumeEClass == null) {
-			rootdevicevolumeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(132);
+			rootdevicevolumeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(117);
 		}
 		return rootdevicevolumeEClass;
 	}
@@ -7100,7 +6271,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 */
 	public EClass getStatustransitionreason() {
 		if (statustransitionreasonEClass == null) {
-			statustransitionreasonEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(133);
+			statustransitionreasonEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(118);
 		}
 		return statustransitionreasonEClass;
 	}
@@ -7139,7 +6310,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 */
 	public EClass getTags() {
 		if (tagsEClass == null) {
-			tagsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(134);
+			tagsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(119);
 		}
 		return tagsEClass;
 	}
@@ -7160,7 +6331,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 */
 	public EClass getInstancevpcinfo() {
 		if (instancevpcinfoEClass == null) {
-			instancevpcinfoEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(135);
+			instancevpcinfoEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(120);
 		}
 		return instancevpcinfoEClass;
 	}
@@ -7199,18 +6370,6 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 */
 	public EOperation getInstancevpcinfo__AppliesConstraint__DiagnosticChain_Map() {
         return getInstancevpcinfo().getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getEurope() {
-		if (europeEClass == null) {
-			europeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(Ec2Package.eNS_URI).getEClassifiers().get(136);
-		}
-		return europeEClass;
 	}
 
 	/**

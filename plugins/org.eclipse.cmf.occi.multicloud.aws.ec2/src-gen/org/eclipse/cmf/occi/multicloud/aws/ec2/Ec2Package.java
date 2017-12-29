@@ -18,8 +18,6 @@ import org.eclipse.cmf.occi.infrastructure.InfrastructurePackage;
 
 import org.eclipse.cmf.occi.multicloud.accounts.AccountsPackage;
 
-import org.eclipse.cmf.occi.multicloud.regions.RegionsPackage;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -9068,1371 +9066,6 @@ public interface Ec2Package extends EPackage {
 	int D2_8XLARGE_OPERATION_COUNT = STORAGEOPTIMIZED_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Us_east_1Impl <em>Us east 1</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Us_east_1Impl
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getUs_east_1()
-	 * @generated
-	 */
-	int US_EAST_1 = 91;
-
-	/**
-	 * The feature id for the '<em><b>Mixin</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int US_EAST_1__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int US_EAST_1__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int US_EAST_1__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Region Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int US_EAST_1__REGION_NAME = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Country</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int US_EAST_1__COUNTRY = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Region Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int US_EAST_1__REGION_ID = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>City</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int US_EAST_1__CITY = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>Us east 1</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int US_EAST_1_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 4;
-
-	/**
-	 * The number of operations of the '<em>Us east 1</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int US_EAST_1_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Us_east_2Impl <em>Us east 2</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Us_east_2Impl
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getUs_east_2()
-	 * @generated
-	 */
-	int US_EAST_2 = 92;
-
-	/**
-	 * The feature id for the '<em><b>Mixin</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int US_EAST_2__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int US_EAST_2__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int US_EAST_2__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Region Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int US_EAST_2__REGION_NAME = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Country</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int US_EAST_2__COUNTRY = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Region Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int US_EAST_2__REGION_ID = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>City</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int US_EAST_2__CITY = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>Us east 2</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int US_EAST_2_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 4;
-
-	/**
-	 * The number of operations of the '<em>Us east 2</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int US_EAST_2_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Us_west_1Impl <em>Us west 1</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Us_west_1Impl
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getUs_west_1()
-	 * @generated
-	 */
-	int US_WEST_1 = 93;
-
-	/**
-	 * The feature id for the '<em><b>Mixin</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int US_WEST_1__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int US_WEST_1__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int US_WEST_1__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Region Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int US_WEST_1__REGION_NAME = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Country</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int US_WEST_1__COUNTRY = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Region Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int US_WEST_1__REGION_ID = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>City</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int US_WEST_1__CITY = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>Us west 1</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int US_WEST_1_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 4;
-
-	/**
-	 * The number of operations of the '<em>Us west 1</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int US_WEST_1_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Us_west_2Impl <em>Us west 2</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Us_west_2Impl
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getUs_west_2()
-	 * @generated
-	 */
-	int US_WEST_2 = 94;
-
-	/**
-	 * The feature id for the '<em><b>Mixin</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int US_WEST_2__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int US_WEST_2__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int US_WEST_2__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Region Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int US_WEST_2__REGION_NAME = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Country</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int US_WEST_2__COUNTRY = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Region Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int US_WEST_2__REGION_ID = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>City</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int US_WEST_2__CITY = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>Us west 2</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int US_WEST_2_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 4;
-
-	/**
-	 * The number of operations of the '<em>Us west 2</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int US_WEST_2_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ca_central_1Impl <em>Ca central 1</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ca_central_1Impl
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getCa_central_1()
-	 * @generated
-	 */
-	int CA_CENTRAL_1 = 95;
-
-	/**
-	 * The feature id for the '<em><b>Mixin</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CA_CENTRAL_1__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CA_CENTRAL_1__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CA_CENTRAL_1__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Region Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CA_CENTRAL_1__REGION_NAME = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Country</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CA_CENTRAL_1__COUNTRY = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Region Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CA_CENTRAL_1__REGION_ID = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>City</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CA_CENTRAL_1__CITY = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>Ca central 1</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CA_CENTRAL_1_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 4;
-
-	/**
-	 * The number of operations of the '<em>Ca central 1</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CA_CENTRAL_1_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Eu_central_1Impl <em>Eu central 1</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Eu_central_1Impl
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getEu_central_1()
-	 * @generated
-	 */
-	int EU_CENTRAL_1 = 96;
-
-	/**
-	 * The feature id for the '<em><b>Mixin</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EU_CENTRAL_1__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EU_CENTRAL_1__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EU_CENTRAL_1__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Country</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EU_CENTRAL_1__COUNTRY = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Region Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EU_CENTRAL_1__REGION_ID = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>City</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EU_CENTRAL_1__CITY = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Region Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EU_CENTRAL_1__REGION_NAME = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>Eu central 1</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EU_CENTRAL_1_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 4;
-
-	/**
-	 * The number of operations of the '<em>Eu central 1</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EU_CENTRAL_1_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Eu_west_1Impl <em>Eu west 1</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Eu_west_1Impl
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getEu_west_1()
-	 * @generated
-	 */
-	int EU_WEST_1 = 97;
-
-	/**
-	 * The feature id for the '<em><b>Mixin</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EU_WEST_1__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EU_WEST_1__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EU_WEST_1__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Region Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EU_WEST_1__REGION_NAME = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Country</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EU_WEST_1__COUNTRY = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Region Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EU_WEST_1__REGION_ID = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>City</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EU_WEST_1__CITY = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>Eu west 1</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EU_WEST_1_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 4;
-
-	/**
-	 * The number of operations of the '<em>Eu west 1</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EU_WEST_1_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Eu_west_2Impl <em>Eu west 2</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Eu_west_2Impl
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getEu_west_2()
-	 * @generated
-	 */
-	int EU_WEST_2 = 98;
-
-	/**
-	 * The feature id for the '<em><b>Mixin</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EU_WEST_2__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EU_WEST_2__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EU_WEST_2__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Region Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EU_WEST_2__REGION_NAME = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Country</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EU_WEST_2__COUNTRY = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Region Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EU_WEST_2__REGION_ID = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>City</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EU_WEST_2__CITY = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>Eu west 2</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EU_WEST_2_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 4;
-
-	/**
-	 * The number of operations of the '<em>Eu west 2</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EU_WEST_2_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Eu_west_3Impl <em>Eu west 3</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Eu_west_3Impl
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getEu_west_3()
-	 * @generated
-	 */
-	int EU_WEST_3 = 99;
-
-	/**
-	 * The feature id for the '<em><b>Mixin</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EU_WEST_3__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EU_WEST_3__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EU_WEST_3__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Region Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EU_WEST_3__REGION_NAME = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Country</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EU_WEST_3__COUNTRY = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Region Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EU_WEST_3__REGION_ID = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>City</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EU_WEST_3__CITY = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>Eu west 3</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EU_WEST_3_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 4;
-
-	/**
-	 * The number of operations of the '<em>Eu west 3</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EU_WEST_3_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ap_northeast_1Impl <em>Ap northeast 1</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ap_northeast_1Impl
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getAp_northeast_1()
-	 * @generated
-	 */
-	int AP_NORTHEAST_1 = 100;
-
-	/**
-	 * The feature id for the '<em><b>Mixin</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_NORTHEAST_1__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_NORTHEAST_1__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_NORTHEAST_1__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Country</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_NORTHEAST_1__COUNTRY = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Region Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_NORTHEAST_1__REGION_NAME = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Region Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_NORTHEAST_1__REGION_ID = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>City</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_NORTHEAST_1__CITY = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>Ap northeast 1</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_NORTHEAST_1_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 4;
-
-	/**
-	 * The number of operations of the '<em>Ap northeast 1</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_NORTHEAST_1_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ap_northeast_2Impl <em>Ap northeast 2</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ap_northeast_2Impl
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getAp_northeast_2()
-	 * @generated
-	 */
-	int AP_NORTHEAST_2 = 101;
-
-	/**
-	 * The feature id for the '<em><b>Mixin</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_NORTHEAST_2__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_NORTHEAST_2__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_NORTHEAST_2__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Country</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_NORTHEAST_2__COUNTRY = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Region Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_NORTHEAST_2__REGION_NAME = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Region Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_NORTHEAST_2__REGION_ID = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>City</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_NORTHEAST_2__CITY = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>Ap northeast 2</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_NORTHEAST_2_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 4;
-
-	/**
-	 * The number of operations of the '<em>Ap northeast 2</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_NORTHEAST_2_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ap_southeast_1Impl <em>Ap southeast 1</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ap_southeast_1Impl
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getAp_southeast_1()
-	 * @generated
-	 */
-	int AP_SOUTHEAST_1 = 102;
-
-	/**
-	 * The feature id for the '<em><b>Mixin</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_SOUTHEAST_1__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_SOUTHEAST_1__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_SOUTHEAST_1__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Country</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_SOUTHEAST_1__COUNTRY = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Region Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_SOUTHEAST_1__REGION_NAME = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Region Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_SOUTHEAST_1__REGION_ID = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>City</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_SOUTHEAST_1__CITY = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>Ap southeast 1</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_SOUTHEAST_1_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 4;
-
-	/**
-	 * The number of operations of the '<em>Ap southeast 1</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_SOUTHEAST_1_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ap_south_east2Impl <em>Ap south east2</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ap_south_east2Impl
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getAp_south_east2()
-	 * @generated
-	 */
-	int AP_SOUTH_EAST2 = 103;
-
-	/**
-	 * The feature id for the '<em><b>Mixin</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_SOUTH_EAST2__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_SOUTH_EAST2__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_SOUTH_EAST2__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Country</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_SOUTH_EAST2__COUNTRY = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Region Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_SOUTH_EAST2__REGION_NAME = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Region Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_SOUTH_EAST2__REGION_ID = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>City</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_SOUTH_EAST2__CITY = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>Ap south east2</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_SOUTH_EAST2_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 4;
-
-	/**
-	 * The number of operations of the '<em>Ap south east2</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_SOUTH_EAST2_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ap_south_1Impl <em>Ap south 1</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ap_south_1Impl
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getAp_south_1()
-	 * @generated
-	 */
-	int AP_SOUTH_1 = 104;
-
-	/**
-	 * The feature id for the '<em><b>Mixin</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_SOUTH_1__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_SOUTH_1__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_SOUTH_1__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Country</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_SOUTH_1__COUNTRY = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Region Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_SOUTH_1__REGION_NAME = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Region Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_SOUTH_1__REGION_ID = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>City</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_SOUTH_1__CITY = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>Ap south 1</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_SOUTH_1_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 4;
-
-	/**
-	 * The number of operations of the '<em>Ap south 1</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AP_SOUTH_1_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Sa_east_1Impl <em>Sa east 1</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Sa_east_1Impl
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getSa_east_1()
-	 * @generated
-	 */
-	int SA_EAST_1 = 105;
-
-	/**
-	 * The feature id for the '<em><b>Mixin</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SA_EAST_1__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SA_EAST_1__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SA_EAST_1__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Country</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SA_EAST_1__COUNTRY = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Region Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SA_EAST_1__REGION_NAME = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Region Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SA_EAST_1__REGION_ID = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>City</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SA_EAST_1__CITY = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>Sa east 1</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SA_EAST_1_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 4;
-
-	/**
-	 * The number of operations of the '<em>Sa east 1</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SA_EAST_1_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.impl.M1_smallImpl <em>M1 small</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10440,7 +9073,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getM1_small()
 	 * @generated
 	 */
-	int M1_SMALL = 106;
+	int M1_SMALL = 91;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -10531,7 +9164,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getT1_micro()
 	 * @generated
 	 */
-	int T1_MICRO = 107;
+	int T1_MICRO = 92;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -10613,7 +9246,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getM1_medium()
 	 * @generated
 	 */
-	int M1_MEDIUM = 108;
+	int M1_MEDIUM = 93;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -10704,7 +9337,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getM1_large()
 	 * @generated
 	 */
-	int M1_LARGE = 109;
+	int M1_LARGE = 94;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -10795,7 +9428,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getM1_xlarge()
 	 * @generated
 	 */
-	int M1_XLARGE = 110;
+	int M1_XLARGE = 95;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -10886,7 +9519,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getC1_medium()
 	 * @generated
 	 */
-	int C1_MEDIUM = 111;
+	int C1_MEDIUM = 96;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -10986,7 +9619,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getC1_xlarge()
 	 * @generated
 	 */
-	int C1_XLARGE = 112;
+	int C1_XLARGE = 97;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -11086,7 +9719,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getCc2_8xlarge()
 	 * @generated
 	 */
-	int CC2_8XLARGE = 113;
+	int CC2_8XLARGE = 98;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -11186,7 +9819,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getG2_2xlarge()
 	 * @generated
 	 */
-	int G2_2XLARGE = 114;
+	int G2_2XLARGE = 99;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -11286,7 +9919,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getG2_8xlarge()
 	 * @generated
 	 */
-	int G2_8XLARGE = 115;
+	int G2_8XLARGE = 100;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -11386,7 +10019,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getCg1_4xlarge()
 	 * @generated
 	 */
-	int CG1_4XLARGE = 116;
+	int CG1_4XLARGE = 101;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -11486,7 +10119,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getM2_xlarge()
 	 * @generated
 	 */
-	int M2_XLARGE = 117;
+	int M2_XLARGE = 102;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -11586,7 +10219,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getM2_2xlarge()
 	 * @generated
 	 */
-	int M2_2XLARGE = 118;
+	int M2_2XLARGE = 103;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -11686,7 +10319,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getM2_4xlarge()
 	 * @generated
 	 */
-	int M2_4XLARGE = 119;
+	int M2_4XLARGE = 104;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -11786,7 +10419,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getCr1_8xlarge()
 	 * @generated
 	 */
-	int CR1_8XLARGE = 120;
+	int CR1_8XLARGE = 105;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -11886,7 +10519,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getI2_xlarge()
 	 * @generated
 	 */
-	int I2_XLARGE = 121;
+	int I2_XLARGE = 106;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -11986,7 +10619,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getI2_2xlarge()
 	 * @generated
 	 */
-	int I2_2XLARGE = 122;
+	int I2_2XLARGE = 107;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -12086,7 +10719,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getI2_4xlarge()
 	 * @generated
 	 */
-	int I2_4XLARGE = 123;
+	int I2_4XLARGE = 108;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -12186,7 +10819,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getI2_8xlarge()
 	 * @generated
 	 */
-	int I2_8XLARGE = 124;
+	int I2_8XLARGE = 109;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -12286,7 +10919,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getHs1_8xlarge()
 	 * @generated
 	 */
-	int HS1_8XLARGE = 125;
+	int HS1_8XLARGE = 110;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -12386,7 +11019,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getPlacementgroup()
 	 * @generated
 	 */
-	int PLACEMENTGROUP = 126;
+	int PLACEMENTGROUP = 111;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -12504,7 +11137,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getRootdevicevolume()
 	 * @generated
 	 */
-	int ROOTDEVICEVOLUME = 127;
+	int ROOTDEVICEVOLUME = 112;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -12586,7 +11219,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getStatustransitionreason()
 	 * @generated
 	 */
-	int STATUSTRANSITIONREASON = 128;
+	int STATUSTRANSITIONREASON = 113;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -12668,7 +11301,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getTags()
 	 * @generated
 	 */
-	int TAGS = 129;
+	int TAGS = 114;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -12732,7 +11365,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getInstancevpcinfo()
 	 * @generated
 	 */
-	int INSTANCEVPCINFO = 130;
+	int INSTANCEVPCINFO = 115;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -12816,106 +11449,6 @@ public interface Ec2Package extends EPackage {
 	int INSTANCEVPCINFO_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.impl.EuropeImpl <em>Europe</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.EuropeImpl
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getEurope()
-	 * @generated
-	 */
-	int EUROPE = 131;
-
-	/**
-	 * The feature id for the '<em><b>Mixin</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EUROPE__MIXIN = RegionsPackage.REGION__MIXIN;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EUROPE__ENTITY = RegionsPackage.REGION__ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EUROPE__ATTRIBUTES = RegionsPackage.REGION__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Region Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EUROPE__REGION_NAME = RegionsPackage.REGION__REGION_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Region Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EUROPE__REGION_ID = RegionsPackage.REGION__REGION_ID;
-
-	/**
-	 * The feature id for the '<em><b>City</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EUROPE__CITY = RegionsPackage.REGION__CITY;
-
-	/**
-	 * The feature id for the '<em><b>Country</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EUROPE__COUNTRY = RegionsPackage.REGION__COUNTRY;
-
-	/**
-	 * The feature id for the '<em><b>Region Endpoint</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EUROPE__REGION_ENDPOINT = RegionsPackage.REGION__REGION_ENDPOINT;
-
-	/**
-	 * The number of structural features of the '<em>Europe</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EUROPE_FEATURE_COUNT = RegionsPackage.REGION_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Europe</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EUROPE_OPERATION_COUNT = RegionsPackage.REGION_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.AWSInstanceState <em>AWS Instance State</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12923,7 +11456,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getAWSInstanceState()
 	 * @generated
 	 */
-	int AWS_INSTANCE_STATE = 132;
+	int AWS_INSTANCE_STATE = 116;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.HypervisorType <em>Hypervisor Type</em>}' enum.
@@ -12933,7 +11466,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getHypervisorType()
 	 * @generated
 	 */
-	int HYPERVISOR_TYPE = 133;
+	int HYPERVISOR_TYPE = 117;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.InstanceLifeCycleType <em>Instance Life Cycle Type</em>}' enum.
@@ -12943,7 +11476,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getInstanceLifeCycleType()
 	 * @generated
 	 */
-	int INSTANCE_LIFE_CYCLE_TYPE = 134;
+	int INSTANCE_LIFE_CYCLE_TYPE = 118;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.MonitoringState <em>Monitoring State</em>}' enum.
@@ -12953,7 +11486,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getMonitoringState()
 	 * @generated
 	 */
-	int MONITORING_STATE = 135;
+	int MONITORING_STATE = 119;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.VirtualizationType <em>Virtualization Type</em>}' enum.
@@ -12963,7 +11496,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getVirtualizationType()
 	 * @generated
 	 */
-	int VIRTUALIZATION_TYPE = 136;
+	int VIRTUALIZATION_TYPE = 120;
 
 
 	/**
@@ -17685,816 +16218,6 @@ public interface Ec2Package extends EPackage {
 	EAttribute getD2_8xlarge_OcciComputeEphemeralStorageSize();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Us_east_1 <em>Us east 1</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Us east 1</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Us_east_1
-	 * @generated
-	 */
-	EClass getUs_east_1();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Us_east_1#getRegionName <em>Region Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Region Name</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Us_east_1#getRegionName()
-	 * @see #getUs_east_1()
-	 * @generated
-	 */
-	EAttribute getUs_east_1_RegionName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Us_east_1#getCountry <em>Country</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Country</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Us_east_1#getCountry()
-	 * @see #getUs_east_1()
-	 * @generated
-	 */
-	EAttribute getUs_east_1_Country();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Us_east_1#getRegionId <em>Region Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Region Id</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Us_east_1#getRegionId()
-	 * @see #getUs_east_1()
-	 * @generated
-	 */
-	EAttribute getUs_east_1_RegionId();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Us_east_1#getCity <em>City</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>City</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Us_east_1#getCity()
-	 * @see #getUs_east_1()
-	 * @generated
-	 */
-	EAttribute getUs_east_1_City();
-
-	/**
-	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Us_east_2 <em>Us east 2</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Us east 2</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Us_east_2
-	 * @generated
-	 */
-	EClass getUs_east_2();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Us_east_2#getRegionName <em>Region Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Region Name</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Us_east_2#getRegionName()
-	 * @see #getUs_east_2()
-	 * @generated
-	 */
-	EAttribute getUs_east_2_RegionName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Us_east_2#getCountry <em>Country</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Country</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Us_east_2#getCountry()
-	 * @see #getUs_east_2()
-	 * @generated
-	 */
-	EAttribute getUs_east_2_Country();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Us_east_2#getRegionId <em>Region Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Region Id</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Us_east_2#getRegionId()
-	 * @see #getUs_east_2()
-	 * @generated
-	 */
-	EAttribute getUs_east_2_RegionId();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Us_east_2#getCity <em>City</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>City</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Us_east_2#getCity()
-	 * @see #getUs_east_2()
-	 * @generated
-	 */
-	EAttribute getUs_east_2_City();
-
-	/**
-	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Us_west_1 <em>Us west 1</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Us west 1</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Us_west_1
-	 * @generated
-	 */
-	EClass getUs_west_1();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Us_west_1#getRegionName <em>Region Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Region Name</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Us_west_1#getRegionName()
-	 * @see #getUs_west_1()
-	 * @generated
-	 */
-	EAttribute getUs_west_1_RegionName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Us_west_1#getCountry <em>Country</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Country</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Us_west_1#getCountry()
-	 * @see #getUs_west_1()
-	 * @generated
-	 */
-	EAttribute getUs_west_1_Country();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Us_west_1#getRegionId <em>Region Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Region Id</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Us_west_1#getRegionId()
-	 * @see #getUs_west_1()
-	 * @generated
-	 */
-	EAttribute getUs_west_1_RegionId();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Us_west_1#getCity <em>City</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>City</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Us_west_1#getCity()
-	 * @see #getUs_west_1()
-	 * @generated
-	 */
-	EAttribute getUs_west_1_City();
-
-	/**
-	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Us_west_2 <em>Us west 2</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Us west 2</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Us_west_2
-	 * @generated
-	 */
-	EClass getUs_west_2();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Us_west_2#getRegionName <em>Region Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Region Name</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Us_west_2#getRegionName()
-	 * @see #getUs_west_2()
-	 * @generated
-	 */
-	EAttribute getUs_west_2_RegionName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Us_west_2#getCountry <em>Country</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Country</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Us_west_2#getCountry()
-	 * @see #getUs_west_2()
-	 * @generated
-	 */
-	EAttribute getUs_west_2_Country();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Us_west_2#getRegionId <em>Region Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Region Id</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Us_west_2#getRegionId()
-	 * @see #getUs_west_2()
-	 * @generated
-	 */
-	EAttribute getUs_west_2_RegionId();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Us_west_2#getCity <em>City</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>City</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Us_west_2#getCity()
-	 * @see #getUs_west_2()
-	 * @generated
-	 */
-	EAttribute getUs_west_2_City();
-
-	/**
-	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ca_central_1 <em>Ca central 1</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Ca central 1</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ca_central_1
-	 * @generated
-	 */
-	EClass getCa_central_1();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ca_central_1#getRegionName <em>Region Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Region Name</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ca_central_1#getRegionName()
-	 * @see #getCa_central_1()
-	 * @generated
-	 */
-	EAttribute getCa_central_1_RegionName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ca_central_1#getCountry <em>Country</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Country</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ca_central_1#getCountry()
-	 * @see #getCa_central_1()
-	 * @generated
-	 */
-	EAttribute getCa_central_1_Country();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ca_central_1#getRegionId <em>Region Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Region Id</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ca_central_1#getRegionId()
-	 * @see #getCa_central_1()
-	 * @generated
-	 */
-	EAttribute getCa_central_1_RegionId();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ca_central_1#getCity <em>City</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>City</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ca_central_1#getCity()
-	 * @see #getCa_central_1()
-	 * @generated
-	 */
-	EAttribute getCa_central_1_City();
-
-	/**
-	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_central_1 <em>Eu central 1</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Eu central 1</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_central_1
-	 * @generated
-	 */
-	EClass getEu_central_1();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_central_1#getCountry <em>Country</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Country</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_central_1#getCountry()
-	 * @see #getEu_central_1()
-	 * @generated
-	 */
-	EAttribute getEu_central_1_Country();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_central_1#getRegionId <em>Region Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Region Id</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_central_1#getRegionId()
-	 * @see #getEu_central_1()
-	 * @generated
-	 */
-	EAttribute getEu_central_1_RegionId();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_central_1#getCity <em>City</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>City</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_central_1#getCity()
-	 * @see #getEu_central_1()
-	 * @generated
-	 */
-	EAttribute getEu_central_1_City();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_central_1#getRegionName <em>Region Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Region Name</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_central_1#getRegionName()
-	 * @see #getEu_central_1()
-	 * @generated
-	 */
-	EAttribute getEu_central_1_RegionName();
-
-	/**
-	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_west_1 <em>Eu west 1</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Eu west 1</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_west_1
-	 * @generated
-	 */
-	EClass getEu_west_1();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_west_1#getRegionName <em>Region Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Region Name</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_west_1#getRegionName()
-	 * @see #getEu_west_1()
-	 * @generated
-	 */
-	EAttribute getEu_west_1_RegionName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_west_1#getCountry <em>Country</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Country</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_west_1#getCountry()
-	 * @see #getEu_west_1()
-	 * @generated
-	 */
-	EAttribute getEu_west_1_Country();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_west_1#getRegionId <em>Region Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Region Id</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_west_1#getRegionId()
-	 * @see #getEu_west_1()
-	 * @generated
-	 */
-	EAttribute getEu_west_1_RegionId();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_west_1#getCity <em>City</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>City</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_west_1#getCity()
-	 * @see #getEu_west_1()
-	 * @generated
-	 */
-	EAttribute getEu_west_1_City();
-
-	/**
-	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_west_2 <em>Eu west 2</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Eu west 2</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_west_2
-	 * @generated
-	 */
-	EClass getEu_west_2();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_west_2#getRegionName <em>Region Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Region Name</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_west_2#getRegionName()
-	 * @see #getEu_west_2()
-	 * @generated
-	 */
-	EAttribute getEu_west_2_RegionName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_west_2#getCountry <em>Country</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Country</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_west_2#getCountry()
-	 * @see #getEu_west_2()
-	 * @generated
-	 */
-	EAttribute getEu_west_2_Country();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_west_2#getRegionId <em>Region Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Region Id</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_west_2#getRegionId()
-	 * @see #getEu_west_2()
-	 * @generated
-	 */
-	EAttribute getEu_west_2_RegionId();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_west_2#getCity <em>City</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>City</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_west_2#getCity()
-	 * @see #getEu_west_2()
-	 * @generated
-	 */
-	EAttribute getEu_west_2_City();
-
-	/**
-	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_west_3 <em>Eu west 3</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Eu west 3</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_west_3
-	 * @generated
-	 */
-	EClass getEu_west_3();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_west_3#getRegionName <em>Region Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Region Name</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_west_3#getRegionName()
-	 * @see #getEu_west_3()
-	 * @generated
-	 */
-	EAttribute getEu_west_3_RegionName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_west_3#getCountry <em>Country</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Country</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_west_3#getCountry()
-	 * @see #getEu_west_3()
-	 * @generated
-	 */
-	EAttribute getEu_west_3_Country();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_west_3#getRegionId <em>Region Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Region Id</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_west_3#getRegionId()
-	 * @see #getEu_west_3()
-	 * @generated
-	 */
-	EAttribute getEu_west_3_RegionId();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_west_3#getCity <em>City</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>City</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Eu_west_3#getCity()
-	 * @see #getEu_west_3()
-	 * @generated
-	 */
-	EAttribute getEu_west_3_City();
-
-	/**
-	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_northeast_1 <em>Ap northeast 1</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Ap northeast 1</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_northeast_1
-	 * @generated
-	 */
-	EClass getAp_northeast_1();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_northeast_1#getCountry <em>Country</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Country</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_northeast_1#getCountry()
-	 * @see #getAp_northeast_1()
-	 * @generated
-	 */
-	EAttribute getAp_northeast_1_Country();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_northeast_1#getRegionName <em>Region Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Region Name</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_northeast_1#getRegionName()
-	 * @see #getAp_northeast_1()
-	 * @generated
-	 */
-	EAttribute getAp_northeast_1_RegionName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_northeast_1#getRegionId <em>Region Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Region Id</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_northeast_1#getRegionId()
-	 * @see #getAp_northeast_1()
-	 * @generated
-	 */
-	EAttribute getAp_northeast_1_RegionId();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_northeast_1#getCity <em>City</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>City</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_northeast_1#getCity()
-	 * @see #getAp_northeast_1()
-	 * @generated
-	 */
-	EAttribute getAp_northeast_1_City();
-
-	/**
-	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_northeast_2 <em>Ap northeast 2</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Ap northeast 2</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_northeast_2
-	 * @generated
-	 */
-	EClass getAp_northeast_2();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_northeast_2#getCountry <em>Country</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Country</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_northeast_2#getCountry()
-	 * @see #getAp_northeast_2()
-	 * @generated
-	 */
-	EAttribute getAp_northeast_2_Country();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_northeast_2#getRegionName <em>Region Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Region Name</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_northeast_2#getRegionName()
-	 * @see #getAp_northeast_2()
-	 * @generated
-	 */
-	EAttribute getAp_northeast_2_RegionName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_northeast_2#getRegionId <em>Region Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Region Id</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_northeast_2#getRegionId()
-	 * @see #getAp_northeast_2()
-	 * @generated
-	 */
-	EAttribute getAp_northeast_2_RegionId();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_northeast_2#getCity <em>City</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>City</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_northeast_2#getCity()
-	 * @see #getAp_northeast_2()
-	 * @generated
-	 */
-	EAttribute getAp_northeast_2_City();
-
-	/**
-	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_southeast_1 <em>Ap southeast 1</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Ap southeast 1</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_southeast_1
-	 * @generated
-	 */
-	EClass getAp_southeast_1();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_southeast_1#getCountry <em>Country</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Country</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_southeast_1#getCountry()
-	 * @see #getAp_southeast_1()
-	 * @generated
-	 */
-	EAttribute getAp_southeast_1_Country();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_southeast_1#getRegionName <em>Region Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Region Name</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_southeast_1#getRegionName()
-	 * @see #getAp_southeast_1()
-	 * @generated
-	 */
-	EAttribute getAp_southeast_1_RegionName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_southeast_1#getRegionId <em>Region Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Region Id</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_southeast_1#getRegionId()
-	 * @see #getAp_southeast_1()
-	 * @generated
-	 */
-	EAttribute getAp_southeast_1_RegionId();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_southeast_1#getCity <em>City</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>City</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_southeast_1#getCity()
-	 * @see #getAp_southeast_1()
-	 * @generated
-	 */
-	EAttribute getAp_southeast_1_City();
-
-	/**
-	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_south_east2 <em>Ap south east2</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Ap south east2</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_south_east2
-	 * @generated
-	 */
-	EClass getAp_south_east2();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_south_east2#getCountry <em>Country</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Country</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_south_east2#getCountry()
-	 * @see #getAp_south_east2()
-	 * @generated
-	 */
-	EAttribute getAp_south_east2_Country();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_south_east2#getRegionName <em>Region Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Region Name</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_south_east2#getRegionName()
-	 * @see #getAp_south_east2()
-	 * @generated
-	 */
-	EAttribute getAp_south_east2_RegionName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_south_east2#getRegionId <em>Region Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Region Id</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_south_east2#getRegionId()
-	 * @see #getAp_south_east2()
-	 * @generated
-	 */
-	EAttribute getAp_south_east2_RegionId();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_south_east2#getCity <em>City</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>City</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_south_east2#getCity()
-	 * @see #getAp_south_east2()
-	 * @generated
-	 */
-	EAttribute getAp_south_east2_City();
-
-	/**
-	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_south_1 <em>Ap south 1</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Ap south 1</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_south_1
-	 * @generated
-	 */
-	EClass getAp_south_1();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_south_1#getCountry <em>Country</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Country</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_south_1#getCountry()
-	 * @see #getAp_south_1()
-	 * @generated
-	 */
-	EAttribute getAp_south_1_Country();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_south_1#getRegionName <em>Region Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Region Name</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_south_1#getRegionName()
-	 * @see #getAp_south_1()
-	 * @generated
-	 */
-	EAttribute getAp_south_1_RegionName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_south_1#getRegionId <em>Region Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Region Id</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_south_1#getRegionId()
-	 * @see #getAp_south_1()
-	 * @generated
-	 */
-	EAttribute getAp_south_1_RegionId();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_south_1#getCity <em>City</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>City</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ap_south_1#getCity()
-	 * @see #getAp_south_1()
-	 * @generated
-	 */
-	EAttribute getAp_south_1_City();
-
-	/**
-	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Sa_east_1 <em>Sa east 1</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Sa east 1</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Sa_east_1
-	 * @generated
-	 */
-	EClass getSa_east_1();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Sa_east_1#getCountry <em>Country</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Country</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Sa_east_1#getCountry()
-	 * @see #getSa_east_1()
-	 * @generated
-	 */
-	EAttribute getSa_east_1_Country();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Sa_east_1#getRegionName <em>Region Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Region Name</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Sa_east_1#getRegionName()
-	 * @see #getSa_east_1()
-	 * @generated
-	 */
-	EAttribute getSa_east_1_RegionName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Sa_east_1#getRegionId <em>Region Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Region Id</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Sa_east_1#getRegionId()
-	 * @see #getSa_east_1()
-	 * @generated
-	 */
-	EAttribute getSa_east_1_RegionId();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Sa_east_1#getCity <em>City</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>City</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Sa_east_1#getCity()
-	 * @see #getSa_east_1()
-	 * @generated
-	 */
-	EAttribute getSa_east_1_City();
-
-	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.M1_small <em>M1 small</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -19805,16 +17528,6 @@ public interface Ec2Package extends EPackage {
 	 * @generated
 	 */
 	EOperation getInstancevpcinfo__AppliesConstraint__DiagnosticChain_Map();
-
-	/**
-	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Europe <em>Europe</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Europe</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Europe
-	 * @generated
-	 */
-	EClass getEurope();
 
 	/**
 	 * Returns the meta object for enum '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.AWSInstanceState <em>AWS Instance State</em>}'.

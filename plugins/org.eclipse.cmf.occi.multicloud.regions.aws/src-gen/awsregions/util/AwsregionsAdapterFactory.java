@@ -20,6 +20,7 @@ import org.eclipse.cmf.occi.multicloud.regions.Asiapacific;
 import org.eclipse.cmf.occi.multicloud.regions.Europe;
 import org.eclipse.cmf.occi.multicloud.regions.Northamerica;
 import org.eclipse.cmf.occi.multicloud.regions.Region;
+import org.eclipse.cmf.occi.multicloud.regions.Southamerica;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -163,6 +164,10 @@ public class AwsregionsAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseAsiapacific(Asiapacific object) {
 				return createAsiapacificAdapter();
+			}
+			@Override
+			public Adapter caseSouthamerica(Southamerica object) {
+				return createSouthamericaAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -461,6 +466,20 @@ public class AwsregionsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAsiapacificAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.regions.Southamerica <em>Southamerica</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.regions.Southamerica
+	 * @generated
+	 */
+	public Adapter createSouthamericaAdapter() {
 		return null;
 	}
 

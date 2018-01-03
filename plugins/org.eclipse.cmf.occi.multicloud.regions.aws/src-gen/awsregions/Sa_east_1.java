@@ -14,7 +14,7 @@ package awsregions;
 
 import org.eclipse.cmf.occi.core.MixinBase;
 
-import org.eclipse.cmf.occi.multicloud.regions.Europe;
+import org.eclipse.cmf.occi.multicloud.regions.Southamerica;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,7 +35,7 @@ import org.eclipse.cmf.occi.multicloud.regions.Europe;
  * @model
  * @generated
  */
-public interface Sa_east_1 extends Europe, MixinBase {
+public interface Sa_east_1 extends Southamerica, MixinBase {
 	/**
 	 * Returns the value of the '<em><b>Country</b></em>' attribute.
 	 * The default value is <code>"Brazil"</code>.

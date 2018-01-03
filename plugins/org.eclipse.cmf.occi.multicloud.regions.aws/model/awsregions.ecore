@@ -167,7 +167,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Sa_east_1" eSuperTypes="platform:/resource/org.eclipse.cmf.occi.multicloud.regions/model/regions.ecore#//Europe platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+  <eClassifiers xsi:type="ecore:EClass" name="Sa_east_1" eSuperTypes="platform:/resource/org.eclipse.cmf.occi.multicloud.regions/model/regions.ecore#//Southamerica platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="country" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"
         defaultValueLiteral="Brazil">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

@@ -19,7 +19,7 @@ import awsregions.Sa_east_1;
 import java.util.Collection;
 import java.util.List;
 
-import org.eclipse.cmf.occi.multicloud.regions.provider.EuropeItemProvider;
+import org.eclipse.cmf.occi.multicloud.regions.provider.SouthamericaItemProvider;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
@@ -37,7 +37,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class Sa_east_1ItemProvider extends EuropeItemProvider {
+public class Sa_east_1ItemProvider extends SouthamericaItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

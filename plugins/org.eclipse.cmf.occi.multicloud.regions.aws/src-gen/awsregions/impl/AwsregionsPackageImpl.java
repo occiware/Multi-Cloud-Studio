@@ -1055,7 +1055,7 @@ public class AwsregionsPackageImpl extends EPackageImpl implements AwsregionsPac
 		eu_west_1EClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		ap_south_1EClass.getESuperTypes().add(theRegionsPackage.getAsiapacific());
 		ap_south_1EClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
-		sa_east_1EClass.getESuperTypes().add(theRegionsPackage.getEurope());
+		sa_east_1EClass.getESuperTypes().add(theRegionsPackage.getSouthamerica());
 		sa_east_1EClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		us_west_2EClass.getESuperTypes().add(theRegionsPackage.getNorthamerica());
 		us_west_2EClass.getESuperTypes().add(theOCCIPackage.getMixinBase());

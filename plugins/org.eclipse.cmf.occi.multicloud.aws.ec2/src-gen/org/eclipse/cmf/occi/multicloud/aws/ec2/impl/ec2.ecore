@@ -14,22 +14,22 @@
     <eLiterals name="rebooting" value="7" literal="rebooting"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="HypervisorType">
-    <eLiterals name="Ovm" literal="Ovm"/>
-    <eLiterals name="Xen" value="1" literal="Xen"/>
+    <eLiterals name="ovm" literal="ovm"/>
+    <eLiterals name="xen" value="1" literal="xen"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="InstanceLifeCycleType">
-    <eLiterals name="Scheduled" literal="Scheduled"/>
-    <eLiterals name="Spot" value="1" literal="Spot"/>
+    <eLiterals name="scheduled" literal="scheduled"/>
+    <eLiterals name="spot" value="1" literal="spot"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="MonitoringState">
-    <eLiterals name="Disabled" literal="Disabled"/>
-    <eLiterals name="Disabling" value="1" literal="Disabling"/>
-    <eLiterals name="Enabled" value="2" literal="Enabled"/>
-    <eLiterals name="Pending" value="3" literal="Pending"/>
+    <eLiterals name="disabled" literal="disabled"/>
+    <eLiterals name="disabling" value="1" literal="disabling"/>
+    <eLiterals name="enabled" value="2" literal="enabled"/>
+    <eLiterals name="pending" value="3" literal="pending"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="VirtualizationType">
-    <eLiterals name="Hvm" literal="Hvm"/>
-    <eLiterals name="Paravirtual" value="1" literal="Paravirtual"/>
+    <eLiterals name="hvm" literal="hvm"/>
+    <eLiterals name="paravirtual" value="1" literal="paravirtual"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Instanceec2" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Compute">
     <eOperations name="terminate"/>
@@ -60,7 +60,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="kernelId" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyPairName" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="monitoringState" eType="#//MonitoringState"
-        defaultValueLiteral="Disabled"/>
+        defaultValueLiteral="disabled"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="platform" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="privateDNSName" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="privateIpV4Address" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String"/>

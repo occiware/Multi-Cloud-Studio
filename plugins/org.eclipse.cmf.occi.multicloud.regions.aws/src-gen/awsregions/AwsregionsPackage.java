@@ -630,7 +630,7 @@ public interface AwsregionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SA_EAST_1__MIXIN = RegionsPackage.EUROPE__MIXIN;
+	int SA_EAST_1__MIXIN = RegionsPackage.SOUTHAMERICA__MIXIN;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' container reference.
@@ -639,7 +639,7 @@ public interface AwsregionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SA_EAST_1__ENTITY = RegionsPackage.EUROPE__ENTITY;
+	int SA_EAST_1__ENTITY = RegionsPackage.SOUTHAMERICA__ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -648,7 +648,7 @@ public interface AwsregionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SA_EAST_1__ATTRIBUTES = RegionsPackage.EUROPE__ATTRIBUTES;
+	int SA_EAST_1__ATTRIBUTES = RegionsPackage.SOUTHAMERICA__ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Country</b></em>' attribute.
@@ -657,7 +657,7 @@ public interface AwsregionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SA_EAST_1__COUNTRY = RegionsPackage.EUROPE_FEATURE_COUNT + 0;
+	int SA_EAST_1__COUNTRY = RegionsPackage.SOUTHAMERICA_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Region Name</b></em>' attribute.
@@ -666,7 +666,7 @@ public interface AwsregionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SA_EAST_1__REGION_NAME = RegionsPackage.EUROPE_FEATURE_COUNT + 1;
+	int SA_EAST_1__REGION_NAME = RegionsPackage.SOUTHAMERICA_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Region Id</b></em>' attribute.
@@ -675,7 +675,7 @@ public interface AwsregionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SA_EAST_1__REGION_ID = RegionsPackage.EUROPE_FEATURE_COUNT + 2;
+	int SA_EAST_1__REGION_ID = RegionsPackage.SOUTHAMERICA_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>City</b></em>' attribute.
@@ -684,7 +684,7 @@ public interface AwsregionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SA_EAST_1__CITY = RegionsPackage.EUROPE_FEATURE_COUNT + 3;
+	int SA_EAST_1__CITY = RegionsPackage.SOUTHAMERICA_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Sa east 1</em>' class.
@@ -693,7 +693,7 @@ public interface AwsregionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SA_EAST_1_FEATURE_COUNT = RegionsPackage.EUROPE_FEATURE_COUNT + 4;
+	int SA_EAST_1_FEATURE_COUNT = RegionsPackage.SOUTHAMERICA_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Sa east 1</em>' class.
@@ -702,7 +702,7 @@ public interface AwsregionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SA_EAST_1_OPERATION_COUNT = RegionsPackage.EUROPE_OPERATION_COUNT + 0;
+	int SA_EAST_1_OPERATION_COUNT = RegionsPackage.SOUTHAMERICA_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link awsregions.impl.Us_west_2Impl <em>Us west 2</em>}' class.

@@ -215,12 +215,12 @@ public class AwsregionsTables
 		private static final /*@NonNull*/ ExecutorFragment _Eu_west_3__OclElement = new ExecutorFragment(Types._Eu_west_3, OCLstdlibTables.Types._OclElement);
 		private static final /*@NonNull*/ ExecutorFragment _Eu_west_3__Region = new ExecutorFragment(Types._Eu_west_3, RegionsTables.Types._Region);
 
-		private static final /*@NonNull*/ ExecutorFragment _Sa_east_1__Europe = new ExecutorFragment(Types._Sa_east_1, RegionsTables.Types._Europe);
 		private static final /*@NonNull*/ ExecutorFragment _Sa_east_1__MixinBase = new ExecutorFragment(Types._Sa_east_1, OCCITables.Types._MixinBase);
 		private static final /*@NonNull*/ ExecutorFragment _Sa_east_1__OclAny = new ExecutorFragment(Types._Sa_east_1, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _Sa_east_1__OclElement = new ExecutorFragment(Types._Sa_east_1, OCLstdlibTables.Types._OclElement);
 		private static final /*@NonNull*/ ExecutorFragment _Sa_east_1__Region = new ExecutorFragment(Types._Sa_east_1, RegionsTables.Types._Region);
 		private static final /*@NonNull*/ ExecutorFragment _Sa_east_1__Sa_east_1 = new ExecutorFragment(Types._Sa_east_1, AwsregionsTables.Types._Sa_east_1);
+		private static final /*@NonNull*/ ExecutorFragment _Sa_east_1__Southamerica = new ExecutorFragment(Types._Sa_east_1, RegionsTables.Types._Southamerica);
 
 		private static final /*@NonNull*/ ExecutorFragment _Us_east_1__MixinBase = new ExecutorFragment(Types._Us_east_1, OCCITables.Types._MixinBase);
 		private static final /*@NonNull*/ ExecutorFragment _Us_east_1__Northamerica = new ExecutorFragment(Types._Us_east_1, RegionsTables.Types._Northamerica);
@@ -529,7 +529,7 @@ public class AwsregionsTables
 			Fragments._Sa_east_1__OclElement /* 1 */,
 			Fragments._Sa_east_1__MixinBase /* 2 */,
 			Fragments._Sa_east_1__Region /* 3 */,
-			Fragments._Sa_east_1__Europe /* 4 */,
+			Fragments._Sa_east_1__Southamerica /* 4 */,
 			Fragments._Sa_east_1__Sa_east_1 /* 5 */
 		};
 		private static final int /*@NonNull*/ [] __Sa_east_1 = { 1,1,1,1,1,1 };
@@ -927,7 +927,6 @@ public class AwsregionsTables
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Eu_west_3__Region = {};
 
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Sa_east_1__Sa_east_1 = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Sa_east_1__Europe = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Sa_east_1__MixinBase = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Sa_east_1__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
@@ -956,6 +955,7 @@ public class AwsregionsTables
 			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Sa_east_1__Region = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Sa_east_1__Southamerica = {};
 
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Us_east_1__Us_east_1 = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Us_east_1__MixinBase = {};
@@ -1155,12 +1155,12 @@ public class AwsregionsTables
 			Fragments._Eu_west_3__OclElement.initOperations(_Eu_west_3__OclElement);
 			Fragments._Eu_west_3__Region.initOperations(_Eu_west_3__Region);
 
-			Fragments._Sa_east_1__Europe.initOperations(_Sa_east_1__Europe);
 			Fragments._Sa_east_1__MixinBase.initOperations(_Sa_east_1__MixinBase);
 			Fragments._Sa_east_1__OclAny.initOperations(_Sa_east_1__OclAny);
 			Fragments._Sa_east_1__OclElement.initOperations(_Sa_east_1__OclElement);
 			Fragments._Sa_east_1__Region.initOperations(_Sa_east_1__Region);
 			Fragments._Sa_east_1__Sa_east_1.initOperations(_Sa_east_1__Sa_east_1);
+			Fragments._Sa_east_1__Southamerica.initOperations(_Sa_east_1__Southamerica);
 
 			Fragments._Us_east_1__MixinBase.initOperations(_Us_east_1__MixinBase);
 			Fragments._Us_east_1__Northamerica.initOperations(_Us_east_1__Northamerica);

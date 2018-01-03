@@ -7,9 +7,6 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: org.eclipse.cmf.occi.multicloud.aws.ec2,
- org.eclipse.cmf.occi.multicloud.aws.ec2.impl,
- org.eclipse.cmf.occi.multicloud.aws.ec2.util
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,

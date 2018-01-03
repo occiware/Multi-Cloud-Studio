@@ -2,8 +2,8 @@
 <occi:Extension xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:occi="http://schemas.ogf.org/occi/core/ecore" name="ec2" scheme="http://occiware.org/occi/infrastructure/aws#">
   <import href="http://schemas.ogf.org/occi/core#/"/>
   <import href="http://occiware.org/occi/infrastructure/locations#/"/>
-  <import href="http://schemas.ogf.org/occi/infrastructure#/"/>
   <import href="http://occiware.org/occi/infrastructure/security#/"/>
+  <import href="http://schemas.ogf.org/occi/infrastructure#/"/>
   <import href="http://occiware.org/occi/infrastructure/locations/aws#/"/>
   <kinds name="instanceEC2" scheme="http://occiware.org/occi/infrastructure/aws#">
     <attributes name="name" mutable="true" description="Name of this instance, this is represented by a tag on provider aws.">
@@ -45,7 +45,7 @@
     <attributes name="keyPairName" mutable="true" description="The name of the key pair, if this instance was launched with an associated key pair.">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="monitoringState" mutable="true" default="Disabled" description="Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled." type="//@types.3"/>
+    <attributes name="monitoringState" mutable="true" default="disabled" description="Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled." type="//@types.3"/>
     <attributes name="platform" mutable="true" description="The value is Windows for Windows instances; otherwise blank.">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
@@ -1574,21 +1574,21 @@
     <literals name="rebooting"/>
   </types>
   <types xsi:type="occi:EnumerationType" name="HypervisorType">
-    <literals name="Ovm"/>
-    <literals name="Xen"/>
+    <literals name="ovm"/>
+    <literals name="xen"/>
   </types>
   <types xsi:type="occi:EnumerationType" name="InstanceLifeCycleType">
-    <literals name="Scheduled"/>
-    <literals name="Spot"/>
+    <literals name="scheduled"/>
+    <literals name="spot"/>
   </types>
   <types xsi:type="occi:EnumerationType" name="MonitoringState">
-    <literals name="Disabled"/>
-    <literals name="Disabling"/>
-    <literals name="Enabled"/>
-    <literals name="Pending"/>
+    <literals name="disabled"/>
+    <literals name="disabling"/>
+    <literals name="enabled"/>
+    <literals name="pending"/>
   </types>
   <types xsi:type="occi:EnumerationType" name="VirtualizationType">
-    <literals name="Hvm"/>
-    <literals name="Paravirtual"/>
+    <literals name="hvm"/>
+    <literals name="paravirtual"/>
   </types>
 </occi:Extension>

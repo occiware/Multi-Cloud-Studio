@@ -15,7 +15,7 @@ package awsregions.impl;
 import awsregions.AwsregionsPackage;
 import awsregions.Sa_east_1;
 
-import org.eclipse.cmf.occi.multicloud.regions.impl.EuropeImpl;
+import org.eclipse.cmf.occi.multicloud.regions.impl.SouthamericaImpl;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -39,7 +39,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class Sa_east_1Impl extends EuropeImpl implements Sa_east_1 {
+public class Sa_east_1Impl extends SouthamericaImpl implements Sa_east_1 {
 	/**
 	 * The default value of the '{@link #getCountry() <em>Country</em>}' attribute.
 	 * <!-- begin-user-doc -->

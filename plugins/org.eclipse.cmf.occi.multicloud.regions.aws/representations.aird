@@ -4,12 +4,12 @@
     <semanticResources>model/awsregions.occie</semanticResources>
     <semanticResources>http://schemas.ogf.org/occi/core</semanticResources>
     <semanticResources>http://occiware.org/occi/infrastructure/locations</semanticResources>
-    <semanticResources>model/awsregions.ecore</semanticResources>
-    <semanticResources>platform:/resource/org.eclipse.cmf.occi.multicloud.regions/model/regions.ecore</semanticResources>
     <semanticResources>platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore</semanticResources>
     <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
-    <semanticResources>platform:/resource/org.eclipse.cmf.occi.multicloud.regions/model/regions.genmodel</semanticResources>
     <semanticResources>platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.genmodel</semanticResources>
+    <semanticResources>platform:/resource/org.eclipse.cmf.occi.multicloud.regions/model/regions.ecore</semanticResources>
+    <semanticResources>platform:/resource/org.eclipse.cmf.occi.multicloud.regions/model/regions.genmodel</semanticResources>
+    <semanticResources>model/awsregions.ecore</semanticResources>
     <semanticResources>model/awsregions.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_ZacVkOykEeeHeIBag6JF7A">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']"/>
@@ -369,7 +369,7 @@
             <styles xmi:type="notation:FilteringStyle" xmi:id="_2Q3cdOymEeeRRaJMDHOJJw"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_2Q3cb-ymEeeRRaJMDHOJJw" fontName=".AppleSystemUIFont" fontHeight="12" bold="true"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2Q3ccOymEeeRRaJMDHOJJw" x="388" y="623"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2Q3ccOymEeeRRaJMDHOJJw" x="492" y="636"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_2Q3cdeymEeeRRaJMDHOJJw" type="2003" element="_2Qg3E-ymEeeRRaJMDHOJJw">
           <children xmi:type="notation:Node" xmi:id="_2Q4DcOymEeeRRaJMDHOJJw" type="5007"/>
@@ -1100,22 +1100,6 @@
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_T9v8CuynEeeRRaJMDHOJJw" id="(0.7870967741935484,0.0)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_T9v8C-ynEeeRRaJMDHOJJw" id="(1.0,0.5)"/>
         </edges>
-        <edges xmi:type="notation:Edge" xmi:id="_UhjMoOynEeeRRaJMDHOJJw" type="4001" element="_UhT8EOynEeeRRaJMDHOJJw" source="_2Q3cbuymEeeRRaJMDHOJJw" target="_iIVn4OymEeeRRaJMDHOJJw">
-          <children xmi:type="notation:Node" xmi:id="_UhjMpOynEeeRRaJMDHOJJw" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UhjMpeynEeeRRaJMDHOJJw" y="-10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_UhjMpuynEeeRRaJMDHOJJw" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UhjMp-ynEeeRRaJMDHOJJw" y="10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_UhjMqOynEeeRRaJMDHOJJw" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UhjMqeynEeeRRaJMDHOJJw" y="10"/>
-          </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_UhjMoeynEeeRRaJMDHOJJw"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_UhjMouynEeeRRaJMDHOJJw" fontName=".AppleSystemUIFont" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_UhjMo-ynEeeRRaJMDHOJJw" points="[0, 0, 312, 150]$[-312, -150, 0, 0]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_UhjMquynEeeRRaJMDHOJJw" id="(0.0,0.18478260869565216)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_UhjMq-ynEeeRRaJMDHOJJw" id="(0.5111111111111111,1.0)"/>
-        </edges>
         <edges xmi:type="notation:Edge" xmi:id="_VZObgOynEeeRRaJMDHOJJw" type="4001" element="_VY980OynEeeRRaJMDHOJJw" source="_2Q4De-ymEeeRRaJMDHOJJw" target="_iIYEK-ymEeeRRaJMDHOJJw">
           <children xmi:type="notation:Node" xmi:id="_VZObhOynEeeRRaJMDHOJJw" type="6001">
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VZObheynEeeRRaJMDHOJJw" y="-10"/>
@@ -1196,6 +1180,22 @@
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_YK1niuynEeeRRaJMDHOJJw" id="(0.0,0.20652173913043478)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_YK1ni-ynEeeRRaJMDHOJJw" id="(1.0,0.5)"/>
         </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_oeqq8PCPEeedPZtpPm1cgg" type="4001" element="_od09cPCPEeedPZtpPm1cgg" source="_2Q3cbuymEeeRRaJMDHOJJw" target="_iIYEJOymEeeRRaJMDHOJJw">
+          <children xmi:type="notation:Node" xmi:id="_oeqq9PCPEeedPZtpPm1cgg" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oeqq9fCPEeedPZtpPm1cgg" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_oeqq9vCPEeedPZtpPm1cgg" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oeqq9_CPEeedPZtpPm1cgg" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_oeqq-PCPEeedPZtpPm1cgg" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oeqq-fCPEeedPZtpPm1cgg" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_oeqq8fCPEeedPZtpPm1cgg"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_oeqq8vCPEeedPZtpPm1cgg" fontName=".AppleSystemUIFont" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_oeqq8_CPEeedPZtpPm1cgg" points="[0, 0, 68, 154]$[-68, -154, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_oerSAPCPEeedPZtpPm1cgg" id="(0.17054263565891473,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_oerSAfCPEeedPZtpPm1cgg" id="(0.22727272727272727,1.0)"/>
+        </edges>
       </data>
     </ownedAnnotationEntries>
     <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_ZcEGMOykEeeHeIBag6JF7A" name="core" incomingEdges="_ZczGAOykEeeHeIBag6JF7A">
@@ -1267,7 +1267,7 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='BooleanTypeContainer']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='BooleanTypeContainer']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_ZcinUuykEeeHeIBag6JF7A" name="boolean" tooltipText="org.eclipse.cmf.occi.core.impl.BooleanTypeImpl@3607f628 (name: Boolean, documentation: Data type for booleans)">
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_ZcinUuykEeeHeIBag6JF7A" name="boolean" tooltipText="org.eclipse.cmf.occi.core.impl.BooleanTypeImpl@5d9ababa (name: Boolean, documentation: Data type for booleans)">
           <target xmi:type="occi:BooleanType" href="http://schemas.ogf.org/occi/core#//@types.1"/>
           <semanticElements xmi:type="occi:BooleanType" href="http://schemas.ogf.org/occi/core#//@types.1"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_ZcinU-ykEeeHeIBag6JF7A" labelSize="10" showIcon="false">
@@ -1285,7 +1285,7 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='StringTypeContainer']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='StringTypeContainer']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_ZcjOYuykEeeHeIBag6JF7A" name="java.lang.String" tooltipText="org.eclipse.cmf.occi.core.impl.StringTypeImpl@2ae654f (name: String, documentation: Data type for strings) (pattern: null, length: &lt;unset>, minLength: &lt;unset>, maxLength: &lt;unset>)">
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_ZcjOYuykEeeHeIBag6JF7A" name="java.lang.String" tooltipText="org.eclipse.cmf.occi.core.impl.StringTypeImpl@76cac011 (name: String, documentation: Data type for strings) (pattern: null, length: &lt;unset>, minLength: &lt;unset>, maxLength: &lt;unset>)">
           <target xmi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
           <semanticElements xmi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_ZcjOY-ykEeeHeIBag6JF7A" labelSize="10" showIcon="false">
@@ -1303,7 +1303,7 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='NumericTypeContainer']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='NumericTypeContainer']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_Zcj1ceykEeeHeIBag6JF7A" name="Integer" tooltipText="org.eclipse.cmf.occi.core.impl.NumericTypeImpl@19960eaf (name: Integer, documentation: Data type for integers) (type: Integer, totalDigits: &lt;unset>, minExclusive: &lt;unset>, maxExclusive: &lt;unset>, minInclusive: &lt;unset>, maxInclusive: &lt;unset>)">
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_Zcj1ceykEeeHeIBag6JF7A" name="Integer" tooltipText="org.eclipse.cmf.occi.core.impl.NumericTypeImpl@4173bf21 (name: Integer, documentation: Data type for integers) (type: Integer, totalDigits: &lt;unset>, minExclusive: &lt;unset>, maxExclusive: &lt;unset>, minInclusive: &lt;unset>, maxInclusive: &lt;unset>)">
           <target xmi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
           <semanticElements xmi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_Zcj1cuykEeeHeIBag6JF7A" labelSize="10" showIcon="false">
@@ -1368,7 +1368,7 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='MixinContainer']/@subNodeMappings[name='MixinAttribute']"/>
         </ownedElements>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_iH6xIOymEeeRRaJMDHOJJw" name="Europe" outgoingEdges="_iIJaoOymEeeRRaJMDHOJJw _iIKowuymEeeRRaJMDHOJJw _iIKoxeymEeeRRaJMDHOJJw" incomingEdges="_SY8hYOynEeeRRaJMDHOJJw _S4YPYOynEeeRRaJMDHOJJw _TZBeUOynEeeRRaJMDHOJJw _T9gEYOynEeeRRaJMDHOJJw _UhT8EOynEeeRRaJMDHOJJw">
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_iH6xIOymEeeRRaJMDHOJJw" name="Europe" outgoingEdges="_iIJaoOymEeeRRaJMDHOJJw _iIKowuymEeeRRaJMDHOJJw _iIKoxeymEeeRRaJMDHOJJw" incomingEdges="_SY8hYOynEeeRRaJMDHOJJw _S4YPYOynEeeRRaJMDHOJJw _TZBeUOynEeeRRaJMDHOJJw _T9gEYOynEeeRRaJMDHOJJw">
         <target xmi:type="occi:Mixin" href="http://occiware.org/occi/infrastructure/locations#//@mixins[term='europe']"/>
         <semanticElements xmi:type="occi:Mixin" href="http://occiware.org/occi/infrastructure/locations#//@mixins[term='europe']"/>
         <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_iH6xIeymEeeRRaJMDHOJJw" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" borderColor="0,37,74" backgroundStyle="GradientTopToBottom" backgroundColor="187,221,255" foregroundColor="255,255,255">
@@ -1389,7 +1389,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='MixinContainer']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_iH7YMuymEeeRRaJMDHOJJw" name="SouthAmerica" outgoingEdges="_iIKBteymEeeRRaJMDHOJJw _iILP0-ymEeeRRaJMDHOJJw _iILP1uymEeeRRaJMDHOJJw">
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_iH7YMuymEeeRRaJMDHOJJw" name="SouthAmerica" outgoingEdges="_iIKBteymEeeRRaJMDHOJJw _iILP0-ymEeeRRaJMDHOJJw _iILP1uymEeeRRaJMDHOJJw" incomingEdges="_od09cPCPEeedPZtpPm1cgg">
         <target xmi:type="occi:Mixin" href="http://occiware.org/occi/infrastructure/locations#//@mixins[term='southamerica']"/>
         <semanticElements xmi:type="occi:Mixin" href="http://occiware.org/occi/infrastructure/locations#//@mixins[term='southamerica']"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -1886,7 +1886,7 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@containerMappings[name='MixinContainer']/@subNodeMappings[name='MixinAttribute']"/>
       </ownedElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_2Qg3EeymEeeRRaJMDHOJJw" name="sa_east_1" outgoingEdges="_UhT8EOynEeeRRaJMDHOJJw">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_2Qg3EeymEeeRRaJMDHOJJw" name="sa_east_1" outgoingEdges="_od09cPCPEeedPZtpPm1cgg">
       <target xmi:type="occi:Mixin" href="model/awsregions.occie#//@mixins[term='sa_east_1']"/>
       <semanticElements xmi:type="occi:Mixin" href="model/awsregions.occie#//@mixins[term='sa_east_1']"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -2354,14 +2354,6 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@edgeMappings[name='DependsEdge']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_UhT8EOynEeeRRaJMDHOJJw" sourceNode="_2Qg3EeymEeeRRaJMDHOJJw" targetNode="_iH6xIOymEeeRRaJMDHOJJw">
-      <target xmi:type="occi:Mixin" href="model/awsregions.occie#//@mixins[term='sa_east_1']"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_UhT8EeynEeeRRaJMDHOJJw" targetArrow="InputClosedArrow" size="2">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@edgeMappings[name='DependsEdge']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_UhT8EuynEeeRRaJMDHOJJw"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@edgeMappings[name='DependsEdge']"/>
-    </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_VY980OynEeeRRaJMDHOJJw" sourceNode="_2Qg3F-ymEeeRRaJMDHOJJw" targetNode="_iH7YNOymEeeRRaJMDHOJJw">
       <target xmi:type="occi:Mixin" href="model/awsregions.occie#//@mixins[term='ap_southeast_1']"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_VY-j4OynEeeRRaJMDHOJJw" targetArrow="InputClosedArrow" size="2">
@@ -2399,6 +2391,14 @@
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_YKlI0eynEeeRRaJMDHOJJw" targetArrow="InputClosedArrow" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@edgeMappings[name='DependsEdge']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_YKlI0uynEeeRRaJMDHOJJw"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@edgeMappings[name='DependsEdge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_od09cPCPEeedPZtpPm1cgg" sourceNode="_2Qg3EeymEeeRRaJMDHOJJw" targetNode="_iH7YMuymEeeRRaJMDHOJJw">
+      <target xmi:type="occi:Mixin" href="model/awsregions.occie#//@mixins[term='sa_east_1']"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_od09cfCPEeedPZtpPm1cgg" targetArrow="InputClosedArrow" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@edgeMappings[name='DependsEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_od09cvCPEeedPZtpPm1cgg"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']/@defaultLayer/@edgeMappings[name='DependsEdge']"/>
     </ownedDiagramElements>

@@ -20,6 +20,7 @@ import org.eclipse.cmf.occi.multicloud.regions.Asiapacific;
 import org.eclipse.cmf.occi.multicloud.regions.Europe;
 import org.eclipse.cmf.occi.multicloud.regions.Northamerica;
 import org.eclipse.cmf.occi.multicloud.regions.Region;
+import org.eclipse.cmf.occi.multicloud.regions.Southamerica;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -140,7 +141,7 @@ public class AwsregionsSwitch<T> extends Switch<T> {
 			case AwsregionsPackage.SA_EAST_1: {
 				Sa_east_1 sa_east_1 = (Sa_east_1)theEObject;
 				T result = caseSa_east_1(sa_east_1);
-				if (result == null) result = caseEurope(sa_east_1);
+				if (result == null) result = caseSouthamerica(sa_east_1);
 				if (result == null) result = caseRegion(sa_east_1);
 				if (result == null) result = caseMixinBase(sa_east_1);
 				if (result == null) result = defaultCase(theEObject);
@@ -519,6 +520,21 @@ public class AwsregionsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAsiapacific(Asiapacific object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Southamerica</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Southamerica</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSouthamerica(Southamerica object) {
 		return null;
 	}
 

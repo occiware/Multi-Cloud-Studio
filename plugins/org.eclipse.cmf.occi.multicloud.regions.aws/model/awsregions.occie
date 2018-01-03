@@ -105,7 +105,7 @@
     <attributes name="city" mutable="true" default="S&#xe3;o Paulo" description="The city where this resource or link is available">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <depends href="http://occiware.org/occi/infrastructure/locations#//@mixins[term='europe']"/>
+    <depends href="http://occiware.org/occi/infrastructure/locations#//@mixins[term='southamerica']"/>
   </mixins>
   <mixins name="us_west_2" scheme="http://occiware.org/occi/infrastructure/locations/aws#">
     <attributes name="regionName" mutable="true" default="US West (Oregon)" description="Region name give an intelligible name on this region">

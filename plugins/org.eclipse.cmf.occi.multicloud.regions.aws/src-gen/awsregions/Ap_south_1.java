@@ -48,7 +48,6 @@ public interface Ap_south_1 extends Asiapacific, MixinBase {
 	 * @see #setCountry(String)
 	 * @see awsregions.AwsregionsPackage#getAp_south_1_Country()
 	 * @model default="India" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Ap_south_1!country'"
 	 * @generated
 	 */
 	String getCountry();
@@ -75,7 +74,6 @@ public interface Ap_south_1 extends Asiapacific, MixinBase {
 	 * @see #setRegionName(String)
 	 * @see awsregions.AwsregionsPackage#getAp_south_1_RegionName()
 	 * @model default="Asia Pacific (Mumbai)" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Ap_south_1!regionName'"
 	 * @generated
 	 */
 	String getRegionName();
@@ -102,7 +100,6 @@ public interface Ap_south_1 extends Asiapacific, MixinBase {
 	 * @see #setRegionId(String)
 	 * @see awsregions.AwsregionsPackage#getAp_south_1_RegionId()
 	 * @model default="ap-south-1" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Ap_south_1!regionId'"
 	 * @generated
 	 */
 	String getRegionId();
@@ -129,7 +126,6 @@ public interface Ap_south_1 extends Asiapacific, MixinBase {
 	 * @see #setCity(String)
 	 * @see awsregions.AwsregionsPackage#getAp_south_1_City()
 	 * @model default="Bombay" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Ap_south_1!city'"
 	 * @generated
 	 */
 	String getCity();

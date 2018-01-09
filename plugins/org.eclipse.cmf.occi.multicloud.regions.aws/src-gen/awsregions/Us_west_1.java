@@ -48,7 +48,6 @@ public interface Us_west_1 extends Northamerica, MixinBase {
 	 * @see #setRegionName(String)
 	 * @see awsregions.AwsregionsPackage#getUs_west_1_RegionName()
 	 * @model default="US West (N. California)" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Us_west_1!regionName'"
 	 * @generated
 	 */
 	String getRegionName();
@@ -75,7 +74,6 @@ public interface Us_west_1 extends Northamerica, MixinBase {
 	 * @see #setCountry(String)
 	 * @see awsregions.AwsregionsPackage#getUs_west_1_Country()
 	 * @model default="USA" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Us_west_1!country'"
 	 * @generated
 	 */
 	String getCountry();
@@ -102,7 +100,6 @@ public interface Us_west_1 extends Northamerica, MixinBase {
 	 * @see #setRegionId(String)
 	 * @see awsregions.AwsregionsPackage#getUs_west_1_RegionId()
 	 * @model default="us-west-1" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Us_west_1!regionId'"
 	 * @generated
 	 */
 	String getRegionId();
@@ -129,7 +126,6 @@ public interface Us_west_1 extends Northamerica, MixinBase {
 	 * @see #setCity(String)
 	 * @see awsregions.AwsregionsPackage#getUs_west_1_City()
 	 * @model default="Palo Alto" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Us_west_1!city'"
 	 * @generated
 	 */
 	String getCity();

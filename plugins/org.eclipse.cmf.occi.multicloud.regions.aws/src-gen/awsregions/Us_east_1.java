@@ -48,7 +48,6 @@ public interface Us_east_1 extends Northamerica, MixinBase {
 	 * @see #setRegionName(String)
 	 * @see awsregions.AwsregionsPackage#getUs_east_1_RegionName()
 	 * @model default="US East (N. Virginia)" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Us_east_1!regionName'"
 	 * @generated
 	 */
 	String getRegionName();
@@ -75,7 +74,6 @@ public interface Us_east_1 extends Northamerica, MixinBase {
 	 * @see #setCountry(String)
 	 * @see awsregions.AwsregionsPackage#getUs_east_1_Country()
 	 * @model default="USA" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Us_east_1!country'"
 	 * @generated
 	 */
 	String getCountry();
@@ -102,7 +100,6 @@ public interface Us_east_1 extends Northamerica, MixinBase {
 	 * @see #setRegionId(String)
 	 * @see awsregions.AwsregionsPackage#getUs_east_1_RegionId()
 	 * @model default="us-east-1" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Us_east_1!regionId'"
 	 * @generated
 	 */
 	String getRegionId();
@@ -129,7 +126,6 @@ public interface Us_east_1 extends Northamerica, MixinBase {
 	 * @see #setCity(String)
 	 * @see awsregions.AwsregionsPackage#getUs_east_1_City()
 	 * @model default="Ashburn, Sterling, Charlottesville" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Us_east_1!city'"
 	 * @generated
 	 */
 	String getCity();

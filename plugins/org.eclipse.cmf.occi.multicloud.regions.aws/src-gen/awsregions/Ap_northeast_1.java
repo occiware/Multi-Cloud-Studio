@@ -48,7 +48,6 @@ public interface Ap_northeast_1 extends Asiapacific, MixinBase {
 	 * @see #setCountry(String)
 	 * @see awsregions.AwsregionsPackage#getAp_northeast_1_Country()
 	 * @model default="Japan" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Ap_northeast_1!country'"
 	 * @generated
 	 */
 	String getCountry();
@@ -75,7 +74,6 @@ public interface Ap_northeast_1 extends Asiapacific, MixinBase {
 	 * @see #setRegionName(String)
 	 * @see awsregions.AwsregionsPackage#getAp_northeast_1_RegionName()
 	 * @model default="Asia Pacific (Tokyo)" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Ap_northeast_1!regionName'"
 	 * @generated
 	 */
 	String getRegionName();
@@ -102,7 +100,6 @@ public interface Ap_northeast_1 extends Asiapacific, MixinBase {
 	 * @see #setRegionId(String)
 	 * @see awsregions.AwsregionsPackage#getAp_northeast_1_RegionId()
 	 * @model default="ap-northeast-1" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Ap_northeast_1!regionId'"
 	 * @generated
 	 */
 	String getRegionId();
@@ -129,7 +126,6 @@ public interface Ap_northeast_1 extends Asiapacific, MixinBase {
 	 * @see #setCity(String)
 	 * @see awsregions.AwsregionsPackage#getAp_northeast_1_City()
 	 * @model default="Tokyo" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Ap_northeast_1!city'"
 	 * @generated
 	 */
 	String getCity();

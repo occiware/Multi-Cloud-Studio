@@ -48,7 +48,6 @@ public interface Eu_central_1 extends Europe, MixinBase {
 	 * @see #setCountry(String)
 	 * @see awsregions.AwsregionsPackage#getEu_central_1_Country()
 	 * @model default="Germany" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Eu_central_1!country'"
 	 * @generated
 	 */
 	String getCountry();
@@ -75,7 +74,6 @@ public interface Eu_central_1 extends Europe, MixinBase {
 	 * @see #setRegionId(String)
 	 * @see awsregions.AwsregionsPackage#getEu_central_1_RegionId()
 	 * @model default="eu-central-1" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Eu_central_1!regionId'"
 	 * @generated
 	 */
 	String getRegionId();
@@ -102,7 +100,6 @@ public interface Eu_central_1 extends Europe, MixinBase {
 	 * @see #setCity(String)
 	 * @see awsregions.AwsregionsPackage#getEu_central_1_City()
 	 * @model default="Frankfurt" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Eu_central_1!city'"
 	 * @generated
 	 */
 	String getCity();
@@ -129,7 +126,6 @@ public interface Eu_central_1 extends Europe, MixinBase {
 	 * @see #setRegionName(String)
 	 * @see awsregions.AwsregionsPackage#getEu_central_1_RegionName()
 	 * @model default="EU (Frankfurt)" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Eu_central_1!regionName'"
 	 * @generated
 	 */
 	String getRegionName();

@@ -48,7 +48,6 @@ public interface Sa_east_1 extends Southamerica, MixinBase {
 	 * @see #setCountry(String)
 	 * @see awsregions.AwsregionsPackage#getSa_east_1_Country()
 	 * @model default="Brazil" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Sa_east_1!country'"
 	 * @generated
 	 */
 	String getCountry();
@@ -75,7 +74,6 @@ public interface Sa_east_1 extends Southamerica, MixinBase {
 	 * @see #setRegionName(String)
 	 * @see awsregions.AwsregionsPackage#getSa_east_1_RegionName()
 	 * @model default="South America (S\u00e3o Paulo)" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Sa_east_1!regionName'"
 	 * @generated
 	 */
 	String getRegionName();
@@ -102,7 +100,6 @@ public interface Sa_east_1 extends Southamerica, MixinBase {
 	 * @see #setRegionId(String)
 	 * @see awsregions.AwsregionsPackage#getSa_east_1_RegionId()
 	 * @model default="sa-east-1" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Sa_east_1!regionId'"
 	 * @generated
 	 */
 	String getRegionId();
@@ -129,7 +126,6 @@ public interface Sa_east_1 extends Southamerica, MixinBase {
 	 * @see #setCity(String)
 	 * @see awsregions.AwsregionsPackage#getSa_east_1_City()
 	 * @model default="S\u00e3o Paulo" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Sa_east_1!city'"
 	 * @generated
 	 */
 	String getCity();

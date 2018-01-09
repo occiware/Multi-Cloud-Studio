@@ -48,7 +48,6 @@ public interface Eu_west_3 extends Europe, MixinBase {
 	 * @see #setRegionName(String)
 	 * @see awsregions.AwsregionsPackage#getEu_west_3_RegionName()
 	 * @model default="EU (Paris)" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Eu_west_3!regionName'"
 	 * @generated
 	 */
 	String getRegionName();
@@ -75,7 +74,6 @@ public interface Eu_west_3 extends Europe, MixinBase {
 	 * @see #setCountry(String)
 	 * @see awsregions.AwsregionsPackage#getEu_west_3_Country()
 	 * @model default="France" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Eu_west_3!country'"
 	 * @generated
 	 */
 	String getCountry();
@@ -102,7 +100,6 @@ public interface Eu_west_3 extends Europe, MixinBase {
 	 * @see #setRegionId(String)
 	 * @see awsregions.AwsregionsPackage#getEu_west_3_RegionId()
 	 * @model default="eu-west-3" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Eu_west_3!regionId'"
 	 * @generated
 	 */
 	String getRegionId();
@@ -129,7 +126,6 @@ public interface Eu_west_3 extends Europe, MixinBase {
 	 * @see #setCity(String)
 	 * @see awsregions.AwsregionsPackage#getEu_west_3_City()
 	 * @model default="Paris" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Eu_west_3!city'"
 	 * @generated
 	 */
 	String getCity();

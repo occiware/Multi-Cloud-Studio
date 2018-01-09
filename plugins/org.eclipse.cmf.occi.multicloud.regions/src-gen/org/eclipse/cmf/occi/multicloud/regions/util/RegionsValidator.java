@@ -16,6 +16,7 @@ import java.util.Map;
 
 import org.eclipse.cmf.occi.multicloud.regions.*;
 
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 
@@ -50,68 +51,12 @@ public class RegionsValidator extends EObjectValidator {
 	public static final String DIAGNOSTIC_SOURCE = "org.eclipse.cmf.occi.multicloud.regions";
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Region'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int REGION__APPLIES_CONSTRAINT = 1;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Availabilityzone'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int AVAILABILITYZONE__APPLIES_CONSTRAINT = 2;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Europe'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int EUROPE__APPLIES_CONSTRAINT = 3;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Northamerica'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int NORTHAMERICA__APPLIES_CONSTRAINT = 4;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Southamerica'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int SOUTHAMERICA__APPLIES_CONSTRAINT = 5;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Asiapacific'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int ASIAPACIFIC__APPLIES_CONSTRAINT = 6;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Africa'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int AFRICA__APPLIES_CONSTRAINT = 7;
-
-	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 7;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 0;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -190,13 +135,32 @@ public class RegionsValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>Region</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String REGION__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(occi::Resource) or self.entity.oclIsKindOf(occi::Link)";
+
+	/**
 	 * Validates the appliesConstraint constraint of '<em>Region</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateRegion_appliesConstraint(Region region, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return region.appliesConstraint(diagnostics, context);
+		return
+			validate
+				(RegionsPackage.Literals.REGION,
+				 region,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "appliesConstraint",
+				 REGION__APPLIES_CONSTRAINT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -219,13 +183,32 @@ public class RegionsValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>Availabilityzone</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String AVAILABILITYZONE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(occi::Resource) or self.entity.oclIsKindOf(occi::Link)";
+
+	/**
 	 * Validates the appliesConstraint constraint of '<em>Availabilityzone</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateAvailabilityzone_appliesConstraint(Availabilityzone availabilityzone, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return availabilityzone.appliesConstraint(diagnostics, context);
+		return
+			validate
+				(RegionsPackage.Literals.AVAILABILITYZONE,
+				 availabilityzone,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "appliesConstraint",
+				 AVAILABILITYZONE__APPLIES_CONSTRAINT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -248,13 +231,40 @@ public class RegionsValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>Europe</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String EUROPE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(occi::Resource) or self.entity.oclIsKindOf(occi::Link)";
+
+	/**
 	 * Validates the appliesConstraint constraint of '<em>Europe</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateEurope_appliesConstraint(Europe europe, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return europe.appliesConstraint(diagnostics, context);
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(europe, context) },
+						 new Object[] { europe },
+						 context));
+			}
+			return false;
+		}
+		return validateRegion_appliesConstraint(europe, diagnostics, context);
 	}
 
 	/**
@@ -277,13 +287,40 @@ public class RegionsValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>Northamerica</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String NORTHAMERICA__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(occi::Resource) or self.entity.oclIsKindOf(occi::Link)";
+
+	/**
 	 * Validates the appliesConstraint constraint of '<em>Northamerica</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateNorthamerica_appliesConstraint(Northamerica northamerica, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return northamerica.appliesConstraint(diagnostics, context);
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(northamerica, context) },
+						 new Object[] { northamerica },
+						 context));
+			}
+			return false;
+		}
+		return validateRegion_appliesConstraint(northamerica, diagnostics, context);
 	}
 
 	/**
@@ -306,13 +343,40 @@ public class RegionsValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>Southamerica</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String SOUTHAMERICA__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(occi::Resource) or self.entity.oclIsKindOf(occi::Link)";
+
+	/**
 	 * Validates the appliesConstraint constraint of '<em>Southamerica</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateSouthamerica_appliesConstraint(Southamerica southamerica, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return southamerica.appliesConstraint(diagnostics, context);
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(southamerica, context) },
+						 new Object[] { southamerica },
+						 context));
+			}
+			return false;
+		}
+		return validateRegion_appliesConstraint(southamerica, diagnostics, context);
 	}
 
 	/**
@@ -335,13 +399,40 @@ public class RegionsValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>Asiapacific</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ASIAPACIFIC__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(occi::Link) or self.entity.oclIsKindOf(occi::Resource)";
+
+	/**
 	 * Validates the appliesConstraint constraint of '<em>Asiapacific</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateAsiapacific_appliesConstraint(Asiapacific asiapacific, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return asiapacific.appliesConstraint(diagnostics, context);
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(asiapacific, context) },
+						 new Object[] { asiapacific },
+						 context));
+			}
+			return false;
+		}
+		return validateRegion_appliesConstraint(asiapacific, diagnostics, context);
 	}
 
 	/**
@@ -364,13 +455,40 @@ public class RegionsValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>Africa</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String AFRICA__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(occi::Resource) or self.entity.oclIsKindOf(occi::Link)";
+
+	/**
 	 * Validates the appliesConstraint constraint of '<em>Africa</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateAfrica_appliesConstraint(Africa africa, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return africa.appliesConstraint(diagnostics, context);
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(africa, context) },
+						 new Object[] { africa },
+						 context));
+			}
+			return false;
+		}
+		return validateRegion_appliesConstraint(africa, diagnostics, context);
 	}
 
 	/**

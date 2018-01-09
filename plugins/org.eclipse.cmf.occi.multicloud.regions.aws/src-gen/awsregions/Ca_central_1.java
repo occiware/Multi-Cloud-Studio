@@ -48,7 +48,6 @@ public interface Ca_central_1 extends Northamerica, MixinBase {
 	 * @see #setRegionName(String)
 	 * @see awsregions.AwsregionsPackage#getCa_central_1_RegionName()
 	 * @model default="Canada (Central)" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Ca_central_1!regionName'"
 	 * @generated
 	 */
 	String getRegionName();
@@ -75,7 +74,6 @@ public interface Ca_central_1 extends Northamerica, MixinBase {
 	 * @see #setCountry(String)
 	 * @see awsregions.AwsregionsPackage#getCa_central_1_Country()
 	 * @model default="Canada" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Ca_central_1!country'"
 	 * @generated
 	 */
 	String getCountry();
@@ -102,7 +100,6 @@ public interface Ca_central_1 extends Northamerica, MixinBase {
 	 * @see #setRegionId(String)
 	 * @see awsregions.AwsregionsPackage#getCa_central_1_RegionId()
 	 * @model default="ca-central-1" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Ca_central_1!regionId'"
 	 * @generated
 	 */
 	String getRegionId();
@@ -129,7 +126,6 @@ public interface Ca_central_1 extends Northamerica, MixinBase {
 	 * @see #setCity(String)
 	 * @see awsregions.AwsregionsPackage#getCa_central_1_City()
 	 * @model default="Toronto" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Ca_central_1!city'"
 	 * @generated
 	 */
 	String getCity();

@@ -48,7 +48,6 @@ public interface Us_west_2 extends Northamerica, MixinBase {
 	 * @see #setRegionName(String)
 	 * @see awsregions.AwsregionsPackage#getUs_west_2_RegionName()
 	 * @model default="US West (Oregon)" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Us_west_2!regionName'"
 	 * @generated
 	 */
 	String getRegionName();
@@ -75,7 +74,6 @@ public interface Us_west_2 extends Northamerica, MixinBase {
 	 * @see #setCountry(String)
 	 * @see awsregions.AwsregionsPackage#getUs_west_2_Country()
 	 * @model default="USA" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Us_west_2!country'"
 	 * @generated
 	 */
 	String getCountry();
@@ -102,7 +100,6 @@ public interface Us_west_2 extends Northamerica, MixinBase {
 	 * @see #setRegionId(String)
 	 * @see awsregions.AwsregionsPackage#getUs_west_2_RegionId()
 	 * @model default="us-west-2" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Us_west_2!regionId'"
 	 * @generated
 	 */
 	String getRegionId();
@@ -129,7 +126,6 @@ public interface Us_west_2 extends Northamerica, MixinBase {
 	 * @see #setCity(String)
 	 * @see awsregions.AwsregionsPackage#getUs_west_2_City()
 	 * @model default="Oregon" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Us_west_2!city'"
 	 * @generated
 	 */
 	String getCity();

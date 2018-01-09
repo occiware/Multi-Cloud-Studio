@@ -48,7 +48,6 @@ public interface Ap_south_east2 extends Asiapacific, MixinBase {
 	 * @see #setCountry(String)
 	 * @see awsregions.AwsregionsPackage#getAp_south_east2_Country()
 	 * @model default="Australia" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Ap_south_east2!country'"
 	 * @generated
 	 */
 	String getCountry();
@@ -75,7 +74,6 @@ public interface Ap_south_east2 extends Asiapacific, MixinBase {
 	 * @see #setRegionName(String)
 	 * @see awsregions.AwsregionsPackage#getAp_south_east2_RegionName()
 	 * @model default="Asia Pacific (Sydney)" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Ap_south_east2!regionName'"
 	 * @generated
 	 */
 	String getRegionName();
@@ -102,7 +100,6 @@ public interface Ap_south_east2 extends Asiapacific, MixinBase {
 	 * @see #setRegionId(String)
 	 * @see awsregions.AwsregionsPackage#getAp_south_east2_RegionId()
 	 * @model default="ap-southeast-2" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Ap_south_east2!regionId'"
 	 * @generated
 	 */
 	String getRegionId();
@@ -129,7 +126,6 @@ public interface Ap_south_east2 extends Asiapacific, MixinBase {
 	 * @see #setCity(String)
 	 * @see awsregions.AwsregionsPackage#getAp_south_east2_City()
 	 * @model default="Sydney" dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/aws/ecore!Ap_south_east2!city'"
 	 * @generated
 	 */
 	String getCity();

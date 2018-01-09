@@ -33,6 +33,8 @@ import org.eclipse.emf.ecore.EPackage;
  * <!-- end-user-doc -->
  * @see org.eclipse.cmf.occi.multicloud.regions.RegionsFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot'"
+ *        annotation="http://www.eclipse.org/OCL/Import occi='http://schemas.ogf.org/occi/core/ecore'"
  * @generated
  */
 public interface RegionsPackage extends EPackage {
@@ -115,22 +117,13 @@ public interface RegionsPackage extends EPackage {
 	int REGION_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
-
-	/**
 	 * The number of operations of the '<em>Region</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REGION_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
+	int REGION_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.regions.impl.AvailabilityzoneImpl <em>Availabilityzone</em>}' class.
@@ -206,22 +199,13 @@ public interface RegionsPackage extends EPackage {
 	int AVAILABILITYZONE_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
 
 	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AVAILABILITYZONE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
-
-	/**
 	 * The number of operations of the '<em>Availabilityzone</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AVAILABILITYZONE_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
+	int AVAILABILITYZONE_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
 
 
 	/**
@@ -271,22 +255,13 @@ public interface RegionsPackage extends EPackage {
 	int EUROPE_FEATURE_COUNT = REGION_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EUROPE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = REGION_OPERATION_COUNT + 0;
-
-	/**
 	 * The number of operations of the '<em>Europe</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EUROPE_OPERATION_COUNT = REGION_OPERATION_COUNT + 1;
+	int EUROPE_OPERATION_COUNT = REGION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.regions.impl.NorthamericaImpl <em>Northamerica</em>}' class.
@@ -335,22 +310,13 @@ public interface RegionsPackage extends EPackage {
 	int NORTHAMERICA_FEATURE_COUNT = REGION_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NORTHAMERICA___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = REGION_OPERATION_COUNT + 0;
-
-	/**
 	 * The number of operations of the '<em>Northamerica</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NORTHAMERICA_OPERATION_COUNT = REGION_OPERATION_COUNT + 1;
+	int NORTHAMERICA_OPERATION_COUNT = REGION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.regions.impl.SouthamericaImpl <em>Southamerica</em>}' class.
@@ -399,22 +365,13 @@ public interface RegionsPackage extends EPackage {
 	int SOUTHAMERICA_FEATURE_COUNT = REGION_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOUTHAMERICA___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = REGION_OPERATION_COUNT + 0;
-
-	/**
 	 * The number of operations of the '<em>Southamerica</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SOUTHAMERICA_OPERATION_COUNT = REGION_OPERATION_COUNT + 1;
+	int SOUTHAMERICA_OPERATION_COUNT = REGION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.regions.impl.AsiapacificImpl <em>Asiapacific</em>}' class.
@@ -463,22 +420,13 @@ public interface RegionsPackage extends EPackage {
 	int ASIAPACIFIC_FEATURE_COUNT = REGION_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASIAPACIFIC___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = REGION_OPERATION_COUNT + 0;
-
-	/**
 	 * The number of operations of the '<em>Asiapacific</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASIAPACIFIC_OPERATION_COUNT = REGION_OPERATION_COUNT + 1;
+	int ASIAPACIFIC_OPERATION_COUNT = REGION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.regions.impl.AfricaImpl <em>Africa</em>}' class.
@@ -527,22 +475,13 @@ public interface RegionsPackage extends EPackage {
 	int AFRICA_FEATURE_COUNT = REGION_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AFRICA___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = REGION_OPERATION_COUNT + 0;
-
-	/**
 	 * The number of operations of the '<em>Africa</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AFRICA_OPERATION_COUNT = REGION_OPERATION_COUNT + 1;
+	int AFRICA_OPERATION_COUNT = REGION_OPERATION_COUNT + 0;
 
 
 	/**
@@ -554,16 +493,6 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getRegion();
-
-	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.regions.Region#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
-	 * @see org.eclipse.cmf.occi.multicloud.regions.Region#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getRegion__AppliesConstraint__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.regions.Availabilityzone <em>Availabilityzone</em>}'.
@@ -609,16 +538,6 @@ public interface RegionsPackage extends EPackage {
 	EAttribute getAvailabilityzone_Available();
 
 	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.regions.Availabilityzone#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
-	 * @see org.eclipse.cmf.occi.multicloud.regions.Availabilityzone#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getAvailabilityzone__AppliesConstraint__DiagnosticChain_Map();
-
-	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.regions.Europe <em>Europe</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -627,16 +546,6 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getEurope();
-
-	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.regions.Europe#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
-	 * @see org.eclipse.cmf.occi.multicloud.regions.Europe#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getEurope__AppliesConstraint__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.regions.Northamerica <em>Northamerica</em>}'.
@@ -649,16 +558,6 @@ public interface RegionsPackage extends EPackage {
 	EClass getNorthamerica();
 
 	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.regions.Northamerica#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
-	 * @see org.eclipse.cmf.occi.multicloud.regions.Northamerica#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getNorthamerica__AppliesConstraint__DiagnosticChain_Map();
-
-	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.regions.Southamerica <em>Southamerica</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -667,16 +566,6 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getSouthamerica();
-
-	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.regions.Southamerica#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
-	 * @see org.eclipse.cmf.occi.multicloud.regions.Southamerica#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getSouthamerica__AppliesConstraint__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.regions.Asiapacific <em>Asiapacific</em>}'.
@@ -689,16 +578,6 @@ public interface RegionsPackage extends EPackage {
 	EClass getAsiapacific();
 
 	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.regions.Asiapacific#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
-	 * @see org.eclipse.cmf.occi.multicloud.regions.Asiapacific#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getAsiapacific__AppliesConstraint__DiagnosticChain_Map();
-
-	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.regions.Africa <em>Africa</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -707,16 +586,6 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getAfrica();
-
-	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.regions.Africa#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
-	 * @see org.eclipse.cmf.occi.multicloud.regions.Africa#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getAfrica__AppliesConstraint__DiagnosticChain_Map();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -750,14 +619,6 @@ public interface RegionsPackage extends EPackage {
 		 * @generated
 		 */
 		EClass REGION = eINSTANCE.getRegion();
-
-		/**
-		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation REGION___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getRegion__AppliesConstraint__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.regions.impl.AvailabilityzoneImpl <em>Availabilityzone</em>}' class.
@@ -794,14 +655,6 @@ public interface RegionsPackage extends EPackage {
 		EAttribute AVAILABILITYZONE__AVAILABLE = eINSTANCE.getAvailabilityzone_Available();
 
 		/**
-		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation AVAILABILITYZONE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getAvailabilityzone__AppliesConstraint__DiagnosticChain_Map();
-
-		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.regions.impl.EuropeImpl <em>Europe</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -810,14 +663,6 @@ public interface RegionsPackage extends EPackage {
 		 * @generated
 		 */
 		EClass EUROPE = eINSTANCE.getEurope();
-
-		/**
-		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation EUROPE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getEurope__AppliesConstraint__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.regions.impl.NorthamericaImpl <em>Northamerica</em>}' class.
@@ -830,14 +675,6 @@ public interface RegionsPackage extends EPackage {
 		EClass NORTHAMERICA = eINSTANCE.getNorthamerica();
 
 		/**
-		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation NORTHAMERICA___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getNorthamerica__AppliesConstraint__DiagnosticChain_Map();
-
-		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.regions.impl.SouthamericaImpl <em>Southamerica</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -846,14 +683,6 @@ public interface RegionsPackage extends EPackage {
 		 * @generated
 		 */
 		EClass SOUTHAMERICA = eINSTANCE.getSouthamerica();
-
-		/**
-		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation SOUTHAMERICA___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getSouthamerica__AppliesConstraint__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.regions.impl.AsiapacificImpl <em>Asiapacific</em>}' class.
@@ -866,14 +695,6 @@ public interface RegionsPackage extends EPackage {
 		EClass ASIAPACIFIC = eINSTANCE.getAsiapacific();
 
 		/**
-		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ASIAPACIFIC___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getAsiapacific__AppliesConstraint__DiagnosticChain_Map();
-
-		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.regions.impl.AfricaImpl <em>Africa</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -882,14 +703,6 @@ public interface RegionsPackage extends EPackage {
 		 * @generated
 		 */
 		EClass AFRICA = eINSTANCE.getAfrica();
-
-		/**
-		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation AFRICA___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getAfrica__AppliesConstraint__DiagnosticChain_Map();
 
 	}
 

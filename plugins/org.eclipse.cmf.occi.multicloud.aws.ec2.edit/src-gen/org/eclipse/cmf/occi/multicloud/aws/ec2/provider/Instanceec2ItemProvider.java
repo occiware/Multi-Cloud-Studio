@@ -71,7 +71,6 @@ public class Instanceec2ItemProvider extends ComputeItemProvider {
 			addNamePropertyDescriptor(object);
 			addInstanceIdPropertyDescriptor(object);
 			addInstanceTypePropertyDescriptor(object);
-			addRegionIdPropertyDescriptor(object);
 			addZoneNamePropertyDescriptor(object);
 			addImageIdPropertyDescriptor(object);
 			addAwsInstanceStatusPropertyDescriptor(object);
@@ -154,28 +153,6 @@ public class Instanceec2ItemProvider extends ComputeItemProvider {
 				 getString("_UI_Instanceec2_instanceType_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Instanceec2_instanceType_feature", "_UI_Instanceec2_type"),
 				 Ec2Package.eINSTANCE.getInstanceec2_InstanceType(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Region Id feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRegionIdPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Instanceec2_regionId_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Instanceec2_regionId_feature", "_UI_Instanceec2_type"),
-				 Ec2Package.eINSTANCE.getInstanceec2_RegionId(),
 				 true,
 				 false,
 				 false,
@@ -597,7 +574,7 @@ public class Instanceec2ItemProvider extends ComputeItemProvider {
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -665,7 +642,6 @@ public class Instanceec2ItemProvider extends ComputeItemProvider {
 			case Ec2Package.INSTANCEEC2__NAME:
 			case Ec2Package.INSTANCEEC2__INSTANCE_ID:
 			case Ec2Package.INSTANCEEC2__INSTANCE_TYPE:
-			case Ec2Package.INSTANCEEC2__REGION_ID:
 			case Ec2Package.INSTANCEEC2__ZONE_NAME:
 			case Ec2Package.INSTANCEEC2__IMAGE_ID:
 			case Ec2Package.INSTANCEEC2__AWS_INSTANCE_STATUS:
@@ -1402,6 +1378,21 @@ public class Instanceec2ItemProvider extends ComputeItemProvider {
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
 				 AwsregionsFactory.eINSTANCE.createAp_northeast_1()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.RESOURCE__LINKS,
+				 Ec2Factory.eINSTANCE.createSecuritygrouplink()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.RESOURCE__LINKS,
+				 Ec2Factory.eINSTANCE.createKeypairlink()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.RESOURCE__LINKS,
+				 Ec2Factory.eINSTANCE.createIppermissionlink()));
 
 		newChildDescriptors.add
 			(createChildParameter

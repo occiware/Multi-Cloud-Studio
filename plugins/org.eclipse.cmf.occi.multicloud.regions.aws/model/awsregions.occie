@@ -1,230 +1,230 @@
 <?xml version="1.0" encoding="ASCII"?>
 <occi:Extension xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:occi="http://schemas.ogf.org/occi/core/ecore" name="awsregions" scheme="http://occiware.org/occi/infrastructure/locations/aws#">
   <import href="http://schemas.ogf.org/occi/core#/"/>
-  <import href="http://occiware.org/occi/infrastructure/locations#/"/>
+  <import href="../locations#/"/>
   <mixins name="us_east_2" scheme="http://occiware.org/occi/infrastructure/locations/aws#">
-    <attributes name="regionName" mutable="true" default="US East (Ohio)" description="Region name give an intelligible name on this region">
+    <attributes name="regionName" default="US East (Ohio)" description="Region name give an intelligible name on this region">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="country" mutable="true" default="USA" description="the country where this resource or link is available">
+    <attributes name="country" default="USA" description="the country where this resource or link is available">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="regionId" mutable="true" default="us-east-2" description="regionId is the id of this region given by the provider ">
+    <attributes name="regionId" default="us-east-2" description="regionId is the id of this region given by the provider ">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="city" mutable="true" default="Columbus" description="The city where this resource or link is available">
+    <attributes name="city" default="Columbus" description="The city where this resource or link is available">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <depends href="http://occiware.org/occi/infrastructure/locations#//@mixins[term='northamerica']"/>
+    <depends href="../locations#//@mixins[term='northamerica']"/>
   </mixins>
   <mixins name="us_east_1" scheme="http://occiware.org/occi/infrastructure/locations/aws#">
-    <attributes name="regionName" mutable="true" default="US East (N. Virginia)" description="Region name give an intelligible name on this region">
+    <attributes name="regionName" default="US East (N. Virginia)" description="Region name give an intelligible name on this region">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="country" mutable="true" default="USA" description="the country where this resource or link is available">
+    <attributes name="country" default="USA" description="the country where this resource or link is available">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="regionId" mutable="true" default="us-east-1" description="regionId is the id of this region given by the provider ">
+    <attributes name="regionId" default="us-east-1" description="regionId is the id of this region given by the provider ">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="city" mutable="true" default="Ashburn, Sterling, Charlottesville" description="The city where this resource or link is available">
+    <attributes name="city" default="Ashburn, Sterling, Charlottesville" description="The city where this resource or link is available">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <depends href="http://occiware.org/occi/infrastructure/locations#//@mixins[term='northamerica']"/>
+    <depends href="../locations#//@mixins[term='northamerica']"/>
   </mixins>
   <mixins name="eu_west_3" scheme="http://occiware.org/occi/infrastructure/locations/aws#">
-    <attributes name="regionName" mutable="true" default="EU (Paris)" description="Region name give an intelligible name on this region">
+    <attributes name="regionName" default="EU (Paris)" description="Region name give an intelligible name on this region">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="country" mutable="true" default="France" description="the country where this resource or link is available">
+    <attributes name="country" default="France" description="the country where this resource or link is available">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="regionId" mutable="true" default="eu-west-3" description="regionId is the id of this region given by the provider ">
+    <attributes name="regionId" default="eu-west-3" description="regionId is the id of this region given by the provider ">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="city" mutable="true" default="Paris" description="The city where this resource or link is available">
+    <attributes name="city" default="Paris" description="The city where this resource or link is available">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <depends href="http://occiware.org/occi/infrastructure/locations#//@mixins[term='europe']"/>
+    <depends href="../locations#//@mixins[term='europe']"/>
   </mixins>
   <mixins name="us_west_1" scheme="http://occiware.org/occi/infrastructure/locations/aws#">
-    <attributes name="regionName" mutable="true" default="US West (N. California)" description="Region name give an intelligible name on this region">
+    <attributes name="regionName" default="US West (N. California)" description="Region name give an intelligible name on this region">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="country" mutable="true" default="USA" description="the country where this resource or link is available">
+    <attributes name="country" default="USA" description="the country where this resource or link is available">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="regionId" mutable="true" default="us-west-1" description="regionId is the id of this region given by the provider ">
+    <attributes name="regionId" default="us-west-1" description="regionId is the id of this region given by the provider ">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="city" mutable="true" default="Palo Alto" description="The city where this resource or link is available">
+    <attributes name="city" default="Palo Alto" description="The city where this resource or link is available">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <depends href="http://occiware.org/occi/infrastructure/locations#//@mixins[term='northamerica']"/>
+    <depends href="../locations#//@mixins[term='northamerica']"/>
   </mixins>
   <mixins name="eu_west_1" scheme="http://occiware.org/occi/infrastructure/locations/aws#">
-    <attributes name="regionName" mutable="true" default="EU (Ireland)" description="Region name give an intelligible name on this region">
+    <attributes name="regionName" default="EU (Ireland)" description="Region name give an intelligible name on this region">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="country" mutable="true" default="Ireland" description="the country where this resource or link is available">
+    <attributes name="country" default="Ireland" description="the country where this resource or link is available">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="regionId" mutable="true" default="eu-west-1" description="regionId is the id of this region given by the provider ">
+    <attributes name="regionId" default="eu-west-1" description="regionId is the id of this region given by the provider ">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="city" mutable="true" default="Dublin" description="The city where this resource or link is available">
+    <attributes name="city" default="Dublin" description="The city where this resource or link is available">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <depends href="http://occiware.org/occi/infrastructure/locations#//@mixins[term='europe']"/>
+    <depends href="../locations#//@mixins[term='europe']"/>
   </mixins>
   <mixins name="ap_south_1" scheme="http://occiware.org/occi/infrastructure/locations/aws#">
-    <attributes name="country" mutable="true" default="India" description="the country where this resource or link is available">
+    <attributes name="country" default="India" description="the country where this resource or link is available">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="regionName" mutable="true" default="Asia Pacific (Mumbai)" description="Region name give an intelligible name on this region">
+    <attributes name="regionName" default="Asia Pacific (Mumbai)" description="Region name give an intelligible name on this region">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="regionId" mutable="true" default="ap-south-1" description="regionId is the id of this region given by the provider ">
+    <attributes name="regionId" default="ap-south-1" description="regionId is the id of this region given by the provider ">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="city" mutable="true" default="Bombay" description="The city where this resource or link is available">
+    <attributes name="city" default="Bombay" description="The city where this resource or link is available">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <depends href="http://occiware.org/occi/infrastructure/locations#//@mixins[term='asiapacific']"/>
+    <depends href="../locations#//@mixins[term='asiapacific']"/>
   </mixins>
   <mixins name="sa_east_1" scheme="http://occiware.org/occi/infrastructure/locations/aws#">
-    <attributes name="country" mutable="true" default="Brazil" description="the country where this resource or link is available">
+    <attributes name="country" default="Brazil" description="the country where this resource or link is available">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="regionName" mutable="true" default="South America (S&#xe3;o Paulo)" description="Region name give an intelligible name on this region">
+    <attributes name="regionName" default="South America (S&#xe3;o Paulo)" description="Region name give an intelligible name on this region">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="regionId" mutable="true" default="sa-east-1" description="regionId is the id of this region given by the provider ">
+    <attributes name="regionId" default="sa-east-1" description="regionId is the id of this region given by the provider ">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="city" mutable="true" default="S&#xe3;o Paulo" description="The city where this resource or link is available">
+    <attributes name="city" default="S&#xe3;o Paulo" description="The city where this resource or link is available">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <depends href="http://occiware.org/occi/infrastructure/locations#//@mixins[term='southamerica']"/>
+    <depends href="../locations#//@mixins[term='southamerica']"/>
   </mixins>
   <mixins name="us_west_2" scheme="http://occiware.org/occi/infrastructure/locations/aws#">
-    <attributes name="regionName" mutable="true" default="US West (Oregon)" description="Region name give an intelligible name on this region">
+    <attributes name="regionName" default="US West (Oregon)" description="Region name give an intelligible name on this region">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="country" mutable="true" default="USA" description="the country where this resource or link is available">
+    <attributes name="country" default="USA" description="the country where this resource or link is available">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="regionId" mutable="true" default="us-west-2" description="regionId is the id of this region given by the provider ">
+    <attributes name="regionId" default="us-west-2" description="regionId is the id of this region given by the provider ">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="city" mutable="true" default="Oregon" description="The city where this resource or link is available">
+    <attributes name="city" default="Oregon" description="The city where this resource or link is available">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <depends href="http://occiware.org/occi/infrastructure/locations#//@mixins[term='northamerica']"/>
+    <depends href="../locations#//@mixins[term='northamerica']"/>
   </mixins>
   <mixins name="eu_west_2" scheme="http://occiware.org/occi/infrastructure/locations/aws#">
-    <attributes name="regionName" mutable="true" default="EU (London)" description="Region name give an intelligible name on this region">
+    <attributes name="regionName" default="EU (London)" description="Region name give an intelligible name on this region">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="country" mutable="true" default="United Kingdom" description="the country where this resource or link is available">
+    <attributes name="country" default="United Kingdom" description="the country where this resource or link is available">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="regionId" mutable="true" default="eu-west-2" description="regionId is the id of this region given by the provider ">
+    <attributes name="regionId" default="eu-west-2" description="regionId is the id of this region given by the provider ">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="city" mutable="true" default="London" description="The city where this resource or link is available">
+    <attributes name="city" default="London" description="The city where this resource or link is available">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <depends href="http://occiware.org/occi/infrastructure/locations#//@mixins[term='europe']"/>
+    <depends href="../locations#//@mixins[term='europe']"/>
   </mixins>
   <mixins name="ap_southeast_1" scheme="http://occiware.org/occi/infrastructure/locations/aws#">
-    <attributes name="country" mutable="true" default="Singapore" description="the country where this resource or link is available">
+    <attributes name="country" default="Singapore" description="the country where this resource or link is available">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="regionName" mutable="true" default="Asia Pacific (Singapore)" description="Region name give an intelligible name on this region">
+    <attributes name="regionName" default="Asia Pacific (Singapore)" description="Region name give an intelligible name on this region">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="regionId" mutable="true" default="ap-southeast-1" description="regionId is the id of this region given by the provider ">
+    <attributes name="regionId" default="ap-southeast-1" description="regionId is the id of this region given by the provider ">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="city" mutable="true" default="Singapore" description="The city where this resource or link is available">
+    <attributes name="city" default="Singapore" description="The city where this resource or link is available">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <depends href="http://occiware.org/occi/infrastructure/locations#//@mixins[term='asiapacific']"/>
+    <depends href="../locations#//@mixins[term='asiapacific']"/>
   </mixins>
   <mixins name="ca_central_1" scheme="http://occiware.org/occi/infrastructure/locations/aws#">
-    <attributes name="regionName" mutable="true" default="Canada (Central)" description="Region name give an intelligible name on this region">
+    <attributes name="regionName" default="Canada (Central)" description="Region name give an intelligible name on this region">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="country" mutable="true" default="Canada" description="the country where this resource or link is available">
+    <attributes name="country" default="Canada" description="the country where this resource or link is available">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="regionId" mutable="true" default="ca-central-1" description="regionId is the id of this region given by the provider ">
+    <attributes name="regionId" default="ca-central-1" description="regionId is the id of this region given by the provider ">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="city" mutable="true" default="Toronto" description="The city where this resource or link is available">
+    <attributes name="city" default="Toronto" description="The city where this resource or link is available">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <depends href="http://occiware.org/occi/infrastructure/locations#//@mixins[term='northamerica']"/>
+    <depends href="../locations#//@mixins[term='northamerica']"/>
   </mixins>
   <mixins name="ap_northeast_2" scheme="http://occiware.org/occi/infrastructure/locations/aws#">
-    <attributes name="country" mutable="true" default="South Korea" description="the country where this resource or link is available">
+    <attributes name="country" default="South Korea" description="the country where this resource or link is available">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="regionName" mutable="true" default="Asia Pacific (Seoul)" description="Region name give an intelligible name on this region">
+    <attributes name="regionName" default="Asia Pacific (Seoul)" description="Region name give an intelligible name on this region">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="regionId" mutable="true" default="ap-northeast-2" description="regionId is the id of this region given by the provider ">
+    <attributes name="regionId" default="ap-northeast-2" description="regionId is the id of this region given by the provider ">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="city" mutable="true" default="Seoul" description="The city where this resource or link is available">
+    <attributes name="city" default="Seoul" description="The city where this resource or link is available">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <depends href="http://occiware.org/occi/infrastructure/locations#//@mixins[term='asiapacific']"/>
+    <depends href="../locations#//@mixins[term='asiapacific']"/>
   </mixins>
   <mixins name="ap_south_east2" scheme="http://occiware.org/occi/infrastructure/locations/aws#">
-    <attributes name="country" mutable="true" default="Australia" description="the country where this resource or link is available">
+    <attributes name="country" default="Australia" description="the country where this resource or link is available">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="regionName" mutable="true" default="Asia Pacific (Sydney)" description="Region name give an intelligible name on this region">
+    <attributes name="regionName" default="Asia Pacific (Sydney)" description="Region name give an intelligible name on this region">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="regionId" mutable="true" default="ap-southeast-2" description="regionId is the id of this region given by the provider ">
+    <attributes name="regionId" default="ap-southeast-2" description="regionId is the id of this region given by the provider ">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="city" mutable="true" default="Sydney" description="The city where this resource or link is available">
+    <attributes name="city" default="Sydney" description="The city where this resource or link is available">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <depends href="http://occiware.org/occi/infrastructure/locations#//@mixins[term='asiapacific']"/>
+    <depends href="../locations#//@mixins[term='asiapacific']"/>
   </mixins>
   <mixins name="eu_central_1" scheme="http://occiware.org/occi/infrastructure/locations/aws#">
-    <attributes name="country" mutable="true" default="Germany" description="the country where this resource or link is available">
+    <attributes name="country" default="Germany" description="the country where this resource or link is available">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="regionId" mutable="true" default="eu-central-1" description="regionId is the id of this region given by the provider ">
+    <attributes name="regionId" default="eu-central-1" description="regionId is the id of this region given by the provider ">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="city" mutable="true" default="Frankfurt" description="The city where this resource or link is available">
+    <attributes name="city" default="Frankfurt" description="The city where this resource or link is available">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="regionName" mutable="true" default="EU (Frankfurt)">
+    <attributes name="regionName" default="EU (Frankfurt)">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <depends href="http://occiware.org/occi/infrastructure/locations#//@mixins[term='europe']"/>
+    <depends href="../locations#//@mixins[term='europe']"/>
   </mixins>
   <mixins name="ap_northeast_1" scheme="http://occiware.org/occi/infrastructure/locations/aws#">
-    <attributes name="country" mutable="true" default="Japan" description="the country where this resource or link is available">
+    <attributes name="country" default="Japan" description="the country where this resource or link is available">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="regionName" mutable="true" default="Asia Pacific (Tokyo)" description="Region name give an intelligible name on this region">
+    <attributes name="regionName" default="Asia Pacific (Tokyo)" description="Region name give an intelligible name on this region">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="regionId" mutable="true" default="ap-northeast-1" description="regionId is the id of this region given by the provider ">
+    <attributes name="regionId" default="ap-northeast-1" description="regionId is the id of this region given by the provider ">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="city" mutable="true" default="Tokyo" description="The city where this resource or link is available">
+    <attributes name="city" default="Tokyo" description="The city where this resource or link is available">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <depends href="http://occiware.org/occi/infrastructure/locations#//@mixins[term='asiapacific']"/>
+    <depends href="../locations#//@mixins[term='asiapacific']"/>
   </mixins>
 </occi:Extension>

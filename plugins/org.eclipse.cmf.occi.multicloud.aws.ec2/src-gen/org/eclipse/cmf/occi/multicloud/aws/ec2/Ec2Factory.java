@@ -50,6 +50,60 @@ public interface Ec2Factory extends EFactory {
 	Awsaccount createAwsaccount();
 
 	/**
+	 * Returns a new object of class '<em>Securitygroup</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Securitygroup</em>'.
+	 * @generated
+	 */
+	Securitygroup createSecuritygroup();
+
+	/**
+	 * Returns a new object of class '<em>Securitygrouplink</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Securitygrouplink</em>'.
+	 * @generated
+	 */
+	Securitygrouplink createSecuritygrouplink();
+
+	/**
+	 * Returns a new object of class '<em>Keypair</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Keypair</em>'.
+	 * @generated
+	 */
+	Keypair createKeypair();
+
+	/**
+	 * Returns a new object of class '<em>Keypairlink</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Keypairlink</em>'.
+	 * @generated
+	 */
+	Keypairlink createKeypairlink();
+
+	/**
+	 * Returns a new object of class '<em>Ippermission</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Ippermission</em>'.
+	 * @generated
+	 */
+	Ippermission createIppermission();
+
+	/**
+	 * Returns a new object of class '<em>Ippermissionlink</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Ippermissionlink</em>'.
+	 * @generated
+	 */
+	Ippermissionlink createIppermissionlink();
+
+	/**
 	 * Returns a new object of class '<em>Awscredential</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

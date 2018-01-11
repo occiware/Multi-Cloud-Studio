@@ -80,6 +80,12 @@ import org.eclipse.cmf.occi.multicloud.aws.ec2.I3_xlarge;
 import org.eclipse.cmf.occi.multicloud.aws.ec2.InstanceLifeCycleType;
 import org.eclipse.cmf.occi.multicloud.aws.ec2.Instanceec2;
 import org.eclipse.cmf.occi.multicloud.aws.ec2.Instancevpcinfo;
+import org.eclipse.cmf.occi.multicloud.aws.ec2.IpPermissionType;
+import org.eclipse.cmf.occi.multicloud.aws.ec2.IpProtocol;
+import org.eclipse.cmf.occi.multicloud.aws.ec2.Ippermission;
+import org.eclipse.cmf.occi.multicloud.aws.ec2.Ippermissionlink;
+import org.eclipse.cmf.occi.multicloud.aws.ec2.Keypair;
+import org.eclipse.cmf.occi.multicloud.aws.ec2.Keypairlink;
 import org.eclipse.cmf.occi.multicloud.aws.ec2.M1_large;
 import org.eclipse.cmf.occi.multicloud.aws.ec2.M1_medium;
 import org.eclipse.cmf.occi.multicloud.aws.ec2.M1_small;
@@ -123,6 +129,8 @@ import org.eclipse.cmf.occi.multicloud.aws.ec2.R4_8xlarge;
 import org.eclipse.cmf.occi.multicloud.aws.ec2.R4_large;
 import org.eclipse.cmf.occi.multicloud.aws.ec2.R4_xlarge;
 import org.eclipse.cmf.occi.multicloud.aws.ec2.Rootdevicevolume;
+import org.eclipse.cmf.occi.multicloud.aws.ec2.Securitygroup;
+import org.eclipse.cmf.occi.multicloud.aws.ec2.Securitygrouplink;
 import org.eclipse.cmf.occi.multicloud.aws.ec2.Statustransitionreason;
 import org.eclipse.cmf.occi.multicloud.aws.ec2.Storageoptimized;
 import org.eclipse.cmf.occi.multicloud.aws.ec2.T1_micro;
@@ -177,6 +185,48 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 * @generated
 	 */
 	private EClass awsaccountEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass securitygroupEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass securitygrouplinkEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass keypairEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass keypairlinkEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass ippermissionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass ippermissionlinkEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1012,6 +1062,20 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	private EEnum virtualizationTypeEEnum = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum ipPermissionTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum ipProtocolEEnum = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -1129,7 +1193,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInstanceec2_RegionId() {
+	public EAttribute getInstanceec2_ZoneName() {
 		return (EAttribute)instanceec2EClass.getEStructuralFeatures().get(3);
 	}
 
@@ -1138,7 +1202,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInstanceec2_ZoneName() {
+	public EAttribute getInstanceec2_ImageId() {
 		return (EAttribute)instanceec2EClass.getEStructuralFeatures().get(4);
 	}
 
@@ -1147,7 +1211,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInstanceec2_ImageId() {
+	public EAttribute getInstanceec2_AwsInstanceStatus() {
 		return (EAttribute)instanceec2EClass.getEStructuralFeatures().get(5);
 	}
 
@@ -1156,7 +1220,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInstanceec2_AwsInstanceStatus() {
+	public EAttribute getInstanceec2_LaunchTime() {
 		return (EAttribute)instanceec2EClass.getEStructuralFeatures().get(6);
 	}
 
@@ -1165,7 +1229,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInstanceec2_LaunchTime() {
+	public EAttribute getInstanceec2_AmiLaunchIndex() {
 		return (EAttribute)instanceec2EClass.getEStructuralFeatures().get(7);
 	}
 
@@ -1174,7 +1238,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInstanceec2_AmiLaunchIndex() {
+	public EAttribute getInstanceec2_EbsOptimizedIO() {
 		return (EAttribute)instanceec2EClass.getEStructuralFeatures().get(8);
 	}
 
@@ -1183,7 +1247,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInstanceec2_EbsOptimizedIO() {
+	public EAttribute getInstanceec2_EnaSupport() {
 		return (EAttribute)instanceec2EClass.getEStructuralFeatures().get(9);
 	}
 
@@ -1192,7 +1256,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInstanceec2_EnaSupport() {
+	public EAttribute getInstanceec2_Hypervisor() {
 		return (EAttribute)instanceec2EClass.getEStructuralFeatures().get(10);
 	}
 
@@ -1201,7 +1265,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInstanceec2_Hypervisor() {
+	public EAttribute getInstanceec2_InstanceLifeCycle() {
 		return (EAttribute)instanceec2EClass.getEStructuralFeatures().get(11);
 	}
 
@@ -1210,7 +1274,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInstanceec2_InstanceLifeCycle() {
+	public EAttribute getInstanceec2_KernelId() {
 		return (EAttribute)instanceec2EClass.getEStructuralFeatures().get(12);
 	}
 
@@ -1219,7 +1283,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInstanceec2_KernelId() {
+	public EAttribute getInstanceec2_KeyPairName() {
 		return (EAttribute)instanceec2EClass.getEStructuralFeatures().get(13);
 	}
 
@@ -1228,7 +1292,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInstanceec2_KeyPairName() {
+	public EAttribute getInstanceec2_MonitoringState() {
 		return (EAttribute)instanceec2EClass.getEStructuralFeatures().get(14);
 	}
 
@@ -1237,7 +1301,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInstanceec2_MonitoringState() {
+	public EAttribute getInstanceec2_Platform() {
 		return (EAttribute)instanceec2EClass.getEStructuralFeatures().get(15);
 	}
 
@@ -1246,7 +1310,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInstanceec2_Platform() {
+	public EAttribute getInstanceec2_PrivateDNSName() {
 		return (EAttribute)instanceec2EClass.getEStructuralFeatures().get(16);
 	}
 
@@ -1255,7 +1319,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInstanceec2_PrivateDNSName() {
+	public EAttribute getInstanceec2_PrivateIpV4Address() {
 		return (EAttribute)instanceec2EClass.getEStructuralFeatures().get(17);
 	}
 
@@ -1264,7 +1328,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInstanceec2_PrivateIpV4Address() {
+	public EAttribute getInstanceec2_PublicDNSName() {
 		return (EAttribute)instanceec2EClass.getEStructuralFeatures().get(18);
 	}
 
@@ -1273,7 +1337,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInstanceec2_PublicDNSName() {
+	public EAttribute getInstanceec2_PublicIpv4Address() {
 		return (EAttribute)instanceec2EClass.getEStructuralFeatures().get(19);
 	}
 
@@ -1282,7 +1346,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInstanceec2_PublicIpv4Address() {
+	public EAttribute getInstanceec2_RamDiskId() {
 		return (EAttribute)instanceec2EClass.getEStructuralFeatures().get(20);
 	}
 
@@ -1291,7 +1355,7 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInstanceec2_RamDiskId() {
+	public EAttribute getInstanceec2_SriovNetSupport() {
 		return (EAttribute)instanceec2EClass.getEStructuralFeatures().get(21);
 	}
 
@@ -1300,17 +1364,8 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInstanceec2_SriovNetSupport() {
-		return (EAttribute)instanceec2EClass.getEStructuralFeatures().get(22);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getInstanceec2_VirtualizationType() {
-		return (EAttribute)instanceec2EClass.getEStructuralFeatures().get(23);
+		return (EAttribute)instanceec2EClass.getEStructuralFeatures().get(22);
 	}
 
 	/**
@@ -1327,35 +1382,215 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getInstanceec2__Restart__RestartMethod() {
-		return instanceec2EClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getInstanceec2__Start() {
-		return instanceec2EClass.getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getInstanceec2__Stop__StopMethod() {
-		return instanceec2EClass.getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getAwsaccount() {
 		return awsaccountEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAwsaccount_RegionId() {
+		return (EAttribute)awsaccountEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSecuritygroup() {
+		return securitygroupEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSecuritygroup_SecurityGroupName() {
+		return (EAttribute)securitygroupEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSecuritygroup_SecurityGroupDescription() {
+		return (EAttribute)securitygroupEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSecuritygroup_VpcId() {
+		return (EAttribute)securitygroupEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSecuritygroup_SecurityGroupId() {
+		return (EAttribute)securitygroupEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSecuritygrouplink() {
+		return securitygrouplinkEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getKeypair() {
+		return keypairEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getKeypair_Name() {
+		return (EAttribute)keypairEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getKeypair_PrivateKey() {
+		return (EAttribute)keypairEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getKeypair_FingerPrint() {
+		return (EAttribute)keypairEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getKeypair_EncodedPublicKey() {
+		return (EAttribute)keypairEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getKeypair__Importkeypair() {
+		return keypairEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getKeypairlink() {
+		return keypairlinkEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getIppermission() {
+		return ippermissionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIppermission_ToPort() {
+		return (EAttribute)ippermissionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIppermission_FromPort() {
+		return (EAttribute)ippermissionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIppermission_IpProtocol() {
+		return (EAttribute)ippermissionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIppermission_Ipv4Ranges() {
+		return (EAttribute)ippermissionEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIppermission_Ipv6Ranges() {
+		return (EAttribute)ippermissionEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIppermission_Traffic() {
+		return (EAttribute)ippermissionEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIppermission_Authorized() {
+		return (EAttribute)ippermissionEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getIppermissionlink() {
+		return ippermissionlinkEClass;
 	}
 
 	/**
@@ -6088,6 +6323,24 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getIpPermissionType() {
+		return ipPermissionTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getIpProtocol() {
+		return ipProtocolEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Ec2Factory getEc2Factory() {
 		return (Ec2Factory)getEFactoryInstance();
 	}
@@ -6115,7 +6368,6 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 		createEAttribute(instanceec2EClass, INSTANCEEC2__NAME);
 		createEAttribute(instanceec2EClass, INSTANCEEC2__INSTANCE_ID);
 		createEAttribute(instanceec2EClass, INSTANCEEC2__INSTANCE_TYPE);
-		createEAttribute(instanceec2EClass, INSTANCEEC2__REGION_ID);
 		createEAttribute(instanceec2EClass, INSTANCEEC2__ZONE_NAME);
 		createEAttribute(instanceec2EClass, INSTANCEEC2__IMAGE_ID);
 		createEAttribute(instanceec2EClass, INSTANCEEC2__AWS_INSTANCE_STATUS);
@@ -6137,11 +6389,37 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 		createEAttribute(instanceec2EClass, INSTANCEEC2__SRIOV_NET_SUPPORT);
 		createEAttribute(instanceec2EClass, INSTANCEEC2__VIRTUALIZATION_TYPE);
 		createEOperation(instanceec2EClass, INSTANCEEC2___TERMINATE);
-		createEOperation(instanceec2EClass, INSTANCEEC2___RESTART__RESTARTMETHOD);
-		createEOperation(instanceec2EClass, INSTANCEEC2___START);
-		createEOperation(instanceec2EClass, INSTANCEEC2___STOP__STOPMETHOD);
 
 		awsaccountEClass = createEClass(AWSACCOUNT);
+		createEAttribute(awsaccountEClass, AWSACCOUNT__REGION_ID);
+
+		securitygroupEClass = createEClass(SECURITYGROUP);
+		createEAttribute(securitygroupEClass, SECURITYGROUP__SECURITY_GROUP_NAME);
+		createEAttribute(securitygroupEClass, SECURITYGROUP__SECURITY_GROUP_DESCRIPTION);
+		createEAttribute(securitygroupEClass, SECURITYGROUP__VPC_ID);
+		createEAttribute(securitygroupEClass, SECURITYGROUP__SECURITY_GROUP_ID);
+
+		securitygrouplinkEClass = createEClass(SECURITYGROUPLINK);
+
+		keypairEClass = createEClass(KEYPAIR);
+		createEAttribute(keypairEClass, KEYPAIR__NAME);
+		createEAttribute(keypairEClass, KEYPAIR__PRIVATE_KEY);
+		createEAttribute(keypairEClass, KEYPAIR__FINGER_PRINT);
+		createEAttribute(keypairEClass, KEYPAIR__ENCODED_PUBLIC_KEY);
+		createEOperation(keypairEClass, KEYPAIR___IMPORTKEYPAIR);
+
+		keypairlinkEClass = createEClass(KEYPAIRLINK);
+
+		ippermissionEClass = createEClass(IPPERMISSION);
+		createEAttribute(ippermissionEClass, IPPERMISSION__TO_PORT);
+		createEAttribute(ippermissionEClass, IPPERMISSION__FROM_PORT);
+		createEAttribute(ippermissionEClass, IPPERMISSION__IP_PROTOCOL);
+		createEAttribute(ippermissionEClass, IPPERMISSION__IPV4_RANGES);
+		createEAttribute(ippermissionEClass, IPPERMISSION__IPV6_RANGES);
+		createEAttribute(ippermissionEClass, IPPERMISSION__TRAFFIC);
+		createEAttribute(ippermissionEClass, IPPERMISSION__AUTHORIZED);
+
+		ippermissionlinkEClass = createEClass(IPPERMISSIONLINK);
 
 		awscredentialEClass = createEClass(AWSCREDENTIAL);
 
@@ -6783,6 +7061,8 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 		instanceLifeCycleTypeEEnum = createEEnum(INSTANCE_LIFE_CYCLE_TYPE);
 		monitoringStateEEnum = createEEnum(MONITORING_STATE);
 		virtualizationTypeEEnum = createEEnum(VIRTUALIZATION_TYPE);
+		ipPermissionTypeEEnum = createEEnum(IP_PERMISSION_TYPE);
+		ipProtocolEEnum = createEEnum(IP_PROTOCOL);
 	}
 
 	/**
@@ -6820,6 +7100,12 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 		// Add supertypes to classes
 		instanceec2EClass.getESuperTypes().add(theInfrastructurePackage.getCompute());
 		awsaccountEClass.getESuperTypes().add(theAccountsPackage.getCloudaccount());
+		securitygroupEClass.getESuperTypes().add(theOCCIPackage.getResource());
+		securitygrouplinkEClass.getESuperTypes().add(theOCCIPackage.getLink());
+		keypairEClass.getESuperTypes().add(theOCCIPackage.getResource());
+		keypairlinkEClass.getESuperTypes().add(theOCCIPackage.getLink());
+		ippermissionEClass.getESuperTypes().add(theOCCIPackage.getResource());
+		ippermissionlinkEClass.getESuperTypes().add(theOCCIPackage.getLink());
 		awscredentialEClass.getESuperTypes().add(theAccountsPackage.getCloudcredential());
 		awscredentialEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		t2_nanoEClass.getESuperTypes().add(this.getGeneralpurpose());
@@ -7049,7 +7335,6 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 		initEAttribute(getInstanceec2_Name(), theOCCIPackage.getString(), "name", null, 0, 1, Instanceec2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInstanceec2_InstanceId(), theOCCIPackage.getString(), "instanceId", null, 0, 1, Instanceec2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInstanceec2_InstanceType(), theOCCIPackage.getString(), "instanceType", "t2.nano", 1, 1, Instanceec2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getInstanceec2_RegionId(), theOCCIPackage.getString(), "regionId", "eu-west-3", 1, 1, Instanceec2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInstanceec2_ZoneName(), theOCCIPackage.getString(), "zoneName", null, 0, 1, Instanceec2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInstanceec2_ImageId(), theOCCIPackage.getString(), "imageId", null, 0, 1, Instanceec2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInstanceec2_AwsInstanceStatus(), this.getAWSInstanceState(), "awsInstanceStatus", null, 0, 1, Instanceec2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -7068,20 +7353,42 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 		initEAttribute(getInstanceec2_PublicDNSName(), theOCCIPackage.getString(), "publicDNSName", null, 0, 1, Instanceec2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInstanceec2_PublicIpv4Address(), theOCCIPackage.getString(), "publicIpv4Address", null, 0, 1, Instanceec2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInstanceec2_RamDiskId(), theOCCIPackage.getString(), "ramDiskId", null, 0, 1, Instanceec2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getInstanceec2_SriovNetSupport(), theOCCIPackage.getBoolean(), "sriovNetSupport", null, 0, 1, Instanceec2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInstanceec2_SriovNetSupport(), theOCCIPackage.getString(), "sriovNetSupport", null, 0, 1, Instanceec2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInstanceec2_VirtualizationType(), this.getVirtualizationType(), "virtualizationType", null, 0, 1, Instanceec2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getInstanceec2__Terminate(), null, "terminate", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		EOperation op = initEOperation(getInstanceec2__Restart__RestartMethod(), null, "restart", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theInfrastructurePackage.getRestartMethod(), "method", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEOperation(getInstanceec2__Start(), null, "start", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getInstanceec2__Stop__StopMethod(), null, "stop", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theInfrastructurePackage.getStopMethod(), "method", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(awsaccountEClass, Awsaccount.class, "Awsaccount", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAwsaccount_RegionId(), theOCCIPackage.getString(), "regionId", "eu-west-3", 1, 1, Awsaccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(securitygroupEClass, Securitygroup.class, "Securitygroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSecuritygroup_SecurityGroupName(), theOCCIPackage.getString(), "securityGroupName", null, 1, 1, Securitygroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSecuritygroup_SecurityGroupDescription(), theOCCIPackage.getString(), "securityGroupDescription", null, 0, 1, Securitygroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSecuritygroup_VpcId(), theOCCIPackage.getString(), "vpcId", null, 0, 1, Securitygroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSecuritygroup_SecurityGroupId(), theOCCIPackage.getString(), "securityGroupId", null, 0, 1, Securitygroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(securitygrouplinkEClass, Securitygrouplink.class, "Securitygrouplink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(keypairEClass, Keypair.class, "Keypair", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getKeypair_Name(), theOCCIPackage.getString(), "name", null, 0, 1, Keypair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getKeypair_PrivateKey(), theOCCIPackage.getString(), "privateKey", null, 0, 1, Keypair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getKeypair_FingerPrint(), theOCCIPackage.getString(), "fingerPrint", null, 0, 1, Keypair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getKeypair_EncodedPublicKey(), theOCCIPackage.getString(), "encodedPublicKey", null, 0, 1, Keypair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getKeypair__Importkeypair(), null, "importkeypair", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(keypairlinkEClass, Keypairlink.class, "Keypairlink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(ippermissionEClass, Ippermission.class, "Ippermission", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getIppermission_ToPort(), theOCCIPackage.getInteger(), "toPort", null, 0, 1, Ippermission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIppermission_FromPort(), theOCCIPackage.getInteger(), "fromPort", null, 0, 1, Ippermission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIppermission_IpProtocol(), this.getIpProtocol(), "ipProtocol", "tcp", 0, 1, Ippermission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIppermission_Ipv4Ranges(), theOCCIPackage.getString(), "ipv4Ranges", null, 0, 1, Ippermission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIppermission_Ipv6Ranges(), theOCCIPackage.getString(), "ipv6Ranges", null, 0, 1, Ippermission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIppermission_Traffic(), this.getIpPermissionType(), "traffic", "inbound", 1, 1, Ippermission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIppermission_Authorized(), theOCCIPackage.getBoolean(), "authorized", "true", 0, 1, Ippermission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(ippermissionlinkEClass, Ippermissionlink.class, "Ippermissionlink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(awscredentialEClass, Awscredential.class, "Awscredential", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -7746,6 +8053,15 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 		addEEnumLiteral(virtualizationTypeEEnum, VirtualizationType.HVM);
 		addEEnumLiteral(virtualizationTypeEEnum, VirtualizationType.PARAVIRTUAL);
 
+		initEEnum(ipPermissionTypeEEnum, IpPermissionType.class, "IpPermissionType");
+		addEEnumLiteral(ipPermissionTypeEEnum, IpPermissionType.INBOUND);
+		addEEnumLiteral(ipPermissionTypeEEnum, IpPermissionType.OUTBOUND);
+
+		initEEnum(ipProtocolEEnum, IpProtocol.class, "IpProtocol");
+		addEEnumLiteral(ipProtocolEEnum, IpProtocol.TCP);
+		addEEnumLiteral(ipProtocolEEnum, IpProtocol.UDP);
+		addEEnumLiteral(ipProtocolEEnum, IpProtocol.ICMP);
+
 		// Create resource
 		createResource(eNS_URI);
 
@@ -7773,6 +8089,24 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
+		   });	
+		addAnnotation
+		  (securitygrouplinkEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "sourceConstraint targetConstraint"
+		   });	
+		addAnnotation
+		  (keypairlinkEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "sourceConstraint targetConstraint"
+		   });	
+		addAnnotation
+		  (ippermissionlinkEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "sourceConstraint targetConstraint"
 		   });	
 		addAnnotation
 		  (awscredentialEClass, 
@@ -7864,6 +8198,27 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 */
 	protected void createPivotAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";	
+		addAnnotation
+		  (securitygrouplinkEClass, 
+		   source, 
+		   new String[] {
+			 "sourceConstraint", "self.source.oclIsKindOf(ec2::Instanceec2)",
+			 "targetConstraint", "self.target.oclIsKindOf(ec2::Securitygroup)"
+		   });	
+		addAnnotation
+		  (keypairlinkEClass, 
+		   source, 
+		   new String[] {
+			 "sourceConstraint", "self.source.oclIsKindOf(ec2::Instanceec2)",
+			 "targetConstraint", "self.target.oclIsKindOf(ec2::Keypair)"
+		   });	
+		addAnnotation
+		  (ippermissionlinkEClass, 
+		   source, 
+		   new String[] {
+			 "sourceConstraint", "self.source.oclIsKindOf(ec2::Securitygroup)",
+			 "targetConstraint", "self.target.oclIsKindOf(ec2::Ippermission)"
+		   });	
 		addAnnotation
 		  (awscredentialEClass, 
 		   source, 

@@ -128,6 +128,144 @@ public class Ec2ItemProviderAdapterFactory extends Ec2AdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.aws.ec2.Securitygroup} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SecuritygroupItemProvider securitygroupItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.aws.ec2.Securitygroup}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSecuritygroupAdapter() {
+		if (securitygroupItemProvider == null) {
+			securitygroupItemProvider = new SecuritygroupItemProvider(this);
+		}
+
+		return securitygroupItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.aws.ec2.Securitygrouplink} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SecuritygrouplinkItemProvider securitygrouplinkItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.aws.ec2.Securitygrouplink}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSecuritygrouplinkAdapter() {
+		if (securitygrouplinkItemProvider == null) {
+			securitygrouplinkItemProvider = new SecuritygrouplinkItemProvider(this);
+		}
+
+		return securitygrouplinkItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.aws.ec2.Keypair} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected KeypairItemProvider keypairItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.aws.ec2.Keypair}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createKeypairAdapter() {
+		if (keypairItemProvider == null) {
+			keypairItemProvider = new KeypairItemProvider(this);
+		}
+
+		return keypairItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.aws.ec2.Keypairlink} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected KeypairlinkItemProvider keypairlinkItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.aws.ec2.Keypairlink}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createKeypairlinkAdapter() {
+		if (keypairlinkItemProvider == null) {
+			keypairlinkItemProvider = new KeypairlinkItemProvider(this);
+		}
+
+		return keypairlinkItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ippermission} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected IppermissionItemProvider ippermissionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ippermission}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createIppermissionAdapter() {
+		if (ippermissionItemProvider == null) {
+			ippermissionItemProvider = new IppermissionItemProvider(this);
+		}
+
+		return ippermissionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ippermissionlink} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected IppermissionlinkItemProvider ippermissionlinkItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ippermissionlink}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createIppermissionlinkAdapter() {
+		if (ippermissionlinkItemProvider == null) {
+			ippermissionlinkItemProvider = new IppermissionlinkItemProvider(this);
+		}
+
+		return ippermissionlinkItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.aws.ec2.Awscredential} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2850,6 +2988,12 @@ public class Ec2ItemProviderAdapterFactory extends Ec2AdapterFactory implements 
 	public void dispose() {
 		if (instanceec2ItemProvider != null) instanceec2ItemProvider.dispose();
 		if (awsaccountItemProvider != null) awsaccountItemProvider.dispose();
+		if (securitygroupItemProvider != null) securitygroupItemProvider.dispose();
+		if (securitygrouplinkItemProvider != null) securitygrouplinkItemProvider.dispose();
+		if (keypairItemProvider != null) keypairItemProvider.dispose();
+		if (keypairlinkItemProvider != null) keypairlinkItemProvider.dispose();
+		if (ippermissionItemProvider != null) ippermissionItemProvider.dispose();
+		if (ippermissionlinkItemProvider != null) ippermissionlinkItemProvider.dispose();
 		if (awscredentialItemProvider != null) awscredentialItemProvider.dispose();
 		if (t2_nanoItemProvider != null) t2_nanoItemProvider.dispose();
 		if (t2_microItemProvider != null) t2_microItemProvider.dispose();

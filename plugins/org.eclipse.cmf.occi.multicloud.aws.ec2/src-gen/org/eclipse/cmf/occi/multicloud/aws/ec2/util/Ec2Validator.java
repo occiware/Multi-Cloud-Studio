@@ -133,6 +133,18 @@ public class Ec2Validator extends EObjectValidator {
 				return validateInstanceec2((Instanceec2)value, diagnostics, context);
 			case Ec2Package.AWSACCOUNT:
 				return validateAwsaccount((Awsaccount)value, diagnostics, context);
+			case Ec2Package.SECURITYGROUP:
+				return validateSecuritygroup((Securitygroup)value, diagnostics, context);
+			case Ec2Package.SECURITYGROUPLINK:
+				return validateSecuritygrouplink((Securitygrouplink)value, diagnostics, context);
+			case Ec2Package.KEYPAIR:
+				return validateKeypair((Keypair)value, diagnostics, context);
+			case Ec2Package.KEYPAIRLINK:
+				return validateKeypairlink((Keypairlink)value, diagnostics, context);
+			case Ec2Package.IPPERMISSION:
+				return validateIppermission((Ippermission)value, diagnostics, context);
+			case Ec2Package.IPPERMISSIONLINK:
+				return validateIppermissionlink((Ippermissionlink)value, diagnostics, context);
 			case Ec2Package.AWSCREDENTIAL:
 				return validateAwscredential((Awscredential)value, diagnostics, context);
 			case Ec2Package.T2_NANO:
@@ -371,6 +383,10 @@ public class Ec2Validator extends EObjectValidator {
 				return validateMonitoringState((MonitoringState)value, diagnostics, context);
 			case Ec2Package.VIRTUALIZATION_TYPE:
 				return validateVirtualizationType((VirtualizationType)value, diagnostics, context);
+			case Ec2Package.IP_PERMISSION_TYPE:
+				return validateIpPermissionType((IpPermissionType)value, diagnostics, context);
+			case Ec2Package.IP_PROTOCOL:
+				return validateIpProtocol((IpProtocol)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -420,6 +436,330 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= occiValidator.validateEntity_DifferentMixins(awsaccount, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateResource_ResourceKindIsInParent(awsaccount, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSecuritygroup(Securitygroup securitygroup, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(securitygroup, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(securitygroup, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(securitygroup, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(securitygroup, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(securitygroup, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(securitygroup, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(securitygroup, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(securitygroup, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(securitygroup, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(securitygroup, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(securitygroup, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(securitygroup, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_DifferentMixins(securitygroup, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateResource_ResourceKindIsInParent(securitygroup, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSecuritygrouplink(Securitygrouplink securitygrouplink, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(securitygrouplink, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(securitygrouplink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(securitygrouplink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(securitygrouplink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(securitygrouplink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(securitygrouplink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(securitygrouplink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(securitygrouplink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(securitygrouplink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(securitygrouplink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(securitygrouplink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(securitygrouplink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_DifferentMixins(securitygrouplink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateLink_LinkKindIsInParent(securitygrouplink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateLink_sourceReferenceInvariant(securitygrouplink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateLink_targetReferenceInvariant(securitygrouplink, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSecuritygrouplink_sourceConstraint(securitygrouplink, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSecuritygrouplink_targetConstraint(securitygrouplink, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the sourceConstraint constraint of '<em>Securitygrouplink</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String SECURITYGROUPLINK__SOURCE_CONSTRAINT__EEXPRESSION = "self.source.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the sourceConstraint constraint of '<em>Securitygrouplink</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSecuritygrouplink_sourceConstraint(Securitygrouplink securitygrouplink, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(Ec2Package.eINSTANCE.getSecuritygrouplink(),
+				 securitygrouplink,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "sourceConstraint",
+				 SECURITYGROUPLINK__SOURCE_CONSTRAINT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the targetConstraint constraint of '<em>Securitygrouplink</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String SECURITYGROUPLINK__TARGET_CONSTRAINT__EEXPRESSION = "self.target.oclIsKindOf(ec2::Securitygroup)";
+
+	/**
+	 * Validates the targetConstraint constraint of '<em>Securitygrouplink</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSecuritygrouplink_targetConstraint(Securitygrouplink securitygrouplink, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(Ec2Package.eINSTANCE.getSecuritygrouplink(),
+				 securitygrouplink,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "targetConstraint",
+				 SECURITYGROUPLINK__TARGET_CONSTRAINT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateKeypair(Keypair keypair, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(keypair, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(keypair, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(keypair, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(keypair, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(keypair, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(keypair, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(keypair, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(keypair, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(keypair, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(keypair, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(keypair, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(keypair, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_DifferentMixins(keypair, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateResource_ResourceKindIsInParent(keypair, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateKeypairlink(Keypairlink keypairlink, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(keypairlink, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(keypairlink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(keypairlink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(keypairlink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(keypairlink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(keypairlink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(keypairlink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(keypairlink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(keypairlink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(keypairlink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(keypairlink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(keypairlink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_DifferentMixins(keypairlink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateLink_LinkKindIsInParent(keypairlink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateLink_sourceReferenceInvariant(keypairlink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateLink_targetReferenceInvariant(keypairlink, diagnostics, context);
+		if (result || diagnostics != null) result &= validateKeypairlink_sourceConstraint(keypairlink, diagnostics, context);
+		if (result || diagnostics != null) result &= validateKeypairlink_targetConstraint(keypairlink, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the sourceConstraint constraint of '<em>Keypairlink</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String KEYPAIRLINK__SOURCE_CONSTRAINT__EEXPRESSION = "self.source.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the sourceConstraint constraint of '<em>Keypairlink</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateKeypairlink_sourceConstraint(Keypairlink keypairlink, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(Ec2Package.eINSTANCE.getKeypairlink(),
+				 keypairlink,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "sourceConstraint",
+				 KEYPAIRLINK__SOURCE_CONSTRAINT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the targetConstraint constraint of '<em>Keypairlink</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String KEYPAIRLINK__TARGET_CONSTRAINT__EEXPRESSION = "self.target.oclIsKindOf(ec2::Keypair)";
+
+	/**
+	 * Validates the targetConstraint constraint of '<em>Keypairlink</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateKeypairlink_targetConstraint(Keypairlink keypairlink, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(Ec2Package.eINSTANCE.getKeypairlink(),
+				 keypairlink,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "targetConstraint",
+				 KEYPAIRLINK__TARGET_CONSTRAINT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateIppermission(Ippermission ippermission, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(ippermission, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(ippermission, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(ippermission, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(ippermission, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(ippermission, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(ippermission, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(ippermission, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(ippermission, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(ippermission, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(ippermission, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(ippermission, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(ippermission, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_DifferentMixins(ippermission, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateResource_ResourceKindIsInParent(ippermission, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateIppermissionlink(Ippermissionlink ippermissionlink, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(ippermissionlink, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(ippermissionlink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(ippermissionlink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(ippermissionlink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(ippermissionlink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(ippermissionlink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(ippermissionlink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(ippermissionlink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(ippermissionlink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(ippermissionlink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(ippermissionlink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(ippermissionlink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_DifferentMixins(ippermissionlink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateLink_LinkKindIsInParent(ippermissionlink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateLink_sourceReferenceInvariant(ippermissionlink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateLink_targetReferenceInvariant(ippermissionlink, diagnostics, context);
+		if (result || diagnostics != null) result &= validateIppermissionlink_sourceConstraint(ippermissionlink, diagnostics, context);
+		if (result || diagnostics != null) result &= validateIppermissionlink_targetConstraint(ippermissionlink, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the sourceConstraint constraint of '<em>Ippermissionlink</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String IPPERMISSIONLINK__SOURCE_CONSTRAINT__EEXPRESSION = "self.source.oclIsKindOf(ec2::Securitygroup)";
+
+	/**
+	 * Validates the sourceConstraint constraint of '<em>Ippermissionlink</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateIppermissionlink_sourceConstraint(Ippermissionlink ippermissionlink, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(Ec2Package.eINSTANCE.getIppermissionlink(),
+				 ippermissionlink,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "sourceConstraint",
+				 IPPERMISSIONLINK__SOURCE_CONSTRAINT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the targetConstraint constraint of '<em>Ippermissionlink</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String IPPERMISSIONLINK__TARGET_CONSTRAINT__EEXPRESSION = "self.target.oclIsKindOf(ec2::Ippermission)";
+
+	/**
+	 * Validates the targetConstraint constraint of '<em>Ippermissionlink</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateIppermissionlink_targetConstraint(Ippermissionlink ippermissionlink, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(Ec2Package.eINSTANCE.getIppermissionlink(),
+				 ippermissionlink,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "targetConstraint",
+				 IPPERMISSIONLINK__TARGET_CONSTRAINT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -2960,6 +3300,24 @@ public class Ec2Validator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateVirtualizationType(VirtualizationType virtualizationType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateIpPermissionType(IpPermissionType ipPermissionType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateIpProtocol(IpProtocol ipProtocol, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

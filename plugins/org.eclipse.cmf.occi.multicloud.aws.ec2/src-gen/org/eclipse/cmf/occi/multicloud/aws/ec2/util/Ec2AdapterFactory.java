@@ -13,6 +13,7 @@
 package org.eclipse.cmf.occi.multicloud.aws.ec2.util;
 
 import org.eclipse.cmf.occi.core.Entity;
+import org.eclipse.cmf.occi.core.Link;
 import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.core.Resource;
 
@@ -94,6 +95,30 @@ public class Ec2AdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseAwsaccount(Awsaccount object) {
 				return createAwsaccountAdapter();
+			}
+			@Override
+			public Adapter caseSecuritygroup(Securitygroup object) {
+				return createSecuritygroupAdapter();
+			}
+			@Override
+			public Adapter caseSecuritygrouplink(Securitygrouplink object) {
+				return createSecuritygrouplinkAdapter();
+			}
+			@Override
+			public Adapter caseKeypair(Keypair object) {
+				return createKeypairAdapter();
+			}
+			@Override
+			public Adapter caseKeypairlink(Keypairlink object) {
+				return createKeypairlinkAdapter();
+			}
+			@Override
+			public Adapter caseIppermission(Ippermission object) {
+				return createIppermissionAdapter();
+			}
+			@Override
+			public Adapter caseIppermissionlink(Ippermissionlink object) {
+				return createIppermissionlinkAdapter();
 			}
 			@Override
 			public Adapter caseAwscredential(Awscredential object) {
@@ -568,6 +593,10 @@ public class Ec2AdapterFactory extends AdapterFactoryImpl {
 				return createCloudaccountAdapter();
 			}
 			@Override
+			public Adapter caseLink(Link object) {
+				return createLinkAdapter();
+			}
+			@Override
 			public Adapter caseMixinBase(MixinBase object) {
 				return createMixinBaseAdapter();
 			}
@@ -624,6 +653,90 @@ public class Ec2AdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAwsaccountAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Securitygroup <em>Securitygroup</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Securitygroup
+	 * @generated
+	 */
+	public Adapter createSecuritygroupAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Securitygrouplink <em>Securitygrouplink</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Securitygrouplink
+	 * @generated
+	 */
+	public Adapter createSecuritygrouplinkAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Keypair <em>Keypair</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Keypair
+	 * @generated
+	 */
+	public Adapter createKeypairAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Keypairlink <em>Keypairlink</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Keypairlink
+	 * @generated
+	 */
+	public Adapter createKeypairlinkAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ippermission <em>Ippermission</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ippermission
+	 * @generated
+	 */
+	public Adapter createIppermissionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ippermissionlink <em>Ippermissionlink</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ippermissionlink
+	 * @generated
+	 */
+	public Adapter createIppermissionlinkAdapter() {
 		return null;
 	}
 
@@ -2276,6 +2389,20 @@ public class Ec2AdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCloudaccountAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.Link <em>Link</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.core.Link
+	 * @generated
+	 */
+	public Adapter createLinkAdapter() {
 		return null;
 	}
 

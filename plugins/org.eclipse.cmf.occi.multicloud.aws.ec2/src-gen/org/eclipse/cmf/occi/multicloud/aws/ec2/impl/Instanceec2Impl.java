@@ -43,7 +43,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Instanceec2Impl#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Instanceec2Impl#getInstanceId <em>Instance Id</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Instanceec2Impl#getInstanceType <em>Instance Type</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Instanceec2Impl#getRegionId <em>Region Id</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Instanceec2Impl#getZoneName <em>Zone Name</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Instanceec2Impl#getImageId <em>Image Id</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Instanceec2Impl#getAwsInstanceStatus <em>Aws Instance Status</em>}</li>
@@ -62,7 +61,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Instanceec2Impl#getPublicDNSName <em>Public DNS Name</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Instanceec2Impl#getPublicIpv4Address <em>Public Ipv4 Address</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Instanceec2Impl#getRamDiskId <em>Ram Disk Id</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Instanceec2Impl#isSriovNetSupport <em>Sriov Net Support</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Instanceec2Impl#getSriovNetSupport <em>Sriov Net Support</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Instanceec2Impl#getVirtualizationType <em>Virtualization Type</em>}</li>
  * </ul>
  *
@@ -128,26 +127,6 @@ public class Instanceec2Impl extends ComputeImpl implements Instanceec2 {
 	 * @ordered
 	 */
 	protected String instanceType = INSTANCE_TYPE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getRegionId() <em>Region Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRegionId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String REGION_ID_EDEFAULT = "eu-west-3";
-
-	/**
-	 * The cached value of the '{@link #getRegionId() <em>Region Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRegionId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String regionId = REGION_ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getZoneName() <em>Zone Name</em>}' attribute.
@@ -510,24 +489,24 @@ public class Instanceec2Impl extends ComputeImpl implements Instanceec2 {
 	protected String ramDiskId = RAM_DISK_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #isSriovNetSupport() <em>Sriov Net Support</em>}' attribute.
+	 * The default value of the '{@link #getSriovNetSupport() <em>Sriov Net Support</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isSriovNetSupport()
+	 * @see #getSriovNetSupport()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean SRIOV_NET_SUPPORT_EDEFAULT = false;
+	protected static final String SRIOV_NET_SUPPORT_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #isSriovNetSupport() <em>Sriov Net Support</em>}' attribute.
+	 * The cached value of the '{@link #getSriovNetSupport() <em>Sriov Net Support</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isSriovNetSupport()
+	 * @see #getSriovNetSupport()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean sriovNetSupport = SRIOV_NET_SUPPORT_EDEFAULT;
+	protected String sriovNetSupport = SRIOV_NET_SUPPORT_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getVirtualizationType() <em>Virtualization Type</em>}' attribute.
@@ -629,27 +608,6 @@ public class Instanceec2Impl extends ComputeImpl implements Instanceec2 {
 		instanceType = newInstanceType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Ec2Package.INSTANCEEC2__INSTANCE_TYPE, oldInstanceType, instanceType));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getRegionId() {
-		return regionId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRegionId(String newRegionId) {
-		String oldRegionId = regionId;
-		regionId = newRegionId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Ec2Package.INSTANCEEC2__REGION_ID, oldRegionId, regionId));
 	}
 
 	/**
@@ -1035,7 +993,7 @@ public class Instanceec2Impl extends ComputeImpl implements Instanceec2 {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isSriovNetSupport() {
+	public String getSriovNetSupport() {
 		return sriovNetSupport;
 	}
 
@@ -1044,8 +1002,8 @@ public class Instanceec2Impl extends ComputeImpl implements Instanceec2 {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSriovNetSupport(boolean newSriovNetSupport) {
-		boolean oldSriovNetSupport = sriovNetSupport;
+	public void setSriovNetSupport(String newSriovNetSupport) {
+		String oldSriovNetSupport = sriovNetSupport;
 		sriovNetSupport = newSriovNetSupport;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Ec2Package.INSTANCEEC2__SRIOV_NET_SUPPORT, oldSriovNetSupport, sriovNetSupport));
@@ -1097,8 +1055,6 @@ public class Instanceec2Impl extends ComputeImpl implements Instanceec2 {
 				return getInstanceId();
 			case Ec2Package.INSTANCEEC2__INSTANCE_TYPE:
 				return getInstanceType();
-			case Ec2Package.INSTANCEEC2__REGION_ID:
-				return getRegionId();
 			case Ec2Package.INSTANCEEC2__ZONE_NAME:
 				return getZoneName();
 			case Ec2Package.INSTANCEEC2__IMAGE_ID:
@@ -1136,7 +1092,7 @@ public class Instanceec2Impl extends ComputeImpl implements Instanceec2 {
 			case Ec2Package.INSTANCEEC2__RAM_DISK_ID:
 				return getRamDiskId();
 			case Ec2Package.INSTANCEEC2__SRIOV_NET_SUPPORT:
-				return isSriovNetSupport();
+				return getSriovNetSupport();
 			case Ec2Package.INSTANCEEC2__VIRTUALIZATION_TYPE:
 				return getVirtualizationType();
 		}
@@ -1159,9 +1115,6 @@ public class Instanceec2Impl extends ComputeImpl implements Instanceec2 {
 				return;
 			case Ec2Package.INSTANCEEC2__INSTANCE_TYPE:
 				setInstanceType((String)newValue);
-				return;
-			case Ec2Package.INSTANCEEC2__REGION_ID:
-				setRegionId((String)newValue);
 				return;
 			case Ec2Package.INSTANCEEC2__ZONE_NAME:
 				setZoneName((String)newValue);
@@ -1218,7 +1171,7 @@ public class Instanceec2Impl extends ComputeImpl implements Instanceec2 {
 				setRamDiskId((String)newValue);
 				return;
 			case Ec2Package.INSTANCEEC2__SRIOV_NET_SUPPORT:
-				setSriovNetSupport((Boolean)newValue);
+				setSriovNetSupport((String)newValue);
 				return;
 			case Ec2Package.INSTANCEEC2__VIRTUALIZATION_TYPE:
 				setVirtualizationType((VirtualizationType)newValue);
@@ -1243,9 +1196,6 @@ public class Instanceec2Impl extends ComputeImpl implements Instanceec2 {
 				return;
 			case Ec2Package.INSTANCEEC2__INSTANCE_TYPE:
 				setInstanceType(INSTANCE_TYPE_EDEFAULT);
-				return;
-			case Ec2Package.INSTANCEEC2__REGION_ID:
-				setRegionId(REGION_ID_EDEFAULT);
 				return;
 			case Ec2Package.INSTANCEEC2__ZONE_NAME:
 				setZoneName(ZONE_NAME_EDEFAULT);
@@ -1325,8 +1275,6 @@ public class Instanceec2Impl extends ComputeImpl implements Instanceec2 {
 				return INSTANCE_ID_EDEFAULT == null ? instanceId != null : !INSTANCE_ID_EDEFAULT.equals(instanceId);
 			case Ec2Package.INSTANCEEC2__INSTANCE_TYPE:
 				return INSTANCE_TYPE_EDEFAULT == null ? instanceType != null : !INSTANCE_TYPE_EDEFAULT.equals(instanceType);
-			case Ec2Package.INSTANCEEC2__REGION_ID:
-				return REGION_ID_EDEFAULT == null ? regionId != null : !REGION_ID_EDEFAULT.equals(regionId);
 			case Ec2Package.INSTANCEEC2__ZONE_NAME:
 				return ZONE_NAME_EDEFAULT == null ? zoneName != null : !ZONE_NAME_EDEFAULT.equals(zoneName);
 			case Ec2Package.INSTANCEEC2__IMAGE_ID:
@@ -1364,7 +1312,7 @@ public class Instanceec2Impl extends ComputeImpl implements Instanceec2 {
 			case Ec2Package.INSTANCEEC2__RAM_DISK_ID:
 				return RAM_DISK_ID_EDEFAULT == null ? ramDiskId != null : !RAM_DISK_ID_EDEFAULT.equals(ramDiskId);
 			case Ec2Package.INSTANCEEC2__SRIOV_NET_SUPPORT:
-				return sriovNetSupport != SRIOV_NET_SUPPORT_EDEFAULT;
+				return SRIOV_NET_SUPPORT_EDEFAULT == null ? sriovNetSupport != null : !SRIOV_NET_SUPPORT_EDEFAULT.equals(sriovNetSupport);
 			case Ec2Package.INSTANCEEC2__VIRTUALIZATION_TYPE:
 				return virtualizationType != VIRTUALIZATION_TYPE_EDEFAULT;
 		}
@@ -1402,8 +1350,6 @@ public class Instanceec2Impl extends ComputeImpl implements Instanceec2 {
 		result.append(instanceId);
 		result.append(", instanceType: ");
 		result.append(instanceType);
-		result.append(", regionId: ");
-		result.append(regionId);
 		result.append(", zoneName: ");
 		result.append(zoneName);
 		result.append(", imageId: ");

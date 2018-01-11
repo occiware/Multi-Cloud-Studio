@@ -69,6 +69,12 @@ public class Ec2FactoryImpl extends EFactoryImpl implements Ec2Factory {
 		switch (eClass.getClassifierID()) {
 			case Ec2Package.INSTANCEEC2: return createInstanceec2();
 			case Ec2Package.AWSACCOUNT: return createAwsaccount();
+			case Ec2Package.SECURITYGROUP: return createSecuritygroup();
+			case Ec2Package.SECURITYGROUPLINK: return createSecuritygrouplink();
+			case Ec2Package.KEYPAIR: return createKeypair();
+			case Ec2Package.KEYPAIRLINK: return createKeypairlink();
+			case Ec2Package.IPPERMISSION: return createIppermission();
+			case Ec2Package.IPPERMISSIONLINK: return createIppermissionlink();
 			case Ec2Package.AWSCREDENTIAL: return createAwscredential();
 			case Ec2Package.T2_NANO: return createT2_nano();
 			case Ec2Package.T2_MICRO: return createT2_micro();
@@ -206,6 +212,10 @@ public class Ec2FactoryImpl extends EFactoryImpl implements Ec2Factory {
 				return createMonitoringStateFromString(eDataType, initialValue);
 			case Ec2Package.VIRTUALIZATION_TYPE:
 				return createVirtualizationTypeFromString(eDataType, initialValue);
+			case Ec2Package.IP_PERMISSION_TYPE:
+				return createIpPermissionTypeFromString(eDataType, initialValue);
+			case Ec2Package.IP_PROTOCOL:
+				return createIpProtocolFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -229,6 +239,10 @@ public class Ec2FactoryImpl extends EFactoryImpl implements Ec2Factory {
 				return convertMonitoringStateToString(eDataType, instanceValue);
 			case Ec2Package.VIRTUALIZATION_TYPE:
 				return convertVirtualizationTypeToString(eDataType, instanceValue);
+			case Ec2Package.IP_PERMISSION_TYPE:
+				return convertIpPermissionTypeToString(eDataType, instanceValue);
+			case Ec2Package.IP_PROTOCOL:
+				return convertIpProtocolToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -252,6 +266,66 @@ public class Ec2FactoryImpl extends EFactoryImpl implements Ec2Factory {
 	public Awsaccount createAwsaccount() {
 		AwsaccountImpl awsaccount = new AwsaccountImpl();
 		return awsaccount;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Securitygroup createSecuritygroup() {
+		SecuritygroupImpl securitygroup = new SecuritygroupImpl();
+		return securitygroup;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Securitygrouplink createSecuritygrouplink() {
+		SecuritygrouplinkImpl securitygrouplink = new SecuritygrouplinkImpl();
+		return securitygrouplink;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Keypair createKeypair() {
+		KeypairImpl keypair = new KeypairImpl();
+		return keypair;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Keypairlink createKeypairlink() {
+		KeypairlinkImpl keypairlink = new KeypairlinkImpl();
+		return keypairlink;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Ippermission createIppermission() {
+		IppermissionImpl ippermission = new IppermissionImpl();
+		return ippermission;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Ippermissionlink createIppermissionlink() {
+		IppermissionlinkImpl ippermissionlink = new IppermissionlinkImpl();
+		return ippermissionlink;
 	}
 
 	/**
@@ -1491,6 +1565,46 @@ public class Ec2FactoryImpl extends EFactoryImpl implements Ec2Factory {
 	 * @generated
 	 */
 	public String convertVirtualizationTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IpPermissionType createIpPermissionTypeFromString(EDataType eDataType, String initialValue) {
+		IpPermissionType result = IpPermissionType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertIpPermissionTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IpProtocol createIpProtocolFromString(EDataType eDataType, String initialValue) {
+		IpProtocol result = IpProtocol.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertIpProtocolToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

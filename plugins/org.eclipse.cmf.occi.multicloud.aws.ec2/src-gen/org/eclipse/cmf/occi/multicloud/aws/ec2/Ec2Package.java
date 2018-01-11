@@ -275,22 +275,13 @@ public interface Ec2Package extends EPackage {
 	int INSTANCEEC2__INSTANCE_TYPE = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Region Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INSTANCEEC2__REGION_ID = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Zone Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INSTANCEEC2__ZONE_NAME = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 4;
+	int INSTANCEEC2__ZONE_NAME = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Image Id</b></em>' attribute.
@@ -299,7 +290,7 @@ public interface Ec2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTANCEEC2__IMAGE_ID = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 5;
+	int INSTANCEEC2__IMAGE_ID = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Aws Instance Status</b></em>' attribute.
@@ -308,7 +299,7 @@ public interface Ec2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTANCEEC2__AWS_INSTANCE_STATUS = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 6;
+	int INSTANCEEC2__AWS_INSTANCE_STATUS = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Launch Time</b></em>' attribute.
@@ -317,7 +308,7 @@ public interface Ec2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTANCEEC2__LAUNCH_TIME = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 7;
+	int INSTANCEEC2__LAUNCH_TIME = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Ami Launch Index</b></em>' attribute.
@@ -326,7 +317,7 @@ public interface Ec2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTANCEEC2__AMI_LAUNCH_INDEX = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 8;
+	int INSTANCEEC2__AMI_LAUNCH_INDEX = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Ebs Optimized IO</b></em>' attribute.
@@ -335,7 +326,7 @@ public interface Ec2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTANCEEC2__EBS_OPTIMIZED_IO = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 9;
+	int INSTANCEEC2__EBS_OPTIMIZED_IO = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Ena Support</b></em>' attribute.
@@ -344,7 +335,7 @@ public interface Ec2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTANCEEC2__ENA_SUPPORT = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 10;
+	int INSTANCEEC2__ENA_SUPPORT = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Hypervisor</b></em>' attribute.
@@ -353,7 +344,7 @@ public interface Ec2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTANCEEC2__HYPERVISOR = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 11;
+	int INSTANCEEC2__HYPERVISOR = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Instance Life Cycle</b></em>' attribute.
@@ -362,7 +353,7 @@ public interface Ec2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTANCEEC2__INSTANCE_LIFE_CYCLE = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 12;
+	int INSTANCEEC2__INSTANCE_LIFE_CYCLE = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Kernel Id</b></em>' attribute.
@@ -371,7 +362,7 @@ public interface Ec2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTANCEEC2__KERNEL_ID = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 13;
+	int INSTANCEEC2__KERNEL_ID = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Key Pair Name</b></em>' attribute.
@@ -380,7 +371,7 @@ public interface Ec2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTANCEEC2__KEY_PAIR_NAME = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 14;
+	int INSTANCEEC2__KEY_PAIR_NAME = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Monitoring State</b></em>' attribute.
@@ -389,7 +380,7 @@ public interface Ec2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTANCEEC2__MONITORING_STATE = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 15;
+	int INSTANCEEC2__MONITORING_STATE = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Platform</b></em>' attribute.
@@ -398,7 +389,7 @@ public interface Ec2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTANCEEC2__PLATFORM = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 16;
+	int INSTANCEEC2__PLATFORM = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Private DNS Name</b></em>' attribute.
@@ -407,7 +398,7 @@ public interface Ec2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTANCEEC2__PRIVATE_DNS_NAME = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 17;
+	int INSTANCEEC2__PRIVATE_DNS_NAME = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Private Ip V4 Address</b></em>' attribute.
@@ -416,7 +407,7 @@ public interface Ec2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTANCEEC2__PRIVATE_IP_V4_ADDRESS = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 18;
+	int INSTANCEEC2__PRIVATE_IP_V4_ADDRESS = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Public DNS Name</b></em>' attribute.
@@ -425,7 +416,7 @@ public interface Ec2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTANCEEC2__PUBLIC_DNS_NAME = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 19;
+	int INSTANCEEC2__PUBLIC_DNS_NAME = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Public Ipv4 Address</b></em>' attribute.
@@ -434,7 +425,7 @@ public interface Ec2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTANCEEC2__PUBLIC_IPV4_ADDRESS = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 20;
+	int INSTANCEEC2__PUBLIC_IPV4_ADDRESS = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Ram Disk Id</b></em>' attribute.
@@ -443,7 +434,7 @@ public interface Ec2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTANCEEC2__RAM_DISK_ID = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 21;
+	int INSTANCEEC2__RAM_DISK_ID = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Sriov Net Support</b></em>' attribute.
@@ -452,7 +443,7 @@ public interface Ec2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTANCEEC2__SRIOV_NET_SUPPORT = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 22;
+	int INSTANCEEC2__SRIOV_NET_SUPPORT = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Virtualization Type</b></em>' attribute.
@@ -461,7 +452,7 @@ public interface Ec2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTANCEEC2__VIRTUALIZATION_TYPE = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 23;
+	int INSTANCEEC2__VIRTUALIZATION_TYPE = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 22;
 
 	/**
 	 * The number of structural features of the '<em>Instanceec2</em>' class.
@@ -470,7 +461,7 @@ public interface Ec2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INSTANCEEC2_FEATURE_COUNT = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 24;
+	int INSTANCEEC2_FEATURE_COUNT = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 23;
 
 	/**
 	 * The operation id for the '<em>Occi Create</em>' operation.
@@ -509,6 +500,33 @@ public interface Ec2Package extends EPackage {
 	int INSTANCEEC2___OCCI_DELETE = InfrastructurePackage.COMPUTE___OCCI_DELETE;
 
 	/**
+	 * The operation id for the '<em>Start</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTANCEEC2___START = InfrastructurePackage.COMPUTE___START;
+
+	/**
+	 * The operation id for the '<em>Stop</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTANCEEC2___STOP__STOPMETHOD = InfrastructurePackage.COMPUTE___STOP__STOPMETHOD;
+
+	/**
+	 * The operation id for the '<em>Restart</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTANCEEC2___RESTART__RESTARTMETHOD = InfrastructurePackage.COMPUTE___RESTART__RESTARTMETHOD;
+
+	/**
 	 * The operation id for the '<em>Suspend</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -536,40 +554,13 @@ public interface Ec2Package extends EPackage {
 	int INSTANCEEC2___TERMINATE = InfrastructurePackage.COMPUTE_OPERATION_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Restart</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INSTANCEEC2___RESTART__RESTARTMETHOD = InfrastructurePackage.COMPUTE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Start</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INSTANCEEC2___START = InfrastructurePackage.COMPUTE_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Stop</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INSTANCEEC2___STOP__STOPMETHOD = InfrastructurePackage.COMPUTE_OPERATION_COUNT + 3;
-
-	/**
 	 * The number of operations of the '<em>Instanceec2</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INSTANCEEC2_OPERATION_COUNT = InfrastructurePackage.COMPUTE_OPERATION_COUNT + 4;
+	int INSTANCEEC2_OPERATION_COUNT = InfrastructurePackage.COMPUTE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.impl.AwsaccountImpl <em>Awsaccount</em>}' class.
@@ -672,13 +663,22 @@ public interface Ec2Package extends EPackage {
 	int AWSACCOUNT__RLINKS = AccountsPackage.CLOUDACCOUNT__RLINKS;
 
 	/**
+	 * The feature id for the '<em><b>Region Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AWSACCOUNT__REGION_ID = AccountsPackage.CLOUDACCOUNT_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Awsaccount</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AWSACCOUNT_FEATURE_COUNT = AccountsPackage.CLOUDACCOUNT_FEATURE_COUNT + 0;
+	int AWSACCOUNT_FEATURE_COUNT = AccountsPackage.CLOUDACCOUNT_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Occi Create</em>' operation.
@@ -726,6 +726,1101 @@ public interface Ec2Package extends EPackage {
 	int AWSACCOUNT_OPERATION_COUNT = AccountsPackage.CLOUDACCOUNT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.impl.SecuritygroupImpl <em>Securitygroup</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.SecuritygroupImpl
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getSecuritygroup()
+	 * @generated
+	 */
+	int SECURITYGROUP = 2;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITYGROUP__ID = OCCIPackage.RESOURCE__ID;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITYGROUP__TITLE = OCCIPackage.RESOURCE__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITYGROUP__KIND = OCCIPackage.RESOURCE__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Location</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITYGROUP__LOCATION = OCCIPackage.RESOURCE__LOCATION;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITYGROUP__ATTRIBUTES = OCCIPackage.RESOURCE__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Mixins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITYGROUP__MIXINS = OCCIPackage.RESOURCE__MIXINS;
+
+	/**
+	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITYGROUP__PARTS = OCCIPackage.RESOURCE__PARTS;
+
+	/**
+	 * The feature id for the '<em><b>Summary</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITYGROUP__SUMMARY = OCCIPackage.RESOURCE__SUMMARY;
+
+	/**
+	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITYGROUP__LINKS = OCCIPackage.RESOURCE__LINKS;
+
+	/**
+	 * The feature id for the '<em><b>Rlinks</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITYGROUP__RLINKS = OCCIPackage.RESOURCE__RLINKS;
+
+	/**
+	 * The feature id for the '<em><b>Security Group Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITYGROUP__SECURITY_GROUP_NAME = OCCIPackage.RESOURCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Security Group Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITYGROUP__SECURITY_GROUP_DESCRIPTION = OCCIPackage.RESOURCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Vpc Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITYGROUP__VPC_ID = OCCIPackage.RESOURCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Security Group Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITYGROUP__SECURITY_GROUP_ID = OCCIPackage.RESOURCE_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Securitygroup</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITYGROUP_FEATURE_COUNT = OCCIPackage.RESOURCE_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Occi Create</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITYGROUP___OCCI_CREATE = OCCIPackage.RESOURCE___OCCI_CREATE;
+
+	/**
+	 * The operation id for the '<em>Occi Retrieve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITYGROUP___OCCI_RETRIEVE = OCCIPackage.RESOURCE___OCCI_RETRIEVE;
+
+	/**
+	 * The operation id for the '<em>Occi Update</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITYGROUP___OCCI_UPDATE = OCCIPackage.RESOURCE___OCCI_UPDATE;
+
+	/**
+	 * The operation id for the '<em>Occi Delete</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITYGROUP___OCCI_DELETE = OCCIPackage.RESOURCE___OCCI_DELETE;
+
+	/**
+	 * The number of operations of the '<em>Securitygroup</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITYGROUP_OPERATION_COUNT = OCCIPackage.RESOURCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.impl.SecuritygrouplinkImpl <em>Securitygrouplink</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.SecuritygrouplinkImpl
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getSecuritygrouplink()
+	 * @generated
+	 */
+	int SECURITYGROUPLINK = 3;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITYGROUPLINK__ID = OCCIPackage.LINK__ID;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITYGROUPLINK__TITLE = OCCIPackage.LINK__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITYGROUPLINK__KIND = OCCIPackage.LINK__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Location</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITYGROUPLINK__LOCATION = OCCIPackage.LINK__LOCATION;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITYGROUPLINK__ATTRIBUTES = OCCIPackage.LINK__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Mixins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITYGROUPLINK__MIXINS = OCCIPackage.LINK__MIXINS;
+
+	/**
+	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITYGROUPLINK__PARTS = OCCIPackage.LINK__PARTS;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITYGROUPLINK__SOURCE = OCCIPackage.LINK__SOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITYGROUPLINK__TARGET = OCCIPackage.LINK__TARGET;
+
+	/**
+	 * The number of structural features of the '<em>Securitygrouplink</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITYGROUPLINK_FEATURE_COUNT = OCCIPackage.LINK_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Occi Create</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITYGROUPLINK___OCCI_CREATE = OCCIPackage.LINK___OCCI_CREATE;
+
+	/**
+	 * The operation id for the '<em>Occi Retrieve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITYGROUPLINK___OCCI_RETRIEVE = OCCIPackage.LINK___OCCI_RETRIEVE;
+
+	/**
+	 * The operation id for the '<em>Occi Update</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITYGROUPLINK___OCCI_UPDATE = OCCIPackage.LINK___OCCI_UPDATE;
+
+	/**
+	 * The operation id for the '<em>Occi Delete</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITYGROUPLINK___OCCI_DELETE = OCCIPackage.LINK___OCCI_DELETE;
+
+	/**
+	 * The operation id for the '<em>Link Target Invariant</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITYGROUPLINK___LINK_TARGET_INVARIANT__KIND_KIND = OCCIPackage.LINK___LINK_TARGET_INVARIANT__KIND_KIND;
+
+	/**
+	 * The operation id for the '<em>Link Source Invariant</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITYGROUPLINK___LINK_SOURCE_INVARIANT__KIND_KIND = OCCIPackage.LINK___LINK_SOURCE_INVARIANT__KIND_KIND;
+
+	/**
+	 * The number of operations of the '<em>Securitygrouplink</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECURITYGROUPLINK_OPERATION_COUNT = OCCIPackage.LINK_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.impl.KeypairImpl <em>Keypair</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.KeypairImpl
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getKeypair()
+	 * @generated
+	 */
+	int KEYPAIR = 4;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYPAIR__ID = OCCIPackage.RESOURCE__ID;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYPAIR__TITLE = OCCIPackage.RESOURCE__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYPAIR__KIND = OCCIPackage.RESOURCE__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Location</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYPAIR__LOCATION = OCCIPackage.RESOURCE__LOCATION;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYPAIR__ATTRIBUTES = OCCIPackage.RESOURCE__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Mixins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYPAIR__MIXINS = OCCIPackage.RESOURCE__MIXINS;
+
+	/**
+	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYPAIR__PARTS = OCCIPackage.RESOURCE__PARTS;
+
+	/**
+	 * The feature id for the '<em><b>Summary</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYPAIR__SUMMARY = OCCIPackage.RESOURCE__SUMMARY;
+
+	/**
+	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYPAIR__LINKS = OCCIPackage.RESOURCE__LINKS;
+
+	/**
+	 * The feature id for the '<em><b>Rlinks</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYPAIR__RLINKS = OCCIPackage.RESOURCE__RLINKS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYPAIR__NAME = OCCIPackage.RESOURCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Private Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYPAIR__PRIVATE_KEY = OCCIPackage.RESOURCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Finger Print</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYPAIR__FINGER_PRINT = OCCIPackage.RESOURCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Encoded Public Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYPAIR__ENCODED_PUBLIC_KEY = OCCIPackage.RESOURCE_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Keypair</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYPAIR_FEATURE_COUNT = OCCIPackage.RESOURCE_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Occi Create</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYPAIR___OCCI_CREATE = OCCIPackage.RESOURCE___OCCI_CREATE;
+
+	/**
+	 * The operation id for the '<em>Occi Retrieve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYPAIR___OCCI_RETRIEVE = OCCIPackage.RESOURCE___OCCI_RETRIEVE;
+
+	/**
+	 * The operation id for the '<em>Occi Update</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYPAIR___OCCI_UPDATE = OCCIPackage.RESOURCE___OCCI_UPDATE;
+
+	/**
+	 * The operation id for the '<em>Occi Delete</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYPAIR___OCCI_DELETE = OCCIPackage.RESOURCE___OCCI_DELETE;
+
+	/**
+	 * The operation id for the '<em>Importkeypair</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYPAIR___IMPORTKEYPAIR = OCCIPackage.RESOURCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Keypair</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYPAIR_OPERATION_COUNT = OCCIPackage.RESOURCE_OPERATION_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.impl.KeypairlinkImpl <em>Keypairlink</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.KeypairlinkImpl
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getKeypairlink()
+	 * @generated
+	 */
+	int KEYPAIRLINK = 5;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYPAIRLINK__ID = OCCIPackage.LINK__ID;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYPAIRLINK__TITLE = OCCIPackage.LINK__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYPAIRLINK__KIND = OCCIPackage.LINK__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Location</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYPAIRLINK__LOCATION = OCCIPackage.LINK__LOCATION;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYPAIRLINK__ATTRIBUTES = OCCIPackage.LINK__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Mixins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYPAIRLINK__MIXINS = OCCIPackage.LINK__MIXINS;
+
+	/**
+	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYPAIRLINK__PARTS = OCCIPackage.LINK__PARTS;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYPAIRLINK__SOURCE = OCCIPackage.LINK__SOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYPAIRLINK__TARGET = OCCIPackage.LINK__TARGET;
+
+	/**
+	 * The number of structural features of the '<em>Keypairlink</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYPAIRLINK_FEATURE_COUNT = OCCIPackage.LINK_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Occi Create</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYPAIRLINK___OCCI_CREATE = OCCIPackage.LINK___OCCI_CREATE;
+
+	/**
+	 * The operation id for the '<em>Occi Retrieve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYPAIRLINK___OCCI_RETRIEVE = OCCIPackage.LINK___OCCI_RETRIEVE;
+
+	/**
+	 * The operation id for the '<em>Occi Update</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYPAIRLINK___OCCI_UPDATE = OCCIPackage.LINK___OCCI_UPDATE;
+
+	/**
+	 * The operation id for the '<em>Occi Delete</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYPAIRLINK___OCCI_DELETE = OCCIPackage.LINK___OCCI_DELETE;
+
+	/**
+	 * The operation id for the '<em>Link Target Invariant</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYPAIRLINK___LINK_TARGET_INVARIANT__KIND_KIND = OCCIPackage.LINK___LINK_TARGET_INVARIANT__KIND_KIND;
+
+	/**
+	 * The operation id for the '<em>Link Source Invariant</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYPAIRLINK___LINK_SOURCE_INVARIANT__KIND_KIND = OCCIPackage.LINK___LINK_SOURCE_INVARIANT__KIND_KIND;
+
+	/**
+	 * The number of operations of the '<em>Keypairlink</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEYPAIRLINK_OPERATION_COUNT = OCCIPackage.LINK_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.impl.IppermissionImpl <em>Ippermission</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.IppermissionImpl
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getIppermission()
+	 * @generated
+	 */
+	int IPPERMISSION = 6;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSION__ID = OCCIPackage.RESOURCE__ID;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSION__TITLE = OCCIPackage.RESOURCE__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSION__KIND = OCCIPackage.RESOURCE__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Location</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSION__LOCATION = OCCIPackage.RESOURCE__LOCATION;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSION__ATTRIBUTES = OCCIPackage.RESOURCE__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Mixins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSION__MIXINS = OCCIPackage.RESOURCE__MIXINS;
+
+	/**
+	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSION__PARTS = OCCIPackage.RESOURCE__PARTS;
+
+	/**
+	 * The feature id for the '<em><b>Summary</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSION__SUMMARY = OCCIPackage.RESOURCE__SUMMARY;
+
+	/**
+	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSION__LINKS = OCCIPackage.RESOURCE__LINKS;
+
+	/**
+	 * The feature id for the '<em><b>Rlinks</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSION__RLINKS = OCCIPackage.RESOURCE__RLINKS;
+
+	/**
+	 * The feature id for the '<em><b>To Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSION__TO_PORT = OCCIPackage.RESOURCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>From Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSION__FROM_PORT = OCCIPackage.RESOURCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Ip Protocol</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSION__IP_PROTOCOL = OCCIPackage.RESOURCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Ipv4 Ranges</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSION__IPV4_RANGES = OCCIPackage.RESOURCE_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Ipv6 Ranges</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSION__IPV6_RANGES = OCCIPackage.RESOURCE_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Traffic</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSION__TRAFFIC = OCCIPackage.RESOURCE_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Authorized</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSION__AUTHORIZED = OCCIPackage.RESOURCE_FEATURE_COUNT + 6;
+
+	/**
+	 * The number of structural features of the '<em>Ippermission</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSION_FEATURE_COUNT = OCCIPackage.RESOURCE_FEATURE_COUNT + 7;
+
+	/**
+	 * The operation id for the '<em>Occi Create</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSION___OCCI_CREATE = OCCIPackage.RESOURCE___OCCI_CREATE;
+
+	/**
+	 * The operation id for the '<em>Occi Retrieve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSION___OCCI_RETRIEVE = OCCIPackage.RESOURCE___OCCI_RETRIEVE;
+
+	/**
+	 * The operation id for the '<em>Occi Update</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSION___OCCI_UPDATE = OCCIPackage.RESOURCE___OCCI_UPDATE;
+
+	/**
+	 * The operation id for the '<em>Occi Delete</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSION___OCCI_DELETE = OCCIPackage.RESOURCE___OCCI_DELETE;
+
+	/**
+	 * The number of operations of the '<em>Ippermission</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSION_OPERATION_COUNT = OCCIPackage.RESOURCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.impl.IppermissionlinkImpl <em>Ippermissionlink</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.IppermissionlinkImpl
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getIppermissionlink()
+	 * @generated
+	 */
+	int IPPERMISSIONLINK = 7;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSIONLINK__ID = OCCIPackage.LINK__ID;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSIONLINK__TITLE = OCCIPackage.LINK__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSIONLINK__KIND = OCCIPackage.LINK__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Location</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSIONLINK__LOCATION = OCCIPackage.LINK__LOCATION;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSIONLINK__ATTRIBUTES = OCCIPackage.LINK__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Mixins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSIONLINK__MIXINS = OCCIPackage.LINK__MIXINS;
+
+	/**
+	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSIONLINK__PARTS = OCCIPackage.LINK__PARTS;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSIONLINK__SOURCE = OCCIPackage.LINK__SOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSIONLINK__TARGET = OCCIPackage.LINK__TARGET;
+
+	/**
+	 * The number of structural features of the '<em>Ippermissionlink</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSIONLINK_FEATURE_COUNT = OCCIPackage.LINK_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Occi Create</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSIONLINK___OCCI_CREATE = OCCIPackage.LINK___OCCI_CREATE;
+
+	/**
+	 * The operation id for the '<em>Occi Retrieve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSIONLINK___OCCI_RETRIEVE = OCCIPackage.LINK___OCCI_RETRIEVE;
+
+	/**
+	 * The operation id for the '<em>Occi Update</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSIONLINK___OCCI_UPDATE = OCCIPackage.LINK___OCCI_UPDATE;
+
+	/**
+	 * The operation id for the '<em>Occi Delete</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSIONLINK___OCCI_DELETE = OCCIPackage.LINK___OCCI_DELETE;
+
+	/**
+	 * The operation id for the '<em>Link Target Invariant</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSIONLINK___LINK_TARGET_INVARIANT__KIND_KIND = OCCIPackage.LINK___LINK_TARGET_INVARIANT__KIND_KIND;
+
+	/**
+	 * The operation id for the '<em>Link Source Invariant</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSIONLINK___LINK_SOURCE_INVARIANT__KIND_KIND = OCCIPackage.LINK___LINK_SOURCE_INVARIANT__KIND_KIND;
+
+	/**
+	 * The number of operations of the '<em>Ippermissionlink</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPPERMISSIONLINK_OPERATION_COUNT = OCCIPackage.LINK_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.impl.AwscredentialImpl <em>Awscredential</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -733,7 +1828,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getAwscredential()
 	 * @generated
 	 */
-	int AWSCREDENTIAL = 2;
+	int AWSCREDENTIAL = 8;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -815,7 +1910,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getGeneralpurpose()
 	 * @generated
 	 */
-	int GENERALPURPOSE = 66;
+	int GENERALPURPOSE = 72;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -870,7 +1965,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getT2_nano()
 	 * @generated
 	 */
-	int T2_NANO = 3;
+	int T2_NANO = 9;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -952,7 +2047,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getT2_micro()
 	 * @generated
 	 */
-	int T2_MICRO = 4;
+	int T2_MICRO = 10;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -1034,7 +2129,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getT2_small()
 	 * @generated
 	 */
-	int T2_SMALL = 5;
+	int T2_SMALL = 11;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -1116,7 +2211,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getT2_medium()
 	 * @generated
 	 */
-	int T2_MEDIUM = 6;
+	int T2_MEDIUM = 12;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -1198,7 +2293,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getT2_large()
 	 * @generated
 	 */
-	int T2_LARGE = 7;
+	int T2_LARGE = 13;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -1280,7 +2375,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getT2_xlarge()
 	 * @generated
 	 */
-	int T2_XLARGE = 8;
+	int T2_XLARGE = 14;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -1362,7 +2457,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getT2_2xlarge()
 	 * @generated
 	 */
-	int T2_2XLARGE = 9;
+	int T2_2XLARGE = 15;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -1444,7 +2539,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getM5_large()
 	 * @generated
 	 */
-	int M5_LARGE = 10;
+	int M5_LARGE = 16;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -1526,7 +2621,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getM5_xlarge()
 	 * @generated
 	 */
-	int M5_XLARGE = 11;
+	int M5_XLARGE = 17;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -1608,7 +2703,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getM5_2xlarge()
 	 * @generated
 	 */
-	int M5_2XLARGE = 12;
+	int M5_2XLARGE = 18;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -1690,7 +2785,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getM5_4xlarge()
 	 * @generated
 	 */
-	int M5_4XLARGE = 13;
+	int M5_4XLARGE = 19;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -1772,7 +2867,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getM5_12xlarge()
 	 * @generated
 	 */
-	int M5_12XLARGE = 14;
+	int M5_12XLARGE = 20;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -1854,7 +2949,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getM5_24xlarge()
 	 * @generated
 	 */
-	int M5_24XLARGE = 15;
+	int M5_24XLARGE = 21;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -1936,7 +3031,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getM4_large()
 	 * @generated
 	 */
-	int M4_LARGE = 16;
+	int M4_LARGE = 22;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -2018,7 +3113,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getM4_xlarge()
 	 * @generated
 	 */
-	int M4_XLARGE = 17;
+	int M4_XLARGE = 23;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -2100,7 +3195,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getM4_2xlarge()
 	 * @generated
 	 */
-	int M4_2XLARGE = 18;
+	int M4_2XLARGE = 24;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -2182,7 +3277,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getM4_10xlarge()
 	 * @generated
 	 */
-	int M4_10XLARGE = 19;
+	int M4_10XLARGE = 25;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -2264,7 +3359,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getM4_16xlarge()
 	 * @generated
 	 */
-	int M4_16XLARGE = 20;
+	int M4_16XLARGE = 26;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -2346,7 +3441,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getM3_medium()
 	 * @generated
 	 */
-	int M3_MEDIUM = 21;
+	int M3_MEDIUM = 27;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -2437,7 +3532,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getM3_large()
 	 * @generated
 	 */
-	int M3_LARGE = 22;
+	int M3_LARGE = 28;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -2528,7 +3623,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getM3_xlarge()
 	 * @generated
 	 */
-	int M3_XLARGE = 23;
+	int M3_XLARGE = 29;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -2619,7 +3714,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getM3_2xlarge()
 	 * @generated
 	 */
-	int M3_2XLARGE = 24;
+	int M3_2XLARGE = 30;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -2710,7 +3805,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getComputeoptimized()
 	 * @generated
 	 */
-	int COMPUTEOPTIMIZED = 67;
+	int COMPUTEOPTIMIZED = 73;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -2765,7 +3860,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getC5_large()
 	 * @generated
 	 */
-	int C5_LARGE = 25;
+	int C5_LARGE = 31;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -2847,7 +3942,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getC5_xlarge()
 	 * @generated
 	 */
-	int C5_XLARGE = 26;
+	int C5_XLARGE = 32;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -2929,7 +4024,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getC5_2xlarge()
 	 * @generated
 	 */
-	int C5_2XLARGE = 27;
+	int C5_2XLARGE = 33;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -3011,7 +4106,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getC5_4xlarge()
 	 * @generated
 	 */
-	int C5_4XLARGE = 28;
+	int C5_4XLARGE = 34;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -3093,7 +4188,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getC5_9xlarge()
 	 * @generated
 	 */
-	int C5_9XLARGE = 29;
+	int C5_9XLARGE = 35;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -3175,7 +4270,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getC5_18xlarge()
 	 * @generated
 	 */
-	int C5_18XLARGE = 30;
+	int C5_18XLARGE = 36;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -3257,7 +4352,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getC4_large()
 	 * @generated
 	 */
-	int C4_LARGE = 31;
+	int C4_LARGE = 37;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -3339,7 +4434,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getC4_xlarge()
 	 * @generated
 	 */
-	int C4_XLARGE = 32;
+	int C4_XLARGE = 38;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -3421,7 +4516,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getC4_2xlarge()
 	 * @generated
 	 */
-	int C4_2XLARGE = 33;
+	int C4_2XLARGE = 39;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -3503,7 +4598,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getC4_4xlarge()
 	 * @generated
 	 */
-	int C4_4XLARGE = 34;
+	int C4_4XLARGE = 40;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -3585,7 +4680,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getC4_8xlarge()
 	 * @generated
 	 */
-	int C4_8XLARGE = 35;
+	int C4_8XLARGE = 41;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -3667,7 +4762,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getC3_large()
 	 * @generated
 	 */
-	int C3_LARGE = 36;
+	int C3_LARGE = 42;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -3758,7 +4853,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getC3_xlarge()
 	 * @generated
 	 */
-	int C3_XLARGE = 37;
+	int C3_XLARGE = 43;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -3849,7 +4944,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getC3_2xlarge()
 	 * @generated
 	 */
-	int C3_2XLARGE = 38;
+	int C3_2XLARGE = 44;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -3940,7 +5035,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getC3_4xlarge()
 	 * @generated
 	 */
-	int C3_4XLARGE = 39;
+	int C3_4XLARGE = 45;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -4031,7 +5126,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getC3_8xlarge()
 	 * @generated
 	 */
-	int C3_8XLARGE = 40;
+	int C3_8XLARGE = 46;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -4122,7 +5217,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getMemoryoptimized()
 	 * @generated
 	 */
-	int MEMORYOPTIMIZED = 68;
+	int MEMORYOPTIMIZED = 74;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -4177,7 +5272,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getX1e_xlarge()
 	 * @generated
 	 */
-	int X1E_XLARGE = 41;
+	int X1E_XLARGE = 47;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -4268,7 +5363,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getX1e_2xlarge()
 	 * @generated
 	 */
-	int X1E_2XLARGE = 42;
+	int X1E_2XLARGE = 48;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -4359,7 +5454,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getX1e_4xlarge()
 	 * @generated
 	 */
-	int X1E_4XLARGE = 43;
+	int X1E_4XLARGE = 49;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -4450,7 +5545,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getX1e_8xlarge()
 	 * @generated
 	 */
-	int X1E_8XLARGE = 44;
+	int X1E_8XLARGE = 50;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -4541,7 +5636,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getX1e_16xlarge()
 	 * @generated
 	 */
-	int X1E_16XLARGE = 45;
+	int X1E_16XLARGE = 51;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -4632,7 +5727,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getX1e_32xlarge()
 	 * @generated
 	 */
-	int X1E_32XLARGE = 46;
+	int X1E_32XLARGE = 52;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -4723,7 +5818,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getX1_16xlarge()
 	 * @generated
 	 */
-	int X1_16XLARGE = 47;
+	int X1_16XLARGE = 53;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -4814,7 +5909,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getX1_32xlarge()
 	 * @generated
 	 */
-	int X1_32XLARGE = 48;
+	int X1_32XLARGE = 54;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -4905,7 +6000,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getR4_large()
 	 * @generated
 	 */
-	int R4_LARGE = 49;
+	int R4_LARGE = 55;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -4987,7 +6082,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getR4_xlarge()
 	 * @generated
 	 */
-	int R4_XLARGE = 50;
+	int R4_XLARGE = 56;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -5069,7 +6164,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getR4_2xlarge()
 	 * @generated
 	 */
-	int R4_2XLARGE = 51;
+	int R4_2XLARGE = 57;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -5151,7 +6246,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getR4_4xlarge()
 	 * @generated
 	 */
-	int R4_4XLARGE = 52;
+	int R4_4XLARGE = 58;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -5233,7 +6328,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getR4_8xlarge()
 	 * @generated
 	 */
-	int R4_8XLARGE = 53;
+	int R4_8XLARGE = 59;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -5315,7 +6410,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getR4_16xlarge()
 	 * @generated
 	 */
-	int R4_16XLARGE = 54;
+	int R4_16XLARGE = 60;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -5397,7 +6492,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getR3_large()
 	 * @generated
 	 */
-	int R3_LARGE = 55;
+	int R3_LARGE = 61;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -5488,7 +6583,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getR3_xlarge()
 	 * @generated
 	 */
-	int R3_XLARGE = 56;
+	int R3_XLARGE = 62;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -5579,7 +6674,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getR3_2xlarge()
 	 * @generated
 	 */
-	int R3_2XLARGE = 57;
+	int R3_2XLARGE = 63;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -5670,7 +6765,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getR3_4xlarge()
 	 * @generated
 	 */
-	int R3_4XLARGE = 58;
+	int R3_4XLARGE = 64;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -5761,7 +6856,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getR3_8xlarge()
 	 * @generated
 	 */
-	int R3_8XLARGE = 59;
+	int R3_8XLARGE = 65;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -5852,7 +6947,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getAcceleratedcomputing()
 	 * @generated
 	 */
-	int ACCELERATEDCOMPUTING = 69;
+	int ACCELERATEDCOMPUTING = 75;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -5907,7 +7002,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getP3_2xlarge()
 	 * @generated
 	 */
-	int P3_2XLARGE = 60;
+	int P3_2XLARGE = 66;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -6016,7 +7111,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getP3_8xlarge()
 	 * @generated
 	 */
-	int P3_8XLARGE = 61;
+	int P3_8XLARGE = 67;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -6125,7 +7220,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getP3_16xlarge()
 	 * @generated
 	 */
-	int P3_16XLARGE = 62;
+	int P3_16XLARGE = 68;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -6234,7 +7329,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getP2_xlarge()
 	 * @generated
 	 */
-	int P2_XLARGE = 63;
+	int P2_XLARGE = 69;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -6343,7 +7438,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getP2_8xlarge()
 	 * @generated
 	 */
-	int P2_8XLARGE = 64;
+	int P2_8XLARGE = 70;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -6452,7 +7547,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getP2_16xlarge()
 	 * @generated
 	 */
-	int P2_16XLARGE = 65;
+	int P2_16XLARGE = 71;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -6561,7 +7656,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getStorageoptimized()
 	 * @generated
 	 */
-	int STORAGEOPTIMIZED = 70;
+	int STORAGEOPTIMIZED = 76;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -6616,7 +7711,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getG3_4xlarge()
 	 * @generated
 	 */
-	int G3_4XLARGE = 71;
+	int G3_4XLARGE = 77;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -6716,7 +7811,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getG3_8xlarge()
 	 * @generated
 	 */
-	int G3_8XLARGE = 72;
+	int G3_8XLARGE = 78;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -6816,7 +7911,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getG3_16xlarge()
 	 * @generated
 	 */
-	int G3_16XLARGE = 73;
+	int G3_16XLARGE = 79;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -6916,7 +8011,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getF1_2xlarge()
 	 * @generated
 	 */
-	int F1_2XLARGE = 74;
+	int F1_2XLARGE = 80;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -7016,7 +8111,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getF1_16xlarge()
 	 * @generated
 	 */
-	int F1_16XLARGE = 75;
+	int F1_16XLARGE = 81;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -7116,7 +8211,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getH1_2xlarge()
 	 * @generated
 	 */
-	int H1_2XLARGE = 76;
+	int H1_2XLARGE = 82;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -7207,7 +8302,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getH1_4xlarge()
 	 * @generated
 	 */
-	int H1_4XLARGE = 77;
+	int H1_4XLARGE = 83;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -7298,7 +8393,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getH1_8xlarge()
 	 * @generated
 	 */
-	int H1_8XLARGE = 78;
+	int H1_8XLARGE = 84;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -7389,7 +8484,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getH1_16xlarge()
 	 * @generated
 	 */
-	int H1_16XLARGE = 79;
+	int H1_16XLARGE = 85;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -7480,7 +8575,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getI3_large()
 	 * @generated
 	 */
-	int I3_LARGE = 80;
+	int I3_LARGE = 86;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -7571,7 +8666,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getI3_xlarge()
 	 * @generated
 	 */
-	int I3_XLARGE = 81;
+	int I3_XLARGE = 87;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -7662,7 +8757,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getI3_2xlarge()
 	 * @generated
 	 */
-	int I3_2XLARGE = 82;
+	int I3_2XLARGE = 88;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -7753,7 +8848,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getI3_4xlarge()
 	 * @generated
 	 */
-	int I3_4XLARGE = 83;
+	int I3_4XLARGE = 89;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -7844,7 +8939,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getI3_8xlarge()
 	 * @generated
 	 */
-	int I3_8XLARGE = 84;
+	int I3_8XLARGE = 90;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -7935,7 +9030,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getI3_16xlarge()
 	 * @generated
 	 */
-	int I3_16XLARGE = 85;
+	int I3_16XLARGE = 91;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -8026,7 +9121,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getI3_metal()
 	 * @generated
 	 */
-	int I3_METAL = 86;
+	int I3_METAL = 92;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -8117,7 +9212,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getD2_xlarge()
 	 * @generated
 	 */
-	int D2_XLARGE = 87;
+	int D2_XLARGE = 93;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -8208,7 +9303,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getD2_2xlarge()
 	 * @generated
 	 */
-	int D2_2XLARGE = 88;
+	int D2_2XLARGE = 94;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -8299,7 +9394,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getD2_4xlarge()
 	 * @generated
 	 */
-	int D2_4XLARGE = 89;
+	int D2_4XLARGE = 95;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -8390,7 +9485,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getD2_8xlarge()
 	 * @generated
 	 */
-	int D2_8XLARGE = 90;
+	int D2_8XLARGE = 96;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -8481,7 +9576,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getM1_small()
 	 * @generated
 	 */
-	int M1_SMALL = 91;
+	int M1_SMALL = 97;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -8572,7 +9667,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getT1_micro()
 	 * @generated
 	 */
-	int T1_MICRO = 92;
+	int T1_MICRO = 98;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -8654,7 +9749,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getM1_medium()
 	 * @generated
 	 */
-	int M1_MEDIUM = 93;
+	int M1_MEDIUM = 99;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -8745,7 +9840,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getM1_large()
 	 * @generated
 	 */
-	int M1_LARGE = 94;
+	int M1_LARGE = 100;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -8836,7 +9931,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getM1_xlarge()
 	 * @generated
 	 */
-	int M1_XLARGE = 95;
+	int M1_XLARGE = 101;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -8927,7 +10022,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getC1_medium()
 	 * @generated
 	 */
-	int C1_MEDIUM = 96;
+	int C1_MEDIUM = 102;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -9018,7 +10113,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getC1_xlarge()
 	 * @generated
 	 */
-	int C1_XLARGE = 97;
+	int C1_XLARGE = 103;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -9109,7 +10204,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getCc2_8xlarge()
 	 * @generated
 	 */
-	int CC2_8XLARGE = 98;
+	int CC2_8XLARGE = 104;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -9200,7 +10295,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getG2_2xlarge()
 	 * @generated
 	 */
-	int G2_2XLARGE = 99;
+	int G2_2XLARGE = 105;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -9291,7 +10386,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getG2_8xlarge()
 	 * @generated
 	 */
-	int G2_8XLARGE = 100;
+	int G2_8XLARGE = 106;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -9382,7 +10477,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getCg1_4xlarge()
 	 * @generated
 	 */
-	int CG1_4XLARGE = 101;
+	int CG1_4XLARGE = 107;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -9473,7 +10568,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getM2_xlarge()
 	 * @generated
 	 */
-	int M2_XLARGE = 102;
+	int M2_XLARGE = 108;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -9564,7 +10659,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getM2_2xlarge()
 	 * @generated
 	 */
-	int M2_2XLARGE = 103;
+	int M2_2XLARGE = 109;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -9655,7 +10750,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getM2_4xlarge()
 	 * @generated
 	 */
-	int M2_4XLARGE = 104;
+	int M2_4XLARGE = 110;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -9746,7 +10841,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getCr1_8xlarge()
 	 * @generated
 	 */
-	int CR1_8XLARGE = 105;
+	int CR1_8XLARGE = 111;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -9837,7 +10932,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getI2_xlarge()
 	 * @generated
 	 */
-	int I2_XLARGE = 106;
+	int I2_XLARGE = 112;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -9928,7 +11023,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getI2_2xlarge()
 	 * @generated
 	 */
-	int I2_2XLARGE = 107;
+	int I2_2XLARGE = 113;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -10019,7 +11114,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getI2_4xlarge()
 	 * @generated
 	 */
-	int I2_4XLARGE = 108;
+	int I2_4XLARGE = 114;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -10110,7 +11205,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getI2_8xlarge()
 	 * @generated
 	 */
-	int I2_8XLARGE = 109;
+	int I2_8XLARGE = 115;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -10201,7 +11296,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getHs1_8xlarge()
 	 * @generated
 	 */
-	int HS1_8XLARGE = 110;
+	int HS1_8XLARGE = 116;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -10292,7 +11387,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getPlacementgroup()
 	 * @generated
 	 */
-	int PLACEMENTGROUP = 111;
+	int PLACEMENTGROUP = 117;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -10401,7 +11496,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getRootdevicevolume()
 	 * @generated
 	 */
-	int ROOTDEVICEVOLUME = 112;
+	int ROOTDEVICEVOLUME = 118;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -10474,7 +11569,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getStatustransitionreason()
 	 * @generated
 	 */
-	int STATUSTRANSITIONREASON = 113;
+	int STATUSTRANSITIONREASON = 119;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -10547,7 +11642,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getTags()
 	 * @generated
 	 */
-	int TAGS = 114;
+	int TAGS = 120;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -10602,7 +11697,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getInstancevpcinfo()
 	 * @generated
 	 */
-	int INSTANCEVPCINFO = 115;
+	int INSTANCEVPCINFO = 121;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -10684,7 +11779,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getAWSInstanceState()
 	 * @generated
 	 */
-	int AWS_INSTANCE_STATE = 116;
+	int AWS_INSTANCE_STATE = 122;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.HypervisorType <em>Hypervisor Type</em>}' enum.
@@ -10694,7 +11789,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getHypervisorType()
 	 * @generated
 	 */
-	int HYPERVISOR_TYPE = 117;
+	int HYPERVISOR_TYPE = 123;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.InstanceLifeCycleType <em>Instance Life Cycle Type</em>}' enum.
@@ -10704,7 +11799,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getInstanceLifeCycleType()
 	 * @generated
 	 */
-	int INSTANCE_LIFE_CYCLE_TYPE = 118;
+	int INSTANCE_LIFE_CYCLE_TYPE = 124;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.MonitoringState <em>Monitoring State</em>}' enum.
@@ -10714,7 +11809,7 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getMonitoringState()
 	 * @generated
 	 */
-	int MONITORING_STATE = 119;
+	int MONITORING_STATE = 125;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.VirtualizationType <em>Virtualization Type</em>}' enum.
@@ -10724,7 +11819,29 @@ public interface Ec2Package extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getVirtualizationType()
 	 * @generated
 	 */
-	int VIRTUALIZATION_TYPE = 120;
+	int VIRTUALIZATION_TYPE = 126;
+
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.IpPermissionType <em>Ip Permission Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.IpPermissionType
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getIpPermissionType()
+	 * @generated
+	 */
+	int IP_PERMISSION_TYPE = 127;
+
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.IpProtocol <em>Ip Protocol</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.IpProtocol
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.impl.Ec2PackageImpl#getIpProtocol()
+	 * @generated
+	 */
+	int IP_PROTOCOL = 128;
 
 
 	/**
@@ -10769,17 +11886,6 @@ public interface Ec2Package extends EPackage {
 	 * @generated
 	 */
 	EAttribute getInstanceec2_InstanceType();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Instanceec2#getRegionId <em>Region Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Region Id</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Instanceec2#getRegionId()
-	 * @see #getInstanceec2()
-	 * @generated
-	 */
-	EAttribute getInstanceec2_RegionId();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Instanceec2#getZoneName <em>Zone Name</em>}'.
@@ -10980,11 +12086,11 @@ public interface Ec2Package extends EPackage {
 	EAttribute getInstanceec2_RamDiskId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Instanceec2#isSriovNetSupport <em>Sriov Net Support</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Instanceec2#getSriovNetSupport <em>Sriov Net Support</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Sriov Net Support</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Instanceec2#isSriovNetSupport()
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Instanceec2#getSriovNetSupport()
 	 * @see #getInstanceec2()
 	 * @generated
 	 */
@@ -11012,36 +12118,6 @@ public interface Ec2Package extends EPackage {
 	EOperation getInstanceec2__Terminate();
 
 	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Instanceec2#restart(org.eclipse.cmf.occi.infrastructure.RestartMethod) <em>Restart</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Restart</em>' operation.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Instanceec2#restart(org.eclipse.cmf.occi.infrastructure.RestartMethod)
-	 * @generated
-	 */
-	EOperation getInstanceec2__Restart__RestartMethod();
-
-	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Instanceec2#start() <em>Start</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Start</em>' operation.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Instanceec2#start()
-	 * @generated
-	 */
-	EOperation getInstanceec2__Start();
-
-	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Instanceec2#stop(org.eclipse.cmf.occi.infrastructure.StopMethod) <em>Stop</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Stop</em>' operation.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Instanceec2#stop(org.eclipse.cmf.occi.infrastructure.StopMethod)
-	 * @generated
-	 */
-	EOperation getInstanceec2__Stop__StopMethod();
-
-	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Awsaccount <em>Awsaccount</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -11050,6 +12126,252 @@ public interface Ec2Package extends EPackage {
 	 * @generated
 	 */
 	EClass getAwsaccount();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Awsaccount#getRegionId <em>Region Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Region Id</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Awsaccount#getRegionId()
+	 * @see #getAwsaccount()
+	 * @generated
+	 */
+	EAttribute getAwsaccount_RegionId();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Securitygroup <em>Securitygroup</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Securitygroup</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Securitygroup
+	 * @generated
+	 */
+	EClass getSecuritygroup();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Securitygroup#getSecurityGroupName <em>Security Group Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Security Group Name</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Securitygroup#getSecurityGroupName()
+	 * @see #getSecuritygroup()
+	 * @generated
+	 */
+	EAttribute getSecuritygroup_SecurityGroupName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Securitygroup#getSecurityGroupDescription <em>Security Group Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Security Group Description</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Securitygroup#getSecurityGroupDescription()
+	 * @see #getSecuritygroup()
+	 * @generated
+	 */
+	EAttribute getSecuritygroup_SecurityGroupDescription();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Securitygroup#getVpcId <em>Vpc Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Vpc Id</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Securitygroup#getVpcId()
+	 * @see #getSecuritygroup()
+	 * @generated
+	 */
+	EAttribute getSecuritygroup_VpcId();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Securitygroup#getSecurityGroupId <em>Security Group Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Security Group Id</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Securitygroup#getSecurityGroupId()
+	 * @see #getSecuritygroup()
+	 * @generated
+	 */
+	EAttribute getSecuritygroup_SecurityGroupId();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Securitygrouplink <em>Securitygrouplink</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Securitygrouplink</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Securitygrouplink
+	 * @generated
+	 */
+	EClass getSecuritygrouplink();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Keypair <em>Keypair</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Keypair</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Keypair
+	 * @generated
+	 */
+	EClass getKeypair();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Keypair#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Keypair#getName()
+	 * @see #getKeypair()
+	 * @generated
+	 */
+	EAttribute getKeypair_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Keypair#getPrivateKey <em>Private Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Private Key</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Keypair#getPrivateKey()
+	 * @see #getKeypair()
+	 * @generated
+	 */
+	EAttribute getKeypair_PrivateKey();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Keypair#getFingerPrint <em>Finger Print</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Finger Print</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Keypair#getFingerPrint()
+	 * @see #getKeypair()
+	 * @generated
+	 */
+	EAttribute getKeypair_FingerPrint();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Keypair#getEncodedPublicKey <em>Encoded Public Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Encoded Public Key</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Keypair#getEncodedPublicKey()
+	 * @see #getKeypair()
+	 * @generated
+	 */
+	EAttribute getKeypair_EncodedPublicKey();
+
+	/**
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Keypair#importkeypair() <em>Importkeypair</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Importkeypair</em>' operation.
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Keypair#importkeypair()
+	 * @generated
+	 */
+	EOperation getKeypair__Importkeypair();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Keypairlink <em>Keypairlink</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Keypairlink</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Keypairlink
+	 * @generated
+	 */
+	EClass getKeypairlink();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ippermission <em>Ippermission</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Ippermission</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ippermission
+	 * @generated
+	 */
+	EClass getIppermission();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ippermission#getToPort <em>To Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>To Port</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ippermission#getToPort()
+	 * @see #getIppermission()
+	 * @generated
+	 */
+	EAttribute getIppermission_ToPort();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ippermission#getFromPort <em>From Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>From Port</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ippermission#getFromPort()
+	 * @see #getIppermission()
+	 * @generated
+	 */
+	EAttribute getIppermission_FromPort();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ippermission#getIpProtocol <em>Ip Protocol</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ip Protocol</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ippermission#getIpProtocol()
+	 * @see #getIppermission()
+	 * @generated
+	 */
+	EAttribute getIppermission_IpProtocol();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ippermission#getIpv4Ranges <em>Ipv4 Ranges</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ipv4 Ranges</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ippermission#getIpv4Ranges()
+	 * @see #getIppermission()
+	 * @generated
+	 */
+	EAttribute getIppermission_Ipv4Ranges();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ippermission#getIpv6Ranges <em>Ipv6 Ranges</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ipv6 Ranges</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ippermission#getIpv6Ranges()
+	 * @see #getIppermission()
+	 * @generated
+	 */
+	EAttribute getIppermission_Ipv6Ranges();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ippermission#getTraffic <em>Traffic</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Traffic</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ippermission#getTraffic()
+	 * @see #getIppermission()
+	 * @generated
+	 */
+	EAttribute getIppermission_Traffic();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ippermission#isAuthorized <em>Authorized</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Authorized</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ippermission#isAuthorized()
+	 * @see #getIppermission()
+	 * @generated
+	 */
+	EAttribute getIppermission_Authorized();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Ippermissionlink <em>Ippermissionlink</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Ippermissionlink</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ippermissionlink
+	 * @generated
+	 */
+	EClass getIppermissionlink();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Awscredential <em>Awscredential</em>}'.
@@ -16706,6 +18028,26 @@ public interface Ec2Package extends EPackage {
 	 * @generated
 	 */
 	EEnum getVirtualizationType();
+
+	/**
+	 * Returns the meta object for enum '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.IpPermissionType <em>Ip Permission Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Ip Permission Type</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.IpPermissionType
+	 * @generated
+	 */
+	EEnum getIpPermissionType();
+
+	/**
+	 * Returns the meta object for enum '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.IpProtocol <em>Ip Protocol</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Ip Protocol</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.IpProtocol
+	 * @generated
+	 */
+	EEnum getIpProtocol();
 
 	/**
 	 * Returns the factory that creates the instances of the model.

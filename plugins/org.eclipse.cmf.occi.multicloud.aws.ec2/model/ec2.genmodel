@@ -72,6 +72,27 @@
         <ecoreEnumLiteral href="ec2.ecore#//VirtualizationType/paravirtual"/>
       </genEnumLiterals>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="ec2.ecore#//IpPermissionType"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ec2.ecore#//IpPermissionType/inbound"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ec2.ecore#//IpPermissionType/outbound"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="ec2.ecore#//IpProtocol"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ec2.ecore#//IpProtocol/tcp"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ec2.ecore#//IpProtocol/udp"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ec2.ecore#//IpProtocol/icmp"/>
+      </genEnumLiterals>
+    </genEnums>
     <genClasses>
       <ecoreClass href="ec2.ecore#//Instanceec2"/>
       <genFeatures createChild="false">
@@ -82,9 +103,6 @@
       </genFeatures>
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Instanceec2/instanceType"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Instanceec2/regionId"/>
       </genFeatures>
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Instanceec2/zoneName"/>
@@ -149,24 +167,78 @@
       <genOperations>
         <ecoreOperation href="ec2.ecore#//Instanceec2/terminate"/>
       </genOperations>
-      <genOperations>
-        <ecoreOperation href="ec2.ecore#//Instanceec2/restart"/>
-        <genParameters>
-          <ecoreParameter href="ec2.ecore#//Instanceec2/restart/method"/>
-        </genParameters>
-      </genOperations>
-      <genOperations>
-        <ecoreOperation href="ec2.ecore#//Instanceec2/start"/>
-      </genOperations>
-      <genOperations>
-        <ecoreOperation href="ec2.ecore#//Instanceec2/stop"/>
-        <genParameters>
-          <ecoreParameter href="ec2.ecore#//Instanceec2/stop/method"/>
-        </genParameters>
-      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="ec2.ecore#//Awsaccount"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Awsaccount/regionId"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//Securitygroup"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Securitygroup/securityGroupName"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Securitygroup/securityGroupDescription"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Securitygroup/vpcId"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Securitygroup/securityGroupId"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//Securitygrouplink"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//Keypair"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Keypair/name"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Keypair/privateKey"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Keypair/fingerPrint"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Keypair/encodedPublicKey"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="ec2.ecore#//Keypair/importkeypair"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//Keypairlink"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//Ippermission"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Ippermission/toPort"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Ippermission/fromPort"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Ippermission/ipProtocol"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Ippermission/ipv4Ranges"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Ippermission/ipv6Ranges"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Ippermission/traffic"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Ippermission/authorized"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//Ippermissionlink"/>
     </genClasses>
     <genClasses>
       <ecoreClass href="ec2.ecore#//Awscredential"/>

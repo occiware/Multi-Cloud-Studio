@@ -13,8 +13,6 @@
 package org.eclipse.cmf.occi.multicloud.aws.ec2;
 
 import org.eclipse.cmf.occi.infrastructure.Compute;
-import org.eclipse.cmf.occi.infrastructure.RestartMethod;
-import org.eclipse.cmf.occi.infrastructure.StopMethod;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,7 +30,6 @@ import org.eclipse.cmf.occi.infrastructure.StopMethod;
  *   <li>{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Instanceec2#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Instanceec2#getInstanceId <em>Instance Id</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Instanceec2#getInstanceType <em>Instance Type</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Instanceec2#getRegionId <em>Region Id</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Instanceec2#getZoneName <em>Zone Name</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Instanceec2#getImageId <em>Image Id</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Instanceec2#getAwsInstanceStatus <em>Aws Instance Status</em>}</li>
@@ -51,7 +48,7 @@ import org.eclipse.cmf.occi.infrastructure.StopMethod;
  *   <li>{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Instanceec2#getPublicDNSName <em>Public DNS Name</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Instanceec2#getPublicIpv4Address <em>Public Ipv4 Address</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Instanceec2#getRamDiskId <em>Ram Disk Id</em>}</li>
- *   <li>{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Instanceec2#isSriovNetSupport <em>Sriov Net Support</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Instanceec2#getSriovNetSupport <em>Sriov Net Support</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Instanceec2#getVirtualizationType <em>Virtualization Type</em>}</li>
  * </ul>
  *
@@ -135,33 +132,6 @@ public interface Instanceec2 extends Compute {
 	 * @generated
 	 */
 	void setInstanceType(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Region Id</b></em>' attribute.
-	 * The default value is <code>"eu-west-3"</code>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * regionId is the id of this region given by the provider 
-	 * Default is eu-west-3 (France - Paris)
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Region Id</em>' attribute.
-	 * @see #setRegionId(String)
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ec2Package#getInstanceec2_RegionId()
-	 * @model default="eu-west-3" dataType="org.eclipse.cmf.occi.core.String" required="true"
-	 * @generated
-	 */
-	String getRegionId();
-
-	/**
-	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Instanceec2#getRegionId <em>Region Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Region Id</em>' attribute.
-	 * @see #getRegionId()
-	 * @generated
-	 */
-	void setRegionId(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Zone Name</b></em>' attribute.
@@ -638,22 +608,22 @@ public interface Instanceec2 extends Compute {
 	 * Specifies whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Sriov Net Support</em>' attribute.
-	 * @see #setSriovNetSupport(boolean)
+	 * @see #setSriovNetSupport(String)
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ec2Package#getInstanceec2_SriovNetSupport()
-	 * @model dataType="org.eclipse.cmf.occi.core.Boolean"
+	 * @model dataType="org.eclipse.cmf.occi.core.String"
 	 * @generated
 	 */
-	boolean isSriovNetSupport();
+	String getSriovNetSupport();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Instanceec2#isSriovNetSupport <em>Sriov Net Support</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Instanceec2#getSriovNetSupport <em>Sriov Net Support</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Sriov Net Support</em>' attribute.
-	 * @see #isSriovNetSupport()
+	 * @see #getSriovNetSupport()
 	 * @generated
 	 */
-	void setSriovNetSupport(boolean value);
+	void setSriovNetSupport(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Virtualization Type</b></em>' attribute.
@@ -693,40 +663,5 @@ public interface Instanceec2 extends Compute {
 	 * @generated
 	 */
 	void terminate();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Restart the system (graceful, warm or cold)
-	 * @param method 
-	 * <!-- end-model-doc -->
-	 * @model
-	 * @generated
-	 */
-	void restart(RestartMethod method);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Start the system
-	 * <!-- end-model-doc -->
-	 * @model
-	 * @generated
-	 */
-	void start();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Stop the system (graceful, acpioff or poweroff)
-	 * @param method 
-	 * <!-- end-model-doc -->
-	 * @model
-	 * @generated
-	 */
-	void stop(StopMethod method);
 
 } // Instanceec2

@@ -27,6 +27,7 @@ import org.eclipse.cmf.occi.multicloud.accounts.provider.CloudaccountItemProvide
 import org.eclipse.cmf.occi.multicloud.aws.ec2.Awsaccount;
 import org.eclipse.cmf.occi.multicloud.aws.ec2.Ec2Factory;
 
+import org.eclipse.cmf.occi.multicloud.aws.ec2.Ec2Package;
 import org.eclipse.cmf.occi.multicloud.regions.RegionsFactory;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -34,7 +35,10 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link org.eclipse.cmf.occi.multicloud.aws.ec2.Awsaccount} object.
@@ -64,8 +68,31 @@ public class AwsaccountItemProvider extends CloudaccountItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addRegionIdPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Region Id feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRegionIdPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Awsaccount_regionId_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Awsaccount_regionId_feature", "_UI_Awsaccount_type"),
+				 Ec2Package.eINSTANCE.getAwsaccount_RegionId(),
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -104,6 +131,12 @@ public class AwsaccountItemProvider extends CloudaccountItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(Awsaccount.class)) {
+			case Ec2Package.AWSACCOUNT__REGION_ID:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 
@@ -827,6 +860,21 @@ public class AwsaccountItemProvider extends CloudaccountItemProvider {
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
 				 AwsregionsFactory.eINSTANCE.createAp_northeast_1()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.RESOURCE__LINKS,
+				 Ec2Factory.eINSTANCE.createSecuritygrouplink()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.RESOURCE__LINKS,
+				 Ec2Factory.eINSTANCE.createKeypairlink()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.RESOURCE__LINKS,
+				 Ec2Factory.eINSTANCE.createIppermissionlink()));
 
 		newChildDescriptors.add
 			(createChildParameter

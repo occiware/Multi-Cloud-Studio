@@ -15,9 +15,6 @@
     <attributes name="instanceType" mutable="true" required="true" default="t2.nano">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="regionId" mutable="true" required="true" default="eu-west-3" description="regionId is the id of this region given by the provider &#xA;Default is eu-west-3 (France - Paris)">
-      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
-    </attributes>
     <attributes name="zoneName" mutable="true" description="The datacenter part. The number and mapping of Availability Zones per region may vary between AWS accounts&#xA;If null, the provider will choose the best to fit with this instance.&#xA;Zone : a, b, c, d, e">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
@@ -65,42 +62,45 @@
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
     <attributes name="sriovNetSupport" mutable="true" description="Specifies whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.">
-      <type xsi:type="occi:BooleanType" href="http://schemas.ogf.org/occi/core#//@types.1"/>
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
     <attributes name="virtualizationType" mutable="true" description="The virtualization type of the instance." type="//@types.4"/>
     <actions name="terminate" scheme="http://occiware.org/occi/infrastructure/aws/instanceec2/action#" title="Terminate - delete the instance on provider"/>
-    <actions name="Restart" scheme="http://occiware.org/occi/infrastructure/aws/instanceec2/action#" title="Restart the system (graceful, warm or cold)">
-      <attributes name="method" mutable="false">
-        <type xsi:type="occi:EnumerationType" href="http://schemas.ogf.org/occi/infrastructure#//@types.8"/>
-      </attributes>
-    </actions>
-    <actions name="Start" scheme="http://occiware.org/occi/infrastructure/aws/instanceec2/action#" title="Start the system"/>
-    <actions name="Stop" scheme="http://occiware.org/occi/infrastructure/aws/instanceec2/action#" title="Stop the system (graceful, acpioff or poweroff)">
-      <attributes name="method" mutable="false">
-        <type xsi:type="occi:EnumerationType" href="http://schemas.ogf.org/occi/infrastructure#//@types.7"/>
-      </attributes>
-    </actions>
-    <fsm attribute="//@kinds[term='instanceec2']/@attributes.6">
+    <fsm attribute="//@kinds[term='instanceec2']/@attributes.5">
       <ownedState literal="//@types.0/@literals.6" initial="true" final="false">
-        <outgoingTransition target="//@kinds[term='instanceec2']/@fsm/@ownedState.1" action="//@kinds[term='instanceec2']/@actions.2"/>
+        <outgoingTransition target="//@kinds[term='instanceec2']/@fsm/@ownedState.1">
+          <action href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']/@actions.0"/>
+        </outgoingTransition>
       </ownedState>
       <ownedState literal="//@types.0/@literals.0" initial="false" final="false">
-        <outgoingTransition target="//@kinds[term='instanceec2']/@fsm/@ownedState.2" action="//@kinds[term='instanceec2']/@actions.2"/>
+        <outgoingTransition target="//@kinds[term='instanceec2']/@fsm/@ownedState.2">
+          <action href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']/@actions.0"/>
+        </outgoingTransition>
       </ownedState>
       <ownedState literal="//@types.0/@literals.1" initial="false" final="false">
-        <outgoingTransition target="//@kinds[term='instanceec2']/@fsm/@ownedState.3" action="//@kinds[term='instanceec2']/@actions.1"/>
-        <outgoingTransition target="//@kinds[term='instanceec2']/@fsm/@ownedState.4" action="//@kinds[term='instanceec2']/@actions.3"/>
+        <outgoingTransition target="//@kinds[term='instanceec2']/@fsm/@ownedState.3">
+          <action href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']/@actions.2"/>
+        </outgoingTransition>
+        <outgoingTransition target="//@kinds[term='instanceec2']/@fsm/@ownedState.4">
+          <action href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']/@actions.1"/>
+        </outgoingTransition>
         <outgoingTransition target="//@kinds[term='instanceec2']/@fsm/@ownedState.7" action="//@kinds[term='instanceec2']/@actions.0"/>
       </ownedState>
       <ownedState literal="//@types.0/@literals.7" initial="false" final="false">
-        <outgoingTransition target="//@kinds[term='instanceec2']/@fsm/@ownedState.2" action="//@kinds[term='instanceec2']/@actions.1"/>
+        <outgoingTransition target="//@kinds[term='instanceec2']/@fsm/@ownedState.2">
+          <action href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']/@actions.2"/>
+        </outgoingTransition>
       </ownedState>
       <ownedState literal="//@types.0/@literals.3" initial="false" final="false">
-        <outgoingTransition target="//@kinds[term='instanceec2']/@fsm/@ownedState.5" action="//@kinds[term='instanceec2']/@actions.3"/>
+        <outgoingTransition target="//@kinds[term='instanceec2']/@fsm/@ownedState.5">
+          <action href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']/@actions.1"/>
+        </outgoingTransition>
       </ownedState>
       <ownedState literal="//@types.0/@literals.4" initial="false" final="false">
         <outgoingTransition target="//@kinds[term='instanceec2']/@fsm/@ownedState.6" action="//@kinds[term='instanceec2']/@actions.0"/>
-        <outgoingTransition target="//@kinds[term='instanceec2']/@fsm/@ownedState.1" action="//@kinds[term='instanceec2']/@actions.2"/>
+        <outgoingTransition target="//@kinds[term='instanceec2']/@fsm/@ownedState.1">
+          <action href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']/@actions.0"/>
+        </outgoingTransition>
       </ownedState>
       <ownedState literal="//@types.0/@literals.5" initial="false" final="true"/>
       <ownedState literal="//@types.0/@literals.2" initial="false" final="false">
@@ -110,7 +110,70 @@
     <parent href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
   </kinds>
   <kinds name="AWSAccount" scheme="http://occiware.org/occi/infrastructure/aws#">
+    <attributes name="regionId" mutable="true" required="true" default="eu-west-3" description="regionId is the id of this region given by the provider &#xA;Default is eu-west-3 (France - Paris)">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
     <parent href="http://occiware.org/occi/infrastructure/security#//@kinds[term='cloudaccount']"/>
+  </kinds>
+  <kinds name="SecurityGroup" scheme="http://occiware.org/occi/infrastructure/aws#" description="Security group acts as a virtual firewall that controls the network traffic for one or more EC2 instances">
+    <attributes name="securityGroupName" mutable="true" required="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="securityGroupDescription" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="vpcId" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="securityGroupId" mutable="false" description="Security group id defined by the provider">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
+  </kinds>
+  <kinds name="SecurityGroupLink" scheme="http://occiware.org/occi/infrastructure/aws#" description="IpPermissions link for a security group" source="//@kinds[term='instanceec2']" target="//@kinds[term='securitygroup']">
+    <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
+  </kinds>
+  <kinds name="KeyPair" scheme="http://occiware.org/occi/infrastructure/aws#">
+    <attributes name="name" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="privateKey" mutable="true" description="Warning, this must be used only after creating a keypair. If privateKey is found, update this attribute to null or other values than the original.">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="fingerPrint" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="encodedPublicKey" mutable="true" description="Public key to import for use with action method importKeypair() only, format is base64 encoded and DER">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <actions name="importKeyPair" scheme="http://occiware.org/occi/infrastructure/aws/keypair/action#"/>
+    <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
+  </kinds>
+  <kinds name="KeyPairLink" scheme="http://occiware.org/occi/infrastructure/aws#" description="Simple link between resources and key pair resource." source="//@kinds[term='instanceec2']" target="//@kinds[term='keypair']">
+    <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
+  </kinds>
+  <kinds name="IpPermission" scheme="http://occiware.org/occi/infrastructure/aws#">
+    <attributes name="toPort" mutable="true">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
+    </attributes>
+    <attributes name="fromPort" mutable="true">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
+    </attributes>
+    <attributes name="ipProtocol" mutable="true" default="tcp" type="//@types.6"/>
+    <attributes name="ipv4Ranges" mutable="true" default="" description="CidrIp range, like  &quot;111.111.111.111/32;150.150.150.150/32&quot; , to build a list use ; as separator">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="ipv6Ranges" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="traffic" mutable="true" required="true" default="inbound" type="//@types.5"/>
+    <attributes name="authorized" mutable="true" default="true">
+      <type xsi:type="occi:BooleanType" href="http://schemas.ogf.org/occi/core#//@types.1"/>
+    </attributes>
+    <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
+  </kinds>
+  <kinds name="IpPermissionLink" scheme="http://occiware.org/occi/infrastructure/aws#" source="//@kinds[term='securitygroup']" target="//@kinds[term='ippermission']">
+    <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
   </kinds>
   <mixins name="AWSCredential" scheme="http://occiware.org/occi/infrastructure/aws#" applies="//@kinds[term='awsaccount']">
     <depends href="http://occiware.org/occi/infrastructure/security#//@mixins[term='cloudcredential']"/>
@@ -1590,5 +1653,14 @@
   <types xsi:type="occi:EnumerationType" name="VirtualizationType">
     <literals name="hvm"/>
     <literals name="paravirtual"/>
+  </types>
+  <types xsi:type="occi:EnumerationType" name="IpPermissionType" documentation="Ippermission types inbound and outbound traffic">
+    <literals name="inbound" documentation="Ingress"/>
+    <literals name="outbound" documentation="egress"/>
+  </types>
+  <types xsi:type="occi:EnumerationType" name="IpProtocol">
+    <literals name="tcp"/>
+    <literals name="udp"/>
+    <literals name="icmp"/>
   </types>
 </occi:Extension>

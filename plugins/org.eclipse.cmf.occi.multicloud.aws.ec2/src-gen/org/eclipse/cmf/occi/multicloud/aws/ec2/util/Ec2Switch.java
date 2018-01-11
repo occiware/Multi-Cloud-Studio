@@ -13,6 +13,7 @@
 package org.eclipse.cmf.occi.multicloud.aws.ec2.util;
 
 import org.eclipse.cmf.occi.core.Entity;
+import org.eclipse.cmf.occi.core.Link;
 import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.core.Resource;
 
@@ -101,6 +102,54 @@ public class Ec2Switch<T> extends Switch<T> {
 				if (result == null) result = caseCloudaccount(awsaccount);
 				if (result == null) result = caseResource(awsaccount);
 				if (result == null) result = caseEntity(awsaccount);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Ec2Package.SECURITYGROUP: {
+				Securitygroup securitygroup = (Securitygroup)theEObject;
+				T result = caseSecuritygroup(securitygroup);
+				if (result == null) result = caseResource(securitygroup);
+				if (result == null) result = caseEntity(securitygroup);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Ec2Package.SECURITYGROUPLINK: {
+				Securitygrouplink securitygrouplink = (Securitygrouplink)theEObject;
+				T result = caseSecuritygrouplink(securitygrouplink);
+				if (result == null) result = caseLink(securitygrouplink);
+				if (result == null) result = caseEntity(securitygrouplink);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Ec2Package.KEYPAIR: {
+				Keypair keypair = (Keypair)theEObject;
+				T result = caseKeypair(keypair);
+				if (result == null) result = caseResource(keypair);
+				if (result == null) result = caseEntity(keypair);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Ec2Package.KEYPAIRLINK: {
+				Keypairlink keypairlink = (Keypairlink)theEObject;
+				T result = caseKeypairlink(keypairlink);
+				if (result == null) result = caseLink(keypairlink);
+				if (result == null) result = caseEntity(keypairlink);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Ec2Package.IPPERMISSION: {
+				Ippermission ippermission = (Ippermission)theEObject;
+				T result = caseIppermission(ippermission);
+				if (result == null) result = caseResource(ippermission);
+				if (result == null) result = caseEntity(ippermission);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Ec2Package.IPPERMISSIONLINK: {
+				Ippermissionlink ippermissionlink = (Ippermissionlink)theEObject;
+				T result = caseIppermissionlink(ippermissionlink);
+				if (result == null) result = caseLink(ippermissionlink);
+				if (result == null) result = caseEntity(ippermissionlink);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1145,6 +1194,96 @@ public class Ec2Switch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAwsaccount(Awsaccount object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Securitygroup</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Securitygroup</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSecuritygroup(Securitygroup object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Securitygrouplink</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Securitygrouplink</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSecuritygrouplink(Securitygrouplink object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Keypair</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Keypair</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseKeypair(Keypair object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Keypairlink</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Keypairlink</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseKeypairlink(Keypairlink object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Ippermission</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Ippermission</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIppermission(Ippermission object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Ippermissionlink</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Ippermissionlink</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIppermissionlink(Ippermissionlink object) {
 		return null;
 	}
 
@@ -2915,6 +3054,21 @@ public class Ec2Switch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCloudaccount(Cloudaccount object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Link</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Link</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLink(Link object) {
 		return null;
 	}
 

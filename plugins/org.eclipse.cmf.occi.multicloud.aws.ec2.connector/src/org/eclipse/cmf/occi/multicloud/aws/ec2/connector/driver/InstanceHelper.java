@@ -39,8 +39,11 @@ import com.amazonaws.services.ec2.model.Reservation;
 import com.amazonaws.services.ec2.model.ResourceType;
 import com.amazonaws.services.ec2.model.RunInstancesRequest;
 import com.amazonaws.services.ec2.model.RunInstancesResult;
+import com.amazonaws.services.ec2.model.StartInstancesRequest;
+import com.amazonaws.services.ec2.model.StopInstancesRequest;
 import com.amazonaws.services.ec2.model.Tag;
 import com.amazonaws.services.ec2.model.TagSpecification;
+import com.amazonaws.services.ec2.model.TerminateInstancesRequest;
 
 /**
  * This class is for instance management on AWS level.
@@ -274,8 +277,9 @@ public class InstanceHelper {
 	 * 
 	 * @param instEC2Conn
 	 * @throws AwsOperationException
+	 * @throws AwsAccountModelException 
 	 */
-	public Instance createEC2Instance(Instanceec2Connector instEC2Conn) throws AwsOperationException {
+	public static Instance createEC2Instance(Instanceec2Connector instEC2Conn) throws AwsOperationException, AwsAccountModelException {
 		RunInstancesRequest runInstancesRequest = new RunInstancesRequest();
 
 		// Manage security group if any is declared on model,
@@ -319,11 +323,8 @@ public class InstanceHelper {
 		}
 
 		// TODO : Add block device mapping and a lot of other things to configure.
-		runInstancesRequest.withImageId(instEC2Conn.getImageId())
-				.withInstanceType(instEC2Conn.getInstanceType())
-				.withMinCount(1).withMaxCount(1)
-				.withKeyName(keyPairName)
-				.withSecurityGroups(securityGroupNames);
+		runInstancesRequest.withImageId(instEC2Conn.getImageId()).withInstanceType(instEC2Conn.getInstanceType())
+				.withMinCount(1).withMaxCount(1).withKeyName(keyPairName).withSecurityGroups(securityGroupNames);
 		if (instEC2Conn.getName() != null) {
 			TagSpecification tagSpec = new TagSpecification();
 			Tag tag = new Tag("name", instEC2Conn.getName());
@@ -346,9 +347,9 @@ public class InstanceHelper {
 					return reservation.getInstances().get(0);
 				}
 			}
-			
+
 			return instance;
-			
+
 		} catch (AmazonServiceException ase) {
 			LOGGER.error(
 					"AmazonServiceException thrown from aws : " + ase.getErrorCode() + " --> " + ase.getErrorMessage());
@@ -356,15 +357,126 @@ public class InstanceHelper {
 		} catch (AmazonClientException ace) {
 			LOGGER.error("AmazonClientException thrown from aws : " + ace.getMessage());
 			throw new AwsOperationException(ace);
-		} catch (AwsAccountModelException ex) {
-			throw new RuntimeException(ex);
 		}
 	}
 
 	/**
-	 * TODO : Create RDS instance.
+	 * Terminate instance from an instance model.
+	 * @param instEC2Conn
+	 * @throws AwsOperationException 
+	 * @throws AwsAccountModelException 
+	 */
+	public static void deleteInstance(AwsEC2Client ec2Client, String instanceId) throws AwsOperationException, AwsAccountModelException {
+
+		List<String> instanceIds = new ArrayList<>();
+		if (instanceId == null || instanceId.trim().isEmpty()) {
+			throw new AwsOperationException("No instances to terminate, you didnt provide instanceId");
+		}
+		instanceIds.add(instanceId);
+		deleteInstances(ec2Client, instanceIds);
+	}
+
+	/**
+	 * 
+	 * @param ec2Client
+	 * @param instanceIds
+	 * @throws AwsOperationException
+	 */
+	public static void deleteInstances(AwsEC2Client ec2Client, List<String> instanceIds) throws AwsOperationException {
+		try {
+			TerminateInstancesRequest terminateInstanceRequest = new TerminateInstancesRequest();
+			terminateInstanceRequest.setInstanceIds(instanceIds);
+			ec2Client.getClientInstance().terminateInstances(terminateInstanceRequest);
+		} catch (AmazonServiceException ase) {
+			LOGGER.error(
+					"AmazonServiceException thrown from aws : " + ase.getErrorCode() + " --> " + ase.getErrorMessage());
+			throw new AwsOperationException(ase);
+		} catch (AmazonClientException ace) {
+			LOGGER.error("AmazonClientException thrown from aws : " + ace.getMessage());
+			throw new AwsOperationException(ace);
+		}
+
+	}
+
+	/**
+	 * Start one instance using its instanceId.
+	 * @param ec2Client
+	 * @param instanceId
+	 * @throws AwsOperationException
+	 */
+	public static void startInstance(AwsEC2Client ec2Client, String instanceId) throws AwsOperationException {
+		List<String> instanceIds = new ArrayList<>();
+		if (instanceId == null || instanceId.trim().isEmpty()) {
+			throw new AwsOperationException("Cant start the instance without its instanceId.");
+		}
+		instanceIds.add(instanceId);
+		startInstances(ec2Client, instanceIds);
+	}
+	
+	/**
+	 * Start all instances from the list of instanceId given.
+	 * @param ec2Client
+	 * @param instanceIds
+	 */
+	public static void startInstances(AwsEC2Client ec2Client, List<String> instanceIds) throws AwsOperationException {
+		StartInstancesRequest req = new StartInstancesRequest();
+		req.withInstanceIds(instanceIds);
+		try {
+			ec2Client.getClientInstance().startInstances(req);
+		} catch (AmazonServiceException ase) {
+			LOGGER.error(
+					"AmazonServiceException thrown from aws : " + ase.getErrorCode() + " --> " + ase.getErrorMessage());
+			throw new AwsOperationException(ase);
+		} catch (AmazonClientException ace) {
+			LOGGER.error("AmazonClientException thrown from aws : " + ace.getMessage());
+			throw new AwsOperationException(ace);
+		}
+	}
+	
+	/**
+	 * Stop instance using instanceId.
+	 * @param ec2Client
+	 * @param instanceId
+	 * @throws AwsOperationException
+	 */
+	public static void stopInstance(AwsEC2Client ec2Client, String instanceId) throws AwsOperationException {
+		List<String> instanceIds = new ArrayList<>();
+		if (instanceId == null) {
+			throw new AwsOperationException("Cant stop the instance without its instanceId.");
+		}
+		instanceIds.add(instanceId);
+		stopInstances(ec2Client, instanceIds);	
+	}
+	
+	/**
+	 * Stop a list of instances.
+	 * @param ec2Client
+	 * @param instanceIds
+	 * @throws AwsOperationException
+	 */
+	public static void stopInstances(AwsEC2Client ec2Client, List<String> instanceIds) throws AwsOperationException {
+		StopInstancesRequest req = new StopInstancesRequest(instanceIds);
+		try {
+			ec2Client.getClientInstance().stopInstances(req);
+		} catch (AmazonServiceException ase) {
+			LOGGER.error(
+					"AmazonServiceException thrown from aws : " + ase.getErrorCode() + " --> " + ase.getErrorMessage());
+			throw new AwsOperationException(ase);
+		} catch (AmazonClientException ace) {
+			LOGGER.error("AmazonClientException thrown from aws : " + ace.getMessage());
+			throw new AwsOperationException(ace);
+		}
+		
+	}
+	
+	// TODO : Manage RDS instance here.
+
+	/**
+	 * Create a RDS based instance.
 	 */
 	public void createRDSInstance() {
 
 	}
+	
+	
 }

@@ -204,7 +204,23 @@ public class KeypairConnector extends org.eclipse.cmf.occi.multicloud.aws.ec2.im
 	 * 
 	 */
 	public AwsEC2Client getClientInstance() throws AwsAccountModelException {
-		return ModelUtils.getClientInstance(this);
+		AwsEC2Client ec2Client = ModelUtils.getClientInstance(this);
+		if (ec2Client == null) {
+			// Must never arrive.
+			globalMessage = "Client is not instanciated, its maybe a bug, please report it.";
+			levelMessage = Level.ERROR;
+			LOGGER.error(globalMessage);
+			throw new AwsAccountModelException(globalMessage);
+		}
+		if (!ec2Client.checkConnection(this)) {
+
+			// Must return true if connection is established.
+			globalMessage = "No connection to aws has been established, please check your credentials or your configuration.";
+			levelMessage = Level.ERROR;
+			LOGGER.error(globalMessage);
+			throw new AwsAccountModelException(globalMessage);
+		}
+		return ec2Client; 
 	}
 	// End of user code
 

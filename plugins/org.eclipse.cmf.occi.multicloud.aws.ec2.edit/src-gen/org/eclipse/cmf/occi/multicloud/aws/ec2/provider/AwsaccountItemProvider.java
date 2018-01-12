@@ -26,8 +26,8 @@ import org.eclipse.cmf.occi.multicloud.accounts.provider.CloudaccountItemProvide
 
 import org.eclipse.cmf.occi.multicloud.aws.ec2.Awsaccount;
 import org.eclipse.cmf.occi.multicloud.aws.ec2.Ec2Factory;
-
 import org.eclipse.cmf.occi.multicloud.aws.ec2.Ec2Package;
+
 import org.eclipse.cmf.occi.multicloud.regions.RegionsFactory;
 
 import org.eclipse.emf.common.notify.AdapterFactory;

@@ -41,7 +41,6 @@ import com.vmware.vim25.mo.HostSystem;
 import com.vmware.vim25.mo.InventoryNavigator;
 import com.vmware.vim25.mo.ManagedEntity;
 import com.vmware.vim25.mo.ResourcePool;
-import com.vmware.vim25.mo.ServiceInstance;
 import com.vmware.vim25.mo.Task;
 import com.vmware.vim25.mo.VirtualMachine;
 
@@ -164,8 +163,7 @@ public class VMHelper {
 	}
 
 	/**
-	 * For use only if you want to create a vm with an existing disk (vmdk
-	 * file).
+	 * For use only if you want to create a vm with an existing disk (vmdk file).
 	 * 
 	 * @param filename
 	 * @param cKey
@@ -227,8 +225,8 @@ public class VMHelper {
 	}
 
 	/**
-	 * Set or unset the hotReconfig option. (to reconfig a vm cpu and memory,
-	 * hot mode)
+	 * Set or unset the hotReconfig option. (to reconfig a vm cpu and memory, hot
+	 * mode)
 	 * 
 	 * @param folder
 	 *            (folder to search vm)
@@ -300,8 +298,8 @@ public class VMHelper {
 	}
 
 	/**
-	 * Mount guest vmware tools, it's important to make it accessible directly
-	 * to client.
+	 * Mount guest vmware tools, it's important to make it accessible directly to
+	 * client.
 	 * 
 	 * @param folder
 	 * @param name
@@ -358,8 +356,8 @@ public class VMHelper {
 	}
 
 	/**
-	 * Find an hostSystem Object for a vm, if there is hostSystem information,
-	 * and compare with the hosted vmName for each vms of each host.
+	 * Find an hostSystem Object for a vm, if there is hostSystem information, and
+	 * compare with the hosted vmName for each vms of each host.
 	 * 
 	 * @param vmName
 	 * @return a hostSystem, may return null if not found.
@@ -507,8 +505,8 @@ public class VMHelper {
 	 * Get the cpu speed in Ghz.
 	 * 
 	 * @param vm
-	 * @return a Float, the cpu speed current demand by the vm, there is no
-	 *         value on exact cpu speed at this time through the VMWare api.
+	 * @return a Float, the cpu speed current demand by the vm, there is no value on
+	 *         exact cpu speed at this time through the VMWare api.
 	 */
 	public static Float getCPUSpeed(final VirtualMachine vm) {
 		Float cpuSpeed = 0.0f;
@@ -524,10 +522,9 @@ public class VMHelper {
 	}
 
 	/**
-	 * Get the state of this compute (VMWare format). poweredOff The virtual
-	 * machine is currently powered off. poweredOn The virtual machine is
-	 * currently powered on. suspended The virtual machine is currently
-	 * suspended.
+	 * Get the state of this compute (VMWare format). poweredOff The virtual machine
+	 * is currently powered off. poweredOn The virtual machine is currently powered
+	 * on. suspended The virtual machine is currently suspended.
 	 * 
 	 * @param vm
 	 * @return a String
@@ -542,11 +539,11 @@ public class VMHelper {
 	}
 
 	/**
-	 * Operation mode of guest operating system, via guestInfo. "running" -
-	 * Guest is running normally. "shuttingdown" - Guest has a pending shutdown
-	 * command. "resetting" - Guest has a pending reset command. "standby" -
-	 * Guest has a pending standby command. "notrunning" - Guest is not running.
-	 * "unknown" - Guest information is not available.
+	 * Operation mode of guest operating system, via guestInfo. "running" - Guest is
+	 * running normally. "shuttingdown" - Guest has a pending shutdown command.
+	 * "resetting" - Guest has a pending reset command. "standby" - Guest has a
+	 * pending standby command. "notrunning" - Guest is not running. "unknown" -
+	 * Guest information is not available.
 	 * 
 	 * @param vm
 	 * @return
@@ -683,6 +680,78 @@ public class VMHelper {
 	}
 
 	/**
+	 * upgrade vm hardware to a new version.
+	 * @param vm
+	 * @param version
+	 * @throws RemoteException
+	 */
+	public static void upgradeVM(final VirtualMachine vm, final String version) throws RemoteException {
+		Task task = null;
+		boolean retVal = false;
+		String vmName = vm.getName();
+		String lastPowerState = getPowerState(vm);
+		task = vm.powerOffVM_Task();
+		if (task != null) {
+			try {
+				retVal = task.waitForTask().equals(Task.SUCCESS);
+				if (retVal) {
+					LOGGER.info("VM " + vmName + " switched off");
+				} else {
+					LOGGER.info("VM " + vmName + "cannot powerOff");
+					return;
+
+				}
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		} else {
+			LOGGER.warn("Cannot stop Virtual Machine " + vmName);
+		}
+
+		if (retVal && getPowerState(vm).equals(POWER_OFF)) {
+			// Effectively upgrade vm to a new version (hardware).
+			task = vm.upgradeVM_Task(version);
+
+			if (task != null) {
+				try {
+					retVal = task.waitForTask().equals(Task.SUCCESS);
+					if (retVal) {
+						LOGGER.info("VM " + vmName + " configuration updated - new version : " + version);
+					} else {
+						LOGGER.error("VM " + vmName + " cannot be reconfigured, task has failed !");
+					}
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+
+			// We powerOn if this is the last state.
+			if (lastPowerState.equals(POWER_ON) && vm.getGuest().getGuestState().equals(POWER_OFF)) {
+				task = vm.powerOnVM_Task(null);
+				if (task != null) {
+					try {
+						retVal = task.waitForTask().equals(Task.SUCCESS);
+						if (retVal) {
+							LOGGER.info("VM " + vmName + " switched on");
+
+						} else {
+							LOGGER.warn("VM " + vmName + " cannot be switched on");
+						}
+						return;
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				} else {
+					LOGGER.info("Cannot start Virtual Machine: " + vmName);
+				}
+			}
+
+		} else {
+			LOGGER.info("Something go wrong, cant reconfigure the virtual machine : " + vmName);
+		}
+	}
+
+	/**
 	 * Change configuration for a VM - Hot or cold.
 	 *
 	 * @param vm
@@ -765,8 +834,7 @@ public class VMHelper {
 							changeSpec.setCpuHotAddEnabled(true);
 							changeSpec.setCpuHotRemoveEnabled(true);
 							changeSpec.setMemoryHotAddEnabled(true);
-							LOGGER.info("Cold reconfiguration --> VM " + vmName + " change cpu from 1 "
-									+ "to " + vCPU);
+							LOGGER.info("Cold reconfiguration --> VM " + vmName + " change cpu from 1 " + "to " + vCPU);
 							execReconf = true;
 						} else {
 							LOGGER.info("Cant reconfigure virtual machine.");
@@ -885,8 +953,7 @@ public class VMHelper {
 	}
 
 	/**
-	 * Graceful power off a virtual machine. (shutdown guest os before
-	 * poweroff).
+	 * Graceful power off a virtual machine. (shutdown guest os before poweroff).
 	 * 
 	 * @param vm
 	 */
@@ -1148,8 +1215,8 @@ public class VMHelper {
 	}
 
 	/**
-	 * From inventory path, load the Folder object and return it, if path
-	 * doesn't exist, the folder and subfolders are created.
+	 * From inventory path, load the Folder object and return it, if path doesn't
+	 * exist, the folder and subfolders are created.
 	 * 
 	 * @param dataCenterVmFolder
 	 * @param inventoryPath
@@ -1168,8 +1235,8 @@ public class VMHelper {
 	}
 
 	/**
-	 * Find a folder from a path like : /inria/test/experience1/ Note : This
-	 * method create the missing folders if any on the path.
+	 * Find a folder from a path like : /inria/test/experience1/ Note : This method
+	 * create the missing folders if any on the path.
 	 *
 	 * @param folderPath
 	 * @return A folder if exist, null if none.

@@ -189,6 +189,7 @@ public interface Instanceec2 extends Compute {
 
 	/**
 	 * Returns the value of the '<em><b>Aws Instance Status</b></em>' attribute.
+	 * The default value is <code>"notexist"</code>.
 	 * The literals are from the enumeration {@link org.eclipse.cmf.occi.multicloud.aws.ec2.AWSInstanceState}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -199,7 +200,7 @@ public interface Instanceec2 extends Compute {
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.AWSInstanceState
 	 * @see #setAwsInstanceStatus(AWSInstanceState)
 	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ec2Package#getInstanceec2_AwsInstanceStatus()
-	 * @model
+	 * @model default="notexist"
 	 * @generated
 	 */
 	AWSInstanceState getAwsInstanceStatus();

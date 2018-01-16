@@ -21,7 +21,7 @@
     <attributes name="imageId" mutable="true" description="The ID of the AMI used to launch the instance.&#xA;Image provider Id, like ami-1a962263 for example. &#xA;It may be your own private ami or a market place ami.">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="awsInstanceStatus" mutable="true" type="//@types.0"/>
+    <attributes name="awsInstanceStatus" mutable="true" default="notexist" type="//@types.0"/>
     <attributes name="launchTime" mutable="true" description="The time the instance was launched.">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>

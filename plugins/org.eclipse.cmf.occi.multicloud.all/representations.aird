@@ -46,8 +46,8 @@
     <semanticResources>platform:/resource/org.eclipse.cmf.occi.multicloud.interoperability/model/interoperability.ecore</semanticResources>
     <semanticResources>model/all.ecore</semanticResources>
     <semanticResources>model/all.genmodel</semanticResources>
-    <semanticResources>platform:/resource/org.eclipse.cmf.occi.multicloud.aws.ec2/model/ec2.genmodel</semanticResources>
-    <semanticResources>platform:/resource/org.eclipse.cmf.occi.multicloud.aws.ec2/model/ec2.ecore</semanticResources>
+    <semanticResources>platform:/resource/org.eclipse.cmf.occi.multicloud.regions.aws/model/awsregions.genmodel</semanticResources>
+    <semanticResources>platform:/resource/org.eclipse.cmf.occi.multicloud.regions.aws/model/awsregions.ecore</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_ikMH0PemEeeB2rcPJiSxYQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_imLE1femEeeB2rcPJiSxYQ" name="all" repPath="#_il4w8PemEeeB2rcPJiSxYQ">

@@ -102,7 +102,8 @@
         <details key="documentation" value="The ID of the AMI used to launch the instance.&#xA;Image provider Id, like ami-1a962263 for example. &#xA;It may be your own private ami or a market place ami."/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="awsInstanceStatus" eType="#//AWSInstanceState">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="awsInstanceStatus" eType="#//AWSInstanceState"
+        defaultValueLiteral="notexist">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value=""/>
       </eAnnotations>

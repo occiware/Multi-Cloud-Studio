@@ -176,7 +176,7 @@ public class Instanceec2Impl extends ComputeImpl implements Instanceec2 {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final AWSInstanceState AWS_INSTANCE_STATUS_EDEFAULT = AWSInstanceState.PENDING;
+	protected static final AWSInstanceState AWS_INSTANCE_STATUS_EDEFAULT = AWSInstanceState.NOTEXIST;
 
 	/**
 	 * The cached value of the '{@link #getAwsInstanceStatus() <em>Aws Instance Status</em>}' attribute.

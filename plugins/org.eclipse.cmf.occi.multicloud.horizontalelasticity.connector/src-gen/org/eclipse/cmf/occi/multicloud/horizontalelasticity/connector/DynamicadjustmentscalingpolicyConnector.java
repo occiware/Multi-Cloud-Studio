@@ -15,6 +15,7 @@
 package org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector;
 
 import org.eclipse.cmf.occi.core.Link;
+import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.core.Resource;
 import org.eclipse.cmf.occi.infrastructure.Compute;
 import org.eclipse.cmf.occi.multicloud.elasticocci.connector.MyRunnable;
@@ -160,6 +161,7 @@ public class DynamicadjustmentscalingpolicyConnector extends org.eclipse.cmf.occ
 		int vcpus = vm.getOcciComputeCores();   ///float decreaseIndicator = ((((vcpus-1)*this.dynamicAdjustmentTarget)/vcpus) - 1);
 		float decreaseIndicator = ((((vcpus-1)*this.dynamicadjustmentscalingpolicyTarget)/vcpus) - 1);  // B = (((count-1)*Tcpu)/count) - alpha // you have not to violate the threshold (Tcpu)
 		float increment = 1;
+
 		if (metrcUsage >= this.dynamicadjustmentscalingpolicyTarget) {
 			ec.actionVertical(vm,  increment, "cpuutilisationconnector", "add", coolduration);
 		}

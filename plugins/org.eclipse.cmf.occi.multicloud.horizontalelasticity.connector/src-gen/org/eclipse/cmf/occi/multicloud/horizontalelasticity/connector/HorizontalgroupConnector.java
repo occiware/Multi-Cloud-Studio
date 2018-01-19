@@ -19,8 +19,10 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.Callable;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -149,9 +151,9 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 		}
 		
 		int vmIndex1=1;
-		//final ExecutorService service = Executors.newCachedThreadPool();
-		final ExecutorService service = Executors.newSingleThreadExecutor();
-		//Set<Runnable> runnables = new HashSet<Runnable>();
+		final ExecutorService service = Executors.newCachedThreadPool();
+		///final ExecutorService service = Executors.newSingleThreadExecutor();
+		////Set<Runnable> runnables = new HashSet<Runnable>();
 		for (int i=1; i <= getHorizontalgroupGroupSize(); ++i) {
 			int vmIndex = vmIndex1;
 			MyRunnable myRunnable = new MyRunnable() {
@@ -163,15 +165,16 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 					}
 				}
 			};
-			//service.execute(myRunnable);
+			///service.execute(myRunnable);
 			service.submit(myRunnable);
+			//service.invokeAll(myRunnable);
 			try {
 				Thread.sleep(5000); // wait 5 seconds to allows threads to be created
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 			vmIndex1++;	
-		}		
+		}
 	////	for (int i=1; i <= getHorizontalgroupGroupSize(); ++i) {
 	////		int vmIndex = vmIndex1;
 	////		MyRunnable myRunnable = new MyRunnable() {
@@ -440,7 +443,8 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 		for (Link link : this.getLinks()) { 
 			if(link.getTarget() instanceof Instancevmware) {
 				if(!LlinksIds.contains(link.getId())) { // try to deploy in the new created configuratio
-					vmname = "node"+ index;
+					//vmname = "node"+ index;
+					vmname = "flask"+ index;
 					System.out.println("will be deployed in the confiugration " + link.getId());
 					Instancevmware inst = (Instancevmware)link.getTarget();
 					System.out.println(" instance name " +  vmname);
@@ -450,7 +454,8 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 						protected void doExecute() {
 							inst.setTitle(vmname1);
 							inst.setOcciComputeState(ComputeStatus.ACTIVE);
-							inst.setImagename("elasticoccidemo"); //templatelast
+							//inst.setImagename("elasticoccidemo"); //templatelast
+							inst.setImagename("flasktemplate");
 						}});
 					System.out.print("instance  " + inst);
 					inst.occiCreate();
@@ -666,10 +671,11 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 		
 		//create config
 		Link link = createConfig();
-		Thread.sleep(5000);
+		Thread.sleep(10000);
 			
 		//create vm
-		String vmName = "node"+vmIndex;
+		//String vmName = "node"+vmIndex;
+		String vmName = "flask"+vmIndex;
 		final TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(this);	
 		Instancevmware inst = (Instancevmware)link.getTarget();
 		domain.getCommandStack().execute(new RecordingCommand(domain) {
@@ -677,7 +683,8 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 			protected void doExecute() {
 				inst.setTitle(vmName);
 				inst.setOcciComputeState(ComputeStatus.ACTIVE);
-				inst.setImagename("elasticoccidemo");
+				//inst.setImagename("elasticoccidemo");
+				inst.setImagename("flasktemplate");
 			}});
 		//String vmName = "node"+vmIndex;
 		//Instancevmware inst = (Instancevmware)link.getTarget();
@@ -725,7 +732,8 @@ public class HorizontalgroupConnector extends org.eclipse.cmf.occi.multicloud.ho
 				protected void doExecute() {
 					inst.setTitle(vmName);
 					inst.setOcciComputeState(ComputeStatus.ACTIVE);
-					inst.setImagename("elasticoccidemo");
+					///inst.setImagename("elasticoccidemo");
+					inst.setImagename("flasktemplate");
 				}});
 			//String vmName = "node"+vmIndex;
 			//Instancevmware inst = (Instancevmware)link.getTarget();

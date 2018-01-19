@@ -1,0 +1,1809 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2015-2017 Obeo, Inria&#xA;All rights reserved. This program and the accompanying materials&#xA;are made available under the terms of the Eclipse Public License v1.0&#xA;which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v10.html&#xA;&#x9;&#xA;Contributors:&#xA;- William Piers &lt;william.piers@obeo.fr>&#xA;- Philippe Merle &lt;philippe.merle@inria.fr>&#xA;- Faiez Zalila &lt;faiez.zalila@inria.fr>" modelDirectory="/org.eclipse.cmf.occi.multicloud.aws.ec2/src-gen" editDirectory="/org.eclipse.cmf.occi.multicloud.aws.ec2.edit/src-gen" editorDirectory="/org.eclipse.cmf.occi.multicloud.aws.ec2.editor/src-gen" modelPluginID="org.eclipse.cmf.occi.multicloud.aws.ec2" modelName="Ec2" testsDirectory="/org.eclipse.cmf.occi.multicloud.aws.ec2.tests/src" complianceLevel="8.0" copyrightFields="false" editPluginID="org.eclipse.cmf.occi.multicloud.aws.ec2.edit" editorPluginID="org.eclipse.cmf.occi.multicloud.aws.ec2.editor" testsPluginID="org.eclipse.cmf.occi.multicloud.aws.ec2.tests" operationReflection="true">
+  <foreignModel>ec2.ecore</foreignModel>
+  <genPackages prefix="Ec2" basePackage="org.eclipse.cmf.occi.multicloud.aws" disposableProviderFactory="true" literalsInterface="false">
+    <ecorePackage href="ec2.ecore#/"/>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="ec2.ecore#//AWSInstanceState"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ec2.ecore#//AWSInstanceState/pending"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ec2.ecore#//AWSInstanceState/running"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ec2.ecore#//AWSInstanceState/shuttingdown"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ec2.ecore#//AWSInstanceState/stopping"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ec2.ecore#//AWSInstanceState/stopped"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ec2.ecore#//AWSInstanceState/terminated"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ec2.ecore#//AWSInstanceState/notexist"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ec2.ecore#//AWSInstanceState/rebooting"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="ec2.ecore#//HypervisorType"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ec2.ecore#//HypervisorType/ovm"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ec2.ecore#//HypervisorType/xen"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="ec2.ecore#//InstanceLifeCycleType"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ec2.ecore#//InstanceLifeCycleType/scheduled"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ec2.ecore#//InstanceLifeCycleType/spot"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="ec2.ecore#//MonitoringState"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ec2.ecore#//MonitoringState/disabled"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ec2.ecore#//MonitoringState/disabling"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ec2.ecore#//MonitoringState/enabled"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ec2.ecore#//MonitoringState/pending"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="ec2.ecore#//VirtualizationType"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ec2.ecore#//VirtualizationType/hvm"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ec2.ecore#//VirtualizationType/paravirtual"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="ec2.ecore#//IpPermissionType"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ec2.ecore#//IpPermissionType/inbound"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ec2.ecore#//IpPermissionType/outbound"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="ec2.ecore#//IpProtocol"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ec2.ecore#//IpProtocol/tcp"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ec2.ecore#//IpProtocol/udp"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ec2.ecore#//IpProtocol/icmp"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//Instanceec2"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Instanceec2/name"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Instanceec2/instanceId"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Instanceec2/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Instanceec2/zoneName"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Instanceec2/imageId"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Instanceec2/awsInstanceStatus"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Instanceec2/launchTime"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Instanceec2/amiLaunchIndex"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Instanceec2/ebsOptimizedIO"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Instanceec2/enaSupport"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Instanceec2/hypervisor"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Instanceec2/instanceLifeCycle"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Instanceec2/kernelId"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Instanceec2/keyPairName"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Instanceec2/monitoringState"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Instanceec2/platform"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Instanceec2/privateDNSName"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Instanceec2/privateIpV4Address"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Instanceec2/publicDNSName"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Instanceec2/publicIpv4Address"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Instanceec2/ramDiskId"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Instanceec2/sriovNetSupport"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Instanceec2/virtualizationType"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="ec2.ecore#//Instanceec2/terminate"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//Awsaccount"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Awsaccount/regionId"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//Securitygroup"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Securitygroup/securityGroupName"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Securitygroup/securityGroupDescription"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Securitygroup/vpcId"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Securitygroup/securityGroupId"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//Securitygrouplink"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//Keypair"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Keypair/name"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Keypair/privateKey"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Keypair/fingerPrint"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Keypair/encodedPublicKey"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="ec2.ecore#//Keypair/importkeypair"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//Keypairlink"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//Ippermission"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Ippermission/toPort"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Ippermission/fromPort"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Ippermission/ipProtocol"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Ippermission/ipv4Ranges"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Ippermission/ipv6Ranges"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Ippermission/traffic"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Ippermission/authorized"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//Ippermissionlink"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//Awscredential"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//T2_nano"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//T2_nano/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//T2_nano/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//T2_nano/instanceType"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//T2_micro"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//T2_micro/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//T2_micro/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//T2_micro/instanceType"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//T2_small"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//T2_small/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//T2_small/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//T2_small/occiComputeCores"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//T2_medium"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//T2_medium/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//T2_medium/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//T2_medium/occiComputeCores"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//T2_large"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//T2_large/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//T2_large/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//T2_large/occiComputeCores"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//T2_xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//T2_xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//T2_xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//T2_xlarge/occiComputeCores"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//T2_2xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//T2_2xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//T2_2xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//T2_2xlarge/occiComputeCores"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//M5_large"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M5_large/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M5_large/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M5_large/occiComputeCores"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//M5_xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M5_xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M5_xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M5_xlarge/occiComputeCores"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//M5_2xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M5_2xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M5_2xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M5_2xlarge/occiComputeCores"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//M5_4xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M5_4xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M5_4xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M5_4xlarge/occiComputeCores"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//M5_12xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M5_12xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M5_12xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M5_12xlarge/occiComputeCores"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//M5_24xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M5_24xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M5_24xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M5_24xlarge/occiComputeCores"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//M4_large"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M4_large/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M4_large/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M4_large/occiComputeCores"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//M4_xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M4_xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M4_xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M4_xlarge/occiComputeCores"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//M4_2xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M4_2xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M4_2xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M4_2xlarge/occiComputeCores"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//M4_10xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M4_10xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M4_10xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M4_10xlarge/occiComputeCores"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//M4_16xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M4_16xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M4_16xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M4_16xlarge/occiComputeCores"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//M3_medium"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M3_medium/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M3_medium/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M3_medium/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M3_medium/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//M3_large"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M3_large/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M3_large/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M3_large/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M3_large/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//M3_xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M3_xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M3_xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M3_xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M3_xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//M3_2xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M3_2xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M3_2xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M3_2xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M3_2xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//C5_large"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C5_large/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C5_large/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C5_large/occiComputeCores"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//C5_xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C5_xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C5_xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C5_xlarge/occiComputeCores"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//C5_2xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C5_2xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C5_2xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C5_2xlarge/occiComputeCores"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//C5_4xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C5_4xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C5_4xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C5_4xlarge/occiComputeCores"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//C5_9xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C5_9xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C5_9xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C5_9xlarge/occiComputeCores"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//C5_18xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C5_18xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C5_18xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C5_18xlarge/occiComputeCores"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//C4_large"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C4_large/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C4_large/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C4_large/occiComputeCores"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//C4_xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C4_xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C4_xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C4_xlarge/occiComputeCores"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//C4_2xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C4_2xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C4_2xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C4_2xlarge/occiComputeCores"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//C4_4xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C4_4xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C4_4xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C4_4xlarge/occiComputeCores"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//C4_8xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C4_8xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C4_8xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C4_8xlarge/occiComputeCores"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//C3_large"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C3_large/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C3_large/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C3_large/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C3_large/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//C3_xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C3_xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C3_xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C3_xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C3_xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//C3_2xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C3_2xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C3_2xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C3_2xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C3_2xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//C3_4xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C3_4xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C3_4xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C3_4xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C3_4xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//C3_8xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C3_8xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C3_8xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C3_8xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C3_8xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//X1e_xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//X1e_xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//X1e_xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//X1e_xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//X1e_xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//X1e_2xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//X1e_2xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//X1e_2xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//X1e_2xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//X1e_2xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//X1e_4xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//X1e_4xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//X1e_4xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//X1e_4xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//X1e_4xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//X1e_8xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//X1e_8xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//X1e_8xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//X1e_8xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//X1e_8xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//X1e_16xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//X1e_16xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//X1e_16xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//X1e_16xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//X1e_16xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//X1e_32xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//X1e_32xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//X1e_32xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//X1e_32xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//X1e_32xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//X1_16xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//X1_16xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//X1_16xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//X1_16xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//X1_16xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//X1_32xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//X1_32xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//X1_32xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//X1_32xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//X1_32xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//R4_large"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//R4_large/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//R4_large/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//R4_large/occiComputeCores"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//R4_xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//R4_xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//R4_xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//R4_xlarge/occiComputeCores"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//R4_2xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//R4_2xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//R4_2xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//R4_2xlarge/occiComputeCores"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//R4_4xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//R4_4xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//R4_4xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//R4_4xlarge/occiComputeCores"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//R4_8xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//R4_8xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//R4_8xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//R4_8xlarge/occiComputeCores"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//R4_16xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//R4_16xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//R4_16xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//R4_16xlarge/occiComputeCores"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//R3_large"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//R3_large/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//R3_large/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//R3_large/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//R3_large/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//R3_xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//R3_xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//R3_xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//R3_xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//R3_xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//R3_2xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//R3_2xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//R3_2xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//R3_2xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//R3_2xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//R3_4xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//R3_4xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//R3_4xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//R3_4xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//R3_4xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//R3_8xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//R3_8xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//R3_8xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//R3_8xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//R3_8xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//P3_2xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//P3_2xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//P3_2xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//P3_2xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//P3_2xlarge/gpus"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//P3_2xlarge/gpuMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//P3_2xlarge/gpuP2P"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//P3_8xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//P3_8xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//P3_8xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//P3_8xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//P3_8xlarge/gpus"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//P3_8xlarge/gpuMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//P3_8xlarge/gpuP2P"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//P3_16xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//P3_16xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//P3_16xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//P3_16xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//P3_16xlarge/gpus"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//P3_16xlarge/gpuMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//P3_16xlarge/gpuP2P"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//P2_xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//P2_xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//P2_xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//P2_xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//P2_xlarge/gpus"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//P2_xlarge/gpuMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//P2_xlarge/gpuP2P"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//P2_8xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//P2_8xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//P2_8xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//P2_8xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//P2_8xlarge/gpus"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//P2_8xlarge/gpuMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//P2_8xlarge/gpuP2P"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//P2_16xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//P2_16xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//P2_16xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//P2_16xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//P2_16xlarge/gpus"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//P2_16xlarge/gpuMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//P2_16xlarge/gpuP2P"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//Generalpurpose"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//Computeoptimized"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//Memoryoptimized"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//Acceleratedcomputing"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//Storageoptimized"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//G3_4xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//G3_4xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//G3_4xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//G3_4xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//G3_4xlarge/gpus"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//G3_4xlarge/gpuMemory"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//G3_8xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//G3_8xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//G3_8xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//G3_8xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//G3_8xlarge/gpus"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//G3_8xlarge/gpuMemory"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//G3_16xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//G3_16xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//G3_16xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//G3_16xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//G3_16xlarge/gpus"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//G3_16xlarge/gpuMemory"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//F1_2xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//F1_2xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//F1_2xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//F1_2xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//F1_2xlarge/fpga"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//F1_2xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//F1_16xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//F1_16xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//F1_16xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//F1_16xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//F1_16xlarge/fpga"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//F1_16xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//H1_2xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//H1_2xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//H1_2xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//H1_2xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//H1_2xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//H1_4xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//H1_4xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//H1_4xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//H1_4xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//H1_4xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//H1_8xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//H1_8xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//H1_8xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//H1_8xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//H1_8xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//H1_16xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//H1_16xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//H1_16xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//H1_16xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//H1_16xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//I3_large"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I3_large/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I3_large/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I3_large/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I3_large/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//I3_xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I3_xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I3_xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I3_xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I3_xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//I3_2xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I3_2xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I3_2xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I3_2xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I3_2xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//I3_4xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I3_4xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I3_4xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I3_4xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I3_4xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//I3_8xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I3_8xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I3_8xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I3_8xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I3_8xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//I3_16xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I3_16xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I3_16xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I3_16xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I3_16xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//I3_metal"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I3_metal/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I3_metal/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I3_metal/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I3_metal/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//D2_xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//D2_xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//D2_xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//D2_xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//D2_xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//D2_2xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//D2_2xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//D2_2xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//D2_2xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//D2_2xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//D2_4xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//D2_4xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//D2_4xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//D2_4xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//D2_4xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//D2_8xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//D2_8xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//D2_8xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//D2_8xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//D2_8xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//M1_small"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M1_small/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M1_small/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M1_small/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M1_small/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//T1_micro"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//T1_micro/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//T1_micro/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//T1_micro/occiComputeCores"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//M1_medium"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M1_medium/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M1_medium/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M1_medium/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M1_medium/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//M1_large"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M1_large/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M1_large/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M1_large/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M1_large/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//M1_xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M1_xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M1_xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M1_xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M1_xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//C1_medium"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C1_medium/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C1_medium/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C1_medium/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C1_medium/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//C1_xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C1_xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C1_xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C1_xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//C1_xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//Cc2_8xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Cc2_8xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Cc2_8xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Cc2_8xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Cc2_8xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//G2_2xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//G2_2xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//G2_2xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//G2_2xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//G2_2xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//G2_8xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//G2_8xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//G2_8xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//G2_8xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//G2_8xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//Cg1_4xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Cg1_4xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Cg1_4xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Cg1_4xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Cg1_4xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//M2_xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M2_xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M2_xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M2_xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M2_xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//M2_2xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M2_2xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M2_2xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M2_2xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M2_2xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//M2_4xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M2_4xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M2_4xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M2_4xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//M2_4xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//Cr1_8xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Cr1_8xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Cr1_8xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Cr1_8xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Cr1_8xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//I2_xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I2_xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I2_xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I2_xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I2_xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//I2_2xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I2_2xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I2_2xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I2_2xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I2_2xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//I2_4xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I2_4xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I2_4xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I2_4xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I2_4xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//I2_8xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I2_8xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I2_8xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I2_8xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//I2_8xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//Hs1_8xlarge"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Hs1_8xlarge/occiComputeMemory"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Hs1_8xlarge/instanceType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Hs1_8xlarge/occiComputeCores"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Hs1_8xlarge/occiComputeEphemeralStorageSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//Placementgroup"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Placementgroup/groupName"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Placementgroup/affinity"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Placementgroup/hostId"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Placementgroup/spreadDomain"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Placementgroup/tenancy"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Placementgroup/zoneName"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//Rootdevicevolume"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Rootdevicevolume/rootDeviceName"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Rootdevicevolume/rootDeviceType"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//Statustransitionreason"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Statustransitionreason/stateTransitionCode"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Statustransitionreason/stateTransitionMessage"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//Tags"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ec2.ecore#//Instancevpcinfo"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Instancevpcinfo/vpcId"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Instancevpcinfo/subnetId"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Instancevpcinfo/sourceDestCheck"/>
+      </genFeatures>
+    </genClasses>
+  </genPackages>
+  <usedGenPackages href="platform:/resource/org.eclipse.cmf.occi.multicloud.regions/model/regions.genmodel#//regions"/>
+  <usedGenPackages href="platform:/resource/org.eclipse.cmf.occi.multicloud.accounts/model/accounts.genmodel#//accounts"/>
+  <usedGenPackages href="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.genmodel#//infrastructure"/>
+  <usedGenPackages href="platform:/resource/org.eclipse.cmf.occi.multicloud.regions.aws/model/awsregions.genmodel#//awsregions"/>
+  <usedGenPackages href="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.genmodel#//occi"/>
+</genmodel:GenModel>

@@ -65,33 +65,35 @@ import com.vmware.vim25.mo.Task;
 import com.vmware.vim25.mo.VirtualMachine;
 
 /**
- * Connector implementation for the OCCI kind:
- * - scheme: http://occiware.org/occi/infrastructure/vmware#
- * - term: vswitch
- * - title: 
+ * Connector implementation for the OCCI kind: - scheme:
+ * http://occiware.org/occi/infrastructure/vmware# - term: vswitch - title:
  */
-public class VswitchConnector extends org.eclipse.cmf.occi.multicloud.vmware.impl.VswitchImpl
-{
+public class VswitchConnector extends org.eclipse.cmf.occi.multicloud.vmware.impl.VswitchImpl {
 	/**
 	 * Initialize the logger.
 	 */
 	private static Logger LOGGER = LoggerFactory.getLogger(VswitchConnector.class);
-	
+
 	// Message to end users management.
 	private String titleMessage = "";
 	private String globalMessage = "";
 	private Level levelMessage = null;
-	
+
 	private Integer nbPortTmp = 0;
 	private String vSwitchName = null;
 	private String portGroupName = null;
 	private int vlanId = 0;
+
+	/**
+	 * Main vmware client to manage this instance on provider.
+	 */
+	private VCenterClient vCenterClient = new VCenterClient(null, null, null);
 	
 	/**
 	 * Represent the physical compute which be used for this standard switch.
 	 */
 	private String hostSystemName = null;
-	
+
 	// Start of user code Vswitchconnector_constructor
 	/**
 	 * Constructs a vswitch connector.
@@ -103,7 +105,7 @@ public class VswitchConnector extends org.eclipse.cmf.occi.multicloud.vmware.imp
 	//
 	// OCCI CRUD callback operations.
 	//
-	
+
 	// Start of user code VswitchocciCreate
 	/**
 	 * Called when this Vswitch instance is completely created.
@@ -111,133 +113,143 @@ public class VswitchConnector extends org.eclipse.cmf.occi.multicloud.vmware.imp
 	@Override
 	public void occiCreate() {
 		LOGGER.debug("occiCreate() called on " + this);
-		
+
 		titleMessage = "Reference a vswitch and retrieve it : " + getTitle();
-			
-//			IRunnableWithProgress runnableWithProgress = new IRunnableWithProgress() {
-//				
-//				@Override
-//				public void run(IProgressMonitor monitor) throws InvocationTargetException, InterruptedException {
-//					LOGGER.debug("occiCreate() called on " + this);
-//					if (!VCenterClient.checkConnection()) {
-//						// Must return true if connection is established.
-//						return;
-//					}
-//					ServiceInstance si = VCenterClient.getServiceInstance();
-//					Folder rootFolder = si.getRootFolder();
-	//
-//					String vSwitchName = getTitle();
-//					String networkName = getLabel();
-	//
-//					if (vSwitchName == null) {
-//						// No name ==> no vswitch.
-//						globalMessage = "The vswitch name is not setted, please check your configuration (attribute title).";
-//						levelMessage = Level.INFO;
-//						LOGGER.warn(globalMessage);
-//						VCenterClient.disconnect();
-//						return;
-//					}
-//					Allocator allocator = new AllocatorImpl(rootFolder);
-	//
-//					// Create a new vSwitch and add his network name.
-	//
-//					// 1 : Check if this vSwitch exist.
-	//
-//					// Get the attribute value for occi.network.vmware.hostsystemname.
-//					hostSystemName = getAttributeValueByOcciKey(ATTR_HOSTSYSTEM_NAME);
-//					if (hostSystemName == null) {
-//						// Get the host system if set on computes link via network adapters
-//						// and set it.
-//						findAndSetHostSystemNameFromLinkedVMs();
-//					}
-//					if (hostSystemName == null) {
-//						// Auto allocation.
-//						LOGGER.info("Auto allocating a host system");
-//						allocator.allocateDatacenter();
-//						allocator.allocateCluster();
-//						allocator.allocateHostSystem();
-//					}
-	//
-//					if (hostSystemName == null) {
-//						LOGGER.error(
-//								"Cant create the vswitch and port group, no host system defined, please set the attribute occi.network.vmware.hostsystemname");
-//						VCenterClient.disconnect();
-//						return;
-//					}
-//					// Load the hostsystem object.
-//					
-//					HostSystem host = HostHelper.findHostSystemForName(rootFolder, getHostSystemName());
-//					if (host == null) {
-//						LOGGER.error("The host system : " + hostSystemName + " doesnt exist on vCenter with your ids.");
-//						VCenterClient.disconnect();
-//						return;
-//					}
-//					HostVirtualSwitch hostVswitch = null;
-//					try {
-//						hostVswitch = NetworkHelper.findVSwitch(host, vSwitchName);
-//					} catch (VirtualSwitchNotFoundException ex) {
-//						// no op.
-//					}
-//					if (hostVswitch == null) {
-//						nbPortStr = getAttributeValueByOcciKey(ATTR_VSWITCH_NBPORT);
-//						if (nbPortStr == null || nbPortStr.isEmpty()) {
-//							nbPortStr = "8";
-//						}
-//						int nbPort = 8;
-//						try {
-//							nbPort = Integer.valueOf(nbPortStr);
-//						} catch (NumberFormatException ex) {
-//							LOGGER.error("bad value for " + ATTR_VSWITCH_NBPORT);
-//							LOGGER.error("Cant create the vswitch.");
-//							VCenterClient.disconnect();
-//							return;
-//						}
-//						
-//						// Get the ip Addresses in cidr notation.
-//						SubnetUtils subnetUtil = new SubnetUtils(getAttributeValueByOcciKey("occi.network.address"));
-//						String netmask = subnetUtil.getInfo().getNetmask();
-//						String ipAddress = subnetUtil.getInfo().getAddress();
-//						// String networkAddress = subnetUtil.getInfo().getNetworkAddress();
-//						String vmKernelIpAddress;
-//						boolean dhcpMode = (getAttributeValueByOcciKey("occi.network.allocation") != null && getAttributeValueByOcciKey("occi.network.allocation").equals("dynamic"));
-//						
-//						// Create the vswitch (without set macAddress, null value)..
-//						try {
-//							NetworkHelper.createVSwitch(vSwitchName, networkName, nbPort, getVlan(), host, null, ipAddress, netmask, dhcpMode);
-//						} catch (RemoteException ex) {
-//							// TODO : Message global.
-//						}
-//					} else {
-//						LOGGER.warn("Cant create the vswitch : " + vSwitchName + " for the host : " + hostSystemName + " , cause it already exist.");
-//						VCenterClient.disconnect();
-//						return;
-//					}
-//					
-//					// 2 : check if created.
-//					try {
-//						hostVswitch = NetworkHelper.findVSwitch(host, vSwitchName);
-//					} catch (VirtualSwitchNotFoundException ex) {
-//						LOGGER.warn("The vswitch is not created, please check your configuration.");
-//					}
-//					
-//					VCenterClient.disconnect();
-//					
-//				}
-//			};
-//			
-//			UIDialog.executeActionThread(runnableWithProgress, titleMessage);
-	//
-//			if (globalMessage != null && !globalMessage.isEmpty()) {
-//				UIDialog.showUserMessage(titleMessage, globalMessage, levelMessage);
-//			}
-//			// retrieve resource informations when no errors has been launched.
-//			if (levelMessage != null && !Level.ERROR.equals(levelMessage)) {
-//				occiRetrieve();
-//			}
-//			globalMessage = "";
-//			levelMessage = null;
-//			
-			occiRetrieve();
+
+		// IRunnableWithProgress runnableWithProgress = new IRunnableWithProgress() {
+		//
+		// @Override
+		// public void run(IProgressMonitor monitor) throws InvocationTargetException,
+		// InterruptedException {
+		// LOGGER.debug("occiCreate() called on " + this);
+		// if (!VCenterClient.checkConnection()) {
+		// // Must return true if connection is established.
+		// return;
+		// }
+		// ServiceInstance si = VCenterClient.getServiceInstance();
+		// Folder rootFolder = si.getRootFolder();
+		//
+		// String vSwitchName = getTitle();
+		// String networkName = getLabel();
+		//
+		// if (vSwitchName == null) {
+		// // No name ==> no vswitch.
+		// globalMessage = "The vswitch name is not setted, please check your
+		// configuration (attribute title).";
+		// levelMessage = Level.INFO;
+		// LOGGER.warn(globalMessage);
+		// VCenterClient.disconnect();
+		// return;
+		// }
+		// Allocator allocator = new AllocatorImpl(rootFolder);
+		//
+		// // Create a new vSwitch and add his network name.
+		//
+		// // 1 : Check if this vSwitch exist.
+		//
+		// // Get the attribute value for occi.network.vmware.hostsystemname.
+		// hostSystemName = getAttributeValueByOcciKey(ATTR_HOSTSYSTEM_NAME);
+		// if (hostSystemName == null) {
+		// // Get the host system if set on computes link via network adapters
+		// // and set it.
+		// findAndSetHostSystemNameFromLinkedVMs();
+		// }
+		// if (hostSystemName == null) {
+		// // Auto allocation.
+		// LOGGER.info("Auto allocating a host system");
+		// allocator.allocateDatacenter();
+		// allocator.allocateCluster();
+		// allocator.allocateHostSystem();
+		// }
+		//
+		// if (hostSystemName == null) {
+		// LOGGER.error(
+		// "Cant create the vswitch and port group, no host system defined, please set
+		// the attribute occi.network.vmware.hostsystemname");
+		// VCenterClient.disconnect();
+		// return;
+		// }
+		// // Load the hostsystem object.
+		//
+		// HostSystem host = HostHelper.findHostSystemForName(rootFolder,
+		// getHostSystemName());
+		// if (host == null) {
+		// LOGGER.error("The host system : " + hostSystemName + " doesnt exist on
+		// vCenter with your ids.");
+		// VCenterClient.disconnect();
+		// return;
+		// }
+		// HostVirtualSwitch hostVswitch = null;
+		// try {
+		// hostVswitch = NetworkHelper.findVSwitch(host, vSwitchName);
+		// } catch (VirtualSwitchNotFoundException ex) {
+		// // no op.
+		// }
+		// if (hostVswitch == null) {
+		// nbPortStr = getAttributeValueByOcciKey(ATTR_VSWITCH_NBPORT);
+		// if (nbPortStr == null || nbPortStr.isEmpty()) {
+		// nbPortStr = "8";
+		// }
+		// int nbPort = 8;
+		// try {
+		// nbPort = Integer.valueOf(nbPortStr);
+		// } catch (NumberFormatException ex) {
+		// LOGGER.error("bad value for " + ATTR_VSWITCH_NBPORT);
+		// LOGGER.error("Cant create the vswitch.");
+		// VCenterClient.disconnect();
+		// return;
+		// }
+		//
+		// // Get the ip Addresses in cidr notation.
+		// SubnetUtils subnetUtil = new
+		// SubnetUtils(getAttributeValueByOcciKey("occi.network.address"));
+		// String netmask = subnetUtil.getInfo().getNetmask();
+		// String ipAddress = subnetUtil.getInfo().getAddress();
+		// // String networkAddress = subnetUtil.getInfo().getNetworkAddress();
+		// String vmKernelIpAddress;
+		// boolean dhcpMode = (getAttributeValueByOcciKey("occi.network.allocation") !=
+		// null &&
+		// getAttributeValueByOcciKey("occi.network.allocation").equals("dynamic"));
+		//
+		// // Create the vswitch (without set macAddress, null value)..
+		// try {
+		// NetworkHelper.createVSwitch(vSwitchName, networkName, nbPort, getVlan(),
+		// host, null, ipAddress, netmask, dhcpMode);
+		// } catch (RemoteException ex) {
+		// // TODO : Message global.
+		// }
+		// } else {
+		// LOGGER.warn("Cant create the vswitch : " + vSwitchName + " for the host : " +
+		// hostSystemName + " , cause it already exist.");
+		// VCenterClient.disconnect();
+		// return;
+		// }
+		//
+		// // 2 : check if created.
+		// try {
+		// hostVswitch = NetworkHelper.findVSwitch(host, vSwitchName);
+		// } catch (VirtualSwitchNotFoundException ex) {
+		// LOGGER.warn("The vswitch is not created, please check your configuration.");
+		// }
+		//
+		// VCenterClient.disconnect();
+		//
+		// }
+		// };
+		//
+		// UIDialog.executeActionThread(runnableWithProgress, titleMessage);
+		//
+		// if (globalMessage != null && !globalMessage.isEmpty()) {
+		// UIDialog.showUserMessage(titleMessage, globalMessage, levelMessage);
+		// }
+		// // retrieve resource informations when no errors has been launched.
+		// if (levelMessage != null && !Level.ERROR.equals(levelMessage)) {
+		// occiRetrieve();
+		// }
+		// globalMessage = "";
+		// levelMessage = null;
+		//
+		occiRetrieve();
 	}
 	// End of user code
 
@@ -255,7 +267,7 @@ public class VswitchConnector extends org.eclipse.cmf.occi.multicloud.vmware.imp
 			LOGGER.debug("Console mode.");
 			// Retrieve a compute without monitoring.
 			retrieveNetwork(null);
-			
+
 		} else {
 			// Launching IRunnableWithProgress UI thread with business code.
 			LOGGER.debug("UI mode.");
@@ -270,16 +282,16 @@ public class VswitchConnector extends org.eclipse.cmf.occi.multicloud.vmware.imp
 			if (globalMessage != null && !globalMessage.isEmpty()) {
 				UIDialog.showUserMessage(titleMessage, globalMessage, levelMessage);
 			}
-			
+
 			updateAttributesOnNetwork();
 
 		}
-		
+
 		globalMessage = "";
 		levelMessage = null;
-			
-		if (VCenterClient.isConnected()) {
-			VCenterClient.disconnect();
+
+		if (vCenterClient.isConnected()) {
+			vCenterClient.disconnect();
 		}
 	}
 	// End of user code
@@ -294,14 +306,14 @@ public class VswitchConnector extends org.eclipse.cmf.occi.multicloud.vmware.imp
 		titleMessage = "Update a vswitch : " + getTitle();
 		LOGGER.debug("occiUpdate() called on " + this);
 
-//		if (!VCenterClient.checkConnection()) {
-//			// Must return true if connection is established.
-//			return;
-//		}
-//
-//		
-//
-//		VCenterClient.disconnect();
+		// if (!VCenterClient.checkConnection()) {
+		// // Must return true if connection is established.
+		// return;
+		// }
+		//
+		//
+		//
+		// VCenterClient.disconnect();
 	}
 	// End of user code
 
@@ -315,22 +327,24 @@ public class VswitchConnector extends org.eclipse.cmf.occi.multicloud.vmware.imp
 		titleMessage = "Delete a vswitch: " + getTitle();
 		LOGGER.debug("occiDelete() called on " + this);
 
-//		if (!VCenterClient.checkConnection()) {
-//			// Must return true if connection is established.
-//			return;
-//		}
-//
-//		// TODO : Remove vSwitch network and detach his linked adapters device
-//		// from network.
-//
-//		VCenterClient.disconnect();
+		// if (!VCenterClient.checkConnection()) {
+		// // Must return true if connection is established.
+		// return;
+		// }
+		//
+		// // TODO : Remove vSwitch network and detach his linked adapters device
+		// // from network.
+		//
+		// VCenterClient.disconnect();
 	}
 	// End of user code
 
 	//
 	// Vswitch actions.
 	//
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.cmf.occi.infrastructure.impl.NetworkImpl#up()
 	 */
 	@Override
@@ -338,41 +352,42 @@ public class VswitchConnector extends org.eclipse.cmf.occi.multicloud.vmware.imp
 		titleMessage = "Enable a vswitch : " + getTitle();
 		LOGGER.debug("Action up() called on " + this);
 
-//		if (!VCenterClient.checkConnection()) {
-//			// Must return true if connection is established.
-//			return;
-//		}
-//
-//		// Activate vswitch.
-//
-//		VCenterClient.disconnect();
+		// if (!VCenterClient.checkConnection()) {
+		// // Must return true if connection is established.
+		// return;
+		// }
+		//
+		// // Activate vswitch.
+		//
+		// VCenterClient.disconnect();
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.cmf.occi.infrastructure.impl.NetworkImpl#down()
 	 */
 	@Override
 	public void down() {
 		titleMessage = "Disable a vwitch : " + getTitle();
 		LOGGER.debug("Action down() called on " + this);
-//		if (!VCenterClient.checkConnection()) {
-//			// Must return true if connection is established.
-//			return;
-//		}
-//
-//		// TODO : Disconnect all network interfaces.
-//
-//		VCenterClient.disconnect();
+		// if (!VCenterClient.checkConnection()) {
+		// // Must return true if connection is established.
+		// return;
+		// }
+		//
+		// // TODO : Disconnect all network interfaces.
+		//
+		// VCenterClient.disconnect();
 	}
-	
-	
+
 	/**
 	 * Search on the linked virtual machine if any the host system name.
 	 * 
 	 * @return
 	 */
 	private void findAndSetHostSystemNameFromLinkedVMs() {
-		
+
 		Configuration conf = OcciHelper.getConfiguration(this);
 
 		List<Resource> resources = conf.getResources();
@@ -426,48 +441,50 @@ public class VswitchConnector extends org.eclipse.cmf.occi.multicloud.vmware.imp
 	public void setHostSystemName(String hostSystemName) {
 		this.hostSystemName = hostSystemName;
 	}
-	
+
 	/**
 	 * Update this object attributes.
 	 */
 	public void updateAttributesOnNetwork() {
-		
+
 		// Get vmfolders mixin.
 		VmwarefoldersConnector vmFolders = getMixinVmwarefolders();
-		
+
 		this.setNbport(nbPortTmp);
-		
+
 		if (vmFolders != null && hostSystemName != null && hostSystemName.isEmpty()) {
 			vmFolders.setHostsystemname(hostSystemName);
 		}
-		
+
 		if (vSwitchName != null && !vSwitchName.isEmpty()) {
 			// TODO : add the vswitch name to a new attribute other than title.
 			this.setTitle(vSwitchName);
 			this.setOcciNetworkState(NetworkStatus.ACTIVE);
 		}
-		
+
 		this.setOcciNetworkVlan(vlanId);
 		if (portGroupName != null && !portGroupName.isEmpty()) {
 			this.setOcciNetworkLabel(portGroupName);
 		}
-		
+
 	}
-	
+
 	/**
 	 * Retrieve a vswitch from network label (port group) and others infos.
-	 * @param monitor must be null if we are in console mode 
+	 * 
+	 * @param monitor
+	 *            must be null if we are in console mode
 	 */
 	public void retrieveNetwork(IProgressMonitor monitor) {
-		if (!VCenterClient.checkConnection()) {
+		if (!vCenterClient.checkConnection(this)) {
 			// Must return true if connection is established.
 			globalMessage = "No connection to Vcenter has been established.";
 			levelMessage = Level.WARN;
 			LOGGER.warn(globalMessage);
 			return;
 		}
-		
-		ServiceInstance si = VCenterClient.getServiceInstance();
+
+		ServiceInstance si = vCenterClient.getServiceInstance();
 		Folder rootFolder = si.getRootFolder();
 		// Search a host that contain this portgroup.
 		String networkLabelName = getOcciNetworkLabel();
@@ -477,7 +494,7 @@ public class VswitchConnector extends org.eclipse.cmf.occi.multicloud.vmware.imp
 			LOGGER.error(globalMessage);
 			return;
 		}
-		
+
 		HostSystem host = HostHelper.findHostForPortGroup(rootFolder, networkLabelName);
 		if (host == null) {
 			globalMessage = "No host found for this port group : " + networkLabelName;
@@ -492,8 +509,7 @@ public class VswitchConnector extends org.eclipse.cmf.occi.multicloud.vmware.imp
 			LOGGER.error(globalMessage);
 			return;
 		}
-		
-		
+
 		// Find now the network.
 		vSwitchName = portGroup.getSpec().getVswitchName();
 		vlanId = portGroup.getSpec().getVlanId();
@@ -508,14 +524,14 @@ public class VswitchConnector extends org.eclipse.cmf.occi.multicloud.vmware.imp
 			LOGGER.warn(globalMessage);
 			return;
 		}
-		
+
 		// TODO : How to check that vswitch / port group is active ?
 		// Set the network state.
 		if (UIDialog.isStandAlone()) {
 			updateAttributesOnNetwork();
 		}
 	}
-	
+
 	/**
 	 * Get the mixin base instance "vmwarefolders".
 	 * 
@@ -532,5 +548,5 @@ public class VswitchConnector extends org.eclipse.cmf.occi.multicloud.vmware.imp
 		}
 		return vmfolders;
 	}
-	
-}	
+
+}

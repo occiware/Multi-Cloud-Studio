@@ -72,12 +72,14 @@ public class VmwareFactoryImpl extends EFactoryImpl implements VmwareFactory {
 			case VmwarePackage.STORAGELINKVMWARE: return createStoragelinkvmware();
 			case VmwarePackage.VSWITCH: return createVswitch();
 			case VmwarePackage.NETWORKADAPTER: return createNetworkadapter();
+			case VmwarePackage.VCENTERACCOUNT: return createVcenteraccount();
 			case VmwarePackage.WINDOWS: return createWindows();
 			case VmwarePackage.LINUX: return createLinux();
 			case VmwarePackage.MACOSX: return createMacosx();
 			case VmwarePackage.VMWAREFOLDERS: return createVmwarefolders();
 			case VmwarePackage.OS_TPL_VMWARE: return createOs_tpl_vmware();
 			case VmwarePackage.SSH_USER_DATA: return createSsh_user_data();
+			case VmwarePackage.VCENTERCREDENTIAL: return createVcentercredential();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -168,6 +170,16 @@ public class VmwareFactoryImpl extends EFactoryImpl implements VmwareFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Vcenteraccount createVcenteraccount() {
+		VcenteraccountImpl vcenteraccount = new VcenteraccountImpl();
+		return vcenteraccount;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Windows createWindows() {
 		WindowsImpl windows = new WindowsImpl();
 		return windows;
@@ -221,6 +233,16 @@ public class VmwareFactoryImpl extends EFactoryImpl implements VmwareFactory {
 	public Ssh_user_data createSsh_user_data() {
 		Ssh_user_dataImpl ssh_user_data = new Ssh_user_dataImpl();
 		return ssh_user_data;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Vcentercredential createVcentercredential() {
+		VcentercredentialImpl vcentercredential = new VcentercredentialImpl();
+		return vcentercredential;
 	}
 
 	/**

@@ -141,5 +141,27 @@ public class ConnectorFactory extends org.eclipse.cmf.occi.multicloud.vmware.imp
 	public org.eclipse.cmf.occi.multicloud.vmware.Ssh_user_data createSsh_user_data() {
 		return new Ssh_user_dataConnector();
 	}
+	
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://occiware.org/occi/infrastructure/vmware#
+	 * - term: vcenteraccount
+	 * - title: 
+	 */
+	@Override
+	public org.eclipse.cmf.occi.multicloud.vmware.Vcenteraccount createVcenteraccount() {
+		return new VcenteraccountConnector();
+	}
+	
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://occiware.org/occi/infrastructure/vmware#
+	 * - term: vcentercredential
+	 * - title: 
+	 */
+	@Override
+	public org.eclipse.cmf.occi.multicloud.vmware.Vcentercredential createVcentercredential() {
+		return new VcentercredentialConnector();
+	}
 
 }

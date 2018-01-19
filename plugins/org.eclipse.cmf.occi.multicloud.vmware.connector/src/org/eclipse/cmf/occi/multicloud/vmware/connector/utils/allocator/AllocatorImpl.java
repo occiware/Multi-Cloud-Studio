@@ -34,6 +34,7 @@ import com.vmware.vim25.mo.InventoryNavigator;
 import com.vmware.vim25.mo.ManagedEntity;
 import com.vmware.vim25.mo.Network;
 import com.vmware.vim25.mo.ResourcePool;
+import com.vmware.vim25.mo.ServiceInstance;
 
 public class AllocatorImpl implements Allocator {
 
@@ -72,10 +73,10 @@ public class AllocatorImpl implements Allocator {
 	/**
 	 * Allocate a cluster, if none found, return null value.
 	 */
-	public ClusterComputeResource allocateCluster() {
+	public ClusterComputeResource allocateCluster(ServiceInstance si) {
 		cluster = null;
 		
-		cluster = ClusterHelper.findFirstCluster(dc);
+		cluster = ClusterHelper.findFirstCluster(dc, si);
 		
 		// Find the first, if none are found, no cluster so null returned.
 		return cluster;

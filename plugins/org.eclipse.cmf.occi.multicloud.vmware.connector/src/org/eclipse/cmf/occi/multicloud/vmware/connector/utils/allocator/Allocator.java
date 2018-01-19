@@ -18,6 +18,7 @@ import com.vmware.vim25.mo.Datastore;
 import com.vmware.vim25.mo.HostSystem;
 import com.vmware.vim25.mo.Network;
 import com.vmware.vim25.mo.ResourcePool;
+import com.vmware.vim25.mo.ServiceInstance;
 
 /**
  * Define resource allocator interface. (Automatic allocation of resources)
@@ -30,7 +31,7 @@ public interface Allocator {
 	public Datacenter allocateDatacenter();
 	public Datastore allocateDatastore();
 	public ResourcePool allocateResourcePool();
-	public ClusterComputeResource allocateCluster();
+	public ClusterComputeResource allocateCluster(ServiceInstance si);
 	public HostSystem allocateHostSystem();
 	
 	public Network allocateNetwork();

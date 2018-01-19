@@ -4,3 +4,4 @@ target/
 build.acceleo
 *.xtendbin
 *~
+org.eclipse.cmf.occi.multicloud.aws.ec2.connector/lib/

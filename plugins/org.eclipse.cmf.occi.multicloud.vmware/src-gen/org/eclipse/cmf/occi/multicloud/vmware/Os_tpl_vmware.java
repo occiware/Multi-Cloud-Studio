@@ -37,7 +37,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='appliesConstraint'"
  * @generated
  */
-public interface Os_tpl_vmware extends MixinBase, Os_tpl {
+public interface Os_tpl_vmware extends Os_tpl, MixinBase {
 	/**
 	 * Returns the value of the '<em><b>Datastoreisopath</b></em>' attribute.
 	 * <!-- begin-user-doc -->

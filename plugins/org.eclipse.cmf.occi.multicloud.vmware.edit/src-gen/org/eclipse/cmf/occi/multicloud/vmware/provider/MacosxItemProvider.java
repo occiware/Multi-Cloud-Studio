@@ -38,7 +38,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class MacosxItemProvider extends MixinBaseItemProvider {
+public class MacosxItemProvider extends Os_tpl_vmwareItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -60,54 +60,8 @@ public class MacosxItemProvider extends MixinBaseItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addDatastoreisopathPropertyDescriptor(object);
-			addGuestidPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Guestid feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addGuestidPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Os_tpl_vmware_guestid_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Os_tpl_vmware_guestid_feature", "_UI_Os_tpl_vmware_type"),
-				 VmwarePackage.Literals.OS_TPL_VMWARE__GUESTID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Datastoreisopath feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDatastoreisopathPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Os_tpl_vmware_datastoreisopath_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Os_tpl_vmware_datastoreisopath_feature", "_UI_Os_tpl_vmware_type"),
-				 VmwarePackage.Literals.OS_TPL_VMWARE__DATASTOREISOPATH,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -146,13 +100,6 @@ public class MacosxItemProvider extends MixinBaseItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(Macosx.class)) {
-			case VmwarePackage.MACOSX__DATASTOREISOPATH:
-			case VmwarePackage.MACOSX__GUESTID:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 
@@ -166,17 +113,6 @@ public class MacosxItemProvider extends MixinBaseItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return VmwareEditPlugin.INSTANCE;
 	}
 
 }

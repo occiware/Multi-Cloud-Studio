@@ -23,6 +23,7 @@ package org.eclipse.cmf.occi.multicloud.vmware;
 
 import org.eclipse.cmf.occi.core.OCCITables;
 import org.eclipse.cmf.occi.infrastructure.InfrastructureTables;
+import org.eclipse.cmf.occi.multicloud.accounts.AccountsTables;
 import org.eclipse.cmf.occi.multicloud.vmware.VmwareTables;
 import org.eclipse.ocl.pivot.internal.library.ecore.EcoreExecutorEnumeration;
 import org.eclipse.ocl.pivot.internal.library.ecore.EcoreExecutorEnumerationLiteral;
@@ -75,6 +76,8 @@ public class VmwareTables
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Ssh_user_data = org.eclipse.cmf.occi.multicloud.vmware.VmwareTables.PACKid_http_c_s_s_occiware_org_s_occi_s_infrastructure_s_vmware_s_ecore.getClassId("Ssh_user_data", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Storagelinkvmware = org.eclipse.cmf.occi.multicloud.vmware.VmwareTables.PACKid_http_c_s_s_occiware_org_s_occi_s_infrastructure_s_vmware_s_ecore.getClassId("Storagelinkvmware", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Storagevmware = org.eclipse.cmf.occi.multicloud.vmware.VmwareTables.PACKid_http_c_s_s_occiware_org_s_occi_s_infrastructure_s_vmware_s_ecore.getClassId("Storagevmware", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Vcenteraccount = org.eclipse.cmf.occi.multicloud.vmware.VmwareTables.PACKid_http_c_s_s_occiware_org_s_occi_s_infrastructure_s_vmware_s_ecore.getClassId("Vcenteraccount", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Vcentercredential = org.eclipse.cmf.occi.multicloud.vmware.VmwareTables.PACKid_http_c_s_s_occiware_org_s_occi_s_infrastructure_s_vmware_s_ecore.getClassId("Vcentercredential", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Vmwarefolders = org.eclipse.cmf.occi.multicloud.vmware.VmwareTables.PACKid_http_c_s_s_occiware_org_s_occi_s_infrastructure_s_vmware_s_ecore.getClassId("Vmwarefolders", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Vswitch = org.eclipse.cmf.occi.multicloud.vmware.VmwareTables.PACKid_http_c_s_s_occiware_org_s_occi_s_infrastructure_s_vmware_s_ecore.getClassId("Vswitch", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Windows = org.eclipse.cmf.occi.multicloud.vmware.VmwareTables.PACKid_http_c_s_s_occiware_org_s_occi_s_infrastructure_s_vmware_s_ecore.getClassId("Windows", 0);
@@ -86,6 +89,7 @@ public class VmwareTables
 	public static final /*@NonInvalid*/ java.lang.String STR_Os_tpl_vmware_c_c_appliesConstraint = "Os_tpl_vmware::appliesConstraint";
 	public static final /*@NonInvalid*/ java.lang.String STR_Ssh_user_data_c_c_appliesConstraint = "Ssh_user_data::appliesConstraint";
 	public static final /*@NonInvalid*/ java.lang.String STR_Storagelinkvmware_c_c_targetConstraint = "Storagelinkvmware::targetConstraint";
+	public static final /*@NonInvalid*/ java.lang.String STR_Vcentercredential_c_c_appliesConstraint = "Vcentercredential::appliesConstraint";
 	public static final /*@NonInvalid*/ java.lang.String STR_Vmwarefolders_c_c_appliesConstraint = "Vmwarefolders::appliesConstraint";
 	public static final /*@NonInvalid*/ java.lang.String STR_Windows_c_c_appliesConstraint = "Windows::appliesConstraint";
 
@@ -126,6 +130,8 @@ public class VmwareTables
 		public static final /*@NonNull*/ EcoreExecutorType _Ssh_user_data = new EcoreExecutorType(VmwarePackage.Literals.SSH_USER_DATA, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Storagelinkvmware = new EcoreExecutorType(VmwarePackage.Literals.STORAGELINKVMWARE, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Storagevmware = new EcoreExecutorType(VmwarePackage.Literals.STORAGEVMWARE, PACKAGE, 0);
+		public static final /*@NonNull*/ EcoreExecutorType _Vcenteraccount = new EcoreExecutorType(VmwarePackage.Literals.VCENTERACCOUNT, PACKAGE, 0);
+		public static final /*@NonNull*/ EcoreExecutorType _Vcentercredential = new EcoreExecutorType(VmwarePackage.Literals.VCENTERCREDENTIAL, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Vmwarefolders = new EcoreExecutorType(VmwarePackage.Literals.VMWAREFOLDERS, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Vswitch = new EcoreExecutorType(VmwarePackage.Literals.VSWITCH, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Windows = new EcoreExecutorType(VmwarePackage.Literals.WINDOWS, PACKAGE, 0);
@@ -140,6 +146,8 @@ public class VmwareTables
 			_Ssh_user_data,
 			_Storagelinkvmware,
 			_Storagevmware,
+			_Vcenteraccount,
+			_Vcentercredential,
 			_Vmwarefolders,
 			_Vswitch,
 			_Windows
@@ -227,6 +235,19 @@ public class VmwareTables
 		private static final /*@NonNull*/ ExecutorFragment _Storagevmware__Resource = new ExecutorFragment(Types._Storagevmware, OCCITables.Types._Resource);
 		private static final /*@NonNull*/ ExecutorFragment _Storagevmware__Storage = new ExecutorFragment(Types._Storagevmware, InfrastructureTables.Types._Storage);
 		private static final /*@NonNull*/ ExecutorFragment _Storagevmware__Storagevmware = new ExecutorFragment(Types._Storagevmware, VmwareTables.Types._Storagevmware);
+
+		private static final /*@NonNull*/ ExecutorFragment _Vcenteraccount__Cloudaccount = new ExecutorFragment(Types._Vcenteraccount, AccountsTables.Types._Cloudaccount);
+		private static final /*@NonNull*/ ExecutorFragment _Vcenteraccount__Entity = new ExecutorFragment(Types._Vcenteraccount, OCCITables.Types._Entity);
+		private static final /*@NonNull*/ ExecutorFragment _Vcenteraccount__OclAny = new ExecutorFragment(Types._Vcenteraccount, OCLstdlibTables.Types._OclAny);
+		private static final /*@NonNull*/ ExecutorFragment _Vcenteraccount__OclElement = new ExecutorFragment(Types._Vcenteraccount, OCLstdlibTables.Types._OclElement);
+		private static final /*@NonNull*/ ExecutorFragment _Vcenteraccount__Resource = new ExecutorFragment(Types._Vcenteraccount, OCCITables.Types._Resource);
+		private static final /*@NonNull*/ ExecutorFragment _Vcenteraccount__Vcenteraccount = new ExecutorFragment(Types._Vcenteraccount, VmwareTables.Types._Vcenteraccount);
+
+		private static final /*@NonNull*/ ExecutorFragment _Vcentercredential__Basiccredential = new ExecutorFragment(Types._Vcentercredential, AccountsTables.Types._Basiccredential);
+		private static final /*@NonNull*/ ExecutorFragment _Vcentercredential__MixinBase = new ExecutorFragment(Types._Vcentercredential, OCCITables.Types._MixinBase);
+		private static final /*@NonNull*/ ExecutorFragment _Vcentercredential__OclAny = new ExecutorFragment(Types._Vcentercredential, OCLstdlibTables.Types._OclAny);
+		private static final /*@NonNull*/ ExecutorFragment _Vcentercredential__OclElement = new ExecutorFragment(Types._Vcentercredential, OCLstdlibTables.Types._OclElement);
+		private static final /*@NonNull*/ ExecutorFragment _Vcentercredential__Vcentercredential = new ExecutorFragment(Types._Vcentercredential, VmwareTables.Types._Vcentercredential);
 
 		private static final /*@NonNull*/ ExecutorFragment _Vmwarefolders__MixinBase = new ExecutorFragment(Types._Vmwarefolders, OCCITables.Types._MixinBase);
 		private static final /*@NonNull*/ ExecutorFragment _Vmwarefolders__OclAny = new ExecutorFragment(Types._Vmwarefolders, OCLstdlibTables.Types._OclAny);
@@ -456,6 +477,27 @@ public class VmwareTables
 		};
 		private static final int /*@NonNull*/ [] __Storagevmware = { 1,1,1,1,1,1 };
 
+		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Vcenteraccount =
+		{
+			Fragments._Vcenteraccount__OclAny /* 0 */,
+			Fragments._Vcenteraccount__OclElement /* 1 */,
+			Fragments._Vcenteraccount__Entity /* 2 */,
+			Fragments._Vcenteraccount__Resource /* 3 */,
+			Fragments._Vcenteraccount__Cloudaccount /* 4 */,
+			Fragments._Vcenteraccount__Vcenteraccount /* 5 */
+		};
+		private static final int /*@NonNull*/ [] __Vcenteraccount = { 1,1,1,1,1,1 };
+
+		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Vcentercredential =
+		{
+			Fragments._Vcentercredential__OclAny /* 0 */,
+			Fragments._Vcentercredential__OclElement /* 1 */,
+			Fragments._Vcentercredential__MixinBase /* 2 */,
+			Fragments._Vcentercredential__Basiccredential /* 3 */,
+			Fragments._Vcentercredential__Vcentercredential /* 4 */
+		};
+		private static final int /*@NonNull*/ [] __Vcentercredential = { 1,1,1,1,1 };
+
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Vmwarefolders =
 		{
 			Fragments._Vmwarefolders__OclAny /* 0 */,
@@ -500,6 +542,8 @@ public class VmwareTables
 			Types._Ssh_user_data.initFragments(_Ssh_user_data, __Ssh_user_data);
 			Types._Storagelinkvmware.initFragments(_Storagelinkvmware, __Storagelinkvmware);
 			Types._Storagevmware.initFragments(_Storagevmware, __Storagevmware);
+			Types._Vcenteraccount.initFragments(_Vcenteraccount, __Vcenteraccount);
+			Types._Vcentercredential.initFragments(_Vcentercredential, __Vcentercredential);
 			Types._Vmwarefolders.initFragments(_Vmwarefolders, __Vmwarefolders);
 			Types._Vswitch.initFragments(_Vswitch, __Vswitch);
 			Types._Windows.initFragments(_Windows, __Windows);
@@ -559,15 +603,24 @@ public class VmwareTables
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Instancevmware__Instancevmware = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Instancevmware__Compute = {
 			InfrastructureTables.Operations._Compute__restart /* restart(RestartMethod[?]) */,
+			InfrastructureTables.Operations._Compute__restart /* restart(RestartMethod[?]) */,
+			InfrastructureTables.Operations._Compute__save /* save(SaveMethod[?],String[?]) */,
 			InfrastructureTables.Operations._Compute__save /* save(SaveMethod[?],String[?]) */,
 			InfrastructureTables.Operations._Compute__start /* start() */,
+			InfrastructureTables.Operations._Compute__start /* start() */,
 			InfrastructureTables.Operations._Compute__stop /* stop(StopMethod[?]) */,
+			InfrastructureTables.Operations._Compute__stop /* stop(StopMethod[?]) */,
+			InfrastructureTables.Operations._Compute__suspend /* suspend(SuspendMethod[?]) */,
 			InfrastructureTables.Operations._Compute__suspend /* suspend(SuspendMethod[?]) */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Instancevmware__Entity = {
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
+			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
+			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
+			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
+			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */,
 			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Instancevmware__OclAny = {
@@ -663,11 +716,20 @@ public class VmwareTables
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Networkadapter__Networkadapter = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Networkadapter__Entity = {
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
+			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
+			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
+			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
+			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */,
 			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
 		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Networkadapter__Link = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Networkadapter__Link = {
+			OCCITables.Operations._Link__LinkSourceInvariant /* LinkSourceInvariant(Kind[?],Kind[?]) */,
+			OCCITables.Operations._Link__LinkSourceInvariant /* LinkSourceInvariant(Kind[?],Kind[?]) */,
+			OCCITables.Operations._Link__LinkTargetInvariant /* LinkTargetInvariant(Kind[?],Kind[?]) */,
+			OCCITables.Operations._Link__LinkTargetInvariant /* LinkTargetInvariant(Kind[?],Kind[?]) */
+		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Networkadapter__Networkinterface = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Networkadapter__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
@@ -759,11 +821,20 @@ public class VmwareTables
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Storagelinkvmware__Storagelinkvmware = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Storagelinkvmware__Entity = {
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
+			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
+			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
+			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
+			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */,
 			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
 		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Storagelinkvmware__Link = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Storagelinkvmware__Link = {
+			OCCITables.Operations._Link__LinkSourceInvariant /* LinkSourceInvariant(Kind[?],Kind[?]) */,
+			OCCITables.Operations._Link__LinkSourceInvariant /* LinkSourceInvariant(Kind[?],Kind[?]) */,
+			OCCITables.Operations._Link__LinkTargetInvariant /* LinkTargetInvariant(Kind[?],Kind[?]) */,
+			OCCITables.Operations._Link__LinkTargetInvariant /* LinkTargetInvariant(Kind[?],Kind[?]) */
+		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Storagelinkvmware__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
 			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
@@ -795,8 +866,12 @@ public class VmwareTables
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Storagevmware__Storagevmware = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Storagevmware__Entity = {
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
+			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
+			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
+			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
+			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */,
 			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Storagevmware__OclAny = {
@@ -828,7 +903,81 @@ public class VmwareTables
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Storagevmware__Resource = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Storagevmware__Storage = {
 			InfrastructureTables.Operations._Storage__offline /* offline() */,
+			InfrastructureTables.Operations._Storage__offline /* offline() */,
+			InfrastructureTables.Operations._Storage__online /* online() */,
 			InfrastructureTables.Operations._Storage__online /* online() */
+		};
+
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Vcenteraccount__Vcenteraccount = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Vcenteraccount__Cloudaccount = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Vcenteraccount__Entity = {
+			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
+			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
+			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
+			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
+			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
+			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
+			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */,
+			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Vcenteraccount__OclAny = {
+			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
+			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
+			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
+			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
+			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
+			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
+			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
+			OCLstdlibTables.Operations._OclAny__toString /* toString() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Vcenteraccount__OclElement = {
+			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
+			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
+			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
+			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
+			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Vcenteraccount__Resource = {};
+
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Vcentercredential__Vcentercredential = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Vcentercredential__Basiccredential = {
+			AccountsTables.Operations._Basiccredential__updatepassword /* updatepassword() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Vcentercredential__MixinBase = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Vcentercredential__OclAny = {
+			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
+			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
+			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
+			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
+			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
+			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
+			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
+			OCLstdlibTables.Operations._OclAny__toString /* toString() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Vcentercredential__OclElement = {
+			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
+			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
+			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
+			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
+			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
 		};
 
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Vmwarefolders__Vmwarefolders = {};
@@ -863,12 +1012,18 @@ public class VmwareTables
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Vswitch__Vswitch = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Vswitch__Entity = {
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
+			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
+			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
+			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
+			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */,
 			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Vswitch__Network = {
 			InfrastructureTables.Operations._Network__down /* down() */,
+			InfrastructureTables.Operations._Network__down /* down() */,
+			InfrastructureTables.Operations._Network__up /* up() */,
 			InfrastructureTables.Operations._Network__up /* up() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Vswitch__OclAny = {
@@ -994,6 +1149,19 @@ public class VmwareTables
 			Fragments._Storagevmware__Storage.initOperations(_Storagevmware__Storage);
 			Fragments._Storagevmware__Storagevmware.initOperations(_Storagevmware__Storagevmware);
 
+			Fragments._Vcenteraccount__Cloudaccount.initOperations(_Vcenteraccount__Cloudaccount);
+			Fragments._Vcenteraccount__Entity.initOperations(_Vcenteraccount__Entity);
+			Fragments._Vcenteraccount__OclAny.initOperations(_Vcenteraccount__OclAny);
+			Fragments._Vcenteraccount__OclElement.initOperations(_Vcenteraccount__OclElement);
+			Fragments._Vcenteraccount__Resource.initOperations(_Vcenteraccount__Resource);
+			Fragments._Vcenteraccount__Vcenteraccount.initOperations(_Vcenteraccount__Vcenteraccount);
+
+			Fragments._Vcentercredential__Basiccredential.initOperations(_Vcentercredential__Basiccredential);
+			Fragments._Vcentercredential__MixinBase.initOperations(_Vcentercredential__MixinBase);
+			Fragments._Vcentercredential__OclAny.initOperations(_Vcentercredential__OclAny);
+			Fragments._Vcentercredential__OclElement.initOperations(_Vcentercredential__OclElement);
+			Fragments._Vcentercredential__Vcentercredential.initOperations(_Vcentercredential__Vcentercredential);
+
 			Fragments._Vmwarefolders__MixinBase.initOperations(_Vmwarefolders__MixinBase);
 			Fragments._Vmwarefolders__OclAny.initOperations(_Vmwarefolders__OclAny);
 			Fragments._Vmwarefolders__OclElement.initOperations(_Vmwarefolders__OclElement);
@@ -1071,6 +1239,10 @@ public class VmwareTables
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Storagevmware = {};
 
+		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Vcenteraccount = {};
+
+		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Vcentercredential = {};
+
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Vmwarefolders = {
 			VmwareTables.Properties._Vmwarefolders__clustername,
 			VmwareTables.Properties._Vmwarefolders__datacentername,
@@ -1101,6 +1273,8 @@ public class VmwareTables
 			Fragments._Ssh_user_data__Ssh_user_data.initProperties(_Ssh_user_data);
 			Fragments._Storagelinkvmware__Storagelinkvmware.initProperties(_Storagelinkvmware);
 			Fragments._Storagevmware__Storagevmware.initProperties(_Storagevmware);
+			Fragments._Vcenteraccount__Vcenteraccount.initProperties(_Vcenteraccount);
+			Fragments._Vcentercredential__Vcentercredential.initProperties(_Vcentercredential);
 			Fragments._Vmwarefolders__Vmwarefolders.initProperties(_Vmwarefolders);
 			Fragments._Vswitch__Vswitch.initProperties(_Vswitch);
 			Fragments._Windows__Windows.initProperties(_Windows);

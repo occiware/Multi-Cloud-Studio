@@ -18,13 +18,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Connector implementation for the OCCI kind:
- * - scheme: http://occiware.org/occi/infrastructure/vmware#
- * - term: linux
- * - title: Mixin os_tpl for linux systems
+ * Connector implementation for the OCCI kind: - scheme:
+ * http://occiware.org/occi/infrastructure/vmware# - term: linux - title: Mixin
+ * os_tpl for linux systems
  */
-public class LinuxConnector extends org.eclipse.cmf.occi.multicloud.vmware.impl.LinuxImpl
-{
+public class LinuxConnector extends org.eclipse.cmf.occi.multicloud.vmware.impl.LinuxImpl {
 	/**
 	 * Initialize the logger.
 	 */
@@ -34,10 +32,9 @@ public class LinuxConnector extends org.eclipse.cmf.occi.multicloud.vmware.impl.
 	/**
 	 * Constructs a linux connector.
 	 */
-	LinuxConnector()
-	{
+	LinuxConnector() {
 		LOGGER.debug("Constructor called on " + this);
 		// TODO: Implement this constructor.
 	}
 	// End of user code
-}	
+}

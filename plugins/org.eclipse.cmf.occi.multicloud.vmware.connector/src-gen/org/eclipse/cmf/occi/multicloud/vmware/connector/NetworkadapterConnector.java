@@ -13,6 +13,7 @@
  * Generated at Wed Jul 19 15:09:17 CEST 2017 from platform:/resource/org.eclipse.cmf.occi.multicloud.vmware/model/vmware.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.vmware.connector;
+
 import java.lang.reflect.InvocationTargetException;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
@@ -62,18 +63,16 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Connector implementation for the OCCI kind:
- * - scheme: http://occiware.org/occi/infrastructure/vmware#
- * - term: networkadapter
- * - title: Network adapter interface
+ * Connector implementation for the OCCI kind: - scheme:
+ * http://occiware.org/occi/infrastructure/vmware# - term: networkadapter -
+ * title: Network adapter interface
  */
-public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmware.impl.NetworkadapterImpl
-{
+public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmware.impl.NetworkadapterImpl {
 	/**
 	 * Initialize the logger.
 	 */
 	private static Logger LOGGER = LoggerFactory.getLogger(NetworkadapterConnector.class);
-	private static final String ATTR_NETWORK_INTERFACE_IP_ADDRESS = "occi.networkinterface.address"; 
+	private static final String ATTR_NETWORK_INTERFACE_IP_ADDRESS = "occi.networkinterface.address";
 	private String vmName = null;
 	private String networkAdapterName = null;
 
@@ -91,20 +90,25 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 
 	private boolean nicExist = false;
 	private boolean created = false;
-	
+
 	private String ipAddressPlainLocal = null;
 	private boolean dhcpMode = false;
 	private boolean wakeOnLan = true;
 	private String macAddress = null;
 	private String allocation = null;
 	private NetworkInterfaceStatus adapterState = NetworkInterfaceStatus.INACTIVE;
+
+	/**
+	 * Main vmware client to manage this instance on provider.
+	 */
+	private VCenterClient vCenterClient = new VCenterClient(null, null, null);
+	
 	
 	/**
 	 * Managed object reference id. Unique reference for virtual machine.
 	 */
 	private String morId;
-	
-	
+
 	// Start of user code Networkadapterconnector_constructor
 	/**
 	 * Constructs a networkadapter connector.
@@ -113,18 +117,17 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		LOGGER.debug("Constructor called on " + this);
 	}
 	// End of user code
-	
+
 	//
 	// OCCI CRUD callback operations.
 	//
-	
+
 	// Start of user code NetworkadapterocciCreate
 	/**
 	 * Called when this Networkadapter instance is completely created.
 	 */
 	@Override
-	public void occiCreate()
-	{
+	public void occiCreate() {
 		LOGGER.debug("occiCreate() called on " + this);
 		titleMessage = "Create network adapter : " + this.getTitle();
 		if (UIDialog.isStandAlone()) {
@@ -167,7 +170,6 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			// Launching thread with business code.
 			LOGGER.debug("Console mode.");
 			retrieveNetworkNIC(null);
-			
 
 		} else {
 			// Launching IRunnableWithProgress UI thread with business code.
@@ -198,13 +200,12 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 	 * Called when this Networkadapter instance is completely updated.
 	 */
 	@Override
-	public void occiUpdate()
-	{
+	public void occiUpdate() {
 		LOGGER.debug("occiUpdate() called on " + this);
 		titleMessage = "Update network adapter : " + this.getTitle();
 		if (UIDialog.isStandAlone()) {
 			updateNetworkNIC(null);
-			
+
 		} else {
 			// Launching IRunnableWithProgress UI thread with business code.
 			LOGGER.debug("UI mode.");
@@ -235,13 +236,12 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 	 * Called when this Networkadapter instance will be deleted.
 	 */
 	@Override
-	public void occiDelete()
-	{
+	public void occiDelete() {
 		LOGGER.debug("occiDelete() called on " + this);
 		titleMessage = "Delete a network adapter : " + this.getTitle();
 		if (UIDialog.isStandAlone()) {
 			deleteNetworkNIC(null);
-			
+
 		} else {
 			// Launching IRunnableWithProgress UI thread with business code.
 			LOGGER.debug("UI mode.");
@@ -255,7 +255,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			if (UIDialog.showConfirmDialog()) {
 				UIDialog.executeActionThread(runnableWithProgress, titleMessage);
 			}
-			
+
 			if (globalMessage != null && !globalMessage.isEmpty()) {
 				UIDialog.showUserMessage(titleMessage, globalMessage, levelMessage);
 			}
@@ -273,7 +273,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 	//
 	// Networkadapter actions.
 	//
-	
+
 	/**
 	 * Connect a network adapter.
 	 */
@@ -360,7 +360,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 				// Get vm title and search in vcenter.
 				// TODO : Add vmname in an attribute other than title.
 				this.vmName = compute.getTitle();
-				Folder rootFolder = VCenterClient.getServiceInstance().getRootFolder();
+				Folder rootFolder = vCenterClient.getServiceInstance().getRootFolder();
 				vm = VMHelper.findVMForName(rootFolder, vmName);
 			}
 		}
@@ -377,8 +377,8 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 	}
 
 	/**
-	 * Get the port group name (port group name), or allocate an vswitch and
-	 * port group if no network.
+	 * Get the port group name (port group name), or allocate an vswitch and port
+	 * group if no network.
 	 * 
 	 * @param vm
 	 * @param netConn
@@ -398,7 +398,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			if (netConn == null) {
 				// No network designed.
 				// Search the first default interface.
-				Folder rootFolder = VCenterClient.getServiceInstance().getRootFolder();
+				Folder rootFolder = vCenterClient.getServiceInstance().getRootFolder();
 				HostSystem host = VMHelper.findHostSystemForVM(rootFolder, vmName);
 				Allocator allocator = new AllocatorImpl(rootFolder);
 				allocator.setHost(host);
@@ -435,8 +435,8 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 	}
 
 	/**
-	 * get attribute value with his occi key, deserve when no property value
-	 * set, with Mixin attribute as it is defined by Cloud designer.
+	 * get attribute value with his occi key, deserve when no property value set,
+	 * with Mixin attribute as it is defined by Cloud designer.
 	 * 
 	 * @param key
 	 * @return an attribute value, null if no one is found.
@@ -458,7 +458,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		return value;
 
 	}
-	
+
 	public String getVmName() {
 		return vmName;
 	}
@@ -490,7 +490,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 	 */
 	public void createNetworkNIC(IProgressMonitor monitor) {
 
-		if (!VCenterClient.checkConnection()) {
+		if (!vCenterClient.checkConnection(this)) {
 			// Must return true if connection is established.
 			globalMessage = "No connection to Vcenter has been established.";
 			levelMessage = Level.ERROR;
@@ -513,7 +513,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			globalMessage = "No virtual machine is linked on the network.";
 			levelMessage = Level.ERROR;
 			LOGGER.error(globalMessage);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		}
 		if (monitor != null) {
@@ -529,7 +529,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			globalMessage = "No network adapter name setted. Cant create the network.";
 			levelMessage = Level.ERROR;
 			LOGGER.error(globalMessage);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		}
 		if (oldNetworkAdapterName == null) {
@@ -543,13 +543,13 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 					+ vmName;
 			levelMessage = Level.WARN;
 			LOGGER.warn(globalMessage);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		}
 		if (monitor != null) {
 			subMonitor.worked(30);
 		}
-		Folder rootFolder = VCenterClient.getServiceInstance().getRootFolder();
+		Folder rootFolder = vCenterClient.getServiceInstance().getRootFolder();
 		HostSystem host = VMHelper.findHostSystemForVM(rootFolder, vmName);
 
 		// Get the linked Network interface connector.
@@ -577,7 +577,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			}
 			levelMessage = Level.ERROR;
 			LOGGER.error(globalMessage);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		}
 		if (monitor != null) {
@@ -605,7 +605,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 					+ " , \n error message: " + ex.getMessage();
 			levelMessage = Level.ERROR;
 			LOGGER.error(globalMessage, ex);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 
 		} catch (InterruptedException e) {
@@ -613,7 +613,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 					+ " , \n error message: " + e.getMessage();
 			levelMessage = Level.ERROR;
 			LOGGER.error(globalMessage, e);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		}
 
@@ -647,7 +647,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			LOGGER.warn("Network adapter : " + networkAdapterName + " could'nt created, cause : \n " + globalMessage);
 		}
 
-		VCenterClient.disconnect();
+		vCenterClient.disconnect();
 	}
 
 	/**
@@ -657,7 +657,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 	 */
 	public void retrieveNetworkNIC(IProgressMonitor monitor) {
 
-		if (!VCenterClient.checkConnection()) {
+		if (!vCenterClient.checkConnection(this)) {
 			// Must return true if connection is established.
 			globalMessage = "No connection to Vcenter has been established.";
 			levelMessage = Level.ERROR;
@@ -676,7 +676,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			subMonitor.worked(10);
 
 		}
-		ServiceInstance si = VCenterClient.getServiceInstance();
+		ServiceInstance si = vCenterClient.getServiceInstance();
 		Folder rootFolder = si.getRootFolder();
 		// Load virtual machine if any.
 		// Note: vmName is set with this method.
@@ -689,7 +689,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			LOGGER.error(globalMessage);
 			adapterState = NetworkInterfaceStatus.INACTIVE;
 			// No vm adapter found so.
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		}
 
@@ -724,7 +724,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 				levelMessage = Level.ERROR;
 				LOGGER.error(globalMessage);
 				adapterState = NetworkInterfaceStatus.INACTIVE;
-				VCenterClient.disconnect();
+				vCenterClient.disconnect();
 				return;
 			}
 
@@ -733,7 +733,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			levelMessage = Level.ERROR;
 			LOGGER.error(globalMessage);
 			adapterState = NetworkInterfaceStatus.INACTIVE;
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		}
 		String externalId = null;
@@ -767,7 +767,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		}
 		// Set the informations...
 		String[] ipAddressesLocal;
-		
+
 		if (VMHelper.isToolsInstalled(vm) && VMHelper.isToolsRunning(vm) && vEthDevice != null) {
 			// Get guest information.
 			GuestNicInfo[] guestNicInf = vm.getGuest().getNet();
@@ -810,37 +810,36 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			}
 
 		}
-		
-		// TODO : Gateway value, how to get this value ? not found on guest
-				// object.
-				
-				// TODO : allocation value (dynamic or static).
-				
-			
-				// if (dhcpMode) {
-				// allocation = "dynamic";
-				// } else {
-				// allocation = "static";
-				// }
-				// Set the allocation.
-				// AttributeState attrib =
-				// this.getAttributeStateObject("occi.networkinterface.allocation");
-				// if (attrib == null) {
-				// // Create the attribute and set his value.
-				//
-				// attrib = createAttribute("occi.networkinterface.allocation",
-				// allocation);
-				// this.getAttributes().add(attrib);
-				// } else {
-				// attrib.setValue(allocation);
-				// }
 
-				// May be null if the device is not started...
+		// TODO : Gateway value, how to get this value ? not found on guest
+		// object.
+
+		// TODO : allocation value (dynamic or static).
+
+		// if (dhcpMode) {
+		// allocation = "dynamic";
+		// } else {
+		// allocation = "static";
+		// }
+		// Set the allocation.
+		// AttributeState attrib =
+		// this.getAttributeStateObject("occi.networkinterface.allocation");
+		// if (attrib == null) {
+		// // Create the attribute and set his value.
+		//
+		// attrib = createAttribute("occi.networkinterface.allocation",
+		// allocation);
+		// this.getAttributes().add(attrib);
+		// } else {
+		// attrib.setValue(allocation);
+		// }
+
+		// May be null if the device is not started...
 
 		if (vEthDevice != null && vEthDevice.getConnectable() != null) {
 			if (vEthDevice.getConnectable().connected) {
 				adapterState = NetworkInterfaceStatus.ACTIVE;
-				
+
 			} else {
 				adapterState = NetworkInterfaceStatus.INACTIVE;
 			}
@@ -848,18 +847,18 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			// TODO : Wake on lan value
 			// wakeOnLan = vEthDevice.getWakeOnLanEnabled();
 		}
-		
+
 		if (toMonitor) {
 			subMonitor.worked(100);
 		}
-		
+
 		if (UIDialog.isStandAlone()) {
 			updateNetworkInterfaceAttributes();
 		}
 		globalMessage = "The network adapter informations has been retrieved and are updated.";
 		levelMessage = Level.INFO;
-		
-		VCenterClient.disconnect();
+
+		vCenterClient.disconnect();
 
 	}
 
@@ -870,7 +869,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 	 */
 	public void updateNetworkNIC(IProgressMonitor monitor) {
 
-		if (!VCenterClient.checkConnection()) {
+		if (!vCenterClient.checkConnection(this)) {
 			// Must return true if connection is established.
 			globalMessage = "No connection to Vcenter has been established.";
 			levelMessage = Level.ERROR;
@@ -901,7 +900,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			LOGGER.error(globalMessage);
 			adapterState = NetworkInterfaceStatus.INACTIVE;
 			// No vm adapter found so.
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		}
 		if (toMonitor) {
@@ -932,7 +931,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 				LOGGER.error(globalMessage);
 				oldNetworkAdapterName = null;
 				adapterState = NetworkInterfaceStatus.INACTIVE;
-				VCenterClient.disconnect();
+				vCenterClient.disconnect();
 				return;
 			}
 			if (toMonitor) {
@@ -961,14 +960,14 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 						+ vmName + " \n " + " Message: " + e.getMessage();
 				levelMessage = Level.ERROR;
 				LOGGER.error(globalMessage);
-				VCenterClient.disconnect();
+				vCenterClient.disconnect();
 				return;
 			} catch (InterruptedException ex) {
 				globalMessage = "Error while updating a network adapter : " + networkAdapterName + " --< from vm : "
 						+ vmName + " \n " + " Message: " + ex.getMessage();
 				levelMessage = Level.ERROR;
 				LOGGER.error(globalMessage);
-				VCenterClient.disconnect();
+				vCenterClient.disconnect();
 				return;
 			}
 
@@ -998,7 +997,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		if (toMonitor) {
 			subMonitor.worked(100);
 		}
-		VCenterClient.disconnect();
+		vCenterClient.disconnect();
 	}
 
 	/**
@@ -1007,7 +1006,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 	 * @param monitor
 	 */
 	public void deleteNetworkNIC(IProgressMonitor monitor) {
-		if (!VCenterClient.checkConnection()) {
+		if (!vCenterClient.checkConnection(this)) {
 			// Must return true if connection is established.
 			globalMessage = "No connection to Vcenter has been established.";
 			levelMessage = Level.ERROR;
@@ -1032,7 +1031,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			globalMessage = "No virtual machine is linked on the network adapter.";
 			levelMessage = Level.ERROR;
 			LOGGER.error(globalMessage);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		}
 
@@ -1046,7 +1045,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			globalMessage = "No network adapter name setted. Cant delete the network adapter.";
 			levelMessage = Level.ERROR;
 			LOGGER.error(globalMessage);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		}
 
@@ -1056,7 +1055,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 					+ vmName;
 			levelMessage = Level.ERROR;
 			LOGGER.error(globalMessage);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		}
 		if (toMonitor) {
@@ -1070,7 +1069,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 					+ " for deletion on virtual machine : " + vmName;
 			levelMessage = Level.ERROR;
 			LOGGER.error(globalMessage);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		}
 		if (toMonitor) {
@@ -1097,14 +1096,14 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 					+ vmName + " \n " + ex.getMessage();
 			levelMessage = Level.ERROR;
 			LOGGER.error(globalMessage, ex);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		} catch (InterruptedException e) {
 			globalMessage = "Error while deleting a network adapter : " + networkAdapterName + " --< from vm : "
 					+ vmName + " \n " + e.getMessage();
 			levelMessage = Level.ERROR;
 			LOGGER.error(globalMessage, e);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		}
 		if (toMonitor) {
@@ -1132,7 +1131,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		if (toMonitor) {
 			subMonitor.worked(100);
 		}
-		VCenterClient.disconnect();
+		vCenterClient.disconnect();
 	}
 
 	/**
@@ -1141,7 +1140,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 	 * @param monitor
 	 */
 	public void upNetworkNIC(IProgressMonitor monitor) {
-		if (!VCenterClient.checkConnection()) {
+		if (!vCenterClient.checkConnection(this)) {
 			// Must return true if connection is established.
 			globalMessage = "No connection to Vcenter has been established.";
 			levelMessage = Level.ERROR;
@@ -1166,7 +1165,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			globalMessage = "No virtual machine is linked on the network.";
 			levelMessage = Level.ERROR;
 			LOGGER.error(globalMessage);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		}
 
@@ -1179,7 +1178,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			globalMessage = "No network adapter name setted. Cant load the network adapter information.";
 			levelMessage = Level.ERROR;
 			LOGGER.error(globalMessage);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		}
 
@@ -1190,7 +1189,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 					+ " for action up, on virtual machine : " + vmName;
 			levelMessage = Level.ERROR;
 			LOGGER.error(globalMessage);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		}
 		if (toMonitor) {
@@ -1202,7 +1201,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			globalMessage = "No connection information is found for this network adapter : " + networkAdapterName;
 			levelMessage = Level.ERROR;
 			LOGGER.error(globalMessage);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		}
 		boolean result = false;
@@ -1252,16 +1251,16 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		if (result) {
 			LOGGER.info("The network adapter : " + networkAdapterName + " is connected.");
 			adapterState = NetworkInterfaceStatus.ACTIVE;
-//			if (netConn != null) {
-//				netConn.setState(NetworkStatus.ACTIVE);
-//			}
+			// if (netConn != null) {
+			// netConn.setState(NetworkStatus.ACTIVE);
+			// }
 		} else {
 			if (connectInfo.isConnected()) {
 				LOGGER.info("The network adapter: " + networkAdapterName + " was already connected.");
 				adapterState = NetworkInterfaceStatus.ACTIVE;
-//				if (netConn != null) {
-//					netConn.setState(NetworkStatus.ACTIVE);
-//				}
+				// if (netConn != null) {
+				// netConn.setState(NetworkStatus.ACTIVE);
+				// }
 			} else {
 				globalMessage = "The network adapter is not connected, check your configuration.";
 				levelMessage = Level.WARN;
@@ -1272,7 +1271,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		if (toMonitor) {
 			subMonitor.worked(100);
 		}
-		VCenterClient.disconnect();
+		vCenterClient.disconnect();
 
 	}
 
@@ -1282,7 +1281,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 	 * @param monitor
 	 */
 	public void downNetworkNIC(IProgressMonitor monitor) {
-		if (!VCenterClient.checkConnection()) {
+		if (!vCenterClient.checkConnection(this)) {
 			// Must return true if connection is established.
 			globalMessage = "No connection to Vcenter has been established.";
 			levelMessage = Level.ERROR;
@@ -1307,7 +1306,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			globalMessage = "No virtual machine is linked on the network adapter.";
 			levelMessage = Level.ERROR;
 			LOGGER.error(globalMessage);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		}
 
@@ -1320,7 +1319,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			globalMessage = "No network adapter name setted. Cant load the network information.";
 			levelMessage = Level.ERROR;
 			LOGGER.error(globalMessage);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		}
 
@@ -1331,7 +1330,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 					+ " for action down, on virtual machine : " + vmName;
 			levelMessage = Level.ERROR;
 			LOGGER.error(globalMessage);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		}
 		if (toMonitor) {
@@ -1343,7 +1342,7 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			globalMessage = "No connection information is found for this network : " + networkAdapterName;
 			levelMessage = Level.ERROR;
 			LOGGER.error(globalMessage);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		}
 		boolean result = false;
@@ -1356,10 +1355,10 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			result = NetworkHelper.down(vm, vEth);
 			if (!result) {
 				adapterState = NetworkInterfaceStatus.ACTIVE;
-				
-//				if (netConn != null) {
-//					netConn.setState(NetworkStatus.ACTIVE);
-//				}
+
+				// if (netConn != null) {
+				// netConn.setState(NetworkStatus.ACTIVE);
+				// }
 			}
 		}
 		if (result) {
@@ -1368,18 +1367,17 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		if (toMonitor) {
 			subMonitor.worked(100);
 		}
-		VCenterClient.disconnect();
+		vCenterClient.disconnect();
 	}
-	
-	
+
 	public void updateNetworkInterfaceAttributes() {
-		
+
 		Ipnetworkinterface mixinIpNetworkInterface = getIpNetworkInterface();
 		Map<String, String> attrsToCreate = new HashMap<>();
 		Map<String, String> attrsToUpdate = new HashMap<>();
 		List<String> attrsToDelete = new ArrayList<>();
 		// TODO : wakeon lan : add attr to extension vmwarecrtp and update this code...
-		
+
 		// String wakeOnLanStr = wakeOnLan.toString();
 		// AttributeState attr =
 		// this.getAttributeStateObject("occi.networkinterface.wakeonlan");
@@ -1391,18 +1389,20 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		// } else {
 		// attr.setValue(wakeOnLanStr);
 		// }
-		
+
 		if (mixinIpNetworkInterface != null && ipAddressPlainLocal != null && !ipAddressPlainLocal.isEmpty()) {
 			mixinIpNetworkInterface.setOcciNetworkinterfaceAddress(ipAddressPlainLocal);
-			if (this.getAttributeStateObjectFromMixinBase(mixinIpNetworkInterface, ATTR_NETWORK_INTERFACE_IP_ADDRESS) == null) {
+			if (this.getAttributeStateObjectFromMixinBase(mixinIpNetworkInterface,
+					ATTR_NETWORK_INTERFACE_IP_ADDRESS) == null) {
 				attrsToCreate.put(ATTR_NETWORK_INTERFACE_IP_ADDRESS, ipAddressPlainLocal);
 			} else {
 				attrsToUpdate.put(ATTR_NETWORK_INTERFACE_IP_ADDRESS, ipAddressPlainLocal);
 			}
 			if (UIDialog.isStandAlone()) {
 				// Headless environment.
-				MixinBaseUtilsHeadless.updateAttributes(mixinIpNetworkInterface, attrsToCreate, attrsToUpdate, attrsToDelete);
-				
+				MixinBaseUtilsHeadless.updateAttributes(mixinIpNetworkInterface, attrsToCreate, attrsToUpdate,
+						attrsToDelete);
+
 			} else {
 				// Gui environment
 				MixinBaseUtils.updateAttributes(mixinIpNetworkInterface, attrsToCreate, attrsToUpdate, attrsToDelete);
@@ -1412,26 +1412,26 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		} else {
 			this.setOcciNetworkinterfaceStateMessage("No ip address setup.");
 		}
-		
+
 		this.setTitle(networkAdapterName);
 		this.setOcciNetworkinterfaceState(adapterState);
 		// Mac address.
 		if (macAddress != null && !macAddress.isEmpty()) {
 			this.setOcciNetworkinterfaceMac(macAddress);
 		}
-		
+
 	}
-	
+
 	/**
 	 * Get an attribute state object for key parameter.
 	 * 
 	 * @param key
 	 *            ex: occi.core.title.
-	 * @return an AttributeState object, if attribute doesnt exist, null value
-	 *         is returned.
+	 * @return an AttributeState object, if attribute doesnt exist, null value is
+	 *         returned.
 	 */
 	public AttributeState getAttributeStateObjectFromMixinBase(MixinBase mixinB, final String key) {
-		
+
 		AttributeState attr = null;
 		if (key == null) {
 			return attr;
@@ -1446,9 +1446,10 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 
 		return attr;
 	}
-	
+
 	/**
 	 * Get the mixin based on ipnetworkinterface
+	 * 
 	 * @return an ipnetworkinterface mixin, null if none applied.
 	 */
 	private Ipnetworkinterface getIpNetworkInterface() {
@@ -1462,5 +1463,5 @@ public class NetworkadapterConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		}
 		return mixinIpNetworkInterface;
 	}
-	
-}	
+
+}

@@ -19,8 +19,7 @@ import org.eclipse.cmf.occi.multicloud.elasticocci.impl.ElasticcontrollerImpl;
 //import org.eclipse.cmf.occi.multicloud.elasticocci.impl.StrategycomputeImpl;
 //import org.eclipse.cmf.occi.multicloud.elasticocci.impl.StrategycpuImpl;
 import org.eclipse.cmf.occi.multicloud.occimonitoring.Zabbixinstance;
-import org.eclipse.cmf.occi.multicloud.occimonitoring.connector.CpuusageConnector;
-import org.eclipse.cmf.occi.multicloud.occimonitoring.connector.MemoryusageConnector;
+import org.eclipse.cmf.occi.multicloud.occimonitoring.Cpuusage;
 //import org.eclipse.cmf.occi.multicloud.vmware.Instancevmware;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.RecordingCommand;
@@ -423,7 +422,7 @@ public class StrategycpuConnector extends org.eclipse.cmf.occi.multicloud.elasti
 			if (link.getTarget() instanceof Zabbixinstance) {
 				if (link.getTarget() != null) {
 					Zabbixinstance zabbix = (Zabbixinstance) link.getTarget();
-					CpuusageConnector cpuUsageMetric = (CpuusageConnector) zabbix.getParts().get(0);
+					Cpuusage cpuUsageMetric = (Cpuusage) zabbix.getParts().get(0);
 					domain.getCommandStack().execute(new RecordingCommand(domain) {
 						@Override
 						protected void doExecute() {

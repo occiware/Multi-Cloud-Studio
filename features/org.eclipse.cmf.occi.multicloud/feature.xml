@@ -362,50 +362,50 @@ litigation.
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         <plugin
+   <plugin
          id="org.eclipse.cmf.occi.core.gen.uris.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         <plugin
+   <plugin
          id="org.eclipse.cmf.occi.core.gen.curl"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
          
-         <plugin
+   <plugin
          id="org.eclipse.cmf.occi.core.gen.curl.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         <plugin
+   <plugin
          id="org.eclipse.cmf.occi.core.gen.xml"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         <plugin
+   <plugin
          id="org.eclipse.cmf.occi.core.gen.xml.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         <plugin
+   <plugin
          id="org.eclipse.cmf.occi.core.gen.alloy"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         <plugin
+   <plugin
          id="org.eclipse.cmf.occi.core.gen.alloy.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         <plugin
+   <plugin
          id="org.eclipse.cmf.occi.core.connector.jocci"
          download-size="0"
          install-size="0"
@@ -429,18 +429,7 @@ litigation.
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-<!--   <plugin
-         id="org.eclipse.cmf.occi.infrastructure.tests"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/> -->
-<!--   <plugin
-         id="org.eclipse.cmf.occi.infrastructure.design"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/> -->
+
    <plugin
          id="org.eclipse.cmf.occi.crtp"
          download-size="0"
@@ -459,18 +448,7 @@ litigation.
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-<!--   <plugin
-         id="org.eclipse.cmf.occi.crtp.tests"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/> -->
-<!--   <plugin
-         id="org.eclipse.cmf.occi.crtp.design"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/> -->
+
    <plugin
          id="org.eclipse.cmf.occi.monitoring"
          download-size="0"
@@ -489,18 +467,22 @@ litigation.
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-<!--   <plugin
-         id="org.eclipse.cmf.occi.monitoring.tests"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/> -->
-<!--   <plugin
-         id="org.eclipse.cmf.occi.monitoring.design"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/> -->
+    <!-- Multi-Cloud part -->
+
+    <!-- Multi-Account part -->
+    <plugin
+        id="org.eclipse.cmf.occi.multicloud.accounts"
+        download-size="0"
+        install-size="0"
+        version="0.0.0"
+        unpack="false"/>
+    <plugin
+        id="org.eclipse.cmf.occi.multicloud.accounts.edit"
+        download-size="0"
+        install-size="0"
+        version="0.0.0"
+        unpack="false"/>
+
     <!-- VMware part -->
     <plugin
         id="org.eclipse.cmf.occi.multicloud.vmware"
@@ -520,19 +502,15 @@ litigation.
         install-size="0"
         version="0.0.0"
         unpack="false"/>
-<!--    <plugin
-        id="org.eclipse.cmf.occi.multicloud.vmware.design"
-        download-size="0"
-        install-size="0"
-        version="0.0.0"
-        unpack="false"/> -->
+
     <plugin
         id="org.eclipse.cmf.occi.multicloud.vmware.connector"
         download-size="0"
         install-size="0"
         version="0.0.0"
         unpack="false"/>
-    <!-- Multicloud monitoring part -->
+        
+    <!-- Multicloud monitoring part core plugins -->
     <plugin
         id="org.eclipse.cmf.occi.multicloud.monitoring"
         download-size="0"
@@ -551,18 +529,13 @@ litigation.
         install-size="0"
         version="0.0.0"
         unpack="false"/>
-<!--    <plugin
-        id="org.eclipse.cmf.occi.multicloud.monitoring.design"
-        download-size="0"
-        install-size="0"
-        version="0.0.0"
-        unpack="false"/> -->
     <plugin
         id="org.eclipse.cmf.occi.multicloud.monitoring.connector"
         download-size="0"
         install-size="0"
         version="0.0.0"
         unpack="false"/>
+    
     <!-- multicloud zabbix monitoring part -->
     <plugin
         id="org.eclipse.cmf.occi.multicloud.monitoring.zabbix"
@@ -582,12 +555,6 @@ litigation.
         install-size="0"
         version="0.0.0"
         unpack="false"/>
-<!--    <plugin
-        id="org.eclipse.cmf.occi.multicloud.monitoring.zabbix.design"
-        download-size="0"
-        install-size="0"
-        version="0.0.0"
-        unpack="false"/> -->
     <plugin
         id="org.eclipse.cmf.occi.multicloud.monitoring.zabbix.connector"
         download-size="0"
@@ -603,9 +570,15 @@ litigation.
         install-size="0"
         version="0.0.0"
         unpack="false"/>
-    
+    <plugin
+        id="org.eclipse.cmf.occi.multicloud.vmware.design.extended"
+        download-size="0"
+        install-size="0"
+        version="0.0.0"
+        unpack="false"/>
+        
     <!-- Designed for Elastic OCCI (elasticzabbix + vmware + ElasticOCCI) -->
-<!--    <plugin
+    <plugin
         id="org.eclipse.cmf.occi.multicloud.occimonitoring"
         download-size="0"
         install-size="0"
@@ -666,35 +639,35 @@ litigation.
         version="0.0.0"
         unpack="false"/>
     <plugin
-        id=">org.eclipse.cmf.occi.multicloud.horizontalelasticity"
+        id="org.eclipse.cmf.occi.multicloud.horizontalelasticity"
         download-size="0"
         install-size="0"
         version="0.0.0"
         unpack="false"/>
     <plugin
-        id=">org.eclipse.cmf.occi.multicloud.horizontalelasticity.edit"
+        id="org.eclipse.cmf.occi.multicloud.horizontalelasticity.edit"
         download-size="0"
         install-size="0"
         version="0.0.0"
         unpack="false"/>
     <plugin
-        id=">org.eclipse.cmf.occi.multicloud.horizontalelasticity.editor"
+        id="org.eclipse.cmf.occi.multicloud.horizontalelasticity.editor"
         download-size="0"
         install-size="0"
         version="0.0.0"
         unpack="false"/>
     <plugin
-        id=">org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector"
+        id="org.eclipse.cmf.occi.multicloud.horizontalelasticity.connector"
         download-size="0"
         install-size="0"
         version="0.0.0"
         unpack="false"/>
     <plugin
-        id=">org.eclipse.cmf.occi.multicloud.horizontalelasticity.design.extended"
+        id="org.eclipse.cmf.occi.multicloud.horizontalelasticity.design.extended"
         download-size="0"
         install-size="0"
         version="0.0.0"
-        unpack="false"/> -->
+        unpack="false"/>
     
 
     

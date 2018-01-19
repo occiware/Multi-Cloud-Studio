@@ -22,6 +22,7 @@ import org.eclipse.cmf.occi.crtp.CrtpFactory;
 
 import org.eclipse.cmf.occi.infrastructure.provider.StoragelinkItemProvider;
 
+import org.eclipse.cmf.occi.multicloud.accounts.AccountsFactory;
 import org.eclipse.cmf.occi.multicloud.vmware.Storagelinkvmware;
 import org.eclipse.cmf.occi.multicloud.vmware.VmwareFactory;
 
@@ -117,6 +118,11 @@ public class StoragelinkvmwareItemProvider extends StoragelinkItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
+				 VmwareFactory.eINSTANCE.createOs_tpl_vmware()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
 				 VmwareFactory.eINSTANCE.createWindows()));
 
 		newChildDescriptors.add
@@ -137,12 +143,12 @@ public class StoragelinkvmwareItemProvider extends StoragelinkItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
-				 VmwareFactory.eINSTANCE.createOs_tpl_vmware()));
+				 VmwareFactory.eINSTANCE.createSsh_user_data()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
-				 VmwareFactory.eINSTANCE.createSsh_user_data()));
+				 VmwareFactory.eINSTANCE.createVcentercredential()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -173,6 +179,26 @@ public class StoragelinkvmwareItemProvider extends StoragelinkItemProvider {
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
 				 CrtpFactory.eINSTANCE.createMem_large()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 AccountsFactory.eINSTANCE.createBasiccredential()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 AccountsFactory.eINSTANCE.createCertificatecredential()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 AccountsFactory.eINSTANCE.createKeypaircredential()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 AccountsFactory.eINSTANCE.createCloudcredential()));
 	}
 
 	/**

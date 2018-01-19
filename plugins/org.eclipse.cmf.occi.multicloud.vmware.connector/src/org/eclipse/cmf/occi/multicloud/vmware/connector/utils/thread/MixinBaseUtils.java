@@ -18,8 +18,14 @@ import java.util.Map;
 
 import org.eclipse.cmf.occi.core.AttributeState;
 import org.eclipse.cmf.occi.core.Entity;
+import org.eclipse.cmf.occi.core.Link;
 import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.core.OCCIFactory;
+import org.eclipse.cmf.occi.core.Resource;
+import org.eclipse.cmf.occi.multicloud.accounts.Cloudaccount;
+import org.eclipse.cmf.occi.multicloud.accounts.Cloudaccountlink;
+import org.eclipse.cmf.occi.multicloud.vmware.Vcentercredential;
+import org.eclipse.cmf.occi.multicloud.vmware.connector.Ssh_user_dataConnector;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.RollbackException;
@@ -177,4 +183,78 @@ public class MixinBaseUtils {
 
 		return attr;
 	}
+	
+	/**
+	 * Get the mixin base instance "vcentercredential" for a resource to apply
+	 * 
+	 * @return a vCenterCredential mixin, if none set, this will return a null value.
+	 */
+	public static Vcentercredential getVcenterCredMixin(Entity entity) {
+		Cloudaccount cloudAccount = null;
+		Vcentercredential vCred = null; 
+		
+		if (entity instanceof Cloudaccount) {
+			cloudAccount = (Cloudaccount) entity;
+			vCred = getVcenterCred(cloudAccount);
+			return vCred;
+		}
+		
+		// If entity is a link find if resource target or resource source has cloud account source resource set, if none return null.
+		if (entity instanceof Link) {
+			if (entity instanceof Cloudaccountlink) {
+				cloudAccount = (Cloudaccount)((Cloudaccountlink)entity).getSource();
+			} else {
+				// Find cloudAccount on linked resources.
+				Resource res = ((Link)entity).getSource();
+				if (res instanceof Cloudaccount) {
+					cloudAccount = (Cloudaccount)res;
+				} else {
+					List<Link> links = res.getRlinks();
+					for (Link link : links) {
+						if (link instanceof Cloudaccountlink) {
+							cloudAccount = (Cloudaccount)((Cloudaccountlink)link).getSource();
+							break;
+						}
+					}
+				}
+				
+				
+			}
+			
+		} else {
+			// Entity is an instance of resource.
+			Resource res = (Resource) entity;
+			List<Link> links = res.getRlinks(); // Research on links from target resources.
+			for (Link link : links) {
+				if (link instanceof Cloudaccountlink) {
+					cloudAccount = (Cloudaccount)((Cloudaccountlink)link).getSource();
+					break;
+				}
+			}
+		}
+		
+		vCred = getVcenterCred(cloudAccount);
+		return vCred;
+	}
+	
+	/**
+	 * 
+	 * @param cloudAccount
+	 * @return null if none or if cloudAccount is null.
+	 */
+	public static Vcentercredential getVcenterCred(Cloudaccount cloudAccount) {
+		if (cloudAccount == null) {
+			return null;
+		}
+		List<MixinBase> mixinCreds = cloudAccount.getParts();
+		Vcentercredential vCred = null;
+		for (MixinBase mixinB : mixinCreds) {
+			if (mixinB instanceof Vcentercredential) {
+				vCred = (Vcentercredential) mixinB;
+				break;
+			}
+		}
+		return vCred;
+	}
+	
 }

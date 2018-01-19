@@ -18,13 +18,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Connector implementation for the OCCI kind:
- * - scheme: http://occiware.org/occi/infrastructure/vmware#
- * - term: os_tpl_vmware
- * - title: 
+ * Connector implementation for the OCCI kind: - scheme:
+ * http://occiware.org/occi/infrastructure/vmware# - term: os_tpl_vmware -
+ * title:
  */
-public class Os_tpl_vmwareConnector extends org.eclipse.cmf.occi.multicloud.vmware.impl.Os_tpl_vmwareImpl
-{
+public class Os_tpl_vmwareConnector extends org.eclipse.cmf.occi.multicloud.vmware.impl.Os_tpl_vmwareImpl {
 	/**
 	 * Initialize the logger.
 	 */
@@ -34,10 +32,9 @@ public class Os_tpl_vmwareConnector extends org.eclipse.cmf.occi.multicloud.vmwa
 	/**
 	 * Constructs a os_tpl_vmware connector.
 	 */
-	Os_tpl_vmwareConnector()
-	{
+	Os_tpl_vmwareConnector() {
 		LOGGER.debug("Constructor called on " + this);
 		// TODO: Implement this constructor.
 	}
 	// End of user code
-}	
+}

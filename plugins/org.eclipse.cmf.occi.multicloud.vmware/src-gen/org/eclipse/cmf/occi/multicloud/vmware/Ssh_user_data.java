@@ -38,7 +38,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='appliesConstraint'"
  * @generated
  */
-public interface Ssh_user_data extends MixinBase, User_data {
+public interface Ssh_user_data extends User_data, MixinBase {
 	/**
 	 * Returns the value of the '<em><b>Password</b></em>' attribute.
 	 * <!-- begin-user-doc -->

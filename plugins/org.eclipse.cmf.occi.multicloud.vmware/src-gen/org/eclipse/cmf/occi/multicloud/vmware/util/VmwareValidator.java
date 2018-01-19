@@ -18,6 +18,7 @@ import org.eclipse.cmf.occi.core.util.OCCIValidator;
 
 import org.eclipse.cmf.occi.infrastructure.util.InfrastructureValidator;
 
+import org.eclipse.cmf.occi.multicloud.accounts.util.AccountsValidator;
 import org.eclipse.cmf.occi.multicloud.vmware.*;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
@@ -118,12 +119,20 @@ public class VmwareValidator extends EObjectValidator {
 	public static final int SSH_USER_DATA__APPLIES_CONSTRAINT = 8;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Vcentercredential'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int VCENTERCREDENTIAL__APPLIES_CONSTRAINT = 9;
+
+	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 8;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 9;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -150,6 +159,14 @@ public class VmwareValidator extends EObjectValidator {
 	protected InfrastructureValidator infrastructureValidator;
 
 	/**
+	 * The cached base package validator.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AccountsValidator accountsValidator;
+
+	/**
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -159,6 +176,7 @@ public class VmwareValidator extends EObjectValidator {
 		super();
 		occiValidator = OCCIValidator.INSTANCE;
 		infrastructureValidator = InfrastructureValidator.INSTANCE;
+		accountsValidator = AccountsValidator.INSTANCE;
 	}
 
 	/**
@@ -191,6 +209,8 @@ public class VmwareValidator extends EObjectValidator {
 				return validateVswitch((Vswitch)value, diagnostics, context);
 			case VmwarePackage.NETWORKADAPTER:
 				return validateNetworkadapter((Networkadapter)value, diagnostics, context);
+			case VmwarePackage.VCENTERACCOUNT:
+				return validateVcenteraccount((Vcenteraccount)value, diagnostics, context);
 			case VmwarePackage.WINDOWS:
 				return validateWindows((Windows)value, diagnostics, context);
 			case VmwarePackage.LINUX:
@@ -203,6 +223,8 @@ public class VmwareValidator extends EObjectValidator {
 				return validateOs_tpl_vmware((Os_tpl_vmware)value, diagnostics, context);
 			case VmwarePackage.SSH_USER_DATA:
 				return validateSsh_user_data((Ssh_user_data)value, diagnostics, context);
+			case VmwarePackage.VCENTERCREDENTIAL:
+				return validateVcentercredential((Vcentercredential)value, diagnostics, context);
 			case VmwarePackage.GUEST_OS_IDENTIFIERS:
 				return validateGuestOsIdentifiers((GuestOsIdentifiers)value, diagnostics, context);
 			default:
@@ -228,6 +250,7 @@ public class VmwareValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(instancevmware, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(instancevmware, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(instancevmware, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_DifferentMixins(instancevmware, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateResource_ResourceKindIsInParent(instancevmware, diagnostics, context);
 		return result;
 	}
@@ -250,6 +273,7 @@ public class VmwareValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(storagevmware, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(storagevmware, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(storagevmware, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_DifferentMixins(storagevmware, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateResource_ResourceKindIsInParent(storagevmware, diagnostics, context);
 		return result;
 	}
@@ -272,6 +296,7 @@ public class VmwareValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(storagelinkvmware, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(storagelinkvmware, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(storagelinkvmware, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_DifferentMixins(storagelinkvmware, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateLink_LinkKindIsInParent(storagelinkvmware, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateLink_sourceReferenceInvariant(storagelinkvmware, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateLink_targetReferenceInvariant(storagelinkvmware, diagnostics, context);
@@ -307,6 +332,7 @@ public class VmwareValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(vswitch, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(vswitch, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(vswitch, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_DifferentMixins(vswitch, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateResource_ResourceKindIsInParent(vswitch, diagnostics, context);
 		if (result || diagnostics != null) result &= infrastructureValidator.validateNetwork_UniqueVlan(vswitch, diagnostics, context);
 		return result;
@@ -330,6 +356,7 @@ public class VmwareValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(networkadapter, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(networkadapter, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(networkadapter, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_DifferentMixins(networkadapter, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateLink_LinkKindIsInParent(networkadapter, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateLink_sourceReferenceInvariant(networkadapter, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateLink_targetReferenceInvariant(networkadapter, diagnostics, context);
@@ -345,6 +372,29 @@ public class VmwareValidator extends EObjectValidator {
 	 */
 	public boolean validateNetworkadapter_targetConstraint(Networkadapter networkadapter, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return networkadapter.targetConstraint(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateVcenteraccount(Vcenteraccount vcenteraccount, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(vcenteraccount, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(vcenteraccount, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(vcenteraccount, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(vcenteraccount, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(vcenteraccount, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(vcenteraccount, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(vcenteraccount, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(vcenteraccount, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(vcenteraccount, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(vcenteraccount, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(vcenteraccount, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(vcenteraccount, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_DifferentMixins(vcenteraccount, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateResource_ResourceKindIsInParent(vcenteraccount, diagnostics, context);
+		return result;
 	}
 
 	/**
@@ -519,6 +569,35 @@ public class VmwareValidator extends EObjectValidator {
 	 */
 	public boolean validateSsh_user_data_appliesConstraint(Ssh_user_data ssh_user_data, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return ssh_user_data.appliesConstraint(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateVcentercredential(Vcentercredential vcentercredential, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(vcentercredential, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(vcentercredential, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(vcentercredential, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(vcentercredential, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(vcentercredential, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(vcentercredential, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(vcentercredential, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(vcentercredential, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(vcentercredential, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVcentercredential_appliesConstraint(vcentercredential, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>Vcentercredential</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateVcentercredential_appliesConstraint(Vcentercredential vcentercredential, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return vcentercredential.appliesConstraint(diagnostics, context);
 	}
 
 	/**

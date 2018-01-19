@@ -41,6 +41,7 @@ import org.eclipse.cmf.occi.infrastructure.RestartMethod;
 import org.eclipse.cmf.occi.infrastructure.SaveMethod;
 import org.eclipse.cmf.occi.infrastructure.StopMethod;
 import org.eclipse.cmf.occi.infrastructure.SuspendMethod;
+import org.eclipse.cmf.occi.multicloud.vmware.Vcentercredential;
 import org.eclipse.cmf.occi.multicloud.vmware.connector.driver.exceptions.MountVMWareToolsDiskException;
 import org.eclipse.cmf.occi.multicloud.vmware.connector.utils.allocator.AllocatorImpl;
 import org.eclipse.cmf.occi.multicloud.vmware.connector.utils.allocator.ResourceTPLContainer;
@@ -170,6 +171,11 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 
 	private boolean toCreateOnStartOperation = false;
 
+	/**
+	 * Main vmware client to manage this instance on provider.
+	 */
+	private VCenterClient vCenterClient = new VCenterClient(null, null, null);
+	
 		
 	/**
 	 * First ipv4 address.
@@ -1231,15 +1237,15 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			// consume..
 			subMonitor.worked(10);
 		}
-
-		if (!VCenterClient.checkConnection()) {
+		
+		if (!vCenterClient.checkConnection(this)) {
 			// Must return true if connection is established.
 			globalMessage = "No connection to Vcenter has been established.";
 			levelMessage = Level.ERROR;
 			LOGGER.error(globalMessage);
 			return;
 		}
-		ServiceInstance si = VCenterClient.getServiceInstance();
+		ServiceInstance si = vCenterClient.getServiceInstance();
 		Folder rootFolder = si.getRootFolder();
 		AllocatorImpl allocator = new AllocatorImpl(rootFolder);
 
@@ -1255,7 +1261,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			globalMessage = "Cant create a new virtual machine, the vm name is not set (check title attribute). ";
 			levelMessage = Level.ERROR;
 			LOGGER.error(globalMessage);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		}
 
@@ -1338,7 +1344,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 				globalMessage = "Cant allocate a datacenter, cause : no available datacenter to allocate.";
 				levelMessage = Level.ERROR;
 				LOGGER.error(globalMessage);
-				VCenterClient.disconnect();
+				vCenterClient.disconnect();
 				return;
 			}
 		} else {
@@ -1351,13 +1357,13 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		if (cluster == null) {
 			// Assign a cluster that already exist, if none found, no
 			// cluster.
-			cluster = allocator.allocateCluster();
+			cluster = allocator.allocateCluster(vCenterClient.getServiceInstance());
 		}
 		if (cluster == null) {
 			globalMessage = "cant allocate a cluster --< No cluster available on datacenter : " + datacenter.getName();
 			levelMessage = Level.ERROR;
 			LOGGER.error(globalMessage);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		} else {
 			setClusterName(cluster.getName());
@@ -1371,7 +1377,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			globalMessage += "Message: " + ex.getMessage();
 			levelMessage = Level.ERROR;
 			LOGGER.error(globalMessage);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		}
 		if (host == null) {
@@ -1382,7 +1388,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 							+ datacenter.getName();
 					levelMessage = Level.ERROR;
 					LOGGER.error(globalMessage);
-					VCenterClient.disconnect();
+					vCenterClient.disconnect();
 					return;
 				}
 			} else {
@@ -1391,7 +1397,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 						+ " --< cause: this doesnt exist on the datacenter: " + datacenter.getName();
 				levelMessage = Level.ERROR;
 				LOGGER.error(globalMessage);
-				VCenterClient.disconnect();
+				vCenterClient.disconnect();
 				return;
 			}
 		}
@@ -1493,7 +1499,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 						+ " --> there's no available datastore on the datacenter.";
 				levelMessage = Level.ERROR;
 				LOGGER.error(globalMessage);
-				VCenterClient.disconnect();
+				vCenterClient.disconnect();
 				return;
 			}
 		}
@@ -1659,7 +1665,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 				if (ex.getMessage() == null) {
 					ex.printStackTrace();
 				}
-				VCenterClient.disconnect();
+				vCenterClient.disconnect();
 				return;
 			}
 		} else {
@@ -1686,7 +1692,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 					globalMessage = "The main disk size must be > 0 in GigaBytes";
 					levelMessage = Level.ERROR;
 					LOGGER.error(globalMessage);
-					VCenterClient.disconnect();
+					vCenterClient.disconnect();
 					return;
 				}
 
@@ -1717,7 +1723,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 						globalMessage = "No virtual networks is available for this virtual machine, please setup a new network in vcenter.";
 						levelMessage = Level.ERROR;
 						LOGGER.error(globalMessage);
-						VCenterClient.disconnect();
+						vCenterClient.disconnect();
 						return;
 					}
 
@@ -1773,7 +1779,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 					globalMessage = "You must set the memory size (in GB) and the number of cores, or use a predefined templates from CRTP extension mixin instance class";
 					levelMessage = Level.ERROR;
 					LOGGER.error(globalMessage);
-					VCenterClient.disconnect();
+					vCenterClient.disconnect();
 					return;
 				}
 
@@ -1817,7 +1823,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 					vmExist = true;
 					// if state is active on create, power on the instance.
 					if (getOcciComputeState() != null && getOcciComputeState().equals(ComputeStatus.ACTIVE)) {
-						VirtualMachine vm = VMHelper.loadVirtualMachine(vmName);
+						VirtualMachine vm = VMHelper.loadVirtualMachine(vmName, rootFolder);
 						boolean poweredOn = VMHelper.powerOn(vm);
 						morId = vm.getMOR().getVal();
 						if (poweredOn) {
@@ -1839,20 +1845,20 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 				levelMessage = Level.ERROR;
 				LOGGER.error(globalMessage);
 				ex.printStackTrace();
-				VCenterClient.disconnect();
+				vCenterClient.disconnect();
 				return;
 			}
 
 		} // endif vmTemplate exist.
 
 		/*if (getOcciComputeState() != null && getOcciComputeState().equals(ComputeStatus.ACTIVE) && vmGuestState != null && vmGuestState.equals("running")) {
-			VirtualMachine vm = VMHelper.loadVirtualMachine(vmName);
+			VirtualMachine vm = VMHelper.loadVirtualMachine(vmName, vCenterClient);
 			ipv4Address = NetworkHelper.getIpv4Address(vm);
 			ipv6Address = NetworkHelper.getIpv6Address(vm);
 		}*/
 
 		// In all case invoke a disconnect from vcenter.
-		VCenterClient.disconnect();
+		vCenterClient.disconnect();
 
 		if (vmTemplate != null) {
 			applyUserData(monitor, vmName);
@@ -1880,8 +1886,8 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			// consume..
 			subMonitor.worked(10);
 		}
-
-		if (!VCenterClient.checkConnection()) {
+		
+		if (!vCenterClient.checkConnection(this)) {
 			// Must return true if connection is established.
 			globalMessage = "No connection to Vcenter has been established.";
 			levelMessage = Level.ERROR;
@@ -1894,7 +1900,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		if (vmOldName == null) {
 			vmOldName = vmName;
 		}
-		ServiceInstance si = VCenterClient.getServiceInstance();
+		ServiceInstance si = vCenterClient.getServiceInstance();
 		Folder rootFolder = si.getRootFolder();
 		morId = getInstanceId();
 		// Search for the vm object.
@@ -1920,7 +1926,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 						globalMessage = "This virtual machine doesnt exist anymore.";
 						levelMessage = Level.WARN;
 						LOGGER.warn(globalMessage);
-						VCenterClient.disconnect();
+						vCenterClient.disconnect();
 						vmExist = false;
 						return;
 					}
@@ -1934,7 +1940,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 					globalMessage = "This virtual machine doesnt exist anymore.";
 					levelMessage = Level.WARN;
 					LOGGER.warn(globalMessage);
-					VCenterClient.disconnect();
+					vCenterClient.disconnect();
 					vmExist = false;
 					return;
 				}
@@ -1954,7 +1960,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			globalMessage = "No host found for this vm : " + vmName;
 			levelMessage = Level.ERROR;
 			LOGGER.error(globalMessage);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			vmExist = false;
 			return;
 		} else {
@@ -2025,7 +2031,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 				globalMessage += "Message: " + ex.getMessage();
 				levelMessage = Level.ERROR;
 				LOGGER.error(globalMessage);
-				VCenterClient.disconnect();
+				vCenterClient.disconnect();
 				vmExist = false;
 				return;
 			}
@@ -2065,7 +2071,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 				if (vmTemplateName != null) {
 					// Check if a clone task is active.
 					taskInfo = VMHelper.getTaskInfo(
-							VMHelper.findVMForName(VCenterClient.getServiceInstance().getRootFolder(), vmTemplateName));
+							VMHelper.findVMForName(vCenterClient.getServiceInstance().getRootFolder(), vmTemplateName));
 					if (taskInfo != null) {
 						TaskInfoState taskState = taskInfo.getState();
 						if (taskState != null && taskState.equals(TaskInfoState.success)) {
@@ -2110,7 +2116,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 				if (vmTemplateName != null) {
 					// Check if a clone task is active.
 					TaskInfo taskInfo = VMHelper.getTaskInfo(
-							VMHelper.findVMForName(VCenterClient.getServiceInstance().getRootFolder(), vmTemplateName));
+							VMHelper.findVMForName(vCenterClient.getServiceInstance().getRootFolder(), vmTemplateName));
 					if (taskInfo != null) {
 						TaskInfoState taskState = taskInfo.getState();
 						if (taskState != null && taskState.equals(TaskInfoState.success)) {
@@ -2152,7 +2158,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		levelMessage = Level.INFO;
 
 		// In the end we disconnect.
-		VCenterClient.disconnect();
+		vCenterClient.disconnect();
 		if (toMonitor) {
 			subMonitor.worked(100);
 		}
@@ -2179,10 +2185,9 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			subMonitor = SubMonitor.convert(monitor, 100);
 			// consume..
 			subMonitor.worked(10);
-
 		}
 
-		if (!VCenterClient.checkConnection()) {
+		if (!vCenterClient.checkConnection(this)) {
 			// Must return true if connection is established.
 			globalMessage = "No connection to Vcenter has been established.";
 			levelMessage = Level.ERROR;
@@ -2202,14 +2207,14 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			globalMessage = "The title must be set, as it is used as the VM name.";
 			levelMessage = Level.ERROR;
 			LOGGER.error(globalMessage);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		}
 		if (vmOldName == null) {
 			vmOldName = vmName;
 		}
-
-		VirtualMachine vm = VMHelper.loadVirtualMachine(vmName);
+		Folder rootFolder = vCenterClient.getServiceInstance().getRootFolder();
+		VirtualMachine vm = VMHelper.loadVirtualMachine(vmName, rootFolder);
 		if (toMonitor) {
 			subMonitor.worked(30);
 		}
@@ -2221,12 +2226,12 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			if (!vmOldName.equals(vmName)) {
 				// The title have been changed.
 				// We load the vm with the old one.
-				vm = VMHelper.loadVirtualMachine(vmOldName);
+				vm = VMHelper.loadVirtualMachine(vmOldName, rootFolder);
 				if (vm != null) {
 					LOGGER.info("The virtual machine name has been changed to a new one, updating...");
 					try {
 						VMHelper.renameVM(vm, vmName);
-						vm = VMHelper.loadVirtualMachine(vmName);
+						vm = VMHelper.loadVirtualMachine(vmName, rootFolder);
 						if (toMonitor) {
 							subMonitor.worked(40);
 						}
@@ -2247,14 +2252,14 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 
 		// Check first if instanceId is set if no vm found with the name.
 		if (morId != null && vm == null) {
-			vm = VMHelper.findVMForMorId(VCenterClient.getServiceInstance().getRootFolder(), morId);
+			vm = VMHelper.findVMForMorId(rootFolder, morId);
 		}
 
 		if (vm == null) {
 			globalMessage = "Unable to load vm informations : " + vmName + " for morId : " + morId;
 			levelMessage = Level.ERROR;
 			LOGGER.error(globalMessage);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		}
 
@@ -2328,9 +2333,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		}
 		// Check if transform template to VM.
 		if (vm.getConfig() != null && vm.getConfig().isTemplate() && "false".equals(markedAsTemplate)) {
-
-			ServiceInstance si = VCenterClient.getServiceInstance();
-			Folder rootFolder = si.getRootFolder();
+			
 			VmwarefoldersConnector vmfoldersMixin = getMixinVmwarefolders();
 			Datacenter datacenter;
 			ClusterComputeResource cluster;
@@ -2344,13 +2347,13 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 				if (host == null) {
 					LOGGER.warn("Host system doesnt exist anymore on your Vcenter : " + hostSystemName);
 					datacenter = allocator.allocateDatacenter();
-					cluster = allocator.allocateCluster();
+					cluster = allocator.allocateCluster(vCenterClient.getServiceInstance());
 					host = allocator.allocateHostSystem();
 					LOGGER.warn("Allocating the virtual machine " + vm.getName() + " to this host: " + host.getName());
 				}
 			} else {
 				datacenter = allocator.allocateDatacenter();
-				cluster = allocator.allocateCluster();
+				cluster = allocator.allocateCluster(vCenterClient.getServiceInstance());
 				host = allocator.allocateHostSystem();
 			}
 
@@ -2383,7 +2386,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			subMonitor.worked(100);
 		}
 		// In the end we disconnect.
-		VCenterClient.disconnect();
+		vCenterClient.disconnect();
 
 	}
 
@@ -2403,9 +2406,9 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			subMonitor = SubMonitor.convert(monitor, 100);
 			// consume..
 			subMonitor.worked(10);
-
 		}
-		if (!VCenterClient.checkConnection()) {
+		
+		if (!vCenterClient.checkConnection(this)) {
 			// Must return true if connection is established.
 			globalMessage = "No connection to Vcenter has been established.";
 			levelMessage = Level.ERROR;
@@ -2417,14 +2420,15 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			globalMessage = "The title must be set, as it is used as the VM name.";
 			levelMessage = Level.WARN;
 			LOGGER.error(globalMessage);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		}
-		VirtualMachine vm = VMHelper.loadVirtualMachine(vmName);
+		Folder rootFolder = vCenterClient.getServiceInstance().getRootFolder();
+		VirtualMachine vm = VMHelper.loadVirtualMachine(vmName, rootFolder);
 
 		if (vm == null) {
 			// Try with instance provider id.
-			vm = VMHelper.findVMForMorId(VCenterClient.getServiceInstance().getRootFolder(), instanceId);
+			vm = VMHelper.findVMForMorId(vCenterClient.getServiceInstance().getRootFolder(), instanceId);
 		}
 
 		if (toMonitor) {
@@ -2436,7 +2440,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 					+ " doesnt exist or has been deleted by a previous operation.";
 			levelMessage = Level.WARN;
 			LOGGER.warn(globalMessage);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		}
 
@@ -2454,7 +2458,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 
 				levelMessage = Level.ERROR;
 				LOGGER.error(globalMessage);
-				VCenterClient.disconnect();
+				vCenterClient.disconnect();
 				return;
 			}
 		}
@@ -2463,7 +2467,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			subMonitor.worked(100);
 		}
 		// In the end we disconnect.
-		VCenterClient.disconnect();
+		vCenterClient.disconnect();
 		globalMessage = "The virtual machine " + vmName + " has been fully removed from vcenter.";
 		levelMessage = Level.INFO;
 		LOGGER.info(globalMessage);
@@ -2497,7 +2501,8 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		}
 
 		LOGGER.debug("Action start() called on " + this);
-		if (!VCenterClient.checkConnection()) {
+	
+		if (!vCenterClient.checkConnection(this)) {
 			// Must return true if connection is established.
 			globalMessage = "No connection to Vcenter has been established.";
 			levelMessage = Level.ERROR;
@@ -2514,21 +2519,22 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			globalMessage = "The title must be set, as it is used as the VM name.";
 			levelMessage = Level.WARN;
 			LOGGER.error(globalMessage);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		}
-		VirtualMachine vm = VMHelper.loadVirtualMachine(vmName);
+		Folder rootFolder = vCenterClient.getServiceInstance().getRootFolder();
+		VirtualMachine vm = VMHelper.loadVirtualMachine(vmName, rootFolder);
 
 		if (vm == null) {
 			// Try with instance provider id.
-			vm = VMHelper.findVMForMorId(VCenterClient.getServiceInstance().getRootFolder(), instanceId);
+			vm = VMHelper.findVMForMorId(vCenterClient.getServiceInstance().getRootFolder(), instanceId);
 		}
 
 		if (vm == null) {
 			globalMessage = "This virtual machine doesnt exist anymore.";
 			levelMessage = Level.WARN;
 			LOGGER.warn(globalMessage);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		}
 		vmState = VMHelper.getPowerState(vm);
@@ -2579,7 +2585,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 
 		}
 		// In the end we disconnect.
-		VCenterClient.disconnect();
+		vCenterClient.disconnect();
 		if (toMonitor) {
 			subMonitor.worked(100);
 		}
@@ -2604,8 +2610,8 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			subMonitor.worked(10);
 
 		}
-
-		if (!VCenterClient.checkConnection()) {
+		
+		if (!vCenterClient.checkConnection(this)) {
 			// Must return true if connection is established.
 			globalMessage = "No connection to Vcenter has been established.";
 			levelMessage = Level.ERROR;
@@ -2620,20 +2626,22 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			globalMessage = "The title must be set, as it is used as the VM name.";
 			levelMessage = Level.WARN;
 			LOGGER.error(globalMessage);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		}
-		VirtualMachine vm = VMHelper.loadVirtualMachine(vmName);
+		
+		Folder rootFolder = vCenterClient.getServiceInstance().getRootFolder();
+		VirtualMachine vm = VMHelper.loadVirtualMachine(vmName, rootFolder);
 
 		if (vm == null) {
 			// Try with instance provider id.
-			vm = VMHelper.findVMForMorId(VCenterClient.getServiceInstance().getRootFolder(), instanceId);
+			vm = VMHelper.findVMForMorId(vCenterClient.getServiceInstance().getRootFolder(), instanceId);
 		}
 		if (vm == null) {
 			globalMessage = "This virtual machine doesnt exist anymore.";
 			levelMessage = Level.WARN;
 			LOGGER.warn(globalMessage);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		}
 		if (toMonitor) {
@@ -2688,7 +2696,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		}
 
 		// In the end we disconnect.
-		VCenterClient.disconnect();
+		vCenterClient.disconnect();
 		if (toMonitor) {
 			subMonitor.worked(100);
 		}
@@ -2713,8 +2721,8 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			subMonitor.worked(10);
 
 		}
-
-		if (!VCenterClient.checkConnection()) {
+		
+		if (!vCenterClient.checkConnection(this)) {
 			// Must return true if connection is established.
 			globalMessage = "No connection to Vcenter has been established.";
 			levelMessage = Level.ERROR;
@@ -2730,14 +2738,15 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			globalMessage = "The title must be set, as it is used as the VM name.";
 			levelMessage = Level.WARN;
 			LOGGER.error(globalMessage);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		}
-		VirtualMachine vm = VMHelper.loadVirtualMachine(vmName);
+		Folder rootFolder = vCenterClient.getServiceInstance().getRootFolder();
+		VirtualMachine vm = VMHelper.loadVirtualMachine(vmName, rootFolder);
 
 		if (vm == null) {
 			// Try with instance provider id.
-			vm = VMHelper.findVMForMorId(VCenterClient.getServiceInstance().getRootFolder(), instanceId);
+			vm = VMHelper.findVMForMorId(vCenterClient.getServiceInstance().getRootFolder(), instanceId);
 		}
 
 		if (toMonitor) {
@@ -2747,7 +2756,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			globalMessage = "This virtual machine doesnt exist anymore.";
 			levelMessage = Level.WARN;
 			LOGGER.warn(globalMessage);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		}
 		if (toMonitor) {
@@ -2823,7 +2832,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			ex.printStackTrace();
 		}
 		// In the end we disconnect.
-		VCenterClient.disconnect();
+		vCenterClient.disconnect();
 		if (toMonitor) {
 			subMonitor.worked(100);
 		}
@@ -2857,8 +2866,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			subMonitor.worked(10);
 
 		}
-
-		if (!VCenterClient.checkConnection()) {
+		if (!vCenterClient.checkConnection(this)) {
 			// Must return true if connection is established.
 			globalMessage = "No connection to Vcenter has been established.";
 			levelMessage = Level.ERROR;
@@ -2874,20 +2882,21 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			globalMessage = "The title must be set, as it is used as the VM name.";
 			levelMessage = Level.WARN;
 			LOGGER.error(globalMessage);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		}
-		VirtualMachine vm = VMHelper.loadVirtualMachine(vmName);
+		Folder rootFolder = vCenterClient.getServiceInstance().getRootFolder();
+		VirtualMachine vm = VMHelper.loadVirtualMachine(vmName, rootFolder);
 
 		if (vm == null) {
 			// Try with instance provider id.
-			vm = VMHelper.findVMForMorId(VCenterClient.getServiceInstance().getRootFolder(), instanceId);
+			vm = VMHelper.findVMForMorId(vCenterClient.getServiceInstance().getRootFolder(), instanceId);
 		}
 		if (vm == null) {
 			globalMessage = "This virtual machine doesnt exist anymore.";
 			levelMessage = Level.WARN;
 			LOGGER.warn(globalMessage);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		}
 		if (toMonitor) {
@@ -2944,7 +2953,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		}
 
 		// In the end we disconnect.
-		VCenterClient.disconnect();
+		vCenterClient.disconnect();
 		if (toMonitor) {
 			subMonitor.worked(100);
 		}
@@ -2970,8 +2979,8 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			subMonitor.worked(10);
 
 		}
-
-		if (!VCenterClient.checkConnection()) {
+		
+		if (!vCenterClient.checkConnection(this)) {
 			// Must return true if connection is established.
 			globalMessage = "No connection to Vcenter has been established.";
 			levelMessage = Level.ERROR;
@@ -2984,14 +2993,15 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			globalMessage = "The title must be set, as it is used as the VM name.";
 			levelMessage = Level.WARN;
 			LOGGER.error(globalMessage);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		}
-		VirtualMachine vm = VMHelper.loadVirtualMachine(vmName);
+		Folder rootFolder = vCenterClient.getServiceInstance().getRootFolder();
+		VirtualMachine vm = VMHelper.loadVirtualMachine(vmName, rootFolder);
 
 		if (vm == null) {
 			// Try with instance provider id.
-			vm = VMHelper.findVMForMorId(VCenterClient.getServiceInstance().getRootFolder(), instanceId);
+			vm = VMHelper.findVMForMorId(vCenterClient.getServiceInstance().getRootFolder(), instanceId);
 		}
 		if (toMonitor) {
 			subMonitor.worked(20);
@@ -3000,7 +3010,7 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 			globalMessage = "This virtual machine doesnt exist anymore.";
 			levelMessage = Level.WARN;
 			LOGGER.warn(globalMessage);
-			VCenterClient.disconnect();
+			vCenterClient.disconnect();
 			return;
 		}
 		try {
@@ -3025,9 +3035,10 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 		if (toMonitor) {
 			subMonitor.worked(80);
 		}
-		vm = VMHelper.loadVirtualMachine(vmName);
+		
+		vm = VMHelper.loadVirtualMachine(vmName, rootFolder);
 		// In the end we disconnect.
-		VCenterClient.disconnect();
+		vCenterClient.disconnect();
 
 		if (toMonitor) {
 			subMonitor.worked(100);
@@ -3065,5 +3076,12 @@ public class InstancevmwareConnector extends org.eclipse.cmf.occi.multicloud.vmw
 	public void setIpv6Address(String ipv6Address) {
 		this.ipv6Address = ipv6Address;
 	}
+
+	public VCenterClient getvCenterClient() {
+		return vCenterClient;
+	}
+	
+	
+	
 
 }

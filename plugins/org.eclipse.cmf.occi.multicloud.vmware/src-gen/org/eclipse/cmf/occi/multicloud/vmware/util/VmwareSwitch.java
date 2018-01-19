@@ -25,6 +25,8 @@ import org.eclipse.cmf.occi.infrastructure.Storage;
 import org.eclipse.cmf.occi.infrastructure.Storagelink;
 import org.eclipse.cmf.occi.infrastructure.User_data;
 
+import org.eclipse.cmf.occi.multicloud.accounts.Basiccredential;
+import org.eclipse.cmf.occi.multicloud.accounts.Cloudaccount;
 import org.eclipse.cmf.occi.multicloud.vmware.*;
 
 import org.eclipse.emf.ecore.EObject;
@@ -134,6 +136,15 @@ public class VmwareSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case VmwarePackage.VCENTERACCOUNT: {
+				Vcenteraccount vcenteraccount = (Vcenteraccount)theEObject;
+				T result = caseVcenteraccount(vcenteraccount);
+				if (result == null) result = caseCloudaccount(vcenteraccount);
+				if (result == null) result = caseResource(vcenteraccount);
+				if (result == null) result = caseEntity(vcenteraccount);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case VmwarePackage.WINDOWS: {
 				Windows windows = (Windows)theEObject;
 				T result = caseWindows(windows);
@@ -181,6 +192,14 @@ public class VmwareSwitch<T> extends Switch<T> {
 				T result = caseSsh_user_data(ssh_user_data);
 				if (result == null) result = caseUser_data(ssh_user_data);
 				if (result == null) result = caseMixinBase(ssh_user_data);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case VmwarePackage.VCENTERCREDENTIAL: {
+				Vcentercredential vcentercredential = (Vcentercredential)theEObject;
+				T result = caseVcentercredential(vcentercredential);
+				if (result == null) result = caseBasiccredential(vcentercredential);
+				if (result == null) result = caseMixinBase(vcentercredential);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -260,6 +279,21 @@ public class VmwareSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseNetworkadapter(Networkadapter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Vcenteraccount</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Vcenteraccount</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseVcenteraccount(Vcenteraccount object) {
 		return null;
 	}
 
@@ -350,6 +384,21 @@ public class VmwareSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSsh_user_data(Ssh_user_data object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Vcentercredential</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Vcentercredential</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseVcentercredential(Vcentercredential object) {
 		return null;
 	}
 
@@ -474,6 +523,21 @@ public class VmwareSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Cloudaccount</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Cloudaccount</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCloudaccount(Cloudaccount object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Mixin Base</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -515,6 +579,21 @@ public class VmwareSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseUser_data(User_data object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Basiccredential</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Basiccredential</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBasiccredential(Basiccredential object) {
 		return null;
 	}
 

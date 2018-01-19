@@ -18,6 +18,7 @@ import java.util.List;
 
 import org.eclipse.cmf.occi.core.provider.MixinBaseItemProvider;
 
+import org.eclipse.cmf.occi.infrastructure.provider.Os_tplItemProvider;
 import org.eclipse.cmf.occi.multicloud.vmware.Os_tpl_vmware;
 import org.eclipse.cmf.occi.multicloud.vmware.VmwarePackage;
 
@@ -37,7 +38,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class Os_tpl_vmwareItemProvider extends MixinBaseItemProvider {
+public class Os_tpl_vmwareItemProvider extends Os_tplItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

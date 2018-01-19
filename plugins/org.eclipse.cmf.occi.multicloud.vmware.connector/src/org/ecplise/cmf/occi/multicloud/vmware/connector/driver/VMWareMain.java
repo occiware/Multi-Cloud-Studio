@@ -19,20 +19,18 @@ public class VMWareMain {
 
 	
 	public static void main(String[] args) {
-		
+		VCenterClient vCenterClient = null;
 		if (args != null) {
 			if (args.length > 2) {
 				String login = args[0];
 				String password = args[1];
 				String url = args[2];
-				VCenterClient.setLogin(login);
-				VCenterClient.setPassword(password);
-				VCenterClient.setUrl(url);	
+				vCenterClient = new VCenterClient(login, password, url);	
 			}
 		}
 		try {		
-			VCenterClient.connect();
-			VCenterClient.disconnect();
+			vCenterClient.connect();
+			vCenterClient.disconnect();
 		} catch (RemoteException ex) {
 			System.out.println("Not connected, message: " + ex.getMessage());
 			exit();

@@ -35,29 +35,31 @@ import org.ecplise.cmf.occi.multicloud.vmware.connector.driver.DatastoreHelper;
 import org.ecplise.cmf.occi.multicloud.vmware.connector.driver.VCenterClient;
 import org.ecplise.cmf.occi.multicloud.vmware.connector.driver.VMHelper;
 
-
 /**
- * Connector implementation for the OCCI kind:
- * - scheme: http://occiware.org/occi/infrastructure/vmware#
- * - term: storagelinkvmware
- * - title: 
+ * Connector implementation for the OCCI kind: - scheme:
+ * http://occiware.org/occi/infrastructure/vmware# - term: storagelinkvmware -
+ * title:
  */
-public class StoragelinkvmwareConnector extends org.eclipse.cmf.occi.multicloud.vmware.impl.StoragelinkvmwareImpl
-{
+public class StoragelinkvmwareConnector extends org.eclipse.cmf.occi.multicloud.vmware.impl.StoragelinkvmwareImpl {
 	/**
 	 * Initialize the logger.
 	 */
 	private static Logger LOGGER = LoggerFactory.getLogger(StoragelinkvmwareConnector.class);
-	
+
 	private String vmName;
 	private StorageLinkStatus tmpStatus = this.getOcciStoragelinkState();
 	private String mountPath = super.getOcciStoragelinkMountpoint();
-	
+
 	// Message to end users management.
 	private String titleMessage = "";
 	private String globalMessage = "";
 	private Level levelMessage = null;
 
+	/**
+	 * Main vmware client to manage this instance on provider.
+	 */
+	private VCenterClient vCenterClient = new VCenterClient(null, null, null);
+	
 	// Start of user code Storagelinkvmwareconnector_constructor
 	/**
 	 * Constructs a storagelinkvmware connector.
@@ -66,11 +68,11 @@ public class StoragelinkvmwareConnector extends org.eclipse.cmf.occi.multicloud.
 		LOGGER.debug("Constructor called on " + this);
 	}
 	// End of user code
-	
+
 	//
 	// OCCI CRUD callback operations.
 	//
-	
+
 	// Start of user code StoragelinkvmwareocciCreate
 	/**
 	 * Called when this Storagelinkvmware instance is completely created.
@@ -107,18 +109,16 @@ public class StoragelinkvmwareConnector extends org.eclipse.cmf.occi.multicloud.
 			if (globalMessage != null && !globalMessage.isEmpty()) {
 				UIDialog.showUserMessage(titleMessage, globalMessage, levelMessage);
 			}
-			
+
 			updateAttributesOnSystemStorage();
-		
+
 		}
-		
+
 		globalMessage = "";
 		levelMessage = null;
 	}
 	// End of user code
 
-	
-	
 	// Start of user code Storagelinkvmware_occiUpdate_method
 	/**
 	 * Called when this Storagelinkvmware instance is completely updated.
@@ -150,26 +150,34 @@ public class StoragelinkvmwareConnector extends org.eclipse.cmf.occi.multicloud.
 	public void setVmName(String vmName) {
 		this.vmName = vmName;
 	}
-	
+
 	/**
 	 * Retrieve the mount path of a disk.
 	 */
 	private void retrieveStorageDiskPath() {
 		VirtualMachine vm = null;
+		if (!vCenterClient.checkConnection(this)) {
+			// Must return true if connection is established.
+			globalMessage = "No connection to Vcenter has been established.";
+			levelMessage = Level.ERROR;
+			LOGGER.error(globalMessage);
+			return;
+		}
 		if (vmName != null) {
 			// Load the vm information.
-			vm = VMHelper.loadVirtualMachine(vmName);
+			vm = VMHelper.loadVirtualMachine(vmName, vCenterClient.getServiceInstance().getRootFolder());
 			if (vm != null && VMHelper.isToolsInstalled(vm) && VMHelper.isToolsRunning(vm)) {
 				GuestDiskInfo[] guestDskInfos = vm.getGuest().getDisk();
 				for (GuestDiskInfo guestDisk : guestDskInfos) {
 					mountPath = guestDisk.getDiskPath();
 					break;
 				}
-				// TODO : Search a better solution, no id defined to link between the system disk AND the virtualDisks.
+				// TODO : Search a better solution, no id defined to link between the system
+				// disk AND the virtualDisks.
 			}
-		}	
+		}
 	}
-	
+
 	/**
 	 * Update the attributes...
 	 */
@@ -180,18 +188,19 @@ public class StoragelinkvmwareConnector extends org.eclipse.cmf.occi.multicloud.
 		if (mountPath != null) {
 			setOcciStoragelinkMountpoint(mountPath);
 		}
-		
+
 	}
-	
+
 	/**
 	 * business code for retrieving a system volume.
+	 * 
 	 * @param monitor
 	 */
 	public void retrieveStorageSystem(IProgressMonitor monitor) {
 		globalMessage = "";
 		levelMessage = null;
-		
-		if (!VCenterClient.checkConnection()) {
+
+		if (!vCenterClient.checkConnection(this)) {
 			// Must return true if connection is established.
 			globalMessage = "No connection to Vcenter has been established.";
 			levelMessage = Level.ERROR;
@@ -209,8 +218,8 @@ public class StoragelinkvmwareConnector extends org.eclipse.cmf.occi.multicloud.
 			subMonitor.worked(10);
 
 		}
-		
-		Folder rootFolder = VCenterClient.getServiceInstance().getRootFolder();
+
+		Folder rootFolder = vCenterClient.getServiceInstance().getRootFolder();
 		// Find a datastore.
 		Resource target = getTarget();
 		if (target == null) {
@@ -228,7 +237,7 @@ public class StoragelinkvmwareConnector extends org.eclipse.cmf.occi.multicloud.
 		if (toMonitor) {
 			subMonitor.worked(20);
 		}
-		
+
 		if (datastoreName == null) {
 			globalMessage = "The datastore name is not setted, please apply mixin vmwarefolders on Storage entity, it is mandated for researching correct datastore. \n Cant retrieve datastore.";
 			levelMessage = Level.ERROR;
@@ -267,18 +276,18 @@ public class StoragelinkvmwareConnector extends org.eclipse.cmf.occi.multicloud.
 		if (toMonitor) {
 			subMonitor.worked(50);
 		}
-		
+
 		retrieveStorageDiskPath();
 		if (toMonitor) {
 			subMonitor.worked(70);
 		}
-		
+
 		if (UIDialog.isStandAlone()) {
 			updateAttributesOnSystemStorage();
 		}
 		if (toMonitor) {
 			subMonitor.worked(100);
 		}
-		VCenterClient.disconnect();
+		vCenterClient.disconnect();
 	}
-}	
+}

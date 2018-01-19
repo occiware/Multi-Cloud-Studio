@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ASCII"?>
+<occi:Extension xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:occi="http://schemas.ogf.org/occi/core/ecore" name="interoperability" scheme="http://occiware.org/occi/multicloud/specialfeatures#">
+  <import href="http://schemas.ogf.org/occi/core#/"/>
+  <import href="http://schemas.ogf.org/occi/infrastructure#/"/>
+  <kinds name="FileTransferOperations" scheme="http://occiware.org/occi/multicloud/specialfeatures#">
+    <attributes name="pathLocationSource" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="pathLocationTarget" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="progressPercent" mutable="true">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
+    </attributes>
+    <attributes name="transferMode" mutable="true" default="scp" type="//@types.0"/>
+    <actions name="copy" scheme="http://occiware.org/occi/multicloud/specialfeatures/datatransferoperations/action#"/>
+    <actions name="cancel" scheme="http://occiware.org/occi/multicloud/specialfeatures/filetransferoperations/action#"/>
+    <actions name="encryptAndCopy" scheme="http://occiware.org/occi/multicloud/specialfeatures/filetransferoperations/action#"/>
+    <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
+    <source href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
+    <target href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
+  </kinds>
+  <mixins name="HttpTransfer" scheme="http://occiware.org/occi/multicloud/specialfeatures#" applies="//@kinds[term='filetransferoperations']">
+    <attributes name="username" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="password" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="sourceUrl" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="targetUrl" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="httpMode" mutable="true" default="https" type="//@types.1"/>
+    <attributes name="httpPort" mutable="true" default="443">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
+    </attributes>
+  </mixins>
+  <mixins name="SshTransfer" scheme="http://occiware.org/occi/multicloud/specialfeatures#" applies="//@kinds[term='filetransferoperations']">
+    <attributes name="username" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="password" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="sshPublicKey" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="sshPrivateKeyPath" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+  </mixins>
+  <types xsi:type="occi:EnumerationType" name="TransferType">
+    <literals name="scp"/>
+    <literals name="ftp"/>
+    <literals name="http"/>
+    <literals name="sftp"/>
+  </types>
+  <types xsi:type="occi:EnumerationType" name="HttpMode">
+    <literals name="http"/>
+    <literals name="https"/>
+  </types>
+</occi:Extension>

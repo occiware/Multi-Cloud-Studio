@@ -15,6 +15,7 @@ package org.ecplise.cmf.occi.multicloud.vmware.connector.driver;
 import java.lang.reflect.InvocationTargetException;
 import java.rmi.RemoteException;
 
+import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.multicloud.vmware.connector.driver.exceptions.UserDataException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.jface.operation.IRunnableWithProgress;
@@ -52,6 +53,7 @@ public class UserDataHelper implements Runnable, IRunnableWithProgress {
 	// private String ipAddress;
 	private String username;
 	private String password;
+	private Entity entity;
 
 	/**
 	 * Unique id of this vm on vcenter. Used only for guest tools access on this
@@ -71,7 +73,7 @@ public class UserDataHelper implements Runnable, IRunnableWithProgress {
 	
 	private int port;
 
-	private VClientImpl vClient = new VClientImpl();
+	private VCenterClient vClient = new VCenterClient(null, null, null);
 
 	/**
 	 * For guest tools or ssh connection with username and password.
@@ -82,7 +84,7 @@ public class UserDataHelper implements Runnable, IRunnableWithProgress {
 	 * @param username
 	 * @param password
 	 */
-	public UserDataHelper(String instanceId, String instanceName, String userDatas, String username, String password, String userDataFile) {
+	public UserDataHelper(String instanceId, String instanceName, String userDatas, String username, String password, String userDataFile, Entity entity) {
 		super();
 		this.userDatas = userDatas;
 		// this.ipAddress = ipAddress;
@@ -91,6 +93,7 @@ public class UserDataHelper implements Runnable, IRunnableWithProgress {
 		this.morId = instanceId;
 		this.name = instanceName;
 		this.userDataFile = userDataFile;
+		this.entity = entity;
 		// this.instanceFolder = instanceFolder;
 	}
 	
@@ -117,11 +120,12 @@ public class UserDataHelper implements Runnable, IRunnableWithProgress {
 
 		// Connect to the client.
 		if (vClient == null) {
-			vClient = new VClientImpl();
+			
+			vClient = new VCenterClient(null, null, null);
 		}
 		try {
-			vClient.init();
-			boolean connected = vClient.checkConnection();
+			
+			boolean connected = vClient.checkConnection(entity);
 			if (connected) {
 				
 				if (instanceFolder == null) {

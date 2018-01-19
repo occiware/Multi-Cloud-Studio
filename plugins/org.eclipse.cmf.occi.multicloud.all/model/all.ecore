@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    name="all" nsURI="http://occiware.org/occi/multicloud/ecore" nsPrefix="all">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+  </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/OCL/Import">
+    <details key="occi" value="http://schemas.ogf.org/occi/core/ecore"/>
+    <details key="crtp" value="http://schemas.ogf.org/occi/infrastructure/compute/template/1.1/ecore"/>
+    <details key="infrastructure" value="http://schemas.ogf.org/occi/infrastructure/ecore"/>
+    <details key="monitoring" value="http://schemas.ogf.org/occi/monitoring/ecore"/>
+    <details key="cloudmonitoring" value="http://occiware.org/occi/multicloud/monitoring/ecore"/>
+    <details key="regions" value="http://occiware.org/occi/infrastructure/locations/ecore"/>
+    <details key="awsregions" value="http://occiware.org/occi/infrastructure/locations/aws/ecore"/>
+    <details key="accounts" value="http://occiware.org/occi/infrastructure/security/ecore"/>
+    <details key="ec2" value="http://occiware.org/occi/infrastructure/aws/ecore"/>
+    <details key="zabbix" value="http://occiware.org/occi/multicloud/monitoring/zabbix/ecore"/>
+    <details key="occimonitoring" value="http://org.eclipse.cmf.occi.multicloud.occimonitoring/ecore"/>
+    <details key="elasticocci" value="http://occiware.org/occi/multicloud/elasticocci/ecore"/>
+    <details key="horizontalelasticity" value="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore"/>
+    <details key="vmware" value="http://occiware.org/occi/infrastructure/vmware/ecore"/>
+    <details key="interoperability" value="http://occiware.org/occi/multicloud/specialfeatures/ecore"/>
+  </eAnnotations>
+</ecore:EPackage>

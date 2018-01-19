@@ -1,3 +1,4 @@
+echo "Process snapshot to oss";
 
 # Are we on the right branch?
 if [ "$TRAVIS_BRANCH" = "master" ]; then

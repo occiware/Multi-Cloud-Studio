@@ -7,6 +7,12 @@
     <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
     <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
   </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/OCL/Import">
+    <details key="occi" value="http://schemas.ogf.org/occi/core/ecore"/>
+    <details key="crtp" value="http://schemas.ogf.org/occi/infrastructure/compute/template/1.1/ecore"/>
+    <details key="infrastructure" value="http://schemas.ogf.org/occi/infrastructure/ecore"/>
+    <details key="accounts" value="http://occiware.org/occi/infrastructure/security/ecore"/>
+  </eAnnotations>
   <eClassifiers xsi:type="ecore:EEnum" name="GuestOsIdentifiers">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Enumerate the guest os id used on vCenter VMware platform"/>
@@ -201,7 +207,7 @@
       <details key="constraints" value="targetConstraint"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="targetConstraint" value="self.target.oclIsKindOf(Storagevmware)"/>
+      <details key="targetConstraint" value="self.target.oclIsKindOf(vmware::Storagevmware)"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Vswitch" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Network">
@@ -222,10 +228,15 @@
       <details key="constraints" value="targetConstraint"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="targetConstraint" value="self.target.oclIsKindOf(Vswitch)"/>
+      <details key="targetConstraint" value="self.target.oclIsKindOf(vmware::Vswitch)"/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Windows" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase #//Os_tpl_vmware">
+  <eClassifiers xsi:type="ecore:EClass" name="Vcenteraccount" eSuperTypes="platform:/resource/org.eclipse.cmf.occi.multicloud.accounts/model/accounts.ecore#//Cloudaccount">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value=""/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Windows" eSuperTypes="#//Os_tpl_vmware platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="appliesConstraint"/>
     </eAnnotations>
@@ -233,7 +244,7 @@
       <details key="appliesConstraint" value="self.entity.oclIsKindOf(vmware::Instancevmware)"/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Linux" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase #//Os_tpl_vmware">
+  <eClassifiers xsi:type="ecore:EClass" name="Linux" eSuperTypes="#//Os_tpl_vmware platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="appliesConstraint"/>
     </eAnnotations>
@@ -241,7 +252,7 @@
       <details key="appliesConstraint" value="self.entity.oclIsKindOf(vmware::Instancevmware)"/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Macosx" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase #//Os_tpl_vmware">
+  <eClassifiers xsi:type="ecore:EClass" name="Macosx" eSuperTypes="#//Os_tpl_vmware platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="appliesConstraint"/>
     </eAnnotations>
@@ -282,7 +293,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Os_tpl_vmware" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Os_tpl">
+  <eClassifiers xsi:type="ecore:EClass" name="Os_tpl_vmware" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Os_tpl platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="appliesConstraint"/>
     </eAnnotations>
@@ -301,7 +312,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Ssh_user_data" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//User_data">
+  <eClassifiers xsi:type="ecore:EClass" name="Ssh_user_data" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//User_data platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="appliesConstraint"/>
     </eAnnotations>
@@ -324,5 +335,13 @@
         <details key="documentation" value=""/>
       </eAnnotations>
     </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Vcentercredential" eSuperTypes="platform:/resource/org.eclipse.cmf.occi.multicloud.accounts/model/accounts.ecore#//Basiccredential platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="appliesConstraint"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="appliesConstraint" value="self.entity.oclIsKindOf(vmware::Vcenteraccount)"/>
+    </eAnnotations>
   </eClassifiers>
 </ecore:EPackage>

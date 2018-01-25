@@ -98,13 +98,14 @@ public class ManualscalingpolicyConnector extends org.eclipse.cmf.occi.multiclou
 			if ((ec.getElasticitycontrollerMinimumLimit() != 0) && (ec.getElasticitycontrollerMinimumLimit() != null)) {
 					hg.setHorizontalgroupMinimum((int)ec.getElasticitycontrollerMinimumLimit());
 			}
-			Horizontalgroup hgg =hg;
-			final TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(this);
-			domain.getCommandStack().execute(new RecordingCommand(domain) {
-				@Override
-				protected void doExecute() {
-					hgg.occiUpdate();
-				}});
+			//Horizontalgroup hgg =hg;
+			//final TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(this);
+			//domain.getCommandStack().execute(new RecordingCommand(domain) {
+			//	@Override
+			//	protected void doExecute() {
+			//		hgg.occiUpdate();
+			//	}});
+			hg.occiUpdate();
 			
 		} else if (vm!=null) {
 			String computeUnit = this.getManualscalingpolicyComputeUnit();

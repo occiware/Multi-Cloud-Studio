@@ -227,6 +227,7 @@ public class StepdynamicscalingpolicyConnector extends org.eclipse.cmf.occi.mult
 				////double metrcUsage  = dp.getMetricUsage(ruleMetric, ruleperiod, consecutive); // get the metric utilization on an interval of (period) for a consecutive of (consecutive),
 				double metrcUsage   = ec.getMetricVertical( vm,  ruleMetric);
 				/////////////// test the rule ///////////////////////////////////////
+
 				if (ec.testRule(metrcUsage, ruleoperator, threshold)) {
 					////////////////////here call the action according to Rule and steps////////
 					if (arrlistofsteps.isEmpty()) {

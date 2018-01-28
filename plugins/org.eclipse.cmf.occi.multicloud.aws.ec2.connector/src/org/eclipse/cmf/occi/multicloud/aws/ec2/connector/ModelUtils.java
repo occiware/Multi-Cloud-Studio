@@ -20,8 +20,11 @@ import org.eclipse.cmf.occi.core.Resource;
 import org.eclipse.cmf.occi.multicloud.accounts.Cloudaccountlink;
 import org.eclipse.cmf.occi.multicloud.aws.ec2.Awsaccount;
 import org.eclipse.cmf.occi.multicloud.aws.ec2.connector.exceptions.AwsAccountModelException;
+import org.eclipse.cmf.occi.multicloud.regions.Regionlink;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import awsregions.Awsregion;
 
 public class ModelUtils {
 
@@ -44,11 +47,34 @@ public class ModelUtils {
 		} else {
 			res = (Resource) entity;
 		}
-		List<Link> links = res.getRlinks();
-		for (Link link : links) {
-			if (link instanceof Cloudaccountlink && link.getSource() instanceof Awsaccount) {
-				awsAccount = (AwsaccountConnector) link.getSource();
+		int cpt = 0;
+		while (awsAccount == null && res != null) {
+			List<Link> links = res.getRlinks();
+			awsAccount = findAccount(links);
+			if (awsAccount == null) {
+				// Search on the first link.
+				if (links == null || links.isEmpty()) {
+					break;
+				}
+				if (!links.isEmpty()) {
+					res = links.get(0).getSource();
+				}
+			}
+			cpt++;
+			if (cpt > 500) {
 				break;
+			}
+		}
+		
+		Awsregion region = null;
+		if (awsAccount != null) {
+			// Search for the region resource.
+			List<Link> links = res.getRlinks();
+			for (Link link : links) {
+				if (link instanceof Regionlink) {
+					region = (Awsregion) ((Regionlink) link).getSource();
+					break;
+				}
 			}
 		}
 		
@@ -56,8 +82,33 @@ public class ModelUtils {
 			LOGGER.error("Cant find awsaccount model. Please check your configuration.");
 			throw new AwsAccountModelException("Cant find awsaccount model. Please check your configuration.");
 		}
-		AwsEC2Client ec2Client = awsAccount.getEc2Client();
-
-		return ec2Client;
+		if (region != null) {
+			// Update client with new region.
+			awsAccount.setRegionId(region.getRegionId());
+			// TODO : Manage region mixin for description etc..
+		}
+		return awsAccount.getEc2Client();
 	}
+	
+	/**
+	 * 
+	 * @param links
+	 * @return
+	 */
+	private static AwsaccountConnector findAccount(List<Link> links) {
+		AwsaccountConnector awsAccount = null;
+		Cloudaccountlink cloudAcclink = null;
+		for (Link link : links) {
+			if (link instanceof Cloudaccountlink) {
+				cloudAcclink = (Cloudaccountlink) link;
+				break;
+			}
+		}
+		if (cloudAcclink != null) {
+			awsAccount = (AwsaccountConnector) cloudAcclink.getSource(); 
+		}
+		return awsAccount;
+	}
+	
+	
 }

@@ -32,7 +32,8 @@ import org.eclipse.cmf.occi.multicloud.regions.Northamerica;
  * </ul>
  *
  * @see awsregions.AwsregionsPackage#getCa_central_1()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='appliesConstraint'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot appliesConstraint='self.entity.oclIsKindOf(awsregions::Awsregion)'"
  * @generated
  */
 public interface Ca_central_1 extends Northamerica, MixinBase {

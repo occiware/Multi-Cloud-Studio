@@ -4,6 +4,9 @@
   <genPackages prefix="Awsregions" disposableProviderFactory="true">
     <ecorePackage href="awsregions.ecore#/"/>
     <genClasses>
+      <ecoreClass href="awsregions.ecore#//Awsregion"/>
+    </genClasses>
+    <genClasses>
       <ecoreClass href="awsregions.ecore#//Us_east_2"/>
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="awsregions.ecore#//Us_east_2/regionName"/>

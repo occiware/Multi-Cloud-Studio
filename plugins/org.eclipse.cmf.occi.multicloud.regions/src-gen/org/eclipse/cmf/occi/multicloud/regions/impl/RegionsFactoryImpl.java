@@ -67,6 +67,7 @@ public class RegionsFactoryImpl extends EFactoryImpl implements RegionsFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case RegionsPackage.REGION: return createRegion();
+			case RegionsPackage.REGIONLINK: return createRegionlink();
 			case RegionsPackage.AVAILABILITYZONE: return createAvailabilityzone();
 			case RegionsPackage.EUROPE: return createEurope();
 			case RegionsPackage.NORTHAMERICA: return createNorthamerica();
@@ -86,6 +87,16 @@ public class RegionsFactoryImpl extends EFactoryImpl implements RegionsFactory {
 	public Region createRegion() {
 		RegionImpl region = new RegionImpl();
 		return region;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Regionlink createRegionlink() {
+		RegionlinkImpl regionlink = new RegionlinkImpl();
+		return regionlink;
 	}
 
 	/**

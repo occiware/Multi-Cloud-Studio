@@ -693,11 +693,6 @@ public class KeypairlinkItemProvider extends LinkItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
-				 RegionsFactory.eINSTANCE.createRegion()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.ENTITY__PARTS,
 				 RegionsFactory.eINSTANCE.createAvailabilityzone()));
 
 		newChildDescriptors.add

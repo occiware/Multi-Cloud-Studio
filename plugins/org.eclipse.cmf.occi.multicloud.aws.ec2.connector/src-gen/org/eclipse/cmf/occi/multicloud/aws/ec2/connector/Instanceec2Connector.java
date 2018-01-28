@@ -315,6 +315,7 @@ public class Instanceec2Connector extends org.eclipse.cmf.occi.multicloud.aws.ec
 					mapInstanceAWStoInstanceAWSOCCI(instance);
 					
 				} else {
+					// TODO : Dialog box information.
 					LOGGER.warn("instance doesnt exist on your aws account.");
 					this.setAwsInstanceStatus(AWSInstanceState.NOTEXIST);
 					this.setOcciComputeState(ComputeStatus.INACTIVE);

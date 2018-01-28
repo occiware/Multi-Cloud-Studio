@@ -24,8 +24,8 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  * @see org.eclipse.cmf.occi.multicloud.regions.RegionsPackage#getAsiapacific()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='appliesConstraint'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot appliesConstraint='self.entity.oclIsKindOf(occi::Link) or self.entity.oclIsKindOf(occi::Resource)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot appliesConstraint='self.entity.oclIsKindOf(regions::Region)'"
  * @generated
  */
-public interface Asiapacific extends Region, MixinBase {
+public interface Asiapacific extends MixinBase {
 } // Asiapacific

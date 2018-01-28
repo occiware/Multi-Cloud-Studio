@@ -42,7 +42,7 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  *
  * @generated
  */
-public class SouthamericaImpl extends RegionImpl implements Southamerica {
+public class SouthamericaImpl extends MixinBaseImpl implements Southamerica {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

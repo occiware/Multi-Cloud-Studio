@@ -68,31 +68,8 @@ public class AwsaccountItemProvider extends CloudaccountItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addRegionIdPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Region Id feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRegionIdPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Awsaccount_regionId_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Awsaccount_regionId_feature", "_UI_Awsaccount_type"),
-				 Ec2Package.eINSTANCE.getAwsaccount_RegionId(),
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -131,12 +108,6 @@ public class AwsaccountItemProvider extends CloudaccountItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(Awsaccount.class)) {
-			case Ec2Package.AWSACCOUNT__REGION_ID:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 
@@ -724,11 +695,6 @@ public class AwsaccountItemProvider extends CloudaccountItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
-				 RegionsFactory.eINSTANCE.createRegion()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.ENTITY__PARTS,
 				 RegionsFactory.eINSTANCE.createAvailabilityzone()));
 
 		newChildDescriptors.add
@@ -875,6 +841,11 @@ public class AwsaccountItemProvider extends CloudaccountItemProvider {
 			(createChildParameter
 				(OCCIPackage.Literals.RESOURCE__LINKS,
 				 Ec2Factory.eINSTANCE.createIppermissionlink()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.RESOURCE__LINKS,
+				 RegionsFactory.eINSTANCE.createRegionlink()));
 
 		newChildDescriptors.add
 			(createChildParameter

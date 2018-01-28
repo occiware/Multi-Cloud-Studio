@@ -10,34 +10,28 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Fri Jan 12 16:58:52 CET 2018 from platform:/resource/org.eclipse.cmf.occi.multicloud.regions.aws/model/awsregions.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Thu Jan 25 17:57:19 CET 2018 from platform:/resource/org.eclipse.cmf.occi.multicloud.regions.aws/model/awsregions.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.regions.aws.connector;
-
-import awsregions.Ap_northeast_1;
-import awsregions.Ap_northeast_2;
-import awsregions.Ap_south_1;
-import awsregions.Ap_south_east2;
-import awsregions.Ap_southeast_1;
-import awsregions.Ca_central_1;
-import awsregions.Eu_central_1;
-import awsregions.Eu_west_1;
-import awsregions.Eu_west_2;
-import awsregions.Eu_west_3;
-import awsregions.Sa_east_1;
-import awsregions.Us_east_1;
-import awsregions.Us_east_2;
-import awsregions.Us_west_1;
-import awsregions.Us_west_2;
-import awsregions.impl.AwsregionsFactoryImpl;
 
 /**
  * Connector EFactory for the OCCI extension:
  * - name: awsregions
  * - scheme: http://occiware.org/occi/infrastructure/locations/aws#
  */
-public class ConnectorFactory extends AwsregionsFactoryImpl
+public class ConnectorFactory extends awsregions.impl.AwsregionsFactoryImpl
 {
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://occiware.org/occi/infrastructure/locations/aws#
+	 * - term: awsregion
+	 * - title: 
+	 */
+	@Override
+	public awsregions.Awsregion createAwsregion() {
+		return new AwsregionConnector();
+	}
+
 	/**
 	 * EFactory method for OCCI kind:
 	 * - scheme: http://occiware.org/occi/infrastructure/locations/aws#
@@ -45,7 +39,7 @@ public class ConnectorFactory extends AwsregionsFactoryImpl
 	 * - title: 
 	 */
 	@Override
-	public Us_east_2 createUs_east_2() {
+	public awsregions.Us_east_2 createUs_east_2() {
 		return new Us_east_2Connector();
 	}
 
@@ -56,7 +50,7 @@ public class ConnectorFactory extends AwsregionsFactoryImpl
 	 * - title: 
 	 */
 	@Override
-	public Us_east_1 createUs_east_1() {
+	public awsregions.Us_east_1 createUs_east_1() {
 		return new Us_east_1Connector();
 	}
 
@@ -67,7 +61,7 @@ public class ConnectorFactory extends AwsregionsFactoryImpl
 	 * - title: 
 	 */
 	@Override
-	public Eu_west_3 createEu_west_3() {
+	public awsregions.Eu_west_3 createEu_west_3() {
 		return new Eu_west_3Connector();
 	}
 
@@ -78,7 +72,7 @@ public class ConnectorFactory extends AwsregionsFactoryImpl
 	 * - title: 
 	 */
 	@Override
-	public Us_west_1 createUs_west_1() {
+	public awsregions.Us_west_1 createUs_west_1() {
 		return new Us_west_1Connector();
 	}
 
@@ -89,7 +83,7 @@ public class ConnectorFactory extends AwsregionsFactoryImpl
 	 * - title: 
 	 */
 	@Override
-	public Eu_west_1 createEu_west_1() {
+	public awsregions.Eu_west_1 createEu_west_1() {
 		return new Eu_west_1Connector();
 	}
 
@@ -100,7 +94,7 @@ public class ConnectorFactory extends AwsregionsFactoryImpl
 	 * - title: 
 	 */
 	@Override
-	public Ap_south_1 createAp_south_1() {
+	public awsregions.Ap_south_1 createAp_south_1() {
 		return new Ap_south_1Connector();
 	}
 
@@ -111,7 +105,7 @@ public class ConnectorFactory extends AwsregionsFactoryImpl
 	 * - title: 
 	 */
 	@Override
-	public Sa_east_1 createSa_east_1() {
+	public awsregions.Sa_east_1 createSa_east_1() {
 		return new Sa_east_1Connector();
 	}
 
@@ -122,7 +116,7 @@ public class ConnectorFactory extends AwsregionsFactoryImpl
 	 * - title: 
 	 */
 	@Override
-	public Us_west_2 createUs_west_2() {
+	public awsregions.Us_west_2 createUs_west_2() {
 		return new Us_west_2Connector();
 	}
 
@@ -133,7 +127,7 @@ public class ConnectorFactory extends AwsregionsFactoryImpl
 	 * - title: 
 	 */
 	@Override
-	public Eu_west_2 createEu_west_2() {
+	public awsregions.Eu_west_2 createEu_west_2() {
 		return new Eu_west_2Connector();
 	}
 
@@ -144,7 +138,7 @@ public class ConnectorFactory extends AwsregionsFactoryImpl
 	 * - title: 
 	 */
 	@Override
-	public Ap_southeast_1 createAp_southeast_1() {
+	public awsregions.Ap_southeast_1 createAp_southeast_1() {
 		return new Ap_southeast_1Connector();
 	}
 
@@ -155,7 +149,7 @@ public class ConnectorFactory extends AwsregionsFactoryImpl
 	 * - title: 
 	 */
 	@Override
-	public Ca_central_1 createCa_central_1() {
+	public awsregions.Ca_central_1 createCa_central_1() {
 		return new Ca_central_1Connector();
 	}
 
@@ -166,7 +160,7 @@ public class ConnectorFactory extends AwsregionsFactoryImpl
 	 * - title: 
 	 */
 	@Override
-	public Ap_northeast_2 createAp_northeast_2() {
+	public awsregions.Ap_northeast_2 createAp_northeast_2() {
 		return new Ap_northeast_2Connector();
 	}
 
@@ -177,7 +171,7 @@ public class ConnectorFactory extends AwsregionsFactoryImpl
 	 * - title: 
 	 */
 	@Override
-	public Ap_south_east2 createAp_south_east2() {
+	public awsregions.Ap_south_east2 createAp_south_east2() {
 		return new Ap_south_east2Connector();
 	}
 
@@ -188,7 +182,7 @@ public class ConnectorFactory extends AwsregionsFactoryImpl
 	 * - title: 
 	 */
 	@Override
-	public Eu_central_1 createEu_central_1() {
+	public awsregions.Eu_central_1 createEu_central_1() {
 		return new Eu_central_1Connector();
 	}
 
@@ -199,7 +193,7 @@ public class ConnectorFactory extends AwsregionsFactoryImpl
 	 * - title: 
 	 */
 	@Override
-	public Ap_northeast_1 createAp_northeast_1() {
+	public awsregions.Ap_northeast_1 createAp_northeast_1() {
 		return new Ap_northeast_1Connector();
 	}
 

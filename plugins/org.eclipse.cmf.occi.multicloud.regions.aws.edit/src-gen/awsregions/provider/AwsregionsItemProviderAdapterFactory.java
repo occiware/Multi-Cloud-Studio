@@ -82,6 +82,29 @@ public class AwsregionsItemProviderAdapterFactory extends AwsregionsAdapterFacto
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link awsregions.Awsregion} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AwsregionItemProvider awsregionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link awsregions.Awsregion}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAwsregionAdapter() {
+		if (awsregionItemProvider == null) {
+			awsregionItemProvider = new AwsregionItemProvider(this);
+		}
+
+		return awsregionItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link awsregions.Us_east_2} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -525,6 +548,7 @@ public class AwsregionsItemProviderAdapterFactory extends AwsregionsAdapterFacto
 	 * @generated
 	 */
 	public void dispose() {
+		if (awsregionItemProvider != null) awsregionItemProvider.dispose();
 		if (us_east_2ItemProvider != null) us_east_2ItemProvider.dispose();
 		if (us_east_1ItemProvider != null) us_east_1ItemProvider.dispose();
 		if (eu_west_3ItemProvider != null) eu_west_3ItemProvider.dispose();

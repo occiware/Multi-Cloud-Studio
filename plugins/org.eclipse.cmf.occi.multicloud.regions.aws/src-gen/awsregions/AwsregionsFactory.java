@@ -32,6 +32,15 @@ public interface AwsregionsFactory extends EFactory {
 	AwsregionsFactory eINSTANCE = awsregions.impl.AwsregionsFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Awsregion</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Awsregion</em>'.
+	 * @generated
+	 */
+	Awsregion createAwsregion();
+
+	/**
 	 * Returns a new object of class '<em>Us east 2</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -5,6 +5,15 @@
     <ecorePackage href="regions.ecore#/"/>
     <genClasses>
       <ecoreClass href="regions.ecore#//Region"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="regions.ecore#//Region/regionId"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="regions.ecore#//Region/regionDescription"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="regions.ecore#//Regionlink"/>
     </genClasses>
     <genClasses>
       <ecoreClass href="regions.ecore#//Availabilityzone"/>

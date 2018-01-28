@@ -12,8 +12,11 @@
  */
 package org.eclipse.cmf.occi.multicloud.regions.util;
 
+import org.eclipse.cmf.occi.core.Entity;
+import org.eclipse.cmf.occi.core.Link;
 import org.eclipse.cmf.occi.core.MixinBase;
 
+import org.eclipse.cmf.occi.core.Resource;
 import org.eclipse.cmf.occi.multicloud.regions.*;
 
 import org.eclipse.emf.ecore.EObject;
@@ -81,7 +84,16 @@ public class RegionsSwitch<T> extends Switch<T> {
 			case RegionsPackage.REGION: {
 				Region region = (Region)theEObject;
 				T result = caseRegion(region);
-				if (result == null) result = caseMixinBase(region);
+				if (result == null) result = caseResource(region);
+				if (result == null) result = caseEntity(region);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RegionsPackage.REGIONLINK: {
+				Regionlink regionlink = (Regionlink)theEObject;
+				T result = caseRegionlink(regionlink);
+				if (result == null) result = caseLink(regionlink);
+				if (result == null) result = caseEntity(regionlink);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -95,7 +107,6 @@ public class RegionsSwitch<T> extends Switch<T> {
 			case RegionsPackage.EUROPE: {
 				Europe europe = (Europe)theEObject;
 				T result = caseEurope(europe);
-				if (result == null) result = caseRegion(europe);
 				if (result == null) result = caseMixinBase(europe);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -103,7 +114,6 @@ public class RegionsSwitch<T> extends Switch<T> {
 			case RegionsPackage.NORTHAMERICA: {
 				Northamerica northamerica = (Northamerica)theEObject;
 				T result = caseNorthamerica(northamerica);
-				if (result == null) result = caseRegion(northamerica);
 				if (result == null) result = caseMixinBase(northamerica);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -111,7 +121,6 @@ public class RegionsSwitch<T> extends Switch<T> {
 			case RegionsPackage.SOUTHAMERICA: {
 				Southamerica southamerica = (Southamerica)theEObject;
 				T result = caseSouthamerica(southamerica);
-				if (result == null) result = caseRegion(southamerica);
 				if (result == null) result = caseMixinBase(southamerica);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -119,7 +128,6 @@ public class RegionsSwitch<T> extends Switch<T> {
 			case RegionsPackage.ASIAPACIFIC: {
 				Asiapacific asiapacific = (Asiapacific)theEObject;
 				T result = caseAsiapacific(asiapacific);
-				if (result == null) result = caseRegion(asiapacific);
 				if (result == null) result = caseMixinBase(asiapacific);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -127,7 +135,6 @@ public class RegionsSwitch<T> extends Switch<T> {
 			case RegionsPackage.AFRICA: {
 				Africa africa = (Africa)theEObject;
 				T result = caseAfrica(africa);
-				if (result == null) result = caseRegion(africa);
 				if (result == null) result = caseMixinBase(africa);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -148,6 +155,21 @@ public class RegionsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseRegion(Region object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Regionlink</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Regionlink</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRegionlink(Regionlink object) {
 		return null;
 	}
 
@@ -238,6 +260,51 @@ public class RegionsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAfrica(Africa object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Entity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Entity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEntity(Entity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Resource</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Resource</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseResource(Resource object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Link</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Link</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLink(Link object) {
 		return null;
 	}
 

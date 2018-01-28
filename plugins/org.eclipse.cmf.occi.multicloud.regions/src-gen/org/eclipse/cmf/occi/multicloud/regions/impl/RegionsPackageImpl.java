@@ -20,6 +20,7 @@ import org.eclipse.cmf.occi.multicloud.regions.Availabilityzone;
 import org.eclipse.cmf.occi.multicloud.regions.Europe;
 import org.eclipse.cmf.occi.multicloud.regions.Northamerica;
 import org.eclipse.cmf.occi.multicloud.regions.Region;
+import org.eclipse.cmf.occi.multicloud.regions.Regionlink;
 import org.eclipse.cmf.occi.multicloud.regions.RegionsFactory;
 import org.eclipse.cmf.occi.multicloud.regions.RegionsPackage;
 
@@ -48,6 +49,13 @@ public class RegionsPackageImpl extends EPackageImpl implements RegionsPackage {
 	 * @generated
 	 */
 	private EClass regionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass regionlinkEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -178,6 +186,33 @@ public class RegionsPackageImpl extends EPackageImpl implements RegionsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getRegion_RegionId() {
+		return (EAttribute)regionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRegion_RegionDescription() {
+		return (EAttribute)regionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRegionlink() {
+		return regionlinkEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAvailabilityzone() {
 		return availabilityzoneEClass;
 	}
@@ -283,6 +318,10 @@ public class RegionsPackageImpl extends EPackageImpl implements RegionsPackage {
 
 		// Create classes and their features
 		regionEClass = createEClass(REGION);
+		createEAttribute(regionEClass, REGION__REGION_ID);
+		createEAttribute(regionEClass, REGION__REGION_DESCRIPTION);
+
+		regionlinkEClass = createEClass(REGIONLINK);
 
 		availabilityzoneEClass = createEClass(AVAILABILITYZONE);
 		createEAttribute(availabilityzoneEClass, AVAILABILITYZONE__ZONE_NAME);
@@ -331,21 +370,21 @@ public class RegionsPackageImpl extends EPackageImpl implements RegionsPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		regionEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		regionEClass.getESuperTypes().add(theOCCIPackage.getResource());
+		regionlinkEClass.getESuperTypes().add(theOCCIPackage.getLink());
 		availabilityzoneEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
-		europeEClass.getESuperTypes().add(this.getRegion());
 		europeEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
-		northamericaEClass.getESuperTypes().add(this.getRegion());
 		northamericaEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
-		southamericaEClass.getESuperTypes().add(this.getRegion());
 		southamericaEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
-		asiapacificEClass.getESuperTypes().add(this.getRegion());
 		asiapacificEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
-		africaEClass.getESuperTypes().add(this.getRegion());
 		africaEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(regionEClass, Region.class, "Region", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRegion_RegionId(), theOCCIPackage.getString(), "regionId", null, 1, 1, Region.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRegion_RegionDescription(), theOCCIPackage.getString(), "regionDescription", null, 0, 1, Region.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(regionlinkEClass, Regionlink.class, "Regionlink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(availabilityzoneEClass, Availabilityzone.class, "Availabilityzone", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAvailabilityzone_ZoneName(), theOCCIPackage.getString(), "zoneName", null, 1, 1, Availabilityzone.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -389,12 +428,6 @@ public class RegionsPackageImpl extends EPackageImpl implements RegionsPackage {
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
-		   });	
-		addAnnotation
-		  (regionEClass, 
-		   source, 
-		   new String[] {
-			 "constraints", "appliesConstraint"
 		   });	
 		addAnnotation
 		  (availabilityzoneEClass, 
@@ -459,46 +492,40 @@ public class RegionsPackageImpl extends EPackageImpl implements RegionsPackage {
 	protected void createPivotAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";	
 		addAnnotation
-		  (regionEClass, 
-		   source, 
-		   new String[] {
-			 "appliesConstraint", "self.entity.oclIsKindOf(occi::Resource) or self.entity.oclIsKindOf(occi::Link)"
-		   });	
-		addAnnotation
 		  (availabilityzoneEClass, 
 		   source, 
 		   new String[] {
-			 "appliesConstraint", "self.entity.oclIsKindOf(occi::Resource) or self.entity.oclIsKindOf(occi::Link)"
+			 "appliesConstraint", "self.entity.oclIsKindOf(regions::Region)"
 		   });	
 		addAnnotation
 		  (europeEClass, 
 		   source, 
 		   new String[] {
-			 "appliesConstraint", "self.entity.oclIsKindOf(occi::Resource) or self.entity.oclIsKindOf(occi::Link)"
+			 "appliesConstraint", "self.entity.oclIsKindOf(regions::Region)"
 		   });	
 		addAnnotation
 		  (northamericaEClass, 
 		   source, 
 		   new String[] {
-			 "appliesConstraint", "self.entity.oclIsKindOf(occi::Resource) or self.entity.oclIsKindOf(occi::Link)"
+			 "appliesConstraint", "self.entity.oclIsKindOf(regions::Region)"
 		   });	
 		addAnnotation
 		  (southamericaEClass, 
 		   source, 
 		   new String[] {
-			 "appliesConstraint", "self.entity.oclIsKindOf(occi::Resource) or self.entity.oclIsKindOf(occi::Link)"
+			 "appliesConstraint", "self.entity.oclIsKindOf(regions::Region)"
 		   });	
 		addAnnotation
 		  (asiapacificEClass, 
 		   source, 
 		   new String[] {
-			 "appliesConstraint", "self.entity.oclIsKindOf(occi::Link) or self.entity.oclIsKindOf(occi::Resource)"
+			 "appliesConstraint", "self.entity.oclIsKindOf(regions::Region)"
 		   });	
 		addAnnotation
 		  (africaEClass, 
 		   source, 
 		   new String[] {
-			 "appliesConstraint", "self.entity.oclIsKindOf(occi::Resource) or self.entity.oclIsKindOf(occi::Link)"
+			 "appliesConstraint", "self.entity.oclIsKindOf(regions::Region)"
 		   });
 	}
 

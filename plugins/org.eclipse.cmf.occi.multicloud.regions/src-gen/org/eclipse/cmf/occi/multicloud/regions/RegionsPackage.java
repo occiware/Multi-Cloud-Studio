@@ -81,22 +81,40 @@ public interface RegionsPackage extends EPackage {
 	int REGION = 0;
 
 	/**
-	 * The feature id for the '<em><b>Mixin</b></em>' reference.
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REGION__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
+	int REGION__ID = OCCIPackage.RESOURCE__ID;
 
 	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REGION__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
+	int REGION__TITLE = OCCIPackage.RESOURCE__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION__KIND = OCCIPackage.RESOURCE__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Location</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION__LOCATION = OCCIPackage.RESOURCE__LOCATION;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -105,7 +123,70 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
+	int REGION__ATTRIBUTES = OCCIPackage.RESOURCE__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Mixins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION__MIXINS = OCCIPackage.RESOURCE__MIXINS;
+
+	/**
+	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION__PARTS = OCCIPackage.RESOURCE__PARTS;
+
+	/**
+	 * The feature id for the '<em><b>Summary</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION__SUMMARY = OCCIPackage.RESOURCE__SUMMARY;
+
+	/**
+	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION__LINKS = OCCIPackage.RESOURCE__LINKS;
+
+	/**
+	 * The feature id for the '<em><b>Rlinks</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION__RLINKS = OCCIPackage.RESOURCE__RLINKS;
+
+	/**
+	 * The feature id for the '<em><b>Region Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION__REGION_ID = OCCIPackage.RESOURCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Region Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION__REGION_DESCRIPTION = OCCIPackage.RESOURCE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Region</em>' class.
@@ -114,7 +195,43 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
+	int REGION_FEATURE_COUNT = OCCIPackage.RESOURCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Occi Create</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION___OCCI_CREATE = OCCIPackage.RESOURCE___OCCI_CREATE;
+
+	/**
+	 * The operation id for the '<em>Occi Retrieve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION___OCCI_RETRIEVE = OCCIPackage.RESOURCE___OCCI_RETRIEVE;
+
+	/**
+	 * The operation id for the '<em>Occi Update</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION___OCCI_UPDATE = OCCIPackage.RESOURCE___OCCI_UPDATE;
+
+	/**
+	 * The operation id for the '<em>Occi Delete</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION___OCCI_DELETE = OCCIPackage.RESOURCE___OCCI_DELETE;
 
 	/**
 	 * The number of operations of the '<em>Region</em>' class.
@@ -123,7 +240,170 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
+	int REGION_OPERATION_COUNT = OCCIPackage.RESOURCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.regions.impl.RegionlinkImpl <em>Regionlink</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.multicloud.regions.impl.RegionlinkImpl
+	 * @see org.eclipse.cmf.occi.multicloud.regions.impl.RegionsPackageImpl#getRegionlink()
+	 * @generated
+	 */
+	int REGIONLINK = 1;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGIONLINK__ID = OCCIPackage.LINK__ID;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGIONLINK__TITLE = OCCIPackage.LINK__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGIONLINK__KIND = OCCIPackage.LINK__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Location</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGIONLINK__LOCATION = OCCIPackage.LINK__LOCATION;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGIONLINK__ATTRIBUTES = OCCIPackage.LINK__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Mixins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGIONLINK__MIXINS = OCCIPackage.LINK__MIXINS;
+
+	/**
+	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGIONLINK__PARTS = OCCIPackage.LINK__PARTS;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGIONLINK__SOURCE = OCCIPackage.LINK__SOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGIONLINK__TARGET = OCCIPackage.LINK__TARGET;
+
+	/**
+	 * The number of structural features of the '<em>Regionlink</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGIONLINK_FEATURE_COUNT = OCCIPackage.LINK_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Occi Create</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGIONLINK___OCCI_CREATE = OCCIPackage.LINK___OCCI_CREATE;
+
+	/**
+	 * The operation id for the '<em>Occi Retrieve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGIONLINK___OCCI_RETRIEVE = OCCIPackage.LINK___OCCI_RETRIEVE;
+
+	/**
+	 * The operation id for the '<em>Occi Update</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGIONLINK___OCCI_UPDATE = OCCIPackage.LINK___OCCI_UPDATE;
+
+	/**
+	 * The operation id for the '<em>Occi Delete</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGIONLINK___OCCI_DELETE = OCCIPackage.LINK___OCCI_DELETE;
+
+	/**
+	 * The operation id for the '<em>Link Target Invariant</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGIONLINK___LINK_TARGET_INVARIANT__KIND_KIND = OCCIPackage.LINK___LINK_TARGET_INVARIANT__KIND_KIND;
+
+	/**
+	 * The operation id for the '<em>Link Source Invariant</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGIONLINK___LINK_SOURCE_INVARIANT__KIND_KIND = OCCIPackage.LINK___LINK_SOURCE_INVARIANT__KIND_KIND;
+
+	/**
+	 * The number of operations of the '<em>Regionlink</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGIONLINK_OPERATION_COUNT = OCCIPackage.LINK_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.regions.impl.AvailabilityzoneImpl <em>Availabilityzone</em>}' class.
@@ -133,7 +413,7 @@ public interface RegionsPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.regions.impl.RegionsPackageImpl#getAvailabilityzone()
 	 * @generated
 	 */
-	int AVAILABILITYZONE = 1;
+	int AVAILABILITYZONE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -216,7 +496,7 @@ public interface RegionsPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.regions.impl.RegionsPackageImpl#getEurope()
 	 * @generated
 	 */
-	int EUROPE = 2;
+	int EUROPE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -225,7 +505,7 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EUROPE__MIXIN = REGION__MIXIN;
+	int EUROPE__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' container reference.
@@ -234,7 +514,7 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EUROPE__ENTITY = REGION__ENTITY;
+	int EUROPE__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -243,7 +523,7 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EUROPE__ATTRIBUTES = REGION__ATTRIBUTES;
+	int EUROPE__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
 
 	/**
 	 * The number of structural features of the '<em>Europe</em>' class.
@@ -252,7 +532,7 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EUROPE_FEATURE_COUNT = REGION_FEATURE_COUNT + 0;
+	int EUROPE_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Europe</em>' class.
@@ -261,7 +541,7 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EUROPE_OPERATION_COUNT = REGION_OPERATION_COUNT + 0;
+	int EUROPE_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.regions.impl.NorthamericaImpl <em>Northamerica</em>}' class.
@@ -271,7 +551,7 @@ public interface RegionsPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.regions.impl.RegionsPackageImpl#getNorthamerica()
 	 * @generated
 	 */
-	int NORTHAMERICA = 3;
+	int NORTHAMERICA = 4;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -280,7 +560,7 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORTHAMERICA__MIXIN = REGION__MIXIN;
+	int NORTHAMERICA__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' container reference.
@@ -289,7 +569,7 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORTHAMERICA__ENTITY = REGION__ENTITY;
+	int NORTHAMERICA__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -298,7 +578,7 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORTHAMERICA__ATTRIBUTES = REGION__ATTRIBUTES;
+	int NORTHAMERICA__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
 
 	/**
 	 * The number of structural features of the '<em>Northamerica</em>' class.
@@ -307,7 +587,7 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORTHAMERICA_FEATURE_COUNT = REGION_FEATURE_COUNT + 0;
+	int NORTHAMERICA_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Northamerica</em>' class.
@@ -316,7 +596,7 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORTHAMERICA_OPERATION_COUNT = REGION_OPERATION_COUNT + 0;
+	int NORTHAMERICA_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.regions.impl.SouthamericaImpl <em>Southamerica</em>}' class.
@@ -326,7 +606,7 @@ public interface RegionsPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.regions.impl.RegionsPackageImpl#getSouthamerica()
 	 * @generated
 	 */
-	int SOUTHAMERICA = 4;
+	int SOUTHAMERICA = 5;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -335,7 +615,7 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOUTHAMERICA__MIXIN = REGION__MIXIN;
+	int SOUTHAMERICA__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' container reference.
@@ -344,7 +624,7 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOUTHAMERICA__ENTITY = REGION__ENTITY;
+	int SOUTHAMERICA__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -353,7 +633,7 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOUTHAMERICA__ATTRIBUTES = REGION__ATTRIBUTES;
+	int SOUTHAMERICA__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
 
 	/**
 	 * The number of structural features of the '<em>Southamerica</em>' class.
@@ -362,7 +642,7 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOUTHAMERICA_FEATURE_COUNT = REGION_FEATURE_COUNT + 0;
+	int SOUTHAMERICA_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Southamerica</em>' class.
@@ -371,7 +651,7 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOUTHAMERICA_OPERATION_COUNT = REGION_OPERATION_COUNT + 0;
+	int SOUTHAMERICA_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.regions.impl.AsiapacificImpl <em>Asiapacific</em>}' class.
@@ -381,7 +661,7 @@ public interface RegionsPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.regions.impl.RegionsPackageImpl#getAsiapacific()
 	 * @generated
 	 */
-	int ASIAPACIFIC = 5;
+	int ASIAPACIFIC = 6;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -390,7 +670,7 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASIAPACIFIC__MIXIN = REGION__MIXIN;
+	int ASIAPACIFIC__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' container reference.
@@ -399,7 +679,7 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASIAPACIFIC__ENTITY = REGION__ENTITY;
+	int ASIAPACIFIC__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -408,7 +688,7 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASIAPACIFIC__ATTRIBUTES = REGION__ATTRIBUTES;
+	int ASIAPACIFIC__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
 
 	/**
 	 * The number of structural features of the '<em>Asiapacific</em>' class.
@@ -417,7 +697,7 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASIAPACIFIC_FEATURE_COUNT = REGION_FEATURE_COUNT + 0;
+	int ASIAPACIFIC_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Asiapacific</em>' class.
@@ -426,7 +706,7 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASIAPACIFIC_OPERATION_COUNT = REGION_OPERATION_COUNT + 0;
+	int ASIAPACIFIC_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.regions.impl.AfricaImpl <em>Africa</em>}' class.
@@ -436,7 +716,7 @@ public interface RegionsPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.regions.impl.RegionsPackageImpl#getAfrica()
 	 * @generated
 	 */
-	int AFRICA = 6;
+	int AFRICA = 7;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -445,7 +725,7 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AFRICA__MIXIN = REGION__MIXIN;
+	int AFRICA__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' container reference.
@@ -454,7 +734,7 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AFRICA__ENTITY = REGION__ENTITY;
+	int AFRICA__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -463,7 +743,7 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AFRICA__ATTRIBUTES = REGION__ATTRIBUTES;
+	int AFRICA__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
 
 	/**
 	 * The number of structural features of the '<em>Africa</em>' class.
@@ -472,7 +752,7 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AFRICA_FEATURE_COUNT = REGION_FEATURE_COUNT + 0;
+	int AFRICA_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Africa</em>' class.
@@ -481,7 +761,7 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AFRICA_OPERATION_COUNT = REGION_OPERATION_COUNT + 0;
+	int AFRICA_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
 
 
 	/**
@@ -493,6 +773,38 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getRegion();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.regions.Region#getRegionId <em>Region Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Region Id</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.regions.Region#getRegionId()
+	 * @see #getRegion()
+	 * @generated
+	 */
+	EAttribute getRegion_RegionId();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.regions.Region#getRegionDescription <em>Region Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Region Description</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.regions.Region#getRegionDescription()
+	 * @see #getRegion()
+	 * @generated
+	 */
+	EAttribute getRegion_RegionDescription();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.regions.Regionlink <em>Regionlink</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Regionlink</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.regions.Regionlink
+	 * @generated
+	 */
+	EClass getRegionlink();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.regions.Availabilityzone <em>Availabilityzone</em>}'.
@@ -619,6 +931,32 @@ public interface RegionsPackage extends EPackage {
 		 * @generated
 		 */
 		EClass REGION = eINSTANCE.getRegion();
+
+		/**
+		 * The meta object literal for the '<em><b>Region Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REGION__REGION_ID = eINSTANCE.getRegion_RegionId();
+
+		/**
+		 * The meta object literal for the '<em><b>Region Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REGION__REGION_DESCRIPTION = eINSTANCE.getRegion_RegionDescription();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.regions.impl.RegionlinkImpl <em>Regionlink</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.cmf.occi.multicloud.regions.impl.RegionlinkImpl
+		 * @see org.eclipse.cmf.occi.multicloud.regions.impl.RegionsPackageImpl#getRegionlink()
+		 * @generated
+		 */
+		EClass REGIONLINK = eINSTANCE.getRegionlink();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.regions.impl.AvailabilityzoneImpl <em>Availabilityzone</em>}' class.

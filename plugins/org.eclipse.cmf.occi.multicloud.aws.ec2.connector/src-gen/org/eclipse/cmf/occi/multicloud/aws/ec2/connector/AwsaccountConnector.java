@@ -14,8 +14,18 @@
  */
 package org.eclipse.cmf.occi.multicloud.aws.ec2.connector;
 
+import java.util.List;
+import java.util.Optional;
+
+import org.eclipse.cmf.occi.core.Attribute;
+import org.eclipse.cmf.occi.core.AttributeState;
+import org.eclipse.cmf.occi.core.MixinBase;
+import org.eclipse.cmf.occi.core.util.OcciHelper;
+import org.eclipse.cmf.occi.multicloud.regions.Region;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import awsregions.impl.Eu_west_1Impl;
 
 /**
  * Connector implementation for the OCCI kind: - scheme:
@@ -28,7 +38,12 @@ public class AwsaccountConnector extends org.eclipse.cmf.occi.multicloud.aws.ec2
 	private static Logger LOGGER = LoggerFactory.getLogger(AwsaccountConnector.class);
 
 	// TODO : manage client via resource AwsAccount.
-	private AwsEC2Client ec2Client = new AwsEC2Client(null, null, this.getRegionId());
+	private AwsEC2Client ec2Client = new AwsEC2Client(null, null, null);
+	
+	/**
+	 * Defined by other resources.
+	 */
+	private String regionId;
 
 	// Start of user code Awsaccountconnector_constructor
 	/**
@@ -88,8 +103,23 @@ public class AwsaccountConnector extends org.eclipse.cmf.occi.multicloud.aws.ec2
 	// End of user code
 
 	public AwsEC2Client getEc2Client() {
+		// Check mixinbase AwsCredential and update the connector accordingly to its attributes..
+		Optional<AwscredentialConnector> optCred = OcciHelper.getMixinBase(this.getParts(), AwscredentialConnector.class);
+		
 		if (ec2Client == null) {
-			ec2Client = new AwsEC2Client(null, null, this.getRegionId());
+			if (optCred.isPresent()) {
+				ec2Client = new AwsEC2Client(optCred.get().getAccessKey(), optCred.get().getSecretKey(), regionId);
+			} else {
+				ec2Client = new AwsEC2Client(null, null, regionId);
+			}
+		} else {
+			// Update client with value access and regionid.
+			if (optCred.isPresent()) {
+				ec2Client.updateClient(optCred.get().getAccessKey(), optCred.get().getSecretKey(), regionId);
+				if (optCred.get().getUrl() == null || !optCred.get().getUrl().equals(ec2Client.getEndpoint())) {
+					optCred.get().setUrl(ec2Client.getEndpoint());
+				}
+			}
 		}
 		return ec2Client;
 	}
@@ -99,6 +129,19 @@ public class AwsaccountConnector extends org.eclipse.cmf.occi.multicloud.aws.ec2
 	//
 
 	
-	
+	/**
+	 * When set region, this enable to rebuild client with the new region.
+	 * @param regionId
+	 */
+	public void setRegionId(final String regionId) {
+		this.regionId = regionId;
+		if (ec2Client != null && regionId != null && regionId.equals(this.regionId)) {
+			// Region has changed !
+			ec2Client.setRegion(regionId);
+			// Reinitialize
+			ec2Client.setEc2Client(null);
+			ec2Client.initEC2Client();
+		}
+	}
 	
 }

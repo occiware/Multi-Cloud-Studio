@@ -105,6 +105,29 @@ public class RegionsItemProviderAdapterFactory extends RegionsAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.regions.Regionlink} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RegionlinkItemProvider regionlinkItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.regions.Regionlink}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRegionlinkAdapter() {
+		if (regionlinkItemProvider == null) {
+			regionlinkItemProvider = new RegionlinkItemProvider(this);
+		}
+
+		return regionlinkItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.regions.Availabilityzone} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -342,6 +365,7 @@ public class RegionsItemProviderAdapterFactory extends RegionsAdapterFactory imp
 	 */
 	public void dispose() {
 		if (regionItemProvider != null) regionItemProvider.dispose();
+		if (regionlinkItemProvider != null) regionlinkItemProvider.dispose();
 		if (availabilityzoneItemProvider != null) availabilityzoneItemProvider.dispose();
 		if (europeItemProvider != null) europeItemProvider.dispose();
 		if (northamericaItemProvider != null) northamericaItemProvider.dispose();

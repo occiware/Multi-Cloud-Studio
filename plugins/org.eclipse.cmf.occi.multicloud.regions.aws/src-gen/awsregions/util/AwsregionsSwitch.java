@@ -14,8 +14,10 @@ package awsregions.util;
 
 import awsregions.*;
 
+import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.core.MixinBase;
 
+import org.eclipse.cmf.occi.core.Resource;
 import org.eclipse.cmf.occi.multicloud.regions.Asiapacific;
 import org.eclipse.cmf.occi.multicloud.regions.Europe;
 import org.eclipse.cmf.occi.multicloud.regions.Northamerica;
@@ -84,11 +86,19 @@ public class AwsregionsSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+			case AwsregionsPackage.AWSREGION: {
+				Awsregion awsregion = (Awsregion)theEObject;
+				T result = caseAwsregion(awsregion);
+				if (result == null) result = caseRegion(awsregion);
+				if (result == null) result = caseResource(awsregion);
+				if (result == null) result = caseEntity(awsregion);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case AwsregionsPackage.US_EAST_2: {
 				Us_east_2 us_east_2 = (Us_east_2)theEObject;
 				T result = caseUs_east_2(us_east_2);
 				if (result == null) result = caseNorthamerica(us_east_2);
-				if (result == null) result = caseRegion(us_east_2);
 				if (result == null) result = caseMixinBase(us_east_2);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -97,7 +107,6 @@ public class AwsregionsSwitch<T> extends Switch<T> {
 				Us_east_1 us_east_1 = (Us_east_1)theEObject;
 				T result = caseUs_east_1(us_east_1);
 				if (result == null) result = caseNorthamerica(us_east_1);
-				if (result == null) result = caseRegion(us_east_1);
 				if (result == null) result = caseMixinBase(us_east_1);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -106,7 +115,6 @@ public class AwsregionsSwitch<T> extends Switch<T> {
 				Eu_west_3 eu_west_3 = (Eu_west_3)theEObject;
 				T result = caseEu_west_3(eu_west_3);
 				if (result == null) result = caseEurope(eu_west_3);
-				if (result == null) result = caseRegion(eu_west_3);
 				if (result == null) result = caseMixinBase(eu_west_3);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -115,7 +123,6 @@ public class AwsregionsSwitch<T> extends Switch<T> {
 				Us_west_1 us_west_1 = (Us_west_1)theEObject;
 				T result = caseUs_west_1(us_west_1);
 				if (result == null) result = caseNorthamerica(us_west_1);
-				if (result == null) result = caseRegion(us_west_1);
 				if (result == null) result = caseMixinBase(us_west_1);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -124,7 +131,6 @@ public class AwsregionsSwitch<T> extends Switch<T> {
 				Eu_west_1 eu_west_1 = (Eu_west_1)theEObject;
 				T result = caseEu_west_1(eu_west_1);
 				if (result == null) result = caseEurope(eu_west_1);
-				if (result == null) result = caseRegion(eu_west_1);
 				if (result == null) result = caseMixinBase(eu_west_1);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -133,7 +139,6 @@ public class AwsregionsSwitch<T> extends Switch<T> {
 				Ap_south_1 ap_south_1 = (Ap_south_1)theEObject;
 				T result = caseAp_south_1(ap_south_1);
 				if (result == null) result = caseAsiapacific(ap_south_1);
-				if (result == null) result = caseRegion(ap_south_1);
 				if (result == null) result = caseMixinBase(ap_south_1);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -142,7 +147,6 @@ public class AwsregionsSwitch<T> extends Switch<T> {
 				Sa_east_1 sa_east_1 = (Sa_east_1)theEObject;
 				T result = caseSa_east_1(sa_east_1);
 				if (result == null) result = caseSouthamerica(sa_east_1);
-				if (result == null) result = caseRegion(sa_east_1);
 				if (result == null) result = caseMixinBase(sa_east_1);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -151,7 +155,6 @@ public class AwsregionsSwitch<T> extends Switch<T> {
 				Us_west_2 us_west_2 = (Us_west_2)theEObject;
 				T result = caseUs_west_2(us_west_2);
 				if (result == null) result = caseNorthamerica(us_west_2);
-				if (result == null) result = caseRegion(us_west_2);
 				if (result == null) result = caseMixinBase(us_west_2);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -160,7 +163,6 @@ public class AwsregionsSwitch<T> extends Switch<T> {
 				Eu_west_2 eu_west_2 = (Eu_west_2)theEObject;
 				T result = caseEu_west_2(eu_west_2);
 				if (result == null) result = caseEurope(eu_west_2);
-				if (result == null) result = caseRegion(eu_west_2);
 				if (result == null) result = caseMixinBase(eu_west_2);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -169,7 +171,6 @@ public class AwsregionsSwitch<T> extends Switch<T> {
 				Ap_southeast_1 ap_southeast_1 = (Ap_southeast_1)theEObject;
 				T result = caseAp_southeast_1(ap_southeast_1);
 				if (result == null) result = caseAsiapacific(ap_southeast_1);
-				if (result == null) result = caseRegion(ap_southeast_1);
 				if (result == null) result = caseMixinBase(ap_southeast_1);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -178,7 +179,6 @@ public class AwsregionsSwitch<T> extends Switch<T> {
 				Ca_central_1 ca_central_1 = (Ca_central_1)theEObject;
 				T result = caseCa_central_1(ca_central_1);
 				if (result == null) result = caseNorthamerica(ca_central_1);
-				if (result == null) result = caseRegion(ca_central_1);
 				if (result == null) result = caseMixinBase(ca_central_1);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -187,7 +187,6 @@ public class AwsregionsSwitch<T> extends Switch<T> {
 				Ap_northeast_2 ap_northeast_2 = (Ap_northeast_2)theEObject;
 				T result = caseAp_northeast_2(ap_northeast_2);
 				if (result == null) result = caseAsiapacific(ap_northeast_2);
-				if (result == null) result = caseRegion(ap_northeast_2);
 				if (result == null) result = caseMixinBase(ap_northeast_2);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -196,7 +195,6 @@ public class AwsregionsSwitch<T> extends Switch<T> {
 				Ap_south_east2 ap_south_east2 = (Ap_south_east2)theEObject;
 				T result = caseAp_south_east2(ap_south_east2);
 				if (result == null) result = caseAsiapacific(ap_south_east2);
-				if (result == null) result = caseRegion(ap_south_east2);
 				if (result == null) result = caseMixinBase(ap_south_east2);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -205,7 +203,6 @@ public class AwsregionsSwitch<T> extends Switch<T> {
 				Eu_central_1 eu_central_1 = (Eu_central_1)theEObject;
 				T result = caseEu_central_1(eu_central_1);
 				if (result == null) result = caseEurope(eu_central_1);
-				if (result == null) result = caseRegion(eu_central_1);
 				if (result == null) result = caseMixinBase(eu_central_1);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -214,13 +211,27 @@ public class AwsregionsSwitch<T> extends Switch<T> {
 				Ap_northeast_1 ap_northeast_1 = (Ap_northeast_1)theEObject;
 				T result = caseAp_northeast_1(ap_northeast_1);
 				if (result == null) result = caseAsiapacific(ap_northeast_1);
-				if (result == null) result = caseRegion(ap_northeast_1);
 				if (result == null) result = caseMixinBase(ap_northeast_1);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			default: return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Awsregion</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Awsregion</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAwsregion(Awsregion object) {
+		return null;
 	}
 
 	/**
@@ -445,6 +456,36 @@ public class AwsregionsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAp_northeast_1(Ap_northeast_1 object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Entity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Entity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEntity(Entity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Resource</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Resource</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseResource(Resource object) {
 		return null;
 	}
 

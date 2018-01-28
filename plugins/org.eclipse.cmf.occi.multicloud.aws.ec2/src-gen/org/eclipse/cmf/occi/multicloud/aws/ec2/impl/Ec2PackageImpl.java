@@ -1391,15 +1391,6 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAwsaccount_RegionId() {
-		return (EAttribute)awsaccountEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getSecuritygroup() {
 		return securitygroupEClass;
 	}
@@ -6391,7 +6382,6 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 		createEOperation(instanceec2EClass, INSTANCEEC2___TERMINATE);
 
 		awsaccountEClass = createEClass(AWSACCOUNT);
-		createEAttribute(awsaccountEClass, AWSACCOUNT__REGION_ID);
 
 		securitygroupEClass = createEClass(SECURITYGROUP);
 		createEAttribute(securitygroupEClass, SECURITYGROUP__SECURITY_GROUP_NAME);
@@ -7359,7 +7349,6 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 		initEOperation(getInstanceec2__Terminate(), null, "terminate", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(awsaccountEClass, Awsaccount.class, "Awsaccount", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAwsaccount_RegionId(), theOCCIPackage.getString(), "regionId", "eu-west-3", 1, 1, Awsaccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(securitygroupEClass, Securitygroup.class, "Securitygroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSecuritygroup_SecurityGroupName(), theOCCIPackage.getString(), "securityGroupName", null, 1, 1, Securitygroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -8115,6 +8104,390 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 			 "constraints", "appliesConstraint"
 		   });	
 		addAnnotation
+		  (t2_nanoEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (t2_microEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (t2_smallEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (t2_mediumEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (t2_largeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (t2_xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (t2_2xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (m5_largeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (m5_xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (m5_2xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (m5_4xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (m5_12xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (m5_24xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (m4_largeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (m4_xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (m4_2xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (m4_10xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (m4_16xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (m3_mediumEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (m3_largeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (m3_xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (m3_2xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (c5_largeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (c5_xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (c5_2xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (c5_4xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (c5_9xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (c5_18xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (c4_largeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (c4_xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (c4_2xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (c4_4xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (c4_8xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (c3_largeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (c3_xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (c3_2xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (c3_4xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (c3_8xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (x1e_xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (x1e_2xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (x1e_4xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (x1e_8xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (x1e_16xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (x1e_32xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (x1_16xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (x1_32xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (r4_largeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (r4_xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (r4_2xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (r4_4xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (r4_8xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (r4_16xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (r3_largeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (r3_xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (r3_2xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (r3_4xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (r3_8xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (p3_2xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (p3_8xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (p3_16xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (p2_xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (p2_8xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (p2_16xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (generalpurposeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
 		  (computeoptimizedEClass, 
 		   source, 
 		   new String[] {
@@ -8134,6 +8507,246 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 		   });	
 		addAnnotation
 		  (storageoptimizedEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (g3_4xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (g3_8xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (g3_16xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (f1_2xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (f1_16xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (h1_2xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (h1_4xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (h1_8xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (h1_16xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (i3_largeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (i3_xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (i3_2xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (i3_4xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (i3_8xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (i3_16xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (i3_metalEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (d2_xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (d2_2xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (d2_4xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (d2_8xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (m1_smallEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (t1_microEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (m1_mediumEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (m1_largeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (m1_xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (c1_mediumEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (c1_xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (cc2_8xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (g2_2xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (g2_8xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (cg1_4xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (m2_xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (m2_2xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (m2_4xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (cr1_8xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (i2_xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (i2_2xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (i2_4xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (i2_8xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (hs1_8xlargeEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "appliesConstraint"
@@ -8226,6 +8839,390 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Awsaccount)"
 		   });	
 		addAnnotation
+		  (t2_nanoEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (t2_microEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (t2_smallEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (t2_mediumEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (t2_largeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (t2_xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (t2_2xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (m5_largeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (m5_xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (m5_2xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (m5_4xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (m5_12xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (m5_24xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (m4_largeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (m4_xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (m4_2xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (m4_10xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (m4_16xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (m3_mediumEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (m3_largeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (m3_xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (m3_2xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (c5_largeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (c5_xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (c5_2xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (c5_4xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (c5_9xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (c5_18xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (c4_largeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (c4_xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (c4_2xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (c4_4xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (c4_8xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (c3_largeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (c3_xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (c3_2xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (c3_4xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (c3_8xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (x1e_xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (x1e_2xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (x1e_4xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (x1e_8xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (x1e_16xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (x1e_32xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (x1_16xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (x1_32xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (r4_largeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (r4_xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (r4_2xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (r4_4xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (r4_8xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (r4_16xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (r3_largeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (r3_xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (r3_2xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (r3_4xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (r3_8xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (p3_2xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (p3_8xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (p3_16xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (p2_xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (p2_8xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (p2_16xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (generalpurposeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
 		  (computeoptimizedEClass, 
 		   source, 
 		   new String[] {
@@ -8245,6 +9242,246 @@ public class Ec2PackageImpl extends EPackageImpl implements Ec2Package {
 		   });	
 		addAnnotation
 		  (storageoptimizedEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (g3_4xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (g3_8xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (g3_16xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (f1_2xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (f1_16xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (h1_2xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (h1_4xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (h1_8xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (h1_16xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (i3_largeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (i3_xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (i3_2xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (i3_4xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (i3_8xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (i3_16xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (i3_metalEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (d2_xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (d2_2xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (d2_4xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (d2_8xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (m1_smallEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (t1_microEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (m1_mediumEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (m1_largeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (m1_xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (c1_mediumEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (c1_xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (cc2_8xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (g2_2xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (g2_8xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (cg1_4xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (m2_xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (m2_2xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (m2_4xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (cr1_8xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (i2_xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (i2_2xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (i2_4xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (i2_8xlargeEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"
+		   });	
+		addAnnotation
+		  (hs1_8xlargeEClass, 
 		   source, 
 		   new String[] {
 			 "appliesConstraint", "self.entity.oclIsKindOf(ec2::Instanceec2)"

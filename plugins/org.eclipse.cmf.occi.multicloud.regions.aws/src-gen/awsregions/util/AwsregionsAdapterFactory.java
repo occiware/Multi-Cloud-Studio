@@ -14,8 +14,10 @@ package awsregions.util;
 
 import awsregions.*;
 
+import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.core.MixinBase;
 
+import org.eclipse.cmf.occi.core.Resource;
 import org.eclipse.cmf.occi.multicloud.regions.Asiapacific;
 import org.eclipse.cmf.occi.multicloud.regions.Europe;
 import org.eclipse.cmf.occi.multicloud.regions.Northamerica;
@@ -86,6 +88,10 @@ public class AwsregionsAdapterFactory extends AdapterFactoryImpl {
 	protected AwsregionsSwitch<Adapter> modelSwitch =
 		new AwsregionsSwitch<Adapter>() {
 			@Override
+			public Adapter caseAwsregion(Awsregion object) {
+				return createAwsregionAdapter();
+			}
+			@Override
 			public Adapter caseUs_east_2(Us_east_2 object) {
 				return createUs_east_2Adapter();
 			}
@@ -146,12 +152,20 @@ public class AwsregionsAdapterFactory extends AdapterFactoryImpl {
 				return createAp_northeast_1Adapter();
 			}
 			@Override
-			public Adapter caseMixinBase(MixinBase object) {
-				return createMixinBaseAdapter();
+			public Adapter caseEntity(Entity object) {
+				return createEntityAdapter();
+			}
+			@Override
+			public Adapter caseResource(Resource object) {
+				return createResourceAdapter();
 			}
 			@Override
 			public Adapter caseRegion(Region object) {
 				return createRegionAdapter();
+			}
+			@Override
+			public Adapter caseMixinBase(MixinBase object) {
+				return createMixinBaseAdapter();
 			}
 			@Override
 			public Adapter caseNorthamerica(Northamerica object) {
@@ -188,6 +202,20 @@ public class AwsregionsAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
+
+	/**
+	 * Creates a new adapter for an object of class '{@link awsregions.Awsregion <em>Awsregion</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see awsregions.Awsregion
+	 * @generated
+	 */
+	public Adapter createAwsregionAdapter() {
+		return null;
+	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link awsregions.Us_east_2 <em>Us east 2</em>}'.
@@ -396,6 +424,34 @@ public class AwsregionsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAp_northeast_1Adapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.Entity <em>Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.core.Entity
+	 * @generated
+	 */
+	public Adapter createEntityAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.Resource <em>Resource</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.core.Resource
+	 * @generated
+	 */
+	public Adapter createResourceAdapter() {
 		return null;
 	}
 

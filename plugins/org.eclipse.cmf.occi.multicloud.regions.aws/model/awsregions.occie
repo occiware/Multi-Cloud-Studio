@@ -2,7 +2,10 @@
 <occi:Extension xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:occi="http://schemas.ogf.org/occi/core/ecore" name="awsregions" scheme="http://occiware.org/occi/infrastructure/locations/aws#">
   <import href="http://schemas.ogf.org/occi/core#/"/>
   <import href="http://occiware.org/occi/infrastructure/locations#/"/>
-  <mixins name="us_east_2" scheme="http://occiware.org/occi/infrastructure/locations/aws#">
+  <kinds name="AWSRegion" scheme="http://occiware.org/occi/infrastructure/locations/aws#">
+    <parent href="http://occiware.org/occi/infrastructure/locations#//@kinds[term='region']"/>
+  </kinds>
+  <mixins name="us_east_2" scheme="http://occiware.org/occi/infrastructure/locations/aws#" applies="//@kinds[term='awsregion']">
     <attributes name="regionName" mutable="true" default="US East (Ohio)" description="Region name give an intelligible name on this region">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
@@ -17,7 +20,7 @@
     </attributes>
     <depends href="http://occiware.org/occi/infrastructure/locations#//@mixins[term='northamerica']"/>
   </mixins>
-  <mixins name="us_east_1" scheme="http://occiware.org/occi/infrastructure/locations/aws#">
+  <mixins name="us_east_1" scheme="http://occiware.org/occi/infrastructure/locations/aws#" applies="//@kinds[term='awsregion']">
     <attributes name="regionName" mutable="true" default="US East (N. Virginia)" description="Region name give an intelligible name on this region">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
@@ -32,7 +35,7 @@
     </attributes>
     <depends href="http://occiware.org/occi/infrastructure/locations#//@mixins[term='northamerica']"/>
   </mixins>
-  <mixins name="eu_west_3" scheme="http://occiware.org/occi/infrastructure/locations/aws#">
+  <mixins name="eu_west_3" scheme="http://occiware.org/occi/infrastructure/locations/aws#" applies="//@kinds[term='awsregion']">
     <attributes name="regionName" mutable="true" default="EU (Paris)" description="Region name give an intelligible name on this region">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
@@ -47,7 +50,7 @@
     </attributes>
     <depends href="http://occiware.org/occi/infrastructure/locations#//@mixins[term='europe']"/>
   </mixins>
-  <mixins name="us_west_1" scheme="http://occiware.org/occi/infrastructure/locations/aws#">
+  <mixins name="us_west_1" scheme="http://occiware.org/occi/infrastructure/locations/aws#" applies="//@kinds[term='awsregion']">
     <attributes name="regionName" mutable="true" default="US West (N. California)" description="Region name give an intelligible name on this region">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
@@ -62,7 +65,7 @@
     </attributes>
     <depends href="http://occiware.org/occi/infrastructure/locations#//@mixins[term='northamerica']"/>
   </mixins>
-  <mixins name="eu_west_1" scheme="http://occiware.org/occi/infrastructure/locations/aws#">
+  <mixins name="eu_west_1" scheme="http://occiware.org/occi/infrastructure/locations/aws#" applies="//@kinds[term='awsregion']">
     <attributes name="regionName" mutable="true" default="EU (Ireland)" description="Region name give an intelligible name on this region">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
@@ -77,7 +80,7 @@
     </attributes>
     <depends href="http://occiware.org/occi/infrastructure/locations#//@mixins[term='europe']"/>
   </mixins>
-  <mixins name="ap_south_1" scheme="http://occiware.org/occi/infrastructure/locations/aws#">
+  <mixins name="ap_south_1" scheme="http://occiware.org/occi/infrastructure/locations/aws#" applies="//@kinds[term='awsregion']">
     <attributes name="country" mutable="true" default="India" description="the country where this resource or link is available">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
@@ -92,7 +95,7 @@
     </attributes>
     <depends href="http://occiware.org/occi/infrastructure/locations#//@mixins[term='asiapacific']"/>
   </mixins>
-  <mixins name="sa_east_1" scheme="http://occiware.org/occi/infrastructure/locations/aws#">
+  <mixins name="sa_east_1" scheme="http://occiware.org/occi/infrastructure/locations/aws#" applies="//@kinds[term='awsregion']">
     <attributes name="country" mutable="true" default="Brazil" description="the country where this resource or link is available">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
@@ -107,7 +110,7 @@
     </attributes>
     <depends href="http://occiware.org/occi/infrastructure/locations#//@mixins[term='southamerica']"/>
   </mixins>
-  <mixins name="us_west_2" scheme="http://occiware.org/occi/infrastructure/locations/aws#">
+  <mixins name="us_west_2" scheme="http://occiware.org/occi/infrastructure/locations/aws#" applies="//@kinds[term='awsregion']">
     <attributes name="regionName" mutable="true" default="US West (Oregon)" description="Region name give an intelligible name on this region">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
@@ -122,7 +125,7 @@
     </attributes>
     <depends href="http://occiware.org/occi/infrastructure/locations#//@mixins[term='northamerica']"/>
   </mixins>
-  <mixins name="eu_west_2" scheme="http://occiware.org/occi/infrastructure/locations/aws#">
+  <mixins name="eu_west_2" scheme="http://occiware.org/occi/infrastructure/locations/aws#" applies="//@kinds[term='awsregion']">
     <attributes name="regionName" mutable="true" default="EU (London)" description="Region name give an intelligible name on this region">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
@@ -137,7 +140,7 @@
     </attributes>
     <depends href="http://occiware.org/occi/infrastructure/locations#//@mixins[term='europe']"/>
   </mixins>
-  <mixins name="ap_southeast_1" scheme="http://occiware.org/occi/infrastructure/locations/aws#">
+  <mixins name="ap_southeast_1" scheme="http://occiware.org/occi/infrastructure/locations/aws#" applies="//@kinds[term='awsregion']">
     <attributes name="country" mutable="true" default="Singapore" description="the country where this resource or link is available">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
@@ -152,7 +155,7 @@
     </attributes>
     <depends href="http://occiware.org/occi/infrastructure/locations#//@mixins[term='asiapacific']"/>
   </mixins>
-  <mixins name="ca_central_1" scheme="http://occiware.org/occi/infrastructure/locations/aws#">
+  <mixins name="ca_central_1" scheme="http://occiware.org/occi/infrastructure/locations/aws#" applies="//@kinds[term='awsregion']">
     <attributes name="regionName" mutable="true" default="Canada (Central)" description="Region name give an intelligible name on this region">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
@@ -167,7 +170,7 @@
     </attributes>
     <depends href="http://occiware.org/occi/infrastructure/locations#//@mixins[term='northamerica']"/>
   </mixins>
-  <mixins name="ap_northeast_2" scheme="http://occiware.org/occi/infrastructure/locations/aws#">
+  <mixins name="ap_northeast_2" scheme="http://occiware.org/occi/infrastructure/locations/aws#" applies="//@kinds[term='awsregion']">
     <attributes name="country" mutable="true" default="South Korea" description="the country where this resource or link is available">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
@@ -182,7 +185,7 @@
     </attributes>
     <depends href="http://occiware.org/occi/infrastructure/locations#//@mixins[term='asiapacific']"/>
   </mixins>
-  <mixins name="ap_south_east2" scheme="http://occiware.org/occi/infrastructure/locations/aws#">
+  <mixins name="ap_south_east2" scheme="http://occiware.org/occi/infrastructure/locations/aws#" applies="//@kinds[term='awsregion']">
     <attributes name="country" mutable="true" default="Australia" description="the country where this resource or link is available">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
@@ -197,7 +200,7 @@
     </attributes>
     <depends href="http://occiware.org/occi/infrastructure/locations#//@mixins[term='asiapacific']"/>
   </mixins>
-  <mixins name="eu_central_1" scheme="http://occiware.org/occi/infrastructure/locations/aws#">
+  <mixins name="eu_central_1" scheme="http://occiware.org/occi/infrastructure/locations/aws#" applies="//@kinds[term='awsregion']">
     <attributes name="country" mutable="true" default="Germany" description="the country where this resource or link is available">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
@@ -212,7 +215,7 @@
     </attributes>
     <depends href="http://occiware.org/occi/infrastructure/locations#//@mixins[term='europe']"/>
   </mixins>
-  <mixins name="ap_northeast_1" scheme="http://occiware.org/occi/infrastructure/locations/aws#">
+  <mixins name="ap_northeast_1" scheme="http://occiware.org/occi/infrastructure/locations/aws#" applies="//@kinds[term='awsregion']">
     <attributes name="country" mutable="true" default="Japan" description="the country where this resource or link is available">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>

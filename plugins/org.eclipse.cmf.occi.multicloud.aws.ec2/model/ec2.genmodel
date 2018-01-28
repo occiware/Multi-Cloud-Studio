@@ -170,9 +170,6 @@
     </genClasses>
     <genClasses>
       <ecoreClass href="ec2.ecore#//Awsaccount"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="ec2.ecore#//Awsaccount/regionId"/>
-      </genFeatures>
     </genClasses>
     <genClasses>
       <ecoreClass href="ec2.ecore#//Securitygroup"/>

@@ -833,8 +833,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(t2_nano, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(t2_nano, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(t2_nano, diagnostics, context);
-		if (result || diagnostics != null) result &= infrastructureValidator.validateResource_tpl_appliesConstraint(t2_nano, diagnostics, context);
+		if (result || diagnostics != null) result &= validateT2_nano_appliesConstraint(t2_nano, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>T2 nano</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String T2_NANO__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>T2 nano</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateT2_nano_appliesConstraint(T2_nano t2_nano, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(t2_nano, context) },
+						 new Object[] { t2_nano },
+						 context));
+			}
+			return false;
+		}
+		return validateGeneralpurpose_appliesConstraint(t2_nano, diagnostics, context);
 	}
 
 	/**
@@ -852,8 +889,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(t2_micro, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(t2_micro, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(t2_micro, diagnostics, context);
-		if (result || diagnostics != null) result &= infrastructureValidator.validateResource_tpl_appliesConstraint(t2_micro, diagnostics, context);
+		if (result || diagnostics != null) result &= validateT2_micro_appliesConstraint(t2_micro, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>T2 micro</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String T2_MICRO__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>T2 micro</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateT2_micro_appliesConstraint(T2_micro t2_micro, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(t2_micro, context) },
+						 new Object[] { t2_micro },
+						 context));
+			}
+			return false;
+		}
+		return validateGeneralpurpose_appliesConstraint(t2_micro, diagnostics, context);
 	}
 
 	/**
@@ -871,8 +945,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(t2_small, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(t2_small, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(t2_small, diagnostics, context);
-		if (result || diagnostics != null) result &= infrastructureValidator.validateResource_tpl_appliesConstraint(t2_small, diagnostics, context);
+		if (result || diagnostics != null) result &= validateT2_small_appliesConstraint(t2_small, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>T2 small</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String T2_SMALL__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>T2 small</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateT2_small_appliesConstraint(T2_small t2_small, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(t2_small, context) },
+						 new Object[] { t2_small },
+						 context));
+			}
+			return false;
+		}
+		return validateGeneralpurpose_appliesConstraint(t2_small, diagnostics, context);
 	}
 
 	/**
@@ -890,8 +1001,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(t2_medium, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(t2_medium, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(t2_medium, diagnostics, context);
-		if (result || diagnostics != null) result &= infrastructureValidator.validateResource_tpl_appliesConstraint(t2_medium, diagnostics, context);
+		if (result || diagnostics != null) result &= validateT2_medium_appliesConstraint(t2_medium, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>T2 medium</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String T2_MEDIUM__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>T2 medium</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateT2_medium_appliesConstraint(T2_medium t2_medium, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(t2_medium, context) },
+						 new Object[] { t2_medium },
+						 context));
+			}
+			return false;
+		}
+		return validateGeneralpurpose_appliesConstraint(t2_medium, diagnostics, context);
 	}
 
 	/**
@@ -909,8 +1057,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(t2_large, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(t2_large, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(t2_large, diagnostics, context);
-		if (result || diagnostics != null) result &= infrastructureValidator.validateResource_tpl_appliesConstraint(t2_large, diagnostics, context);
+		if (result || diagnostics != null) result &= validateT2_large_appliesConstraint(t2_large, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>T2 large</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String T2_LARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>T2 large</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateT2_large_appliesConstraint(T2_large t2_large, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(t2_large, context) },
+						 new Object[] { t2_large },
+						 context));
+			}
+			return false;
+		}
+		return validateGeneralpurpose_appliesConstraint(t2_large, diagnostics, context);
 	}
 
 	/**
@@ -928,8 +1113,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(t2_xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(t2_xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(t2_xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= infrastructureValidator.validateResource_tpl_appliesConstraint(t2_xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateT2_xlarge_appliesConstraint(t2_xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>T2 xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String T2_XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>T2 xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateT2_xlarge_appliesConstraint(T2_xlarge t2_xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(t2_xlarge, context) },
+						 new Object[] { t2_xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateGeneralpurpose_appliesConstraint(t2_xlarge, diagnostics, context);
 	}
 
 	/**
@@ -947,8 +1169,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(t2_2xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(t2_2xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(t2_2xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= infrastructureValidator.validateResource_tpl_appliesConstraint(t2_2xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateT2_2xlarge_appliesConstraint(t2_2xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>T2 2xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String T2_2XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>T2 2xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateT2_2xlarge_appliesConstraint(T2_2xlarge t2_2xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(t2_2xlarge, context) },
+						 new Object[] { t2_2xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateGeneralpurpose_appliesConstraint(t2_2xlarge, diagnostics, context);
 	}
 
 	/**
@@ -966,8 +1225,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(m5_large, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(m5_large, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(m5_large, diagnostics, context);
-		if (result || diagnostics != null) result &= infrastructureValidator.validateResource_tpl_appliesConstraint(m5_large, diagnostics, context);
+		if (result || diagnostics != null) result &= validateM5_large_appliesConstraint(m5_large, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>M5 large</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String M5_LARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>M5 large</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateM5_large_appliesConstraint(M5_large m5_large, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(m5_large, context) },
+						 new Object[] { m5_large },
+						 context));
+			}
+			return false;
+		}
+		return validateGeneralpurpose_appliesConstraint(m5_large, diagnostics, context);
 	}
 
 	/**
@@ -985,8 +1281,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(m5_xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(m5_xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(m5_xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= infrastructureValidator.validateResource_tpl_appliesConstraint(m5_xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateM5_xlarge_appliesConstraint(m5_xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>M5 xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String M5_XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>M5 xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateM5_xlarge_appliesConstraint(M5_xlarge m5_xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(m5_xlarge, context) },
+						 new Object[] { m5_xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateGeneralpurpose_appliesConstraint(m5_xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1004,8 +1337,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(m5_2xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(m5_2xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(m5_2xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= infrastructureValidator.validateResource_tpl_appliesConstraint(m5_2xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateM5_2xlarge_appliesConstraint(m5_2xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>M5 2xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String M5_2XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>M5 2xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateM5_2xlarge_appliesConstraint(M5_2xlarge m5_2xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(m5_2xlarge, context) },
+						 new Object[] { m5_2xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateGeneralpurpose_appliesConstraint(m5_2xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1023,8 +1393,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(m5_4xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(m5_4xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(m5_4xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= infrastructureValidator.validateResource_tpl_appliesConstraint(m5_4xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateM5_4xlarge_appliesConstraint(m5_4xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>M5 4xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String M5_4XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>M5 4xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateM5_4xlarge_appliesConstraint(M5_4xlarge m5_4xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(m5_4xlarge, context) },
+						 new Object[] { m5_4xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateGeneralpurpose_appliesConstraint(m5_4xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1042,8 +1449,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(m5_12xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(m5_12xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(m5_12xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= infrastructureValidator.validateResource_tpl_appliesConstraint(m5_12xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateM5_12xlarge_appliesConstraint(m5_12xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>M5 12xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String M5_12XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>M5 12xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateM5_12xlarge_appliesConstraint(M5_12xlarge m5_12xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(m5_12xlarge, context) },
+						 new Object[] { m5_12xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateGeneralpurpose_appliesConstraint(m5_12xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1061,8 +1505,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(m5_24xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(m5_24xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(m5_24xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= infrastructureValidator.validateResource_tpl_appliesConstraint(m5_24xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateM5_24xlarge_appliesConstraint(m5_24xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>M5 24xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String M5_24XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>M5 24xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateM5_24xlarge_appliesConstraint(M5_24xlarge m5_24xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(m5_24xlarge, context) },
+						 new Object[] { m5_24xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateGeneralpurpose_appliesConstraint(m5_24xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1080,8 +1561,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(m4_large, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(m4_large, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(m4_large, diagnostics, context);
-		if (result || diagnostics != null) result &= infrastructureValidator.validateResource_tpl_appliesConstraint(m4_large, diagnostics, context);
+		if (result || diagnostics != null) result &= validateM4_large_appliesConstraint(m4_large, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>M4 large</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String M4_LARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>M4 large</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateM4_large_appliesConstraint(M4_large m4_large, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(m4_large, context) },
+						 new Object[] { m4_large },
+						 context));
+			}
+			return false;
+		}
+		return validateGeneralpurpose_appliesConstraint(m4_large, diagnostics, context);
 	}
 
 	/**
@@ -1099,8 +1617,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(m4_xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(m4_xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(m4_xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= infrastructureValidator.validateResource_tpl_appliesConstraint(m4_xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateM4_xlarge_appliesConstraint(m4_xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>M4 xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String M4_XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>M4 xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateM4_xlarge_appliesConstraint(M4_xlarge m4_xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(m4_xlarge, context) },
+						 new Object[] { m4_xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateGeneralpurpose_appliesConstraint(m4_xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1118,8 +1673,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(m4_2xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(m4_2xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(m4_2xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= infrastructureValidator.validateResource_tpl_appliesConstraint(m4_2xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateM4_2xlarge_appliesConstraint(m4_2xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>M4 2xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String M4_2XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>M4 2xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateM4_2xlarge_appliesConstraint(M4_2xlarge m4_2xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(m4_2xlarge, context) },
+						 new Object[] { m4_2xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateGeneralpurpose_appliesConstraint(m4_2xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1137,8 +1729,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(m4_10xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(m4_10xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(m4_10xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= infrastructureValidator.validateResource_tpl_appliesConstraint(m4_10xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateM4_10xlarge_appliesConstraint(m4_10xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>M4 10xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String M4_10XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>M4 10xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateM4_10xlarge_appliesConstraint(M4_10xlarge m4_10xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(m4_10xlarge, context) },
+						 new Object[] { m4_10xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateGeneralpurpose_appliesConstraint(m4_10xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1156,8 +1785,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(m4_16xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(m4_16xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(m4_16xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= infrastructureValidator.validateResource_tpl_appliesConstraint(m4_16xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateM4_16xlarge_appliesConstraint(m4_16xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>M4 16xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String M4_16XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>M4 16xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateM4_16xlarge_appliesConstraint(M4_16xlarge m4_16xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(m4_16xlarge, context) },
+						 new Object[] { m4_16xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateGeneralpurpose_appliesConstraint(m4_16xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1175,8 +1841,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(m3_medium, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(m3_medium, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(m3_medium, diagnostics, context);
-		if (result || diagnostics != null) result &= infrastructureValidator.validateResource_tpl_appliesConstraint(m3_medium, diagnostics, context);
+		if (result || diagnostics != null) result &= validateM3_medium_appliesConstraint(m3_medium, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>M3 medium</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String M3_MEDIUM__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>M3 medium</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateM3_medium_appliesConstraint(M3_medium m3_medium, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(m3_medium, context) },
+						 new Object[] { m3_medium },
+						 context));
+			}
+			return false;
+		}
+		return validateGeneralpurpose_appliesConstraint(m3_medium, diagnostics, context);
 	}
 
 	/**
@@ -1194,8 +1897,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(m3_large, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(m3_large, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(m3_large, diagnostics, context);
-		if (result || diagnostics != null) result &= infrastructureValidator.validateResource_tpl_appliesConstraint(m3_large, diagnostics, context);
+		if (result || diagnostics != null) result &= validateM3_large_appliesConstraint(m3_large, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>M3 large</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String M3_LARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>M3 large</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateM3_large_appliesConstraint(M3_large m3_large, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(m3_large, context) },
+						 new Object[] { m3_large },
+						 context));
+			}
+			return false;
+		}
+		return validateGeneralpurpose_appliesConstraint(m3_large, diagnostics, context);
 	}
 
 	/**
@@ -1213,8 +1953,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(m3_xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(m3_xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(m3_xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= infrastructureValidator.validateResource_tpl_appliesConstraint(m3_xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateM3_xlarge_appliesConstraint(m3_xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>M3 xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String M3_XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>M3 xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateM3_xlarge_appliesConstraint(M3_xlarge m3_xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(m3_xlarge, context) },
+						 new Object[] { m3_xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateGeneralpurpose_appliesConstraint(m3_xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1232,8 +2009,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(m3_2xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(m3_2xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(m3_2xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= infrastructureValidator.validateResource_tpl_appliesConstraint(m3_2xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateM3_2xlarge_appliesConstraint(m3_2xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>M3 2xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String M3_2XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>M3 2xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateM3_2xlarge_appliesConstraint(M3_2xlarge m3_2xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(m3_2xlarge, context) },
+						 new Object[] { m3_2xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateGeneralpurpose_appliesConstraint(m3_2xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1251,8 +2065,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(c5_large, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(c5_large, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(c5_large, diagnostics, context);
-		if (result || diagnostics != null) result &= validateComputeoptimized_appliesConstraint(c5_large, diagnostics, context);
+		if (result || diagnostics != null) result &= validateC5_large_appliesConstraint(c5_large, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>C5 large</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String C5_LARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>C5 large</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateC5_large_appliesConstraint(C5_large c5_large, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(c5_large, context) },
+						 new Object[] { c5_large },
+						 context));
+			}
+			return false;
+		}
+		return validateComputeoptimized_appliesConstraint(c5_large, diagnostics, context);
 	}
 
 	/**
@@ -1270,8 +2121,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(c5_xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(c5_xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(c5_xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateComputeoptimized_appliesConstraint(c5_xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateC5_xlarge_appliesConstraint(c5_xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>C5 xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String C5_XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>C5 xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateC5_xlarge_appliesConstraint(C5_xlarge c5_xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(c5_xlarge, context) },
+						 new Object[] { c5_xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateComputeoptimized_appliesConstraint(c5_xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1289,8 +2177,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(c5_2xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(c5_2xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(c5_2xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateComputeoptimized_appliesConstraint(c5_2xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateC5_2xlarge_appliesConstraint(c5_2xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>C5 2xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String C5_2XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>C5 2xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateC5_2xlarge_appliesConstraint(C5_2xlarge c5_2xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(c5_2xlarge, context) },
+						 new Object[] { c5_2xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateComputeoptimized_appliesConstraint(c5_2xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1308,8 +2233,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(c5_4xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(c5_4xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(c5_4xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateComputeoptimized_appliesConstraint(c5_4xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateC5_4xlarge_appliesConstraint(c5_4xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>C5 4xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String C5_4XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>C5 4xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateC5_4xlarge_appliesConstraint(C5_4xlarge c5_4xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(c5_4xlarge, context) },
+						 new Object[] { c5_4xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateComputeoptimized_appliesConstraint(c5_4xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1327,8 +2289,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(c5_9xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(c5_9xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(c5_9xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateComputeoptimized_appliesConstraint(c5_9xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateC5_9xlarge_appliesConstraint(c5_9xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>C5 9xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String C5_9XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>C5 9xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateC5_9xlarge_appliesConstraint(C5_9xlarge c5_9xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(c5_9xlarge, context) },
+						 new Object[] { c5_9xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateComputeoptimized_appliesConstraint(c5_9xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1346,8 +2345,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(c5_18xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(c5_18xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(c5_18xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateComputeoptimized_appliesConstraint(c5_18xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateC5_18xlarge_appliesConstraint(c5_18xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>C5 18xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String C5_18XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>C5 18xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateC5_18xlarge_appliesConstraint(C5_18xlarge c5_18xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(c5_18xlarge, context) },
+						 new Object[] { c5_18xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateComputeoptimized_appliesConstraint(c5_18xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1365,8 +2401,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(c4_large, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(c4_large, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(c4_large, diagnostics, context);
-		if (result || diagnostics != null) result &= validateComputeoptimized_appliesConstraint(c4_large, diagnostics, context);
+		if (result || diagnostics != null) result &= validateC4_large_appliesConstraint(c4_large, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>C4 large</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String C4_LARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>C4 large</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateC4_large_appliesConstraint(C4_large c4_large, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(c4_large, context) },
+						 new Object[] { c4_large },
+						 context));
+			}
+			return false;
+		}
+		return validateComputeoptimized_appliesConstraint(c4_large, diagnostics, context);
 	}
 
 	/**
@@ -1384,8 +2457,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(c4_xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(c4_xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(c4_xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateComputeoptimized_appliesConstraint(c4_xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateC4_xlarge_appliesConstraint(c4_xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>C4 xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String C4_XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>C4 xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateC4_xlarge_appliesConstraint(C4_xlarge c4_xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(c4_xlarge, context) },
+						 new Object[] { c4_xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateComputeoptimized_appliesConstraint(c4_xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1403,8 +2513,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(c4_2xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(c4_2xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(c4_2xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateComputeoptimized_appliesConstraint(c4_2xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateC4_2xlarge_appliesConstraint(c4_2xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>C4 2xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String C4_2XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>C4 2xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateC4_2xlarge_appliesConstraint(C4_2xlarge c4_2xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(c4_2xlarge, context) },
+						 new Object[] { c4_2xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateComputeoptimized_appliesConstraint(c4_2xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1422,8 +2569,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(c4_4xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(c4_4xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(c4_4xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateComputeoptimized_appliesConstraint(c4_4xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateC4_4xlarge_appliesConstraint(c4_4xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>C4 4xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String C4_4XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>C4 4xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateC4_4xlarge_appliesConstraint(C4_4xlarge c4_4xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(c4_4xlarge, context) },
+						 new Object[] { c4_4xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateComputeoptimized_appliesConstraint(c4_4xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1441,8 +2625,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(c4_8xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(c4_8xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(c4_8xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateComputeoptimized_appliesConstraint(c4_8xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateC4_8xlarge_appliesConstraint(c4_8xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>C4 8xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String C4_8XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>C4 8xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateC4_8xlarge_appliesConstraint(C4_8xlarge c4_8xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(c4_8xlarge, context) },
+						 new Object[] { c4_8xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateComputeoptimized_appliesConstraint(c4_8xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1460,8 +2681,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(c3_large, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(c3_large, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(c3_large, diagnostics, context);
-		if (result || diagnostics != null) result &= validateComputeoptimized_appliesConstraint(c3_large, diagnostics, context);
+		if (result || diagnostics != null) result &= validateC3_large_appliesConstraint(c3_large, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>C3 large</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String C3_LARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>C3 large</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateC3_large_appliesConstraint(C3_large c3_large, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(c3_large, context) },
+						 new Object[] { c3_large },
+						 context));
+			}
+			return false;
+		}
+		return validateComputeoptimized_appliesConstraint(c3_large, diagnostics, context);
 	}
 
 	/**
@@ -1479,8 +2737,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(c3_xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(c3_xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(c3_xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateComputeoptimized_appliesConstraint(c3_xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateC3_xlarge_appliesConstraint(c3_xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>C3 xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String C3_XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>C3 xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateC3_xlarge_appliesConstraint(C3_xlarge c3_xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(c3_xlarge, context) },
+						 new Object[] { c3_xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateComputeoptimized_appliesConstraint(c3_xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1498,8 +2793,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(c3_2xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(c3_2xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(c3_2xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateComputeoptimized_appliesConstraint(c3_2xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateC3_2xlarge_appliesConstraint(c3_2xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>C3 2xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String C3_2XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>C3 2xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateC3_2xlarge_appliesConstraint(C3_2xlarge c3_2xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(c3_2xlarge, context) },
+						 new Object[] { c3_2xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateComputeoptimized_appliesConstraint(c3_2xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1517,8 +2849,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(c3_4xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(c3_4xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(c3_4xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateComputeoptimized_appliesConstraint(c3_4xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateC3_4xlarge_appliesConstraint(c3_4xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>C3 4xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String C3_4XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>C3 4xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateC3_4xlarge_appliesConstraint(C3_4xlarge c3_4xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(c3_4xlarge, context) },
+						 new Object[] { c3_4xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateComputeoptimized_appliesConstraint(c3_4xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1536,8 +2905,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(c3_8xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(c3_8xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(c3_8xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateComputeoptimized_appliesConstraint(c3_8xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateC3_8xlarge_appliesConstraint(c3_8xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>C3 8xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String C3_8XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>C3 8xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateC3_8xlarge_appliesConstraint(C3_8xlarge c3_8xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(c3_8xlarge, context) },
+						 new Object[] { c3_8xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateComputeoptimized_appliesConstraint(c3_8xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1555,8 +2961,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(x1e_xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(x1e_xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(x1e_xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMemoryoptimized_appliesConstraint(x1e_xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateX1e_xlarge_appliesConstraint(x1e_xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>X1e xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String X1E_XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>X1e xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateX1e_xlarge_appliesConstraint(X1e_xlarge x1e_xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(x1e_xlarge, context) },
+						 new Object[] { x1e_xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateMemoryoptimized_appliesConstraint(x1e_xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1574,8 +3017,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(x1e_2xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(x1e_2xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(x1e_2xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMemoryoptimized_appliesConstraint(x1e_2xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateX1e_2xlarge_appliesConstraint(x1e_2xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>X1e 2xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String X1E_2XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>X1e 2xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateX1e_2xlarge_appliesConstraint(X1e_2xlarge x1e_2xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(x1e_2xlarge, context) },
+						 new Object[] { x1e_2xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateMemoryoptimized_appliesConstraint(x1e_2xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1593,8 +3073,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(x1e_4xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(x1e_4xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(x1e_4xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMemoryoptimized_appliesConstraint(x1e_4xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateX1e_4xlarge_appliesConstraint(x1e_4xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>X1e 4xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String X1E_4XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>X1e 4xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateX1e_4xlarge_appliesConstraint(X1e_4xlarge x1e_4xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(x1e_4xlarge, context) },
+						 new Object[] { x1e_4xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateMemoryoptimized_appliesConstraint(x1e_4xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1612,8 +3129,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(x1e_8xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(x1e_8xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(x1e_8xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMemoryoptimized_appliesConstraint(x1e_8xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateX1e_8xlarge_appliesConstraint(x1e_8xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>X1e 8xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String X1E_8XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>X1e 8xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateX1e_8xlarge_appliesConstraint(X1e_8xlarge x1e_8xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(x1e_8xlarge, context) },
+						 new Object[] { x1e_8xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateMemoryoptimized_appliesConstraint(x1e_8xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1631,8 +3185,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(x1e_16xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(x1e_16xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(x1e_16xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMemoryoptimized_appliesConstraint(x1e_16xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateX1e_16xlarge_appliesConstraint(x1e_16xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>X1e 16xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String X1E_16XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>X1e 16xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateX1e_16xlarge_appliesConstraint(X1e_16xlarge x1e_16xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(x1e_16xlarge, context) },
+						 new Object[] { x1e_16xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateMemoryoptimized_appliesConstraint(x1e_16xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1650,8 +3241,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(x1e_32xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(x1e_32xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(x1e_32xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMemoryoptimized_appliesConstraint(x1e_32xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateX1e_32xlarge_appliesConstraint(x1e_32xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>X1e 32xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String X1E_32XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>X1e 32xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateX1e_32xlarge_appliesConstraint(X1e_32xlarge x1e_32xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(x1e_32xlarge, context) },
+						 new Object[] { x1e_32xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateMemoryoptimized_appliesConstraint(x1e_32xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1669,8 +3297,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(x1_16xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(x1_16xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(x1_16xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMemoryoptimized_appliesConstraint(x1_16xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateX1_16xlarge_appliesConstraint(x1_16xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>X1 16xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String X1_16XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>X1 16xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateX1_16xlarge_appliesConstraint(X1_16xlarge x1_16xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(x1_16xlarge, context) },
+						 new Object[] { x1_16xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateMemoryoptimized_appliesConstraint(x1_16xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1688,8 +3353,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(x1_32xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(x1_32xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(x1_32xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMemoryoptimized_appliesConstraint(x1_32xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateX1_32xlarge_appliesConstraint(x1_32xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>X1 32xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String X1_32XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>X1 32xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateX1_32xlarge_appliesConstraint(X1_32xlarge x1_32xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(x1_32xlarge, context) },
+						 new Object[] { x1_32xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateMemoryoptimized_appliesConstraint(x1_32xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1707,8 +3409,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(r4_large, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(r4_large, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(r4_large, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMemoryoptimized_appliesConstraint(r4_large, diagnostics, context);
+		if (result || diagnostics != null) result &= validateR4_large_appliesConstraint(r4_large, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>R4 large</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String R4_LARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>R4 large</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateR4_large_appliesConstraint(R4_large r4_large, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(r4_large, context) },
+						 new Object[] { r4_large },
+						 context));
+			}
+			return false;
+		}
+		return validateMemoryoptimized_appliesConstraint(r4_large, diagnostics, context);
 	}
 
 	/**
@@ -1726,8 +3465,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(r4_xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(r4_xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(r4_xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMemoryoptimized_appliesConstraint(r4_xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateR4_xlarge_appliesConstraint(r4_xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>R4 xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String R4_XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>R4 xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateR4_xlarge_appliesConstraint(R4_xlarge r4_xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(r4_xlarge, context) },
+						 new Object[] { r4_xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateMemoryoptimized_appliesConstraint(r4_xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1745,8 +3521,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(r4_2xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(r4_2xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(r4_2xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMemoryoptimized_appliesConstraint(r4_2xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateR4_2xlarge_appliesConstraint(r4_2xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>R4 2xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String R4_2XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>R4 2xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateR4_2xlarge_appliesConstraint(R4_2xlarge r4_2xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(r4_2xlarge, context) },
+						 new Object[] { r4_2xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateMemoryoptimized_appliesConstraint(r4_2xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1764,8 +3577,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(r4_4xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(r4_4xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(r4_4xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMemoryoptimized_appliesConstraint(r4_4xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateR4_4xlarge_appliesConstraint(r4_4xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>R4 4xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String R4_4XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>R4 4xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateR4_4xlarge_appliesConstraint(R4_4xlarge r4_4xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(r4_4xlarge, context) },
+						 new Object[] { r4_4xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateMemoryoptimized_appliesConstraint(r4_4xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1783,8 +3633,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(r4_8xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(r4_8xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(r4_8xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMemoryoptimized_appliesConstraint(r4_8xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateR4_8xlarge_appliesConstraint(r4_8xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>R4 8xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String R4_8XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>R4 8xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateR4_8xlarge_appliesConstraint(R4_8xlarge r4_8xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(r4_8xlarge, context) },
+						 new Object[] { r4_8xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateMemoryoptimized_appliesConstraint(r4_8xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1802,8 +3689,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(r4_16xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(r4_16xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(r4_16xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMemoryoptimized_appliesConstraint(r4_16xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateR4_16xlarge_appliesConstraint(r4_16xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>R4 16xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String R4_16XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>R4 16xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateR4_16xlarge_appliesConstraint(R4_16xlarge r4_16xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(r4_16xlarge, context) },
+						 new Object[] { r4_16xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateMemoryoptimized_appliesConstraint(r4_16xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1821,8 +3745,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(r3_large, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(r3_large, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(r3_large, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMemoryoptimized_appliesConstraint(r3_large, diagnostics, context);
+		if (result || diagnostics != null) result &= validateR3_large_appliesConstraint(r3_large, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>R3 large</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String R3_LARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>R3 large</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateR3_large_appliesConstraint(R3_large r3_large, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(r3_large, context) },
+						 new Object[] { r3_large },
+						 context));
+			}
+			return false;
+		}
+		return validateMemoryoptimized_appliesConstraint(r3_large, diagnostics, context);
 	}
 
 	/**
@@ -1840,8 +3801,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(r3_xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(r3_xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(r3_xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMemoryoptimized_appliesConstraint(r3_xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateR3_xlarge_appliesConstraint(r3_xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>R3 xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String R3_XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>R3 xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateR3_xlarge_appliesConstraint(R3_xlarge r3_xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(r3_xlarge, context) },
+						 new Object[] { r3_xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateMemoryoptimized_appliesConstraint(r3_xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1859,8 +3857,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(r3_2xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(r3_2xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(r3_2xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMemoryoptimized_appliesConstraint(r3_2xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateR3_2xlarge_appliesConstraint(r3_2xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>R3 2xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String R3_2XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>R3 2xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateR3_2xlarge_appliesConstraint(R3_2xlarge r3_2xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(r3_2xlarge, context) },
+						 new Object[] { r3_2xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateMemoryoptimized_appliesConstraint(r3_2xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1878,8 +3913,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(r3_4xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(r3_4xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(r3_4xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMemoryoptimized_appliesConstraint(r3_4xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateR3_4xlarge_appliesConstraint(r3_4xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>R3 4xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String R3_4XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>R3 4xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateR3_4xlarge_appliesConstraint(R3_4xlarge r3_4xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(r3_4xlarge, context) },
+						 new Object[] { r3_4xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateMemoryoptimized_appliesConstraint(r3_4xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1897,8 +3969,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(r3_8xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(r3_8xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(r3_8xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMemoryoptimized_appliesConstraint(r3_8xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateR3_8xlarge_appliesConstraint(r3_8xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>R3 8xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String R3_8XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>R3 8xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateR3_8xlarge_appliesConstraint(R3_8xlarge r3_8xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(r3_8xlarge, context) },
+						 new Object[] { r3_8xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateMemoryoptimized_appliesConstraint(r3_8xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1916,8 +4025,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(p3_2xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(p3_2xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(p3_2xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAcceleratedcomputing_appliesConstraint(p3_2xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateP3_2xlarge_appliesConstraint(p3_2xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>P3 2xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String P3_2XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>P3 2xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateP3_2xlarge_appliesConstraint(P3_2xlarge p3_2xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(p3_2xlarge, context) },
+						 new Object[] { p3_2xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateAcceleratedcomputing_appliesConstraint(p3_2xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1935,8 +4081,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(p3_8xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(p3_8xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(p3_8xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAcceleratedcomputing_appliesConstraint(p3_8xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateP3_8xlarge_appliesConstraint(p3_8xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>P3 8xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String P3_8XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>P3 8xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateP3_8xlarge_appliesConstraint(P3_8xlarge p3_8xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(p3_8xlarge, context) },
+						 new Object[] { p3_8xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateAcceleratedcomputing_appliesConstraint(p3_8xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1954,8 +4137,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(p3_16xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(p3_16xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(p3_16xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAcceleratedcomputing_appliesConstraint(p3_16xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateP3_16xlarge_appliesConstraint(p3_16xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>P3 16xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String P3_16XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>P3 16xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateP3_16xlarge_appliesConstraint(P3_16xlarge p3_16xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(p3_16xlarge, context) },
+						 new Object[] { p3_16xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateAcceleratedcomputing_appliesConstraint(p3_16xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1973,8 +4193,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(p2_xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(p2_xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(p2_xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAcceleratedcomputing_appliesConstraint(p2_xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateP2_xlarge_appliesConstraint(p2_xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>P2 xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String P2_XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>P2 xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateP2_xlarge_appliesConstraint(P2_xlarge p2_xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(p2_xlarge, context) },
+						 new Object[] { p2_xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateAcceleratedcomputing_appliesConstraint(p2_xlarge, diagnostics, context);
 	}
 
 	/**
@@ -1992,8 +4249,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(p2_8xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(p2_8xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(p2_8xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAcceleratedcomputing_appliesConstraint(p2_8xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateP2_8xlarge_appliesConstraint(p2_8xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>P2 8xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String P2_8XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>P2 8xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateP2_8xlarge_appliesConstraint(P2_8xlarge p2_8xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(p2_8xlarge, context) },
+						 new Object[] { p2_8xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateAcceleratedcomputing_appliesConstraint(p2_8xlarge, diagnostics, context);
 	}
 
 	/**
@@ -2011,8 +4305,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(p2_16xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(p2_16xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(p2_16xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAcceleratedcomputing_appliesConstraint(p2_16xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateP2_16xlarge_appliesConstraint(p2_16xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>P2 16xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String P2_16XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>P2 16xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateP2_16xlarge_appliesConstraint(P2_16xlarge p2_16xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(p2_16xlarge, context) },
+						 new Object[] { p2_16xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateAcceleratedcomputing_appliesConstraint(p2_16xlarge, diagnostics, context);
 	}
 
 	/**
@@ -2030,8 +4361,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(generalpurpose, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(generalpurpose, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(generalpurpose, diagnostics, context);
-		if (result || diagnostics != null) result &= infrastructureValidator.validateResource_tpl_appliesConstraint(generalpurpose, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGeneralpurpose_appliesConstraint(generalpurpose, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>Generalpurpose</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String GENERALPURPOSE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>Generalpurpose</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGeneralpurpose_appliesConstraint(Generalpurpose generalpurpose, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(generalpurpose, context) },
+						 new Object[] { generalpurpose },
+						 context));
+			}
+			return false;
+		}
+		return infrastructureValidator.validateResource_tpl_appliesConstraint(generalpurpose, diagnostics, context);
 	}
 
 	/**
@@ -2273,8 +4641,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(g3_4xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(g3_4xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(g3_4xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAcceleratedcomputing_appliesConstraint(g3_4xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateG3_4xlarge_appliesConstraint(g3_4xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>G3 4xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String G3_4XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>G3 4xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateG3_4xlarge_appliesConstraint(G3_4xlarge g3_4xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(g3_4xlarge, context) },
+						 new Object[] { g3_4xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateAcceleratedcomputing_appliesConstraint(g3_4xlarge, diagnostics, context);
 	}
 
 	/**
@@ -2292,8 +4697,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(g3_8xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(g3_8xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(g3_8xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAcceleratedcomputing_appliesConstraint(g3_8xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateG3_8xlarge_appliesConstraint(g3_8xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>G3 8xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String G3_8XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>G3 8xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateG3_8xlarge_appliesConstraint(G3_8xlarge g3_8xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(g3_8xlarge, context) },
+						 new Object[] { g3_8xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateAcceleratedcomputing_appliesConstraint(g3_8xlarge, diagnostics, context);
 	}
 
 	/**
@@ -2311,8 +4753,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(g3_16xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(g3_16xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(g3_16xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAcceleratedcomputing_appliesConstraint(g3_16xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateG3_16xlarge_appliesConstraint(g3_16xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>G3 16xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String G3_16XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>G3 16xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateG3_16xlarge_appliesConstraint(G3_16xlarge g3_16xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(g3_16xlarge, context) },
+						 new Object[] { g3_16xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateAcceleratedcomputing_appliesConstraint(g3_16xlarge, diagnostics, context);
 	}
 
 	/**
@@ -2330,8 +4809,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(f1_2xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(f1_2xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(f1_2xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAcceleratedcomputing_appliesConstraint(f1_2xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateF1_2xlarge_appliesConstraint(f1_2xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>F1 2xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String F1_2XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>F1 2xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateF1_2xlarge_appliesConstraint(F1_2xlarge f1_2xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(f1_2xlarge, context) },
+						 new Object[] { f1_2xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateAcceleratedcomputing_appliesConstraint(f1_2xlarge, diagnostics, context);
 	}
 
 	/**
@@ -2349,8 +4865,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(f1_16xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(f1_16xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(f1_16xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAcceleratedcomputing_appliesConstraint(f1_16xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateF1_16xlarge_appliesConstraint(f1_16xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>F1 16xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String F1_16XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>F1 16xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateF1_16xlarge_appliesConstraint(F1_16xlarge f1_16xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(f1_16xlarge, context) },
+						 new Object[] { f1_16xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateAcceleratedcomputing_appliesConstraint(f1_16xlarge, diagnostics, context);
 	}
 
 	/**
@@ -2368,8 +4921,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(h1_2xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(h1_2xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(h1_2xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStorageoptimized_appliesConstraint(h1_2xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateH1_2xlarge_appliesConstraint(h1_2xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>H1 2xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String H1_2XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>H1 2xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateH1_2xlarge_appliesConstraint(H1_2xlarge h1_2xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(h1_2xlarge, context) },
+						 new Object[] { h1_2xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateStorageoptimized_appliesConstraint(h1_2xlarge, diagnostics, context);
 	}
 
 	/**
@@ -2387,8 +4977,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(h1_4xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(h1_4xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(h1_4xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStorageoptimized_appliesConstraint(h1_4xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateH1_4xlarge_appliesConstraint(h1_4xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>H1 4xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String H1_4XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>H1 4xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateH1_4xlarge_appliesConstraint(H1_4xlarge h1_4xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(h1_4xlarge, context) },
+						 new Object[] { h1_4xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateStorageoptimized_appliesConstraint(h1_4xlarge, diagnostics, context);
 	}
 
 	/**
@@ -2406,8 +5033,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(h1_8xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(h1_8xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(h1_8xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStorageoptimized_appliesConstraint(h1_8xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateH1_8xlarge_appliesConstraint(h1_8xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>H1 8xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String H1_8XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>H1 8xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateH1_8xlarge_appliesConstraint(H1_8xlarge h1_8xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(h1_8xlarge, context) },
+						 new Object[] { h1_8xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateStorageoptimized_appliesConstraint(h1_8xlarge, diagnostics, context);
 	}
 
 	/**
@@ -2425,8 +5089,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(h1_16xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(h1_16xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(h1_16xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStorageoptimized_appliesConstraint(h1_16xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateH1_16xlarge_appliesConstraint(h1_16xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>H1 16xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String H1_16XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>H1 16xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateH1_16xlarge_appliesConstraint(H1_16xlarge h1_16xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(h1_16xlarge, context) },
+						 new Object[] { h1_16xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateStorageoptimized_appliesConstraint(h1_16xlarge, diagnostics, context);
 	}
 
 	/**
@@ -2444,8 +5145,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(i3_large, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(i3_large, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(i3_large, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStorageoptimized_appliesConstraint(i3_large, diagnostics, context);
+		if (result || diagnostics != null) result &= validateI3_large_appliesConstraint(i3_large, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>I3 large</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String I3_LARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>I3 large</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateI3_large_appliesConstraint(I3_large i3_large, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(i3_large, context) },
+						 new Object[] { i3_large },
+						 context));
+			}
+			return false;
+		}
+		return validateStorageoptimized_appliesConstraint(i3_large, diagnostics, context);
 	}
 
 	/**
@@ -2463,8 +5201,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(i3_xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(i3_xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(i3_xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStorageoptimized_appliesConstraint(i3_xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateI3_xlarge_appliesConstraint(i3_xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>I3 xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String I3_XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>I3 xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateI3_xlarge_appliesConstraint(I3_xlarge i3_xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(i3_xlarge, context) },
+						 new Object[] { i3_xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateStorageoptimized_appliesConstraint(i3_xlarge, diagnostics, context);
 	}
 
 	/**
@@ -2482,8 +5257,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(i3_2xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(i3_2xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(i3_2xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStorageoptimized_appliesConstraint(i3_2xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateI3_2xlarge_appliesConstraint(i3_2xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>I3 2xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String I3_2XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>I3 2xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateI3_2xlarge_appliesConstraint(I3_2xlarge i3_2xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(i3_2xlarge, context) },
+						 new Object[] { i3_2xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateStorageoptimized_appliesConstraint(i3_2xlarge, diagnostics, context);
 	}
 
 	/**
@@ -2501,8 +5313,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(i3_4xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(i3_4xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(i3_4xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStorageoptimized_appliesConstraint(i3_4xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateI3_4xlarge_appliesConstraint(i3_4xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>I3 4xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String I3_4XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>I3 4xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateI3_4xlarge_appliesConstraint(I3_4xlarge i3_4xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(i3_4xlarge, context) },
+						 new Object[] { i3_4xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateStorageoptimized_appliesConstraint(i3_4xlarge, diagnostics, context);
 	}
 
 	/**
@@ -2520,8 +5369,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(i3_8xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(i3_8xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(i3_8xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStorageoptimized_appliesConstraint(i3_8xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateI3_8xlarge_appliesConstraint(i3_8xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>I3 8xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String I3_8XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>I3 8xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateI3_8xlarge_appliesConstraint(I3_8xlarge i3_8xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(i3_8xlarge, context) },
+						 new Object[] { i3_8xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateStorageoptimized_appliesConstraint(i3_8xlarge, diagnostics, context);
 	}
 
 	/**
@@ -2539,8 +5425,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(i3_16xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(i3_16xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(i3_16xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStorageoptimized_appliesConstraint(i3_16xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateI3_16xlarge_appliesConstraint(i3_16xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>I3 16xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String I3_16XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>I3 16xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateI3_16xlarge_appliesConstraint(I3_16xlarge i3_16xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(i3_16xlarge, context) },
+						 new Object[] { i3_16xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateStorageoptimized_appliesConstraint(i3_16xlarge, diagnostics, context);
 	}
 
 	/**
@@ -2558,8 +5481,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(i3_metal, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(i3_metal, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(i3_metal, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStorageoptimized_appliesConstraint(i3_metal, diagnostics, context);
+		if (result || diagnostics != null) result &= validateI3_metal_appliesConstraint(i3_metal, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>I3 metal</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String I3_METAL__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>I3 metal</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateI3_metal_appliesConstraint(I3_metal i3_metal, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(i3_metal, context) },
+						 new Object[] { i3_metal },
+						 context));
+			}
+			return false;
+		}
+		return validateStorageoptimized_appliesConstraint(i3_metal, diagnostics, context);
 	}
 
 	/**
@@ -2577,8 +5537,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(d2_xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(d2_xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(d2_xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStorageoptimized_appliesConstraint(d2_xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateD2_xlarge_appliesConstraint(d2_xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>D2 xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String D2_XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>D2 xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateD2_xlarge_appliesConstraint(D2_xlarge d2_xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(d2_xlarge, context) },
+						 new Object[] { d2_xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateStorageoptimized_appliesConstraint(d2_xlarge, diagnostics, context);
 	}
 
 	/**
@@ -2596,8 +5593,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(d2_2xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(d2_2xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(d2_2xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStorageoptimized_appliesConstraint(d2_2xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateD2_2xlarge_appliesConstraint(d2_2xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>D2 2xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String D2_2XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>D2 2xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateD2_2xlarge_appliesConstraint(D2_2xlarge d2_2xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(d2_2xlarge, context) },
+						 new Object[] { d2_2xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateStorageoptimized_appliesConstraint(d2_2xlarge, diagnostics, context);
 	}
 
 	/**
@@ -2615,8 +5649,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(d2_4xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(d2_4xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(d2_4xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStorageoptimized_appliesConstraint(d2_4xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateD2_4xlarge_appliesConstraint(d2_4xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>D2 4xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String D2_4XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>D2 4xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateD2_4xlarge_appliesConstraint(D2_4xlarge d2_4xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(d2_4xlarge, context) },
+						 new Object[] { d2_4xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateStorageoptimized_appliesConstraint(d2_4xlarge, diagnostics, context);
 	}
 
 	/**
@@ -2634,8 +5705,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(d2_8xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(d2_8xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(d2_8xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStorageoptimized_appliesConstraint(d2_8xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateD2_8xlarge_appliesConstraint(d2_8xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>D2 8xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String D2_8XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>D2 8xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateD2_8xlarge_appliesConstraint(D2_8xlarge d2_8xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(d2_8xlarge, context) },
+						 new Object[] { d2_8xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateStorageoptimized_appliesConstraint(d2_8xlarge, diagnostics, context);
 	}
 
 	/**
@@ -2653,8 +5761,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(m1_small, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(m1_small, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(m1_small, diagnostics, context);
-		if (result || diagnostics != null) result &= infrastructureValidator.validateResource_tpl_appliesConstraint(m1_small, diagnostics, context);
+		if (result || diagnostics != null) result &= validateM1_small_appliesConstraint(m1_small, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>M1 small</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String M1_SMALL__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>M1 small</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateM1_small_appliesConstraint(M1_small m1_small, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(m1_small, context) },
+						 new Object[] { m1_small },
+						 context));
+			}
+			return false;
+		}
+		return validateGeneralpurpose_appliesConstraint(m1_small, diagnostics, context);
 	}
 
 	/**
@@ -2672,8 +5817,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(t1_micro, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(t1_micro, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(t1_micro, diagnostics, context);
-		if (result || diagnostics != null) result &= infrastructureValidator.validateResource_tpl_appliesConstraint(t1_micro, diagnostics, context);
+		if (result || diagnostics != null) result &= validateT1_micro_appliesConstraint(t1_micro, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>T1 micro</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String T1_MICRO__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>T1 micro</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateT1_micro_appliesConstraint(T1_micro t1_micro, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(t1_micro, context) },
+						 new Object[] { t1_micro },
+						 context));
+			}
+			return false;
+		}
+		return validateGeneralpurpose_appliesConstraint(t1_micro, diagnostics, context);
 	}
 
 	/**
@@ -2691,8 +5873,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(m1_medium, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(m1_medium, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(m1_medium, diagnostics, context);
-		if (result || diagnostics != null) result &= infrastructureValidator.validateResource_tpl_appliesConstraint(m1_medium, diagnostics, context);
+		if (result || diagnostics != null) result &= validateM1_medium_appliesConstraint(m1_medium, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>M1 medium</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String M1_MEDIUM__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>M1 medium</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateM1_medium_appliesConstraint(M1_medium m1_medium, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(m1_medium, context) },
+						 new Object[] { m1_medium },
+						 context));
+			}
+			return false;
+		}
+		return validateGeneralpurpose_appliesConstraint(m1_medium, diagnostics, context);
 	}
 
 	/**
@@ -2710,8 +5929,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(m1_large, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(m1_large, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(m1_large, diagnostics, context);
-		if (result || diagnostics != null) result &= infrastructureValidator.validateResource_tpl_appliesConstraint(m1_large, diagnostics, context);
+		if (result || diagnostics != null) result &= validateM1_large_appliesConstraint(m1_large, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>M1 large</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String M1_LARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>M1 large</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateM1_large_appliesConstraint(M1_large m1_large, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(m1_large, context) },
+						 new Object[] { m1_large },
+						 context));
+			}
+			return false;
+		}
+		return validateGeneralpurpose_appliesConstraint(m1_large, diagnostics, context);
 	}
 
 	/**
@@ -2729,8 +5985,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(m1_xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(m1_xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(m1_xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= infrastructureValidator.validateResource_tpl_appliesConstraint(m1_xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateM1_xlarge_appliesConstraint(m1_xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>M1 xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String M1_XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>M1 xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateM1_xlarge_appliesConstraint(M1_xlarge m1_xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(m1_xlarge, context) },
+						 new Object[] { m1_xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateGeneralpurpose_appliesConstraint(m1_xlarge, diagnostics, context);
 	}
 
 	/**
@@ -2748,8 +6041,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(c1_medium, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(c1_medium, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(c1_medium, diagnostics, context);
-		if (result || diagnostics != null) result &= validateComputeoptimized_appliesConstraint(c1_medium, diagnostics, context);
+		if (result || diagnostics != null) result &= validateC1_medium_appliesConstraint(c1_medium, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>C1 medium</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String C1_MEDIUM__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>C1 medium</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateC1_medium_appliesConstraint(C1_medium c1_medium, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(c1_medium, context) },
+						 new Object[] { c1_medium },
+						 context));
+			}
+			return false;
+		}
+		return validateComputeoptimized_appliesConstraint(c1_medium, diagnostics, context);
 	}
 
 	/**
@@ -2767,8 +6097,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(c1_xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(c1_xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(c1_xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateComputeoptimized_appliesConstraint(c1_xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateC1_xlarge_appliesConstraint(c1_xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>C1 xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String C1_XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>C1 xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateC1_xlarge_appliesConstraint(C1_xlarge c1_xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(c1_xlarge, context) },
+						 new Object[] { c1_xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateComputeoptimized_appliesConstraint(c1_xlarge, diagnostics, context);
 	}
 
 	/**
@@ -2786,8 +6153,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(cc2_8xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(cc2_8xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(cc2_8xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateComputeoptimized_appliesConstraint(cc2_8xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCc2_8xlarge_appliesConstraint(cc2_8xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>Cc2 8xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String CC2_8XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>Cc2 8xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCc2_8xlarge_appliesConstraint(Cc2_8xlarge cc2_8xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(cc2_8xlarge, context) },
+						 new Object[] { cc2_8xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateComputeoptimized_appliesConstraint(cc2_8xlarge, diagnostics, context);
 	}
 
 	/**
@@ -2805,8 +6209,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(g2_2xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(g2_2xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(g2_2xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAcceleratedcomputing_appliesConstraint(g2_2xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateG2_2xlarge_appliesConstraint(g2_2xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>G2 2xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String G2_2XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>G2 2xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateG2_2xlarge_appliesConstraint(G2_2xlarge g2_2xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(g2_2xlarge, context) },
+						 new Object[] { g2_2xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateAcceleratedcomputing_appliesConstraint(g2_2xlarge, diagnostics, context);
 	}
 
 	/**
@@ -2824,8 +6265,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(g2_8xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(g2_8xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(g2_8xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAcceleratedcomputing_appliesConstraint(g2_8xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateG2_8xlarge_appliesConstraint(g2_8xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>G2 8xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String G2_8XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>G2 8xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateG2_8xlarge_appliesConstraint(G2_8xlarge g2_8xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(g2_8xlarge, context) },
+						 new Object[] { g2_8xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateAcceleratedcomputing_appliesConstraint(g2_8xlarge, diagnostics, context);
 	}
 
 	/**
@@ -2843,8 +6321,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(cg1_4xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(cg1_4xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(cg1_4xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAcceleratedcomputing_appliesConstraint(cg1_4xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCg1_4xlarge_appliesConstraint(cg1_4xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>Cg1 4xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String CG1_4XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>Cg1 4xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCg1_4xlarge_appliesConstraint(Cg1_4xlarge cg1_4xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(cg1_4xlarge, context) },
+						 new Object[] { cg1_4xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateAcceleratedcomputing_appliesConstraint(cg1_4xlarge, diagnostics, context);
 	}
 
 	/**
@@ -2862,8 +6377,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(m2_xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(m2_xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(m2_xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMemoryoptimized_appliesConstraint(m2_xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateM2_xlarge_appliesConstraint(m2_xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>M2 xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String M2_XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>M2 xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateM2_xlarge_appliesConstraint(M2_xlarge m2_xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(m2_xlarge, context) },
+						 new Object[] { m2_xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateMemoryoptimized_appliesConstraint(m2_xlarge, diagnostics, context);
 	}
 
 	/**
@@ -2881,8 +6433,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(m2_2xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(m2_2xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(m2_2xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMemoryoptimized_appliesConstraint(m2_2xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateM2_2xlarge_appliesConstraint(m2_2xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>M2 2xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String M2_2XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>M2 2xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateM2_2xlarge_appliesConstraint(M2_2xlarge m2_2xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(m2_2xlarge, context) },
+						 new Object[] { m2_2xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateMemoryoptimized_appliesConstraint(m2_2xlarge, diagnostics, context);
 	}
 
 	/**
@@ -2900,8 +6489,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(m2_4xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(m2_4xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(m2_4xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMemoryoptimized_appliesConstraint(m2_4xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateM2_4xlarge_appliesConstraint(m2_4xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>M2 4xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String M2_4XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>M2 4xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateM2_4xlarge_appliesConstraint(M2_4xlarge m2_4xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(m2_4xlarge, context) },
+						 new Object[] { m2_4xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateMemoryoptimized_appliesConstraint(m2_4xlarge, diagnostics, context);
 	}
 
 	/**
@@ -2919,8 +6545,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(cr1_8xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(cr1_8xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(cr1_8xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMemoryoptimized_appliesConstraint(cr1_8xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCr1_8xlarge_appliesConstraint(cr1_8xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>Cr1 8xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String CR1_8XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>Cr1 8xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCr1_8xlarge_appliesConstraint(Cr1_8xlarge cr1_8xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(cr1_8xlarge, context) },
+						 new Object[] { cr1_8xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateMemoryoptimized_appliesConstraint(cr1_8xlarge, diagnostics, context);
 	}
 
 	/**
@@ -2938,8 +6601,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(i2_xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(i2_xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(i2_xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStorageoptimized_appliesConstraint(i2_xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateI2_xlarge_appliesConstraint(i2_xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>I2 xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String I2_XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>I2 xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateI2_xlarge_appliesConstraint(I2_xlarge i2_xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(i2_xlarge, context) },
+						 new Object[] { i2_xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateStorageoptimized_appliesConstraint(i2_xlarge, diagnostics, context);
 	}
 
 	/**
@@ -2957,8 +6657,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(i2_2xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(i2_2xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(i2_2xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStorageoptimized_appliesConstraint(i2_2xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateI2_2xlarge_appliesConstraint(i2_2xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>I2 2xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String I2_2XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>I2 2xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateI2_2xlarge_appliesConstraint(I2_2xlarge i2_2xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(i2_2xlarge, context) },
+						 new Object[] { i2_2xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateStorageoptimized_appliesConstraint(i2_2xlarge, diagnostics, context);
 	}
 
 	/**
@@ -2976,8 +6713,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(i2_4xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(i2_4xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(i2_4xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStorageoptimized_appliesConstraint(i2_4xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateI2_4xlarge_appliesConstraint(i2_4xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>I2 4xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String I2_4XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>I2 4xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateI2_4xlarge_appliesConstraint(I2_4xlarge i2_4xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(i2_4xlarge, context) },
+						 new Object[] { i2_4xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateStorageoptimized_appliesConstraint(i2_4xlarge, diagnostics, context);
 	}
 
 	/**
@@ -2995,8 +6769,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(i2_8xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(i2_8xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(i2_8xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStorageoptimized_appliesConstraint(i2_8xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateI2_8xlarge_appliesConstraint(i2_8xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>I2 8xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String I2_8XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>I2 8xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateI2_8xlarge_appliesConstraint(I2_8xlarge i2_8xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(i2_8xlarge, context) },
+						 new Object[] { i2_8xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateStorageoptimized_appliesConstraint(i2_8xlarge, diagnostics, context);
 	}
 
 	/**
@@ -3014,8 +6825,45 @@ public class Ec2Validator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(hs1_8xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(hs1_8xlarge, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(hs1_8xlarge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStorageoptimized_appliesConstraint(hs1_8xlarge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateHs1_8xlarge_appliesConstraint(hs1_8xlarge, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>Hs1 8xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String HS1_8XLARGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(ec2::Instanceec2)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>Hs1 8xlarge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateHs1_8xlarge_appliesConstraint(Hs1_8xlarge hs1_8xlarge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(hs1_8xlarge, context) },
+						 new Object[] { hs1_8xlarge },
+						 context));
+			}
+			return false;
+		}
+		return validateStorageoptimized_appliesConstraint(hs1_8xlarge, diagnostics, context);
 	}
 
 	/**

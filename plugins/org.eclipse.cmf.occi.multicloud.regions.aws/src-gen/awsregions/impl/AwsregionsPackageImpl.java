@@ -17,6 +17,7 @@ import awsregions.Ap_northeast_2;
 import awsregions.Ap_south_1;
 import awsregions.Ap_south_east2;
 import awsregions.Ap_southeast_1;
+import awsregions.Awsregion;
 import awsregions.AwsregionsFactory;
 import awsregions.AwsregionsPackage;
 import awsregions.Ca_central_1;
@@ -30,6 +31,7 @@ import awsregions.Us_east_2;
 import awsregions.Us_west_1;
 import awsregions.Us_west_2;
 
+import awsregions.util.AwsregionsValidator;
 import org.eclipse.cmf.occi.core.OCCIPackage;
 
 import org.eclipse.cmf.occi.multicloud.regions.RegionsPackage;
@@ -38,6 +40,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -47,6 +50,13 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * @generated
  */
 public class AwsregionsPackageImpl extends EPackageImpl implements AwsregionsPackage {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass awsregionEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -208,6 +218,15 @@ public class AwsregionsPackageImpl extends EPackageImpl implements AwsregionsPac
 		// Initialize created meta-data
 		theAwsregionsPackage.initializePackageContents();
 
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theAwsregionsPackage, 
+			 new EValidator.Descriptor() {
+				 public EValidator getEValidator() {
+					 return AwsregionsValidator.INSTANCE;
+				 }
+			 });
+
 		// Mark meta-data to indicate it can't be changed
 		theAwsregionsPackage.freeze();
 
@@ -215,6 +234,15 @@ public class AwsregionsPackageImpl extends EPackageImpl implements AwsregionsPac
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(AwsregionsPackage.eNS_URI, theAwsregionsPackage);
 		return theAwsregionsPackage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAwsregion() {
+		return awsregionEClass;
 	}
 
 	/**
@@ -920,6 +948,8 @@ public class AwsregionsPackageImpl extends EPackageImpl implements AwsregionsPac
 		isCreated = true;
 
 		// Create classes and their features
+		awsregionEClass = createEClass(AWSREGION);
+
 		us_east_2EClass = createEClass(US_EAST_2);
 		createEAttribute(us_east_2EClass, US_EAST_2__REGION_NAME);
 		createEAttribute(us_east_2EClass, US_EAST_2__COUNTRY);
@@ -1043,6 +1073,7 @@ public class AwsregionsPackageImpl extends EPackageImpl implements AwsregionsPac
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		awsregionEClass.getESuperTypes().add(theRegionsPackage.getRegion());
 		us_east_2EClass.getESuperTypes().add(theRegionsPackage.getNorthamerica());
 		us_east_2EClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		us_east_1EClass.getESuperTypes().add(theRegionsPackage.getNorthamerica());
@@ -1075,6 +1106,8 @@ public class AwsregionsPackageImpl extends EPackageImpl implements AwsregionsPac
 		ap_northeast_1EClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 
 		// Initialize classes, features, and operations; add parameters
+		initEClass(awsregionEClass, Awsregion.class, "Awsregion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(us_east_2EClass, Us_east_2.class, "Us_east_2", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUs_east_2_RegionName(), theOCCIPackage.getString(), "regionName", "US East (Ohio)", 0, 1, Us_east_2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUs_east_2_Country(), theOCCIPackage.getString(), "country", "USA", 0, 1, Us_east_2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1173,6 +1206,8 @@ public class AwsregionsPackageImpl extends EPackageImpl implements AwsregionsPac
 		createEcoreAnnotations();
 		// http://www.eclipse.org/OCL/Import
 		createImportAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot
+		createPivotAnnotations();
 	}
 
 	/**
@@ -1190,6 +1225,96 @@ public class AwsregionsPackageImpl extends EPackageImpl implements AwsregionsPac
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
+		   });	
+		addAnnotation
+		  (us_east_2EClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (us_east_1EClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (eu_west_3EClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (us_west_1EClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (eu_west_1EClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (ap_south_1EClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (sa_east_1EClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (us_west_2EClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (eu_west_2EClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (ap_southeast_1EClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (ca_central_1EClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (ap_northeast_2EClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (ap_south_east2EClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (eu_central_1EClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (ap_northeast_1EClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
 		   });
 	}
 
@@ -1207,6 +1332,106 @@ public class AwsregionsPackageImpl extends EPackageImpl implements AwsregionsPac
 		   new String[] {
 			 "occi", "http://schemas.ogf.org/occi/core/ecore",
 			 "regions", "http://occiware.org/occi/infrastructure/locations/ecore"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createPivotAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";	
+		addAnnotation
+		  (us_east_2EClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(awsregions::Awsregion)"
+		   });	
+		addAnnotation
+		  (us_east_1EClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(awsregions::Awsregion)"
+		   });	
+		addAnnotation
+		  (eu_west_3EClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(awsregions::Awsregion)"
+		   });	
+		addAnnotation
+		  (us_west_1EClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(awsregions::Awsregion)"
+		   });	
+		addAnnotation
+		  (eu_west_1EClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(awsregions::Awsregion)"
+		   });	
+		addAnnotation
+		  (ap_south_1EClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(awsregions::Awsregion)"
+		   });	
+		addAnnotation
+		  (sa_east_1EClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(awsregions::Awsregion)"
+		   });	
+		addAnnotation
+		  (us_west_2EClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(awsregions::Awsregion)"
+		   });	
+		addAnnotation
+		  (eu_west_2EClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(awsregions::Awsregion)"
+		   });	
+		addAnnotation
+		  (ap_southeast_1EClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(awsregions::Awsregion)"
+		   });	
+		addAnnotation
+		  (ca_central_1EClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(awsregions::Awsregion)"
+		   });	
+		addAnnotation
+		  (ap_northeast_2EClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(awsregions::Awsregion)"
+		   });	
+		addAnnotation
+		  (ap_south_east2EClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(awsregions::Awsregion)"
+		   });	
+		addAnnotation
+		  (eu_central_1EClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(awsregions::Awsregion)"
+		   });	
+		addAnnotation
+		  (ap_northeast_1EClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(awsregions::Awsregion)"
 		   });
 	}
 

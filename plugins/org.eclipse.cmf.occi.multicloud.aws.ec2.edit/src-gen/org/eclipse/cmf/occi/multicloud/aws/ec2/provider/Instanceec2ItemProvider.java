@@ -1252,11 +1252,6 @@ public class Instanceec2ItemProvider extends ComputeItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
-				 RegionsFactory.eINSTANCE.createRegion()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.ENTITY__PARTS,
 				 RegionsFactory.eINSTANCE.createAvailabilityzone()));
 
 		newChildDescriptors.add
@@ -1393,6 +1388,11 @@ public class Instanceec2ItemProvider extends ComputeItemProvider {
 			(createChildParameter
 				(OCCIPackage.Literals.RESOURCE__LINKS,
 				 Ec2Factory.eINSTANCE.createIppermissionlink()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.RESOURCE__LINKS,
+				 RegionsFactory.eINSTANCE.createRegionlink()));
 
 		newChildDescriptors.add
 			(createChildParameter

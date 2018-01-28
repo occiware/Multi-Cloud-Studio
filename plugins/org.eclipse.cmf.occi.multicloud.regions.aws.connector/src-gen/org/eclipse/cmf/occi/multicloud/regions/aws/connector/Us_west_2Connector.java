@@ -10,14 +10,12 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Fri Jan 12 16:58:52 CET 2018 from platform:/resource/org.eclipse.cmf.occi.multicloud.regions.aws/model/awsregions.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Thu Jan 25 17:57:19 CET 2018 from platform:/resource/org.eclipse.cmf.occi.multicloud.regions.aws/model/awsregions.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.regions.aws.connector;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import awsregions.impl.Us_west_2Impl;
 
 
 
@@ -27,7 +25,7 @@ import awsregions.impl.Us_west_2Impl;
  * - term: us_west_2
  * - title: 
  */
-public class Us_west_2Connector extends Us_west_2Impl
+public class Us_west_2Connector extends awsregions.impl.Us_west_2Impl
 {
 	/**
 	 * Initialize the logger.

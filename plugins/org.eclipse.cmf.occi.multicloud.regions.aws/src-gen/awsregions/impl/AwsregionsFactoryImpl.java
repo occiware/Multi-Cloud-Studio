@@ -66,6 +66,7 @@ public class AwsregionsFactoryImpl extends EFactoryImpl implements AwsregionsFac
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case AwsregionsPackage.AWSREGION: return createAwsregion();
 			case AwsregionsPackage.US_EAST_2: return createUs_east_2();
 			case AwsregionsPackage.US_EAST_1: return createUs_east_1();
 			case AwsregionsPackage.EU_WEST_3: return createEu_west_3();
@@ -84,6 +85,16 @@ public class AwsregionsFactoryImpl extends EFactoryImpl implements AwsregionsFac
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Awsregion createAwsregion() {
+		AwsregionImpl awsregion = new AwsregionImpl();
+		return awsregion;
 	}
 
 	/**

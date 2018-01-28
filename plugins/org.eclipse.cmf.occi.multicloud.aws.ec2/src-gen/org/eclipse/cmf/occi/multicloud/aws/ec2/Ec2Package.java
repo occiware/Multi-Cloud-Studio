@@ -663,22 +663,13 @@ public interface Ec2Package extends EPackage {
 	int AWSACCOUNT__RLINKS = AccountsPackage.CLOUDACCOUNT__RLINKS;
 
 	/**
-	 * The feature id for the '<em><b>Region Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AWSACCOUNT__REGION_ID = AccountsPackage.CLOUDACCOUNT_FEATURE_COUNT + 0;
-
-	/**
 	 * The number of structural features of the '<em>Awsaccount</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AWSACCOUNT_FEATURE_COUNT = AccountsPackage.CLOUDACCOUNT_FEATURE_COUNT + 1;
+	int AWSACCOUNT_FEATURE_COUNT = AccountsPackage.CLOUDACCOUNT_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Occi Create</em>' operation.
@@ -12126,17 +12117,6 @@ public interface Ec2Package extends EPackage {
 	 * @generated
 	 */
 	EClass getAwsaccount();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Awsaccount#getRegionId <em>Region Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Region Id</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Awsaccount#getRegionId()
-	 * @see #getAwsaccount()
-	 * @generated
-	 */
-	EAttribute getAwsaccount_RegionId();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.aws.ec2.Securitygroup <em>Securitygroup</em>}'.

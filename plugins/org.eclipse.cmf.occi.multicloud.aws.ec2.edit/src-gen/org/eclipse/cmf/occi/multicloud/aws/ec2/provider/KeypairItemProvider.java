@@ -798,11 +798,6 @@ public class KeypairItemProvider extends ResourceItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
-				 RegionsFactory.eINSTANCE.createRegion()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.ENTITY__PARTS,
 				 RegionsFactory.eINSTANCE.createAvailabilityzone()));
 
 		newChildDescriptors.add
@@ -969,6 +964,11 @@ public class KeypairItemProvider extends ResourceItemProvider {
 			(createChildParameter
 				(OCCIPackage.Literals.RESOURCE__LINKS,
 				 Ec2Factory.eINSTANCE.createIppermissionlink()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.RESOURCE__LINKS,
+				 RegionsFactory.eINSTANCE.createRegionlink()));
 
 		newChildDescriptors.add
 			(createChildParameter

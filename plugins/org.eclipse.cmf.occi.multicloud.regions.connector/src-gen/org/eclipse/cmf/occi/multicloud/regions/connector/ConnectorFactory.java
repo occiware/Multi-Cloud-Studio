@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Fri Jan 12 16:58:05 CET 2018 from platform:/resource/org.eclipse.cmf.occi.multicloud.regions/model/regions.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Thu Jan 25 17:55:49 CET 2018 from platform:/resource/org.eclipse.cmf.occi.multicloud.regions/model/regions.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.regions.connector;
 
@@ -25,11 +25,22 @@ public class ConnectorFactory extends org.eclipse.cmf.occi.multicloud.regions.im
 	 * EFactory method for OCCI kind:
 	 * - scheme: http://occiware.org/occi/infrastructure/locations#
 	 * - term: region
-	 * - title: General region to locate the resource and link geographicaly
+	 * - title: 
 	 */
 	@Override
 	public org.eclipse.cmf.occi.multicloud.regions.Region createRegion() {
 		return new RegionConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://occiware.org/occi/infrastructure/locations#
+	 * - term: regionlink
+	 * - title: 
+	 */
+	@Override
+	public org.eclipse.cmf.occi.multicloud.regions.Regionlink createRegionlink() {
+		return new RegionlinkConnector();
 	}
 
 	/**

@@ -32,7 +32,8 @@ import org.eclipse.cmf.occi.multicloud.regions.Asiapacific;
  * </ul>
  *
  * @see awsregions.AwsregionsPackage#getAp_south_east2()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='appliesConstraint'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot appliesConstraint='self.entity.oclIsKindOf(awsregions::Awsregion)'"
  * @generated
  */
 public interface Ap_south_east2 extends Asiapacific, MixinBase {

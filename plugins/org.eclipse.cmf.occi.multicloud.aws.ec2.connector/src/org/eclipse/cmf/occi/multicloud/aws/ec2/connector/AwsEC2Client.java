@@ -50,11 +50,12 @@ import com.amazonaws.services.ec2.model.Region;
 
 /**
  * Manage AWS client for ec2 service (elastic compute).
+ * 
  * @author Christophe Gourdin
  *
  */
 public class AwsEC2Client {
-	
+
 	private String accessKey = null;
 	private String secretKey = null;
 	/**
@@ -62,11 +63,10 @@ public class AwsEC2Client {
 	 */
 	private String endpoint = "https://{1}.{0}.amazonaws.com/";
 	private String region = null;
-	
+
 	private static Logger LOGGER = LoggerFactory.getLogger(AwsEC2Client.class);
-	
+
 	private AmazonEC2 ec2Client;
-	
 
 	/**
 	 * @param accessKey
@@ -81,6 +81,13 @@ public class AwsEC2Client {
 		if (region != null && !region.trim().isEmpty()) {
 			this.endpoint = MessageFormat.format(endpoint, region, "ec2");
 		}
+	}
+
+	public void updateClient(String accessKey, String secretKey, String region) {
+		this.accessKey = accessKey;
+		this.secretKey = secretKey;
+		this.setRegion(region);
+
 	}
 
 	/**
@@ -109,16 +116,18 @@ public class AwsEC2Client {
 				this.accessKey = prop.getProperty("aws.accessKey");
 				this.secretKey = prop.getProperty("aws.secretKey");
 				this.endpoint = prop.getProperty("aws.endpoint");
-				// TODO : define a default region in property file. if set this override extension default region on resources.
-				
+				// TODO : define a default region in property file. if set this override
+				// extension default region on resources.
+
 			} else {
 				throw new FileNotFoundException("credential property file not found !");
 			}
 		}
 	}
-	
+
 	/**
-	 * Read login, password and url from a vcenter credential mixin.
+	 * Read login, password and url from credential mixin.
+	 * 
 	 * @param vcenterCred
 	 */
 	public void loadFromCredentialMixin(Awscredential awsCred) {
@@ -161,9 +170,7 @@ public class AwsEC2Client {
 	public void setEc2Client(AmazonEC2Client ec2Client) {
 		this.ec2Client = ec2Client;
 	}
-	
-	
-	
+
 	public String getRegion() {
 		return region;
 	}
@@ -177,40 +184,36 @@ public class AwsEC2Client {
 
 	/**
 	 * Build a new aws ec2 client.
+	 * 
 	 * @return
 	 */
 	public AmazonEC2 initEC2Client() {
 		ClientConfiguration config = new ClientConfiguration();
-        AWSCredentials credentials = new BasicAWSCredentials(accessKey, secretKey);
-        config.withRequestTimeout(5000); // TODO : Define a field in AwsAccount for aws request timeout.
-        
-        if (region != null) {
-        		// Build with region.
-        		ec2Client = AmazonEC2ClientBuilder.standard()
-        				.withRegion(region)
-        				.withClientConfiguration(config)
-        				.withCredentials(new AWSStaticCredentialsProvider(credentials))
-        				.build();
-        } else {
-        		// TODO : get region from endpoint string and set it if endpoint is non null value.
-        		if (endpoint != null && !endpoint.trim().isEmpty()) {
-        			
-        		} else {
-        			LOGGER.warn("No region defined, using default set by AWS");
-        			ec2Client = AmazonEC2ClientBuilder.standard()
-        				.withClientConfiguration(config)
-        				.withCredentials(new AWSStaticCredentialsProvider(credentials))
-        				.build();
-        		}
-        }
-        
-        return ec2Client;
+		AWSCredentials credentials = new BasicAWSCredentials(accessKey, secretKey);
+		config.withRequestTimeout(5000); // TODO : Define a field in AwsAccount for aws request timeout.
+
+		if (region != null) {
+			// Build with region.
+			ec2Client = AmazonEC2ClientBuilder.standard().withRegion(region).withClientConfiguration(config)
+					.withCredentials(new AWSStaticCredentialsProvider(credentials)).build();
+		} else {
+			// TODO : get region from endpoint string and set it if endpoint is non null
+			// value.
+			if (endpoint != null && !endpoint.trim().isEmpty()) {
+
+			} else {
+				LOGGER.warn("No region defined, using default set by AWS");
+				ec2Client = AmazonEC2ClientBuilder.standard().withClientConfiguration(config)
+						.withCredentials(new AWSStaticCredentialsProvider(credentials)).build();
+			}
+		}
+
+		return ec2Client;
 	}
-	
-	
+
 	public AmazonEC2 getClientInstance() {
-        return this.ec2Client;
-    }
+		return this.ec2Client;
+	}
 
 	/**
 	 * Initialize a connection to aws server by describing regions.
@@ -219,6 +222,7 @@ public class AwsEC2Client {
 	 * @throws MalformedURLException
 	 */
 	public void connect() throws AmazonServiceException {
+		System.out.println("Connecting to AWS region : " + this.getRegion());
 		if (ec2Client == null && accessKey != null && secretKey != null) {
 			initEC2Client();
 		}
@@ -227,111 +231,47 @@ public class AwsEC2Client {
 			DescribeRegionsResult result = ec2Client.describeRegions();
 			List<Region> regions = result.getRegions();
 			for (Region region : regions) {
+				// TODO : Update dynamically the model (maybe not here).
+				System.out.println("Region found after aws connect : " + region.getRegionName());
 				LOGGER.info("Region found after aws connect : " + region.getRegionName());
 			}
-		} catch (AmazonClientException ex) {
-			initEC2Client();
 			
+		} catch (AmazonClientException ex) {
+			ex.printStackTrace();
+			throw ex;
 		}
-		
+
 	}
-	
+
 	/**
 	 * Clean up resources linked to this client.
 	 */
-    public void destroyClient() {
-        this.ec2Client.shutdown();
-        this.ec2Client = null;
-    }
-    
-    /**
-     * Check if the client is ready for queries. if not, this instantiate a new client for the account and region.
-     * @param entity
-     * @return
-     */
-    public boolean checkConnection(Entity entity) throws AmazonClientException, AwsAccountModelException {
-    		boolean connected = false;
-    		
-    		if (ec2Client == null) {
-    			Optional<Awscredential> optCred;
-    			// Search for AwsAccount resource (mandatory), without account => no client.
-    			Awsaccount awsAccount = null; 
-    			if (entity instanceof Awsaccount) {
-    				awsAccount = (Awsaccount)entity;
-    			} else {
-    				// Search by Cloudaccountlink.
-    				if (entity instanceof Resource) {
-    					Resource res = (Resource) entity;
-    					List<Link> links = res.getRlinks(); // From target to source : source awsAccount -> cloudaccountlink -> target resource.
-    					for (Link link : links) {
-    						if (link instanceof Cloudaccountlink && link.getSource() instanceof Awsaccount) {
-    							awsAccount = (Awsaccount) link.getSource();
-    							break;
-    						}
-    					}
-    					
-    					
-    				} else {
-    					// Entity is a link. Account is maybe on source
-    					Link link = (Link) entity;
-    					Resource source = link.getSource();
-    					if (source instanceof Awsaccount) {
-    						awsAccount = (Awsaccount)entity;
-    					} else {
-    						// Search on sublinked resources.
-    						List<Link> links = source.getRlinks();
-    						for (Link linkSrc : links) {
-    							if (linkSrc instanceof Cloudaccountlink && linkSrc.getSource() instanceof Awsaccount) {
-        							awsAccount = (Awsaccount) linkSrc.getSource();
-        							break;
-        						}
-    						}
-    					}
-    				}
-    			}
-    			if (awsAccount == null) {
-    				throw new AwsAccountModelException("AwsAccount resource doesnt exist, please add awsaccount resource and link it with cloudaccountlink on a resource.");
-    			}
-    			
-    			optCred = OcciHelper.getMixinBase(awsAccount.getParts(), Awscredential.class);
-    			if (optCred.isPresent()) {
-    				this.setAccessKey(optCred.get().getAccessKey());
-    				this.setSecretKey(optCred.get().getSecretKey());
-    				this.setEndpoint(optCred.get().getUrl());
-    			}
-    			// Search for region mixin.
-    			Optional<org.eclipse.cmf.occi.multicloud.regions.Region> optRegion = OcciHelper.getMixinBase(awsAccount.getParts(), org.eclipse.cmf.occi.multicloud.regions.Region.class);
-    			if (optRegion.isPresent()) {
-    				org.eclipse.cmf.occi.multicloud.regions.Region regionMixin = optRegion.get();
-    				// Get the region name attribute.
-    				for (AttributeState attrState : regionMixin.getAttributes()) {
-    					if (attrState.getName().equalsIgnoreCase("regionName")) {
-    						this.setRegion(attrState.getValue());
-    						LOGGER.warn("Region is set on ec2 client to : " + attrState.getValue());
-    						break;
-    					}
-    				}
-    				if (region == null) {
-    					LOGGER.warn("No mixin region found and no region is set on client, using aws default");
-    				}
-    				
-    			}
-    			
-    		} else {
-    			try {
-    				this.connect();
-    				
-    				// If no exceptions thrown, the sdk can connect to aws account.
-        			connected = true;
-    			} catch (AmazonServiceException ex) {
-    				LOGGER.error(ex.getErrorCode() + "--> " + ex.getErrorMessage() + " --< type :-->" + ex.getErrorType());
-    				
-    			} catch (AmazonClientException ex) {
-    				LOGGER.error("AmazonClientException : " + ex.getMessage());
-    			}
-    			
-    		}
-    		return connected;
-    }
-	
+	public void destroyClient() {
+		this.ec2Client.shutdown();
+		this.ec2Client = null;
+	}
+
+	/**
+	 * Check if the client is ready for queries. if not, this instantiate a new
+	 * client for the account and region.
+	 * 
+	 * @param entity
+	 * @return
+	 */
+	public boolean checkConnection(Entity entity) throws AmazonClientException, AwsAccountModelException {
+		boolean connected = false;
+		try {
+			
+			this.connect();
+			// If no exceptions thrown, the sdk can connect to aws account.
+			connected = true;
+		} catch (AmazonServiceException ex) {
+			LOGGER.error(ex.getErrorCode() + "--> " + ex.getErrorMessage() + " --< type :-->" + ex.getErrorType());
+
+		} catch (AmazonClientException ex) {
+			LOGGER.error("AmazonClientException : " + ex.getMessage());
+		}
+		return connected;
+	}
+
 }

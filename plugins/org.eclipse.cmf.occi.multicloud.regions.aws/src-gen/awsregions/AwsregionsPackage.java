@@ -70,6 +70,178 @@ public interface AwsregionsPackage extends EPackage {
 	AwsregionsPackage eINSTANCE = awsregions.impl.AwsregionsPackageImpl.init();
 
 	/**
+	 * The meta object id for the '{@link awsregions.impl.AwsregionImpl <em>Awsregion</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see awsregions.impl.AwsregionImpl
+	 * @see awsregions.impl.AwsregionsPackageImpl#getAwsregion()
+	 * @generated
+	 */
+	int AWSREGION = 0;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AWSREGION__ID = RegionsPackage.REGION__ID;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AWSREGION__TITLE = RegionsPackage.REGION__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AWSREGION__KIND = RegionsPackage.REGION__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Location</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AWSREGION__LOCATION = RegionsPackage.REGION__LOCATION;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AWSREGION__ATTRIBUTES = RegionsPackage.REGION__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Mixins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AWSREGION__MIXINS = RegionsPackage.REGION__MIXINS;
+
+	/**
+	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AWSREGION__PARTS = RegionsPackage.REGION__PARTS;
+
+	/**
+	 * The feature id for the '<em><b>Summary</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AWSREGION__SUMMARY = RegionsPackage.REGION__SUMMARY;
+
+	/**
+	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AWSREGION__LINKS = RegionsPackage.REGION__LINKS;
+
+	/**
+	 * The feature id for the '<em><b>Rlinks</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AWSREGION__RLINKS = RegionsPackage.REGION__RLINKS;
+
+	/**
+	 * The feature id for the '<em><b>Region Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AWSREGION__REGION_ID = RegionsPackage.REGION__REGION_ID;
+
+	/**
+	 * The feature id for the '<em><b>Region Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AWSREGION__REGION_DESCRIPTION = RegionsPackage.REGION__REGION_DESCRIPTION;
+
+	/**
+	 * The number of structural features of the '<em>Awsregion</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AWSREGION_FEATURE_COUNT = RegionsPackage.REGION_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Occi Create</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AWSREGION___OCCI_CREATE = RegionsPackage.REGION___OCCI_CREATE;
+
+	/**
+	 * The operation id for the '<em>Occi Retrieve</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AWSREGION___OCCI_RETRIEVE = RegionsPackage.REGION___OCCI_RETRIEVE;
+
+	/**
+	 * The operation id for the '<em>Occi Update</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AWSREGION___OCCI_UPDATE = RegionsPackage.REGION___OCCI_UPDATE;
+
+	/**
+	 * The operation id for the '<em>Occi Delete</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AWSREGION___OCCI_DELETE = RegionsPackage.REGION___OCCI_DELETE;
+
+	/**
+	 * The number of operations of the '<em>Awsregion</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AWSREGION_OPERATION_COUNT = RegionsPackage.REGION_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link awsregions.impl.Us_east_2Impl <em>Us east 2</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -77,7 +249,7 @@ public interface AwsregionsPackage extends EPackage {
 	 * @see awsregions.impl.AwsregionsPackageImpl#getUs_east_2()
 	 * @generated
 	 */
-	int US_EAST_2 = 0;
+	int US_EAST_2 = 1;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -168,7 +340,7 @@ public interface AwsregionsPackage extends EPackage {
 	 * @see awsregions.impl.AwsregionsPackageImpl#getUs_east_1()
 	 * @generated
 	 */
-	int US_EAST_1 = 1;
+	int US_EAST_1 = 2;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -259,7 +431,7 @@ public interface AwsregionsPackage extends EPackage {
 	 * @see awsregions.impl.AwsregionsPackageImpl#getEu_west_3()
 	 * @generated
 	 */
-	int EU_WEST_3 = 2;
+	int EU_WEST_3 = 3;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -350,7 +522,7 @@ public interface AwsregionsPackage extends EPackage {
 	 * @see awsregions.impl.AwsregionsPackageImpl#getUs_west_1()
 	 * @generated
 	 */
-	int US_WEST_1 = 3;
+	int US_WEST_1 = 4;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -441,7 +613,7 @@ public interface AwsregionsPackage extends EPackage {
 	 * @see awsregions.impl.AwsregionsPackageImpl#getEu_west_1()
 	 * @generated
 	 */
-	int EU_WEST_1 = 4;
+	int EU_WEST_1 = 5;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -532,7 +704,7 @@ public interface AwsregionsPackage extends EPackage {
 	 * @see awsregions.impl.AwsregionsPackageImpl#getAp_south_1()
 	 * @generated
 	 */
-	int AP_SOUTH_1 = 5;
+	int AP_SOUTH_1 = 6;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -623,7 +795,7 @@ public interface AwsregionsPackage extends EPackage {
 	 * @see awsregions.impl.AwsregionsPackageImpl#getSa_east_1()
 	 * @generated
 	 */
-	int SA_EAST_1 = 6;
+	int SA_EAST_1 = 7;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -714,7 +886,7 @@ public interface AwsregionsPackage extends EPackage {
 	 * @see awsregions.impl.AwsregionsPackageImpl#getUs_west_2()
 	 * @generated
 	 */
-	int US_WEST_2 = 7;
+	int US_WEST_2 = 8;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -805,7 +977,7 @@ public interface AwsregionsPackage extends EPackage {
 	 * @see awsregions.impl.AwsregionsPackageImpl#getEu_west_2()
 	 * @generated
 	 */
-	int EU_WEST_2 = 8;
+	int EU_WEST_2 = 9;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -896,7 +1068,7 @@ public interface AwsregionsPackage extends EPackage {
 	 * @see awsregions.impl.AwsregionsPackageImpl#getAp_southeast_1()
 	 * @generated
 	 */
-	int AP_SOUTHEAST_1 = 9;
+	int AP_SOUTHEAST_1 = 10;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -987,7 +1159,7 @@ public interface AwsregionsPackage extends EPackage {
 	 * @see awsregions.impl.AwsregionsPackageImpl#getCa_central_1()
 	 * @generated
 	 */
-	int CA_CENTRAL_1 = 10;
+	int CA_CENTRAL_1 = 11;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -1078,7 +1250,7 @@ public interface AwsregionsPackage extends EPackage {
 	 * @see awsregions.impl.AwsregionsPackageImpl#getAp_northeast_2()
 	 * @generated
 	 */
-	int AP_NORTHEAST_2 = 11;
+	int AP_NORTHEAST_2 = 12;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -1169,7 +1341,7 @@ public interface AwsregionsPackage extends EPackage {
 	 * @see awsregions.impl.AwsregionsPackageImpl#getAp_south_east2()
 	 * @generated
 	 */
-	int AP_SOUTH_EAST2 = 12;
+	int AP_SOUTH_EAST2 = 13;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -1260,7 +1432,7 @@ public interface AwsregionsPackage extends EPackage {
 	 * @see awsregions.impl.AwsregionsPackageImpl#getEu_central_1()
 	 * @generated
 	 */
-	int EU_CENTRAL_1 = 13;
+	int EU_CENTRAL_1 = 14;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -1351,7 +1523,7 @@ public interface AwsregionsPackage extends EPackage {
 	 * @see awsregions.impl.AwsregionsPackageImpl#getAp_northeast_1()
 	 * @generated
 	 */
-	int AP_NORTHEAST_1 = 14;
+	int AP_NORTHEAST_1 = 15;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -1434,6 +1606,16 @@ public interface AwsregionsPackage extends EPackage {
 	 */
 	int AP_NORTHEAST_1_OPERATION_COUNT = RegionsPackage.ASIAPACIFIC_OPERATION_COUNT + 0;
 
+
+	/**
+	 * Returns the meta object for class '{@link awsregions.Awsregion <em>Awsregion</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Awsregion</em>'.
+	 * @see awsregions.Awsregion
+	 * @generated
+	 */
+	EClass getAwsregion();
 
 	/**
 	 * Returns the meta object for class '{@link awsregions.Us_east_2 <em>Us east 2</em>}'.
@@ -2268,6 +2450,16 @@ public interface AwsregionsPackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
+		/**
+		 * The meta object literal for the '{@link awsregions.impl.AwsregionImpl <em>Awsregion</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see awsregions.impl.AwsregionImpl
+		 * @see awsregions.impl.AwsregionsPackageImpl#getAwsregion()
+		 * @generated
+		 */
+		EClass AWSREGION = eINSTANCE.getAwsregion();
+
 		/**
 		 * The meta object literal for the '{@link awsregions.impl.Us_east_2Impl <em>Us east 2</em>}' class.
 		 * <!-- begin-user-doc -->

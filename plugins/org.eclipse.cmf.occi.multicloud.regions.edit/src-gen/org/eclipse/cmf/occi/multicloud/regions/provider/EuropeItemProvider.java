@@ -16,9 +16,11 @@ package org.eclipse.cmf.occi.multicloud.regions.provider;
 import java.util.Collection;
 import java.util.List;
 
+import org.eclipse.cmf.occi.core.provider.MixinBaseItemProvider;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
@@ -27,7 +29,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
  * <!-- end-user-doc -->
  * @generated
  */
-public class EuropeItemProvider extends RegionItemProvider {
+public class EuropeItemProvider extends MixinBaseItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -99,6 +101,17 @@ public class EuropeItemProvider extends RegionItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return RegionsEditPlugin.INSTANCE;
 	}
 
 }

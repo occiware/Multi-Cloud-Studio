@@ -29,7 +29,8 @@ import org.eclipse.cmf.occi.core.MixinBase;
  * </ul>
  *
  * @see org.eclipse.cmf.occi.multicloud.aws.ec2.Ec2Package#getT2_nano()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='appliesConstraint'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot appliesConstraint='self.entity.oclIsKindOf(ec2::Instanceec2)'"
  * @generated
  */
 public interface T2_nano extends Generalpurpose, MixinBase {

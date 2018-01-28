@@ -42,7 +42,7 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  *
  * @generated
  */
-public class AsiapacificImpl extends RegionImpl implements Asiapacific {
+public class AsiapacificImpl extends MixinBaseImpl implements Asiapacific {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -24,6 +24,17 @@
         <!-- Multi-Account modules -->
         <module>plugins/org.eclipse.cmf.occi.multicloud.accounts</module>
         <module>plugins/org.eclipse.cmf.occi.multicloud.accounts.edit</module>
+        <module>plugins/org.eclipse.cmf.occi.multicloud.accounts.connector</module>
+        
+        <!-- Regions -->
+        <module>plugins/org.eclipse.cmf.occi.multicloud.regions</module>
+        <module>plugins/org.eclipse.cmf.occi.multicloud.regions.edit</module>
+        <module>plugins/org.eclipse.cmf.occi.multicloud.regions.connector</module>
+        
+        <module>plugins/org.eclipse.cmf.occi.multicloud.regions.aws</module>
+        <module>plugins/org.eclipse.cmf.occi.multicloud.regions.aws.edit</module>
+        <module>plugins/org.eclipse.cmf.occi.multicloud.regions.aws.connector</module>
+        
         
         <!-- VMware modules -->
         <module>plugins/org.eclipse.cmf.occi.multicloud.vmware</module>
@@ -73,6 +84,20 @@
         <module>plugins/org.eclipse.cmf.occi.multicloud.vmware.design.extended</module>
         <module>plugins/org.eclipse.cmf.occi.multicloud.elasticocci.design.extended</module>
         <module>plugins/org.eclipse.cmf.occi.multicloud.horizontalelasticity.design.extended</module>
+        
+        <module>plugins/org.eclipse.cmf.occi.multicloud.aws.ec2</module>
+        <module>plugins/org.eclipse.cmf.occi.multicloud.aws.ec2.edit</module>
+        <module>plugins/org.eclipse.cmf.occi.multicloud.aws.ec2.connector.dependencies</module>
+        <module>plugins/org.eclipse.cmf.occi.multicloud.aws.ec2.connector</module>
+        
+        <module>plugins/org.eclipse.cmf.occi.multicloud.interoperability</module>
+        <module>plugins/org.eclipse.cmf.occi.multicloud.interoperability.edit</module>
+        <module>plugins/org.eclipse.cmf.occi.multicloud.interoperability.connector</module>
+        
+        <module>plugins/org.eclipse.cmf.occi.multicloud.all</module>
+        <module>plugins/org.eclipse.cmf.occi.multicloud.all.edit</module>
+        <module>plugins/org.eclipse.cmf.occi.multicloud.all.design.extended</module>
+        
         
         <!-- Releng -->
         <module>features/org.eclipse.cmf.occi.multicloud</module>

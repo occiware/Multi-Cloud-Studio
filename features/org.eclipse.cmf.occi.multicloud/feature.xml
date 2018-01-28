@@ -482,7 +482,50 @@ litigation.
         install-size="0"
         version="0.0.0"
         unpack="false"/>
+    <plugin
+        id="org.eclipse.cmf.occi.multicloud.accounts.connector"
+        download-size="0"
+        install-size="0"
+        version="0.0.0"
+        unpack="false"/>
 
+  <plugin
+    id="org.eclipse.cmf.occi.multicloud.regions"
+    download-size="0"
+    install-size="0"
+    version="0.0.0"
+    unpack="false"/>
+  <plugin
+    id="org.eclipse.cmf.occi.multicloud.regions.edit"
+    download-size="0"
+    install-size="0"
+    version="0.0.0"
+    unpack="false"/>
+  <plugin
+    id="org.eclipse.cmf.occi.multicloud.regions.connector"
+    download-size="0"
+    install-size="0"
+    version="0.0.0"
+    unpack="false"/>
+  <plugin
+    id="org.eclipse.cmf.occi.multicloud.regions.aws"
+    download-size="0"
+    install-size="0"
+    version="0.0.0"
+    unpack="false"/>
+  <plugin
+    id="org.eclipse.cmf.occi.multicloud.regions.aws.edit"
+    download-size="0"
+    install-size="0"
+    version="0.0.0"
+    unpack="false"/>
+    <plugin
+    id="org.eclipse.cmf.occi.multicloud.regions.aws.connector"
+    download-size="0"
+    install-size="0"
+    version="0.0.0"
+    unpack="false"/>
+    
     <!-- VMware part -->
     <plugin
         id="org.eclipse.cmf.occi.multicloud.vmware"
@@ -669,7 +712,66 @@ litigation.
         version="0.0.0"
         unpack="false"/>
     
-
+    <!-- Multi-cloud AWS EC2 service -->
+  <plugin
+    id="org.eclipse.cmf.occi.multicloud.aws.ec2"
+    download-size="0"
+    install-size="0"
+    version="0.0.0"
+    unpack="false"/>
+  <plugin
+    id="org.eclipse.cmf.occi.multicloud.aws.ec2.edit"
+    download-size="0"
+    install-size="0"
+    version="0.0.0"
+    unpack="false"/>
+  <plugin
+    id="org.eclipse.cmf.occi.multicloud.aws.ec2.connector"
+    download-size="0"
+    install-size="0"
+    version="0.0.0"
+    unpack="false"/>
+   
+  <plugin
+   id="org.eclipse.cmf.occi.multicloud.interoperability"
+   download-size="0"
+   install-size="0"
+   version="0.0.0"
+   unpack="false"/>
+   <plugin
+   id="org.eclipse.cmf.occi.multicloud.interoperability.edit"
+   download-size="0"
+   install-size="0"
+   version="0.0.0"
+   unpack="false"/>
+   <plugin
+   id="org.eclipse.cmf.occi.multicloud.interoperability.connector"
+   download-size="0"
+   install-size="0"
+   version="0.0.0"
+   unpack="false"/>
+   
+    <!-- Multi-cloud all agregated plugin design -->
+    <plugin
+      id="org.eclipse.cmf.occi.multicloud.all"
+      download-size="0"
+      install-size="0"
+      version="0.0.0"
+      unpack="false"/>
+    <plugin
+      id="org.eclipse.cmf.occi.multicloud.all.edit"
+      download-size="0"
+      install-size="0"
+      version="0.0.0"
+      unpack="false"/>
+    <plugin
+      id="org.eclipse.cmf.occi.multicloud.all.design.extended"
+      download-size="0"
+      install-size="0"
+      version="0.0.0"
+      unpack="false"/>
+    
+    
     
   <requires>
     <!-- Eclipse Modeling Framework and tools. -->

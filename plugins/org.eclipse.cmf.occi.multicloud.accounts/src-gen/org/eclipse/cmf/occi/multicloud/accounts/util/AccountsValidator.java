@@ -18,6 +18,7 @@ import org.eclipse.cmf.occi.core.util.OCCIValidator;
 
 import org.eclipse.cmf.occi.multicloud.accounts.*;
 
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 
@@ -52,52 +53,12 @@ public class AccountsValidator extends EObjectValidator {
 	public static final String DIAGNOSTIC_SOURCE = "org.eclipse.cmf.occi.multicloud.accounts";
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Source Constraint' of 'Cloudaccountlink'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int CLOUDACCOUNTLINK__SOURCE_CONSTRAINT = 1;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Basiccredential'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int BASICCREDENTIAL__APPLIES_CONSTRAINT = 2;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Certificatecredential'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int CERTIFICATECREDENTIAL__APPLIES_CONSTRAINT = 3;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Keypaircredential'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int KEYPAIRCREDENTIAL__APPLIES_CONSTRAINT = 4;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Cloudcredential'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int CLOUDCREDENTIAL__APPLIES_CONSTRAINT = 5;
-
-	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 5;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 0;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -213,13 +174,32 @@ public class AccountsValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the sourceConstraint constraint of '<em>Cloudaccountlink</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String CLOUDACCOUNTLINK__SOURCE_CONSTRAINT__EEXPRESSION = "self.source.oclIsKindOf(accounts::Cloudaccount)";
+
+	/**
 	 * Validates the sourceConstraint constraint of '<em>Cloudaccountlink</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateCloudaccountlink_sourceConstraint(Cloudaccountlink cloudaccountlink, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return cloudaccountlink.sourceConstraint(diagnostics, context);
+		return
+			validate
+				(AccountsPackage.Literals.CLOUDACCOUNTLINK,
+				 cloudaccountlink,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "sourceConstraint",
+				 CLOUDACCOUNTLINK__SOURCE_CONSTRAINT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -242,13 +222,32 @@ public class AccountsValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>Basiccredential</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String BASICCREDENTIAL__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(accounts::Cloudaccount)";
+
+	/**
 	 * Validates the appliesConstraint constraint of '<em>Basiccredential</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateBasiccredential_appliesConstraint(Basiccredential basiccredential, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return basiccredential.appliesConstraint(diagnostics, context);
+		return
+			validate
+				(AccountsPackage.Literals.BASICCREDENTIAL,
+				 basiccredential,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "appliesConstraint",
+				 BASICCREDENTIAL__APPLIES_CONSTRAINT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -271,13 +270,32 @@ public class AccountsValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>Certificatecredential</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String CERTIFICATECREDENTIAL__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(accounts::Cloudaccount)";
+
+	/**
 	 * Validates the appliesConstraint constraint of '<em>Certificatecredential</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateCertificatecredential_appliesConstraint(Certificatecredential certificatecredential, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return certificatecredential.appliesConstraint(diagnostics, context);
+		return
+			validate
+				(AccountsPackage.Literals.CERTIFICATECREDENTIAL,
+				 certificatecredential,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "appliesConstraint",
+				 CERTIFICATECREDENTIAL__APPLIES_CONSTRAINT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -300,13 +318,32 @@ public class AccountsValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>Keypaircredential</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String KEYPAIRCREDENTIAL__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(accounts::Cloudaccount)";
+
+	/**
 	 * Validates the appliesConstraint constraint of '<em>Keypaircredential</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateKeypaircredential_appliesConstraint(Keypaircredential keypaircredential, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return keypaircredential.appliesConstraint(diagnostics, context);
+		return
+			validate
+				(AccountsPackage.Literals.KEYPAIRCREDENTIAL,
+				 keypaircredential,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "appliesConstraint",
+				 KEYPAIRCREDENTIAL__APPLIES_CONSTRAINT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -329,13 +366,32 @@ public class AccountsValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>Cloudcredential</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String CLOUDCREDENTIAL__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(accounts::Cloudaccount)";
+
+	/**
 	 * Validates the appliesConstraint constraint of '<em>Cloudcredential</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateCloudcredential_appliesConstraint(Cloudcredential cloudcredential, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return cloudcredential.appliesConstraint(diagnostics, context);
+		return
+			validate
+				(AccountsPackage.Literals.CLOUDCREDENTIAL,
+				 cloudcredential,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "appliesConstraint",
+				 CLOUDCREDENTIAL__APPLIES_CONSTRAINT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

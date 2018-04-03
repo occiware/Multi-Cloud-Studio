@@ -37,6 +37,8 @@ import org.eclipse.emf.ecore.EPackage;
  * <!-- end-user-doc -->
  * @see org.eclipse.cmf.occi.multicloud.vmware.VmwareFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot'"
+ *        annotation="http://www.eclipse.org/OCL/Import occi='http://schemas.ogf.org/occi/core/ecore' infrastructure='http://schemas.ogf.org/occi/infrastructure/ecore' accounts='http://occiware.org/occi/infrastructure/security/ecore'"
  * @generated
  */
 public interface VmwarePackage extends EPackage {
@@ -787,22 +789,13 @@ public interface VmwarePackage extends EPackage {
 	int STORAGELINKVMWARE___OCCI_DELETE = InfrastructurePackage.STORAGELINK___OCCI_DELETE;
 
 	/**
-	 * The operation id for the '<em>Target Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STORAGELINKVMWARE___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP = InfrastructurePackage.STORAGELINK_OPERATION_COUNT + 0;
-
-	/**
 	 * The number of operations of the '<em>Storagelinkvmware</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STORAGELINKVMWARE_OPERATION_COUNT = InfrastructurePackage.STORAGELINK_OPERATION_COUNT + 1;
+	int STORAGELINKVMWARE_OPERATION_COUNT = InfrastructurePackage.STORAGELINK_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.vmware.impl.VswitchImpl <em>Vswitch</em>}' class.
@@ -1194,22 +1187,13 @@ public interface VmwarePackage extends EPackage {
 	int NETWORKADAPTER___OCCI_DELETE = InfrastructurePackage.NETWORKINTERFACE___OCCI_DELETE;
 
 	/**
-	 * The operation id for the '<em>Target Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORKADAPTER___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP = InfrastructurePackage.NETWORKINTERFACE_OPERATION_COUNT + 0;
-
-	/**
 	 * The number of operations of the '<em>Networkadapter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NETWORKADAPTER_OPERATION_COUNT = InfrastructurePackage.NETWORKINTERFACE_OPERATION_COUNT + 1;
+	int NETWORKADAPTER_OPERATION_COUNT = InfrastructurePackage.NETWORKINTERFACE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.vmware.impl.VcenteraccountImpl <em>Vcenteraccount</em>}' class.
@@ -1470,22 +1454,13 @@ public interface VmwarePackage extends EPackage {
 	int OS_TPL_VMWARE_FEATURE_COUNT = InfrastructurePackage.OS_TPL_FEATURE_COUNT + 2;
 
 	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OS_TPL_VMWARE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = InfrastructurePackage.OS_TPL_OPERATION_COUNT + 0;
-
-	/**
 	 * The number of operations of the '<em>Os tpl vmware</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OS_TPL_VMWARE_OPERATION_COUNT = InfrastructurePackage.OS_TPL_OPERATION_COUNT + 1;
+	int OS_TPL_VMWARE_OPERATION_COUNT = InfrastructurePackage.OS_TPL_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -1542,22 +1517,13 @@ public interface VmwarePackage extends EPackage {
 	int WINDOWS_FEATURE_COUNT = OS_TPL_VMWARE_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WINDOWS___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OS_TPL_VMWARE_OPERATION_COUNT + 0;
-
-	/**
 	 * The number of operations of the '<em>Windows</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WINDOWS_OPERATION_COUNT = OS_TPL_VMWARE_OPERATION_COUNT + 1;
+	int WINDOWS_OPERATION_COUNT = OS_TPL_VMWARE_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -1614,22 +1580,13 @@ public interface VmwarePackage extends EPackage {
 	int LINUX_FEATURE_COUNT = OS_TPL_VMWARE_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINUX___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OS_TPL_VMWARE_OPERATION_COUNT + 0;
-
-	/**
 	 * The number of operations of the '<em>Linux</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LINUX_OPERATION_COUNT = OS_TPL_VMWARE_OPERATION_COUNT + 1;
+	int LINUX_OPERATION_COUNT = OS_TPL_VMWARE_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -1686,22 +1643,13 @@ public interface VmwarePackage extends EPackage {
 	int MACOSX_FEATURE_COUNT = OS_TPL_VMWARE_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MACOSX___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OS_TPL_VMWARE_OPERATION_COUNT + 0;
-
-	/**
 	 * The number of operations of the '<em>Macosx</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MACOSX_OPERATION_COUNT = OS_TPL_VMWARE_OPERATION_COUNT + 1;
+	int MACOSX_OPERATION_COUNT = OS_TPL_VMWARE_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -1785,22 +1733,13 @@ public interface VmwarePackage extends EPackage {
 	int VMWAREFOLDERS_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 5;
 
 	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VMWAREFOLDERS___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
-
-	/**
 	 * The number of operations of the '<em>Vmwarefolders</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VMWAREFOLDERS_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
+	int VMWAREFOLDERS_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.vmware.impl.Ssh_user_dataImpl <em>Ssh user data</em>}' class.
@@ -1885,22 +1824,13 @@ public interface VmwarePackage extends EPackage {
 	int SSH_USER_DATA_FEATURE_COUNT = InfrastructurePackage.USER_DATA_FEATURE_COUNT + 3;
 
 	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SSH_USER_DATA___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = InfrastructurePackage.USER_DATA_OPERATION_COUNT + 0;
-
-	/**
 	 * The number of operations of the '<em>Ssh user data</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SSH_USER_DATA_OPERATION_COUNT = InfrastructurePackage.USER_DATA_OPERATION_COUNT + 1;
+	int SSH_USER_DATA_OPERATION_COUNT = InfrastructurePackage.USER_DATA_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.vmware.impl.VcentercredentialImpl <em>Vcentercredential</em>}' class.
@@ -1985,22 +1915,13 @@ public interface VmwarePackage extends EPackage {
 	int VCENTERCREDENTIAL___UPDATEPASSWORD = AccountsPackage.BASICCREDENTIAL___UPDATEPASSWORD;
 
 	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VCENTERCREDENTIAL___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = AccountsPackage.BASICCREDENTIAL_OPERATION_COUNT + 0;
-
-	/**
 	 * The number of operations of the '<em>Vcentercredential</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VCENTERCREDENTIAL_OPERATION_COUNT = AccountsPackage.BASICCREDENTIAL_OPERATION_COUNT + 1;
+	int VCENTERCREDENTIAL_OPERATION_COUNT = AccountsPackage.BASICCREDENTIAL_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.vmware.GuestOsIdentifiers <em>Guest Os Identifiers</em>}' enum.
@@ -2132,16 +2053,6 @@ public interface VmwarePackage extends EPackage {
 	EClass getStoragelinkvmware();
 
 	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.vmware.Storagelinkvmware#targetConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Target Constraint</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Target Constraint</em>' operation.
-	 * @see org.eclipse.cmf.occi.multicloud.vmware.Storagelinkvmware#targetConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getStoragelinkvmware__TargetConstraint__DiagnosticChain_Map();
-
-	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.vmware.Vswitch <em>Vswitch</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2173,16 +2084,6 @@ public interface VmwarePackage extends EPackage {
 	EClass getNetworkadapter();
 
 	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.vmware.Networkadapter#targetConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Target Constraint</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Target Constraint</em>' operation.
-	 * @see org.eclipse.cmf.occi.multicloud.vmware.Networkadapter#targetConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getNetworkadapter__TargetConstraint__DiagnosticChain_Map();
-
-	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.vmware.Vcenteraccount <em>Vcenteraccount</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2203,16 +2104,6 @@ public interface VmwarePackage extends EPackage {
 	EClass getWindows();
 
 	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.vmware.Windows#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
-	 * @see org.eclipse.cmf.occi.multicloud.vmware.Windows#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getWindows__AppliesConstraint__DiagnosticChain_Map();
-
-	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.vmware.Linux <em>Linux</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2223,16 +2114,6 @@ public interface VmwarePackage extends EPackage {
 	EClass getLinux();
 
 	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.vmware.Linux#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
-	 * @see org.eclipse.cmf.occi.multicloud.vmware.Linux#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getLinux__AppliesConstraint__DiagnosticChain_Map();
-
-	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.vmware.Macosx <em>Macosx</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2241,16 +2122,6 @@ public interface VmwarePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getMacosx();
-
-	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.vmware.Macosx#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
-	 * @see org.eclipse.cmf.occi.multicloud.vmware.Macosx#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getMacosx__AppliesConstraint__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.vmware.Vmwarefolders <em>Vmwarefolders</em>}'.
@@ -2318,16 +2189,6 @@ public interface VmwarePackage extends EPackage {
 	EAttribute getVmwarefolders_Inventorypath();
 
 	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.vmware.Vmwarefolders#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
-	 * @see org.eclipse.cmf.occi.multicloud.vmware.Vmwarefolders#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getVmwarefolders__AppliesConstraint__DiagnosticChain_Map();
-
-	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.vmware.Os_tpl_vmware <em>Os tpl vmware</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2358,16 +2219,6 @@ public interface VmwarePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getOs_tpl_vmware_Guestid();
-
-	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.vmware.Os_tpl_vmware#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
-	 * @see org.eclipse.cmf.occi.multicloud.vmware.Os_tpl_vmware#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getOs_tpl_vmware__AppliesConstraint__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.vmware.Ssh_user_data <em>Ssh user data</em>}'.
@@ -2413,16 +2264,6 @@ public interface VmwarePackage extends EPackage {
 	EAttribute getSsh_user_data_User();
 
 	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.vmware.Ssh_user_data#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
-	 * @see org.eclipse.cmf.occi.multicloud.vmware.Ssh_user_data#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getSsh_user_data__AppliesConstraint__DiagnosticChain_Map();
-
-	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.vmware.Vcentercredential <em>Vcentercredential</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2431,16 +2272,6 @@ public interface VmwarePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getVcentercredential();
-
-	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.vmware.Vcentercredential#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
-	 * @see org.eclipse.cmf.occi.multicloud.vmware.Vcentercredential#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getVcentercredential__AppliesConstraint__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for enum '{@link org.eclipse.cmf.occi.multicloud.vmware.GuestOsIdentifiers <em>Guest Os Identifiers</em>}'.
@@ -2570,14 +2401,6 @@ public interface VmwarePackage extends EPackage {
 		EClass STORAGELINKVMWARE = eINSTANCE.getStoragelinkvmware();
 
 		/**
-		 * The meta object literal for the '<em><b>Target Constraint</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation STORAGELINKVMWARE___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getStoragelinkvmware__TargetConstraint__DiagnosticChain_Map();
-
-		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.vmware.impl.VswitchImpl <em>Vswitch</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2606,14 +2429,6 @@ public interface VmwarePackage extends EPackage {
 		EClass NETWORKADAPTER = eINSTANCE.getNetworkadapter();
 
 		/**
-		 * The meta object literal for the '<em><b>Target Constraint</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation NETWORKADAPTER___TARGET_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getNetworkadapter__TargetConstraint__DiagnosticChain_Map();
-
-		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.vmware.impl.VcenteraccountImpl <em>Vcenteraccount</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2634,14 +2449,6 @@ public interface VmwarePackage extends EPackage {
 		EClass WINDOWS = eINSTANCE.getWindows();
 
 		/**
-		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation WINDOWS___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getWindows__AppliesConstraint__DiagnosticChain_Map();
-
-		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.vmware.impl.LinuxImpl <em>Linux</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2652,14 +2459,6 @@ public interface VmwarePackage extends EPackage {
 		EClass LINUX = eINSTANCE.getLinux();
 
 		/**
-		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation LINUX___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getLinux__AppliesConstraint__DiagnosticChain_Map();
-
-		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.vmware.impl.MacosxImpl <em>Macosx</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2668,14 +2467,6 @@ public interface VmwarePackage extends EPackage {
 		 * @generated
 		 */
 		EClass MACOSX = eINSTANCE.getMacosx();
-
-		/**
-		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation MACOSX___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getMacosx__AppliesConstraint__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.vmware.impl.VmwarefoldersImpl <em>Vmwarefolders</em>}' class.
@@ -2728,14 +2519,6 @@ public interface VmwarePackage extends EPackage {
 		EAttribute VMWAREFOLDERS__INVENTORYPATH = eINSTANCE.getVmwarefolders_Inventorypath();
 
 		/**
-		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation VMWAREFOLDERS___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getVmwarefolders__AppliesConstraint__DiagnosticChain_Map();
-
-		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.vmware.impl.Os_tpl_vmwareImpl <em>Os tpl vmware</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2760,14 +2543,6 @@ public interface VmwarePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute OS_TPL_VMWARE__GUESTID = eINSTANCE.getOs_tpl_vmware_Guestid();
-
-		/**
-		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation OS_TPL_VMWARE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getOs_tpl_vmware__AppliesConstraint__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.vmware.impl.Ssh_user_dataImpl <em>Ssh user data</em>}' class.
@@ -2804,14 +2579,6 @@ public interface VmwarePackage extends EPackage {
 		EAttribute SSH_USER_DATA__USER = eINSTANCE.getSsh_user_data_User();
 
 		/**
-		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation SSH_USER_DATA___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getSsh_user_data__AppliesConstraint__DiagnosticChain_Map();
-
-		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.vmware.impl.VcentercredentialImpl <em>Vcentercredential</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2820,14 +2587,6 @@ public interface VmwarePackage extends EPackage {
 		 * @generated
 		 */
 		EClass VCENTERCREDENTIAL = eINSTANCE.getVcentercredential();
-
-		/**
-		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation VCENTERCREDENTIAL___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getVcentercredential__AppliesConstraint__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.vmware.GuestOsIdentifiers <em>Guest Os Identifiers</em>}' enum.

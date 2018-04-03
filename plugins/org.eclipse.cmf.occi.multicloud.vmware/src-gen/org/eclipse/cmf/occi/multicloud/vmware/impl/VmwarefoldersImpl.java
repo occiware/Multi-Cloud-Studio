@@ -297,84 +297,6 @@ public class VmwarefoldersImpl extends MixinBaseImpl implements Vmwarefolders {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean appliesConstraint(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		/**
-		 *
-		 * inv appliesConstraint:
-		 *   let severity : Integer[1] = 'Vmwarefolders::appliesConstraint'.getSeverity()
-		 *   in
-		 *     if severity <= 0
-		 *     then true
-		 *     else
-		 *       let
-		 *         result : occi::Boolean[?] = self.entity.oclIsKindOf(Instancevmware) or
-		 *         self.entity.oclIsKindOf(Networkadapter) or
-		 *         self.entity.oclIsKindOf(Storagelinkvmware) or
-		 *         self.entity.oclIsKindOf(Storagevmware) or
-		 *         self.entity.oclIsKindOf(Vswitch)
-		 *       in
-		 *         'Vmwarefolders::appliesConstraint'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
-		 *     endif
-		 */
-		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
-		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
-		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, VmwareTables.STR_Vmwarefolders_c_c_appliesConstraint);
-		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, VmwareTables.INT_0).booleanValue();
-		/*@NonInvalid*/ boolean symbol_0;
-		if (le) {
-			symbol_0 = ValueUtil.TRUE_VALUE;
-		}
-		else {
-			final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_vmware_c_c_Instancevmware_0 = idResolver.getClass(VmwareTables.CLSSid_Instancevmware, null);
-			final /*@NonInvalid*/ Entity entity_3 = this.getEntity();
-			final /*@NonInvalid*/ boolean oclIsKindOf = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_3, TYP_vmware_c_c_Instancevmware_0).booleanValue();
-			/*@NonInvalid*/ boolean or;
-			if (oclIsKindOf) {
-				or = ValueUtil.TRUE_VALUE;
-			}
-			else {
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_vmware_c_c_Networkadapter = idResolver.getClass(VmwareTables.CLSSid_Networkadapter, null);
-				final /*@NonInvalid*/ boolean oclIsKindOf_0 = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_3, TYP_vmware_c_c_Networkadapter).booleanValue();
-				or = oclIsKindOf_0;
-			}
-			/*@NonInvalid*/ boolean or_0;
-			if (or) {
-				or_0 = ValueUtil.TRUE_VALUE;
-			}
-			else {
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_vmware_c_c_Storagelinkvmware = idResolver.getClass(VmwareTables.CLSSid_Storagelinkvmware, null);
-				final /*@NonInvalid*/ boolean oclIsKindOf_1 = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_3, TYP_vmware_c_c_Storagelinkvmware).booleanValue();
-				or_0 = oclIsKindOf_1;
-			}
-			/*@NonInvalid*/ boolean or_1;
-			if (or_0) {
-				or_1 = ValueUtil.TRUE_VALUE;
-			}
-			else {
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_vmware_c_c_Storagevmware_0 = idResolver.getClass(VmwareTables.CLSSid_Storagevmware, null);
-				final /*@NonInvalid*/ boolean oclIsKindOf_2 = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_3, TYP_vmware_c_c_Storagevmware_0).booleanValue();
-				or_1 = oclIsKindOf_2;
-			}
-			/*@NonInvalid*/ boolean result;
-			if (or_1) {
-				result = ValueUtil.TRUE_VALUE;
-			}
-			else {
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_vmware_c_c_Vswitch_0 = idResolver.getClass(VmwareTables.CLSSid_Vswitch, null);
-				final /*@NonInvalid*/ boolean oclIsKindOf_3 = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity_3, TYP_vmware_c_c_Vswitch_0).booleanValue();
-				result = oclIsKindOf_3;
-			}
-			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, VmwareTables.STR_Vmwarefolders_c_c_appliesConstraint, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, VmwareTables.INT_0).booleanValue();
-			symbol_0 = logDiagnostic;
-		}
-		return Boolean.TRUE == symbol_0;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -466,21 +388,6 @@ public class VmwarefoldersImpl extends MixinBaseImpl implements Vmwarefolders {
 				return INVENTORYPATH_EDEFAULT == null ? inventorypath != null : !INVENTORYPATH_EDEFAULT.equals(inventorypath);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case VmwarePackage.VMWAREFOLDERS___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP:
-				return appliesConstraint((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

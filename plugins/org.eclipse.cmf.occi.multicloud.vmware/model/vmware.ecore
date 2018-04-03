@@ -9,7 +9,6 @@
   </eAnnotations>
   <eAnnotations source="http://www.eclipse.org/OCL/Import">
     <details key="occi" value="http://schemas.ogf.org/occi/core/ecore"/>
-    <details key="crtp" value="http://schemas.ogf.org/occi/infrastructure/compute/template/1.1/ecore"/>
     <details key="infrastructure" value="http://schemas.ogf.org/occi/infrastructure/ecore"/>
     <details key="accounts" value="http://occiware.org/occi/infrastructure/security/ecore"/>
   </eAnnotations>
@@ -204,9 +203,10 @@
       <details key="documentation" value=""/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="targetConstraint"/>
+      <details key="constraints" value="sourceConstraint targetConstraint"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="sourceConstraint" value="self.source.oclIsKindOf(vmware::Instancevmware)"/>
       <details key="targetConstraint" value="self.target.oclIsKindOf(vmware::Storagevmware)"/>
     </eAnnotations>
   </eClassifiers>
@@ -225,9 +225,10 @@
       <details key="documentation" value="Network adapter interface"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="targetConstraint"/>
+      <details key="constraints" value="sourceConstraint targetConstraint"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="sourceConstraint" value="self.source.oclIsKindOf(vmware::Instancevmware)"/>
       <details key="targetConstraint" value="self.target.oclIsKindOf(vmware::Vswitch)"/>
     </eAnnotations>
   </eClassifiers>

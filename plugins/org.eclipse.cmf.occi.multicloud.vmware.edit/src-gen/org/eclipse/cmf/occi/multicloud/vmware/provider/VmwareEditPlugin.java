@@ -55,7 +55,6 @@ public final class VmwareEditPlugin extends EMFPlugin {
 	public VmwareEditPlugin() {
 		super
 		  (new ResourceLocator [] {
-		     CrtpEditPlugin.INSTANCE,
 		     InfrastructureEditPlugin.INSTANCE,
 		     AccountsEditPlugin.INSTANCE,
 		     OCCIEditPlugin.INSTANCE,

@@ -1,0 +1,111 @@
+h1. OCCI accounts extension
+
+Abstract Account management extension, this is to use and implement for each providers.
+
+| *Name* | accounts |
+| *Scheme* | http://occiware.org/occi/infrastructure/security# |
+
+
+Imported OCCI Extensions:
+
+| *Name* | *Scheme* |
+| <a href="core.textile">core</a> | http://schemas.ogf.org/occi/core# |
+
+h1. Kinds
+
+h2. Kind cloudaccount
+
+| *Term* | cloudaccount |
+| *Scheme* | http://occiware.org/occi/infrastructure/security# |
+| *Title* |  |
+| *Parent* | <a href="core.textile#kind-resource">http://schemas.ogf.org/occi/core#resource</a> |
+
+h2. Kind cloudaccountlink
+
+| *Term* | cloudaccountlink |
+| *Scheme* | http://occiware.org/occi/infrastructure/security# |
+| *Title* |  |
+| *Parent* | <a href="core.textile#kind-link">http://schemas.ogf.org/occi/core#link</a> |
+
+
+h1. Mixins
+
+h2. Mixin basiccredential
+
+| *Term* | basiccredential |
+| *Scheme* | http://occiware.org/occi/infrastructure/security# |
+| *Title* |  |
+Applies to:
+* <a href="accounts.textile#kind-cloudaccount">http://occiware.org/occi/infrastructure/security#cloudaccount</a>
+
+Attributes of basiccredential are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| username | <a href="core.textile#-string">String</a> | false | true |  |  |
+| password | <a href="core.textile#-string">String</a> | false | true |  |  |
+| url | <a href="core.textile#-string">String</a> | false | true |  |  |
+
+Actions of basiccredential are:
+
+| *Term* | *Scheme* | *Attributes* | *Title* |
+| updatepassword | http://occiware.org/occi/infrastructure/security/basiccredential/action# |  |  |
+
+
+h2. Mixin certificatecredential
+
+| *Term* | certificatecredential |
+| *Scheme* | http://occiware.org/occi/infrastructure/security# |
+| *Title* |  |
+Applies to:
+* <a href="accounts.textile#kind-cloudaccount">http://occiware.org/occi/infrastructure/security#cloudaccount</a>
+
+Attributes of certificatecredential are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| publicCertificateContent | <a href="core.textile#-string">String</a> | false | true |  |  |
+| privateCertifcateName | <a href="core.textile#-string">String</a> | false | true |  |  |
+
+Actions of certificatecredential are:
+
+| *Term* | *Scheme* | *Attributes* | *Title* |
+| generate | http://occiware.org/occi/infrastructure/security/certificatecredential/action# |  |  |
+
+
+h2. Mixin keypaircredential
+
+| *Term* | keypaircredential |
+| *Scheme* | http://occiware.org/occi/infrastructure/security# |
+| *Title* |  |
+Applies to:
+* <a href="accounts.textile#kind-cloudaccount">http://occiware.org/occi/infrastructure/security#cloudaccount</a>
+
+Attributes of keypaircredential are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| privateKey | <a href="core.textile#-string">String</a> | false | true |  |  |
+| publicKey | <a href="core.textile#-string">String</a> | false | true |  |  |
+
+Actions of keypaircredential are:
+
+| *Term* | *Scheme* | *Attributes* | *Title* |
+| generate | http://occiware.org/occi/infrastructure/security/keypaircredential/action# |  |  |
+
+
+h2. Mixin cloudcredential
+
+| *Term* | cloudcredential |
+| *Scheme* | http://occiware.org/occi/infrastructure/security# |
+| *Title* |  |
+Applies to:
+* <a href="accounts.textile#kind-cloudaccount">http://occiware.org/occi/infrastructure/security#cloudaccount</a>
+
+Attributes of cloudcredential are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| accessKey | <a href="core.textile#-string">String</a> | false | true |  |  |
+| secretKey | <a href="core.textile#-string">String</a> | false | true |  |  |
+| url | <a href="core.textile#-string">String</a> | false | true |  |  |
+
+
+
+Generated at Mon Jan 29 15:16:59 CET 2018 from platform:/resource/org.eclipse.cmf.occi.multicloud.accounts/model/accounts.occie by org.eclipse.cmf.occi.core.gen.textile

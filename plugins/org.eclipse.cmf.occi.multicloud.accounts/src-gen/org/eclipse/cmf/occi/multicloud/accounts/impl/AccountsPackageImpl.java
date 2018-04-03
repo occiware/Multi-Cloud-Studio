@@ -179,15 +179,6 @@ public class AccountsPackageImpl extends EPackageImpl implements AccountsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getCloudaccountlink__SourceConstraint__DiagnosticChain_Map() {
-		return cloudaccountlinkEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getBasiccredential() {
 		return basiccredentialEClass;
 	}
@@ -233,15 +224,6 @@ public class AccountsPackageImpl extends EPackageImpl implements AccountsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBasiccredential__AppliesConstraint__DiagnosticChain_Map() {
-		return basiccredentialEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getCertificatecredential() {
 		return certificatecredentialEClass;
 	}
@@ -271,15 +253,6 @@ public class AccountsPackageImpl extends EPackageImpl implements AccountsPackage
 	 */
 	public EOperation getCertificatecredential__Generate() {
 		return certificatecredentialEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getCertificatecredential__AppliesConstraint__DiagnosticChain_Map() {
-		return certificatecredentialEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -323,15 +296,6 @@ public class AccountsPackageImpl extends EPackageImpl implements AccountsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getKeypaircredential__AppliesConstraint__DiagnosticChain_Map() {
-		return keypaircredentialEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getCloudcredential() {
 		return cloudcredentialEClass;
 	}
@@ -368,15 +332,6 @@ public class AccountsPackageImpl extends EPackageImpl implements AccountsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getCloudcredential__AppliesConstraint__DiagnosticChain_Map() {
-		return cloudcredentialEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public AccountsFactory getAccountsFactory() {
 		return (AccountsFactory)getEFactoryInstance();
 	}
@@ -403,32 +358,27 @@ public class AccountsPackageImpl extends EPackageImpl implements AccountsPackage
 		cloudaccountEClass = createEClass(CLOUDACCOUNT);
 
 		cloudaccountlinkEClass = createEClass(CLOUDACCOUNTLINK);
-		createEOperation(cloudaccountlinkEClass, CLOUDACCOUNTLINK___SOURCE_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
 		basiccredentialEClass = createEClass(BASICCREDENTIAL);
 		createEAttribute(basiccredentialEClass, BASICCREDENTIAL__USERNAME);
 		createEAttribute(basiccredentialEClass, BASICCREDENTIAL__PASSWORD);
 		createEAttribute(basiccredentialEClass, BASICCREDENTIAL__URL);
 		createEOperation(basiccredentialEClass, BASICCREDENTIAL___UPDATEPASSWORD);
-		createEOperation(basiccredentialEClass, BASICCREDENTIAL___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
 		certificatecredentialEClass = createEClass(CERTIFICATECREDENTIAL);
 		createEAttribute(certificatecredentialEClass, CERTIFICATECREDENTIAL__PUBLIC_CERTIFICATE_CONTENT);
 		createEAttribute(certificatecredentialEClass, CERTIFICATECREDENTIAL__PRIVATE_CERTIFCATE_NAME);
 		createEOperation(certificatecredentialEClass, CERTIFICATECREDENTIAL___GENERATE);
-		createEOperation(certificatecredentialEClass, CERTIFICATECREDENTIAL___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
 		keypaircredentialEClass = createEClass(KEYPAIRCREDENTIAL);
 		createEAttribute(keypaircredentialEClass, KEYPAIRCREDENTIAL__PRIVATE_KEY);
 		createEAttribute(keypaircredentialEClass, KEYPAIRCREDENTIAL__PUBLIC_KEY);
 		createEOperation(keypaircredentialEClass, KEYPAIRCREDENTIAL___GENERATE);
-		createEOperation(keypaircredentialEClass, KEYPAIRCREDENTIAL___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
 		cloudcredentialEClass = createEClass(CLOUDCREDENTIAL);
 		createEAttribute(cloudcredentialEClass, CLOUDCREDENTIAL__ACCESS_KEY);
 		createEAttribute(cloudcredentialEClass, CLOUDCREDENTIAL__SECRET_KEY);
 		createEAttribute(cloudcredentialEClass, CLOUDCREDENTIAL__URL);
-		createEOperation(cloudcredentialEClass, CLOUDCREDENTIAL___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 	}
 
 	/**
@@ -474,15 +424,6 @@ public class AccountsPackageImpl extends EPackageImpl implements AccountsPackage
 
 		initEClass(cloudaccountlinkEClass, Cloudaccountlink.class, "Cloudaccountlink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		EOperation op = initEOperation(getCloudaccountlink__SourceConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "sourceConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
-		EGenericType g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(basiccredentialEClass, Basiccredential.class, "Basiccredential", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBasiccredential_Username(), theOCCIPackage.getString(), "username", null, 0, 1, Basiccredential.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBasiccredential_Password(), theOCCIPackage.getString(), "password", null, 0, 1, Basiccredential.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -490,29 +431,11 @@ public class AccountsPackageImpl extends EPackageImpl implements AccountsPackage
 
 		initEOperation(getBasiccredential__Updatepassword(), null, "updatepassword", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getBasiccredential__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(certificatecredentialEClass, Certificatecredential.class, "Certificatecredential", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCertificatecredential_PublicCertificateContent(), theOCCIPackage.getString(), "publicCertificateContent", null, 0, 1, Certificatecredential.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCertificatecredential_PrivateCertifcateName(), theOCCIPackage.getString(), "privateCertifcateName", null, 0, 1, Certificatecredential.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getCertificatecredential__Generate(), null, "generate", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getCertificatecredential__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(keypaircredentialEClass, Keypaircredential.class, "Keypaircredential", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getKeypaircredential_PrivateKey(), theOCCIPackage.getString(), "privateKey", null, 0, 1, Keypaircredential.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -520,28 +443,10 @@ public class AccountsPackageImpl extends EPackageImpl implements AccountsPackage
 
 		initEOperation(getKeypaircredential__Generate(), null, "generate", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getKeypaircredential__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(cloudcredentialEClass, Cloudcredential.class, "Cloudcredential", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCloudcredential_AccessKey(), theOCCIPackage.getString(), "accessKey", null, 0, 1, Cloudcredential.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCloudcredential_SecretKey(), theOCCIPackage.getString(), "secretKey", null, 0, 1, Cloudcredential.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCloudcredential_Url(), theOCCIPackage.getString(), "url", null, 0, 1, Cloudcredential.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		op = initEOperation(getCloudcredential__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -549,6 +454,10 @@ public class AccountsPackageImpl extends EPackageImpl implements AccountsPackage
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
+		// http://www.eclipse.org/OCL/Import
+		createImportAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot
+		createPivotAnnotations();
 	}
 
 	/**
@@ -563,6 +472,9 @@ public class AccountsPackageImpl extends EPackageImpl implements AccountsPackage
 		  (this, 
 		   source, 
 		   new String[] {
+			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
 		   });	
 		addAnnotation
 		  (cloudaccountlinkEClass, 
@@ -593,6 +505,62 @@ public class AccountsPackageImpl extends EPackageImpl implements AccountsPackage
 		   source, 
 		   new String[] {
 			 "constraints", "appliesConstraint"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/OCL/Import</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createImportAnnotations() {
+		String source = "http://www.eclipse.org/OCL/Import";	
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+			 "occi", "http://schemas.ogf.org/occi/core/ecore"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createPivotAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";	
+		addAnnotation
+		  (cloudaccountlinkEClass, 
+		   source, 
+		   new String[] {
+			 "sourceConstraint", "self.source.oclIsKindOf(accounts::Cloudaccount)"
+		   });	
+		addAnnotation
+		  (basiccredentialEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(accounts::Cloudaccount)"
+		   });	
+		addAnnotation
+		  (certificatecredentialEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(accounts::Cloudaccount)"
+		   });	
+		addAnnotation
+		  (keypaircredentialEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(accounts::Cloudaccount)"
+		   });	
+		addAnnotation
+		  (cloudcredentialEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(accounts::Cloudaccount)"
 		   });
 	}
 

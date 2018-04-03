@@ -33,6 +33,8 @@ import org.eclipse.emf.ecore.EPackage;
  * <!-- end-user-doc -->
  * @see org.eclipse.cmf.occi.multicloud.accounts.AccountsFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot'"
+ *        annotation="http://www.eclipse.org/OCL/Import occi='http://schemas.ogf.org/occi/core/ecore'"
  * @generated
  */
 public interface AccountsPackage extends EPackage {
@@ -377,22 +379,13 @@ public interface AccountsPackage extends EPackage {
 	int CLOUDACCOUNTLINK___LINK_SOURCE_INVARIANT__KIND_KIND = OCCIPackage.LINK___LINK_SOURCE_INVARIANT__KIND_KIND;
 
 	/**
-	 * The operation id for the '<em>Source Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLOUDACCOUNTLINK___SOURCE_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.LINK_OPERATION_COUNT + 0;
-
-	/**
 	 * The number of operations of the '<em>Cloudaccountlink</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLOUDACCOUNTLINK_OPERATION_COUNT = OCCIPackage.LINK_OPERATION_COUNT + 1;
+	int CLOUDACCOUNTLINK_OPERATION_COUNT = OCCIPackage.LINK_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.accounts.impl.BasiccredentialImpl <em>Basiccredential</em>}' class.
@@ -477,22 +470,13 @@ public interface AccountsPackage extends EPackage {
 	int BASICCREDENTIAL___UPDATEPASSWORD = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BASICCREDENTIAL___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
-
-	/**
 	 * The number of operations of the '<em>Basiccredential</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BASICCREDENTIAL_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
+	int BASICCREDENTIAL_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.accounts.impl.CertificatecredentialImpl <em>Certificatecredential</em>}' class.
@@ -568,22 +552,13 @@ public interface AccountsPackage extends EPackage {
 	int CERTIFICATECREDENTIAL___GENERATE = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CERTIFICATECREDENTIAL___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
-
-	/**
 	 * The number of operations of the '<em>Certificatecredential</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CERTIFICATECREDENTIAL_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
+	int CERTIFICATECREDENTIAL_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.accounts.impl.KeypaircredentialImpl <em>Keypaircredential</em>}' class.
@@ -659,22 +634,13 @@ public interface AccountsPackage extends EPackage {
 	int KEYPAIRCREDENTIAL___GENERATE = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int KEYPAIRCREDENTIAL___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
-
-	/**
 	 * The number of operations of the '<em>Keypaircredential</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int KEYPAIRCREDENTIAL_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
+	int KEYPAIRCREDENTIAL_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.accounts.impl.CloudcredentialImpl <em>Cloudcredential</em>}' class.
@@ -750,22 +716,13 @@ public interface AccountsPackage extends EPackage {
 	int CLOUDCREDENTIAL_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
 
 	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLOUDCREDENTIAL___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
-
-	/**
 	 * The number of operations of the '<em>Cloudcredential</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLOUDCREDENTIAL_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
+	int CLOUDCREDENTIAL_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
 
 
 	/**
@@ -787,16 +744,6 @@ public interface AccountsPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getCloudaccountlink();
-
-	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.accounts.Cloudaccountlink#sourceConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Source Constraint</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Source Constraint</em>' operation.
-	 * @see org.eclipse.cmf.occi.multicloud.accounts.Cloudaccountlink#sourceConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getCloudaccountlink__SourceConstraint__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.accounts.Basiccredential <em>Basiccredential</em>}'.
@@ -852,16 +799,6 @@ public interface AccountsPackage extends EPackage {
 	EOperation getBasiccredential__Updatepassword();
 
 	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.accounts.Basiccredential#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
-	 * @see org.eclipse.cmf.occi.multicloud.accounts.Basiccredential#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getBasiccredential__AppliesConstraint__DiagnosticChain_Map();
-
-	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.accounts.Certificatecredential <em>Certificatecredential</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -904,16 +841,6 @@ public interface AccountsPackage extends EPackage {
 	EOperation getCertificatecredential__Generate();
 
 	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.accounts.Certificatecredential#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
-	 * @see org.eclipse.cmf.occi.multicloud.accounts.Certificatecredential#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getCertificatecredential__AppliesConstraint__DiagnosticChain_Map();
-
-	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.accounts.Keypaircredential <em>Keypaircredential</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -954,16 +881,6 @@ public interface AccountsPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getKeypaircredential__Generate();
-
-	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.accounts.Keypaircredential#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
-	 * @see org.eclipse.cmf.occi.multicloud.accounts.Keypaircredential#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getKeypaircredential__AppliesConstraint__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.accounts.Cloudcredential <em>Cloudcredential</em>}'.
@@ -1009,16 +926,6 @@ public interface AccountsPackage extends EPackage {
 	EAttribute getCloudcredential_Url();
 
 	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.accounts.Cloudcredential#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
-	 * @see org.eclipse.cmf.occi.multicloud.accounts.Cloudcredential#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getCloudcredential__AppliesConstraint__DiagnosticChain_Map();
-
-	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1060,14 +967,6 @@ public interface AccountsPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CLOUDACCOUNTLINK = eINSTANCE.getCloudaccountlink();
-
-		/**
-		 * The meta object literal for the '<em><b>Source Constraint</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation CLOUDACCOUNTLINK___SOURCE_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getCloudaccountlink__SourceConstraint__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.accounts.impl.BasiccredentialImpl <em>Basiccredential</em>}' class.
@@ -1112,14 +1011,6 @@ public interface AccountsPackage extends EPackage {
 		EOperation BASICCREDENTIAL___UPDATEPASSWORD = eINSTANCE.getBasiccredential__Updatepassword();
 
 		/**
-		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation BASICCREDENTIAL___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getBasiccredential__AppliesConstraint__DiagnosticChain_Map();
-
-		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.accounts.impl.CertificatecredentialImpl <em>Certificatecredential</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1152,14 +1043,6 @@ public interface AccountsPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation CERTIFICATECREDENTIAL___GENERATE = eINSTANCE.getCertificatecredential__Generate();
-
-		/**
-		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation CERTIFICATECREDENTIAL___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getCertificatecredential__AppliesConstraint__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.accounts.impl.KeypaircredentialImpl <em>Keypaircredential</em>}' class.
@@ -1196,14 +1079,6 @@ public interface AccountsPackage extends EPackage {
 		EOperation KEYPAIRCREDENTIAL___GENERATE = eINSTANCE.getKeypaircredential__Generate();
 
 		/**
-		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation KEYPAIRCREDENTIAL___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getKeypaircredential__AppliesConstraint__DiagnosticChain_Map();
-
-		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.accounts.impl.CloudcredentialImpl <em>Cloudcredential</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1236,14 +1111,6 @@ public interface AccountsPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CLOUDCREDENTIAL__URL = eINSTANCE.getCloudcredential_Url();
-
-		/**
-		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation CLOUDCREDENTIAL___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getCloudcredential__AppliesConstraint__DiagnosticChain_Map();
 
 	}
 

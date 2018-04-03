@@ -154,36 +154,6 @@ public class VcenteraccountItemProvider extends CloudaccountItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
-				 CrtpFactory.eINSTANCE.createSmall()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.ENTITY__PARTS,
-				 CrtpFactory.eINSTANCE.createMedium()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.ENTITY__PARTS,
-				 CrtpFactory.eINSTANCE.createLarge()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.ENTITY__PARTS,
-				 CrtpFactory.eINSTANCE.createMem_small()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.ENTITY__PARTS,
-				 CrtpFactory.eINSTANCE.createMem_medium()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.ENTITY__PARTS,
-				 CrtpFactory.eINSTANCE.createMem_large()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.ENTITY__PARTS,
 				 InfrastructureFactory.eINSTANCE.createIpnetwork()));
 
 		newChildDescriptors.add

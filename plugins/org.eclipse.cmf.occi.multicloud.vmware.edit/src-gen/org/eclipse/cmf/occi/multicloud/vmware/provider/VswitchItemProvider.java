@@ -186,36 +186,6 @@ public class VswitchItemProvider extends NetworkItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
-				 CrtpFactory.eINSTANCE.createSmall()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.ENTITY__PARTS,
-				 CrtpFactory.eINSTANCE.createMedium()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.ENTITY__PARTS,
-				 CrtpFactory.eINSTANCE.createLarge()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.ENTITY__PARTS,
-				 CrtpFactory.eINSTANCE.createMem_small()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.ENTITY__PARTS,
-				 CrtpFactory.eINSTANCE.createMem_medium()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.ENTITY__PARTS,
-				 CrtpFactory.eINSTANCE.createMem_large()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.ENTITY__PARTS,
 				 AccountsFactory.eINSTANCE.createBasiccredential()));
 
 		newChildDescriptors.add

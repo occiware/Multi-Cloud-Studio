@@ -53,7 +53,6 @@ public interface Instancevmware extends Compute {
 	 * @see #setImagename(String)
 	 * @see org.eclipse.cmf.occi.multicloud.vmware.VmwarePackage#getInstancevmware_Imagename()
 	 * @model dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/vmware/ecore!Instancevmware!imagename'"
 	 * @generated
 	 */
 	String getImagename();
@@ -79,7 +78,6 @@ public interface Instancevmware extends Compute {
 	 * @see #setMarkedastemplate(String)
 	 * @see org.eclipse.cmf.occi.multicloud.vmware.VmwarePackage#getInstancevmware_Markedastemplate()
 	 * @model dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/vmware/ecore!Instancevmware!markedastemplate'"
 	 * @generated
 	 */
 	String getMarkedastemplate();
@@ -105,7 +103,6 @@ public interface Instancevmware extends Compute {
 	 * @see #setGueststate(String)
 	 * @see org.eclipse.cmf.occi.multicloud.vmware.VmwarePackage#getInstancevmware_Gueststate()
 	 * @model dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/vmware/ecore!Instancevmware!gueststate'"
 	 * @generated
 	 */
 	String getGueststate();
@@ -131,7 +128,6 @@ public interface Instancevmware extends Compute {
 	 * @see #setGuestosid(String)
 	 * @see org.eclipse.cmf.occi.multicloud.vmware.VmwarePackage#getInstancevmware_Guestosid()
 	 * @model dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/vmware/ecore!Instancevmware!guestosid'"
 	 * @generated
 	 */
 	String getGuestosid();
@@ -157,7 +153,6 @@ public interface Instancevmware extends Compute {
 	 * @see #setVcpu(Integer)
 	 * @see org.eclipse.cmf.occi.multicloud.vmware.VmwarePackage#getInstancevmware_Vcpu()
 	 * @model dataType="org.eclipse.cmf.occi.core.Integer"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/vmware/ecore!Instancevmware!vcpu'"
 	 * @generated
 	 */
 	Integer getVcpu();
@@ -183,7 +178,6 @@ public interface Instancevmware extends Compute {
 	 * @see #setInstanceId(String)
 	 * @see org.eclipse.cmf.occi.multicloud.vmware.VmwarePackage#getInstancevmware_InstanceId()
 	 * @model dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/vmware/ecore!Instancevmware!instanceId'"
 	 * @generated
 	 */
 	String getInstanceId();
@@ -209,7 +203,6 @@ public interface Instancevmware extends Compute {
 	 * @see #setGuestIpv4Address(String)
 	 * @see org.eclipse.cmf.occi.multicloud.vmware.VmwarePackage#getInstancevmware_GuestIpv4Address()
 	 * @model dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/vmware/ecore!Instancevmware!guestIpv4Address'"
 	 * @generated
 	 */
 	String getGuestIpv4Address();
@@ -235,7 +228,6 @@ public interface Instancevmware extends Compute {
 	 * @see #setGuestIpv6Address(String)
 	 * @see org.eclipse.cmf.occi.multicloud.vmware.VmwarePackage#getInstancevmware_GuestIpv6Address()
 	 * @model dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/vmware/ecore!Instancevmware!guestIpv6Address'"
 	 * @generated
 	 */
 	String getGuestIpv6Address();

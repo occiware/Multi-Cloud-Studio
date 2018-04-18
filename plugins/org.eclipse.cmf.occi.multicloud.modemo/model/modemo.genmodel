@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2015-2017 Obeo, Inria&#xA;All rights reserved. This program and the accompanying materials&#xA;are made available under the terms of the Eclipse Public License v1.0&#xA;which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v10.html&#xA;&#x9;&#xA;Contributors:&#xA;- William Piers &lt;william.piers@obeo.fr>&#xA;- Philippe Merle &lt;philippe.merle@inria.fr>&#xA;- Faiez Zalila &lt;faiez.zalila@inria.fr>" modelDirectory="/org.eclipse.cmf.occi.multicloud.modemo/src-gen" editDirectory="/org.eclipse.cmf.occi.multicloud.modemo.edit/src-gen" editorDirectory="/org.eclipse.cmf.occi.multicloud.modemo.editor/src-gen" modelPluginID="org.eclipse.cmf.occi.multicloud.modemo" modelName="Modemo" testsDirectory="/org.eclipse.cmf.occi.multicloud.modemo.tests/src" complianceLevel="8.0" copyrightFields="false" editPluginID="org.eclipse.cmf.occi.multicloud.modemo.edit" editorPluginID="org.eclipse.cmf.occi.multicloud.modemo.editor" testsPluginID="org.eclipse.cmf.occi.multicloud.modemo.tests" operationReflection="true">
+  <foreignModel>modemo.ecore</foreignModel>
+  <genPackages prefix="Modemo" basePackage="org.eclipse.cmf.occi.multicloud" disposableProviderFactory="true">
+    <ecorePackage href="modemo.ecore#/"/>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="modemo.ecore#//TypeMetric"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="modemo.ecore#//TypeMetric/CPUtilisation"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="modemo.ecore#//TypeMetric/MemoryUtilisation"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="modemo.ecore#//OperatorType"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="modemo.ecore#//OperatorType/GreaterThan"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="modemo.ecore#//OperatorType/GreaterThanOrEqualTo"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="modemo.ecore#//OperatorType/LessThan"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="modemo.ecore#//OperatorType/LessThanorEqualTo"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="modemo.ecore#//OperatorType/EqualTo"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="modemo.ecore#//OperatorType/NotEqualTo"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="modemo.ecore#//ActionOperation"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="modemo.ecore#//ActionOperation/add"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="modemo.ecore#//ActionOperation/remove"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="modemo.ecore#//ActionOperation/set_to"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="modemo.ecore#//ActionType"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="modemo.ecore#//ActionType/instanceCount"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="modemo.ecore#//ActionType/percent"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="modemo.ecore#//MetricTargetTracking"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="modemo.ecore#//MetricTargetTracking/AverageCpuUtilisation"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="modemo.ecore#//MetricTargetTracking/LBRequestCountperTarget"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="modemo.ecore#//MetricTargetTracking/AverageNetworkIn"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="modemo.ecore#//MetricTargetTracking/AverageNetworkOut"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="modemo.ecore#//Unit"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="modemo.ecore#//Unit/minute"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="modemo.ecore#//Unit/hour"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="modemo.ecore#//Unit/dayOfWeek"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="modemo.ecore#//Unit/dayOfMonth"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="modemo.ecore#//Unit/month"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genDataTypes>
+      <ecoreDataType href="modemo.ecore#//Float"/>
+    </genDataTypes>
+    <genDataTypes>
+      <ecoreDataType href="modemo.ecore#//Date"/>
+    </genDataTypes>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//RecurrenceStep"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="modemo.ecore#//RecurrenceStep/unit"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="modemo.ecore#//RecurrenceStep/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Array"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="modemo.ecore#//Array/values"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//ArrofRecStep"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="modemo.ecore#//ArrofRecStep/arrofrecstepValues"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Horizontalgroup"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="modemo.ecore#//Horizontalgroup/horizontalgroupName"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="modemo.ecore#//Horizontalgroup/horizontalgroupGroupSize"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="modemo.ecore#//Horizontalgroup/horizontalgroupMaximum"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="modemo.ecore#//Horizontalgroup/horizontalgroupMinimum"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="modemo.ecore#//Horizontalgroup/horizontalgroupTemplateName"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="modemo.ecore#//Horizontalgroup/horizontalgroupLoadBalancer"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Loadbalancer"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="modemo.ecore#//Loadbalancer/loadbalancerName"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="modemo.ecore#//Loadbalancer/loadbalancerInstanceIP"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="modemo.ecore#//Loadbalancer/loadbalancerAddress"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="modemo.ecore#//Loadbalancer/addbackendserver"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="modemo.ecore#//Loadbalancer/removebackendserver"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Elasticitycontroller"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="modemo.ecore#//Elasticitycontroller/ElasticitycontrollerMinimumLimit"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="modemo.ecore#//Elasticitycontroller/ElasticitycontrollerMaximumLimit"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Instancegrouplink"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Loadbalancerlink"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Elasticlink"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Rule"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="modemo.ecore#//Rule/ruleOperator"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="modemo.ecore#//Rule/ruleThreshold"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="modemo.ecore#//Rule/rulePeriod"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="modemo.ecore#//Rule/ruleConsecutive"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Actiontrigger"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="modemo.ecore#//Actiontrigger/actiontriggerAction"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="modemo.ecore#//Actiontrigger/actiontriggerActionType"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="modemo.ecore#//Actiontrigger/actiontriggerAmount"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Step"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="modemo.ecore#//Step/stepLowerStepBound"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="modemo.ecore#//Step/stepUpperStepBound"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="modemo.ecore#//Step/stepSize"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Steplink"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Provider"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Providerlink"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Providervmware"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Provideropenstack"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Provideramazon"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Providerazure"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Providerinstancelink"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Creation"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="modemo.ecore#//Creation/occiComputeCreationDate"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Schedulingpolicy"/>
+      <genOperations>
+        <ecoreOperation href="modemo.ecore#//Schedulingpolicy/start"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="modemo.ecore#//Schedulingpolicy/stop"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Uniqueschedulingpolicy"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="modemo.ecore#//Uniqueschedulingpolicy/uniqueschedulingpolicyStartDate"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="modemo.ecore#//Uniqueschedulingpolicy/uniqueschedulingpolicyEndDate"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Recurringschedulingpolicy"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="modemo.ecore#//Recurringschedulingpolicy/recurringschedulingpolicyRecurrence"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="modemo.ecore#//Recurringschedulingpolicy/recurringschedulingpolicyStartDate"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="modemo.ecore#//Recurringschedulingpolicy/recurringschedulingpolicyEndDate"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="modemo.ecore#//Recurringschedulingpolicy/recurringschedulingpolicyInterval"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Scalingpolicy"/>
+      <genOperations>
+        <ecoreOperation href="modemo.ecore#//Scalingpolicy/start"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="modemo.ecore#//Scalingpolicy/stop"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Dynamicscalingpolicy"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="modemo.ecore#//Dynamicscalingpolicy/dynamicscalingpolicyCoolDuration"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="modemo.ecore#//Dynamicscalingpolicy/dynamicscalingpolicyIterationWaitTime"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Dynamicadjustmentscalingpolicy"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="modemo.ecore#//Dynamicadjustmentscalingpolicy/dynamicadjustmentscalingpolicyMetric"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="modemo.ecore#//Dynamicadjustmentscalingpolicy/dynamicadjustmentscalingpolicyDisableScaleIn"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="modemo.ecore#//Dynamicadjustmentscalingpolicy/dynamicadjustmentscalingpolicyTarget"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Simpledynamicscalingpolicy"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Stepdynamicscalingpolicy"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Manualscalingpolicy"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="modemo.ecore#//Manualscalingpolicy/manualscalingpolicyDesiredSize"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="modemo.ecore#//Manualscalingpolicy/manualscalingpolicyComputeUnit"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Metric"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="modemo.ecore#//Metric/name"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Cpuutilisation"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Memoryutilisation"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Allocationpolicy"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Roundrobin"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Responsetime"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Cost"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Swappingpolicy"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Sourcemigrationpolicity"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Livemigration"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Nonlivemigration"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Migrationtype"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Dynamicmigrationpolicy"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Manualmigrationpolicy"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Sla"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Loadvolume"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Power"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Resourcewastage"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Targetmigrationpolicy"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Availableresources"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Manualtargetselection"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Availalbleresourcesorload"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Targetresponsetime"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Responsetimemetric"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Networkcontention"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Loadbalanceralgorithm"/>
+      <genOperations>
+        <ecoreOperation href="modemo.ecore#//Loadbalanceralgorithm/apply"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="modemo.ecore#//Loadbalanceralgorithm/remove"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Roundrobinalgo"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Leastconn"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Stickysessions"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Wstaticrr"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Source"/>
+    </genClasses>
+  </genPackages>
+  <usedGenPackages href="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.genmodel#//infrastructure"/>
+  <usedGenPackages href="platform:/resource/org.eclipse.cmf.occi.multicloud.vmware/model/vmware.genmodel#//vmware"/>
+  <usedGenPackages href="platform:/resource/org.eclipse.cmf.occi.multicloud.accounts/model/accounts.genmodel#//accounts"/>
+  <usedGenPackages href="platform:/resource/org.eclipse.cmf.occi.multicloud.aws.ec2/model/ec2.genmodel#//ec2"/>
+  <usedGenPackages href="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.genmodel#//occi"/>
+</genmodel:GenModel>

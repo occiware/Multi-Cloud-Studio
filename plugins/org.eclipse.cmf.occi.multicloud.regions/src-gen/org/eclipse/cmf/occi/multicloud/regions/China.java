@@ -12,22 +12,18 @@
  */
 package org.eclipse.cmf.occi.multicloud.regions;
 
-import org.eclipse.cmf.occi.core.Link;
+import org.eclipse.cmf.occi.core.MixinBase;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Regionlink</b></em>'.
+ * A representation of the model object '<em><b>China</b></em>'.
  * <!-- end-user-doc -->
  *
- * <!-- begin-model-doc -->
- * 
- * <!-- end-model-doc -->
  *
- *
- * @see org.eclipse.cmf.occi.multicloud.regions.RegionsPackage#getRegionlink()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='sourceConstraint'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot sourceConstraint='self.source.oclIsKindOf(regions::Region)'"
+ * @see org.eclipse.cmf.occi.multicloud.regions.RegionsPackage#getChina()
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='appliesConstraint'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot appliesConstraint='self.entity.oclIsKindOf(regions::Region)'"
  * @generated
  */
-public interface Regionlink extends Link {
-} // Regionlink
+public interface China extends MixinBase {
+} // China

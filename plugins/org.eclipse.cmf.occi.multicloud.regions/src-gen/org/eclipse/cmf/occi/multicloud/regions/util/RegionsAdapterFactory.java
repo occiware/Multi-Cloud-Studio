@@ -115,6 +115,10 @@ public class RegionsAdapterFactory extends AdapterFactoryImpl {
 				return createAfricaAdapter();
 			}
 			@Override
+			public Adapter caseChina(China object) {
+				return createChinaAdapter();
+			}
+			@Override
 			public Adapter caseEntity(Entity object) {
 				return createEntityAdapter();
 			}
@@ -259,6 +263,20 @@ public class RegionsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAfricaAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.regions.China <em>China</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.regions.China
+	 * @generated
+	 */
+	public Adapter createChinaAdapter() {
 		return null;
 	}
 

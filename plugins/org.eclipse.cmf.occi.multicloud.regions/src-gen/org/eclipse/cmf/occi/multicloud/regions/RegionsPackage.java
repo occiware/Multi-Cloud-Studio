@@ -189,13 +189,31 @@ public interface RegionsPackage extends EPackage {
 	int REGION__REGION_DESCRIPTION = OCCIPackage.RESOURCE_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Endpoint</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION__ENDPOINT = OCCIPackage.RESOURCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Region Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION__REGION_NAME = OCCIPackage.RESOURCE_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Region</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REGION_FEATURE_COUNT = OCCIPackage.RESOURCE_FEATURE_COUNT + 2;
+	int REGION_FEATURE_COUNT = OCCIPackage.RESOURCE_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Occi Create</em>' operation.
@@ -765,6 +783,62 @@ public interface RegionsPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.regions.impl.ChinaImpl <em>China</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.multicloud.regions.impl.ChinaImpl
+	 * @see org.eclipse.cmf.occi.multicloud.regions.impl.RegionsPackageImpl#getChina()
+	 * @generated
+	 */
+	int CHINA = 8;
+
+	/**
+	 * The feature id for the '<em><b>Mixin</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHINA__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHINA__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHINA__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
+
+	/**
+	 * The number of structural features of the '<em>China</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHINA_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>China</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHINA_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.regions.Region <em>Region</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -795,6 +869,28 @@ public interface RegionsPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRegion_RegionDescription();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.regions.Region#getEndpoint <em>Endpoint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Endpoint</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.regions.Region#getEndpoint()
+	 * @see #getRegion()
+	 * @generated
+	 */
+	EAttribute getRegion_Endpoint();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.regions.Region#getRegionName <em>Region Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Region Name</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.regions.Region#getRegionName()
+	 * @see #getRegion()
+	 * @generated
+	 */
+	EAttribute getRegion_RegionName();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.regions.Regionlink <em>Regionlink</em>}'.
@@ -900,6 +996,16 @@ public interface RegionsPackage extends EPackage {
 	EClass getAfrica();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.regions.China <em>China</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>China</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.regions.China
+	 * @generated
+	 */
+	EClass getChina();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -947,6 +1053,22 @@ public interface RegionsPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute REGION__REGION_DESCRIPTION = eINSTANCE.getRegion_RegionDescription();
+
+		/**
+		 * The meta object literal for the '<em><b>Endpoint</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REGION__ENDPOINT = eINSTANCE.getRegion_Endpoint();
+
+		/**
+		 * The meta object literal for the '<em><b>Region Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REGION__REGION_NAME = eINSTANCE.getRegion_RegionName();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.regions.impl.RegionlinkImpl <em>Regionlink</em>}' class.
@@ -1041,6 +1163,16 @@ public interface RegionsPackage extends EPackage {
 		 * @generated
 		 */
 		EClass AFRICA = eINSTANCE.getAfrica();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.regions.impl.ChinaImpl <em>China</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.cmf.occi.multicloud.regions.impl.ChinaImpl
+		 * @see org.eclipse.cmf.occi.multicloud.regions.impl.RegionsPackageImpl#getChina()
+		 * @generated
+		 */
+		EClass CHINA = eINSTANCE.getChina();
 
 	}
 

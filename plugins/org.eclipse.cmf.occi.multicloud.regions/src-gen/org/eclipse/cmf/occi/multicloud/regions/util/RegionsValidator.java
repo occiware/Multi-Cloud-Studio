@@ -122,6 +122,8 @@ public class RegionsValidator extends EObjectValidator {
 				return validateAsiapacific((Asiapacific)value, diagnostics, context);
 			case RegionsPackage.AFRICA:
 				return validateAfrica((Africa)value, diagnostics, context);
+			case RegionsPackage.CHINA:
+				return validateChina((China)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -172,7 +174,37 @@ public class RegionsValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= occiValidator.validateLink_LinkKindIsInParent(regionlink, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateLink_sourceReferenceInvariant(regionlink, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateLink_targetReferenceInvariant(regionlink, diagnostics, context);
+		if (result || diagnostics != null) result &= validateRegionlink_sourceConstraint(regionlink, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the sourceConstraint constraint of '<em>Regionlink</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String REGIONLINK__SOURCE_CONSTRAINT__EEXPRESSION = "self.source.oclIsKindOf(regions::Region)";
+
+	/**
+	 * Validates the sourceConstraint constraint of '<em>Regionlink</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRegionlink_sourceConstraint(Regionlink regionlink, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RegionsPackage.Literals.REGIONLINK,
+				 regionlink,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "sourceConstraint",
+				 REGIONLINK__SOURCE_CONSTRAINT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -458,6 +490,54 @@ public class RegionsValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
 				 "appliesConstraint",
 				 AFRICA__APPLIES_CONSTRAINT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateChina(China china, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(china, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(china, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(china, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(china, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(china, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(china, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(china, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(china, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(china, diagnostics, context);
+		if (result || diagnostics != null) result &= validateChina_appliesConstraint(china, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>China</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String CHINA__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(regions::Region)";
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>China</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateChina_appliesConstraint(China china, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RegionsPackage.Literals.CHINA,
+				 china,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "appliesConstraint",
+				 CHINA__APPLIES_CONSTRAINT__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

@@ -266,6 +266,29 @@ public class RegionsItemProviderAdapterFactory extends RegionsAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.regions.China} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ChinaItemProvider chinaItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.regions.China}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createChinaAdapter() {
+		if (chinaItemProvider == null) {
+			chinaItemProvider = new ChinaItemProvider(this);
+		}
+
+		return chinaItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -372,6 +395,7 @@ public class RegionsItemProviderAdapterFactory extends RegionsAdapterFactory imp
 		if (southamericaItemProvider != null) southamericaItemProvider.dispose();
 		if (asiapacificItemProvider != null) asiapacificItemProvider.dispose();
 		if (africaItemProvider != null) africaItemProvider.dispose();
+		if (chinaItemProvider != null) chinaItemProvider.dispose();
 	}
 
 }

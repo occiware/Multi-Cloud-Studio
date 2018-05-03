@@ -11,6 +11,12 @@
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="regions.ecore#//Region/regionDescription"/>
       </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="regions.ecore#//Region/endpoint"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="regions.ecore#//Region/regionName"/>
+      </genFeatures>
     </genClasses>
     <genClasses>
       <ecoreClass href="regions.ecore#//Regionlink"/>
@@ -41,6 +47,9 @@
     </genClasses>
     <genClasses>
       <ecoreClass href="regions.ecore#//Africa"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="regions.ecore#//China"/>
     </genClasses>
   </genPackages>
   <usedGenPackages href="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.genmodel#//occi"/>

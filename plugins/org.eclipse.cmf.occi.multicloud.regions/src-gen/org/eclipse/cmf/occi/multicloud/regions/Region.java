@@ -34,6 +34,8 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * <ul>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.regions.Region#getRegionId <em>Region Id</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.regions.Region#getRegionDescription <em>Region Description</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.regions.Region#getEndpoint <em>Endpoint</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.regions.Region#getRegionName <em>Region Name</em>}</li>
  * </ul>
  *
  * @see org.eclipse.cmf.occi.multicloud.regions.RegionsPackage#getRegion()
@@ -47,7 +49,7 @@ public interface Region extends Resource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * 
+	 * The region provider identifier
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Region Id</em>' attribute.
 	 * @see #setRegionId(String)
@@ -72,7 +74,7 @@ public interface Region extends Resource {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * 
+	 * The region description
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Region Description</em>' attribute.
 	 * @see #setRegionDescription(String)
@@ -91,5 +93,55 @@ public interface Region extends Resource {
 	 * @generated
 	 */
 	void setRegionDescription(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Endpoint</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Endpoint</em>' attribute.
+	 * @see #setEndpoint(String)
+	 * @see org.eclipse.cmf.occi.multicloud.regions.RegionsPackage#getRegion_Endpoint()
+	 * @model dataType="org.eclipse.cmf.occi.core.String"
+	 * @generated
+	 */
+	String getEndpoint();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.regions.Region#getEndpoint <em>Endpoint</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Endpoint</em>' attribute.
+	 * @see #getEndpoint()
+	 * @generated
+	 */
+	void setEndpoint(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Region Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The region friendly human name
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Region Name</em>' attribute.
+	 * @see #setRegionName(String)
+	 * @see org.eclipse.cmf.occi.multicloud.regions.RegionsPackage#getRegion_RegionName()
+	 * @model dataType="org.eclipse.cmf.occi.core.String"
+	 * @generated
+	 */
+	String getRegionName();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.cmf.occi.multicloud.regions.Region#getRegionName <em>Region Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Region Name</em>' attribute.
+	 * @see #getRegionName()
+	 * @generated
+	 */
+	void setRegionName(String value);
 
 } // Region

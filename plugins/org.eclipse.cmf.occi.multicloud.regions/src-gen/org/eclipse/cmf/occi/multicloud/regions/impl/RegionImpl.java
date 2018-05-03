@@ -61,6 +61,8 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  * <ul>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.regions.impl.RegionImpl#getRegionId <em>Region Id</em>}</li>
  *   <li>{@link org.eclipse.cmf.occi.multicloud.regions.impl.RegionImpl#getRegionDescription <em>Region Description</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.regions.impl.RegionImpl#getEndpoint <em>Endpoint</em>}</li>
+ *   <li>{@link org.eclipse.cmf.occi.multicloud.regions.impl.RegionImpl#getRegionName <em>Region Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -102,6 +104,43 @@ public class RegionImpl extends ResourceImpl implements Region {
 	 * @ordered
 	 */
 	protected String regionDescription = REGION_DESCRIPTION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getEndpoint() <em>Endpoint</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEndpoint()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ENDPOINT_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getEndpoint() <em>Endpoint</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEndpoint()
+	 * @generated
+	 * @ordered
+	 */
+	protected String endpoint = ENDPOINT_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getRegionName() <em>Region Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRegionName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String REGION_NAME_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getRegionName() <em>Region Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRegionName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String regionName = REGION_NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -169,6 +208,48 @@ public class RegionImpl extends ResourceImpl implements Region {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getEndpoint() {
+		return endpoint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEndpoint(String newEndpoint) {
+		String oldEndpoint = endpoint;
+		endpoint = newEndpoint;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RegionsPackage.REGION__ENDPOINT, oldEndpoint, endpoint));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getRegionName() {
+		return regionName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRegionName(String newRegionName) {
+		String oldRegionName = regionName;
+		regionName = newRegionName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RegionsPackage.REGION__REGION_NAME, oldRegionName, regionName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -176,6 +257,10 @@ public class RegionImpl extends ResourceImpl implements Region {
 				return getRegionId();
 			case RegionsPackage.REGION__REGION_DESCRIPTION:
 				return getRegionDescription();
+			case RegionsPackage.REGION__ENDPOINT:
+				return getEndpoint();
+			case RegionsPackage.REGION__REGION_NAME:
+				return getRegionName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -193,6 +278,12 @@ public class RegionImpl extends ResourceImpl implements Region {
 				return;
 			case RegionsPackage.REGION__REGION_DESCRIPTION:
 				setRegionDescription((String)newValue);
+				return;
+			case RegionsPackage.REGION__ENDPOINT:
+				setEndpoint((String)newValue);
+				return;
+			case RegionsPackage.REGION__REGION_NAME:
+				setRegionName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -212,6 +303,12 @@ public class RegionImpl extends ResourceImpl implements Region {
 			case RegionsPackage.REGION__REGION_DESCRIPTION:
 				setRegionDescription(REGION_DESCRIPTION_EDEFAULT);
 				return;
+			case RegionsPackage.REGION__ENDPOINT:
+				setEndpoint(ENDPOINT_EDEFAULT);
+				return;
+			case RegionsPackage.REGION__REGION_NAME:
+				setRegionName(REGION_NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -228,6 +325,10 @@ public class RegionImpl extends ResourceImpl implements Region {
 				return REGION_ID_EDEFAULT == null ? regionId != null : !REGION_ID_EDEFAULT.equals(regionId);
 			case RegionsPackage.REGION__REGION_DESCRIPTION:
 				return REGION_DESCRIPTION_EDEFAULT == null ? regionDescription != null : !REGION_DESCRIPTION_EDEFAULT.equals(regionDescription);
+			case RegionsPackage.REGION__ENDPOINT:
+				return ENDPOINT_EDEFAULT == null ? endpoint != null : !ENDPOINT_EDEFAULT.equals(endpoint);
+			case RegionsPackage.REGION__REGION_NAME:
+				return REGION_NAME_EDEFAULT == null ? regionName != null : !REGION_NAME_EDEFAULT.equals(regionName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -246,6 +347,10 @@ public class RegionImpl extends ResourceImpl implements Region {
 		result.append(regionId);
 		result.append(", regionDescription: ");
 		result.append(regionDescription);
+		result.append(", endpoint: ");
+		result.append(endpoint);
+		result.append(", regionName: ");
+		result.append(regionName);
 		result.append(')');
 		return result.toString();
 	}

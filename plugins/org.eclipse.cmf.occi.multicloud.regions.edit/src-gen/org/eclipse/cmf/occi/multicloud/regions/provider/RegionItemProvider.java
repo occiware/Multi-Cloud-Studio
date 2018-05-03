@@ -63,6 +63,8 @@ public class RegionItemProvider extends ResourceItemProvider {
 
 			addRegionIdPropertyDescriptor(object);
 			addRegionDescriptionPropertyDescriptor(object);
+			addEndpointPropertyDescriptor(object);
+			addRegionNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -112,6 +114,50 @@ public class RegionItemProvider extends ResourceItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Endpoint feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEndpointPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Region_endpoint_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Region_endpoint_feature", "_UI_Region_type"),
+				 RegionsPackage.Literals.REGION__ENDPOINT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Region Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRegionNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Region_regionName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Region_regionName_feature", "_UI_Region_type"),
+				 RegionsPackage.Literals.REGION__REGION_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Region.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -151,6 +197,8 @@ public class RegionItemProvider extends ResourceItemProvider {
 		switch (notification.getFeatureID(Region.class)) {
 			case RegionsPackage.REGION__REGION_ID:
 			case RegionsPackage.REGION__REGION_DESCRIPTION:
+			case RegionsPackage.REGION__ENDPOINT:
+			case RegionsPackage.REGION__REGION_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -197,6 +245,11 @@ public class RegionItemProvider extends ResourceItemProvider {
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
 				 RegionsFactory.eINSTANCE.createAfrica()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 RegionsFactory.eINSTANCE.createChina()));
 
 		newChildDescriptors.add
 			(createChildParameter

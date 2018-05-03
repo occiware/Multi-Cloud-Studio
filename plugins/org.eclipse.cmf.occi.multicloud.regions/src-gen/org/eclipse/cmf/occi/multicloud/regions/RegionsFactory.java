@@ -104,6 +104,15 @@ public interface RegionsFactory extends EFactory {
 	Africa createAfrica();
 
 	/**
+	 * Returns a new object of class '<em>China</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>China</em>'.
+	 * @generated
+	 */
+	China createChina();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

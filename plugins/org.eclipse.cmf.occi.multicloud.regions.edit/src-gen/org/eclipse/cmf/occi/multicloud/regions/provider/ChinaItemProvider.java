@@ -16,12 +16,7 @@ package org.eclipse.cmf.occi.multicloud.regions.provider;
 import java.util.Collection;
 import java.util.List;
 
-import org.eclipse.cmf.occi.core.OCCIPackage;
-
-import org.eclipse.cmf.occi.core.provider.LinkItemProvider;
-
-import org.eclipse.cmf.occi.multicloud.regions.Regionlink;
-import org.eclipse.cmf.occi.multicloud.regions.RegionsFactory;
+import org.eclipse.cmf.occi.core.provider.MixinBaseItemProvider;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
@@ -31,19 +26,19 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.cmf.occi.multicloud.regions.Regionlink} object.
+ * This is the item provider adapter for a {@link org.eclipse.cmf.occi.multicloud.regions.China} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class RegionlinkItemProvider extends LinkItemProvider {
+public class ChinaItemProvider extends MixinBaseItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RegionlinkItemProvider(AdapterFactory adapterFactory) {
+	public ChinaItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -63,14 +58,14 @@ public class RegionlinkItemProvider extends LinkItemProvider {
 	}
 
 	/**
-	 * This returns Regionlink.gif.
+	 * This returns China.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Regionlink"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/China"));
 	}
 
 	/**
@@ -81,10 +76,7 @@ public class RegionlinkItemProvider extends LinkItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Regionlink)object).getId();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Regionlink_type") :
-			getString("_UI_Regionlink_type") + " " + label;
+		return getString("_UI_China_type");
 	}
 	
 
@@ -111,41 +103,6 @@ public class RegionlinkItemProvider extends LinkItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.ENTITY__PARTS,
-				 RegionsFactory.eINSTANCE.createAvailabilityzone()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.ENTITY__PARTS,
-				 RegionsFactory.eINSTANCE.createEurope()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.ENTITY__PARTS,
-				 RegionsFactory.eINSTANCE.createNorthamerica()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.ENTITY__PARTS,
-				 RegionsFactory.eINSTANCE.createSouthamerica()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.ENTITY__PARTS,
-				 RegionsFactory.eINSTANCE.createAsiapacific()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.ENTITY__PARTS,
-				 RegionsFactory.eINSTANCE.createAfrica()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.ENTITY__PARTS,
-				 RegionsFactory.eINSTANCE.createChina()));
 	}
 
 	/**

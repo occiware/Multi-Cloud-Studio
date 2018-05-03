@@ -10,7 +10,7 @@
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
  *
- * Generated at Thu Jan 25 17:55:49 CET 2018 from platform:/resource/org.eclipse.cmf.occi.multicloud.regions/model/regions.occie by org.eclipse.cmf.occi.core.gen.connector
+ * Generated at Thu May 03 15:45:31 CEST 2018 from platform:/resource/org.eclipse.cmf.occi.multicloud.regions/model/regions.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.eclipse.cmf.occi.multicloud.regions.connector;
 
@@ -107,6 +107,17 @@ public class ConnectorFactory extends org.eclipse.cmf.occi.multicloud.regions.im
 	@Override
 	public org.eclipse.cmf.occi.multicloud.regions.Africa createAfrica() {
 		return new AfricaConnector();
+	}
+
+	/**
+	 * EFactory method for OCCI kind:
+	 * - scheme: http://occiware.org/occi/infrastructure/locations#
+	 * - term: china
+	 * - title: 
+	 */
+	@Override
+	public org.eclipse.cmf.occi.multicloud.regions.China createChina() {
+		return new ChinaConnector();
 	}
 
 }

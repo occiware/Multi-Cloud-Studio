@@ -22,21 +22,21 @@ import org.slf4j.LoggerFactory;
 /**
  * Connector implementation for the OCCI kind:
  * - scheme: http://occiware.org/occi/infrastructure/locations#
- * - term: availabilityzone
- * - title: This mixin is used to locate a resource or link in a datacenter part
+ * - term: china
+ * - title: 
  */
-public class AvailabilityzoneConnector extends org.eclipse.cmf.occi.multicloud.regions.impl.AvailabilityzoneImpl
+public class ChinaConnector extends org.eclipse.cmf.occi.multicloud.regions.impl.ChinaImpl
 {
 	/**
 	 * Initialize the logger.
 	 */
-	private static Logger LOGGER = LoggerFactory.getLogger(AvailabilityzoneConnector.class);
+	private static Logger LOGGER = LoggerFactory.getLogger(ChinaConnector.class);
 
-	// Start of user code Availabilityzoneconnector_constructor
+	// Start of user code Chinaconnector_constructor
 	/**
-	 * Constructs a availabilityzone connector.
+	 * Constructs a china connector.
 	 */
-	AvailabilityzoneConnector()
+	ChinaConnector()
 	{
 		LOGGER.debug("Constructor called on " + this);
 		// TODO: Implement this constructor.

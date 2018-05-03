@@ -138,10 +138,13 @@ public class AwsaccountConnector extends org.eclipse.cmf.occi.multicloud.aws.ec2
 		if (ec2Client != null && regionId != null && regionId.equals(this.regionId)) {
 			// Region has changed !
 			ec2Client.setRegion(regionId);
+			this.getEc2Client();
 			// Reinitialize
-			ec2Client.setEc2Client(null);
+			// ec2Client.setEc2Client(null);
 			ec2Client.initEC2Client();
 		}
 	}
+	
+	
 	
 }

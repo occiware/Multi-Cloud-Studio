@@ -3160,19 +3160,19 @@
             <menuItemDescription xsi:type="tool_1:OperationAction" name="StopMethodGraceful" label="Graceful" icon="/org.eclipse.cmf.occi.multicloud.all.edit/icons/full/obj16/stop.gif">
               <view name="views"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(org.eclipse.emf.ecore.impl.EClassImpl@773ba2f2 (name: Compute) (instanceClassName: null) (abstract: false, interface: false)).stop(StopMethod::graceful)/]"/>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Compute).stop(StopMethod::graceful)/]"/>
               </initialOperation>
             </menuItemDescription>
             <menuItemDescription xsi:type="tool_1:OperationAction" name="StopMethodAcpioff" label="Acpioff" icon="/org.eclipse.cmf.occi.multicloud.all.edit/icons/full/obj16/stop.gif">
               <view name="views"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(org.eclipse.emf.ecore.impl.EClassImpl@773ba2f2 (name: Compute) (instanceClassName: null) (abstract: false, interface: false)).stop(StopMethod::acpioff)/]"/>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Compute).stop(StopMethod::acpioff)/]"/>
               </initialOperation>
             </menuItemDescription>
             <menuItemDescription xsi:type="tool_1:OperationAction" name="StopMethodPoweroff" label="Poweroff" icon="/org.eclipse.cmf.occi.multicloud.all.edit/icons/full/obj16/stop.gif">
               <view name="views"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(org.eclipse.emf.ecore.impl.EClassImpl@773ba2f2 (name: Compute) (instanceClassName: null) (abstract: false, interface: false)).stop(StopMethod::poweroff)/]"/>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Compute).stop(StopMethod::poweroff)/]"/>
               </initialOperation>
             </menuItemDescription>
           </ownedTools>
@@ -3180,19 +3180,19 @@
             <menuItemDescription xsi:type="tool_1:OperationAction" name="RestartMethodGraceful" label="Graceful" icon="/org.eclipse.cmf.occi.multicloud.all.edit/icons/full/obj16/restart.gif">
               <view name="views"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(org.eclipse.emf.ecore.impl.EClassImpl@773ba2f2 (name: Compute) (instanceClassName: null) (abstract: false, interface: false)).restart(RestartMethod::graceful)/]"/>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Compute).restart(RestartMethod::graceful)/]"/>
               </initialOperation>
             </menuItemDescription>
             <menuItemDescription xsi:type="tool_1:OperationAction" name="RestartMethodWarm" label="Warm" icon="/org.eclipse.cmf.occi.multicloud.all.edit/icons/full/obj16/restart.gif">
               <view name="views"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(org.eclipse.emf.ecore.impl.EClassImpl@773ba2f2 (name: Compute) (instanceClassName: null) (abstract: false, interface: false)).restart(RestartMethod::warm)/]"/>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Compute).restart(RestartMethod::warm)/]"/>
               </initialOperation>
             </menuItemDescription>
             <menuItemDescription xsi:type="tool_1:OperationAction" name="RestartMethodCold" label="Cold" icon="/org.eclipse.cmf.occi.multicloud.all.edit/icons/full/obj16/restart.gif">
               <view name="views"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(org.eclipse.emf.ecore.impl.EClassImpl@773ba2f2 (name: Compute) (instanceClassName: null) (abstract: false, interface: false)).restart(RestartMethod::cold)/]"/>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Compute).restart(RestartMethod::cold)/]"/>
               </initialOperation>
             </menuItemDescription>
           </ownedTools>
@@ -3200,13 +3200,13 @@
             <menuItemDescription xsi:type="tool_1:OperationAction" name="SuspendMethodHibernate" label="Hibernate">
               <view name="views"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(org.eclipse.emf.ecore.impl.EClassImpl@773ba2f2 (name: Compute) (instanceClassName: null) (abstract: false, interface: false)).suspend(SuspendMethod::hibernate)/]"/>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Compute).suspend(SuspendMethod::hibernate)/]"/>
               </initialOperation>
             </menuItemDescription>
             <menuItemDescription xsi:type="tool_1:OperationAction" name="SuspendMethodSuspend" label="Suspend">
               <view name="views"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(org.eclipse.emf.ecore.impl.EClassImpl@773ba2f2 (name: Compute) (instanceClassName: null) (abstract: false, interface: false)).suspend(SuspendMethod::suspend)/]"/>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Compute).suspend(SuspendMethod::suspendl)/]"/>
               </initialOperation>
             </menuItemDescription>
           </ownedTools>

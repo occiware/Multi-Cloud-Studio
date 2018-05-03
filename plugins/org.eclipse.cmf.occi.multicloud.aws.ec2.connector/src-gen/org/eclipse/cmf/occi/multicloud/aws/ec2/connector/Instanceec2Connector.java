@@ -507,10 +507,13 @@ public class Instanceec2Connector extends org.eclipse.cmf.occi.multicloud.aws.ec
 		}
 		if (statusTransitionReasonOpt.isPresent()) {
 			Statustransitionreason statusTransMixin = statusTransitionReasonOpt.get();
-			statusTransMixin.setStateTransitionCode(instance.getStateReason().getCode());
-			statusTransMixin.setStateTransitionMessage(instance.getStateReason().getMessage()
-					+ " --> Transition reason : " + instance.getStateTransitionReason());
+			if (instance.getStateReason() != null) {
+				statusTransMixin.setStateTransitionCode(instance.getStateReason().getCode());
+				statusTransMixin.setStateTransitionMessage(instance.getStateReason().getMessage()
+						+ " --> Transition reason : " + instance.getStateTransitionReason());
+			}
 		}
+		
 	}
 	// End of user code
 

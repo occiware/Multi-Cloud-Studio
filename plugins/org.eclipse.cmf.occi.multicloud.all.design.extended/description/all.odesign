@@ -2,7 +2,7 @@
 <description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="all" version="12.0.0.2017041100">
   <ownedViewpoints name="AllConfiguration" label="Multi-Cloud Configuration">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="AllConfiguration Diagram" label="Multi-Cloud Configuration Diagram" domainClass="Configuration">
-      <metamodel href="file:/Users/cgourdin/workspace_infrastudio/Multi-Cloud-Studio/plugins/org.eclipse.cmf.occi.multicloud.all/model/all.ecore#/"/>
+      <metamodel href="http://occiware.org/occi/multicloud/ecore#/"/>
       <metamodel href="http://schemas.ogf.org/occi/core/ecore#/"/>
       <metamodel href="http://schemas.ogf.org/occi/infrastructure/compute/template/1.1/ecore#/"/>
       <metamodel href="http://schemas.ogf.org/occi/infrastructure/ecore#/"/>
@@ -11,7 +11,7 @@
       <metamodel href="http://occiware.org/occi/infrastructure/locations/ecore#/"/>
       <metamodel href="http://occiware.org/occi/infrastructure/locations/aws/ecore#/"/>
       <metamodel href="http://occiware.org/occi/infrastructure/security/ecore#/"/>
-      <metamodel href="file:/Users/cgourdin/workspace_infrastudio/Multi-Cloud-Studio/plugins/org.eclipse.cmf.occi.multicloud.aws.ec2/model/ec2.ecore#/"/>
+      <metamodel href="http://occiware.org/occi/infrastructure/aws/ecore#/"/>
       <metamodel href="http://occiware.org/occi/multicloud/monitoring/zabbix/ecore#/"/>
       <metamodel href="http://org.eclipse.cmf.occi.multicloud.occimonitoring/ecore#/"/>
       <metamodel href="http://occiware.org/occi/multicloud/elasticocci/ecore#/"/>

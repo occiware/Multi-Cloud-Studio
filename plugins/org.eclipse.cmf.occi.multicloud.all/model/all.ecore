@@ -8,19 +8,16 @@
   </eAnnotations>
   <eAnnotations source="http://www.eclipse.org/OCL/Import">
     <details key="occi" value="http://schemas.ogf.org/occi/core/ecore"/>
-    <details key="crtp" value="http://schemas.ogf.org/occi/infrastructure/compute/template/1.1/ecore"/>
     <details key="infrastructure" value="http://schemas.ogf.org/occi/infrastructure/ecore"/>
     <details key="monitoring" value="http://schemas.ogf.org/occi/monitoring/ecore"/>
-    <details key="cloudmonitoring" value="http://occiware.org/occi/multicloud/monitoring/ecore"/>
-    <details key="regions" value="http://occiware.org/occi/infrastructure/locations/ecore"/>
-    <details key="awsregions" value="http://occiware.org/occi/infrastructure/locations/aws/ecore"/>
     <details key="accounts" value="http://occiware.org/occi/infrastructure/security/ecore"/>
+    <details key="regions" value="http://occiware.org/occi/infrastructure/locations/ecore"/>
+    <details key="awsaccounts" value="http://occiware.org/occi/aws/security/ecore"/>
+    <details key="awsregions" value="http://occiware.org/occi/infrastructure/locations/aws/ecore"/>
     <details key="ec2" value="http://occiware.org/occi/infrastructure/aws/ecore"/>
-    <details key="zabbix" value="http://occiware.org/occi/multicloud/monitoring/zabbix/ecore"/>
-    <details key="occimonitoring" value="http://org.eclipse.cmf.occi.multicloud.occimonitoring/ecore"/>
-    <details key="elasticocci" value="http://occiware.org/occi/multicloud/elasticocci/ecore"/>
-    <details key="horizontalelasticity" value="http://org.eclipse.cmf.occi.multicloud.horizontalelasticity/ecore"/>
     <details key="vmware" value="http://occiware.org/occi/infrastructure/vmware/ecore"/>
     <details key="interoperability" value="http://occiware.org/occi/multicloud/specialfeatures/ecore"/>
+    <details key="oscore" value="http://occiware.org/occi/infrastructure/openstack/ecore"/>
+    <details key="identity" value="http://occiware.org/occi/infrastructure/openstack/security/ecore"/>
   </eAnnotations>
 </ecore:EPackage>

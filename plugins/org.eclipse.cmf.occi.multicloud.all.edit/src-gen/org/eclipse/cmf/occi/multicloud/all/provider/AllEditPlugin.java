@@ -12,10 +12,10 @@
  */
 package org.eclipse.cmf.occi.multicloud.all.provider;
 
+import awsaccounts.provider.AwsaccountsEditPlugin;
 import awsregions.provider.AwsregionsEditPlugin;
 
-import cloudmonitoring.provider.CloudmonitoringEditPlugin;
-
+import identity.provider.IdentityEditPlugin;
 import org.eclipse.cmf.occi.core.provider.OCCIEditPlugin;
 
 import org.eclipse.cmf.occi.crtp.provider.CrtpEditPlugin;
@@ -28,15 +28,7 @@ import org.eclipse.cmf.occi.multicloud.accounts.provider.AccountsEditPlugin;
 
 import org.eclipse.cmf.occi.multicloud.aws.ec2.provider.Ec2EditPlugin;
 
-import org.eclipse.cmf.occi.multicloud.elasticocci.provider.ElasticocciEditPlugin;
-
-import org.eclipse.cmf.occi.multicloud.horizontalelasticity.provider.HorizontalelasticityEditPlugin;
-
 import org.eclipse.cmf.occi.multicloud.interoperability.provider.InteroperabilityEditPlugin;
-
-import org.eclipse.cmf.occi.multicloud.monitoring.zabbix.provider.ZabbixEditPlugin;
-
-import org.eclipse.cmf.occi.multicloud.occimonitoring.provider.OccimonitoringEditPlugin;
 
 import org.eclipse.cmf.occi.multicloud.regions.provider.RegionsEditPlugin;
 
@@ -45,6 +37,7 @@ import org.eclipse.cmf.occi.multicloud.vmware.provider.VmwareEditPlugin;
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+import oscore.provider.OscoreEditPlugin;
 
 /**
  * This is the central singleton for the All edit plugin.
@@ -78,20 +71,17 @@ public final class AllEditPlugin extends EMFPlugin {
 	public AllEditPlugin() {
 		super
 		  (new ResourceLocator [] {
-		     CrtpEditPlugin.INSTANCE,
 		     InfrastructureEditPlugin.INSTANCE,
 		     MonitoringEditPlugin.INSTANCE,
-		     CloudmonitoringEditPlugin.INSTANCE,
-		     RegionsEditPlugin.INSTANCE,
-		     AwsregionsEditPlugin.INSTANCE,
 		     AccountsEditPlugin.INSTANCE,
+		     RegionsEditPlugin.INSTANCE,
+		     AwsaccountsEditPlugin.INSTANCE,
+		     AwsregionsEditPlugin.INSTANCE,
 		     Ec2EditPlugin.INSTANCE,
-		     ZabbixEditPlugin.INSTANCE,
-		     OccimonitoringEditPlugin.INSTANCE,
-		     ElasticocciEditPlugin.INSTANCE,
-		     HorizontalelasticityEditPlugin.INSTANCE,
 		     VmwareEditPlugin.INSTANCE,
 		     InteroperabilityEditPlugin.INSTANCE,
+		     OscoreEditPlugin.INSTANCE,
+		     IdentityEditPlugin.INSTANCE,
 		     OCCIEditPlugin.INSTANCE,
 		   });
 	}

@@ -39,17 +39,26 @@
     </attributes>
   </mixins>
   <mixins name="SshTransfer" scheme="http://occiware.org/occi/multicloud/specialfeatures#" applies="//@kinds[term='filetransferoperations']">
-    <attributes name="username" mutable="true">
+    <attributes name="srcusername" mutable="true">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="password" mutable="true">
+    <attributes name="srcpassword" mutable="true">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="sshPublicKey" mutable="true">
+    <attributes name="srcprivateKeyPath" mutable="true">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="sshPrivateKeyPath" mutable="true">
+    <attributes name="targetusername" mutable="true">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="targetpassword" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="targetprivatekeypath" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="sshport" mutable="true" default="22">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
     </attributes>
   </mixins>
   <types xsi:type="occi:EnumerationType" name="TransferType">

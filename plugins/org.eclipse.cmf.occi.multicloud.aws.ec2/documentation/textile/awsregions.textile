@@ -1,0 +1,313 @@
+h1. OCCI awsregions extension
+
+
+
+| *Name* | awsregions |
+| *Scheme* | http://occiware.org/occi/infrastructure/locations/aws# |
+
+
+Imported OCCI Extensions:
+
+| *Name* | *Scheme* |
+| <a href="core.textile">core</a> | http://schemas.ogf.org/occi/core# |
+| <a href="regions.textile">regions</a> | http://occiware.org/occi/infrastructure/locations# |
+
+h1. Kinds
+
+h2. Kind awsregion
+
+| *Term* | awsregion |
+| *Scheme* | http://occiware.org/occi/infrastructure/locations/aws# |
+| *Title* |  |
+| *Parent* | <a href="regions.textile#kind-region">http://occiware.org/occi/infrastructure/locations#region</a> |
+
+
+h1. Mixins
+
+h2. Mixin us_east_2
+
+| *Term* | us_east_2 |
+| *Scheme* | http://occiware.org/occi/infrastructure/locations/aws# |
+| *Title* |  |
+Depends on:
+* <a href="regions.textile#mixin-northamerica">http://occiware.org/occi/infrastructure/locations#northamerica</a>
+Applies to:
+* <a href="awsregions.textile#kind-awsregion">http://occiware.org/occi/infrastructure/locations/aws#awsregion</a>
+
+Attributes of us_east_2 are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| regionName | <a href="core.textile#-string">String</a> | false | true | US East (Ohio) | Region name give an intelligible name on this region |
+| country | <a href="core.textile#-string">String</a> | false | true | USA | the country where this resource or link is available |
+| regionId | <a href="core.textile#-string">String</a> | false | true | us-east-2 | regionId is the id of this region given by the provider  |
+| city | <a href="core.textile#-string">String</a> | false | true | Columbus | The city where this resource or link is available |
+
+
+h2. Mixin us_east_1
+
+| *Term* | us_east_1 |
+| *Scheme* | http://occiware.org/occi/infrastructure/locations/aws# |
+| *Title* |  |
+Depends on:
+* <a href="regions.textile#mixin-northamerica">http://occiware.org/occi/infrastructure/locations#northamerica</a>
+Applies to:
+* <a href="awsregions.textile#kind-awsregion">http://occiware.org/occi/infrastructure/locations/aws#awsregion</a>
+
+Attributes of us_east_1 are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| regionName | <a href="core.textile#-string">String</a> | false | true | US East (N. Virginia) | Region name give an intelligible name on this region |
+| country | <a href="core.textile#-string">String</a> | false | true | USA | the country where this resource or link is available |
+| regionId | <a href="core.textile#-string">String</a> | false | true | us-east-1 | regionId is the id of this region given by the provider  |
+| city | <a href="core.textile#-string">String</a> | false | true | Ashburn, Sterling, Charlottesville | The city where this resource or link is available |
+
+
+h2. Mixin eu_west_3
+
+| *Term* | eu_west_3 |
+| *Scheme* | http://occiware.org/occi/infrastructure/locations/aws# |
+| *Title* |  |
+Depends on:
+* <a href="regions.textile#mixin-europe">http://occiware.org/occi/infrastructure/locations#europe</a>
+Applies to:
+* <a href="awsregions.textile#kind-awsregion">http://occiware.org/occi/infrastructure/locations/aws#awsregion</a>
+
+Attributes of eu_west_3 are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| regionName | <a href="core.textile#-string">String</a> | false | true | EU (Paris) | Region name give an intelligible name on this region |
+| country | <a href="core.textile#-string">String</a> | false | true | France | the country where this resource or link is available |
+| regionId | <a href="core.textile#-string">String</a> | false | true | eu-west-3 | regionId is the id of this region given by the provider  |
+| city | <a href="core.textile#-string">String</a> | false | true | Paris | The city where this resource or link is available |
+
+
+h2. Mixin us_west_1
+
+| *Term* | us_west_1 |
+| *Scheme* | http://occiware.org/occi/infrastructure/locations/aws# |
+| *Title* |  |
+Depends on:
+* <a href="regions.textile#mixin-northamerica">http://occiware.org/occi/infrastructure/locations#northamerica</a>
+Applies to:
+* <a href="awsregions.textile#kind-awsregion">http://occiware.org/occi/infrastructure/locations/aws#awsregion</a>
+
+Attributes of us_west_1 are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| regionName | <a href="core.textile#-string">String</a> | false | true | US West (N. California) | Region name give an intelligible name on this region |
+| country | <a href="core.textile#-string">String</a> | false | true | USA | the country where this resource or link is available |
+| regionId | <a href="core.textile#-string">String</a> | false | true | us-west-1 | regionId is the id of this region given by the provider  |
+| city | <a href="core.textile#-string">String</a> | false | true | Palo Alto | The city where this resource or link is available |
+
+
+h2. Mixin eu_west_1
+
+| *Term* | eu_west_1 |
+| *Scheme* | http://occiware.org/occi/infrastructure/locations/aws# |
+| *Title* |  |
+Depends on:
+* <a href="regions.textile#mixin-europe">http://occiware.org/occi/infrastructure/locations#europe</a>
+Applies to:
+* <a href="awsregions.textile#kind-awsregion">http://occiware.org/occi/infrastructure/locations/aws#awsregion</a>
+
+Attributes of eu_west_1 are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| regionName | <a href="core.textile#-string">String</a> | false | true | EU (Ireland) | Region name give an intelligible name on this region |
+| country | <a href="core.textile#-string">String</a> | false | true | Ireland | the country where this resource or link is available |
+| regionId | <a href="core.textile#-string">String</a> | false | true | eu-west-1 | regionId is the id of this region given by the provider  |
+| city | <a href="core.textile#-string">String</a> | false | true | Dublin | The city where this resource or link is available |
+
+
+h2. Mixin ap_south_1
+
+| *Term* | ap_south_1 |
+| *Scheme* | http://occiware.org/occi/infrastructure/locations/aws# |
+| *Title* |  |
+Depends on:
+* <a href="regions.textile#mixin-asiapacific">http://occiware.org/occi/infrastructure/locations#asiapacific</a>
+Applies to:
+* <a href="awsregions.textile#kind-awsregion">http://occiware.org/occi/infrastructure/locations/aws#awsregion</a>
+
+Attributes of ap_south_1 are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| country | <a href="core.textile#-string">String</a> | false | true | India | the country where this resource or link is available |
+| regionName | <a href="core.textile#-string">String</a> | false | true | Asia Pacific (Mumbai) | Region name give an intelligible name on this region |
+| regionId | <a href="core.textile#-string">String</a> | false | true | ap-south-1 | regionId is the id of this region given by the provider  |
+| city | <a href="core.textile#-string">String</a> | false | true | Bombay | The city where this resource or link is available |
+
+
+h2. Mixin sa_east_1
+
+| *Term* | sa_east_1 |
+| *Scheme* | http://occiware.org/occi/infrastructure/locations/aws# |
+| *Title* |  |
+Depends on:
+* <a href="regions.textile#mixin-southamerica">http://occiware.org/occi/infrastructure/locations#southamerica</a>
+Applies to:
+* <a href="awsregions.textile#kind-awsregion">http://occiware.org/occi/infrastructure/locations/aws#awsregion</a>
+
+Attributes of sa_east_1 are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| country | <a href="core.textile#-string">String</a> | false | true | Brazil | the country where this resource or link is available |
+| regionName | <a href="core.textile#-string">String</a> | false | true | South America (São Paulo) | Region name give an intelligible name on this region |
+| regionId | <a href="core.textile#-string">String</a> | false | true | sa-east-1 | regionId is the id of this region given by the provider  |
+| city | <a href="core.textile#-string">String</a> | false | true | São Paulo | The city where this resource or link is available |
+
+
+h2. Mixin us_west_2
+
+| *Term* | us_west_2 |
+| *Scheme* | http://occiware.org/occi/infrastructure/locations/aws# |
+| *Title* |  |
+Depends on:
+* <a href="regions.textile#mixin-northamerica">http://occiware.org/occi/infrastructure/locations#northamerica</a>
+Applies to:
+* <a href="awsregions.textile#kind-awsregion">http://occiware.org/occi/infrastructure/locations/aws#awsregion</a>
+
+Attributes of us_west_2 are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| regionName | <a href="core.textile#-string">String</a> | false | true | US West (Oregon) | Region name give an intelligible name on this region |
+| country | <a href="core.textile#-string">String</a> | false | true | USA | the country where this resource or link is available |
+| regionId | <a href="core.textile#-string">String</a> | false | true | us-west-2 | regionId is the id of this region given by the provider  |
+| city | <a href="core.textile#-string">String</a> | false | true | Oregon | The city where this resource or link is available |
+
+
+h2. Mixin eu_west_2
+
+| *Term* | eu_west_2 |
+| *Scheme* | http://occiware.org/occi/infrastructure/locations/aws# |
+| *Title* |  |
+Depends on:
+* <a href="regions.textile#mixin-europe">http://occiware.org/occi/infrastructure/locations#europe</a>
+Applies to:
+* <a href="awsregions.textile#kind-awsregion">http://occiware.org/occi/infrastructure/locations/aws#awsregion</a>
+
+Attributes of eu_west_2 are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| regionName | <a href="core.textile#-string">String</a> | false | true | EU (London) | Region name give an intelligible name on this region |
+| country | <a href="core.textile#-string">String</a> | false | true | United Kingdom | the country where this resource or link is available |
+| regionId | <a href="core.textile#-string">String</a> | false | true | eu-west-2 | regionId is the id of this region given by the provider  |
+| city | <a href="core.textile#-string">String</a> | false | true | London | The city where this resource or link is available |
+
+
+h2. Mixin ap_southeast_1
+
+| *Term* | ap_southeast_1 |
+| *Scheme* | http://occiware.org/occi/infrastructure/locations/aws# |
+| *Title* |  |
+Depends on:
+* <a href="regions.textile#mixin-asiapacific">http://occiware.org/occi/infrastructure/locations#asiapacific</a>
+Applies to:
+* <a href="awsregions.textile#kind-awsregion">http://occiware.org/occi/infrastructure/locations/aws#awsregion</a>
+
+Attributes of ap_southeast_1 are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| country | <a href="core.textile#-string">String</a> | false | true | Singapore | the country where this resource or link is available |
+| regionName | <a href="core.textile#-string">String</a> | false | true | Asia Pacific (Singapore) | Region name give an intelligible name on this region |
+| regionId | <a href="core.textile#-string">String</a> | false | true | ap-southeast-1 | regionId is the id of this region given by the provider  |
+| city | <a href="core.textile#-string">String</a> | false | true | Singapore | The city where this resource or link is available |
+
+
+h2. Mixin ca_central_1
+
+| *Term* | ca_central_1 |
+| *Scheme* | http://occiware.org/occi/infrastructure/locations/aws# |
+| *Title* |  |
+Depends on:
+* <a href="regions.textile#mixin-northamerica">http://occiware.org/occi/infrastructure/locations#northamerica</a>
+Applies to:
+* <a href="awsregions.textile#kind-awsregion">http://occiware.org/occi/infrastructure/locations/aws#awsregion</a>
+
+Attributes of ca_central_1 are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| regionName | <a href="core.textile#-string">String</a> | false | true | Canada (Central) | Region name give an intelligible name on this region |
+| country | <a href="core.textile#-string">String</a> | false | true | Canada | the country where this resource or link is available |
+| regionId | <a href="core.textile#-string">String</a> | false | true | ca-central-1 | regionId is the id of this region given by the provider  |
+| city | <a href="core.textile#-string">String</a> | false | true | Toronto | The city where this resource or link is available |
+
+
+h2. Mixin ap_northeast_2
+
+| *Term* | ap_northeast_2 |
+| *Scheme* | http://occiware.org/occi/infrastructure/locations/aws# |
+| *Title* |  |
+Depends on:
+* <a href="regions.textile#mixin-asiapacific">http://occiware.org/occi/infrastructure/locations#asiapacific</a>
+Applies to:
+* <a href="awsregions.textile#kind-awsregion">http://occiware.org/occi/infrastructure/locations/aws#awsregion</a>
+
+Attributes of ap_northeast_2 are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| country | <a href="core.textile#-string">String</a> | false | true | South Korea | the country where this resource or link is available |
+| regionName | <a href="core.textile#-string">String</a> | false | true | Asia Pacific (Seoul) | Region name give an intelligible name on this region |
+| regionId | <a href="core.textile#-string">String</a> | false | true | ap-northeast-2 | regionId is the id of this region given by the provider  |
+| city | <a href="core.textile#-string">String</a> | false | true | Seoul | The city where this resource or link is available |
+
+
+h2. Mixin ap_south_east2
+
+| *Term* | ap_south_east2 |
+| *Scheme* | http://occiware.org/occi/infrastructure/locations/aws# |
+| *Title* |  |
+Depends on:
+* <a href="regions.textile#mixin-asiapacific">http://occiware.org/occi/infrastructure/locations#asiapacific</a>
+Applies to:
+* <a href="awsregions.textile#kind-awsregion">http://occiware.org/occi/infrastructure/locations/aws#awsregion</a>
+
+Attributes of ap_south_east2 are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| country | <a href="core.textile#-string">String</a> | false | true | Australia | the country where this resource or link is available |
+| regionName | <a href="core.textile#-string">String</a> | false | true | Asia Pacific (Sydney) | Region name give an intelligible name on this region |
+| regionId | <a href="core.textile#-string">String</a> | false | true | ap-southeast-2 | regionId is the id of this region given by the provider  |
+| city | <a href="core.textile#-string">String</a> | false | true | Sydney | The city where this resource or link is available |
+
+
+h2. Mixin eu_central_1
+
+| *Term* | eu_central_1 |
+| *Scheme* | http://occiware.org/occi/infrastructure/locations/aws# |
+| *Title* |  |
+Depends on:
+* <a href="regions.textile#mixin-europe">http://occiware.org/occi/infrastructure/locations#europe</a>
+Applies to:
+* <a href="awsregions.textile#kind-awsregion">http://occiware.org/occi/infrastructure/locations/aws#awsregion</a>
+
+Attributes of eu_central_1 are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| country | <a href="core.textile#-string">String</a> | false | true | Germany | the country where this resource or link is available |
+| regionId | <a href="core.textile#-string">String</a> | false | true | eu-central-1 | regionId is the id of this region given by the provider  |
+| city | <a href="core.textile#-string">String</a> | false | true | Frankfurt | The city where this resource or link is available |
+| regionName | <a href="core.textile#-string">String</a> | false | true | EU (Frankfurt) |  |
+
+
+h2. Mixin ap_northeast_1
+
+| *Term* | ap_northeast_1 |
+| *Scheme* | http://occiware.org/occi/infrastructure/locations/aws# |
+| *Title* |  |
+Depends on:
+* <a href="regions.textile#mixin-asiapacific">http://occiware.org/occi/infrastructure/locations#asiapacific</a>
+Applies to:
+* <a href="awsregions.textile#kind-awsregion">http://occiware.org/occi/infrastructure/locations/aws#awsregion</a>
+
+Attributes of ap_northeast_1 are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| country | <a href="core.textile#-string">String</a> | false | true | Japan | the country where this resource or link is available |
+| regionName | <a href="core.textile#-string">String</a> | false | true | Asia Pacific (Tokyo) | Region name give an intelligible name on this region |
+| regionId | <a href="core.textile#-string">String</a> | false | true | ap-northeast-1 | regionId is the id of this region given by the provider  |
+| city | <a href="core.textile#-string">String</a> | false | true | Tokyo | The city where this resource or link is available |
+
+
+
+Generated at Mon Jan 29 15:30:04 CET 2018 from http://occiware.org/occi/infrastructure/locations/aws by org.eclipse.cmf.occi.core.gen.textile

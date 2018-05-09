@@ -17,16 +17,12 @@ package org.eclipse.cmf.occi.multicloud.interoperability.connector;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
-
 /**
- * Connector implementation for the OCCI kind:
- * - scheme: http://occiware.org/occi/multicloud/specialfeatures#
- * - term: httptransfer
- * - title: 
+ * Connector implementation for the OCCI kind: - scheme:
+ * http://occiware.org/occi/multicloud/specialfeatures# - term: httptransfer -
+ * title:
  */
-public class HttptransferConnector extends org.eclipse.cmf.occi.multicloud.interoperability.impl.HttptransferImpl
-{
+public class HttptransferConnector extends org.eclipse.cmf.occi.multicloud.interoperability.impl.HttptransferImpl {
 	/**
 	 * Initialize the logger.
 	 */
@@ -36,15 +32,10 @@ public class HttptransferConnector extends org.eclipse.cmf.occi.multicloud.inter
 	/**
 	 * Constructs a httptransfer connector.
 	 */
-	HttptransferConnector()
-	{
+	HttptransferConnector() {
 		LOGGER.debug("Constructor called on " + this);
 		// TODO: Implement this constructor.
 	}
 	// End of user code
 
-
-		
-
-
-}	
+}

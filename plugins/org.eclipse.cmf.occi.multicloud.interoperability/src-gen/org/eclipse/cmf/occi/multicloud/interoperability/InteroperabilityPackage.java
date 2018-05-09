@@ -444,40 +444,67 @@ public interface InteroperabilityPackage extends EPackage {
 	int SSHTRANSFER__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
 
 	/**
-	 * The feature id for the '<em><b>Username</b></em>' attribute.
+	 * The feature id for the '<em><b>Srcusername</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SSHTRANSFER__USERNAME = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
+	int SSHTRANSFER__SRCUSERNAME = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Password</b></em>' attribute.
+	 * The feature id for the '<em><b>Srcpassword</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SSHTRANSFER__PASSWORD = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
+	int SSHTRANSFER__SRCPASSWORD = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Ssh Public Key</b></em>' attribute.
+	 * The feature id for the '<em><b>Srcprivate Key Path</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SSHTRANSFER__SSH_PUBLIC_KEY = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
+	int SSHTRANSFER__SRCPRIVATE_KEY_PATH = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Ssh Private Key Path</b></em>' attribute.
+	 * The feature id for the '<em><b>Targetusername</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SSHTRANSFER__SSH_PRIVATE_KEY_PATH = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
+	int SSHTRANSFER__TARGETUSERNAME = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Targetpassword</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SSHTRANSFER__TARGETPASSWORD = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Targetprivatekeypath</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SSHTRANSFER__TARGETPRIVATEKEYPATH = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Sshport</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SSHTRANSFER__SSHPORT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Sshtransfer</em>' class.
@@ -486,7 +513,7 @@ public interface InteroperabilityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SSHTRANSFER_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 4;
+	int SSHTRANSFER_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of operations of the '<em>Sshtransfer</em>' class.
@@ -689,48 +716,81 @@ public interface InteroperabilityPackage extends EPackage {
 	EClass getSshtransfer();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.interoperability.Sshtransfer#getUsername <em>Username</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.interoperability.Sshtransfer#getSrcusername <em>Srcusername</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Username</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.interoperability.Sshtransfer#getUsername()
+	 * @return the meta object for the attribute '<em>Srcusername</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.interoperability.Sshtransfer#getSrcusername()
 	 * @see #getSshtransfer()
 	 * @generated
 	 */
-	EAttribute getSshtransfer_Username();
+	EAttribute getSshtransfer_Srcusername();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.interoperability.Sshtransfer#getPassword <em>Password</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.interoperability.Sshtransfer#getSrcpassword <em>Srcpassword</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Password</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.interoperability.Sshtransfer#getPassword()
+	 * @return the meta object for the attribute '<em>Srcpassword</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.interoperability.Sshtransfer#getSrcpassword()
 	 * @see #getSshtransfer()
 	 * @generated
 	 */
-	EAttribute getSshtransfer_Password();
+	EAttribute getSshtransfer_Srcpassword();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.interoperability.Sshtransfer#getSshPublicKey <em>Ssh Public Key</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.interoperability.Sshtransfer#getSrcprivateKeyPath <em>Srcprivate Key Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Ssh Public Key</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.interoperability.Sshtransfer#getSshPublicKey()
+	 * @return the meta object for the attribute '<em>Srcprivate Key Path</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.interoperability.Sshtransfer#getSrcprivateKeyPath()
 	 * @see #getSshtransfer()
 	 * @generated
 	 */
-	EAttribute getSshtransfer_SshPublicKey();
+	EAttribute getSshtransfer_SrcprivateKeyPath();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.interoperability.Sshtransfer#getSshPrivateKeyPath <em>Ssh Private Key Path</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.interoperability.Sshtransfer#getTargetusername <em>Targetusername</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Ssh Private Key Path</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.interoperability.Sshtransfer#getSshPrivateKeyPath()
+	 * @return the meta object for the attribute '<em>Targetusername</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.interoperability.Sshtransfer#getTargetusername()
 	 * @see #getSshtransfer()
 	 * @generated
 	 */
-	EAttribute getSshtransfer_SshPrivateKeyPath();
+	EAttribute getSshtransfer_Targetusername();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.interoperability.Sshtransfer#getTargetpassword <em>Targetpassword</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Targetpassword</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.interoperability.Sshtransfer#getTargetpassword()
+	 * @see #getSshtransfer()
+	 * @generated
+	 */
+	EAttribute getSshtransfer_Targetpassword();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.interoperability.Sshtransfer#getTargetprivatekeypath <em>Targetprivatekeypath</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Targetprivatekeypath</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.interoperability.Sshtransfer#getTargetprivatekeypath()
+	 * @see #getSshtransfer()
+	 * @generated
+	 */
+	EAttribute getSshtransfer_Targetprivatekeypath();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.cmf.occi.multicloud.interoperability.Sshtransfer#getSshport <em>Sshport</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Sshport</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.interoperability.Sshtransfer#getSshport()
+	 * @see #getSshtransfer()
+	 * @generated
+	 */
+	EAttribute getSshtransfer_Sshport();
 
 	/**
 	 * Returns the meta object for enum '{@link org.eclipse.cmf.occi.multicloud.interoperability.TransferType <em>Transfer Type</em>}'.
@@ -910,36 +970,60 @@ public interface InteroperabilityPackage extends EPackage {
 		EClass SSHTRANSFER = eINSTANCE.getSshtransfer();
 
 		/**
-		 * The meta object literal for the '<em><b>Username</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Srcusername</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SSHTRANSFER__USERNAME = eINSTANCE.getSshtransfer_Username();
+		EAttribute SSHTRANSFER__SRCUSERNAME = eINSTANCE.getSshtransfer_Srcusername();
 
 		/**
-		 * The meta object literal for the '<em><b>Password</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Srcpassword</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SSHTRANSFER__PASSWORD = eINSTANCE.getSshtransfer_Password();
+		EAttribute SSHTRANSFER__SRCPASSWORD = eINSTANCE.getSshtransfer_Srcpassword();
 
 		/**
-		 * The meta object literal for the '<em><b>Ssh Public Key</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Srcprivate Key Path</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SSHTRANSFER__SSH_PUBLIC_KEY = eINSTANCE.getSshtransfer_SshPublicKey();
+		EAttribute SSHTRANSFER__SRCPRIVATE_KEY_PATH = eINSTANCE.getSshtransfer_SrcprivateKeyPath();
 
 		/**
-		 * The meta object literal for the '<em><b>Ssh Private Key Path</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Targetusername</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SSHTRANSFER__SSH_PRIVATE_KEY_PATH = eINSTANCE.getSshtransfer_SshPrivateKeyPath();
+		EAttribute SSHTRANSFER__TARGETUSERNAME = eINSTANCE.getSshtransfer_Targetusername();
+
+		/**
+		 * The meta object literal for the '<em><b>Targetpassword</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SSHTRANSFER__TARGETPASSWORD = eINSTANCE.getSshtransfer_Targetpassword();
+
+		/**
+		 * The meta object literal for the '<em><b>Targetprivatekeypath</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SSHTRANSFER__TARGETPRIVATEKEYPATH = eINSTANCE.getSshtransfer_Targetprivatekeypath();
+
+		/**
+		 * The meta object literal for the '<em><b>Sshport</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SSHTRANSFER__SSHPORT = eINSTANCE.getSshtransfer_Sshport();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.interoperability.TransferType <em>Transfer Type</em>}' enum.

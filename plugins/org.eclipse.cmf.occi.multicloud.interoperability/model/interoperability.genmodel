@@ -75,16 +75,25 @@
     <genClasses>
       <ecoreClass href="interoperability.ecore#//Sshtransfer"/>
       <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="interoperability.ecore#//Sshtransfer/username"/>
+        <ecoreFeature xsi:type="ecore:EAttribute" href="interoperability.ecore#//Sshtransfer/srcusername"/>
       </genFeatures>
       <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="interoperability.ecore#//Sshtransfer/password"/>
+        <ecoreFeature xsi:type="ecore:EAttribute" href="interoperability.ecore#//Sshtransfer/srcpassword"/>
       </genFeatures>
       <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="interoperability.ecore#//Sshtransfer/sshPublicKey"/>
+        <ecoreFeature xsi:type="ecore:EAttribute" href="interoperability.ecore#//Sshtransfer/srcprivateKeyPath"/>
       </genFeatures>
       <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="interoperability.ecore#//Sshtransfer/sshPrivateKeyPath"/>
+        <ecoreFeature xsi:type="ecore:EAttribute" href="interoperability.ecore#//Sshtransfer/targetusername"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="interoperability.ecore#//Sshtransfer/targetpassword"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="interoperability.ecore#//Sshtransfer/targetprivatekeypath"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="interoperability.ecore#//Sshtransfer/sshport"/>
       </genFeatures>
     </genClasses>
   </genPackages>

@@ -1,0 +1,97 @@
+h1. OCCI regions extension
+
+
+
+| *Name* | regions |
+| *Scheme* | http://occiware.org/occi/infrastructure/locations# |
+
+
+Imported OCCI Extensions:
+
+| *Name* | *Scheme* |
+| <a href="core.textile">core</a> | http://schemas.ogf.org/occi/core# |
+
+h1. Kinds
+
+h2. Kind region
+
+| *Term* | region |
+| *Scheme* | http://occiware.org/occi/infrastructure/locations# |
+| *Title* |  |
+| *Parent* | <a href="core.textile#kind-resource">http://schemas.ogf.org/occi/core#resource</a> |
+
+Attributes of region are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| regionId | <a href="core.textile#-string">String</a> | true | true |  |  |
+| regionDescription | <a href="core.textile#-string">String</a> | false | true |  |  |
+
+
+h2. Kind regionlink
+
+| *Term* | regionlink |
+| *Scheme* | http://occiware.org/occi/infrastructure/locations# |
+| *Title* |  |
+| *Parent* | <a href="core.textile#kind-link">http://schemas.ogf.org/occi/core#link</a> |
+
+
+h1. Mixins
+
+h2. Mixin availabilityzone
+
+| *Term* | availabilityzone |
+| *Scheme* | http://occiware.org/occi/infrastructure/locations# |
+| *Title* | This mixin is used to locate a resource or link in a datacenter part |
+Applies to:
+* <a href="regions.textile#kind-region">http://occiware.org/occi/infrastructure/locations#region</a>
+
+Attributes of availabilityzone are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| zoneName | <a href="core.textile#-string">String</a> | true | true |  |  |
+| zoneMessage | <a href="core.textile#-string">String</a> | false | true |  |  |
+| available | <a href="core.textile#-boolean">Boolean</a> | false | true | true |  |
+
+
+h2. Mixin europe
+
+| *Term* | europe |
+| *Scheme* | http://occiware.org/occi/infrastructure/locations# |
+| *Title* |  |
+Applies to:
+* <a href="regions.textile#kind-region">http://occiware.org/occi/infrastructure/locations#region</a>
+
+h2. Mixin northamerica
+
+| *Term* | northamerica |
+| *Scheme* | http://occiware.org/occi/infrastructure/locations# |
+| *Title* |  |
+Applies to:
+* <a href="regions.textile#kind-region">http://occiware.org/occi/infrastructure/locations#region</a>
+
+h2. Mixin southamerica
+
+| *Term* | southamerica |
+| *Scheme* | http://occiware.org/occi/infrastructure/locations# |
+| *Title* |  |
+Applies to:
+* <a href="regions.textile#kind-region">http://occiware.org/occi/infrastructure/locations#region</a>
+
+h2. Mixin asiapacific
+
+| *Term* | asiapacific |
+| *Scheme* | http://occiware.org/occi/infrastructure/locations# |
+| *Title* |  |
+Applies to:
+* <a href="regions.textile#kind-region">http://occiware.org/occi/infrastructure/locations#region</a>
+
+h2. Mixin africa
+
+| *Term* | africa |
+| *Scheme* | http://occiware.org/occi/infrastructure/locations# |
+| *Title* |  |
+Applies to:
+* <a href="regions.textile#kind-region">http://occiware.org/occi/infrastructure/locations#region</a>
+
+
+Generated at Mon Jan 29 15:30:04 CET 2018 from http://occiware.org/occi/infrastructure/locations by org.eclipse.cmf.occi.core.gen.textile

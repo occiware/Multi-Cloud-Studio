@@ -300,7 +300,7 @@ public class InteroperabilityPackageImpl extends EPackageImpl implements Interop
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSshtransfer_Username() {
+	public EAttribute getSshtransfer_Srcusername() {
 		return (EAttribute)sshtransferEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -309,7 +309,7 @@ public class InteroperabilityPackageImpl extends EPackageImpl implements Interop
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSshtransfer_Password() {
+	public EAttribute getSshtransfer_Srcpassword() {
 		return (EAttribute)sshtransferEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -318,7 +318,7 @@ public class InteroperabilityPackageImpl extends EPackageImpl implements Interop
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSshtransfer_SshPublicKey() {
+	public EAttribute getSshtransfer_SrcprivateKeyPath() {
 		return (EAttribute)sshtransferEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -327,8 +327,35 @@ public class InteroperabilityPackageImpl extends EPackageImpl implements Interop
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSshtransfer_SshPrivateKeyPath() {
+	public EAttribute getSshtransfer_Targetusername() {
 		return (EAttribute)sshtransferEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSshtransfer_Targetpassword() {
+		return (EAttribute)sshtransferEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSshtransfer_Targetprivatekeypath() {
+		return (EAttribute)sshtransferEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSshtransfer_Sshport() {
+		return (EAttribute)sshtransferEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -395,10 +422,13 @@ public class InteroperabilityPackageImpl extends EPackageImpl implements Interop
 		createEAttribute(httptransferEClass, HTTPTRANSFER__HTTP_PORT);
 
 		sshtransferEClass = createEClass(SSHTRANSFER);
-		createEAttribute(sshtransferEClass, SSHTRANSFER__USERNAME);
-		createEAttribute(sshtransferEClass, SSHTRANSFER__PASSWORD);
-		createEAttribute(sshtransferEClass, SSHTRANSFER__SSH_PUBLIC_KEY);
-		createEAttribute(sshtransferEClass, SSHTRANSFER__SSH_PRIVATE_KEY_PATH);
+		createEAttribute(sshtransferEClass, SSHTRANSFER__SRCUSERNAME);
+		createEAttribute(sshtransferEClass, SSHTRANSFER__SRCPASSWORD);
+		createEAttribute(sshtransferEClass, SSHTRANSFER__SRCPRIVATE_KEY_PATH);
+		createEAttribute(sshtransferEClass, SSHTRANSFER__TARGETUSERNAME);
+		createEAttribute(sshtransferEClass, SSHTRANSFER__TARGETPASSWORD);
+		createEAttribute(sshtransferEClass, SSHTRANSFER__TARGETPRIVATEKEYPATH);
+		createEAttribute(sshtransferEClass, SSHTRANSFER__SSHPORT);
 
 		// Create enums
 		transferTypeEEnum = createEEnum(TRANSFER_TYPE);
@@ -462,10 +492,13 @@ public class InteroperabilityPackageImpl extends EPackageImpl implements Interop
 		initEAttribute(getHttptransfer_HttpPort(), theOCCIPackage.getInteger(), "httpPort", "443", 0, 1, Httptransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sshtransferEClass, Sshtransfer.class, "Sshtransfer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSshtransfer_Username(), theOCCIPackage.getString(), "username", null, 0, 1, Sshtransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSshtransfer_Password(), theOCCIPackage.getString(), "password", null, 0, 1, Sshtransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSshtransfer_SshPublicKey(), theOCCIPackage.getString(), "sshPublicKey", null, 0, 1, Sshtransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSshtransfer_SshPrivateKeyPath(), theOCCIPackage.getString(), "sshPrivateKeyPath", null, 0, 1, Sshtransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSshtransfer_Srcusername(), theOCCIPackage.getString(), "srcusername", null, 0, 1, Sshtransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSshtransfer_Srcpassword(), theOCCIPackage.getString(), "srcpassword", null, 0, 1, Sshtransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSshtransfer_SrcprivateKeyPath(), theOCCIPackage.getString(), "srcprivateKeyPath", null, 0, 1, Sshtransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSshtransfer_Targetusername(), theOCCIPackage.getString(), "targetusername", null, 0, 1, Sshtransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSshtransfer_Targetpassword(), theOCCIPackage.getString(), "targetpassword", null, 0, 1, Sshtransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSshtransfer_Targetprivatekeypath(), theOCCIPackage.getString(), "targetprivatekeypath", null, 0, 1, Sshtransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSshtransfer_Sshport(), theOCCIPackage.getInteger(), "sshport", "22", 0, 1, Sshtransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(transferTypeEEnum, TransferType.class, "TransferType");

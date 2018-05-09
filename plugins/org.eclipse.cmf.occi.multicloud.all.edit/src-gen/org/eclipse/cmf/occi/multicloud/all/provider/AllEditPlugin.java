@@ -12,13 +12,9 @@
  */
 package org.eclipse.cmf.occi.multicloud.all.provider;
 
-import awsaccounts.provider.AwsaccountsEditPlugin;
 import awsregions.provider.AwsregionsEditPlugin;
 
-import identity.provider.IdentityEditPlugin;
 import org.eclipse.cmf.occi.core.provider.OCCIEditPlugin;
-
-import org.eclipse.cmf.occi.crtp.provider.CrtpEditPlugin;
 
 import org.eclipse.cmf.occi.infrastructure.provider.InfrastructureEditPlugin;
 
@@ -37,7 +33,6 @@ import org.eclipse.cmf.occi.multicloud.vmware.provider.VmwareEditPlugin;
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-import oscore.provider.OscoreEditPlugin;
 
 /**
  * This is the central singleton for the All edit plugin.
@@ -75,13 +70,10 @@ public final class AllEditPlugin extends EMFPlugin {
 		     MonitoringEditPlugin.INSTANCE,
 		     AccountsEditPlugin.INSTANCE,
 		     RegionsEditPlugin.INSTANCE,
-		     AwsaccountsEditPlugin.INSTANCE,
 		     AwsregionsEditPlugin.INSTANCE,
 		     Ec2EditPlugin.INSTANCE,
 		     VmwareEditPlugin.INSTANCE,
 		     InteroperabilityEditPlugin.INSTANCE,
-		     OscoreEditPlugin.INSTANCE,
-		     IdentityEditPlugin.INSTANCE,
 		     OCCIEditPlugin.INSTANCE,
 		   });
 	}

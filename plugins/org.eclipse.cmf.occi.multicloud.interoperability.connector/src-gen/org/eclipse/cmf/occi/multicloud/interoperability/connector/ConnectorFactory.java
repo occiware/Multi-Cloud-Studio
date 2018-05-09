@@ -15,17 +15,15 @@
 package org.eclipse.cmf.occi.multicloud.interoperability.connector;
 
 /**
- * Connector EFactory for the OCCI extension:
- * - name: interoperability
- * - scheme: http://occiware.org/occi/multicloud/specialfeatures#
+ * Connector EFactory for the OCCI extension: - name: interoperability - scheme:
+ * http://occiware.org/occi/multicloud/specialfeatures#
  */
-public class ConnectorFactory extends org.eclipse.cmf.occi.multicloud.interoperability.impl.InteroperabilityFactoryImpl
-{
+public class ConnectorFactory
+		extends org.eclipse.cmf.occi.multicloud.interoperability.impl.InteroperabilityFactoryImpl {
 	/**
-	 * EFactory method for OCCI kind:
-	 * - scheme: http://occiware.org/occi/multicloud/specialfeatures#
-	 * - term: filetransferoperations
-	 * - title: 
+	 * EFactory method for OCCI kind: - scheme:
+	 * http://occiware.org/occi/multicloud/specialfeatures# - term:
+	 * filetransferoperations - title:
 	 */
 	@Override
 	public org.eclipse.cmf.occi.multicloud.interoperability.Filetransferoperations createFiletransferoperations() {
@@ -33,10 +31,9 @@ public class ConnectorFactory extends org.eclipse.cmf.occi.multicloud.interopera
 	}
 
 	/**
-	 * EFactory method for OCCI kind:
-	 * - scheme: http://occiware.org/occi/multicloud/specialfeatures#
-	 * - term: httptransfer
-	 * - title: 
+	 * EFactory method for OCCI kind: - scheme:
+	 * http://occiware.org/occi/multicloud/specialfeatures# - term: httptransfer -
+	 * title:
 	 */
 	@Override
 	public org.eclipse.cmf.occi.multicloud.interoperability.Httptransfer createHttptransfer() {
@@ -44,10 +41,9 @@ public class ConnectorFactory extends org.eclipse.cmf.occi.multicloud.interopera
 	}
 
 	/**
-	 * EFactory method for OCCI kind:
-	 * - scheme: http://occiware.org/occi/multicloud/specialfeatures#
-	 * - term: sshtransfer
-	 * - title: 
+	 * EFactory method for OCCI kind: - scheme:
+	 * http://occiware.org/occi/multicloud/specialfeatures# - term: sshtransfer -
+	 * title:
 	 */
 	@Override
 	public org.eclipse.cmf.occi.multicloud.interoperability.Sshtransfer createSshtransfer() {

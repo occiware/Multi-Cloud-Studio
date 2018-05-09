@@ -8,12 +8,9 @@
   <usedGenPackages href="platform:/plugin/org.eclipse.cmf.occi.monitoring/model/monitoring.genmodel#//monitoring"/>
   <usedGenPackages href="platform:/resource/org.eclipse.cmf.occi.multicloud.accounts/model/accounts.genmodel#//accounts"/>
   <usedGenPackages href="platform:/resource/org.eclipse.cmf.occi.multicloud.regions/model/regions.genmodel#//regions"/>
-  <usedGenPackages href="platform:/resource/xscalibur.multicloud.aws.accounts/model/awsaccounts.genmodel#//awsaccounts"/>
   <usedGenPackages href="platform:/resource/org.eclipse.cmf.occi.multicloud.regions.aws/model/awsregions.genmodel#//awsregions"/>
   <usedGenPackages href="platform:/resource/org.eclipse.cmf.occi.multicloud.aws.ec2/model/ec2.genmodel#//ec2"/>
   <usedGenPackages href="platform:/resource/org.eclipse.cmf.occi.multicloud.vmware/model/vmware.genmodel#//vmware"/>
   <usedGenPackages href="platform:/resource/org.eclipse.cmf.occi.multicloud.interoperability/model/interoperability.genmodel#//interoperability"/>
-  <usedGenPackages href="platform:/resource/xscalibur.multicloud.openstack.core/model/oscore.genmodel#//oscore"/>
-  <usedGenPackages href="platform:/resource/xscalibur.multicloud.openstack.security/model/identity.genmodel#//identity"/>
   <usedGenPackages href="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.genmodel#//occi"/>
 </genmodel:GenModel>

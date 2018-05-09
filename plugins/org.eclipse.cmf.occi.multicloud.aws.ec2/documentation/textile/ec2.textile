@@ -1,0 +1,2285 @@
+h1. OCCI ec2 extension
+
+
+
+| *Name* | ec2 |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+
+
+Imported OCCI Extensions:
+
+| *Name* | *Scheme* |
+| <a href="core.textile">core</a> | http://schemas.ogf.org/occi/core# |
+| <a href="regions.textile">regions</a> | http://occiware.org/occi/infrastructure/locations# |
+| <a href="accounts.textile">accounts</a> | http://occiware.org/occi/infrastructure/security# |
+| <a href="infrastructure.textile">infrastructure</a> | http://schemas.ogf.org/occi/infrastructure# |
+| <a href="awsregions.textile">awsregions</a> | http://occiware.org/occi/infrastructure/locations/aws# |
+
+h1. Kinds
+
+h2. Kind instanceec2
+
+| *Term* | instanceec2 |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+| *Parent* | <a href="infrastructure.textile#kind-compute">http://schemas.ogf.org/occi/infrastructure#compute</a> |
+
+Attributes of instanceec2 are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| name | <a href="core.textile#-string">String</a> | false | true |  | Name of this instance, this is represented by a tag on provider aws. |
+| instanceId | <a href="core.textile#-string">String</a> | false | true |  | AWS instance id (i-xxxxxx) |
+| instanceType | <a href="core.textile#-string">String</a> | true | true | t2.nano |  |
+| zoneName | <a href="core.textile#-string">String</a> | false | true |  | The datacenter part. The number and mapping of Availability Zones per region may vary between AWS accounts
+If null, the provider will choose the best to fit with this instance.
+Zone : a, b, c, d, e |
+| imageId | <a href="core.textile#-string">String</a> | false | true |  | The ID of the AMI used to launch the instance.
+Image provider Id, like ami-1a962263 for example. 
+It may be your own private ami or a market place ami. |
+| awsInstanceStatus | <a href="ec2.textile#-awsinstancestate">AWSInstanceState</a> | false | true | notexist |  |
+| launchTime | <a href="core.textile#-string">String</a> | false | true |  | The time the instance was launched. |
+| amiLaunchIndex | <a href="core.textile#-integer">Integer</a> | false | true |  | The AMI launch index, which can be used to find this instance in the launch group. |
+| ebsOptimizedIO | <a href="core.textile#-boolean">Boolean</a> | false | true |  | Indicates whether the instance is optimized for Amazon EBS I/O. |
+| enaSupport | <a href="core.textile#-boolean">Boolean</a> | false | true |  | Specifies whether enhanced networking with ENA is enabled. |
+| hypervisor | <a href="ec2.textile#-hypervisortype">HypervisorType</a> | false | true |  | The hypervisor type of the instance. |
+| instanceLifeCycle | <a href="ec2.textile#-instancelifecycletype">InstanceLifeCycleType</a> | false | true |  | Indicates whether this is a Spot Instance or a Scheduled Instance. |
+| kernelId | <a href="core.textile#-string">String</a> | false | true |  | The kernel associated with this instance, if applicable. |
+| keyPairName | <a href="core.textile#-string">String</a> | false | true |  | The name of the key pair, if this instance was launched with an associated key pair. |
+| monitoringState | <a href="ec2.textile#-monitoringstate">MonitoringState</a> | false | true | disabled | Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled. |
+| platform | <a href="core.textile#-string">String</a> | false | true |  | The value is Windows for Windows instances; otherwise blank. |
+| privateDNSName | <a href="core.textile#-string">String</a> | false | true |  | (IPv4 only) The private DNS hostname name assigned to the instance. |
+| privateIpV4Address | <a href="core.textile#-string">String</a> | false | true |  |  |
+| publicDNSName | <a href="core.textile#-string">String</a> | false | true |  | (IPv4 only) The public DNS name assigned to the instance. |
+| publicIpv4Address | <a href="core.textile#-string">String</a> | false | true |  |  |
+| ramDiskId | <a href="core.textile#-string">String</a> | false | true |  | The RAM disk associated with this instance, if applicable. |
+| sriovNetSupport | <a href="core.textile#-string">String</a> | false | true |  | Specifies whether enhanced networking with the Intel 82599 Virtual Function interface is enabled. |
+| virtualizationType | <a href="ec2.textile#-virtualizationtype">VirtualizationType</a> | false | true |  | The virtualization type of the instance. |
+
+Actions of instanceec2 are:
+
+| *Term* | *Scheme* | *Attributes* | *Title* |
+| terminate | http://occiware.org/occi/infrastructure/aws/instanceec2/action# |  | Terminate - delete the instance on provider |
+
+
+h2. Kind awsaccount
+
+| *Term* | awsaccount |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+| *Parent* | <a href="accounts.textile#kind-cloudaccount">http://occiware.org/occi/infrastructure/security#cloudaccount</a> |
+
+h2. Kind securitygroup
+
+| *Term* | securitygroup |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+| *Parent* | <a href="core.textile#kind-resource">http://schemas.ogf.org/occi/core#resource</a> |
+
+Attributes of securitygroup are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| securityGroupName | <a href="core.textile#-string">String</a> | true | true |  |  |
+| securityGroupDescription | <a href="core.textile#-string">String</a> | false | true |  |  |
+| vpcId | <a href="core.textile#-string">String</a> | false | true |  |  |
+| securityGroupId | <a href="core.textile#-string">String</a> | false | false |  | Security group id defined by the provider |
+
+
+h2. Kind securitygrouplink
+
+| *Term* | securitygrouplink |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+| *Parent* | <a href="core.textile#kind-link">http://schemas.ogf.org/occi/core#link</a> |
+
+h2. Kind keypair
+
+| *Term* | keypair |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+| *Parent* | <a href="core.textile#kind-resource">http://schemas.ogf.org/occi/core#resource</a> |
+
+Attributes of keypair are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| name | <a href="core.textile#-string">String</a> | false | true |  |  |
+| privateKey | <a href="core.textile#-string">String</a> | false | true |  | Warning, this must be used only after creating a keypair. If privateKey is found, update this attribute to null or other values than the original. |
+| fingerPrint | <a href="core.textile#-string">String</a> | false | true |  |  |
+| encodedPublicKey | <a href="core.textile#-string">String</a> | false | true |  | Public key to import for use with action method importKeypair() only, format is base64 encoded and DER |
+
+Actions of keypair are:
+
+| *Term* | *Scheme* | *Attributes* | *Title* |
+| importkeypair | http://occiware.org/occi/infrastructure/aws/keypair/action# |  |  |
+
+
+h2. Kind keypairlink
+
+| *Term* | keypairlink |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+| *Parent* | <a href="core.textile#kind-link">http://schemas.ogf.org/occi/core#link</a> |
+
+h2. Kind ippermission
+
+| *Term* | ippermission |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+| *Parent* | <a href="core.textile#kind-resource">http://schemas.ogf.org/occi/core#resource</a> |
+
+Attributes of ippermission are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| toPort | <a href="core.textile#-integer">Integer</a> | false | true |  |  |
+| fromPort | <a href="core.textile#-integer">Integer</a> | false | true |  |  |
+| ipProtocol | <a href="ec2.textile#-ipprotocol">IpProtocol</a> | false | true | tcp |  |
+| ipv4Ranges | <a href="core.textile#-string">String</a> | false | true |  | CidrIp range, like  "111.111.111.111/32;150.150.150.150/32" , to build a list use ; as separator |
+| ipv6Ranges | <a href="core.textile#-string">String</a> | false | true |  |  |
+| traffic | <a href="ec2.textile#-ippermissiontype">IpPermissionType</a> | true | true | inbound |  |
+| authorized | <a href="core.textile#-boolean">Boolean</a> | false | true | true |  |
+
+
+h2. Kind ippermissionlink
+
+| *Term* | ippermissionlink |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+| *Parent* | <a href="core.textile#kind-link">http://schemas.ogf.org/occi/core#link</a> |
+
+
+h1. Mixins
+
+h2. Mixin awscredential
+
+| *Term* | awscredential |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="accounts.textile#mixin-cloudcredential">http://occiware.org/occi/infrastructure/security#cloudcredential</a>
+Applies to:
+* <a href="ec2.textile#kind-awsaccount">http://occiware.org/occi/infrastructure/aws#awsaccount</a>
+
+h2. Mixin t2_nano
+
+| *Term* | t2_nano |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-generalpurpose">http://occiware.org/occi/infrastructure/aws#generalpurpose</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of t2_nano are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 0.5 | Maximum RAM in gigabytes allocated to the instance |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 1 | Number of CPU cores assigned to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | t2.nano |  |
+
+
+h2. Mixin t2_micro
+
+| *Term* | t2_micro |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-generalpurpose">http://occiware.org/occi/infrastructure/aws#generalpurpose</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of t2_micro are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 1 | Maximum RAM in gigabytes allocated to the instance |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 1 | Number of CPU cores assigned to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | t2.micro |  |
+
+
+h2. Mixin t2_small
+
+| *Term* | t2_small |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-generalpurpose">http://occiware.org/occi/infrastructure/aws#generalpurpose</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of t2_small are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 2 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | t2.small |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 1 | Number of CPU cores assigned to the instance |
+
+
+h2. Mixin t2_medium
+
+| *Term* | t2_medium |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-generalpurpose">http://occiware.org/occi/infrastructure/aws#generalpurpose</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of t2_medium are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 4 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | t2.medium |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 2 | Number of CPU cores assigned to the instance |
+
+
+h2. Mixin t2_large
+
+| *Term* | t2_large |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-generalpurpose">http://occiware.org/occi/infrastructure/aws#generalpurpose</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of t2_large are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 8 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | t2.large |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 2 | Number of CPU cores assigned to the instance |
+
+
+h2. Mixin t2_xlarge
+
+| *Term* | t2_xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-generalpurpose">http://occiware.org/occi/infrastructure/aws#generalpurpose</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of t2_xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 16 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | t2.xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 4 | Number of CPU cores assigned to the instance |
+
+
+h2. Mixin t2_2xlarge
+
+| *Term* | t2_2xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-generalpurpose">http://occiware.org/occi/infrastructure/aws#generalpurpose</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of t2_2xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 32 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | t2.2xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 8 | Number of CPU cores assigned to the instance |
+
+
+h2. Mixin m5_large
+
+| *Term* | m5_large |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-generalpurpose">http://occiware.org/occi/infrastructure/aws#generalpurpose</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of m5_large are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 8 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | m5.large |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 2 | Number of CPU cores assigned to the instance |
+
+
+h2. Mixin m5_xlarge
+
+| *Term* | m5_xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-generalpurpose">http://occiware.org/occi/infrastructure/aws#generalpurpose</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of m5_xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 16 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | m5.xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 4 | Number of CPU cores assigned to the instance |
+
+
+h2. Mixin m5_2xlarge
+
+| *Term* | m5_2xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-generalpurpose">http://occiware.org/occi/infrastructure/aws#generalpurpose</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of m5_2xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 32 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | m5.2xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 8 | Number of CPU cores assigned to the instance |
+
+
+h2. Mixin m5_4xlarge
+
+| *Term* | m5_4xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-generalpurpose">http://occiware.org/occi/infrastructure/aws#generalpurpose</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of m5_4xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 64 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | m5.4xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 16 | Number of CPU cores assigned to the instance |
+
+
+h2. Mixin m5_12xlarge
+
+| *Term* | m5_12xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-generalpurpose">http://occiware.org/occi/infrastructure/aws#generalpurpose</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of m5_12xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 192 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | m5.12xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 48 | Number of CPU cores assigned to the instance |
+
+
+h2. Mixin m5_24xlarge
+
+| *Term* | m5_24xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-generalpurpose">http://occiware.org/occi/infrastructure/aws#generalpurpose</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of m5_24xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 384 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | m5.24xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 96 | Number of CPU cores assigned to the instance |
+
+
+h2. Mixin m4_large
+
+| *Term* | m4_large |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-generalpurpose">http://occiware.org/occi/infrastructure/aws#generalpurpose</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of m4_large are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 8 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | m4.large |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 2 | Number of CPU cores assigned to the instance |
+
+
+h2. Mixin m4_xlarge
+
+| *Term* | m4_xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-generalpurpose">http://occiware.org/occi/infrastructure/aws#generalpurpose</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of m4_xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 16 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | m4.xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 4 | Number of CPU cores assigned to the instance |
+
+
+h2. Mixin m4_2xlarge
+
+| *Term* | m4_2xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-generalpurpose">http://occiware.org/occi/infrastructure/aws#generalpurpose</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of m4_2xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 32 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | m4.2xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 8 | Number of CPU cores assigned to the instance |
+
+
+h2. Mixin m4_10xlarge
+
+| *Term* | m4_10xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-generalpurpose">http://occiware.org/occi/infrastructure/aws#generalpurpose</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of m4_10xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 160 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | m4.10xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 40 | Number of CPU cores assigned to the instance |
+
+
+h2. Mixin m4_16xlarge
+
+| *Term* | m4_16xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-generalpurpose">http://occiware.org/occi/infrastructure/aws#generalpurpose</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of m4_16xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 256 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | m4.16xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 64 | Number of CPU cores assigned to the instance |
+
+
+h2. Mixin m3_medium
+
+| *Term* | m3_medium |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-generalpurpose">http://occiware.org/occi/infrastructure/aws#generalpurpose</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of m3_medium are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 3.75 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | m3.medium |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 1 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 4.0 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin m3_large
+
+| *Term* | m3_large |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-generalpurpose">http://occiware.org/occi/infrastructure/aws#generalpurpose</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of m3_large are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 7.5 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | m3.large |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 2 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 32 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin m3_xlarge
+
+| *Term* | m3_xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-generalpurpose">http://occiware.org/occi/infrastructure/aws#generalpurpose</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of m3_xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 15 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | m3.xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 4 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 80 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin m3_2xlarge
+
+| *Term* | m3_2xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-generalpurpose">http://occiware.org/occi/infrastructure/aws#generalpurpose</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of m3_2xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 30 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | m3.2xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 8 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 160 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin c5_large
+
+| *Term* | c5_large |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-computeoptimized">http://occiware.org/occi/infrastructure/aws#computeoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of c5_large are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 4 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | c5.large |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 2 | Number of CPU cores assigned to the instance |
+
+
+h2. Mixin c5_xlarge
+
+| *Term* | c5_xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-computeoptimized">http://occiware.org/occi/infrastructure/aws#computeoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of c5_xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 8 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | c5.xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 4 | Number of CPU cores assigned to the instance |
+
+
+h2. Mixin c5_2xlarge
+
+| *Term* | c5_2xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-computeoptimized">http://occiware.org/occi/infrastructure/aws#computeoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of c5_2xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 16 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | c5.2xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 8 | Number of CPU cores assigned to the instance |
+
+
+h2. Mixin c5_4xlarge
+
+| *Term* | c5_4xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-computeoptimized">http://occiware.org/occi/infrastructure/aws#computeoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of c5_4xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 32 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | c5.4xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 16 | Number of CPU cores assigned to the instance |
+
+
+h2. Mixin c5_9xlarge
+
+| *Term* | c5_9xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-computeoptimized">http://occiware.org/occi/infrastructure/aws#computeoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of c5_9xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 72 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | c5.9xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 36 | Number of CPU cores assigned to the instance |
+
+
+h2. Mixin c5_18xlarge
+
+| *Term* | c5_18xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-computeoptimized">http://occiware.org/occi/infrastructure/aws#computeoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of c5_18xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 144 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | c5.18xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 72 | Number of CPU cores assigned to the instance |
+
+
+h2. Mixin c4_large
+
+| *Term* | c4_large |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-computeoptimized">http://occiware.org/occi/infrastructure/aws#computeoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of c4_large are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 3.75 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | c4.large |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 2 | Number of CPU cores assigned to the instance |
+
+
+h2. Mixin c4_xlarge
+
+| *Term* | c4_xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-computeoptimized">http://occiware.org/occi/infrastructure/aws#computeoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of c4_xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 7.5 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | c4.xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 4 | Number of CPU cores assigned to the instance |
+
+
+h2. Mixin c4_2xlarge
+
+| *Term* | c4_2xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-computeoptimized">http://occiware.org/occi/infrastructure/aws#computeoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of c4_2xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 15 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | c4.2xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 8 | Number of CPU cores assigned to the instance |
+
+
+h2. Mixin c4_4xlarge
+
+| *Term* | c4_4xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-computeoptimized">http://occiware.org/occi/infrastructure/aws#computeoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of c4_4xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 30 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | c4.2xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 16 | Number of CPU cores assigned to the instance |
+
+
+h2. Mixin c4_8xlarge
+
+| *Term* | c4_8xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-computeoptimized">http://occiware.org/occi/infrastructure/aws#computeoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of c4_8xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 60 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | c4.2xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 36 | Number of CPU cores assigned to the instance |
+
+
+h2. Mixin c3_large
+
+| *Term* | c3_large |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-computeoptimized">http://occiware.org/occi/infrastructure/aws#computeoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of c3_large are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 3.75 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | c3.large |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 2 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 32 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin c3_xlarge
+
+| *Term* | c3_xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-computeoptimized">http://occiware.org/occi/infrastructure/aws#computeoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of c3_xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 7.5 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | c3.xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 4 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 80 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin c3_2xlarge
+
+| *Term* | c3_2xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-computeoptimized">http://occiware.org/occi/infrastructure/aws#computeoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of c3_2xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 15 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | c3.2xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 8 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 160 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin c3_4xlarge
+
+| *Term* | c3_4xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-computeoptimized">http://occiware.org/occi/infrastructure/aws#computeoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of c3_4xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 30 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | c3.4xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 16 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 160 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin c3_8xlarge
+
+| *Term* | c3_8xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-computeoptimized">http://occiware.org/occi/infrastructure/aws#computeoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of c3_8xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 60 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | c3.8xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 32 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 640 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin x1e_xlarge
+
+| *Term* | x1e_xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-memoryoptimized">http://occiware.org/occi/infrastructure/aws#memoryoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of x1e_xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 122 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | x1e.xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 4 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 120 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin x1e_2xlarge
+
+| *Term* | x1e_2xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-memoryoptimized">http://occiware.org/occi/infrastructure/aws#memoryoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of x1e_2xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 244 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | x1e.2xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 8 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 240 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin x1e_4xlarge
+
+| *Term* | x1e_4xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-memoryoptimized">http://occiware.org/occi/infrastructure/aws#memoryoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of x1e_4xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 488 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | x1e.4xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 16 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 480 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin x1e_8xlarge
+
+| *Term* | x1e_8xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-memoryoptimized">http://occiware.org/occi/infrastructure/aws#memoryoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of x1e_8xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 976 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | x1e.8xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 32 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 960 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin x1e_16xlarge
+
+| *Term* | x1e_16xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-memoryoptimized">http://occiware.org/occi/infrastructure/aws#memoryoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of x1e_16xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 1952 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | x1e.16xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 64 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 1920 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin x1e_32xlarge
+
+| *Term* | x1e_32xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-memoryoptimized">http://occiware.org/occi/infrastructure/aws#memoryoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of x1e_32xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 1952 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | x1e.32xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 128 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 3840 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin x1_16xlarge
+
+| *Term* | x1_16xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-memoryoptimized">http://occiware.org/occi/infrastructure/aws#memoryoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of x1_16xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 976 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | x1.16xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 64 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 1920 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin x1_32xlarge
+
+| *Term* | x1_32xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-memoryoptimized">http://occiware.org/occi/infrastructure/aws#memoryoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of x1_32xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 1952 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | x1.32xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 128 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 3840 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin r4_large
+
+| *Term* | r4_large |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-memoryoptimized">http://occiware.org/occi/infrastructure/aws#memoryoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of r4_large are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 15.25 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | r4.large |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 2 | Number of CPU cores assigned to the instance |
+
+
+h2. Mixin r4_xlarge
+
+| *Term* | r4_xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-memoryoptimized">http://occiware.org/occi/infrastructure/aws#memoryoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of r4_xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 30.5 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | r4.xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 4 | Number of CPU cores assigned to the instance |
+
+
+h2. Mixin r4_2xlarge
+
+| *Term* | r4_2xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-memoryoptimized">http://occiware.org/occi/infrastructure/aws#memoryoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of r4_2xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 61 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | r4.2xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 8 | Number of CPU cores assigned to the instance |
+
+
+h2. Mixin r4_4xlarge
+
+| *Term* | r4_4xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-memoryoptimized">http://occiware.org/occi/infrastructure/aws#memoryoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of r4_4xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 122 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | r4.4xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 16 | Number of CPU cores assigned to the instance |
+
+
+h2. Mixin r4_8xlarge
+
+| *Term* | r4_8xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-memoryoptimized">http://occiware.org/occi/infrastructure/aws#memoryoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of r4_8xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 244 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | r4.8xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 32 | Number of CPU cores assigned to the instance |
+
+
+h2. Mixin r4_16xlarge
+
+| *Term* | r4_16xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-memoryoptimized">http://occiware.org/occi/infrastructure/aws#memoryoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of r4_16xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 488 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | r4.16xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 64 | Number of CPU cores assigned to the instance |
+
+
+h2. Mixin r3_large
+
+| *Term* | r3_large |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-memoryoptimized">http://occiware.org/occi/infrastructure/aws#memoryoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of r3_large are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 15.25 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | r3.large |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 2 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 32 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin r3_xlarge
+
+| *Term* | r3_xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-memoryoptimized">http://occiware.org/occi/infrastructure/aws#memoryoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of r3_xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 30.5 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | r3.xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 4 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 80 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin r3_2xlarge
+
+| *Term* | r3_2xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-memoryoptimized">http://occiware.org/occi/infrastructure/aws#memoryoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of r3_2xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 61 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | r3.2xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 8 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 160 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin r3_4xlarge
+
+| *Term* | r3_4xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-memoryoptimized">http://occiware.org/occi/infrastructure/aws#memoryoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of r3_4xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 122 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | r3.4xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 16 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 320 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin r3_8xlarge
+
+| *Term* | r3_8xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-memoryoptimized">http://occiware.org/occi/infrastructure/aws#memoryoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of r3_8xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 244 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | r3.8xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 32 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 640 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin p3_2xlarge
+
+| *Term* | p3_2xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-acceleratedcomputing">http://occiware.org/occi/infrastructure/aws#acceleratedcomputing</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of p3_2xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 61 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | p3.2xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 8 | Number of CPU cores assigned to the instance |
+| gpus | <a href="infrastructure.textile#-core">Core</a> | false | false | 1 |  |
+| gpuMemory | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 16 |  |
+| gpuP2P | <a href="core.textile#-string">String</a> | false | false | None |  |
+
+
+h2. Mixin p3_8xlarge
+
+| *Term* | p3_8xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-acceleratedcomputing">http://occiware.org/occi/infrastructure/aws#acceleratedcomputing</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of p3_8xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 244 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | p3.8xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 32 | Number of CPU cores assigned to the instance |
+| gpus | <a href="infrastructure.textile#-core">Core</a> | false | false | 4 |  |
+| gpuMemory | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 64 |  |
+| gpuP2P | <a href="core.textile#-string">String</a> | false | false | NVLink |  |
+
+
+h2. Mixin p3_16xlarge
+
+| *Term* | p3_16xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-acceleratedcomputing">http://occiware.org/occi/infrastructure/aws#acceleratedcomputing</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of p3_16xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 488 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | p3.16xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 64 | Number of CPU cores assigned to the instance |
+| gpus | <a href="infrastructure.textile#-core">Core</a> | false | false | 8 |  |
+| gpuMemory | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 128 |  |
+| gpuP2P | <a href="core.textile#-string">String</a> | false | false | NVLink |  |
+
+
+h2. Mixin p2_xlarge
+
+| *Term* | p2_xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-acceleratedcomputing">http://occiware.org/occi/infrastructure/aws#acceleratedcomputing</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of p2_xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 61 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | p2.xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 4 | Number of CPU cores assigned to the instance |
+| gpus | <a href="infrastructure.textile#-core">Core</a> | false | false | 1 |  |
+| gpuMemory | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 12 |  |
+| gpuP2P | <a href="core.textile#-string">String</a> | false | false | GPUDirect |  |
+
+
+h2. Mixin p2_8xlarge
+
+| *Term* | p2_8xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-acceleratedcomputing">http://occiware.org/occi/infrastructure/aws#acceleratedcomputing</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of p2_8xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 488 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | p2.8xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 32 | Number of CPU cores assigned to the instance |
+| gpus | <a href="infrastructure.textile#-core">Core</a> | false | false | 8 |  |
+| gpuMemory | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 96 |  |
+| gpuP2P | <a href="core.textile#-string">String</a> | false | false | GPUDirect |  |
+
+
+h2. Mixin p2_16xlarge
+
+| *Term* | p2_16xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-acceleratedcomputing">http://occiware.org/occi/infrastructure/aws#acceleratedcomputing</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of p2_16xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 732 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | p2.8xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 64 | Number of CPU cores assigned to the instance |
+| gpus | <a href="infrastructure.textile#-core">Core</a> | false | false | 16 |  |
+| gpuMemory | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 192 |  |
+| gpuP2P | <a href="core.textile#-string">String</a> | false | false | GPUDirect |  |
+
+
+h2. Mixin generalpurpose
+
+| *Term* | generalpurpose |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="infrastructure.textile#mixin-resource_tpl">http://schemas.ogf.org/occi/infrastructure#resource_tpl</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+h2. Mixin computeoptimized
+
+| *Term* | computeoptimized |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="infrastructure.textile#mixin-resource_tpl">http://schemas.ogf.org/occi/infrastructure#resource_tpl</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+h2. Mixin memoryoptimized
+
+| *Term* | memoryoptimized |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="infrastructure.textile#mixin-resource_tpl">http://schemas.ogf.org/occi/infrastructure#resource_tpl</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+h2. Mixin acceleratedcomputing
+
+| *Term* | acceleratedcomputing |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="infrastructure.textile#mixin-resource_tpl">http://schemas.ogf.org/occi/infrastructure#resource_tpl</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+h2. Mixin storageoptimized
+
+| *Term* | storageoptimized |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="infrastructure.textile#mixin-resource_tpl">http://schemas.ogf.org/occi/infrastructure#resource_tpl</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+h2. Mixin g3_4xlarge
+
+| *Term* | g3_4xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-acceleratedcomputing">http://occiware.org/occi/infrastructure/aws#acceleratedcomputing</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of g3_4xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 122 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | g3.4xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 16 | Number of CPU cores assigned to the instance |
+| gpus | <a href="infrastructure.textile#-core">Core</a> | false | false | 1 |  |
+| gpuMemory | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 8 |  |
+
+
+h2. Mixin g3_8xlarge
+
+| *Term* | g3_8xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-acceleratedcomputing">http://occiware.org/occi/infrastructure/aws#acceleratedcomputing</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of g3_8xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 244 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | g3.8xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 32 | Number of CPU cores assigned to the instance |
+| gpus | <a href="infrastructure.textile#-core">Core</a> | false | false | 4 |  |
+| gpuMemory | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 32 |  |
+
+
+h2. Mixin g3_16xlarge
+
+| *Term* | g3_16xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-acceleratedcomputing">http://occiware.org/occi/infrastructure/aws#acceleratedcomputing</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of g3_16xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 488 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | g3.16xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 64 | Number of CPU cores assigned to the instance |
+| gpus | <a href="infrastructure.textile#-core">Core</a> | false | false | 4 |  |
+| gpuMemory | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 32 |  |
+
+
+h2. Mixin f1_2xlarge
+
+| *Term* | f1_2xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-acceleratedcomputing">http://occiware.org/occi/infrastructure/aws#acceleratedcomputing</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of f1_2xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 122 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | f1.2xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 8 | Number of CPU cores assigned to the instance |
+| fpga | <a href="core.textile#-integer">Integer</a> | false | false | 1 |  |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 470 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin f1_16xlarge
+
+| *Term* | f1_16xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-acceleratedcomputing">http://occiware.org/occi/infrastructure/aws#acceleratedcomputing</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of f1_16xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 976 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | f1.16xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 64 | Number of CPU cores assigned to the instance |
+| fpga | <a href="infrastructure.textile#-core">Core</a> | false | false | 8 |  |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 3760 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin h1_2xlarge
+
+| *Term* | h1_2xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-storageoptimized">http://occiware.org/occi/infrastructure/aws#storageoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of h1_2xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 32 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | h1.2xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 8 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 2000 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin h1_4xlarge
+
+| *Term* | h1_4xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-storageoptimized">http://occiware.org/occi/infrastructure/aws#storageoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of h1_4xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 64 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | h1.4xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 16 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 4000 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin h1_8xlarge
+
+| *Term* | h1_8xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-storageoptimized">http://occiware.org/occi/infrastructure/aws#storageoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of h1_8xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 128 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | h1.8xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 32 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 8000 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin h1_16xlarge
+
+| *Term* | h1_16xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-storageoptimized">http://occiware.org/occi/infrastructure/aws#storageoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of h1_16xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 256 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | h1.16xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 64 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 16000 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin i3_large
+
+| *Term* | i3_large |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-storageoptimized">http://occiware.org/occi/infrastructure/aws#storageoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of i3_large are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 15.25 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | i3.large |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 2 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 475 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin i3_xlarge
+
+| *Term* | i3_xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-storageoptimized">http://occiware.org/occi/infrastructure/aws#storageoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of i3_xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 30.5 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | i3.xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 4 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 950 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin i3_2xlarge
+
+| *Term* | i3_2xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-storageoptimized">http://occiware.org/occi/infrastructure/aws#storageoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of i3_2xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 61 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | i3.2xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 8 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 1900 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin i3_4xlarge
+
+| *Term* | i3_4xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-storageoptimized">http://occiware.org/occi/infrastructure/aws#storageoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of i3_4xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 122 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | i3.4xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 16 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 3800 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin i3_8xlarge
+
+| *Term* | i3_8xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-storageoptimized">http://occiware.org/occi/infrastructure/aws#storageoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of i3_8xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 244 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | i3.8xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 32 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 7600 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin i3_16xlarge
+
+| *Term* | i3_16xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-storageoptimized">http://occiware.org/occi/infrastructure/aws#storageoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of i3_16xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 488 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | i3.16xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 64 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 15200 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin i3_metal
+
+| *Term* | i3_metal |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-storageoptimized">http://occiware.org/occi/infrastructure/aws#storageoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of i3_metal are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 512 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | i3.metal |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 0 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 15200 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin d2_xlarge
+
+| *Term* | d2_xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-storageoptimized">http://occiware.org/occi/infrastructure/aws#storageoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of d2_xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 30.5 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | d2.xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 4 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 6000 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin d2_2xlarge
+
+| *Term* | d2_2xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-storageoptimized">http://occiware.org/occi/infrastructure/aws#storageoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of d2_2xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 61 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | d2.2xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 8 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 12000 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin d2_4xlarge
+
+| *Term* | d2_4xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-storageoptimized">http://occiware.org/occi/infrastructure/aws#storageoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of d2_4xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 122 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | d2.4xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 16 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 24000 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin d2_8xlarge
+
+| *Term* | d2_8xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-storageoptimized">http://occiware.org/occi/infrastructure/aws#storageoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of d2_8xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 244 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | d2.8xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 36 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 48000 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin m1_small
+
+| *Term* | m1_small |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-generalpurpose">http://occiware.org/occi/infrastructure/aws#generalpurpose</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of m1_small are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 1.7 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | m1.small |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 1 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 160 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin t1_micro
+
+| *Term* | t1_micro |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-generalpurpose">http://occiware.org/occi/infrastructure/aws#generalpurpose</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of t1_micro are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 0.613 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | t1.micro |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 1 | Number of CPU cores assigned to the instance |
+
+
+h2. Mixin m1_medium
+
+| *Term* | m1_medium |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-generalpurpose">http://occiware.org/occi/infrastructure/aws#generalpurpose</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of m1_medium are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 3.75 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | m1.medium |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 1 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 410 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin m1_large
+
+| *Term* | m1_large |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-generalpurpose">http://occiware.org/occi/infrastructure/aws#generalpurpose</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of m1_large are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 7.5 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | m1.large |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 2 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 840 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin m1_xlarge
+
+| *Term* | m1_xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-generalpurpose">http://occiware.org/occi/infrastructure/aws#generalpurpose</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of m1_xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 15 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | m1.xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 4 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 1680 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin c1_medium
+
+| *Term* | c1_medium |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-computeoptimized">http://occiware.org/occi/infrastructure/aws#computeoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of c1_medium are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 1.7 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | c1.medium |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 2 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 350 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin c1_xlarge
+
+| *Term* | c1_xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-computeoptimized">http://occiware.org/occi/infrastructure/aws#computeoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of c1_xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 7 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | c1.xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 8 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 1680 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin cc2_8xlarge
+
+| *Term* | cc2_8xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-computeoptimized">http://occiware.org/occi/infrastructure/aws#computeoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of cc2_8xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 60.5 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | c1.xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 32 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 3360 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin g2_2xlarge
+
+| *Term* | g2_2xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-acceleratedcomputing">http://occiware.org/occi/infrastructure/aws#acceleratedcomputing</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of g2_2xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 15 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | g2.2xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 8 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 60 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin g2_8xlarge
+
+| *Term* | g2_8xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-acceleratedcomputing">http://occiware.org/occi/infrastructure/aws#acceleratedcomputing</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of g2_8xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 60 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | g2.8xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 32 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 240 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin cg1_4xlarge
+
+| *Term* | cg1_4xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-acceleratedcomputing">http://occiware.org/occi/infrastructure/aws#acceleratedcomputing</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of cg1_4xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 22.5 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | g2.2xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 16 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 1680 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin m2_xlarge
+
+| *Term* | m2_xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-memoryoptimized">http://occiware.org/occi/infrastructure/aws#memoryoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of m2_xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 17.1 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | m2.xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 2 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 420 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin m2_2xlarge
+
+| *Term* | m2_2xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-memoryoptimized">http://occiware.org/occi/infrastructure/aws#memoryoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of m2_2xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 34.2 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | m2.2xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 4 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 850 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin m2_4xlarge
+
+| *Term* | m2_4xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-memoryoptimized">http://occiware.org/occi/infrastructure/aws#memoryoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of m2_4xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 68.4 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | m2.4xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 8 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 1680 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin cr1_8xlarge
+
+| *Term* | cr1_8xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-memoryoptimized">http://occiware.org/occi/infrastructure/aws#memoryoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of cr1_8xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 244 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | cr1_8xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 32 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 240 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin i2_xlarge
+
+| *Term* | i2_xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-storageoptimized">http://occiware.org/occi/infrastructure/aws#storageoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of i2_xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 30.5 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | i2.xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 4 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 800 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin i2_2xlarge
+
+| *Term* | i2_2xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-storageoptimized">http://occiware.org/occi/infrastructure/aws#storageoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of i2_2xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 61 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | i2.2xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 8 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 1600 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin i2_4xlarge
+
+| *Term* | i2_4xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-storageoptimized">http://occiware.org/occi/infrastructure/aws#storageoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of i2_4xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 122 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | i2.4xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 16 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 3200 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin i2_8xlarge
+
+| *Term* | i2_8xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-storageoptimized">http://occiware.org/occi/infrastructure/aws#storageoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of i2_8xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 244 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | i2.8xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 32 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 6400 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin hs1_8xlarge
+
+| *Term* | hs1_8xlarge |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Depends on:
+* <a href="ec2.textile#mixin-storageoptimized">http://occiware.org/occi/infrastructure/aws#storageoptimized</a>
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of hs1_8xlarge are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| occi.compute.memory | <a href="infrastructure.textile#-gib">GiB</a> | false | true | 117 | Maximum RAM in gigabytes allocated to the instance |
+| instanceType | <a href="core.textile#-string">String</a> | false | true | i2.8xlarge |  |
+| occi.compute.cores | <a href="infrastructure.textile#-core">Core</a> | false | true | 16 | Number of CPU cores assigned to the instance |
+| occi.compute.ephemeral.storage.size | <a href="infrastructure.textile#-gib">GiB</a> | false | false | 48000 | Ephemeral storage provisioned for the associated Compute instance |
+
+
+h2. Mixin placementgroup
+
+| *Term* | placementgroup |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of placementgroup are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| groupName | <a href="core.textile#-string">String</a> | false | true |  | The name of the placement group the instance is in (for cluster compute instances). |
+| affinity | <a href="core.textile#-string">String</a> | false | true |  | The affinity setting for the instance on the Dedicated Host. |
+| hostId | <a href="core.textile#-string">String</a> | false | true |  | The ID of the Dedicated Host on which the instance resides. |
+| spreadDomain | <a href="core.textile#-string">String</a> | false | true |  |  |
+| tenancy | <a href="core.textile#-string">String</a> | false | true |  | The tenancy of the instance (if the instance is running in a VPC). |
+| zoneName | <a href="core.textile#-string">String</a> | false | true |  | The datacenter part. The number and mapping of Availability Zones per region may vary between AWS accounts
+If null, the provider will choose the best to fit with this instance.
+Zone : a, b, c, d, e |
+
+
+h2. Mixin rootdevicevolume
+
+| *Term* | rootdevicevolume |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of rootdevicevolume are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| rootDeviceName | <a href="core.textile#-string">String</a> | false | true |  | The device name of the root device volume (for example, /dev/sda1). |
+| rootDeviceType | <a href="core.textile#-string">String</a> | false | true |  | The root device type used by the AMI. 
+The AMI can use an EBS volume or an instance store volume. |
+
+
+h2. Mixin statustransitionreason
+
+| *Term* | statustransitionreason |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of statustransitionreason are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| stateTransitionCode | <a href="core.textile#-string">String</a> | false | true |  |  |
+| stateTransitionMessage | <a href="core.textile#-string">String</a> | false | true |  |  |
+
+
+h2. Mixin tags
+
+| *Term* | tags |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+h2. Mixin instancevpcinfo
+
+| *Term* | instancevpcinfo |
+| *Scheme* | http://occiware.org/occi/infrastructure/aws# |
+| *Title* |  |
+Applies to:
+* <a href="ec2.textile#kind-instanceec2">http://occiware.org/occi/infrastructure/aws#instanceec2</a>
+
+Attributes of instancevpcinfo are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| vpcId | <a href="core.textile#-string">String</a> | false | true |  |  |
+| subnetId | <a href="core.textile#-string">String</a> | false | true |  | [EC2-VPC] The ID of the subnet in which the instance is running. |
+| sourceDestCheck | <a href="core.textile#-boolean">Boolean</a> | false | true |  | Specifies whether to enable an instance launched in a VPC to perform NAT. 
+This controls whether source/destination checking is enabled on the instance. 
+A value of true means that checking is enabled, and false means that checking is disabled. 
+The value must be false for the instance to perform NAT. 
+For more information, see NAT Instances in the Amazon Virtual Private Cloud User Guide |
+
+
+
+h1. Types
+
+h2. EnumerationType AWSInstanceState
+
+**Literals**:
+* pending  
+* running  
+* shuttingdown  
+* stopping  
+* stopped  
+* terminated  
+* notexist  
+* rebooting  
+
+h2. EnumerationType HypervisorType
+
+**Literals**:
+* ovm  
+* xen  
+
+h2. EnumerationType InstanceLifeCycleType
+
+**Literals**:
+* scheduled  
+* spot  
+
+h2. EnumerationType MonitoringState
+
+**Literals**:
+* disabled  
+* disabling  
+* enabled  
+* pending  
+
+h2. EnumerationType VirtualizationType
+
+**Literals**:
+* hvm  
+* paravirtual  
+
+h2. EnumerationType IpPermissionType
+
+Ippermission types inbound and outbound traffic. 
+
+**Literals**:
+* inbound  
+* outbound  
+
+h2. EnumerationType IpProtocol
+
+**Literals**:
+* tcp  
+* udp  
+* icmp  
+
+Generated at Mon Jan 29 15:30:04 CET 2018 from platform:/resource/org.eclipse.cmf.occi.multicloud.aws.ec2/model/ec2.occie by org.eclipse.cmf.occi.core.gen.textile

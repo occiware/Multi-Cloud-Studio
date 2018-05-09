@@ -5,11 +5,8 @@
   <import href="http://schemas.ogf.org/occi/monitoring#/"/>
   <import href="http://occiware.org/occi/infrastructure/security#/"/>
   <import href="http://occiware.org/occi/infrastructure/locations#/"/>
-  <import href="http://occiware.org/occi/aws/security#/"/>
   <import href="http://occiware.org/occi/infrastructure/locations/aws#/"/>
   <import href="http://occiware.org/occi/infrastructure/aws#/"/>
   <import href="http://occiware.org/occi/infrastructure/vmware#/"/>
   <import href="http://occiware.org/occi/multicloud/specialfeatures#/"/>
-  <import href="http://occiware.org/occi/infrastructure/openstack#/"/>
-  <import href="http://occiware.org/occi/infrastructure/openstack/security#/"/>
 </occi:Extension>

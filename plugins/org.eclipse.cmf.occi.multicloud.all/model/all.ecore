@@ -12,12 +12,9 @@
     <details key="monitoring" value="http://schemas.ogf.org/occi/monitoring/ecore"/>
     <details key="accounts" value="http://occiware.org/occi/infrastructure/security/ecore"/>
     <details key="regions" value="http://occiware.org/occi/infrastructure/locations/ecore"/>
-    <details key="awsaccounts" value="http://occiware.org/occi/aws/security/ecore"/>
     <details key="awsregions" value="http://occiware.org/occi/infrastructure/locations/aws/ecore"/>
     <details key="ec2" value="http://occiware.org/occi/infrastructure/aws/ecore"/>
     <details key="vmware" value="http://occiware.org/occi/infrastructure/vmware/ecore"/>
     <details key="interoperability" value="http://occiware.org/occi/multicloud/specialfeatures/ecore"/>
-    <details key="oscore" value="http://occiware.org/occi/infrastructure/openstack/ecore"/>
-    <details key="identity" value="http://occiware.org/occi/infrastructure/openstack/security/ecore"/>
   </eAnnotations>
 </ecore:EPackage>

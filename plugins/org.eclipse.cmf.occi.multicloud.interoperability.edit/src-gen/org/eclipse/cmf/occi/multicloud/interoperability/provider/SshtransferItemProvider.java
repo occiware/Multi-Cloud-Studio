@@ -59,28 +59,31 @@ public class SshtransferItemProvider extends MixinBaseItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addUsernamePropertyDescriptor(object);
-			addPasswordPropertyDescriptor(object);
-			addSshPublicKeyPropertyDescriptor(object);
-			addSshPrivateKeyPathPropertyDescriptor(object);
+			addSrcusernamePropertyDescriptor(object);
+			addSrcpasswordPropertyDescriptor(object);
+			addSrcprivateKeyPathPropertyDescriptor(object);
+			addTargetusernamePropertyDescriptor(object);
+			addTargetpasswordPropertyDescriptor(object);
+			addTargetprivatekeypathPropertyDescriptor(object);
+			addSshportPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Username feature.
+	 * This adds a property descriptor for the Srcusername feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addUsernamePropertyDescriptor(Object object) {
+	protected void addSrcusernamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Sshtransfer_username_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Sshtransfer_username_feature", "_UI_Sshtransfer_type"),
-				 InteroperabilityPackage.Literals.SSHTRANSFER__USERNAME,
+				 getString("_UI_Sshtransfer_srcusername_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Sshtransfer_srcusername_feature", "_UI_Sshtransfer_type"),
+				 InteroperabilityPackage.Literals.SSHTRANSFER__SRCUSERNAME,
 				 true,
 				 false,
 				 false,
@@ -90,19 +93,19 @@ public class SshtransferItemProvider extends MixinBaseItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Password feature.
+	 * This adds a property descriptor for the Srcpassword feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPasswordPropertyDescriptor(Object object) {
+	protected void addSrcpasswordPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Sshtransfer_password_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Sshtransfer_password_feature", "_UI_Sshtransfer_type"),
-				 InteroperabilityPackage.Literals.SSHTRANSFER__PASSWORD,
+				 getString("_UI_Sshtransfer_srcpassword_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Sshtransfer_srcpassword_feature", "_UI_Sshtransfer_type"),
+				 InteroperabilityPackage.Literals.SSHTRANSFER__SRCPASSWORD,
 				 true,
 				 false,
 				 false,
@@ -112,19 +115,19 @@ public class SshtransferItemProvider extends MixinBaseItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Ssh Public Key feature.
+	 * This adds a property descriptor for the Srcprivate Key Path feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSshPublicKeyPropertyDescriptor(Object object) {
+	protected void addSrcprivateKeyPathPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Sshtransfer_sshPublicKey_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Sshtransfer_sshPublicKey_feature", "_UI_Sshtransfer_type"),
-				 InteroperabilityPackage.Literals.SSHTRANSFER__SSH_PUBLIC_KEY,
+				 getString("_UI_Sshtransfer_srcprivateKeyPath_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Sshtransfer_srcprivateKeyPath_feature", "_UI_Sshtransfer_type"),
+				 InteroperabilityPackage.Literals.SSHTRANSFER__SRCPRIVATE_KEY_PATH,
 				 true,
 				 false,
 				 false,
@@ -134,19 +137,85 @@ public class SshtransferItemProvider extends MixinBaseItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Ssh Private Key Path feature.
+	 * This adds a property descriptor for the Targetusername feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSshPrivateKeyPathPropertyDescriptor(Object object) {
+	protected void addTargetusernamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Sshtransfer_sshPrivateKeyPath_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Sshtransfer_sshPrivateKeyPath_feature", "_UI_Sshtransfer_type"),
-				 InteroperabilityPackage.Literals.SSHTRANSFER__SSH_PRIVATE_KEY_PATH,
+				 getString("_UI_Sshtransfer_targetusername_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Sshtransfer_targetusername_feature", "_UI_Sshtransfer_type"),
+				 InteroperabilityPackage.Literals.SSHTRANSFER__TARGETUSERNAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Targetpassword feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTargetpasswordPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Sshtransfer_targetpassword_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Sshtransfer_targetpassword_feature", "_UI_Sshtransfer_type"),
+				 InteroperabilityPackage.Literals.SSHTRANSFER__TARGETPASSWORD,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Targetprivatekeypath feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTargetprivatekeypathPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Sshtransfer_targetprivatekeypath_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Sshtransfer_targetprivatekeypath_feature", "_UI_Sshtransfer_type"),
+				 InteroperabilityPackage.Literals.SSHTRANSFER__TARGETPRIVATEKEYPATH,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Sshport feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSshportPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Sshtransfer_sshport_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Sshtransfer_sshport_feature", "_UI_Sshtransfer_type"),
+				 InteroperabilityPackage.Literals.SSHTRANSFER__SSHPORT,
 				 true,
 				 false,
 				 false,
@@ -174,7 +243,7 @@ public class SshtransferItemProvider extends MixinBaseItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Sshtransfer)object).getUsername();
+		String label = ((Sshtransfer)object).getSrcusername();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Sshtransfer_type") :
 			getString("_UI_Sshtransfer_type") + " " + label;
@@ -193,10 +262,13 @@ public class SshtransferItemProvider extends MixinBaseItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Sshtransfer.class)) {
-			case InteroperabilityPackage.SSHTRANSFER__USERNAME:
-			case InteroperabilityPackage.SSHTRANSFER__PASSWORD:
-			case InteroperabilityPackage.SSHTRANSFER__SSH_PUBLIC_KEY:
-			case InteroperabilityPackage.SSHTRANSFER__SSH_PRIVATE_KEY_PATH:
+			case InteroperabilityPackage.SSHTRANSFER__SRCUSERNAME:
+			case InteroperabilityPackage.SSHTRANSFER__SRCPASSWORD:
+			case InteroperabilityPackage.SSHTRANSFER__SRCPRIVATE_KEY_PATH:
+			case InteroperabilityPackage.SSHTRANSFER__TARGETUSERNAME:
+			case InteroperabilityPackage.SSHTRANSFER__TARGETPASSWORD:
+			case InteroperabilityPackage.SSHTRANSFER__TARGETPRIVATEKEYPATH:
+			case InteroperabilityPackage.SSHTRANSFER__SSHPORT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

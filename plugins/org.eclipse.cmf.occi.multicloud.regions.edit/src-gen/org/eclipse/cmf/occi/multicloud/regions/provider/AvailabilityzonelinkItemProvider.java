@@ -20,7 +20,7 @@ import org.eclipse.cmf.occi.core.OCCIPackage;
 
 import org.eclipse.cmf.occi.core.provider.LinkItemProvider;
 
-import org.eclipse.cmf.occi.multicloud.regions.Regionlink;
+import org.eclipse.cmf.occi.multicloud.regions.Availabilityzonelink;
 import org.eclipse.cmf.occi.multicloud.regions.RegionsFactory;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -31,19 +31,19 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.cmf.occi.multicloud.regions.Regionlink} object.
+ * This is the item provider adapter for a {@link org.eclipse.cmf.occi.multicloud.regions.Availabilityzonelink} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class RegionlinkItemProvider extends LinkItemProvider {
+public class AvailabilityzonelinkItemProvider extends LinkItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RegionlinkItemProvider(AdapterFactory adapterFactory) {
+	public AvailabilityzonelinkItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -63,14 +63,14 @@ public class RegionlinkItemProvider extends LinkItemProvider {
 	}
 
 	/**
-	 * This returns Regionlink.gif.
+	 * This returns Availabilityzonelink.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Regionlink"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Availabilityzonelink"));
 	}
 
 	/**
@@ -81,10 +81,10 @@ public class RegionlinkItemProvider extends LinkItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Regionlink)object).getId();
+		String label = ((Availabilityzonelink)object).getId();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Regionlink_type") :
-			getString("_UI_Regionlink_type") + " " + label;
+			getString("_UI_Availabilityzonelink_type") :
+			getString("_UI_Availabilityzonelink_type") + " " + label;
 	}
 	
 

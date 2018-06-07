@@ -219,11 +219,6 @@ public class RegionItemProvider extends ResourceItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(OCCIPackage.Literals.ENTITY__PARTS,
-				 RegionsFactory.eINSTANCE.createAvailabilityzone()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OCCIPackage.Literals.ENTITY__PARTS,
 				 RegionsFactory.eINSTANCE.createEurope()));
 
 		newChildDescriptors.add
@@ -255,6 +250,11 @@ public class RegionItemProvider extends ResourceItemProvider {
 			(createChildParameter
 				(OCCIPackage.Literals.RESOURCE__LINKS,
 				 RegionsFactory.eINSTANCE.createRegionlink()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.RESOURCE__LINKS,
+				 RegionsFactory.eINSTANCE.createAvailabilityzonelink()));
 	}
 
 	/**

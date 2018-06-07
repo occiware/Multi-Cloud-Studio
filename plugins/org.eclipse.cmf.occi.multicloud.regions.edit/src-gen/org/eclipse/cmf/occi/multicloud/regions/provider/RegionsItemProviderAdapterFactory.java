@@ -151,6 +151,29 @@ public class RegionsItemProviderAdapterFactory extends RegionsAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.regions.Availabilityzonelink} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AvailabilityzonelinkItemProvider availabilityzonelinkItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.cmf.occi.multicloud.regions.Availabilityzonelink}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAvailabilityzonelinkAdapter() {
+		if (availabilityzonelinkItemProvider == null) {
+			availabilityzonelinkItemProvider = new AvailabilityzonelinkItemProvider(this);
+		}
+
+		return availabilityzonelinkItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.cmf.occi.multicloud.regions.Europe} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -390,6 +413,7 @@ public class RegionsItemProviderAdapterFactory extends RegionsAdapterFactory imp
 		if (regionItemProvider != null) regionItemProvider.dispose();
 		if (regionlinkItemProvider != null) regionlinkItemProvider.dispose();
 		if (availabilityzoneItemProvider != null) availabilityzoneItemProvider.dispose();
+		if (availabilityzonelinkItemProvider != null) availabilityzonelinkItemProvider.dispose();
 		if (europeItemProvider != null) europeItemProvider.dispose();
 		if (northamericaItemProvider != null) northamericaItemProvider.dispose();
 		if (southamericaItemProvider != null) southamericaItemProvider.dispose();

@@ -34,6 +34,9 @@
       </genFeatures>
     </genClasses>
     <genClasses>
+      <ecoreClass href="regions.ecore#//Availabilityzonelink"/>
+    </genClasses>
+    <genClasses>
       <ecoreClass href="regions.ecore#//Europe"/>
     </genClasses>
     <genClasses>

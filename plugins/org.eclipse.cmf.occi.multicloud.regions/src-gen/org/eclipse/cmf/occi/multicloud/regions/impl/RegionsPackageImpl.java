@@ -17,6 +17,7 @@ import org.eclipse.cmf.occi.core.OCCIPackage;
 import org.eclipse.cmf.occi.multicloud.regions.Africa;
 import org.eclipse.cmf.occi.multicloud.regions.Asiapacific;
 import org.eclipse.cmf.occi.multicloud.regions.Availabilityzone;
+import org.eclipse.cmf.occi.multicloud.regions.Availabilityzonelink;
 import org.eclipse.cmf.occi.multicloud.regions.China;
 import org.eclipse.cmf.occi.multicloud.regions.Europe;
 import org.eclipse.cmf.occi.multicloud.regions.Northamerica;
@@ -64,6 +65,13 @@ public class RegionsPackageImpl extends EPackageImpl implements RegionsPackage {
 	 * @generated
 	 */
 	private EClass availabilityzoneEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass availabilityzonelinkEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -275,6 +283,15 @@ public class RegionsPackageImpl extends EPackageImpl implements RegionsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getAvailabilityzonelink() {
+		return availabilityzonelinkEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getEurope() {
 		return europeEClass;
 	}
@@ -365,6 +382,8 @@ public class RegionsPackageImpl extends EPackageImpl implements RegionsPackage {
 		createEAttribute(availabilityzoneEClass, AVAILABILITYZONE__ZONE_MESSAGE);
 		createEAttribute(availabilityzoneEClass, AVAILABILITYZONE__AVAILABLE);
 
+		availabilityzonelinkEClass = createEClass(AVAILABILITYZONELINK);
+
 		europeEClass = createEClass(EUROPE);
 
 		northamericaEClass = createEClass(NORTHAMERICA);
@@ -411,7 +430,8 @@ public class RegionsPackageImpl extends EPackageImpl implements RegionsPackage {
 		// Add supertypes to classes
 		regionEClass.getESuperTypes().add(theOCCIPackage.getResource());
 		regionlinkEClass.getESuperTypes().add(theOCCIPackage.getLink());
-		availabilityzoneEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		availabilityzoneEClass.getESuperTypes().add(theOCCIPackage.getResource());
+		availabilityzonelinkEClass.getESuperTypes().add(theOCCIPackage.getLink());
 		europeEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		northamericaEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		southamericaEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
@@ -432,6 +452,8 @@ public class RegionsPackageImpl extends EPackageImpl implements RegionsPackage {
 		initEAttribute(getAvailabilityzone_ZoneName(), theOCCIPackage.getString(), "zoneName", null, 1, 1, Availabilityzone.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAvailabilityzone_ZoneMessage(), theOCCIPackage.getString(), "zoneMessage", null, 0, 1, Availabilityzone.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAvailabilityzone_Available(), theOCCIPackage.getBoolean(), "available", "true", 0, 1, Availabilityzone.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(availabilityzonelinkEClass, Availabilityzonelink.class, "Availabilityzonelink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(europeEClass, Europe.class, "Europe", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -480,10 +502,10 @@ public class RegionsPackageImpl extends EPackageImpl implements RegionsPackage {
 			 "constraints", "sourceConstraint"
 		   });	
 		addAnnotation
-		  (availabilityzoneEClass, 
+		  (availabilityzonelinkEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "appliesConstraint"
+			 "constraints", "sourceConstraint"
 		   });	
 		addAnnotation
 		  (europeEClass, 
@@ -554,10 +576,10 @@ public class RegionsPackageImpl extends EPackageImpl implements RegionsPackage {
 			 "sourceConstraint", "self.source.oclIsKindOf(regions::Region)"
 		   });	
 		addAnnotation
-		  (availabilityzoneEClass, 
+		  (availabilityzonelinkEClass, 
 		   source, 
 		   new String[] {
-			 "appliesConstraint", "self.entity.oclIsKindOf(regions::Region)"
+			 "sourceConstraint", "self.source.oclIsKindOf(regions::Availabilityzone)"
 		   });	
 		addAnnotation
 		  (europeEClass, 

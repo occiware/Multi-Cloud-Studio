@@ -112,6 +112,8 @@ public class RegionsValidator extends EObjectValidator {
 				return validateRegionlink((Regionlink)value, diagnostics, context);
 			case RegionsPackage.AVAILABILITYZONE:
 				return validateAvailabilityzone((Availabilityzone)value, diagnostics, context);
+			case RegionsPackage.AVAILABILITYZONELINK:
+				return validateAvailabilityzonelink((Availabilityzonelink)value, diagnostics, context);
 			case RegionsPackage.EUROPE:
 				return validateEurope((Europe)value, diagnostics, context);
 			case RegionsPackage.NORTHAMERICA:
@@ -222,34 +224,64 @@ public class RegionsValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(availabilityzone, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(availabilityzone, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(availabilityzone, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAvailabilityzone_appliesConstraint(availabilityzone, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(availabilityzone, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(availabilityzone, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(availabilityzone, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_DifferentMixins(availabilityzone, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateResource_ResourceKindIsInParent(availabilityzone, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * The cached validation expression for the appliesConstraint constraint of '<em>Availabilityzone</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String AVAILABILITYZONE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(regions::Region)";
+	public boolean validateAvailabilityzonelink(Availabilityzonelink availabilityzonelink, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(availabilityzonelink, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(availabilityzonelink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(availabilityzonelink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(availabilityzonelink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(availabilityzonelink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(availabilityzonelink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(availabilityzonelink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(availabilityzonelink, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(availabilityzonelink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(availabilityzonelink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(availabilityzonelink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(availabilityzonelink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_DifferentMixins(availabilityzonelink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateLink_LinkKindIsInParent(availabilityzonelink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateLink_sourceReferenceInvariant(availabilityzonelink, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateLink_targetReferenceInvariant(availabilityzonelink, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAvailabilityzonelink_sourceConstraint(availabilityzonelink, diagnostics, context);
+		return result;
+	}
 
 	/**
-	 * Validates the appliesConstraint constraint of '<em>Availabilityzone</em>'.
+	 * The cached validation expression for the sourceConstraint constraint of '<em>Availabilityzonelink</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAvailabilityzone_appliesConstraint(Availabilityzone availabilityzone, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	protected static final String AVAILABILITYZONELINK__SOURCE_CONSTRAINT__EEXPRESSION = "self.source.oclIsKindOf(regions::Availabilityzone)";
+
+	/**
+	 * Validates the sourceConstraint constraint of '<em>Availabilityzonelink</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAvailabilityzonelink_sourceConstraint(Availabilityzonelink availabilityzonelink, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
-				(RegionsPackage.Literals.AVAILABILITYZONE,
-				 availabilityzone,
+				(RegionsPackage.Literals.AVAILABILITYZONELINK,
+				 availabilityzonelink,
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "appliesConstraint",
-				 AVAILABILITYZONE__APPLIES_CONSTRAINT__EEXPRESSION,
+				 "sourceConstraint",
+				 AVAILABILITYZONELINK__SOURCE_CONSTRAINT__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

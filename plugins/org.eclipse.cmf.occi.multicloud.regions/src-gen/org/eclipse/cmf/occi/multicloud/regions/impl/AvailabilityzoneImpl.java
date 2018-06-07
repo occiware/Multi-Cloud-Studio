@@ -20,6 +20,7 @@ import org.eclipse.cmf.occi.core.Entity;
 
 import org.eclipse.cmf.occi.core.impl.MixinBaseImpl;
 
+import org.eclipse.cmf.occi.core.impl.ResourceImpl;
 import org.eclipse.cmf.occi.multicloud.regions.Availabilityzone;
 import org.eclipse.cmf.occi.multicloud.regions.RegionsPackage;
 import org.eclipse.cmf.occi.multicloud.regions.RegionsTables;
@@ -65,7 +66,7 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  *
  * @generated
  */
-public class AvailabilityzoneImpl extends MixinBaseImpl implements Availabilityzone {
+public class AvailabilityzoneImpl extends ResourceImpl implements Availabilityzone {
 	/**
 	 * The default value of the '{@link #getZoneName() <em>Zone Name</em>}' attribute.
 	 * <!-- begin-user-doc -->

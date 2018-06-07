@@ -47,11 +47,16 @@ public class ConnectorFactory extends org.eclipse.cmf.occi.multicloud.regions.im
 	 * EFactory method for OCCI kind:
 	 * - scheme: http://occiware.org/occi/infrastructure/locations#
 	 * - term: availabilityzone
-	 * - title: This mixin is used to locate a resource or link in a datacenter part
+	 * - title: This resource is used to locate a resource or link in a datacenter part
 	 */
 	@Override
 	public org.eclipse.cmf.occi.multicloud.regions.Availabilityzone createAvailabilityzone() {
 		return new AvailabilityzoneConnector();
+	}
+	
+	@Override
+	public org.eclipse.cmf.occi.multicloud.regions.Availabilityzonelink createAvailabilityzonelink() {
+		return new AvailabilityzonelinkConnector();
 	}
 
 	/**

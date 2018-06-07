@@ -16,9 +16,12 @@ package org.eclipse.cmf.occi.multicloud.regions.provider;
 import java.util.Collection;
 import java.util.List;
 
+import org.eclipse.cmf.occi.core.OCCIPackage;
 import org.eclipse.cmf.occi.core.provider.MixinBaseItemProvider;
 
+import org.eclipse.cmf.occi.core.provider.ResourceItemProvider;
 import org.eclipse.cmf.occi.multicloud.regions.Availabilityzone;
+import org.eclipse.cmf.occi.multicloud.regions.RegionsFactory;
 import org.eclipse.cmf.occi.multicloud.regions.RegionsPackage;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -37,7 +40,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class AvailabilityzoneItemProvider extends MixinBaseItemProvider {
+public class AvailabilityzoneItemProvider extends ResourceItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -151,7 +154,7 @@ public class AvailabilityzoneItemProvider extends MixinBaseItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Availabilityzone)object).getZoneName();
+		String label = ((Availabilityzone)object).getId();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Availabilityzone_type") :
 			getString("_UI_Availabilityzone_type") + " " + label;
@@ -189,6 +192,46 @@ public class AvailabilityzoneItemProvider extends MixinBaseItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 RegionsFactory.eINSTANCE.createEurope()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 RegionsFactory.eINSTANCE.createNorthamerica()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 RegionsFactory.eINSTANCE.createSouthamerica()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 RegionsFactory.eINSTANCE.createAsiapacific()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 RegionsFactory.eINSTANCE.createAfrica()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.ENTITY__PARTS,
+				 RegionsFactory.eINSTANCE.createChina()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.RESOURCE__LINKS,
+				 RegionsFactory.eINSTANCE.createRegionlink()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OCCIPackage.Literals.RESOURCE__LINKS,
+				 RegionsFactory.eINSTANCE.createAvailabilityzonelink()));
 	}
 
 	/**

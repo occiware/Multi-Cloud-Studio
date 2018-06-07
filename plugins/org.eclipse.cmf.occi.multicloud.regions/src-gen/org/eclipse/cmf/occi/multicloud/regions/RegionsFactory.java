@@ -59,6 +59,15 @@ public interface RegionsFactory extends EFactory {
 	Availabilityzone createAvailabilityzone();
 
 	/**
+	 * Returns a new object of class '<em>Availabilityzonelink</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Availabilityzonelink</em>'.
+	 * @generated
+	 */
+	Availabilityzonelink createAvailabilityzonelink();
+
+	/**
 	 * Returns a new object of class '<em>Europe</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

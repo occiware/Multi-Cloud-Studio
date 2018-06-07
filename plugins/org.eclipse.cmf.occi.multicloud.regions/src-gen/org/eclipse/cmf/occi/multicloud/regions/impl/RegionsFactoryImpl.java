@@ -69,6 +69,7 @@ public class RegionsFactoryImpl extends EFactoryImpl implements RegionsFactory {
 			case RegionsPackage.REGION: return createRegion();
 			case RegionsPackage.REGIONLINK: return createRegionlink();
 			case RegionsPackage.AVAILABILITYZONE: return createAvailabilityzone();
+			case RegionsPackage.AVAILABILITYZONELINK: return createAvailabilityzonelink();
 			case RegionsPackage.EUROPE: return createEurope();
 			case RegionsPackage.NORTHAMERICA: return createNorthamerica();
 			case RegionsPackage.SOUTHAMERICA: return createSouthamerica();
@@ -108,6 +109,16 @@ public class RegionsFactoryImpl extends EFactoryImpl implements RegionsFactory {
 	public Availabilityzone createAvailabilityzone() {
 		AvailabilityzoneImpl availabilityzone = new AvailabilityzoneImpl();
 		return availabilityzone;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Availabilityzonelink createAvailabilityzonelink() {
+		AvailabilityzonelinkImpl availabilityzonelink = new AvailabilityzonelinkImpl();
+		return availabilityzonelink;
 	}
 
 	/**

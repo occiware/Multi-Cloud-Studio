@@ -100,7 +100,16 @@ public class RegionsSwitch<T> extends Switch<T> {
 			case RegionsPackage.AVAILABILITYZONE: {
 				Availabilityzone availabilityzone = (Availabilityzone)theEObject;
 				T result = caseAvailabilityzone(availabilityzone);
-				if (result == null) result = caseMixinBase(availabilityzone);
+				if (result == null) result = caseResource(availabilityzone);
+				if (result == null) result = caseEntity(availabilityzone);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RegionsPackage.AVAILABILITYZONELINK: {
+				Availabilityzonelink availabilityzonelink = (Availabilityzonelink)theEObject;
+				T result = caseAvailabilityzonelink(availabilityzonelink);
+				if (result == null) result = caseLink(availabilityzonelink);
+				if (result == null) result = caseEntity(availabilityzonelink);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -192,6 +201,21 @@ public class RegionsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAvailabilityzone(Availabilityzone object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Availabilityzonelink</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Availabilityzonelink</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAvailabilityzonelink(Availabilityzonelink object) {
 		return null;
 	}
 

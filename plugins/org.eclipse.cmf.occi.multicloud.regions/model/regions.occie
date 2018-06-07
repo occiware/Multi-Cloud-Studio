@@ -19,7 +19,7 @@
   <kinds name="Regionlink" scheme="http://occiware.org/occi/infrastructure/locations#" source="//@kinds[term='region']">
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
   </kinds>
-  <mixins name="AvailabilityZone" scheme="http://occiware.org/occi/infrastructure/locations#" title="This mixin is used to locate a resource or link in a datacenter part" applies="//@kinds[term='region']">
+  <kinds name="AvailabilityZone" scheme="http://occiware.org/occi/infrastructure/locations#">
     <attributes name="zoneName" mutable="true" required="true">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
@@ -29,7 +29,11 @@
     <attributes name="available" mutable="true" default="true">
       <type xsi:type="occi:BooleanType" href="http://schemas.ogf.org/occi/core#//@types.1"/>
     </attributes>
-  </mixins>
+    <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
+  </kinds>
+  <kinds name="AvailabilityZoneLink" scheme="http://occiware.org/occi/infrastructure/locations#" source="//@kinds[term='availabilityzone']">
+    <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
+  </kinds>
   <mixins name="Europe" scheme="http://occiware.org/occi/infrastructure/locations#" applies="//@kinds[term='region']"/>
   <mixins name="NorthAmerica" scheme="http://occiware.org/occi/infrastructure/locations#" applies="//@kinds[term='region']"/>
   <mixins name="SouthAmerica" scheme="http://occiware.org/occi/infrastructure/locations#" applies="//@kinds[term='region']"/>

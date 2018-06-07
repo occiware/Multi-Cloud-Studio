@@ -12,16 +12,16 @@
  */
 package org.eclipse.cmf.occi.multicloud.regions;
 
-import java.util.Map;
-
-import org.eclipse.cmf.occi.core.MixinBase;
-
-import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.cmf.occi.core.Resource;
 
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Availabilityzone</b></em>'.
  * <!-- end-user-doc -->
+ *
+ * <!-- begin-model-doc -->
+ * 
+ * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
@@ -33,11 +33,10 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * </ul>
  *
  * @see org.eclipse.cmf.occi.multicloud.regions.RegionsPackage#getAvailabilityzone()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='appliesConstraint'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot appliesConstraint='self.entity.oclIsKindOf(regions::Region)'"
+ * @model
  * @generated
  */
-public interface Availabilityzone extends MixinBase {
+public interface Availabilityzone extends Resource {
 	/**
 	 * Returns the value of the '<em><b>Zone Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

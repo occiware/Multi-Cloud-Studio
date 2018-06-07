@@ -95,6 +95,10 @@ public class RegionsAdapterFactory extends AdapterFactoryImpl {
 				return createAvailabilityzoneAdapter();
 			}
 			@Override
+			public Adapter caseAvailabilityzonelink(Availabilityzonelink object) {
+				return createAvailabilityzonelinkAdapter();
+			}
+			@Override
 			public Adapter caseEurope(Europe object) {
 				return createEuropeAdapter();
 			}
@@ -193,6 +197,20 @@ public class RegionsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAvailabilityzoneAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.regions.Availabilityzonelink <em>Availabilityzonelink</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.regions.Availabilityzonelink
+	 * @generated
+	 */
+	public Adapter createAvailabilityzonelinkAdapter() {
 		return null;
 	}
 

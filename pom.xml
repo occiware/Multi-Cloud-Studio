@@ -134,7 +134,7 @@
         <repository>
             <id>OCL-6.3</id>
             <layout>p2</layout>
-            <url>http://download.eclipse.org/modeling/mdt/ocl/updates/milestones/6.3.0</url>
+            <url>http://download.eclipse.org/modeling/mdt/ocl/updates/milestones/zz6.3.0</url>
         </repository>
         <repository>
             <id>oss-sonatype</id>

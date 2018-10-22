@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 	
+ *
  * Contributors:
  * - William Piers <william.piers@obeo.fr>
  * - Philippe Merle <philippe.merle@inria.fr>
@@ -42,7 +42,6 @@ import org.eclipse.ocl.pivot.oclstdlib.OCLstdlibTables;
  * In order to ensure correct static initialization, a top level class element must be accessed
  * before any nested class element. Therefore an access to PACKAGE.getClass() is recommended.
  */
-@SuppressWarnings("nls")
 public class VmwareTables
 {
 	static {
@@ -85,9 +84,11 @@ public class VmwareTables
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.values.IntegerValue INT_0 = org.eclipse.ocl.pivot.utilities.ValueUtil.integerValueOf("0");
 	public static final /*@NonInvalid*/ java.lang.String STR_Linux_c_c_appliesConstraint = "Linux::appliesConstraint";
 	public static final /*@NonInvalid*/ java.lang.String STR_Macosx_c_c_appliesConstraint = "Macosx::appliesConstraint";
+	public static final /*@NonInvalid*/ java.lang.String STR_Networkadapter_c_c_sourceConstraint = "Networkadapter::sourceConstraint";
 	public static final /*@NonInvalid*/ java.lang.String STR_Networkadapter_c_c_targetConstraint = "Networkadapter::targetConstraint";
 	public static final /*@NonInvalid*/ java.lang.String STR_Os_tpl_vmware_c_c_appliesConstraint = "Os_tpl_vmware::appliesConstraint";
 	public static final /*@NonInvalid*/ java.lang.String STR_Ssh_user_data_c_c_appliesConstraint = "Ssh_user_data::appliesConstraint";
+	public static final /*@NonInvalid*/ java.lang.String STR_Storagelinkvmware_c_c_sourceConstraint = "Storagelinkvmware::sourceConstraint";
 	public static final /*@NonInvalid*/ java.lang.String STR_Storagelinkvmware_c_c_targetConstraint = "Storagelinkvmware::targetConstraint";
 	public static final /*@NonInvalid*/ java.lang.String STR_Vcentercredential_c_c_appliesConstraint = "Vcentercredential::appliesConstraint";
 	public static final /*@NonInvalid*/ java.lang.String STR_Vmwarefolders_c_c_appliesConstraint = "Vmwarefolders::appliesConstraint";
@@ -382,151 +383,151 @@ public class VmwareTables
 		}
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _GuestOsIdentifiers =
-		{
-			Fragments._GuestOsIdentifiers__OclAny /* 0 */,
-			Fragments._GuestOsIdentifiers__OclElement /* 1 */,
-			Fragments._GuestOsIdentifiers__OclType /* 2 */,
-			Fragments._GuestOsIdentifiers__OclEnumeration /* 3 */,
-			Fragments._GuestOsIdentifiers__GuestOsIdentifiers /* 4 */
-		};
+			{
+				Fragments._GuestOsIdentifiers__OclAny /* 0 */,
+				Fragments._GuestOsIdentifiers__OclElement /* 1 */,
+				Fragments._GuestOsIdentifiers__OclType /* 2 */,
+				Fragments._GuestOsIdentifiers__OclEnumeration /* 3 */,
+				Fragments._GuestOsIdentifiers__GuestOsIdentifiers /* 4 */
+			};
 		private static final int /*@NonNull*/ [] __GuestOsIdentifiers = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Instancevmware =
-		{
-			Fragments._Instancevmware__OclAny /* 0 */,
-			Fragments._Instancevmware__OclElement /* 1 */,
-			Fragments._Instancevmware__Entity /* 2 */,
-			Fragments._Instancevmware__Resource /* 3 */,
-			Fragments._Instancevmware__Compute /* 4 */,
-			Fragments._Instancevmware__Instancevmware /* 5 */
-		};
+			{
+				Fragments._Instancevmware__OclAny /* 0 */,
+				Fragments._Instancevmware__OclElement /* 1 */,
+				Fragments._Instancevmware__Entity /* 2 */,
+				Fragments._Instancevmware__Resource /* 3 */,
+				Fragments._Instancevmware__Compute /* 4 */,
+				Fragments._Instancevmware__Instancevmware /* 5 */
+			};
 		private static final int /*@NonNull*/ [] __Instancevmware = { 1,1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Linux =
-		{
-			Fragments._Linux__OclAny /* 0 */,
-			Fragments._Linux__OclElement /* 1 */,
-			Fragments._Linux__MixinBase /* 2 */,
-			Fragments._Linux__Os_tpl /* 3 */,
-			Fragments._Linux__Os_tpl_vmware /* 4 */,
-			Fragments._Linux__Linux /* 5 */
-		};
+			{
+				Fragments._Linux__OclAny /* 0 */,
+				Fragments._Linux__OclElement /* 1 */,
+				Fragments._Linux__MixinBase /* 2 */,
+				Fragments._Linux__Os_tpl /* 3 */,
+				Fragments._Linux__Os_tpl_vmware /* 4 */,
+				Fragments._Linux__Linux /* 5 */
+			};
 		private static final int /*@NonNull*/ [] __Linux = { 1,1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Macosx =
-		{
-			Fragments._Macosx__OclAny /* 0 */,
-			Fragments._Macosx__OclElement /* 1 */,
-			Fragments._Macosx__MixinBase /* 2 */,
-			Fragments._Macosx__Os_tpl /* 3 */,
-			Fragments._Macosx__Os_tpl_vmware /* 4 */,
-			Fragments._Macosx__Macosx /* 5 */
-		};
+			{
+				Fragments._Macosx__OclAny /* 0 */,
+				Fragments._Macosx__OclElement /* 1 */,
+				Fragments._Macosx__MixinBase /* 2 */,
+				Fragments._Macosx__Os_tpl /* 3 */,
+				Fragments._Macosx__Os_tpl_vmware /* 4 */,
+				Fragments._Macosx__Macosx /* 5 */
+			};
 		private static final int /*@NonNull*/ [] __Macosx = { 1,1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Networkadapter =
-		{
-			Fragments._Networkadapter__OclAny /* 0 */,
-			Fragments._Networkadapter__OclElement /* 1 */,
-			Fragments._Networkadapter__Entity /* 2 */,
-			Fragments._Networkadapter__Link /* 3 */,
-			Fragments._Networkadapter__Networkinterface /* 4 */,
-			Fragments._Networkadapter__Networkadapter /* 5 */
-		};
+			{
+				Fragments._Networkadapter__OclAny /* 0 */,
+				Fragments._Networkadapter__OclElement /* 1 */,
+				Fragments._Networkadapter__Entity /* 2 */,
+				Fragments._Networkadapter__Link /* 3 */,
+				Fragments._Networkadapter__Networkinterface /* 4 */,
+				Fragments._Networkadapter__Networkadapter /* 5 */
+			};
 		private static final int /*@NonNull*/ [] __Networkadapter = { 1,1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Os_tpl_vmware =
-		{
-			Fragments._Os_tpl_vmware__OclAny /* 0 */,
-			Fragments._Os_tpl_vmware__OclElement /* 1 */,
-			Fragments._Os_tpl_vmware__MixinBase /* 2 */,
-			Fragments._Os_tpl_vmware__Os_tpl /* 3 */,
-			Fragments._Os_tpl_vmware__Os_tpl_vmware /* 4 */
-		};
+			{
+				Fragments._Os_tpl_vmware__OclAny /* 0 */,
+				Fragments._Os_tpl_vmware__OclElement /* 1 */,
+				Fragments._Os_tpl_vmware__MixinBase /* 2 */,
+				Fragments._Os_tpl_vmware__Os_tpl /* 3 */,
+				Fragments._Os_tpl_vmware__Os_tpl_vmware /* 4 */
+			};
 		private static final int /*@NonNull*/ [] __Os_tpl_vmware = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Ssh_user_data =
-		{
-			Fragments._Ssh_user_data__OclAny /* 0 */,
-			Fragments._Ssh_user_data__OclElement /* 1 */,
-			Fragments._Ssh_user_data__MixinBase /* 2 */,
-			Fragments._Ssh_user_data__User_data /* 3 */,
-			Fragments._Ssh_user_data__Ssh_user_data /* 4 */
-		};
+			{
+				Fragments._Ssh_user_data__OclAny /* 0 */,
+				Fragments._Ssh_user_data__OclElement /* 1 */,
+				Fragments._Ssh_user_data__MixinBase /* 2 */,
+				Fragments._Ssh_user_data__User_data /* 3 */,
+				Fragments._Ssh_user_data__Ssh_user_data /* 4 */
+			};
 		private static final int /*@NonNull*/ [] __Ssh_user_data = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Storagelinkvmware =
-		{
-			Fragments._Storagelinkvmware__OclAny /* 0 */,
-			Fragments._Storagelinkvmware__OclElement /* 1 */,
-			Fragments._Storagelinkvmware__Entity /* 2 */,
-			Fragments._Storagelinkvmware__Link /* 3 */,
-			Fragments._Storagelinkvmware__Storagelink /* 4 */,
-			Fragments._Storagelinkvmware__Storagelinkvmware /* 5 */
-		};
+			{
+				Fragments._Storagelinkvmware__OclAny /* 0 */,
+				Fragments._Storagelinkvmware__OclElement /* 1 */,
+				Fragments._Storagelinkvmware__Entity /* 2 */,
+				Fragments._Storagelinkvmware__Link /* 3 */,
+				Fragments._Storagelinkvmware__Storagelink /* 4 */,
+				Fragments._Storagelinkvmware__Storagelinkvmware /* 5 */
+			};
 		private static final int /*@NonNull*/ [] __Storagelinkvmware = { 1,1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Storagevmware =
-		{
-			Fragments._Storagevmware__OclAny /* 0 */,
-			Fragments._Storagevmware__OclElement /* 1 */,
-			Fragments._Storagevmware__Entity /* 2 */,
-			Fragments._Storagevmware__Resource /* 3 */,
-			Fragments._Storagevmware__Storage /* 4 */,
-			Fragments._Storagevmware__Storagevmware /* 5 */
-		};
+			{
+				Fragments._Storagevmware__OclAny /* 0 */,
+				Fragments._Storagevmware__OclElement /* 1 */,
+				Fragments._Storagevmware__Entity /* 2 */,
+				Fragments._Storagevmware__Resource /* 3 */,
+				Fragments._Storagevmware__Storage /* 4 */,
+				Fragments._Storagevmware__Storagevmware /* 5 */
+			};
 		private static final int /*@NonNull*/ [] __Storagevmware = { 1,1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Vcenteraccount =
-		{
-			Fragments._Vcenteraccount__OclAny /* 0 */,
-			Fragments._Vcenteraccount__OclElement /* 1 */,
-			Fragments._Vcenteraccount__Entity /* 2 */,
-			Fragments._Vcenteraccount__Resource /* 3 */,
-			Fragments._Vcenteraccount__Cloudaccount /* 4 */,
-			Fragments._Vcenteraccount__Vcenteraccount /* 5 */
-		};
+			{
+				Fragments._Vcenteraccount__OclAny /* 0 */,
+				Fragments._Vcenteraccount__OclElement /* 1 */,
+				Fragments._Vcenteraccount__Entity /* 2 */,
+				Fragments._Vcenteraccount__Resource /* 3 */,
+				Fragments._Vcenteraccount__Cloudaccount /* 4 */,
+				Fragments._Vcenteraccount__Vcenteraccount /* 5 */
+			};
 		private static final int /*@NonNull*/ [] __Vcenteraccount = { 1,1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Vcentercredential =
-		{
-			Fragments._Vcentercredential__OclAny /* 0 */,
-			Fragments._Vcentercredential__OclElement /* 1 */,
-			Fragments._Vcentercredential__MixinBase /* 2 */,
-			Fragments._Vcentercredential__Basiccredential /* 3 */,
-			Fragments._Vcentercredential__Vcentercredential /* 4 */
-		};
+			{
+				Fragments._Vcentercredential__OclAny /* 0 */,
+				Fragments._Vcentercredential__OclElement /* 1 */,
+				Fragments._Vcentercredential__MixinBase /* 2 */,
+				Fragments._Vcentercredential__Basiccredential /* 3 */,
+				Fragments._Vcentercredential__Vcentercredential /* 4 */
+			};
 		private static final int /*@NonNull*/ [] __Vcentercredential = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Vmwarefolders =
-		{
-			Fragments._Vmwarefolders__OclAny /* 0 */,
-			Fragments._Vmwarefolders__OclElement /* 1 */,
-			Fragments._Vmwarefolders__MixinBase /* 2 */,
-			Fragments._Vmwarefolders__Vmwarefolders /* 3 */
-		};
+			{
+				Fragments._Vmwarefolders__OclAny /* 0 */,
+				Fragments._Vmwarefolders__OclElement /* 1 */,
+				Fragments._Vmwarefolders__MixinBase /* 2 */,
+				Fragments._Vmwarefolders__Vmwarefolders /* 3 */
+			};
 		private static final int /*@NonNull*/ [] __Vmwarefolders = { 1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Vswitch =
-		{
-			Fragments._Vswitch__OclAny /* 0 */,
-			Fragments._Vswitch__OclElement /* 1 */,
-			Fragments._Vswitch__Entity /* 2 */,
-			Fragments._Vswitch__Resource /* 3 */,
-			Fragments._Vswitch__Network /* 4 */,
-			Fragments._Vswitch__Vswitch /* 5 */
-		};
+			{
+				Fragments._Vswitch__OclAny /* 0 */,
+				Fragments._Vswitch__OclElement /* 1 */,
+				Fragments._Vswitch__Entity /* 2 */,
+				Fragments._Vswitch__Resource /* 3 */,
+				Fragments._Vswitch__Network /* 4 */,
+				Fragments._Vswitch__Vswitch /* 5 */
+			};
 		private static final int /*@NonNull*/ [] __Vswitch = { 1,1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Windows =
-		{
-			Fragments._Windows__OclAny /* 0 */,
-			Fragments._Windows__OclElement /* 1 */,
-			Fragments._Windows__MixinBase /* 2 */,
-			Fragments._Windows__Os_tpl /* 3 */,
-			Fragments._Windows__Os_tpl_vmware /* 4 */,
-			Fragments._Windows__Windows /* 5 */
-		};
+			{
+				Fragments._Windows__OclAny /* 0 */,
+				Fragments._Windows__OclElement /* 1 */,
+				Fragments._Windows__MixinBase /* 2 */,
+				Fragments._Windows__Os_tpl /* 3 */,
+				Fragments._Windows__Os_tpl_vmware /* 4 */,
+				Fragments._Windows__Windows /* 5 */
+			};
 		private static final int /*@NonNull*/ [] __Windows = { 1,1,1,1,1,1 };
 
 		/**
@@ -603,14 +604,9 @@ public class VmwareTables
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Instancevmware__Instancevmware = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Instancevmware__Compute = {
 			InfrastructureTables.Operations._Compute__restart /* restart(RestartMethod[?]) */,
-			InfrastructureTables.Operations._Compute__restart /* restart(RestartMethod[?]) */,
-			InfrastructureTables.Operations._Compute__save /* save(SaveMethod[?],String[?]) */,
 			InfrastructureTables.Operations._Compute__save /* save(SaveMethod[?],String[?]) */,
 			InfrastructureTables.Operations._Compute__start /* start() */,
-			InfrastructureTables.Operations._Compute__start /* start() */,
 			InfrastructureTables.Operations._Compute__stop /* stop(StopMethod[?]) */,
-			InfrastructureTables.Operations._Compute__stop /* stop(StopMethod[?]) */,
-			InfrastructureTables.Operations._Compute__suspend /* suspend(SuspendMethod[?]) */,
 			InfrastructureTables.Operations._Compute__suspend /* suspend(SuspendMethod[?]) */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Instancevmware__Entity = {
@@ -903,8 +899,6 @@ public class VmwareTables
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Storagevmware__Resource = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Storagevmware__Storage = {
 			InfrastructureTables.Operations._Storage__offline /* offline() */,
-			InfrastructureTables.Operations._Storage__offline /* offline() */,
-			InfrastructureTables.Operations._Storage__online /* online() */,
 			InfrastructureTables.Operations._Storage__online /* online() */
 		};
 
@@ -1022,8 +1016,6 @@ public class VmwareTables
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Vswitch__Network = {
 			InfrastructureTables.Operations._Network__down /* down() */,
-			InfrastructureTables.Operations._Network__down /* down() */,
-			InfrastructureTables.Operations._Network__up /* up() */,
 			InfrastructureTables.Operations._Network__up /* up() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Vswitch__OclAny = {

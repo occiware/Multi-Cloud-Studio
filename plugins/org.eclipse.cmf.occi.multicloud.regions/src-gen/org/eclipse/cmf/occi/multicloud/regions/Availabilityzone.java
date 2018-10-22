@@ -48,6 +48,7 @@ public interface Availabilityzone extends Resource {
 	 * @see #setZoneName(String)
 	 * @see org.eclipse.cmf.occi.multicloud.regions.RegionsPackage#getAvailabilityzone_ZoneName()
 	 * @model dataType="org.eclipse.cmf.occi.core.String" required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/ecore!Availabilityzone!zoneName'"
 	 * @generated
 	 */
 	String getZoneName();
@@ -73,6 +74,7 @@ public interface Availabilityzone extends Resource {
 	 * @see #setZoneMessage(String)
 	 * @see org.eclipse.cmf.occi.multicloud.regions.RegionsPackage#getAvailabilityzone_ZoneMessage()
 	 * @model dataType="org.eclipse.cmf.occi.core.String"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/ecore!Availabilityzone!zoneMessage'"
 	 * @generated
 	 */
 	String getZoneMessage();
@@ -99,6 +101,7 @@ public interface Availabilityzone extends Resource {
 	 * @see #setAvailable(boolean)
 	 * @see org.eclipse.cmf.occi.multicloud.regions.RegionsPackage#getAvailabilityzone_Available()
 	 * @model default="true" dataType="org.eclipse.cmf.occi.core.Boolean"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/ecore!Availabilityzone!available'"
 	 * @generated
 	 */
 	boolean isAvailable();

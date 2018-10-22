@@ -8,9 +8,9 @@
     <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
   </eAnnotations>
   <eAnnotations source="http://www.eclipse.org/OCL/Import">
-    <details key="occi" value="http://schemas.ogf.org/occi/core/ecore"/>
-    <details key="infrastructure" value="http://schemas.ogf.org/occi/infrastructure/ecore"/>
-    <details key="accounts" value="http://occiware.org/occi/infrastructure/security/ecore"/>
+    <details key="occi" value="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#/"/>
+    <details key="infrastructure" value="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#/"/>
+    <details key="accounts" value="platform:/resource/org.eclipse.cmf.occi.multicloud.accounts/model/accounts.ecore#/"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EEnum" name="GuestOsIdentifiers">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

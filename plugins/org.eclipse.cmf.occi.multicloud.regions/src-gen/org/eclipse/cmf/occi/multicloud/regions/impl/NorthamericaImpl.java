@@ -62,4 +62,56 @@ public class NorthamericaImpl extends MixinBaseImpl implements Northamerica {
 		return RegionsPackage.Literals.NORTHAMERICA;
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean appliesConstraint(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		/**
+		 *
+		 * inv appliesConstraint:
+		 *   let severity : Integer[1] = 'Northamerica::appliesConstraint'.getSeverity()
+		 *   in
+		 *     if severity <= 0
+		 *     then true
+		 *     else
+		 *       let result : occi::Boolean[1] = self.entity.oclIsKindOf(Region)
+		 *       in
+		 *         'Northamerica::appliesConstraint'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+		 *     endif
+		 */
+		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
+		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
+		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, RegionsTables.STR_Northamerica_c_c_appliesConstraint);
+		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, RegionsTables.INT_0).booleanValue();
+		/*@NonInvalid*/ boolean symbol_0;
+		if (le) {
+			symbol_0 = ValueUtil.TRUE_VALUE;
+		}
+		else {
+			final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_regions_c_c_Region_0 = idResolver.getClass(RegionsTables.CLSSid_Region, null);
+			final /*@NonInvalid*/ Entity entity = this.getEntity();
+			final /*@NonInvalid*/ boolean result = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity, TYP_regions_c_c_Region_0).booleanValue();
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, RegionsTables.STR_Northamerica_c_c_appliesConstraint, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, RegionsTables.INT_0).booleanValue();
+			symbol_0 = logDiagnostic;
+		}
+		return Boolean.TRUE == symbol_0;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case RegionsPackage.NORTHAMERICA___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP:
+				return appliesConstraint((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
 } //NorthamericaImpl

@@ -57,7 +57,7 @@
 
   <repositories>
     <repository location="https://dl.bintray.com/occiware/Multi-Cloud-Studio/update-site/current-release" enabled="true" />
-    <repository location="http://download.eclipse.org/releases/oxygen" enabled="true" />
+    <repository location="http://download.eclipse.org/releases/photon" enabled="true" />
   </repositories>
 
   <preferencesInfo>

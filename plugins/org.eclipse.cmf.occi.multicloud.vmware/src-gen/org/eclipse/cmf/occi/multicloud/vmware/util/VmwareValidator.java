@@ -56,12 +56,100 @@ public class VmwareValidator extends EObjectValidator {
 	public static final String DIAGNOSTIC_SOURCE = "org.eclipse.cmf.occi.multicloud.vmware";
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Source Constraint' of 'Storagelinkvmware'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int STORAGELINKVMWARE__SOURCE_CONSTRAINT = 1;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Target Constraint' of 'Storagelinkvmware'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int STORAGELINKVMWARE__TARGET_CONSTRAINT = 2;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Source Constraint' of 'Networkadapter'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int NETWORKADAPTER__SOURCE_CONSTRAINT = 3;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Target Constraint' of 'Networkadapter'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int NETWORKADAPTER__TARGET_CONSTRAINT = 4;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Windows'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int WINDOWS__APPLIES_CONSTRAINT = 5;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Linux'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int LINUX__APPLIES_CONSTRAINT = 6;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Macosx'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int MACOSX__APPLIES_CONSTRAINT = 7;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Vmwarefolders'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int VMWAREFOLDERS__APPLIES_CONSTRAINT = 8;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Os tpl vmware'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int OS_TPL_VMWARE__APPLIES_CONSTRAINT = 9;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Ssh user data'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int SSH_USER_DATA__APPLIES_CONSTRAINT = 10;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Vcentercredential'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int VCENTERCREDENTIAL__APPLIES_CONSTRAINT = 11;
+
+	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 0;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 11;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -229,18 +317,10 @@ public class VmwareValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= occiValidator.validateLink_LinkKindIsInParent(storagelinkvmware, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateLink_sourceReferenceInvariant(storagelinkvmware, diagnostics, context);
 		if (result || diagnostics != null) result &= occiValidator.validateLink_targetReferenceInvariant(storagelinkvmware, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStoragelinkvmware_sourceConstraint(storagelinkvmware, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStoragelinkvmware_targetConstraint(storagelinkvmware, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStoragelinkvmware_sourceConstraint(storagelinkvmware, diagnostics, context);
 		return result;
 	}
-
-	/**
-	 * The cached validation expression for the sourceConstraint constraint of '<em>Storagelinkvmware</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String STORAGELINKVMWARE__SOURCE_CONSTRAINT__EEXPRESSION = "self.source.oclIsKindOf(vmware::Instancevmware)";
 
 	/**
 	 * Validates the sourceConstraint constraint of '<em>Storagelinkvmware</em>'.
@@ -249,27 +329,8 @@ public class VmwareValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateStoragelinkvmware_sourceConstraint(Storagelinkvmware storagelinkvmware, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(VmwarePackage.Literals.STORAGELINKVMWARE,
-				 storagelinkvmware,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "sourceConstraint",
-				 STORAGELINKVMWARE__SOURCE_CONSTRAINT__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return storagelinkvmware.sourceConstraint(diagnostics, context);
 	}
-
-	/**
-	 * The cached validation expression for the targetConstraint constraint of '<em>Storagelinkvmware</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String STORAGELINKVMWARE__TARGET_CONSTRAINT__EEXPRESSION = "self.target.oclIsKindOf(vmware::Storagevmware)";
 
 	/**
 	 * Validates the targetConstraint constraint of '<em>Storagelinkvmware</em>'.
@@ -278,18 +339,7 @@ public class VmwareValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateStoragelinkvmware_targetConstraint(Storagelinkvmware storagelinkvmware, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(VmwarePackage.Literals.STORAGELINKVMWARE,
-				 storagelinkvmware,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "targetConstraint",
-				 STORAGELINKVMWARE__TARGET_CONSTRAINT__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return storagelinkvmware.targetConstraint(diagnostics, context);
 	}
 
 	/**
@@ -344,41 +394,14 @@ public class VmwareValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the sourceConstraint constraint of '<em>Networkadapter</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String NETWORKADAPTER__SOURCE_CONSTRAINT__EEXPRESSION = "self.source.oclIsKindOf(vmware::Instancevmware)";
-
-	/**
 	 * Validates the sourceConstraint constraint of '<em>Networkadapter</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateNetworkadapter_sourceConstraint(Networkadapter networkadapter, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(VmwarePackage.Literals.NETWORKADAPTER,
-				 networkadapter,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "sourceConstraint",
-				 NETWORKADAPTER__SOURCE_CONSTRAINT__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return networkadapter.sourceConstraint(diagnostics, context);
 	}
-
-	/**
-	 * The cached validation expression for the targetConstraint constraint of '<em>Networkadapter</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String NETWORKADAPTER__TARGET_CONSTRAINT__EEXPRESSION = "self.target.oclIsKindOf(vmware::Vswitch)";
 
 	/**
 	 * Validates the targetConstraint constraint of '<em>Networkadapter</em>'.
@@ -387,26 +410,7 @@ public class VmwareValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateNetworkadapter_targetConstraint(Networkadapter networkadapter, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "targetConstraint", getObjectLabel(networkadapter, context) },
-						 new Object[] { networkadapter },
-						 context));
-			}
-			return false;
-		}
-		return infrastructureValidator.validateNetworkinterface_targetConstraint(networkadapter, diagnostics, context);
+		return networkadapter.targetConstraint(diagnostics, context);
 	}
 
 	/**
@@ -452,40 +456,13 @@ public class VmwareValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the appliesConstraint constraint of '<em>Windows</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String WINDOWS__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(vmware::Instancevmware)";
-
-	/**
 	 * Validates the appliesConstraint constraint of '<em>Windows</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateWindows_appliesConstraint(Windows windows, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "appliesConstraint", getObjectLabel(windows, context) },
-						 new Object[] { windows },
-						 context));
-			}
-			return false;
-		}
-		return validateOs_tpl_vmware_appliesConstraint(windows, diagnostics, context);
+		return windows.appliesConstraint(diagnostics, context);
 	}
 
 	/**
@@ -508,40 +485,13 @@ public class VmwareValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the appliesConstraint constraint of '<em>Linux</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String LINUX__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(vmware::Instancevmware)";
-
-	/**
 	 * Validates the appliesConstraint constraint of '<em>Linux</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateLinux_appliesConstraint(Linux linux, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "appliesConstraint", getObjectLabel(linux, context) },
-						 new Object[] { linux },
-						 context));
-			}
-			return false;
-		}
-		return validateOs_tpl_vmware_appliesConstraint(linux, diagnostics, context);
+		return linux.appliesConstraint(diagnostics, context);
 	}
 
 	/**
@@ -564,40 +514,13 @@ public class VmwareValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the appliesConstraint constraint of '<em>Macosx</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String MACOSX__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(vmware::Instancevmware)";
-
-	/**
 	 * Validates the appliesConstraint constraint of '<em>Macosx</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateMacosx_appliesConstraint(Macosx macosx, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "appliesConstraint", getObjectLabel(macosx, context) },
-						 new Object[] { macosx },
-						 context));
-			}
-			return false;
-		}
-		return validateOs_tpl_vmware_appliesConstraint(macosx, diagnostics, context);
+		return macosx.appliesConstraint(diagnostics, context);
 	}
 
 	/**
@@ -620,32 +543,13 @@ public class VmwareValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the appliesConstraint constraint of '<em>Vmwarefolders</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String VMWAREFOLDERS__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(vmware::Instancevmware) or self.entity.oclIsKindOf(vmware::Networkadapter) or self.entity.oclIsKindOf(vmware::Storagelinkvmware) or self.entity.oclIsKindOf(vmware::Storagevmware) or self.entity.oclIsKindOf(vmware::Vswitch)";
-
-	/**
 	 * Validates the appliesConstraint constraint of '<em>Vmwarefolders</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateVmwarefolders_appliesConstraint(Vmwarefolders vmwarefolders, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(VmwarePackage.Literals.VMWAREFOLDERS,
-				 vmwarefolders,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "appliesConstraint",
-				 VMWAREFOLDERS__APPLIES_CONSTRAINT__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return vmwarefolders.appliesConstraint(diagnostics, context);
 	}
 
 	/**
@@ -668,40 +572,13 @@ public class VmwareValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the appliesConstraint constraint of '<em>Os tpl vmware</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String OS_TPL_VMWARE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(vmware::Instancevmware)";
-
-	/**
 	 * Validates the appliesConstraint constraint of '<em>Os tpl vmware</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateOs_tpl_vmware_appliesConstraint(Os_tpl_vmware os_tpl_vmware, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "appliesConstraint", getObjectLabel(os_tpl_vmware, context) },
-						 new Object[] { os_tpl_vmware },
-						 context));
-			}
-			return false;
-		}
-		return infrastructureValidator.validateOs_tpl_appliesConstraint(os_tpl_vmware, diagnostics, context);
+		return os_tpl_vmware.appliesConstraint(diagnostics, context);
 	}
 
 	/**
@@ -724,40 +601,13 @@ public class VmwareValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the appliesConstraint constraint of '<em>Ssh user data</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String SSH_USER_DATA__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(vmware::Instancevmware)";
-
-	/**
 	 * Validates the appliesConstraint constraint of '<em>Ssh user data</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateSsh_user_data_appliesConstraint(Ssh_user_data ssh_user_data, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "appliesConstraint", getObjectLabel(ssh_user_data, context) },
-						 new Object[] { ssh_user_data },
-						 context));
-			}
-			return false;
-		}
-		return infrastructureValidator.validateUser_data_appliesConstraint(ssh_user_data, diagnostics, context);
+		return ssh_user_data.appliesConstraint(diagnostics, context);
 	}
 
 	/**
@@ -780,40 +630,13 @@ public class VmwareValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the appliesConstraint constraint of '<em>Vcentercredential</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String VCENTERCREDENTIAL__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(vmware::Vcenteraccount)";
-
-	/**
 	 * Validates the appliesConstraint constraint of '<em>Vcentercredential</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateVcentercredential_appliesConstraint(Vcentercredential vcentercredential, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO override the constraint, if desired
-		// -> uncomment the scaffolding
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "appliesConstraint", getObjectLabel(vcentercredential, context) },
-						 new Object[] { vcentercredential },
-						 context));
-			}
-			return false;
-		}
-		return accountsValidator.validateBasiccredential_appliesConstraint(vcentercredential, diagnostics, context);
+		return vcentercredential.appliesConstraint(diagnostics, context);
 	}
 
 	/**

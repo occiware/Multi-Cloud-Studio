@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:occi="http://schemas.ogf.org/occi/core/ecore" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
-  <viewpoint:DAnalysis xmi:id="_noRsoGuUEee-_K0Z20tIpQ" selectedViews="_oJI-AGuUEee-_K0Z20tIpQ _SJEiwGyJEeel_Mg3P10acA _SJgnoGyJEeel_Mg3P10acA _SJwfQGyJEeel_Mg3P10acA _SKBlAGyJEeel_Mg3P10acA" version="12.1.0.201708031200">
+  <viewpoint:DAnalysis xmi:id="_noRsoGuUEee-_K0Z20tIpQ" selectedViews="_oJI-AGuUEee-_K0Z20tIpQ _SJEiwGyJEeel_Mg3P10acA _SJgnoGyJEeel_Mg3P10acA _SJwfQGyJEeel_Mg3P10acA _SKBlAGyJEeel_Mg3P10acA" version="13.0.0.201804031646">
     <semanticResources>model/vmware.occie</semanticResources>
     <semanticResources>http://schemas.ogf.org/occi/core</semanticResources>
     <semanticResources>http://schemas.ogf.org/occi/infrastructure/compute/template/1.1</semanticResources>
@@ -13,10 +13,10 @@
     <semanticResources>platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.genmodel</semanticResources>
     <semanticResources>platform:/plugin/org.eclipse.cmf.occi.crtp/model/crtp.ecore</semanticResources>
     <semanticResources>http://occiware.org/occi/infrastructure/security</semanticResources>
-    <semanticResources>model/vmware.ecore</semanticResources>
     <semanticResources>platform:/resource/org.eclipse.cmf.occi.multicloud.accounts/model/accounts.ecore</semanticResources>
-    <semanticResources>model/vmware.genmodel</semanticResources>
     <semanticResources>platform:/resource/org.eclipse.cmf.occi.multicloud.accounts/model/accounts.genmodel</semanticResources>
+    <semanticResources>model/vmware.ecore</semanticResources>
+    <semanticResources>model/vmware.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_oJI-AGuUEee-_K0Z20tIpQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_oU5iEGuUEee-_K0Z20tIpQ" name="vmware" repPath="#_1y9gcDc5EeiPbtIaKso2kg">

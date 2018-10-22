@@ -55,6 +55,7 @@ public interface Region extends Resource {
 	 * @see #setRegionId(String)
 	 * @see org.eclipse.cmf.occi.multicloud.regions.RegionsPackage#getRegion_RegionId()
 	 * @model dataType="org.eclipse.cmf.occi.core.String" required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/ecore!Region!regionId'"
 	 * @generated
 	 */
 	String getRegionId();
@@ -80,6 +81,7 @@ public interface Region extends Resource {
 	 * @see #setRegionDescription(String)
 	 * @see org.eclipse.cmf.occi.multicloud.regions.RegionsPackage#getRegion_RegionDescription()
 	 * @model dataType="org.eclipse.cmf.occi.core.String"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/ecore!Region!regionDescription'"
 	 * @generated
 	 */
 	String getRegionDescription();
@@ -105,6 +107,7 @@ public interface Region extends Resource {
 	 * @see #setEndpoint(String)
 	 * @see org.eclipse.cmf.occi.multicloud.regions.RegionsPackage#getRegion_Endpoint()
 	 * @model dataType="org.eclipse.cmf.occi.core.String"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/ecore!Region!endpoint'"
 	 * @generated
 	 */
 	String getEndpoint();
@@ -130,6 +133,7 @@ public interface Region extends Resource {
 	 * @see #setRegionName(String)
 	 * @see org.eclipse.cmf.occi.multicloud.regions.RegionsPackage#getRegion_RegionName()
 	 * @model dataType="org.eclipse.cmf.occi.core.String"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/locations/ecore!Region!regionName'"
 	 * @generated
 	 */
 	String getRegionName();

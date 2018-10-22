@@ -775,6 +775,7 @@ litigation.
     
   <requires>
     <!-- Eclipse Modeling Framework and tools. -->
+    <!-- old ones... for oxygen...
     <import feature="org.eclipse.emf" version="2.12.0.v20160526-0356"/>
     <import feature="org.eclipse.sirius.runtime" version="5.0.0.201706130938"/>
     <import feature="org.eclipse.sirius.runtime.aql" version="5.0.0.201706130938"/>
@@ -793,6 +794,26 @@ litigation.
     <import feature="org.eclipse.emf.ecoretools.design" version="3.3.0.201706121316"/>
     <import feature="org.eclipse.mylyn.wikitext_feature" version="3.0.6.201703111926"/>
     <import feature="org.eclipse.egit" version="4.8.0.201706111038-r"/>
-    <import feature="org.eclipse.emf.compare.egit" version="1.2.1.201706130827"/>
+    <import feature="org.eclipse.emf.compare.egit" version="1.2.1.201706130827"/> -->
+    <!-- for photon -->
+    <import feature="org.eclipse.egit" version="5.0.1.201806211838-r"/>
+    <import feature="org.eclipse.emf" version="2.14.0.v20180529-1144"/>
+    <import feature="org.eclipse.emf.compare.egit" version="1.2.3.201805161152"/>
+    <import feature="org.eclipse.emf.ecoretools.design" version="3.3.0.201706121316"/>
+    <import feature="org.eclipse.epsilon.core.dt.feature" version="1.4.0.201611012202"/>
+    <import feature="org.eclipse.epsilon.core.feature" version="1.4.0.201611012202"/>
+    <import feature="org.eclipse.epsilon.emf.dt.feature" version="1.4.0.201611012202"/>
+    <import feature="org.eclipse.epsilon.emf.feature" version="1.4.0.201611012202"/>
+    <import feature="org.eclipse.mylyn.wikitext_feature" version="3.0.19.201711172000"/>
+    <import feature="org.eclipse.ocl.all.sdk" version="5.4.0.v20180611-1119"/>
+    <import feature="org.eclipse.ocl.examples" version="6.4.0.v20180611-1119"/>
+    <import feature="org.eclipse.pde" version="3.13.100.v20180611-0826"/>
+    <import feature="org.eclipse.sdk" version="4.8.0.v20180611-0826"/>
+    <import feature="org.eclipse.sirius.runtime" version="6.0.0.201806111309"/>
+    <import feature="org.eclipse.sirius.runtime.aql" version="6.0.0.201806111309"/>
+    <import feature="org.eclipse.sirius.runtime.ide.ui" version="6.0.0.201806111309"/>
+    <import feature="org.eclipse.sirius.specifier" version="6.0.0.201806111309"/>
+    <import feature="org.eclipse.xtend.sdk" version="2.14.0.v20180523-0937"/>
+    <import feature="org.eclipse.xtext.sdk" version="2.14.0.v20180523-0937"/>
   </requires>
 </feature>

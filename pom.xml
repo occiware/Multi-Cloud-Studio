@@ -123,19 +123,19 @@
         <!-- configure p2 repository to resolve against -->
         <repository>
             <id>OCCI-Studio</id>
-            <url>http://dl.bintray.com/occiware/OCCI-Studio/update-site/current-release</url>
+            <url>https://dl.bintray.com/occiware/OCCI-Studio/update-site/current-release</url>
             <layout>p2</layout>
         </repository>
         <repository>
-            <id>oxygen</id>
+            <id>photon</id>
             <layout>p2</layout>
-            <url>http://download.eclipse.org/releases/oxygen</url>
+            <url>http://download.eclipse.org/releases/photon</url>
         </repository>
-        <repository>
+        <!-- <repository>
             <id>OCL-6.3</id>
             <layout>p2</layout>
             <url>http://download.eclipse.org/modeling/mdt/ocl/updates/milestones/zz6.3.0</url>
-        </repository>
+        </repository> -->
         <repository>
             <id>oss-sonatype</id>
             <name>oss-sonatype</name>

@@ -296,7 +296,7 @@ public class AvailabilityzoneImpl extends ResourceImpl implements Availabilityzo
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (zoneName: ");
 		result.append(zoneName);
 		result.append(", zoneMessage: ");

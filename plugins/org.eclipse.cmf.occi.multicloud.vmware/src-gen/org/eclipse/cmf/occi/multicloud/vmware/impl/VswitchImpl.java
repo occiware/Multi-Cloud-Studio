@@ -164,7 +164,7 @@ public class VswitchImpl extends NetworkImpl implements Vswitch {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (nbport: ");
 		result.append(nbport);
 		result.append(')');

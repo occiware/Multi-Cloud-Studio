@@ -46,6 +46,7 @@ public interface Vswitch extends Network {
 	 * @see #setNbport(Integer)
 	 * @see org.eclipse.cmf.occi.multicloud.vmware.VmwarePackage#getVswitch_Nbport()
 	 * @model dataType="org.eclipse.cmf.occi.core.Integer"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://occiware.org/occi/infrastructure/vmware/ecore!Vswitch!nbport'"
 	 * @generated
 	 */
 	Integer getNbport();

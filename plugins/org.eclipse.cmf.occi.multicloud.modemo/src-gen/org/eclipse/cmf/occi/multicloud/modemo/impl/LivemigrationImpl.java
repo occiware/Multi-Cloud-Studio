@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class LivemigrationImpl extends MigrationtypeImpl implements Livemigration {
+public class LivemigrationImpl extends MigrationpolicyImpl implements Livemigration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

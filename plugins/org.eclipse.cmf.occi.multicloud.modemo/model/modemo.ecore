@@ -11,19 +11,15 @@
     <details key="occi" value="http://schemas.ogf.org/occi/core/ecore"/>
     <details key="infrastructure" value="http://schemas.ogf.org/occi/infrastructure/ecore"/>
     <details key="vmware" value="http://occiware.org/occi/infrastructure/vmware/ecore"/>
+    <details key="docker" value="http://occiware.org/occi/docker/ecore"/>
     <details key="accounts" value="http://occiware.org/occi/infrastructure/security/ecore"/>
-    <details key="ec2" value="http://occiware.org/occi/infrastructure/aws/ecore"/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EEnum" name="TypeMetric">
-    <eLiterals name="CPUtilisation" literal="CPUtilisation"/>
-    <eLiterals name="MemoryUtilisation" value="1" literal="MemoryUtilisation"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="Float" instanceClassName="java.lang.Float"/>
   <eClassifiers xsi:type="ecore:EEnum" name="OperatorType">
     <eLiterals name="GreaterThan" literal="GreaterThan"/>
     <eLiterals name="GreaterThanOrEqualTo" value="1" literal="GreaterThanOrEqualTo"/>
     <eLiterals name="LessThan" value="2" literal="LessThan"/>
-    <eLiterals name="LessThanorEqualTo" value="3" literal="LessThanorEqualTo"/>
+    <eLiterals name="LessThanOrEqualTo" value="3" literal="LessThanOrEqualTo"/>
     <eLiterals name="EqualTo" value="4" literal="EqualTo"/>
     <eLiterals name="NotEqualTo" value="5" literal="NotEqualTo"/>
   </eClassifiers>
@@ -297,22 +293,22 @@
       <details key="targetConstraint" value="self.target.oclIsKindOf(modemo::Provider)"/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Providervmware" eSuperTypes="#//Provider">
+  <eClassifiers xsi:type="ecore:EClass" name="Vmwareprovider" eSuperTypes="#//Provider">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value=""/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Provideropenstack" eSuperTypes="#//Provider">
+  <eClassifiers xsi:type="ecore:EClass" name="Openstackprovider" eSuperTypes="#//Provider">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value=""/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Provideramazon" eSuperTypes="#//Provider">
+  <eClassifiers xsi:type="ecore:EClass" name="Amazonprovider" eSuperTypes="#//Provider">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value=""/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Providerazure" eSuperTypes="#//Provider">
+  <eClassifiers xsi:type="ecore:EClass" name="Azureprovider" eSuperTypes="#//Provider">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value=""/>
     </eAnnotations>
@@ -503,7 +499,7 @@
       <details key="appliesConstraint" value="self.entity.oclIsKindOf(modemo::Elasticitycontroller)"/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Sourcemigrationpolicity" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+  <eClassifiers xsi:type="ecore:EClass" name="Sourcemigrationpolicy" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="appliesConstraint"/>
     </eAnnotations>
@@ -511,9 +507,9 @@
       <details key="appliesConstraint" value="self.entity.oclIsKindOf(modemo::Elasticitycontroller)"/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Livemigration" eSuperTypes="#//Migrationtype platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Nonlivemigration" eSuperTypes="#//Migrationtype platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Migrationtype" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+  <eClassifiers xsi:type="ecore:EClass" name="Livemigration" eSuperTypes="#//Migrationpolicy platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Nonlivemigration" eSuperTypes="#//Migrationpolicy platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Migrationpolicy" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="appliesConstraint"/>
     </eAnnotations>
@@ -521,12 +517,10 @@
       <details key="appliesConstraint" value="self.entity.oclIsKindOf(modemo::Elasticitycontroller)"/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Dynamicmigrationpolicy" eSuperTypes="#//Sourcemigrationpolicity platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Manualmigrationpolicy" eSuperTypes="#//Sourcemigrationpolicity platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Sla" eSuperTypes="#//Dynamicmigrationpolicy platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Dynamicmigrationpolicy" eSuperTypes="#//Sourcemigrationpolicy platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Manualmigrationpolicy" eSuperTypes="#//Sourcemigrationpolicy platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
   <eClassifiers xsi:type="ecore:EClass" name="Loadvolume" eSuperTypes="#//Dynamicmigrationpolicy platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
   <eClassifiers xsi:type="ecore:EClass" name="Power" eSuperTypes="#//Dynamicmigrationpolicy platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Resourcewastage" eSuperTypes="#//Dynamicmigrationpolicy platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
   <eClassifiers xsi:type="ecore:EClass" name="Targetmigrationpolicy" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="appliesConstraint"/>
@@ -537,31 +531,32 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Availableresources" eSuperTypes="#//Allocationpolicy platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
   <eClassifiers xsi:type="ecore:EClass" name="Manualtargetselection" eSuperTypes="#//Targetmigrationpolicy platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Availalbleresourcesorload" eSuperTypes="#//Targetmigrationpolicy platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Availableresourcesorload" eSuperTypes="#//Targetmigrationpolicy platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
   <eClassifiers xsi:type="ecore:EClass" name="Targetresponsetime" eSuperTypes="#//Targetmigrationpolicy platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
   <eClassifiers xsi:type="ecore:EClass" name="Responsetimemetric" eSuperTypes="#//Metric platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Networkcontention" eSuperTypes="#//Dynamicmigrationpolicy platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Loadbalanceralgorithm" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+  <eClassifiers xsi:type="ecore:EClass" name="Loadbalancerpolicy" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="appliesConstraint"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="appliesConstraint" value="self.entity.oclIsKindOf(modemo::Loadbalancer)"/>
     </eAnnotations>
-    <eOperations name="apply">
+    <eOperations name="start">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value=""/>
       </eAnnotations>
     </eOperations>
-    <eOperations name="remove">
+    <eOperations name="stop">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value=""/>
       </eAnnotations>
     </eOperations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Roundrobinalgo" eSuperTypes="#//Loadbalanceralgorithm platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Leastconn" eSuperTypes="#//Loadbalanceralgorithm platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Stickysessions" eSuperTypes="#//Loadbalanceralgorithm platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Wstaticrr" eSuperTypes="#//Loadbalanceralgorithm platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Source" eSuperTypes="#//Loadbalanceralgorithm platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Roundrobinalgo" eSuperTypes="#//Loadbalancerpolicy platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Leastconn" eSuperTypes="#//Loadbalancerpolicy platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Leasttraffic" eSuperTypes="#//Loadbalancerpolicy platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Wstaticrr" eSuperTypes="#//Loadbalancerpolicy platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Source" eSuperTypes="#//Loadbalancerpolicy platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
+  <eClassifiers xsi:type="ecore:EClass" name="First" eSuperTypes="#//Loadbalancerpolicy platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Leastlatency" eSuperTypes="#//Loadbalancerpolicy platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
 </ecore:EPackage>

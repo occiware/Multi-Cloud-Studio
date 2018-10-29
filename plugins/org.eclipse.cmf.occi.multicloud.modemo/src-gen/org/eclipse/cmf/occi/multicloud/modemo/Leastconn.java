@@ -24,5 +24,5 @@ import org.eclipse.cmf.occi.core.MixinBase;
  * @model
  * @generated
  */
-public interface Leastconn extends Loadbalanceralgorithm, MixinBase {
+public interface Leastconn extends Loadbalancerpolicy, MixinBase {
 } // Leastconn

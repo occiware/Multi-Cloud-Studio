@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class NonlivemigrationImpl extends MigrationtypeImpl implements Nonlivemigration {
+public class NonlivemigrationImpl extends MigrationpolicyImpl implements Nonlivemigration {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ManualmigrationpolicyImpl extends SourcemigrationpolicityImpl implements Manualmigrationpolicy {
+public class ManualmigrationpolicyImpl extends SourcemigrationpolicyImpl implements Manualmigrationpolicy {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

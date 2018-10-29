@@ -24,5 +24,5 @@ import org.eclipse.cmf.occi.core.MixinBase;
  * @model
  * @generated
  */
-public interface Source extends Loadbalanceralgorithm, MixinBase {
+public interface Source extends Loadbalancerpolicy, MixinBase {
 } // Source

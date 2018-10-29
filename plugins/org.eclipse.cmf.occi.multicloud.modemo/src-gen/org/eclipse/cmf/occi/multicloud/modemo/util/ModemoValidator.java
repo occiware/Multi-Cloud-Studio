@@ -138,14 +138,14 @@ public class ModemoValidator extends EObjectValidator {
 				return validateProvider((Provider)value, diagnostics, context);
 			case ModemoPackage.PROVIDERLINK:
 				return validateProviderlink((Providerlink)value, diagnostics, context);
-			case ModemoPackage.PROVIDERVMWARE:
-				return validateProvidervmware((Providervmware)value, diagnostics, context);
-			case ModemoPackage.PROVIDEROPENSTACK:
-				return validateProvideropenstack((Provideropenstack)value, diagnostics, context);
-			case ModemoPackage.PROVIDERAMAZON:
-				return validateProvideramazon((Provideramazon)value, diagnostics, context);
-			case ModemoPackage.PROVIDERAZURE:
-				return validateProviderazure((Providerazure)value, diagnostics, context);
+			case ModemoPackage.VMWAREPROVIDER:
+				return validateVmwareprovider((Vmwareprovider)value, diagnostics, context);
+			case ModemoPackage.OPENSTACKPROVIDER:
+				return validateOpenstackprovider((Openstackprovider)value, diagnostics, context);
+			case ModemoPackage.AMAZONPROVIDER:
+				return validateAmazonprovider((Amazonprovider)value, diagnostics, context);
+			case ModemoPackage.AZUREPROVIDER:
+				return validateAzureprovider((Azureprovider)value, diagnostics, context);
 			case ModemoPackage.PROVIDERINSTANCELINK:
 				return validateProviderinstancelink((Providerinstancelink)value, diagnostics, context);
 			case ModemoPackage.CREATION:
@@ -184,54 +184,50 @@ public class ModemoValidator extends EObjectValidator {
 				return validateCost((Cost)value, diagnostics, context);
 			case ModemoPackage.SWAPPINGPOLICY:
 				return validateSwappingpolicy((Swappingpolicy)value, diagnostics, context);
-			case ModemoPackage.SOURCEMIGRATIONPOLICITY:
-				return validateSourcemigrationpolicity((Sourcemigrationpolicity)value, diagnostics, context);
+			case ModemoPackage.SOURCEMIGRATIONPOLICY:
+				return validateSourcemigrationpolicy((Sourcemigrationpolicy)value, diagnostics, context);
 			case ModemoPackage.LIVEMIGRATION:
 				return validateLivemigration((Livemigration)value, diagnostics, context);
 			case ModemoPackage.NONLIVEMIGRATION:
 				return validateNonlivemigration((Nonlivemigration)value, diagnostics, context);
-			case ModemoPackage.MIGRATIONTYPE:
-				return validateMigrationtype((Migrationtype)value, diagnostics, context);
+			case ModemoPackage.MIGRATIONPOLICY:
+				return validateMigrationpolicy((Migrationpolicy)value, diagnostics, context);
 			case ModemoPackage.DYNAMICMIGRATIONPOLICY:
 				return validateDynamicmigrationpolicy((Dynamicmigrationpolicy)value, diagnostics, context);
 			case ModemoPackage.MANUALMIGRATIONPOLICY:
 				return validateManualmigrationpolicy((Manualmigrationpolicy)value, diagnostics, context);
-			case ModemoPackage.SLA:
-				return validateSla((Sla)value, diagnostics, context);
 			case ModemoPackage.LOADVOLUME:
 				return validateLoadvolume((Loadvolume)value, diagnostics, context);
 			case ModemoPackage.POWER:
 				return validatePower((Power)value, diagnostics, context);
-			case ModemoPackage.RESOURCEWASTAGE:
-				return validateResourcewastage((Resourcewastage)value, diagnostics, context);
 			case ModemoPackage.TARGETMIGRATIONPOLICY:
 				return validateTargetmigrationpolicy((Targetmigrationpolicy)value, diagnostics, context);
 			case ModemoPackage.AVAILABLERESOURCES:
 				return validateAvailableresources((Availableresources)value, diagnostics, context);
 			case ModemoPackage.MANUALTARGETSELECTION:
 				return validateManualtargetselection((Manualtargetselection)value, diagnostics, context);
-			case ModemoPackage.AVAILALBLERESOURCESORLOAD:
-				return validateAvailalbleresourcesorload((Availalbleresourcesorload)value, diagnostics, context);
+			case ModemoPackage.AVAILABLERESOURCESORLOAD:
+				return validateAvailableresourcesorload((Availableresourcesorload)value, diagnostics, context);
 			case ModemoPackage.TARGETRESPONSETIME:
 				return validateTargetresponsetime((Targetresponsetime)value, diagnostics, context);
 			case ModemoPackage.RESPONSETIMEMETRIC:
 				return validateResponsetimemetric((Responsetimemetric)value, diagnostics, context);
-			case ModemoPackage.NETWORKCONTENTION:
-				return validateNetworkcontention((Networkcontention)value, diagnostics, context);
-			case ModemoPackage.LOADBALANCERALGORITHM:
-				return validateLoadbalanceralgorithm((Loadbalanceralgorithm)value, diagnostics, context);
+			case ModemoPackage.LOADBALANCERPOLICY:
+				return validateLoadbalancerpolicy((Loadbalancerpolicy)value, diagnostics, context);
 			case ModemoPackage.ROUNDROBINALGO:
 				return validateRoundrobinalgo((Roundrobinalgo)value, diagnostics, context);
 			case ModemoPackage.LEASTCONN:
 				return validateLeastconn((Leastconn)value, diagnostics, context);
-			case ModemoPackage.STICKYSESSIONS:
-				return validateStickysessions((Stickysessions)value, diagnostics, context);
+			case ModemoPackage.LEASTTRAFFIC:
+				return validateLeasttraffic((Leasttraffic)value, diagnostics, context);
 			case ModemoPackage.WSTATICRR:
 				return validateWstaticrr((Wstaticrr)value, diagnostics, context);
 			case ModemoPackage.SOURCE:
 				return validateSource((Source)value, diagnostics, context);
-			case ModemoPackage.TYPE_METRIC:
-				return validateTypeMetric((TypeMetric)value, diagnostics, context);
+			case ModemoPackage.FIRST:
+				return validateFirst((First)value, diagnostics, context);
+			case ModemoPackage.LEASTLATENCY:
+				return validateLeastlatency((Leastlatency)value, diagnostics, context);
 			case ModemoPackage.OPERATOR_TYPE:
 				return validateOperatorType((OperatorType)value, diagnostics, context);
 			case ModemoPackage.ACTION_OPERATION:
@@ -931,21 +927,21 @@ public class ModemoValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProvidervmware(Providervmware providervmware, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(providervmware, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(providervmware, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(providervmware, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(providervmware, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(providervmware, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(providervmware, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(providervmware, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(providervmware, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(providervmware, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(providervmware, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(providervmware, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(providervmware, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateEntity_DifferentMixins(providervmware, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateResource_ResourceKindIsInParent(providervmware, diagnostics, context);
+	public boolean validateVmwareprovider(Vmwareprovider vmwareprovider, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(vmwareprovider, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(vmwareprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(vmwareprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(vmwareprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(vmwareprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(vmwareprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(vmwareprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(vmwareprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(vmwareprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(vmwareprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(vmwareprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(vmwareprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_DifferentMixins(vmwareprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateResource_ResourceKindIsInParent(vmwareprovider, diagnostics, context);
 		return result;
 	}
 
@@ -954,21 +950,21 @@ public class ModemoValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProvideropenstack(Provideropenstack provideropenstack, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(provideropenstack, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(provideropenstack, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(provideropenstack, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(provideropenstack, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(provideropenstack, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(provideropenstack, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(provideropenstack, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(provideropenstack, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(provideropenstack, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(provideropenstack, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(provideropenstack, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(provideropenstack, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateEntity_DifferentMixins(provideropenstack, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateResource_ResourceKindIsInParent(provideropenstack, diagnostics, context);
+	public boolean validateOpenstackprovider(Openstackprovider openstackprovider, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(openstackprovider, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(openstackprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(openstackprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(openstackprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(openstackprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(openstackprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(openstackprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(openstackprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(openstackprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(openstackprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(openstackprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(openstackprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_DifferentMixins(openstackprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateResource_ResourceKindIsInParent(openstackprovider, diagnostics, context);
 		return result;
 	}
 
@@ -977,21 +973,21 @@ public class ModemoValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProvideramazon(Provideramazon provideramazon, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(provideramazon, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(provideramazon, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(provideramazon, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(provideramazon, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(provideramazon, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(provideramazon, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(provideramazon, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(provideramazon, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(provideramazon, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(provideramazon, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(provideramazon, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(provideramazon, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateEntity_DifferentMixins(provideramazon, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateResource_ResourceKindIsInParent(provideramazon, diagnostics, context);
+	public boolean validateAmazonprovider(Amazonprovider amazonprovider, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(amazonprovider, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(amazonprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(amazonprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(amazonprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(amazonprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(amazonprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(amazonprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(amazonprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(amazonprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(amazonprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(amazonprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(amazonprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_DifferentMixins(amazonprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateResource_ResourceKindIsInParent(amazonprovider, diagnostics, context);
 		return result;
 	}
 
@@ -1000,21 +996,21 @@ public class ModemoValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProviderazure(Providerazure providerazure, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(providerazure, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(providerazure, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(providerazure, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(providerazure, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(providerazure, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(providerazure, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(providerazure, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(providerazure, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(providerazure, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(providerazure, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(providerazure, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(providerazure, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateEntity_DifferentMixins(providerazure, diagnostics, context);
-		if (result || diagnostics != null) result &= occiValidator.validateResource_ResourceKindIsInParent(providerazure, diagnostics, context);
+	public boolean validateAzureprovider(Azureprovider azureprovider, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(azureprovider, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(azureprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(azureprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(azureprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(azureprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(azureprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(azureprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(azureprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(azureprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_IdUnique(azureprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_AttributesNameUnique(azureprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_KindCompatibleWithOneAppliesOfEachMixin(azureprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateEntity_DifferentMixins(azureprovider, diagnostics, context);
+		if (result || diagnostics != null) result &= occiValidator.validateResource_ResourceKindIsInParent(azureprovider, diagnostics, context);
 		return result;
 	}
 
@@ -1624,44 +1620,44 @@ public class ModemoValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateSourcemigrationpolicity(Sourcemigrationpolicity sourcemigrationpolicity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(sourcemigrationpolicity, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(sourcemigrationpolicity, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(sourcemigrationpolicity, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(sourcemigrationpolicity, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(sourcemigrationpolicity, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(sourcemigrationpolicity, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(sourcemigrationpolicity, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(sourcemigrationpolicity, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(sourcemigrationpolicity, diagnostics, context);
-		if (result || diagnostics != null) result &= validateSourcemigrationpolicity_appliesConstraint(sourcemigrationpolicity, diagnostics, context);
+	public boolean validateSourcemigrationpolicy(Sourcemigrationpolicy sourcemigrationpolicy, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(sourcemigrationpolicy, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(sourcemigrationpolicy, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(sourcemigrationpolicy, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(sourcemigrationpolicy, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(sourcemigrationpolicy, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(sourcemigrationpolicy, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(sourcemigrationpolicy, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(sourcemigrationpolicy, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(sourcemigrationpolicy, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSourcemigrationpolicy_appliesConstraint(sourcemigrationpolicy, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * The cached validation expression for the appliesConstraint constraint of '<em>Sourcemigrationpolicity</em>'.
+	 * The cached validation expression for the appliesConstraint constraint of '<em>Sourcemigrationpolicy</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String SOURCEMIGRATIONPOLICITY__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(modemo::Elasticitycontroller)";
+	protected static final String SOURCEMIGRATIONPOLICY__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(modemo::Elasticitycontroller)";
 
 	/**
-	 * Validates the appliesConstraint constraint of '<em>Sourcemigrationpolicity</em>'.
+	 * Validates the appliesConstraint constraint of '<em>Sourcemigrationpolicy</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateSourcemigrationpolicity_appliesConstraint(Sourcemigrationpolicity sourcemigrationpolicity, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateSourcemigrationpolicy_appliesConstraint(Sourcemigrationpolicy sourcemigrationpolicy, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
-				(ModemoPackage.Literals.SOURCEMIGRATIONPOLICITY,
-				 sourcemigrationpolicity,
+				(ModemoPackage.Literals.SOURCEMIGRATIONPOLICY,
+				 sourcemigrationpolicy,
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
 				 "appliesConstraint",
-				 SOURCEMIGRATIONPOLICITY__APPLIES_CONSTRAINT__EEXPRESSION,
+				 SOURCEMIGRATIONPOLICY__APPLIES_CONSTRAINT__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -1682,7 +1678,7 @@ public class ModemoValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(livemigration, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(livemigration, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(livemigration, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMigrationtype_appliesConstraint(livemigration, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMigrationpolicy_appliesConstraint(livemigration, diagnostics, context);
 		return result;
 	}
 
@@ -1701,7 +1697,7 @@ public class ModemoValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(nonlivemigration, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(nonlivemigration, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(nonlivemigration, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMigrationtype_appliesConstraint(nonlivemigration, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMigrationpolicy_appliesConstraint(nonlivemigration, diagnostics, context);
 		return result;
 	}
 
@@ -1710,44 +1706,44 @@ public class ModemoValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMigrationtype(Migrationtype migrationtype, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(migrationtype, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(migrationtype, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(migrationtype, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(migrationtype, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(migrationtype, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(migrationtype, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(migrationtype, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(migrationtype, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(migrationtype, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMigrationtype_appliesConstraint(migrationtype, diagnostics, context);
+	public boolean validateMigrationpolicy(Migrationpolicy migrationpolicy, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(migrationpolicy, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(migrationpolicy, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(migrationpolicy, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(migrationpolicy, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(migrationpolicy, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(migrationpolicy, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(migrationpolicy, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(migrationpolicy, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(migrationpolicy, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMigrationpolicy_appliesConstraint(migrationpolicy, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * The cached validation expression for the appliesConstraint constraint of '<em>Migrationtype</em>'.
+	 * The cached validation expression for the appliesConstraint constraint of '<em>Migrationpolicy</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String MIGRATIONTYPE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(modemo::Elasticitycontroller)";
+	protected static final String MIGRATIONPOLICY__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(modemo::Elasticitycontroller)";
 
 	/**
-	 * Validates the appliesConstraint constraint of '<em>Migrationtype</em>'.
+	 * Validates the appliesConstraint constraint of '<em>Migrationpolicy</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMigrationtype_appliesConstraint(Migrationtype migrationtype, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateMigrationpolicy_appliesConstraint(Migrationpolicy migrationpolicy, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
-				(ModemoPackage.Literals.MIGRATIONTYPE,
-				 migrationtype,
+				(ModemoPackage.Literals.MIGRATIONPOLICY,
+				 migrationpolicy,
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
 				 "appliesConstraint",
-				 MIGRATIONTYPE__APPLIES_CONSTRAINT__EEXPRESSION,
+				 MIGRATIONPOLICY__APPLIES_CONSTRAINT__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -1768,7 +1764,7 @@ public class ModemoValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(dynamicmigrationpolicy, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(dynamicmigrationpolicy, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(dynamicmigrationpolicy, diagnostics, context);
-		if (result || diagnostics != null) result &= validateSourcemigrationpolicity_appliesConstraint(dynamicmigrationpolicy, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSourcemigrationpolicy_appliesConstraint(dynamicmigrationpolicy, diagnostics, context);
 		return result;
 	}
 
@@ -1787,26 +1783,7 @@ public class ModemoValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(manualmigrationpolicy, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(manualmigrationpolicy, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(manualmigrationpolicy, diagnostics, context);
-		if (result || diagnostics != null) result &= validateSourcemigrationpolicity_appliesConstraint(manualmigrationpolicy, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateSla(Sla sla, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(sla, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(sla, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(sla, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(sla, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(sla, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(sla, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(sla, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(sla, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(sla, diagnostics, context);
-		if (result || diagnostics != null) result &= validateSourcemigrationpolicity_appliesConstraint(sla, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSourcemigrationpolicy_appliesConstraint(manualmigrationpolicy, diagnostics, context);
 		return result;
 	}
 
@@ -1825,7 +1802,7 @@ public class ModemoValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(loadvolume, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(loadvolume, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(loadvolume, diagnostics, context);
-		if (result || diagnostics != null) result &= validateSourcemigrationpolicity_appliesConstraint(loadvolume, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSourcemigrationpolicy_appliesConstraint(loadvolume, diagnostics, context);
 		return result;
 	}
 
@@ -1844,26 +1821,7 @@ public class ModemoValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(power, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(power, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(power, diagnostics, context);
-		if (result || diagnostics != null) result &= validateSourcemigrationpolicity_appliesConstraint(power, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateResourcewastage(Resourcewastage resourcewastage, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(resourcewastage, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(resourcewastage, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(resourcewastage, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(resourcewastage, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(resourcewastage, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(resourcewastage, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(resourcewastage, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(resourcewastage, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(resourcewastage, diagnostics, context);
-		if (result || diagnostics != null) result &= validateSourcemigrationpolicity_appliesConstraint(resourcewastage, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSourcemigrationpolicy_appliesConstraint(power, diagnostics, context);
 		return result;
 	}
 
@@ -1958,17 +1916,17 @@ public class ModemoValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAvailalbleresourcesorload(Availalbleresourcesorload availalbleresourcesorload, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(availalbleresourcesorload, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(availalbleresourcesorload, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(availalbleresourcesorload, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(availalbleresourcesorload, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(availalbleresourcesorload, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(availalbleresourcesorload, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(availalbleresourcesorload, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(availalbleresourcesorload, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(availalbleresourcesorload, diagnostics, context);
-		if (result || diagnostics != null) result &= validateTargetmigrationpolicy_appliesConstraint(availalbleresourcesorload, diagnostics, context);
+	public boolean validateAvailableresourcesorload(Availableresourcesorload availableresourcesorload, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(availableresourcesorload, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(availableresourcesorload, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(availableresourcesorload, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(availableresourcesorload, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(availableresourcesorload, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(availableresourcesorload, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(availableresourcesorload, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(availableresourcesorload, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(availableresourcesorload, diagnostics, context);
+		if (result || diagnostics != null) result &= validateTargetmigrationpolicy_appliesConstraint(availableresourcesorload, diagnostics, context);
 		return result;
 	}
 
@@ -2015,63 +1973,44 @@ public class ModemoValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateNetworkcontention(Networkcontention networkcontention, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(networkcontention, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(networkcontention, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(networkcontention, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(networkcontention, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(networkcontention, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(networkcontention, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(networkcontention, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(networkcontention, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(networkcontention, diagnostics, context);
-		if (result || diagnostics != null) result &= validateSourcemigrationpolicity_appliesConstraint(networkcontention, diagnostics, context);
+	public boolean validateLoadbalancerpolicy(Loadbalancerpolicy loadbalancerpolicy, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(loadbalancerpolicy, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(loadbalancerpolicy, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(loadbalancerpolicy, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(loadbalancerpolicy, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(loadbalancerpolicy, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(loadbalancerpolicy, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(loadbalancerpolicy, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(loadbalancerpolicy, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(loadbalancerpolicy, diagnostics, context);
+		if (result || diagnostics != null) result &= validateLoadbalancerpolicy_appliesConstraint(loadbalancerpolicy, diagnostics, context);
 		return result;
 	}
 
 	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>Loadbalancerpolicy</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateLoadbalanceralgorithm(Loadbalanceralgorithm loadbalanceralgorithm, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(loadbalanceralgorithm, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(loadbalanceralgorithm, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(loadbalanceralgorithm, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(loadbalanceralgorithm, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(loadbalanceralgorithm, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(loadbalanceralgorithm, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(loadbalanceralgorithm, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(loadbalanceralgorithm, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(loadbalanceralgorithm, diagnostics, context);
-		if (result || diagnostics != null) result &= validateLoadbalanceralgorithm_appliesConstraint(loadbalanceralgorithm, diagnostics, context);
-		return result;
-	}
+	protected static final String LOADBALANCERPOLICY__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(modemo::Loadbalancer)";
 
 	/**
-	 * The cached validation expression for the appliesConstraint constraint of '<em>Loadbalanceralgorithm</em>'.
+	 * Validates the appliesConstraint constraint of '<em>Loadbalancerpolicy</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String LOADBALANCERALGORITHM__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(modemo::Loadbalancer)";
-
-	/**
-	 * Validates the appliesConstraint constraint of '<em>Loadbalanceralgorithm</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateLoadbalanceralgorithm_appliesConstraint(Loadbalanceralgorithm loadbalanceralgorithm, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateLoadbalancerpolicy_appliesConstraint(Loadbalancerpolicy loadbalancerpolicy, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
-				(ModemoPackage.Literals.LOADBALANCERALGORITHM,
-				 loadbalanceralgorithm,
+				(ModemoPackage.Literals.LOADBALANCERPOLICY,
+				 loadbalancerpolicy,
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
 				 "appliesConstraint",
-				 LOADBALANCERALGORITHM__APPLIES_CONSTRAINT__EEXPRESSION,
+				 LOADBALANCERPOLICY__APPLIES_CONSTRAINT__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -2092,7 +2031,7 @@ public class ModemoValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(roundrobinalgo, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(roundrobinalgo, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(roundrobinalgo, diagnostics, context);
-		if (result || diagnostics != null) result &= validateLoadbalanceralgorithm_appliesConstraint(roundrobinalgo, diagnostics, context);
+		if (result || diagnostics != null) result &= validateLoadbalancerpolicy_appliesConstraint(roundrobinalgo, diagnostics, context);
 		return result;
 	}
 
@@ -2111,7 +2050,7 @@ public class ModemoValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(leastconn, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(leastconn, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(leastconn, diagnostics, context);
-		if (result || diagnostics != null) result &= validateLoadbalanceralgorithm_appliesConstraint(leastconn, diagnostics, context);
+		if (result || diagnostics != null) result &= validateLoadbalancerpolicy_appliesConstraint(leastconn, diagnostics, context);
 		return result;
 	}
 
@@ -2120,17 +2059,17 @@ public class ModemoValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateStickysessions(Stickysessions stickysessions, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(stickysessions, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(stickysessions, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(stickysessions, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(stickysessions, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(stickysessions, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(stickysessions, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(stickysessions, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(stickysessions, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(stickysessions, diagnostics, context);
-		if (result || diagnostics != null) result &= validateLoadbalanceralgorithm_appliesConstraint(stickysessions, diagnostics, context);
+	public boolean validateLeasttraffic(Leasttraffic leasttraffic, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(leasttraffic, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(leasttraffic, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(leasttraffic, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(leasttraffic, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(leasttraffic, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(leasttraffic, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(leasttraffic, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(leasttraffic, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(leasttraffic, diagnostics, context);
+		if (result || diagnostics != null) result &= validateLoadbalancerpolicy_appliesConstraint(leasttraffic, diagnostics, context);
 		return result;
 	}
 
@@ -2149,7 +2088,7 @@ public class ModemoValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(wstaticrr, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(wstaticrr, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(wstaticrr, diagnostics, context);
-		if (result || diagnostics != null) result &= validateLoadbalanceralgorithm_appliesConstraint(wstaticrr, diagnostics, context);
+		if (result || diagnostics != null) result &= validateLoadbalancerpolicy_appliesConstraint(wstaticrr, diagnostics, context);
 		return result;
 	}
 
@@ -2168,7 +2107,7 @@ public class ModemoValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(source, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(source, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(source, diagnostics, context);
-		if (result || diagnostics != null) result &= validateLoadbalanceralgorithm_appliesConstraint(source, diagnostics, context);
+		if (result || diagnostics != null) result &= validateLoadbalancerpolicy_appliesConstraint(source, diagnostics, context);
 		return result;
 	}
 
@@ -2177,8 +2116,37 @@ public class ModemoValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateTypeMetric(TypeMetric typeMetric, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return true;
+	public boolean validateFirst(First first, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(first, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(first, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(first, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(first, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(first, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(first, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(first, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(first, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(first, diagnostics, context);
+		if (result || diagnostics != null) result &= validateLoadbalancerpolicy_appliesConstraint(first, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateLeastlatency(Leastlatency leastlatency, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(leastlatency, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(leastlatency, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(leastlatency, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(leastlatency, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(leastlatency, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(leastlatency, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(leastlatency, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(leastlatency, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(leastlatency, diagnostics, context);
+		if (result || diagnostics != null) result &= validateLoadbalancerpolicy_appliesConstraint(leastlatency, diagnostics, context);
+		return result;
 	}
 
 	/**

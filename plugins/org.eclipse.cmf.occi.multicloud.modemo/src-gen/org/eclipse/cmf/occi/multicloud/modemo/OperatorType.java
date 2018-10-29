@@ -59,14 +59,14 @@ public enum OperatorType implements Enumerator {
 	LESS_THAN(2, "LessThan", "LessThan"),
 
 	/**
-	 * The '<em><b>Less Thanor Equal To</b></em>' literal object.
+	 * The '<em><b>Less Than Or Equal To</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #LESS_THANOR_EQUAL_TO_VALUE
+	 * @see #LESS_THAN_OR_EQUAL_TO_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	LESS_THANOR_EQUAL_TO(3, "LessThanorEqualTo", "LessThanorEqualTo"),
+	LESS_THAN_OR_EQUAL_TO(3, "LessThanOrEqualTo", "LessThanOrEqualTo"),
 
 	/**
 	 * The '<em><b>Equal To</b></em>' literal object.
@@ -134,19 +134,19 @@ public enum OperatorType implements Enumerator {
 	public static final int LESS_THAN_VALUE = 2;
 
 	/**
-	 * The '<em><b>Less Thanor Equal To</b></em>' literal value.
+	 * The '<em><b>Less Than Or Equal To</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Less Thanor Equal To</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Less Than Or Equal To</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #LESS_THANOR_EQUAL_TO
-	 * @model name="LessThanorEqualTo"
+	 * @see #LESS_THAN_OR_EQUAL_TO
+	 * @model name="LessThanOrEqualTo"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int LESS_THANOR_EQUAL_TO_VALUE = 3;
+	public static final int LESS_THAN_OR_EQUAL_TO_VALUE = 3;
 
 	/**
 	 * The '<em><b>Equal To</b></em>' literal value.
@@ -189,7 +189,7 @@ public enum OperatorType implements Enumerator {
 			GREATER_THAN,
 			GREATER_THAN_OR_EQUAL_TO,
 			LESS_THAN,
-			LESS_THANOR_EQUAL_TO,
+			LESS_THAN_OR_EQUAL_TO,
 			EQUAL_TO,
 			NOT_EQUAL_TO,
 		};
@@ -251,7 +251,7 @@ public enum OperatorType implements Enumerator {
 			case GREATER_THAN_VALUE: return GREATER_THAN;
 			case GREATER_THAN_OR_EQUAL_TO_VALUE: return GREATER_THAN_OR_EQUAL_TO;
 			case LESS_THAN_VALUE: return LESS_THAN;
-			case LESS_THANOR_EQUAL_TO_VALUE: return LESS_THANOR_EQUAL_TO;
+			case LESS_THAN_OR_EQUAL_TO_VALUE: return LESS_THAN_OR_EQUAL_TO;
 			case EQUAL_TO_VALUE: return EQUAL_TO;
 			case NOT_EQUAL_TO_VALUE: return NOT_EQUAL_TO;
 		}

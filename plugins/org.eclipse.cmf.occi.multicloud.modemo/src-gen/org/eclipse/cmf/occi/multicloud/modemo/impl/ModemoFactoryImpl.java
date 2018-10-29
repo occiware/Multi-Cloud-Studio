@@ -84,10 +84,10 @@ public class ModemoFactoryImpl extends EFactoryImpl implements ModemoFactory {
 			case ModemoPackage.STEPLINK: return createSteplink();
 			case ModemoPackage.PROVIDER: return createProvider();
 			case ModemoPackage.PROVIDERLINK: return createProviderlink();
-			case ModemoPackage.PROVIDERVMWARE: return createProvidervmware();
-			case ModemoPackage.PROVIDEROPENSTACK: return createProvideropenstack();
-			case ModemoPackage.PROVIDERAMAZON: return createProvideramazon();
-			case ModemoPackage.PROVIDERAZURE: return createProviderazure();
+			case ModemoPackage.VMWAREPROVIDER: return createVmwareprovider();
+			case ModemoPackage.OPENSTACKPROVIDER: return createOpenstackprovider();
+			case ModemoPackage.AMAZONPROVIDER: return createAmazonprovider();
+			case ModemoPackage.AZUREPROVIDER: return createAzureprovider();
 			case ModemoPackage.PROVIDERINSTANCELINK: return createProviderinstancelink();
 			case ModemoPackage.CREATION: return createCreation();
 			case ModemoPackage.SCHEDULINGPOLICY: return createSchedulingpolicy();
@@ -107,29 +107,28 @@ public class ModemoFactoryImpl extends EFactoryImpl implements ModemoFactory {
 			case ModemoPackage.RESPONSETIME: return createResponsetime();
 			case ModemoPackage.COST: return createCost();
 			case ModemoPackage.SWAPPINGPOLICY: return createSwappingpolicy();
-			case ModemoPackage.SOURCEMIGRATIONPOLICITY: return createSourcemigrationpolicity();
+			case ModemoPackage.SOURCEMIGRATIONPOLICY: return createSourcemigrationpolicy();
 			case ModemoPackage.LIVEMIGRATION: return createLivemigration();
 			case ModemoPackage.NONLIVEMIGRATION: return createNonlivemigration();
-			case ModemoPackage.MIGRATIONTYPE: return createMigrationtype();
+			case ModemoPackage.MIGRATIONPOLICY: return createMigrationpolicy();
 			case ModemoPackage.DYNAMICMIGRATIONPOLICY: return createDynamicmigrationpolicy();
 			case ModemoPackage.MANUALMIGRATIONPOLICY: return createManualmigrationpolicy();
-			case ModemoPackage.SLA: return createSla();
 			case ModemoPackage.LOADVOLUME: return createLoadvolume();
 			case ModemoPackage.POWER: return createPower();
-			case ModemoPackage.RESOURCEWASTAGE: return createResourcewastage();
 			case ModemoPackage.TARGETMIGRATIONPOLICY: return createTargetmigrationpolicy();
 			case ModemoPackage.AVAILABLERESOURCES: return createAvailableresources();
 			case ModemoPackage.MANUALTARGETSELECTION: return createManualtargetselection();
-			case ModemoPackage.AVAILALBLERESOURCESORLOAD: return createAvailalbleresourcesorload();
+			case ModemoPackage.AVAILABLERESOURCESORLOAD: return createAvailableresourcesorload();
 			case ModemoPackage.TARGETRESPONSETIME: return createTargetresponsetime();
 			case ModemoPackage.RESPONSETIMEMETRIC: return createResponsetimemetric();
-			case ModemoPackage.NETWORKCONTENTION: return createNetworkcontention();
-			case ModemoPackage.LOADBALANCERALGORITHM: return createLoadbalanceralgorithm();
+			case ModemoPackage.LOADBALANCERPOLICY: return createLoadbalancerpolicy();
 			case ModemoPackage.ROUNDROBINALGO: return createRoundrobinalgo();
 			case ModemoPackage.LEASTCONN: return createLeastconn();
-			case ModemoPackage.STICKYSESSIONS: return createStickysessions();
+			case ModemoPackage.LEASTTRAFFIC: return createLeasttraffic();
 			case ModemoPackage.WSTATICRR: return createWstaticrr();
 			case ModemoPackage.SOURCE: return createSource();
+			case ModemoPackage.FIRST: return createFirst();
+			case ModemoPackage.LEASTLATENCY: return createLeastlatency();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -143,8 +142,6 @@ public class ModemoFactoryImpl extends EFactoryImpl implements ModemoFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case ModemoPackage.TYPE_METRIC:
-				return createTypeMetricFromString(eDataType, initialValue);
 			case ModemoPackage.OPERATOR_TYPE:
 				return createOperatorTypeFromString(eDataType, initialValue);
 			case ModemoPackage.ACTION_OPERATION:
@@ -172,8 +169,6 @@ public class ModemoFactoryImpl extends EFactoryImpl implements ModemoFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case ModemoPackage.TYPE_METRIC:
-				return convertTypeMetricToString(eDataType, instanceValue);
 			case ModemoPackage.OPERATOR_TYPE:
 				return convertOperatorTypeToString(eDataType, instanceValue);
 			case ModemoPackage.ACTION_OPERATION:
@@ -348,9 +343,9 @@ public class ModemoFactoryImpl extends EFactoryImpl implements ModemoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Providervmware createProvidervmware() {
-		ProvidervmwareImpl providervmware = new ProvidervmwareImpl();
-		return providervmware;
+	public Vmwareprovider createVmwareprovider() {
+		VmwareproviderImpl vmwareprovider = new VmwareproviderImpl();
+		return vmwareprovider;
 	}
 
 	/**
@@ -358,9 +353,9 @@ public class ModemoFactoryImpl extends EFactoryImpl implements ModemoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Provideropenstack createProvideropenstack() {
-		ProvideropenstackImpl provideropenstack = new ProvideropenstackImpl();
-		return provideropenstack;
+	public Openstackprovider createOpenstackprovider() {
+		OpenstackproviderImpl openstackprovider = new OpenstackproviderImpl();
+		return openstackprovider;
 	}
 
 	/**
@@ -368,9 +363,9 @@ public class ModemoFactoryImpl extends EFactoryImpl implements ModemoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Provideramazon createProvideramazon() {
-		ProvideramazonImpl provideramazon = new ProvideramazonImpl();
-		return provideramazon;
+	public Amazonprovider createAmazonprovider() {
+		AmazonproviderImpl amazonprovider = new AmazonproviderImpl();
+		return amazonprovider;
 	}
 
 	/**
@@ -378,9 +373,9 @@ public class ModemoFactoryImpl extends EFactoryImpl implements ModemoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Providerazure createProviderazure() {
-		ProviderazureImpl providerazure = new ProviderazureImpl();
-		return providerazure;
+	public Azureprovider createAzureprovider() {
+		AzureproviderImpl azureprovider = new AzureproviderImpl();
+		return azureprovider;
 	}
 
 	/**
@@ -578,9 +573,9 @@ public class ModemoFactoryImpl extends EFactoryImpl implements ModemoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Sourcemigrationpolicity createSourcemigrationpolicity() {
-		SourcemigrationpolicityImpl sourcemigrationpolicity = new SourcemigrationpolicityImpl();
-		return sourcemigrationpolicity;
+	public Sourcemigrationpolicy createSourcemigrationpolicy() {
+		SourcemigrationpolicyImpl sourcemigrationpolicy = new SourcemigrationpolicyImpl();
+		return sourcemigrationpolicy;
 	}
 
 	/**
@@ -608,9 +603,9 @@ public class ModemoFactoryImpl extends EFactoryImpl implements ModemoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Migrationtype createMigrationtype() {
-		MigrationtypeImpl migrationtype = new MigrationtypeImpl();
-		return migrationtype;
+	public Migrationpolicy createMigrationpolicy() {
+		MigrationpolicyImpl migrationpolicy = new MigrationpolicyImpl();
+		return migrationpolicy;
 	}
 
 	/**
@@ -638,16 +633,6 @@ public class ModemoFactoryImpl extends EFactoryImpl implements ModemoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Sla createSla() {
-		SlaImpl sla = new SlaImpl();
-		return sla;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Loadvolume createLoadvolume() {
 		LoadvolumeImpl loadvolume = new LoadvolumeImpl();
 		return loadvolume;
@@ -661,16 +646,6 @@ public class ModemoFactoryImpl extends EFactoryImpl implements ModemoFactory {
 	public Power createPower() {
 		PowerImpl power = new PowerImpl();
 		return power;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Resourcewastage createResourcewastage() {
-		ResourcewastageImpl resourcewastage = new ResourcewastageImpl();
-		return resourcewastage;
 	}
 
 	/**
@@ -708,9 +683,9 @@ public class ModemoFactoryImpl extends EFactoryImpl implements ModemoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Availalbleresourcesorload createAvailalbleresourcesorload() {
-		AvailalbleresourcesorloadImpl availalbleresourcesorload = new AvailalbleresourcesorloadImpl();
-		return availalbleresourcesorload;
+	public Availableresourcesorload createAvailableresourcesorload() {
+		AvailableresourcesorloadImpl availableresourcesorload = new AvailableresourcesorloadImpl();
+		return availableresourcesorload;
 	}
 
 	/**
@@ -738,19 +713,9 @@ public class ModemoFactoryImpl extends EFactoryImpl implements ModemoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Networkcontention createNetworkcontention() {
-		NetworkcontentionImpl networkcontention = new NetworkcontentionImpl();
-		return networkcontention;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Loadbalanceralgorithm createLoadbalanceralgorithm() {
-		LoadbalanceralgorithmImpl loadbalanceralgorithm = new LoadbalanceralgorithmImpl();
-		return loadbalanceralgorithm;
+	public Loadbalancerpolicy createLoadbalancerpolicy() {
+		LoadbalancerpolicyImpl loadbalancerpolicy = new LoadbalancerpolicyImpl();
+		return loadbalancerpolicy;
 	}
 
 	/**
@@ -778,9 +743,9 @@ public class ModemoFactoryImpl extends EFactoryImpl implements ModemoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Stickysessions createStickysessions() {
-		StickysessionsImpl stickysessions = new StickysessionsImpl();
-		return stickysessions;
+	public Leasttraffic createLeasttraffic() {
+		LeasttrafficImpl leasttraffic = new LeasttrafficImpl();
+		return leasttraffic;
 	}
 
 	/**
@@ -808,10 +773,9 @@ public class ModemoFactoryImpl extends EFactoryImpl implements ModemoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TypeMetric createTypeMetricFromString(EDataType eDataType, String initialValue) {
-		TypeMetric result = TypeMetric.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
+	public First createFirst() {
+		FirstImpl first = new FirstImpl();
+		return first;
 	}
 
 	/**
@@ -819,8 +783,9 @@ public class ModemoFactoryImpl extends EFactoryImpl implements ModemoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertTypeMetricToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+	public Leastlatency createLeastlatency() {
+		LeastlatencyImpl leastlatency = new LeastlatencyImpl();
+		return leastlatency;
 	}
 
 	/**

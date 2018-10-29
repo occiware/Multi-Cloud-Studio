@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class SourceImpl extends LoadbalanceralgorithmImpl implements Source {
+public class SourceImpl extends LoadbalancerpolicyImpl implements Source {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

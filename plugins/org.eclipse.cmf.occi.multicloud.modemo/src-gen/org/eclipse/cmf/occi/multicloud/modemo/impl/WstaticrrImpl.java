@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class WstaticrrImpl extends LoadbalanceralgorithmImpl implements Wstaticrr {
+public class WstaticrrImpl extends LoadbalancerpolicyImpl implements Wstaticrr {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

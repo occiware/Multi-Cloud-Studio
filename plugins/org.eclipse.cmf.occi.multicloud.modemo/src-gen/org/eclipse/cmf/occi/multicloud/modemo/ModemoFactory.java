@@ -167,40 +167,40 @@ public interface ModemoFactory extends EFactory {
 	Providerlink createProviderlink();
 
 	/**
-	 * Returns a new object of class '<em>Providervmware</em>'.
+	 * Returns a new object of class '<em>Vmwareprovider</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Providervmware</em>'.
+	 * @return a new object of class '<em>Vmwareprovider</em>'.
 	 * @generated
 	 */
-	Providervmware createProvidervmware();
+	Vmwareprovider createVmwareprovider();
 
 	/**
-	 * Returns a new object of class '<em>Provideropenstack</em>'.
+	 * Returns a new object of class '<em>Openstackprovider</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Provideropenstack</em>'.
+	 * @return a new object of class '<em>Openstackprovider</em>'.
 	 * @generated
 	 */
-	Provideropenstack createProvideropenstack();
+	Openstackprovider createOpenstackprovider();
 
 	/**
-	 * Returns a new object of class '<em>Provideramazon</em>'.
+	 * Returns a new object of class '<em>Amazonprovider</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Provideramazon</em>'.
+	 * @return a new object of class '<em>Amazonprovider</em>'.
 	 * @generated
 	 */
-	Provideramazon createProvideramazon();
+	Amazonprovider createAmazonprovider();
 
 	/**
-	 * Returns a new object of class '<em>Providerazure</em>'.
+	 * Returns a new object of class '<em>Azureprovider</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Providerazure</em>'.
+	 * @return a new object of class '<em>Azureprovider</em>'.
 	 * @generated
 	 */
-	Providerazure createProviderazure();
+	Azureprovider createAzureprovider();
 
 	/**
 	 * Returns a new object of class '<em>Providerinstancelink</em>'.
@@ -374,13 +374,13 @@ public interface ModemoFactory extends EFactory {
 	Swappingpolicy createSwappingpolicy();
 
 	/**
-	 * Returns a new object of class '<em>Sourcemigrationpolicity</em>'.
+	 * Returns a new object of class '<em>Sourcemigrationpolicy</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Sourcemigrationpolicity</em>'.
+	 * @return a new object of class '<em>Sourcemigrationpolicy</em>'.
 	 * @generated
 	 */
-	Sourcemigrationpolicity createSourcemigrationpolicity();
+	Sourcemigrationpolicy createSourcemigrationpolicy();
 
 	/**
 	 * Returns a new object of class '<em>Livemigration</em>'.
@@ -401,13 +401,13 @@ public interface ModemoFactory extends EFactory {
 	Nonlivemigration createNonlivemigration();
 
 	/**
-	 * Returns a new object of class '<em>Migrationtype</em>'.
+	 * Returns a new object of class '<em>Migrationpolicy</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Migrationtype</em>'.
+	 * @return a new object of class '<em>Migrationpolicy</em>'.
 	 * @generated
 	 */
-	Migrationtype createMigrationtype();
+	Migrationpolicy createMigrationpolicy();
 
 	/**
 	 * Returns a new object of class '<em>Dynamicmigrationpolicy</em>'.
@@ -428,15 +428,6 @@ public interface ModemoFactory extends EFactory {
 	Manualmigrationpolicy createManualmigrationpolicy();
 
 	/**
-	 * Returns a new object of class '<em>Sla</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Sla</em>'.
-	 * @generated
-	 */
-	Sla createSla();
-
-	/**
 	 * Returns a new object of class '<em>Loadvolume</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -453,15 +444,6 @@ public interface ModemoFactory extends EFactory {
 	 * @generated
 	 */
 	Power createPower();
-
-	/**
-	 * Returns a new object of class '<em>Resourcewastage</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Resourcewastage</em>'.
-	 * @generated
-	 */
-	Resourcewastage createResourcewastage();
 
 	/**
 	 * Returns a new object of class '<em>Targetmigrationpolicy</em>'.
@@ -491,13 +473,13 @@ public interface ModemoFactory extends EFactory {
 	Manualtargetselection createManualtargetselection();
 
 	/**
-	 * Returns a new object of class '<em>Availalbleresourcesorload</em>'.
+	 * Returns a new object of class '<em>Availableresourcesorload</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Availalbleresourcesorload</em>'.
+	 * @return a new object of class '<em>Availableresourcesorload</em>'.
 	 * @generated
 	 */
-	Availalbleresourcesorload createAvailalbleresourcesorload();
+	Availableresourcesorload createAvailableresourcesorload();
 
 	/**
 	 * Returns a new object of class '<em>Targetresponsetime</em>'.
@@ -518,22 +500,13 @@ public interface ModemoFactory extends EFactory {
 	Responsetimemetric createResponsetimemetric();
 
 	/**
-	 * Returns a new object of class '<em>Networkcontention</em>'.
+	 * Returns a new object of class '<em>Loadbalancerpolicy</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Networkcontention</em>'.
+	 * @return a new object of class '<em>Loadbalancerpolicy</em>'.
 	 * @generated
 	 */
-	Networkcontention createNetworkcontention();
-
-	/**
-	 * Returns a new object of class '<em>Loadbalanceralgorithm</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Loadbalanceralgorithm</em>'.
-	 * @generated
-	 */
-	Loadbalanceralgorithm createLoadbalanceralgorithm();
+	Loadbalancerpolicy createLoadbalancerpolicy();
 
 	/**
 	 * Returns a new object of class '<em>Roundrobinalgo</em>'.
@@ -554,13 +527,13 @@ public interface ModemoFactory extends EFactory {
 	Leastconn createLeastconn();
 
 	/**
-	 * Returns a new object of class '<em>Stickysessions</em>'.
+	 * Returns a new object of class '<em>Leasttraffic</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Stickysessions</em>'.
+	 * @return a new object of class '<em>Leasttraffic</em>'.
 	 * @generated
 	 */
-	Stickysessions createStickysessions();
+	Leasttraffic createLeasttraffic();
 
 	/**
 	 * Returns a new object of class '<em>Wstaticrr</em>'.
@@ -579,6 +552,24 @@ public interface ModemoFactory extends EFactory {
 	 * @generated
 	 */
 	Source createSource();
+
+	/**
+	 * Returns a new object of class '<em>First</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>First</em>'.
+	 * @generated
+	 */
+	First createFirst();
+
+	/**
+	 * Returns a new object of class '<em>Leastlatency</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Leastlatency</em>'.
+	 * @generated
+	 */
+	Leastlatency createLeastlatency();
 
 	/**
 	 * Returns the package supported by this factory.

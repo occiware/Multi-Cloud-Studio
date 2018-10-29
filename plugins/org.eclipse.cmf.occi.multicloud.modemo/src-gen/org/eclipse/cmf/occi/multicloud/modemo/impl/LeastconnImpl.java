@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class LeastconnImpl extends LoadbalanceralgorithmImpl implements Leastconn {
+public class LeastconnImpl extends LoadbalancerpolicyImpl implements Leastconn {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

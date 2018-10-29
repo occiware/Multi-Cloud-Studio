@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class DynamicmigrationpolicyImpl extends SourcemigrationpolicityImpl implements Dynamicmigrationpolicy {
+public class DynamicmigrationpolicyImpl extends SourcemigrationpolicyImpl implements Dynamicmigrationpolicy {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

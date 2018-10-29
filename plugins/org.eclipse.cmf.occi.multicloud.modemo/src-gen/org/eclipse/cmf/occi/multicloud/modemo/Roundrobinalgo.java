@@ -24,5 +24,5 @@ import org.eclipse.cmf.occi.core.MixinBase;
  * @model
  * @generated
  */
-public interface Roundrobinalgo extends Loadbalanceralgorithm, MixinBase {
+public interface Roundrobinalgo extends Loadbalancerpolicy, MixinBase {
 } // Roundrobinalgo

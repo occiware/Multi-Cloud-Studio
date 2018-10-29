@@ -24,5 +24,5 @@ import org.eclipse.cmf.occi.core.MixinBase;
  * @model
  * @generated
  */
-public interface Wstaticrr extends Loadbalanceralgorithm, MixinBase {
+public interface Wstaticrr extends Loadbalancerpolicy, MixinBase {
 } // Wstaticrr

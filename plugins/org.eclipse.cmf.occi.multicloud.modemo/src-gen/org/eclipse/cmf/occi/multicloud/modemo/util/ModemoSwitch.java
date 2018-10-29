@@ -195,39 +195,39 @@ public class ModemoSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ModemoPackage.PROVIDERVMWARE: {
-				Providervmware providervmware = (Providervmware)theEObject;
-				T result = caseProvidervmware(providervmware);
-				if (result == null) result = caseProvider(providervmware);
-				if (result == null) result = caseResource(providervmware);
-				if (result == null) result = caseEntity(providervmware);
+			case ModemoPackage.VMWAREPROVIDER: {
+				Vmwareprovider vmwareprovider = (Vmwareprovider)theEObject;
+				T result = caseVmwareprovider(vmwareprovider);
+				if (result == null) result = caseProvider(vmwareprovider);
+				if (result == null) result = caseResource(vmwareprovider);
+				if (result == null) result = caseEntity(vmwareprovider);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ModemoPackage.PROVIDEROPENSTACK: {
-				Provideropenstack provideropenstack = (Provideropenstack)theEObject;
-				T result = caseProvideropenstack(provideropenstack);
-				if (result == null) result = caseProvider(provideropenstack);
-				if (result == null) result = caseResource(provideropenstack);
-				if (result == null) result = caseEntity(provideropenstack);
+			case ModemoPackage.OPENSTACKPROVIDER: {
+				Openstackprovider openstackprovider = (Openstackprovider)theEObject;
+				T result = caseOpenstackprovider(openstackprovider);
+				if (result == null) result = caseProvider(openstackprovider);
+				if (result == null) result = caseResource(openstackprovider);
+				if (result == null) result = caseEntity(openstackprovider);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ModemoPackage.PROVIDERAMAZON: {
-				Provideramazon provideramazon = (Provideramazon)theEObject;
-				T result = caseProvideramazon(provideramazon);
-				if (result == null) result = caseProvider(provideramazon);
-				if (result == null) result = caseResource(provideramazon);
-				if (result == null) result = caseEntity(provideramazon);
+			case ModemoPackage.AMAZONPROVIDER: {
+				Amazonprovider amazonprovider = (Amazonprovider)theEObject;
+				T result = caseAmazonprovider(amazonprovider);
+				if (result == null) result = caseProvider(amazonprovider);
+				if (result == null) result = caseResource(amazonprovider);
+				if (result == null) result = caseEntity(amazonprovider);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ModemoPackage.PROVIDERAZURE: {
-				Providerazure providerazure = (Providerazure)theEObject;
-				T result = caseProviderazure(providerazure);
-				if (result == null) result = caseProvider(providerazure);
-				if (result == null) result = caseResource(providerazure);
-				if (result == null) result = caseEntity(providerazure);
+			case ModemoPackage.AZUREPROVIDER: {
+				Azureprovider azureprovider = (Azureprovider)theEObject;
+				T result = caseAzureprovider(azureprovider);
+				if (result == null) result = caseProvider(azureprovider);
+				if (result == null) result = caseResource(azureprovider);
+				if (result == null) result = caseEntity(azureprovider);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -380,17 +380,17 @@ public class ModemoSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ModemoPackage.SOURCEMIGRATIONPOLICITY: {
-				Sourcemigrationpolicity sourcemigrationpolicity = (Sourcemigrationpolicity)theEObject;
-				T result = caseSourcemigrationpolicity(sourcemigrationpolicity);
-				if (result == null) result = caseMixinBase(sourcemigrationpolicity);
+			case ModemoPackage.SOURCEMIGRATIONPOLICY: {
+				Sourcemigrationpolicy sourcemigrationpolicy = (Sourcemigrationpolicy)theEObject;
+				T result = caseSourcemigrationpolicy(sourcemigrationpolicy);
+				if (result == null) result = caseMixinBase(sourcemigrationpolicy);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ModemoPackage.LIVEMIGRATION: {
 				Livemigration livemigration = (Livemigration)theEObject;
 				T result = caseLivemigration(livemigration);
-				if (result == null) result = caseMigrationtype(livemigration);
+				if (result == null) result = caseMigrationpolicy(livemigration);
 				if (result == null) result = caseMixinBase(livemigration);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -398,22 +398,22 @@ public class ModemoSwitch<T> extends Switch<T> {
 			case ModemoPackage.NONLIVEMIGRATION: {
 				Nonlivemigration nonlivemigration = (Nonlivemigration)theEObject;
 				T result = caseNonlivemigration(nonlivemigration);
-				if (result == null) result = caseMigrationtype(nonlivemigration);
+				if (result == null) result = caseMigrationpolicy(nonlivemigration);
 				if (result == null) result = caseMixinBase(nonlivemigration);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ModemoPackage.MIGRATIONTYPE: {
-				Migrationtype migrationtype = (Migrationtype)theEObject;
-				T result = caseMigrationtype(migrationtype);
-				if (result == null) result = caseMixinBase(migrationtype);
+			case ModemoPackage.MIGRATIONPOLICY: {
+				Migrationpolicy migrationpolicy = (Migrationpolicy)theEObject;
+				T result = caseMigrationpolicy(migrationpolicy);
+				if (result == null) result = caseMixinBase(migrationpolicy);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ModemoPackage.DYNAMICMIGRATIONPOLICY: {
 				Dynamicmigrationpolicy dynamicmigrationpolicy = (Dynamicmigrationpolicy)theEObject;
 				T result = caseDynamicmigrationpolicy(dynamicmigrationpolicy);
-				if (result == null) result = caseSourcemigrationpolicity(dynamicmigrationpolicy);
+				if (result == null) result = caseSourcemigrationpolicy(dynamicmigrationpolicy);
 				if (result == null) result = caseMixinBase(dynamicmigrationpolicy);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -421,17 +421,8 @@ public class ModemoSwitch<T> extends Switch<T> {
 			case ModemoPackage.MANUALMIGRATIONPOLICY: {
 				Manualmigrationpolicy manualmigrationpolicy = (Manualmigrationpolicy)theEObject;
 				T result = caseManualmigrationpolicy(manualmigrationpolicy);
-				if (result == null) result = caseSourcemigrationpolicity(manualmigrationpolicy);
+				if (result == null) result = caseSourcemigrationpolicy(manualmigrationpolicy);
 				if (result == null) result = caseMixinBase(manualmigrationpolicy);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ModemoPackage.SLA: {
-				Sla sla = (Sla)theEObject;
-				T result = caseSla(sla);
-				if (result == null) result = caseDynamicmigrationpolicy(sla);
-				if (result == null) result = caseSourcemigrationpolicity(sla);
-				if (result == null) result = caseMixinBase(sla);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -439,7 +430,7 @@ public class ModemoSwitch<T> extends Switch<T> {
 				Loadvolume loadvolume = (Loadvolume)theEObject;
 				T result = caseLoadvolume(loadvolume);
 				if (result == null) result = caseDynamicmigrationpolicy(loadvolume);
-				if (result == null) result = caseSourcemigrationpolicity(loadvolume);
+				if (result == null) result = caseSourcemigrationpolicy(loadvolume);
 				if (result == null) result = caseMixinBase(loadvolume);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -448,17 +439,8 @@ public class ModemoSwitch<T> extends Switch<T> {
 				Power power = (Power)theEObject;
 				T result = casePower(power);
 				if (result == null) result = caseDynamicmigrationpolicy(power);
-				if (result == null) result = caseSourcemigrationpolicity(power);
+				if (result == null) result = caseSourcemigrationpolicy(power);
 				if (result == null) result = caseMixinBase(power);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ModemoPackage.RESOURCEWASTAGE: {
-				Resourcewastage resourcewastage = (Resourcewastage)theEObject;
-				T result = caseResourcewastage(resourcewastage);
-				if (result == null) result = caseDynamicmigrationpolicy(resourcewastage);
-				if (result == null) result = caseSourcemigrationpolicity(resourcewastage);
-				if (result == null) result = caseMixinBase(resourcewastage);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -485,11 +467,11 @@ public class ModemoSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ModemoPackage.AVAILALBLERESOURCESORLOAD: {
-				Availalbleresourcesorload availalbleresourcesorload = (Availalbleresourcesorload)theEObject;
-				T result = caseAvailalbleresourcesorload(availalbleresourcesorload);
-				if (result == null) result = caseTargetmigrationpolicy(availalbleresourcesorload);
-				if (result == null) result = caseMixinBase(availalbleresourcesorload);
+			case ModemoPackage.AVAILABLERESOURCESORLOAD: {
+				Availableresourcesorload availableresourcesorload = (Availableresourcesorload)theEObject;
+				T result = caseAvailableresourcesorload(availableresourcesorload);
+				if (result == null) result = caseTargetmigrationpolicy(availableresourcesorload);
+				if (result == null) result = caseMixinBase(availableresourcesorload);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -509,26 +491,17 @@ public class ModemoSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ModemoPackage.NETWORKCONTENTION: {
-				Networkcontention networkcontention = (Networkcontention)theEObject;
-				T result = caseNetworkcontention(networkcontention);
-				if (result == null) result = caseDynamicmigrationpolicy(networkcontention);
-				if (result == null) result = caseSourcemigrationpolicity(networkcontention);
-				if (result == null) result = caseMixinBase(networkcontention);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ModemoPackage.LOADBALANCERALGORITHM: {
-				Loadbalanceralgorithm loadbalanceralgorithm = (Loadbalanceralgorithm)theEObject;
-				T result = caseLoadbalanceralgorithm(loadbalanceralgorithm);
-				if (result == null) result = caseMixinBase(loadbalanceralgorithm);
+			case ModemoPackage.LOADBALANCERPOLICY: {
+				Loadbalancerpolicy loadbalancerpolicy = (Loadbalancerpolicy)theEObject;
+				T result = caseLoadbalancerpolicy(loadbalancerpolicy);
+				if (result == null) result = caseMixinBase(loadbalancerpolicy);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ModemoPackage.ROUNDROBINALGO: {
 				Roundrobinalgo roundrobinalgo = (Roundrobinalgo)theEObject;
 				T result = caseRoundrobinalgo(roundrobinalgo);
-				if (result == null) result = caseLoadbalanceralgorithm(roundrobinalgo);
+				if (result == null) result = caseLoadbalancerpolicy(roundrobinalgo);
 				if (result == null) result = caseMixinBase(roundrobinalgo);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -536,23 +509,23 @@ public class ModemoSwitch<T> extends Switch<T> {
 			case ModemoPackage.LEASTCONN: {
 				Leastconn leastconn = (Leastconn)theEObject;
 				T result = caseLeastconn(leastconn);
-				if (result == null) result = caseLoadbalanceralgorithm(leastconn);
+				if (result == null) result = caseLoadbalancerpolicy(leastconn);
 				if (result == null) result = caseMixinBase(leastconn);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ModemoPackage.STICKYSESSIONS: {
-				Stickysessions stickysessions = (Stickysessions)theEObject;
-				T result = caseStickysessions(stickysessions);
-				if (result == null) result = caseLoadbalanceralgorithm(stickysessions);
-				if (result == null) result = caseMixinBase(stickysessions);
+			case ModemoPackage.LEASTTRAFFIC: {
+				Leasttraffic leasttraffic = (Leasttraffic)theEObject;
+				T result = caseLeasttraffic(leasttraffic);
+				if (result == null) result = caseLoadbalancerpolicy(leasttraffic);
+				if (result == null) result = caseMixinBase(leasttraffic);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ModemoPackage.WSTATICRR: {
 				Wstaticrr wstaticrr = (Wstaticrr)theEObject;
 				T result = caseWstaticrr(wstaticrr);
-				if (result == null) result = caseLoadbalanceralgorithm(wstaticrr);
+				if (result == null) result = caseLoadbalancerpolicy(wstaticrr);
 				if (result == null) result = caseMixinBase(wstaticrr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -560,8 +533,24 @@ public class ModemoSwitch<T> extends Switch<T> {
 			case ModemoPackage.SOURCE: {
 				Source source = (Source)theEObject;
 				T result = caseSource(source);
-				if (result == null) result = caseLoadbalanceralgorithm(source);
+				if (result == null) result = caseLoadbalancerpolicy(source);
 				if (result == null) result = caseMixinBase(source);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ModemoPackage.FIRST: {
+				First first = (First)theEObject;
+				T result = caseFirst(first);
+				if (result == null) result = caseLoadbalancerpolicy(first);
+				if (result == null) result = caseMixinBase(first);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ModemoPackage.LEASTLATENCY: {
+				Leastlatency leastlatency = (Leastlatency)theEObject;
+				T result = caseLeastlatency(leastlatency);
+				if (result == null) result = caseLoadbalancerpolicy(leastlatency);
+				if (result == null) result = caseMixinBase(leastlatency);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -795,62 +784,62 @@ public class ModemoSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Providervmware</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Vmwareprovider</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Providervmware</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Vmwareprovider</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseProvidervmware(Providervmware object) {
+	public T caseVmwareprovider(Vmwareprovider object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Provideropenstack</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Openstackprovider</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Provideropenstack</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Openstackprovider</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseProvideropenstack(Provideropenstack object) {
+	public T caseOpenstackprovider(Openstackprovider object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Provideramazon</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Amazonprovider</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Provideramazon</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Amazonprovider</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseProvideramazon(Provideramazon object) {
+	public T caseAmazonprovider(Amazonprovider object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Providerazure</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Azureprovider</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Providerazure</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Azureprovider</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseProviderazure(Providerazure object) {
+	public T caseAzureprovider(Azureprovider object) {
 		return null;
 	}
 
@@ -1140,17 +1129,17 @@ public class ModemoSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Sourcemigrationpolicity</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Sourcemigrationpolicy</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Sourcemigrationpolicity</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Sourcemigrationpolicy</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSourcemigrationpolicity(Sourcemigrationpolicity object) {
+	public T caseSourcemigrationpolicy(Sourcemigrationpolicy object) {
 		return null;
 	}
 
@@ -1185,17 +1174,17 @@ public class ModemoSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Migrationtype</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Migrationpolicy</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Migrationtype</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Migrationpolicy</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMigrationtype(Migrationtype object) {
+	public T caseMigrationpolicy(Migrationpolicy object) {
 		return null;
 	}
 
@@ -1230,21 +1219,6 @@ public class ModemoSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Sla</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Sla</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSla(Sla object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Loadvolume</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1271,21 +1245,6 @@ public class ModemoSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePower(Power object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Resourcewastage</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Resourcewastage</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseResourcewastage(Resourcewastage object) {
 		return null;
 	}
 
@@ -1335,17 +1294,17 @@ public class ModemoSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Availalbleresourcesorload</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Availableresourcesorload</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Availalbleresourcesorload</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Availableresourcesorload</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseAvailalbleresourcesorload(Availalbleresourcesorload object) {
+	public T caseAvailableresourcesorload(Availableresourcesorload object) {
 		return null;
 	}
 
@@ -1380,32 +1339,17 @@ public class ModemoSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Networkcontention</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Loadbalancerpolicy</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Networkcontention</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Loadbalancerpolicy</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseNetworkcontention(Networkcontention object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Loadbalanceralgorithm</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Loadbalanceralgorithm</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseLoadbalanceralgorithm(Loadbalanceralgorithm object) {
+	public T caseLoadbalancerpolicy(Loadbalancerpolicy object) {
 		return null;
 	}
 
@@ -1440,17 +1384,17 @@ public class ModemoSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Stickysessions</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Leasttraffic</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Stickysessions</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Leasttraffic</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseStickysessions(Stickysessions object) {
+	public T caseLeasttraffic(Leasttraffic object) {
 		return null;
 	}
 
@@ -1481,6 +1425,36 @@ public class ModemoSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSource(Source object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>First</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>First</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFirst(First object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Leastlatency</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Leastlatency</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLeastlatency(Leastlatency object) {
 		return null;
 	}
 

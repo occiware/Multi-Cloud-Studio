@@ -4,8 +4,7 @@
   <import href="http://schemas.ogf.org/occi/infrastructure#/"/>
   <import href="../../org.eclipse.cmf.occi.multicloud.vmware/model/vmware.occie#/"/>
   <import href="../../org.eclipse.cmf.occi.multicloud.accounts/model/accounts.occie#/"/>
-  <import href="../../org.eclipse.cmf.occi.multicloud.aws.ec2/model/ec2.occie#/"/>
-  <import href="file:/Users/spirals/Documents/modemo/git%20repository/Docker-Studio/plugins/org.eclipse.cmf.occi.docker/model/docker.occie#/"/>
+  <import href="../../org.eclipse.cmf.occi.docker/model/docker.occie#/"/>
   <kinds name="HorizontalGroup" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#">
     <attributes name="horizontalgroup.name" mutable="true">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
@@ -63,8 +62,8 @@
     <target href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
   </kinds>
   <kinds name="Rule" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" source="//@kinds[term='elasticitycontroller']" target="//@kinds[term='actiontrigger']">
-    <attributes name="rule.operator" mutable="true" type="//@types.2"/>
-    <attributes name="rule.threshold" mutable="true" type="//@types.1"/>
+    <attributes name="rule.operator" mutable="true" type="//@types.1"/>
+    <attributes name="rule.threshold" mutable="true" type="//@types.0"/>
     <attributes name="rule.period" mutable="true">
       <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
     </attributes>
@@ -74,15 +73,15 @@
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
   </kinds>
   <kinds name="ActionTrigger" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#">
-    <attributes name="actiontrigger.action" mutable="true" type="//@types.3"/>
-    <attributes name="actiontrigger.actionType" mutable="true" type="//@types.4"/>
-    <attributes name="actiontrigger.amount" mutable="true" type="//@types.1"/>
+    <attributes name="actiontrigger.action" mutable="true" type="//@types.2"/>
+    <attributes name="actiontrigger.actionType" mutable="true" type="//@types.3"/>
+    <attributes name="actiontrigger.amount" mutable="true" type="//@types.0"/>
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
   </kinds>
   <kinds name="Step" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#">
-    <attributes name="step.lowerStepBound" mutable="true" type="//@types.1"/>
-    <attributes name="step.upperStepBound" mutable="true" type="//@types.1"/>
-    <attributes name="step.size" mutable="true" type="//@types.1"/>
+    <attributes name="step.lowerStepBound" mutable="true" type="//@types.0"/>
+    <attributes name="step.upperStepBound" mutable="true" type="//@types.0"/>
+    <attributes name="step.size" mutable="true" type="//@types.0"/>
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
   </kinds>
   <kinds name="StepLink" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" source="//@kinds[term='elasticitycontroller']" target="//@kinds[term='step']">
@@ -94,16 +93,16 @@
   <kinds name="ProviderLink" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" source="//@kinds[term='horizontalgroup']" target="//@kinds[term='provider']">
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
   </kinds>
-  <kinds name="ProviderVMware" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" parent="//@kinds[term='provider']"/>
-  <kinds name="ProviderOpenStack" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" parent="//@kinds[term='provider']"/>
-  <kinds name="ProviderAmazon" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" parent="//@kinds[term='provider']"/>
-  <kinds name="ProviderAzure" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" parent="//@kinds[term='provider']"/>
+  <kinds name="VMwareProvider" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" parent="//@kinds[term='provider']"/>
+  <kinds name="OpenStackProvider" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" parent="//@kinds[term='provider']"/>
+  <kinds name="AmazonProvider" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" parent="//@kinds[term='provider']"/>
+  <kinds name="AzureProvider" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" parent="//@kinds[term='provider']"/>
   <kinds name="ProviderInstanceLink" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" source="//@kinds[term='provider']">
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
     <target href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
   </kinds>
   <mixins name="Creation" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#">
-    <attributes name="occi.compute.creation.date" mutable="true" type="//@types.9"/>
+    <attributes name="occi.compute.creation.date" mutable="true" type="//@types.8"/>
     <applies href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
   </mixins>
   <mixins name="SchedulingPolicy" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" title="" applies="//@kinds[term='elasticitycontroller']">
@@ -111,13 +110,13 @@
     <actions name="Stop" scheme="http://org.eclipse.cmf.occi.multicloud.modemo/schedulingpolicy/action#"/>
   </mixins>
   <mixins name="UniqueSchedulingPolicy" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" depends="//@mixins[term='schedulingpolicy']">
-    <attributes name="uniqueschedulingpolicy.startDate" mutable="true" type="//@types.9"/>
-    <attributes name="uniqueschedulingpolicy.endDate" mutable="true" type="//@types.9"/>
+    <attributes name="uniqueschedulingpolicy.startDate" mutable="true" type="//@types.8"/>
+    <attributes name="uniqueschedulingpolicy.endDate" mutable="true" type="//@types.8"/>
   </mixins>
   <mixins name="RecurringSchedulingPolicy" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" depends="//@mixins[term='schedulingpolicy']">
-    <attributes name="recurringschedulingpolicy.recurrence" mutable="true" type="//@types.10"/>
-    <attributes name="recurringschedulingpolicy.startDate" mutable="true" type="//@types.9"/>
-    <attributes name="recurringschedulingpolicy.endDate" mutable="true" type="//@types.9"/>
+    <attributes name="recurringschedulingpolicy.recurrence" mutable="true" type="//@types.9"/>
+    <attributes name="recurringschedulingpolicy.startDate" mutable="true" type="//@types.8"/>
+    <attributes name="recurringschedulingpolicy.endDate" mutable="true" type="//@types.8"/>
     <attributes name="recurringschedulingpolicy.interval" mutable="true">
       <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
     </attributes>
@@ -135,16 +134,16 @@
     </attributes>
   </mixins>
   <mixins name="DynamicAdjustmentScalingPolicy" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" depends="//@mixins[term='dynamicscalingpolicy']">
-    <attributes name="dynamicadjustmentscalingpolicy.metric" mutable="true" type="//@types.5"/>
+    <attributes name="dynamicadjustmentscalingpolicy.metric" mutable="true" type="//@types.4"/>
     <attributes name="dynamicadjustmentscalingpolicy.disableScaleIn" mutable="true">
       <type xsi:type="occi:BooleanType" href="http://schemas.ogf.org/occi/core#//@types.1"/>
     </attributes>
-    <attributes name="dynamicadjustmentscalingpolicy.Target" mutable="true" type="//@types.1"/>
+    <attributes name="dynamicadjustmentscalingpolicy.Target" mutable="true" type="//@types.0"/>
   </mixins>
   <mixins name="SimpleDynamicScalingPolicy" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" depends="//@mixins[term='dynamicscalingpolicy']"/>
   <mixins name="StepDynamicScalingPolicy" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" depends="//@mixins[term='dynamicscalingpolicy']"/>
   <mixins name="ManualScalingPolicy" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" depends="//@mixins[term='scalingpolicy']">
-    <attributes name="manualscalingpolicy.desiredSize" mutable="true" type="//@types.1"/>
+    <attributes name="manualscalingpolicy.desiredSize" mutable="true" type="//@types.0"/>
     <attributes name="manualscalingpolicy.computeUnit" mutable="true">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
@@ -161,42 +160,37 @@
   <mixins name="ResponseTime" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" depends="//@mixins[term='allocationpolicy']"/>
   <mixins name="Cost" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" depends="//@mixins[term='allocationpolicy']"/>
   <mixins name="SwappingPolicy" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" applies="//@kinds[term='elasticitycontroller']"/>
-  <mixins name="SourceMigrationPolicity" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" applies="//@kinds[term='elasticitycontroller']"/>
-  <mixins name="LiveMigration" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" depends="//@mixins[term='migrationtype']"/>
-  <mixins name="NonLiveMigration" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" depends="//@mixins[term='migrationtype']"/>
-  <mixins name="MigrationType" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" applies="//@kinds[term='elasticitycontroller']"/>
-  <mixins name="DynamicMigrationPolicy" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" depends="//@mixins[term='sourcemigrationpolicity']"/>
-  <mixins name="ManualMigrationPolicy" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" depends="//@mixins[term='sourcemigrationpolicity']"/>
-  <mixins name="SLA" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" depends="//@mixins[term='dynamicmigrationpolicy']"/>
+  <mixins name="SourceMigrationPolicy" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" applies="//@kinds[term='elasticitycontroller']"/>
+  <mixins name="LiveMigration" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" depends="//@mixins[term='migrationpolicy']"/>
+  <mixins name="NonLiveMigration" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" depends="//@mixins[term='migrationpolicy']"/>
+  <mixins name="MigrationPolicy" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" applies="//@kinds[term='elasticitycontroller']"/>
+  <mixins name="DynamicMigrationPolicy" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" depends="//@mixins[term='sourcemigrationpolicy']"/>
+  <mixins name="ManualMigrationPolicy" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" depends="//@mixins[term='sourcemigrationpolicy']"/>
   <mixins name="LoadVolume" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" depends="//@mixins[term='dynamicmigrationpolicy']"/>
   <mixins name="Power" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" depends="//@mixins[term='dynamicmigrationpolicy']"/>
-  <mixins name="ResourceWastage" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" depends="//@mixins[term='dynamicmigrationpolicy']"/>
   <mixins name="TargetMigrationPolicy" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" applies="//@kinds[term='elasticitycontroller']"/>
   <mixins name="AvailableResources" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" depends="//@mixins[term='allocationpolicy']"/>
   <mixins name="ManualTargetSelection" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" depends="//@mixins[term='targetmigrationpolicy']"/>
-  <mixins name="AvailalbleResourcesOrload" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" depends="//@mixins[term='targetmigrationpolicy']"/>
+  <mixins name="AvailableResourcesOrLoad" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" depends="//@mixins[term='targetmigrationpolicy']"/>
   <mixins name="TargetResponseTime" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" depends="//@mixins[term='targetmigrationpolicy']"/>
   <mixins name="ResponseTimeMetric" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" depends="//@mixins[term='metric']"/>
-  <mixins name="NetworkContention" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" depends="//@mixins[term='dynamicmigrationpolicy']"/>
-  <mixins name="LoadbalancerAlgorithm" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" applies="//@kinds[term='loadbalancer']">
-    <actions name="apply" scheme="http://org.eclipse.cmf.occi.multicloud.modemo/loadbalanceralgorithm/action#"/>
-    <actions name="remove" scheme="http://org.eclipse.cmf.occi.multicloud.modemo/loadbalanceralgorithm/action#"/>
+  <mixins name="LoadBalancerPolicy" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" applies="//@kinds[term='loadbalancer']">
+    <actions name="start" scheme="http://org.eclipse.cmf.occi.multicloud.modemo/loadbalancerpolicy/action#"/>
+    <actions name="stop" scheme="http://org.eclipse.cmf.occi.multicloud.modemo/loadbalancerpolicy/action#"/>
   </mixins>
-  <mixins name="Roundrobinalgo" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" depends="//@mixins[term='loadbalanceralgorithm']"/>
-  <mixins name="Leastconn" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" depends="//@mixins[term='loadbalanceralgorithm']"/>
-  <mixins name="StickySessions" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" depends="//@mixins[term='loadbalanceralgorithm']"/>
-  <mixins name="WstaticRr" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" depends="//@mixins[term='loadbalanceralgorithm']"/>
-  <mixins name="Source" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" depends="//@mixins[term='loadbalanceralgorithm']"/>
-  <types xsi:type="occi:EnumerationType" name="TypeMetric">
-    <literals name="CPUtilisation"/>
-    <literals name="MemoryUtilisation"/>
-  </types>
+  <mixins name="RoundRobinAlgo" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" depends="//@mixins[term='loadbalancerpolicy']"/>
+  <mixins name="LeastConn" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" depends="//@mixins[term='loadbalancerpolicy']"/>
+  <mixins name="LeastTraffic" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" depends="//@mixins[term='loadbalancerpolicy']"/>
+  <mixins name="WstaticRr" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" depends="//@mixins[term='loadbalancerpolicy']"/>
+  <mixins name="Source" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" depends="//@mixins[term='loadbalancerpolicy']"/>
+  <mixins name="First" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" depends="//@mixins[term='loadbalancerpolicy']"/>
+  <mixins name="LeastLatency" scheme="http://org.eclipse.cmf.occi.multicloud.modemo#" depends="//@mixins[term='loadbalancerpolicy']"/>
   <types xsi:type="occi:NumericType" name="Float" type="Float"/>
   <types xsi:type="occi:EnumerationType" name="OperatorType">
     <literals name="GreaterThan"/>
     <literals name="GreaterThanOrEqualTo"/>
     <literals name="LessThan"/>
-    <literals name="LessThanorEqualTo"/>
+    <literals name="LessThanOrEqualTo"/>
     <literals name="EqualTo"/>
     <literals name="NotEqualTo"/>
   </types>
@@ -216,8 +210,8 @@
     <literals name="AverageNetworkOut"/>
   </types>
   <types xsi:type="occi:RecordType" name="RecurrenceStep">
-    <recordFields name="unit" mutable="true" type="//@types.7"/>
-    <recordFields name="value" mutable="true" type="//@types.8"/>
+    <recordFields name="unit" mutable="true" type="//@types.6"/>
+    <recordFields name="value" mutable="true" type="//@types.7"/>
   </types>
   <types xsi:type="occi:EnumerationType" name="Unit">
     <literals name="minute"/>
@@ -230,5 +224,5 @@
     <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
   </types>
   <types xsi:type="occi:EObjectType" name="Date" instanceClassName="java.util.Date"/>
-  <types xsi:type="occi:ArrayType" name="ArrofRecStep" type="//@types.6"/>
+  <types xsi:type="occi:ArrayType" name="ArrofRecStep" type="//@types.5"/>
 </occi:Extension>

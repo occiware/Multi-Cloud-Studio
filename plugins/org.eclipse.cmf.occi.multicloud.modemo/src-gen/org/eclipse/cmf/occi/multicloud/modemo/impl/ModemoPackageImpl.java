@@ -16,20 +16,22 @@ import java.util.Date;
 
 import org.eclipse.cmf.occi.core.OCCIPackage;
 
+import org.eclipse.cmf.occi.docker.DockerPackage;
+
 import org.eclipse.cmf.occi.infrastructure.InfrastructurePackage;
 
 import org.eclipse.cmf.occi.multicloud.accounts.AccountsPackage;
-
-import org.eclipse.cmf.occi.multicloud.aws.ec2.Ec2Package;
 
 import org.eclipse.cmf.occi.multicloud.modemo.ActionOperation;
 import org.eclipse.cmf.occi.multicloud.modemo.ActionType;
 import org.eclipse.cmf.occi.multicloud.modemo.Actiontrigger;
 import org.eclipse.cmf.occi.multicloud.modemo.Allocationpolicy;
+import org.eclipse.cmf.occi.multicloud.modemo.Amazonprovider;
 import org.eclipse.cmf.occi.multicloud.modemo.Array;
 import org.eclipse.cmf.occi.multicloud.modemo.ArrofRecStep;
 import org.eclipse.cmf.occi.multicloud.modemo.Availableresources;
-import org.eclipse.cmf.occi.multicloud.modemo.Availalbleresourcesorload;
+import org.eclipse.cmf.occi.multicloud.modemo.Availableresourcesorload;
+import org.eclipse.cmf.occi.multicloud.modemo.Azureprovider;
 import org.eclipse.cmf.occi.multicloud.modemo.Cost;
 import org.eclipse.cmf.occi.multicloud.modemo.Cpuutilisation;
 import org.eclipse.cmf.occi.multicloud.modemo.Creation;
@@ -38,13 +40,16 @@ import org.eclipse.cmf.occi.multicloud.modemo.Dynamicmigrationpolicy;
 import org.eclipse.cmf.occi.multicloud.modemo.Dynamicscalingpolicy;
 import org.eclipse.cmf.occi.multicloud.modemo.Elasticitycontroller;
 import org.eclipse.cmf.occi.multicloud.modemo.Elasticlink;
+import org.eclipse.cmf.occi.multicloud.modemo.First;
 import org.eclipse.cmf.occi.multicloud.modemo.Horizontalgroup;
 import org.eclipse.cmf.occi.multicloud.modemo.Instancegrouplink;
 import org.eclipse.cmf.occi.multicloud.modemo.Leastconn;
+import org.eclipse.cmf.occi.multicloud.modemo.Leastlatency;
+import org.eclipse.cmf.occi.multicloud.modemo.Leasttraffic;
 import org.eclipse.cmf.occi.multicloud.modemo.Livemigration;
 import org.eclipse.cmf.occi.multicloud.modemo.Loadbalancer;
-import org.eclipse.cmf.occi.multicloud.modemo.Loadbalanceralgorithm;
 import org.eclipse.cmf.occi.multicloud.modemo.Loadbalancerlink;
+import org.eclipse.cmf.occi.multicloud.modemo.Loadbalancerpolicy;
 import org.eclipse.cmf.occi.multicloud.modemo.Loadvolume;
 import org.eclipse.cmf.occi.multicloud.modemo.Manualmigrationpolicy;
 import org.eclipse.cmf.occi.multicloud.modemo.Manualscalingpolicy;
@@ -52,23 +57,18 @@ import org.eclipse.cmf.occi.multicloud.modemo.Manualtargetselection;
 import org.eclipse.cmf.occi.multicloud.modemo.Memoryutilisation;
 import org.eclipse.cmf.occi.multicloud.modemo.Metric;
 import org.eclipse.cmf.occi.multicloud.modemo.MetricTargetTracking;
-import org.eclipse.cmf.occi.multicloud.modemo.Migrationtype;
+import org.eclipse.cmf.occi.multicloud.modemo.Migrationpolicy;
 import org.eclipse.cmf.occi.multicloud.modemo.ModemoFactory;
 import org.eclipse.cmf.occi.multicloud.modemo.ModemoPackage;
-import org.eclipse.cmf.occi.multicloud.modemo.Networkcontention;
 import org.eclipse.cmf.occi.multicloud.modemo.Nonlivemigration;
+import org.eclipse.cmf.occi.multicloud.modemo.Openstackprovider;
 import org.eclipse.cmf.occi.multicloud.modemo.OperatorType;
 import org.eclipse.cmf.occi.multicloud.modemo.Power;
 import org.eclipse.cmf.occi.multicloud.modemo.Provider;
-import org.eclipse.cmf.occi.multicloud.modemo.Provideramazon;
-import org.eclipse.cmf.occi.multicloud.modemo.Providerazure;
 import org.eclipse.cmf.occi.multicloud.modemo.Providerinstancelink;
 import org.eclipse.cmf.occi.multicloud.modemo.Providerlink;
-import org.eclipse.cmf.occi.multicloud.modemo.Provideropenstack;
-import org.eclipse.cmf.occi.multicloud.modemo.Providervmware;
 import org.eclipse.cmf.occi.multicloud.modemo.RecurrenceStep;
 import org.eclipse.cmf.occi.multicloud.modemo.Recurringschedulingpolicy;
-import org.eclipse.cmf.occi.multicloud.modemo.Resourcewastage;
 import org.eclipse.cmf.occi.multicloud.modemo.Responsetime;
 import org.eclipse.cmf.occi.multicloud.modemo.Responsetimemetric;
 import org.eclipse.cmf.occi.multicloud.modemo.Roundrobin;
@@ -77,19 +77,17 @@ import org.eclipse.cmf.occi.multicloud.modemo.Rule;
 import org.eclipse.cmf.occi.multicloud.modemo.Scalingpolicy;
 import org.eclipse.cmf.occi.multicloud.modemo.Schedulingpolicy;
 import org.eclipse.cmf.occi.multicloud.modemo.Simpledynamicscalingpolicy;
-import org.eclipse.cmf.occi.multicloud.modemo.Sla;
 import org.eclipse.cmf.occi.multicloud.modemo.Source;
-import org.eclipse.cmf.occi.multicloud.modemo.Sourcemigrationpolicity;
+import org.eclipse.cmf.occi.multicloud.modemo.Sourcemigrationpolicy;
 import org.eclipse.cmf.occi.multicloud.modemo.Step;
 import org.eclipse.cmf.occi.multicloud.modemo.Stepdynamicscalingpolicy;
 import org.eclipse.cmf.occi.multicloud.modemo.Steplink;
-import org.eclipse.cmf.occi.multicloud.modemo.Stickysessions;
 import org.eclipse.cmf.occi.multicloud.modemo.Swappingpolicy;
 import org.eclipse.cmf.occi.multicloud.modemo.Targetmigrationpolicy;
 import org.eclipse.cmf.occi.multicloud.modemo.Targetresponsetime;
-import org.eclipse.cmf.occi.multicloud.modemo.TypeMetric;
 import org.eclipse.cmf.occi.multicloud.modemo.Uniqueschedulingpolicy;
 import org.eclipse.cmf.occi.multicloud.modemo.Unit;
+import org.eclipse.cmf.occi.multicloud.modemo.Vmwareprovider;
 import org.eclipse.cmf.occi.multicloud.modemo.Wstaticrr;
 
 import org.eclipse.cmf.occi.multicloud.modemo.util.ModemoValidator;
@@ -224,28 +222,28 @@ public class ModemoPackageImpl extends EPackageImpl implements ModemoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass providervmwareEClass = null;
+	private EClass vmwareproviderEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass provideropenstackEClass = null;
+	private EClass openstackproviderEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass provideramazonEClass = null;
+	private EClass amazonproviderEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass providerazureEClass = null;
+	private EClass azureproviderEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -385,7 +383,7 @@ public class ModemoPackageImpl extends EPackageImpl implements ModemoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass sourcemigrationpolicityEClass = null;
+	private EClass sourcemigrationpolicyEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -406,7 +404,7 @@ public class ModemoPackageImpl extends EPackageImpl implements ModemoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass migrationtypeEClass = null;
+	private EClass migrationpolicyEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -427,13 +425,6 @@ public class ModemoPackageImpl extends EPackageImpl implements ModemoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass slaEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass loadvolumeEClass = null;
 
 	/**
@@ -442,13 +433,6 @@ public class ModemoPackageImpl extends EPackageImpl implements ModemoPackage {
 	 * @generated
 	 */
 	private EClass powerEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass resourcewastageEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -476,7 +460,7 @@ public class ModemoPackageImpl extends EPackageImpl implements ModemoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass availalbleresourcesorloadEClass = null;
+	private EClass availableresourcesorloadEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -497,14 +481,7 @@ public class ModemoPackageImpl extends EPackageImpl implements ModemoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass networkcontentionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass loadbalanceralgorithmEClass = null;
+	private EClass loadbalancerpolicyEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -525,7 +502,7 @@ public class ModemoPackageImpl extends EPackageImpl implements ModemoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass stickysessionsEClass = null;
+	private EClass leasttrafficEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -546,7 +523,14 @@ public class ModemoPackageImpl extends EPackageImpl implements ModemoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum typeMetricEEnum = null;
+	private EClass firstEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass leastlatencyEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -646,8 +630,8 @@ public class ModemoPackageImpl extends EPackageImpl implements ModemoPackage {
 		// Initialize simple dependencies
 		InfrastructurePackage.eINSTANCE.eClass();
 		VmwarePackage.eINSTANCE.eClass();
+		DockerPackage.eINSTANCE.eClass();
 		AccountsPackage.eINSTANCE.eClass();
-		Ec2Package.eINSTANCE.eClass();
 		OCCIPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
@@ -1057,8 +1041,8 @@ public class ModemoPackageImpl extends EPackageImpl implements ModemoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getProvidervmware() {
-		return providervmwareEClass;
+	public EClass getVmwareprovider() {
+		return vmwareproviderEClass;
 	}
 
 	/**
@@ -1066,8 +1050,8 @@ public class ModemoPackageImpl extends EPackageImpl implements ModemoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getProvideropenstack() {
-		return provideropenstackEClass;
+	public EClass getOpenstackprovider() {
+		return openstackproviderEClass;
 	}
 
 	/**
@@ -1075,8 +1059,8 @@ public class ModemoPackageImpl extends EPackageImpl implements ModemoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getProvideramazon() {
-		return provideramazonEClass;
+	public EClass getAmazonprovider() {
+		return amazonproviderEClass;
 	}
 
 	/**
@@ -1084,8 +1068,8 @@ public class ModemoPackageImpl extends EPackageImpl implements ModemoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getProviderazure() {
-		return providerazureEClass;
+	public EClass getAzureprovider() {
+		return azureproviderEClass;
 	}
 
 	/**
@@ -1435,8 +1419,8 @@ public class ModemoPackageImpl extends EPackageImpl implements ModemoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSourcemigrationpolicity() {
-		return sourcemigrationpolicityEClass;
+	public EClass getSourcemigrationpolicy() {
+		return sourcemigrationpolicyEClass;
 	}
 
 	/**
@@ -1462,8 +1446,8 @@ public class ModemoPackageImpl extends EPackageImpl implements ModemoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getMigrationtype() {
-		return migrationtypeEClass;
+	public EClass getMigrationpolicy() {
+		return migrationpolicyEClass;
 	}
 
 	/**
@@ -1489,15 +1473,6 @@ public class ModemoPackageImpl extends EPackageImpl implements ModemoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSla() {
-		return slaEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getLoadvolume() {
 		return loadvolumeEClass;
 	}
@@ -1509,15 +1484,6 @@ public class ModemoPackageImpl extends EPackageImpl implements ModemoPackage {
 	 */
 	public EClass getPower() {
 		return powerEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getResourcewastage() {
-		return resourcewastageEClass;
 	}
 
 	/**
@@ -1552,8 +1518,8 @@ public class ModemoPackageImpl extends EPackageImpl implements ModemoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAvailalbleresourcesorload() {
-		return availalbleresourcesorloadEClass;
+	public EClass getAvailableresourcesorload() {
+		return availableresourcesorloadEClass;
 	}
 
 	/**
@@ -1579,8 +1545,8 @@ public class ModemoPackageImpl extends EPackageImpl implements ModemoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getNetworkcontention() {
-		return networkcontentionEClass;
+	public EClass getLoadbalancerpolicy() {
+		return loadbalancerpolicyEClass;
 	}
 
 	/**
@@ -1588,8 +1554,8 @@ public class ModemoPackageImpl extends EPackageImpl implements ModemoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getLoadbalanceralgorithm() {
-		return loadbalanceralgorithmEClass;
+	public EOperation getLoadbalancerpolicy__Start() {
+		return loadbalancerpolicyEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -1597,17 +1563,8 @@ public class ModemoPackageImpl extends EPackageImpl implements ModemoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getLoadbalanceralgorithm__Apply() {
-		return loadbalanceralgorithmEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getLoadbalanceralgorithm__Remove() {
-		return loadbalanceralgorithmEClass.getEOperations().get(1);
+	public EOperation getLoadbalancerpolicy__Stop() {
+		return loadbalancerpolicyEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -1633,8 +1590,8 @@ public class ModemoPackageImpl extends EPackageImpl implements ModemoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getStickysessions() {
-		return stickysessionsEClass;
+	public EClass getLeasttraffic() {
+		return leasttrafficEClass;
 	}
 
 	/**
@@ -1660,8 +1617,17 @@ public class ModemoPackageImpl extends EPackageImpl implements ModemoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getTypeMetric() {
-		return typeMetricEEnum;
+	public EClass getFirst() {
+		return firstEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLeastlatency() {
+		return leastlatencyEClass;
 	}
 
 	/**
@@ -1812,13 +1778,13 @@ public class ModemoPackageImpl extends EPackageImpl implements ModemoPackage {
 
 		providerlinkEClass = createEClass(PROVIDERLINK);
 
-		providervmwareEClass = createEClass(PROVIDERVMWARE);
+		vmwareproviderEClass = createEClass(VMWAREPROVIDER);
 
-		provideropenstackEClass = createEClass(PROVIDEROPENSTACK);
+		openstackproviderEClass = createEClass(OPENSTACKPROVIDER);
 
-		provideramazonEClass = createEClass(PROVIDERAMAZON);
+		amazonproviderEClass = createEClass(AMAZONPROVIDER);
 
-		providerazureEClass = createEClass(PROVIDERAZURE);
+		azureproviderEClass = createEClass(AZUREPROVIDER);
 
 		providerinstancelinkEClass = createEClass(PROVIDERINSTANCELINK);
 
@@ -1877,25 +1843,21 @@ public class ModemoPackageImpl extends EPackageImpl implements ModemoPackage {
 
 		swappingpolicyEClass = createEClass(SWAPPINGPOLICY);
 
-		sourcemigrationpolicityEClass = createEClass(SOURCEMIGRATIONPOLICITY);
+		sourcemigrationpolicyEClass = createEClass(SOURCEMIGRATIONPOLICY);
 
 		livemigrationEClass = createEClass(LIVEMIGRATION);
 
 		nonlivemigrationEClass = createEClass(NONLIVEMIGRATION);
 
-		migrationtypeEClass = createEClass(MIGRATIONTYPE);
+		migrationpolicyEClass = createEClass(MIGRATIONPOLICY);
 
 		dynamicmigrationpolicyEClass = createEClass(DYNAMICMIGRATIONPOLICY);
 
 		manualmigrationpolicyEClass = createEClass(MANUALMIGRATIONPOLICY);
 
-		slaEClass = createEClass(SLA);
-
 		loadvolumeEClass = createEClass(LOADVOLUME);
 
 		powerEClass = createEClass(POWER);
-
-		resourcewastageEClass = createEClass(RESOURCEWASTAGE);
 
 		targetmigrationpolicyEClass = createEClass(TARGETMIGRATIONPOLICY);
 
@@ -1903,30 +1865,31 @@ public class ModemoPackageImpl extends EPackageImpl implements ModemoPackage {
 
 		manualtargetselectionEClass = createEClass(MANUALTARGETSELECTION);
 
-		availalbleresourcesorloadEClass = createEClass(AVAILALBLERESOURCESORLOAD);
+		availableresourcesorloadEClass = createEClass(AVAILABLERESOURCESORLOAD);
 
 		targetresponsetimeEClass = createEClass(TARGETRESPONSETIME);
 
 		responsetimemetricEClass = createEClass(RESPONSETIMEMETRIC);
 
-		networkcontentionEClass = createEClass(NETWORKCONTENTION);
-
-		loadbalanceralgorithmEClass = createEClass(LOADBALANCERALGORITHM);
-		createEOperation(loadbalanceralgorithmEClass, LOADBALANCERALGORITHM___APPLY);
-		createEOperation(loadbalanceralgorithmEClass, LOADBALANCERALGORITHM___REMOVE);
+		loadbalancerpolicyEClass = createEClass(LOADBALANCERPOLICY);
+		createEOperation(loadbalancerpolicyEClass, LOADBALANCERPOLICY___START);
+		createEOperation(loadbalancerpolicyEClass, LOADBALANCERPOLICY___STOP);
 
 		roundrobinalgoEClass = createEClass(ROUNDROBINALGO);
 
 		leastconnEClass = createEClass(LEASTCONN);
 
-		stickysessionsEClass = createEClass(STICKYSESSIONS);
+		leasttrafficEClass = createEClass(LEASTTRAFFIC);
 
 		wstaticrrEClass = createEClass(WSTATICRR);
 
 		sourceEClass = createEClass(SOURCE);
 
+		firstEClass = createEClass(FIRST);
+
+		leastlatencyEClass = createEClass(LEASTLATENCY);
+
 		// Create enums
-		typeMetricEEnum = createEEnum(TYPE_METRIC);
 		operatorTypeEEnum = createEEnum(OPERATOR_TYPE);
 		actionOperationEEnum = createEEnum(ACTION_OPERATION);
 		actionTypeEEnum = createEEnum(ACTION_TYPE);
@@ -1981,10 +1944,10 @@ public class ModemoPackageImpl extends EPackageImpl implements ModemoPackage {
 		steplinkEClass.getESuperTypes().add(theOCCIPackage.getLink());
 		providerEClass.getESuperTypes().add(theOCCIPackage.getResource());
 		providerlinkEClass.getESuperTypes().add(theOCCIPackage.getLink());
-		providervmwareEClass.getESuperTypes().add(this.getProvider());
-		provideropenstackEClass.getESuperTypes().add(this.getProvider());
-		provideramazonEClass.getESuperTypes().add(this.getProvider());
-		providerazureEClass.getESuperTypes().add(this.getProvider());
+		vmwareproviderEClass.getESuperTypes().add(this.getProvider());
+		openstackproviderEClass.getESuperTypes().add(this.getProvider());
+		amazonproviderEClass.getESuperTypes().add(this.getProvider());
+		azureproviderEClass.getESuperTypes().add(this.getProvider());
 		providerinstancelinkEClass.getESuperTypes().add(theOCCIPackage.getLink());
 		creationEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		schedulingpolicyEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
@@ -2016,48 +1979,46 @@ public class ModemoPackageImpl extends EPackageImpl implements ModemoPackage {
 		costEClass.getESuperTypes().add(this.getAllocationpolicy());
 		costEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		swappingpolicyEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
-		sourcemigrationpolicityEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
-		livemigrationEClass.getESuperTypes().add(this.getMigrationtype());
+		sourcemigrationpolicyEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		livemigrationEClass.getESuperTypes().add(this.getMigrationpolicy());
 		livemigrationEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
-		nonlivemigrationEClass.getESuperTypes().add(this.getMigrationtype());
+		nonlivemigrationEClass.getESuperTypes().add(this.getMigrationpolicy());
 		nonlivemigrationEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
-		migrationtypeEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
-		dynamicmigrationpolicyEClass.getESuperTypes().add(this.getSourcemigrationpolicity());
+		migrationpolicyEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		dynamicmigrationpolicyEClass.getESuperTypes().add(this.getSourcemigrationpolicy());
 		dynamicmigrationpolicyEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
-		manualmigrationpolicyEClass.getESuperTypes().add(this.getSourcemigrationpolicity());
+		manualmigrationpolicyEClass.getESuperTypes().add(this.getSourcemigrationpolicy());
 		manualmigrationpolicyEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
-		slaEClass.getESuperTypes().add(this.getDynamicmigrationpolicy());
-		slaEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		loadvolumeEClass.getESuperTypes().add(this.getDynamicmigrationpolicy());
 		loadvolumeEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		powerEClass.getESuperTypes().add(this.getDynamicmigrationpolicy());
 		powerEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
-		resourcewastageEClass.getESuperTypes().add(this.getDynamicmigrationpolicy());
-		resourcewastageEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		targetmigrationpolicyEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		availableresourcesEClass.getESuperTypes().add(this.getAllocationpolicy());
 		availableresourcesEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		manualtargetselectionEClass.getESuperTypes().add(this.getTargetmigrationpolicy());
 		manualtargetselectionEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
-		availalbleresourcesorloadEClass.getESuperTypes().add(this.getTargetmigrationpolicy());
-		availalbleresourcesorloadEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		availableresourcesorloadEClass.getESuperTypes().add(this.getTargetmigrationpolicy());
+		availableresourcesorloadEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		targetresponsetimeEClass.getESuperTypes().add(this.getTargetmigrationpolicy());
 		targetresponsetimeEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		responsetimemetricEClass.getESuperTypes().add(this.getMetric());
 		responsetimemetricEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
-		networkcontentionEClass.getESuperTypes().add(this.getDynamicmigrationpolicy());
-		networkcontentionEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
-		loadbalanceralgorithmEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
-		roundrobinalgoEClass.getESuperTypes().add(this.getLoadbalanceralgorithm());
+		loadbalancerpolicyEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		roundrobinalgoEClass.getESuperTypes().add(this.getLoadbalancerpolicy());
 		roundrobinalgoEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
-		leastconnEClass.getESuperTypes().add(this.getLoadbalanceralgorithm());
+		leastconnEClass.getESuperTypes().add(this.getLoadbalancerpolicy());
 		leastconnEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
-		stickysessionsEClass.getESuperTypes().add(this.getLoadbalanceralgorithm());
-		stickysessionsEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
-		wstaticrrEClass.getESuperTypes().add(this.getLoadbalanceralgorithm());
+		leasttrafficEClass.getESuperTypes().add(this.getLoadbalancerpolicy());
+		leasttrafficEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		wstaticrrEClass.getESuperTypes().add(this.getLoadbalancerpolicy());
 		wstaticrrEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
-		sourceEClass.getESuperTypes().add(this.getLoadbalanceralgorithm());
+		sourceEClass.getESuperTypes().add(this.getLoadbalancerpolicy());
 		sourceEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		firstEClass.getESuperTypes().add(this.getLoadbalancerpolicy());
+		firstEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		leastlatencyEClass.getESuperTypes().add(this.getLoadbalancerpolicy());
+		leastlatencyEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(recurrenceStepEClass, RecurrenceStep.class, "RecurrenceStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2119,13 +2080,13 @@ public class ModemoPackageImpl extends EPackageImpl implements ModemoPackage {
 
 		initEClass(providerlinkEClass, Providerlink.class, "Providerlink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(providervmwareEClass, Providervmware.class, "Providervmware", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(vmwareproviderEClass, Vmwareprovider.class, "Vmwareprovider", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(provideropenstackEClass, Provideropenstack.class, "Provideropenstack", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(openstackproviderEClass, Openstackprovider.class, "Openstackprovider", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(provideramazonEClass, Provideramazon.class, "Provideramazon", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(amazonproviderEClass, Amazonprovider.class, "Amazonprovider", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(providerazureEClass, Providerazure.class, "Providerazure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(azureproviderEClass, Azureprovider.class, "Azureprovider", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(providerinstancelinkEClass, Providerinstancelink.class, "Providerinstancelink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2188,25 +2149,21 @@ public class ModemoPackageImpl extends EPackageImpl implements ModemoPackage {
 
 		initEClass(swappingpolicyEClass, Swappingpolicy.class, "Swappingpolicy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(sourcemigrationpolicityEClass, Sourcemigrationpolicity.class, "Sourcemigrationpolicity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(sourcemigrationpolicyEClass, Sourcemigrationpolicy.class, "Sourcemigrationpolicy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(livemigrationEClass, Livemigration.class, "Livemigration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(nonlivemigrationEClass, Nonlivemigration.class, "Nonlivemigration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(migrationtypeEClass, Migrationtype.class, "Migrationtype", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(migrationpolicyEClass, Migrationpolicy.class, "Migrationpolicy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(dynamicmigrationpolicyEClass, Dynamicmigrationpolicy.class, "Dynamicmigrationpolicy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(manualmigrationpolicyEClass, Manualmigrationpolicy.class, "Manualmigrationpolicy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(slaEClass, Sla.class, "Sla", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
 		initEClass(loadvolumeEClass, Loadvolume.class, "Loadvolume", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(powerEClass, Power.class, "Power", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(resourcewastageEClass, Resourcewastage.class, "Resourcewastage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(targetmigrationpolicyEClass, Targetmigrationpolicy.class, "Targetmigrationpolicy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2214,40 +2171,38 @@ public class ModemoPackageImpl extends EPackageImpl implements ModemoPackage {
 
 		initEClass(manualtargetselectionEClass, Manualtargetselection.class, "Manualtargetselection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(availalbleresourcesorloadEClass, Availalbleresourcesorload.class, "Availalbleresourcesorload", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(availableresourcesorloadEClass, Availableresourcesorload.class, "Availableresourcesorload", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(targetresponsetimeEClass, Targetresponsetime.class, "Targetresponsetime", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(responsetimemetricEClass, Responsetimemetric.class, "Responsetimemetric", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(networkcontentionEClass, Networkcontention.class, "Networkcontention", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(loadbalancerpolicyEClass, Loadbalancerpolicy.class, "Loadbalancerpolicy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(loadbalanceralgorithmEClass, Loadbalanceralgorithm.class, "Loadbalanceralgorithm", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEOperation(getLoadbalancerpolicy__Start(), null, "start", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getLoadbalanceralgorithm__Apply(), null, "apply", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEOperation(getLoadbalanceralgorithm__Remove(), null, "remove", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getLoadbalancerpolicy__Stop(), null, "stop", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(roundrobinalgoEClass, Roundrobinalgo.class, "Roundrobinalgo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(leastconnEClass, Leastconn.class, "Leastconn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(stickysessionsEClass, Stickysessions.class, "Stickysessions", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(leasttrafficEClass, Leasttraffic.class, "Leasttraffic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(wstaticrrEClass, Wstaticrr.class, "Wstaticrr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(sourceEClass, Source.class, "Source", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		// Initialize enums and add enum literals
-		initEEnum(typeMetricEEnum, TypeMetric.class, "TypeMetric");
-		addEEnumLiteral(typeMetricEEnum, TypeMetric.CP_UTILISATION);
-		addEEnumLiteral(typeMetricEEnum, TypeMetric.MEMORY_UTILISATION);
+		initEClass(firstEClass, First.class, "First", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		initEClass(leastlatencyEClass, Leastlatency.class, "Leastlatency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		// Initialize enums and add enum literals
 		initEEnum(operatorTypeEEnum, OperatorType.class, "OperatorType");
 		addEEnumLiteral(operatorTypeEEnum, OperatorType.GREATER_THAN);
 		addEEnumLiteral(operatorTypeEEnum, OperatorType.GREATER_THAN_OR_EQUAL_TO);
 		addEEnumLiteral(operatorTypeEEnum, OperatorType.LESS_THAN);
-		addEEnumLiteral(operatorTypeEEnum, OperatorType.LESS_THANOR_EQUAL_TO);
+		addEEnumLiteral(operatorTypeEEnum, OperatorType.LESS_THAN_OR_EQUAL_TO);
 		addEEnumLiteral(operatorTypeEEnum, OperatorType.EQUAL_TO);
 		addEEnumLiteral(operatorTypeEEnum, OperatorType.NOT_EQUAL_TO);
 
@@ -2384,13 +2339,13 @@ public class ModemoPackageImpl extends EPackageImpl implements ModemoPackage {
 			 "constraints", "appliesConstraint"
 		   });	
 		addAnnotation
-		  (sourcemigrationpolicityEClass, 
+		  (sourcemigrationpolicyEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "appliesConstraint"
 		   });	
 		addAnnotation
-		  (migrationtypeEClass, 
+		  (migrationpolicyEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "appliesConstraint"
@@ -2402,7 +2357,7 @@ public class ModemoPackageImpl extends EPackageImpl implements ModemoPackage {
 			 "constraints", "appliesConstraint"
 		   });	
 		addAnnotation
-		  (loadbalanceralgorithmEClass, 
+		  (loadbalancerpolicyEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "appliesConstraint"
@@ -2424,8 +2379,8 @@ public class ModemoPackageImpl extends EPackageImpl implements ModemoPackage {
 			 "occi", "http://schemas.ogf.org/occi/core/ecore",
 			 "infrastructure", "http://schemas.ogf.org/occi/infrastructure/ecore",
 			 "vmware", "http://occiware.org/occi/infrastructure/vmware/ecore",
-			 "accounts", "http://occiware.org/occi/infrastructure/security/ecore",
-			 "ec2", "http://occiware.org/occi/infrastructure/aws/ecore"
+			 "docker", "http://occiware.org/occi/docker/ecore",
+			 "accounts", "http://occiware.org/occi/infrastructure/security/ecore"
 		   });
 	}
 
@@ -2523,13 +2478,13 @@ public class ModemoPackageImpl extends EPackageImpl implements ModemoPackage {
 			 "appliesConstraint", "self.entity.oclIsKindOf(modemo::Elasticitycontroller)"
 		   });	
 		addAnnotation
-		  (sourcemigrationpolicityEClass, 
+		  (sourcemigrationpolicyEClass, 
 		   source, 
 		   new String[] {
 			 "appliesConstraint", "self.entity.oclIsKindOf(modemo::Elasticitycontroller)"
 		   });	
 		addAnnotation
-		  (migrationtypeEClass, 
+		  (migrationpolicyEClass, 
 		   source, 
 		   new String[] {
 			 "appliesConstraint", "self.entity.oclIsKindOf(modemo::Elasticitycontroller)"
@@ -2541,7 +2496,7 @@ public class ModemoPackageImpl extends EPackageImpl implements ModemoPackage {
 			 "appliesConstraint", "self.entity.oclIsKindOf(modemo::Elasticitycontroller)"
 		   });	
 		addAnnotation
-		  (loadbalanceralgorithmEClass, 
+		  (loadbalancerpolicyEClass, 
 		   source, 
 		   new String[] {
 			 "appliesConstraint", "self.entity.oclIsKindOf(modemo::Loadbalancer)"

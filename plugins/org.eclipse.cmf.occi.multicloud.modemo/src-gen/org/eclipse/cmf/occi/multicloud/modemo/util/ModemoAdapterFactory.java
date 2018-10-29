@@ -143,20 +143,20 @@ public class ModemoAdapterFactory extends AdapterFactoryImpl {
 				return createProviderlinkAdapter();
 			}
 			@Override
-			public Adapter caseProvidervmware(Providervmware object) {
-				return createProvidervmwareAdapter();
+			public Adapter caseVmwareprovider(Vmwareprovider object) {
+				return createVmwareproviderAdapter();
 			}
 			@Override
-			public Adapter caseProvideropenstack(Provideropenstack object) {
-				return createProvideropenstackAdapter();
+			public Adapter caseOpenstackprovider(Openstackprovider object) {
+				return createOpenstackproviderAdapter();
 			}
 			@Override
-			public Adapter caseProvideramazon(Provideramazon object) {
-				return createProvideramazonAdapter();
+			public Adapter caseAmazonprovider(Amazonprovider object) {
+				return createAmazonproviderAdapter();
 			}
 			@Override
-			public Adapter caseProviderazure(Providerazure object) {
-				return createProviderazureAdapter();
+			public Adapter caseAzureprovider(Azureprovider object) {
+				return createAzureproviderAdapter();
 			}
 			@Override
 			public Adapter caseProviderinstancelink(Providerinstancelink object) {
@@ -235,8 +235,8 @@ public class ModemoAdapterFactory extends AdapterFactoryImpl {
 				return createSwappingpolicyAdapter();
 			}
 			@Override
-			public Adapter caseSourcemigrationpolicity(Sourcemigrationpolicity object) {
-				return createSourcemigrationpolicityAdapter();
+			public Adapter caseSourcemigrationpolicy(Sourcemigrationpolicy object) {
+				return createSourcemigrationpolicyAdapter();
 			}
 			@Override
 			public Adapter caseLivemigration(Livemigration object) {
@@ -247,8 +247,8 @@ public class ModemoAdapterFactory extends AdapterFactoryImpl {
 				return createNonlivemigrationAdapter();
 			}
 			@Override
-			public Adapter caseMigrationtype(Migrationtype object) {
-				return createMigrationtypeAdapter();
+			public Adapter caseMigrationpolicy(Migrationpolicy object) {
+				return createMigrationpolicyAdapter();
 			}
 			@Override
 			public Adapter caseDynamicmigrationpolicy(Dynamicmigrationpolicy object) {
@@ -259,20 +259,12 @@ public class ModemoAdapterFactory extends AdapterFactoryImpl {
 				return createManualmigrationpolicyAdapter();
 			}
 			@Override
-			public Adapter caseSla(Sla object) {
-				return createSlaAdapter();
-			}
-			@Override
 			public Adapter caseLoadvolume(Loadvolume object) {
 				return createLoadvolumeAdapter();
 			}
 			@Override
 			public Adapter casePower(Power object) {
 				return createPowerAdapter();
-			}
-			@Override
-			public Adapter caseResourcewastage(Resourcewastage object) {
-				return createResourcewastageAdapter();
 			}
 			@Override
 			public Adapter caseTargetmigrationpolicy(Targetmigrationpolicy object) {
@@ -287,8 +279,8 @@ public class ModemoAdapterFactory extends AdapterFactoryImpl {
 				return createManualtargetselectionAdapter();
 			}
 			@Override
-			public Adapter caseAvailalbleresourcesorload(Availalbleresourcesorload object) {
-				return createAvailalbleresourcesorloadAdapter();
+			public Adapter caseAvailableresourcesorload(Availableresourcesorload object) {
+				return createAvailableresourcesorloadAdapter();
 			}
 			@Override
 			public Adapter caseTargetresponsetime(Targetresponsetime object) {
@@ -299,12 +291,8 @@ public class ModemoAdapterFactory extends AdapterFactoryImpl {
 				return createResponsetimemetricAdapter();
 			}
 			@Override
-			public Adapter caseNetworkcontention(Networkcontention object) {
-				return createNetworkcontentionAdapter();
-			}
-			@Override
-			public Adapter caseLoadbalanceralgorithm(Loadbalanceralgorithm object) {
-				return createLoadbalanceralgorithmAdapter();
+			public Adapter caseLoadbalancerpolicy(Loadbalancerpolicy object) {
+				return createLoadbalancerpolicyAdapter();
 			}
 			@Override
 			public Adapter caseRoundrobinalgo(Roundrobinalgo object) {
@@ -315,8 +303,8 @@ public class ModemoAdapterFactory extends AdapterFactoryImpl {
 				return createLeastconnAdapter();
 			}
 			@Override
-			public Adapter caseStickysessions(Stickysessions object) {
-				return createStickysessionsAdapter();
+			public Adapter caseLeasttraffic(Leasttraffic object) {
+				return createLeasttrafficAdapter();
 			}
 			@Override
 			public Adapter caseWstaticrr(Wstaticrr object) {
@@ -325,6 +313,14 @@ public class ModemoAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseSource(Source object) {
 				return createSourceAdapter();
+			}
+			@Override
+			public Adapter caseFirst(First object) {
+				return createFirstAdapter();
+			}
+			@Override
+			public Adapter caseLeastlatency(Leastlatency object) {
+				return createLeastlatencyAdapter();
 			}
 			@Override
 			public Adapter caseEntity(Entity object) {
@@ -573,58 +569,58 @@ public class ModemoAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.modemo.Providervmware <em>Providervmware</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.modemo.Vmwareprovider <em>Vmwareprovider</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.Providervmware
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.Vmwareprovider
 	 * @generated
 	 */
-	public Adapter createProvidervmwareAdapter() {
+	public Adapter createVmwareproviderAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.modemo.Provideropenstack <em>Provideropenstack</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.modemo.Openstackprovider <em>Openstackprovider</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.Provideropenstack
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.Openstackprovider
 	 * @generated
 	 */
-	public Adapter createProvideropenstackAdapter() {
+	public Adapter createOpenstackproviderAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.modemo.Provideramazon <em>Provideramazon</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.modemo.Amazonprovider <em>Amazonprovider</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.Provideramazon
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.Amazonprovider
 	 * @generated
 	 */
-	public Adapter createProvideramazonAdapter() {
+	public Adapter createAmazonproviderAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.modemo.Providerazure <em>Providerazure</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.modemo.Azureprovider <em>Azureprovider</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.Providerazure
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.Azureprovider
 	 * @generated
 	 */
-	public Adapter createProviderazureAdapter() {
+	public Adapter createAzureproviderAdapter() {
 		return null;
 	}
 
@@ -895,16 +891,16 @@ public class ModemoAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.modemo.Sourcemigrationpolicity <em>Sourcemigrationpolicity</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.modemo.Sourcemigrationpolicy <em>Sourcemigrationpolicy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.Sourcemigrationpolicity
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.Sourcemigrationpolicy
 	 * @generated
 	 */
-	public Adapter createSourcemigrationpolicityAdapter() {
+	public Adapter createSourcemigrationpolicyAdapter() {
 		return null;
 	}
 
@@ -937,16 +933,16 @@ public class ModemoAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.modemo.Migrationtype <em>Migrationtype</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.modemo.Migrationpolicy <em>Migrationpolicy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.Migrationtype
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.Migrationpolicy
 	 * @generated
 	 */
-	public Adapter createMigrationtypeAdapter() {
+	public Adapter createMigrationpolicyAdapter() {
 		return null;
 	}
 
@@ -979,20 +975,6 @@ public class ModemoAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.modemo.Sla <em>Sla</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.Sla
-	 * @generated
-	 */
-	public Adapter createSlaAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.modemo.Loadvolume <em>Loadvolume</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -1017,20 +999,6 @@ public class ModemoAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPowerAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.modemo.Resourcewastage <em>Resourcewastage</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.Resourcewastage
-	 * @generated
-	 */
-	public Adapter createResourcewastageAdapter() {
 		return null;
 	}
 
@@ -1077,16 +1045,16 @@ public class ModemoAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.modemo.Availalbleresourcesorload <em>Availalbleresourcesorload</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.modemo.Availableresourcesorload <em>Availableresourcesorload</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.Availalbleresourcesorload
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.Availableresourcesorload
 	 * @generated
 	 */
-	public Adapter createAvailalbleresourcesorloadAdapter() {
+	public Adapter createAvailableresourcesorloadAdapter() {
 		return null;
 	}
 
@@ -1119,30 +1087,16 @@ public class ModemoAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.modemo.Networkcontention <em>Networkcontention</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.modemo.Loadbalancerpolicy <em>Loadbalancerpolicy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.Networkcontention
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.Loadbalancerpolicy
 	 * @generated
 	 */
-	public Adapter createNetworkcontentionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.modemo.Loadbalanceralgorithm <em>Loadbalanceralgorithm</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.Loadbalanceralgorithm
-	 * @generated
-	 */
-	public Adapter createLoadbalanceralgorithmAdapter() {
+	public Adapter createLoadbalancerpolicyAdapter() {
 		return null;
 	}
 
@@ -1175,16 +1129,16 @@ public class ModemoAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.modemo.Stickysessions <em>Stickysessions</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.modemo.Leasttraffic <em>Leasttraffic</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.Stickysessions
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.Leasttraffic
 	 * @generated
 	 */
-	public Adapter createStickysessionsAdapter() {
+	public Adapter createLeasttrafficAdapter() {
 		return null;
 	}
 
@@ -1213,6 +1167,34 @@ public class ModemoAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSourceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.modemo.First <em>First</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.First
+	 * @generated
+	 */
+	public Adapter createFirstAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.multicloud.modemo.Leastlatency <em>Leastlatency</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.Leastlatency
+	 * @generated
+	 */
+	public Adapter createLeastlatencyAdapter() {
 		return null;
 	}
 

@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class RoundrobinalgoImpl extends LoadbalanceralgorithmImpl implements Roundrobinalgo {
+public class RoundrobinalgoImpl extends LoadbalancerpolicyImpl implements Roundrobinalgo {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

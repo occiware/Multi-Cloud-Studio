@@ -54,8 +54,7 @@
       <!-- @generated modemo -->
       <package
             uri="http://org.eclipse.cmf.occi.multicloud.modemo/ecore"
-            class="org.eclipse.cmf.occi.multicloud.modemo.ModemoPackage"
-            genModel="model/modemo.genmodel"/>
+            class="org.eclipse.cmf.occi.multicloud.modemo.ModemoPackage"/>
    </extension>
 
 </plugin>

@@ -4,15 +4,6 @@
   <genPackages prefix="Modemo" basePackage="org.eclipse.cmf.occi.multicloud" disposableProviderFactory="true">
     <ecorePackage href="modemo.ecore#/"/>
     <genEnums typeSafeEnumCompatible="false">
-      <ecoreEnum href="modemo.ecore#//TypeMetric"/>
-      <genEnumLiterals>
-        <ecoreEnumLiteral href="modemo.ecore#//TypeMetric/CPUtilisation"/>
-      </genEnumLiterals>
-      <genEnumLiterals>
-        <ecoreEnumLiteral href="modemo.ecore#//TypeMetric/MemoryUtilisation"/>
-      </genEnumLiterals>
-    </genEnums>
-    <genEnums typeSafeEnumCompatible="false">
       <ecoreEnum href="modemo.ecore#//OperatorType"/>
       <genEnumLiterals>
         <ecoreEnumLiteral href="modemo.ecore#//OperatorType/GreaterThan"/>
@@ -24,7 +15,7 @@
         <ecoreEnumLiteral href="modemo.ecore#//OperatorType/LessThan"/>
       </genEnumLiterals>
       <genEnumLiterals>
-        <ecoreEnumLiteral href="modemo.ecore#//OperatorType/LessThanorEqualTo"/>
+        <ecoreEnumLiteral href="modemo.ecore#//OperatorType/LessThanOrEqualTo"/>
       </genEnumLiterals>
       <genEnumLiterals>
         <ecoreEnumLiteral href="modemo.ecore#//OperatorType/EqualTo"/>
@@ -220,16 +211,16 @@
       <ecoreClass href="modemo.ecore#//Providerlink"/>
     </genClasses>
     <genClasses>
-      <ecoreClass href="modemo.ecore#//Providervmware"/>
+      <ecoreClass href="modemo.ecore#//Vmwareprovider"/>
     </genClasses>
     <genClasses>
-      <ecoreClass href="modemo.ecore#//Provideropenstack"/>
+      <ecoreClass href="modemo.ecore#//Openstackprovider"/>
     </genClasses>
     <genClasses>
-      <ecoreClass href="modemo.ecore#//Provideramazon"/>
+      <ecoreClass href="modemo.ecore#//Amazonprovider"/>
     </genClasses>
     <genClasses>
-      <ecoreClass href="modemo.ecore#//Providerazure"/>
+      <ecoreClass href="modemo.ecore#//Azureprovider"/>
     </genClasses>
     <genClasses>
       <ecoreClass href="modemo.ecore#//Providerinstancelink"/>
@@ -346,7 +337,7 @@
       <ecoreClass href="modemo.ecore#//Swappingpolicy"/>
     </genClasses>
     <genClasses>
-      <ecoreClass href="modemo.ecore#//Sourcemigrationpolicity"/>
+      <ecoreClass href="modemo.ecore#//Sourcemigrationpolicy"/>
     </genClasses>
     <genClasses>
       <ecoreClass href="modemo.ecore#//Livemigration"/>
@@ -355,7 +346,7 @@
       <ecoreClass href="modemo.ecore#//Nonlivemigration"/>
     </genClasses>
     <genClasses>
-      <ecoreClass href="modemo.ecore#//Migrationtype"/>
+      <ecoreClass href="modemo.ecore#//Migrationpolicy"/>
     </genClasses>
     <genClasses>
       <ecoreClass href="modemo.ecore#//Dynamicmigrationpolicy"/>
@@ -364,16 +355,10 @@
       <ecoreClass href="modemo.ecore#//Manualmigrationpolicy"/>
     </genClasses>
     <genClasses>
-      <ecoreClass href="modemo.ecore#//Sla"/>
-    </genClasses>
-    <genClasses>
       <ecoreClass href="modemo.ecore#//Loadvolume"/>
     </genClasses>
     <genClasses>
       <ecoreClass href="modemo.ecore#//Power"/>
-    </genClasses>
-    <genClasses>
-      <ecoreClass href="modemo.ecore#//Resourcewastage"/>
     </genClasses>
     <genClasses>
       <ecoreClass href="modemo.ecore#//Targetmigrationpolicy"/>
@@ -385,7 +370,7 @@
       <ecoreClass href="modemo.ecore#//Manualtargetselection"/>
     </genClasses>
     <genClasses>
-      <ecoreClass href="modemo.ecore#//Availalbleresourcesorload"/>
+      <ecoreClass href="modemo.ecore#//Availableresourcesorload"/>
     </genClasses>
     <genClasses>
       <ecoreClass href="modemo.ecore#//Targetresponsetime"/>
@@ -394,15 +379,12 @@
       <ecoreClass href="modemo.ecore#//Responsetimemetric"/>
     </genClasses>
     <genClasses>
-      <ecoreClass href="modemo.ecore#//Networkcontention"/>
-    </genClasses>
-    <genClasses>
-      <ecoreClass href="modemo.ecore#//Loadbalanceralgorithm"/>
+      <ecoreClass href="modemo.ecore#//Loadbalancerpolicy"/>
       <genOperations>
-        <ecoreOperation href="modemo.ecore#//Loadbalanceralgorithm/apply"/>
+        <ecoreOperation href="modemo.ecore#//Loadbalancerpolicy/start"/>
       </genOperations>
       <genOperations>
-        <ecoreOperation href="modemo.ecore#//Loadbalanceralgorithm/remove"/>
+        <ecoreOperation href="modemo.ecore#//Loadbalancerpolicy/stop"/>
       </genOperations>
     </genClasses>
     <genClasses>
@@ -412,7 +394,7 @@
       <ecoreClass href="modemo.ecore#//Leastconn"/>
     </genClasses>
     <genClasses>
-      <ecoreClass href="modemo.ecore#//Stickysessions"/>
+      <ecoreClass href="modemo.ecore#//Leasttraffic"/>
     </genClasses>
     <genClasses>
       <ecoreClass href="modemo.ecore#//Wstaticrr"/>
@@ -420,10 +402,16 @@
     <genClasses>
       <ecoreClass href="modemo.ecore#//Source"/>
     </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//First"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="modemo.ecore#//Leastlatency"/>
+    </genClasses>
   </genPackages>
   <usedGenPackages href="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.genmodel#//infrastructure"/>
   <usedGenPackages href="platform:/resource/org.eclipse.cmf.occi.multicloud.vmware/model/vmware.genmodel#//vmware"/>
+  <usedGenPackages href="platform:/resource/org.eclipse.cmf.occi.docker/model/docker.genmodel#//docker"/>
   <usedGenPackages href="platform:/resource/org.eclipse.cmf.occi.multicloud.accounts/model/accounts.genmodel#//accounts"/>
-  <usedGenPackages href="platform:/resource/org.eclipse.cmf.occi.multicloud.aws.ec2/model/ec2.genmodel#//ec2"/>
   <usedGenPackages href="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.genmodel#//occi"/>
 </genmodel:GenModel>

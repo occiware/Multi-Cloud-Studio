@@ -24,5 +24,5 @@ import org.eclipse.cmf.occi.core.MixinBase;
  * @model
  * @generated
  */
-public interface Dynamicmigrationpolicy extends Sourcemigrationpolicity, MixinBase {
+public interface Dynamicmigrationpolicy extends Sourcemigrationpolicy, MixinBase {
 } // Dynamicmigrationpolicy

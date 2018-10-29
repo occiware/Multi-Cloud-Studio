@@ -37,7 +37,7 @@ import org.eclipse.emf.ecore.EReference;
  * @see org.eclipse.cmf.occi.multicloud.modemo.ModemoFactory
  * @model kind="package"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot'"
- *        annotation="http://www.eclipse.org/OCL/Import occi='http://schemas.ogf.org/occi/core/ecore' infrastructure='http://schemas.ogf.org/occi/infrastructure/ecore' vmware='http://occiware.org/occi/infrastructure/vmware/ecore' accounts='http://occiware.org/occi/infrastructure/security/ecore' ec2='http://occiware.org/occi/infrastructure/aws/ecore'"
+ *        annotation="http://www.eclipse.org/OCL/Import occi='http://schemas.ogf.org/occi/core/ecore' infrastructure='http://schemas.ogf.org/occi/infrastructure/ecore' vmware='http://occiware.org/occi/infrastructure/vmware/ecore' docker='http://occiware.org/occi/docker/ecore' accounts='http://occiware.org/occi/infrastructure/security/ecore'"
  * @generated
  */
 public interface ModemoPackage extends EPackage {
@@ -2303,14 +2303,14 @@ public interface ModemoPackage extends EPackage {
 	int PROVIDERLINK_OPERATION_COUNT = OCCIPackage.LINK_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.ProvidervmwareImpl <em>Providervmware</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.VmwareproviderImpl <em>Vmwareprovider</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ProvidervmwareImpl
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getProvidervmware()
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.VmwareproviderImpl
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getVmwareprovider()
 	 * @generated
 	 */
-	int PROVIDERVMWARE = 15;
+	int VMWAREPROVIDER = 15;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -2319,7 +2319,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERVMWARE__ID = PROVIDER__ID;
+	int VMWAREPROVIDER__ID = PROVIDER__ID;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -2328,7 +2328,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERVMWARE__TITLE = PROVIDER__TITLE;
+	int VMWAREPROVIDER__TITLE = PROVIDER__TITLE;
 
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' reference.
@@ -2337,7 +2337,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERVMWARE__KIND = PROVIDER__KIND;
+	int VMWAREPROVIDER__KIND = PROVIDER__KIND;
 
 	/**
 	 * The feature id for the '<em><b>Location</b></em>' attribute.
@@ -2346,7 +2346,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERVMWARE__LOCATION = PROVIDER__LOCATION;
+	int VMWAREPROVIDER__LOCATION = PROVIDER__LOCATION;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -2355,7 +2355,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERVMWARE__ATTRIBUTES = PROVIDER__ATTRIBUTES;
+	int VMWAREPROVIDER__ATTRIBUTES = PROVIDER__ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Mixins</b></em>' reference list.
@@ -2364,7 +2364,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERVMWARE__MIXINS = PROVIDER__MIXINS;
+	int VMWAREPROVIDER__MIXINS = PROVIDER__MIXINS;
 
 	/**
 	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
@@ -2373,7 +2373,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERVMWARE__PARTS = PROVIDER__PARTS;
+	int VMWAREPROVIDER__PARTS = PROVIDER__PARTS;
 
 	/**
 	 * The feature id for the '<em><b>Summary</b></em>' attribute.
@@ -2382,7 +2382,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERVMWARE__SUMMARY = PROVIDER__SUMMARY;
+	int VMWAREPROVIDER__SUMMARY = PROVIDER__SUMMARY;
 
 	/**
 	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
@@ -2391,7 +2391,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERVMWARE__LINKS = PROVIDER__LINKS;
+	int VMWAREPROVIDER__LINKS = PROVIDER__LINKS;
 
 	/**
 	 * The feature id for the '<em><b>Rlinks</b></em>' reference list.
@@ -2400,16 +2400,16 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERVMWARE__RLINKS = PROVIDER__RLINKS;
+	int VMWAREPROVIDER__RLINKS = PROVIDER__RLINKS;
 
 	/**
-	 * The number of structural features of the '<em>Providervmware</em>' class.
+	 * The number of structural features of the '<em>Vmwareprovider</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERVMWARE_FEATURE_COUNT = PROVIDER_FEATURE_COUNT + 0;
+	int VMWAREPROVIDER_FEATURE_COUNT = PROVIDER_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Occi Create</em>' operation.
@@ -2418,7 +2418,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERVMWARE___OCCI_CREATE = PROVIDER___OCCI_CREATE;
+	int VMWAREPROVIDER___OCCI_CREATE = PROVIDER___OCCI_CREATE;
 
 	/**
 	 * The operation id for the '<em>Occi Retrieve</em>' operation.
@@ -2427,7 +2427,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERVMWARE___OCCI_RETRIEVE = PROVIDER___OCCI_RETRIEVE;
+	int VMWAREPROVIDER___OCCI_RETRIEVE = PROVIDER___OCCI_RETRIEVE;
 
 	/**
 	 * The operation id for the '<em>Occi Update</em>' operation.
@@ -2436,7 +2436,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERVMWARE___OCCI_UPDATE = PROVIDER___OCCI_UPDATE;
+	int VMWAREPROVIDER___OCCI_UPDATE = PROVIDER___OCCI_UPDATE;
 
 	/**
 	 * The operation id for the '<em>Occi Delete</em>' operation.
@@ -2445,26 +2445,26 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERVMWARE___OCCI_DELETE = PROVIDER___OCCI_DELETE;
+	int VMWAREPROVIDER___OCCI_DELETE = PROVIDER___OCCI_DELETE;
 
 	/**
-	 * The number of operations of the '<em>Providervmware</em>' class.
+	 * The number of operations of the '<em>Vmwareprovider</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERVMWARE_OPERATION_COUNT = PROVIDER_OPERATION_COUNT + 0;
+	int VMWAREPROVIDER_OPERATION_COUNT = PROVIDER_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.ProvideropenstackImpl <em>Provideropenstack</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.OpenstackproviderImpl <em>Openstackprovider</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ProvideropenstackImpl
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getProvideropenstack()
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.OpenstackproviderImpl
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getOpenstackprovider()
 	 * @generated
 	 */
-	int PROVIDEROPENSTACK = 16;
+	int OPENSTACKPROVIDER = 16;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -2473,7 +2473,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDEROPENSTACK__ID = PROVIDER__ID;
+	int OPENSTACKPROVIDER__ID = PROVIDER__ID;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -2482,7 +2482,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDEROPENSTACK__TITLE = PROVIDER__TITLE;
+	int OPENSTACKPROVIDER__TITLE = PROVIDER__TITLE;
 
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' reference.
@@ -2491,7 +2491,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDEROPENSTACK__KIND = PROVIDER__KIND;
+	int OPENSTACKPROVIDER__KIND = PROVIDER__KIND;
 
 	/**
 	 * The feature id for the '<em><b>Location</b></em>' attribute.
@@ -2500,7 +2500,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDEROPENSTACK__LOCATION = PROVIDER__LOCATION;
+	int OPENSTACKPROVIDER__LOCATION = PROVIDER__LOCATION;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -2509,7 +2509,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDEROPENSTACK__ATTRIBUTES = PROVIDER__ATTRIBUTES;
+	int OPENSTACKPROVIDER__ATTRIBUTES = PROVIDER__ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Mixins</b></em>' reference list.
@@ -2518,7 +2518,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDEROPENSTACK__MIXINS = PROVIDER__MIXINS;
+	int OPENSTACKPROVIDER__MIXINS = PROVIDER__MIXINS;
 
 	/**
 	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
@@ -2527,7 +2527,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDEROPENSTACK__PARTS = PROVIDER__PARTS;
+	int OPENSTACKPROVIDER__PARTS = PROVIDER__PARTS;
 
 	/**
 	 * The feature id for the '<em><b>Summary</b></em>' attribute.
@@ -2536,7 +2536,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDEROPENSTACK__SUMMARY = PROVIDER__SUMMARY;
+	int OPENSTACKPROVIDER__SUMMARY = PROVIDER__SUMMARY;
 
 	/**
 	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
@@ -2545,7 +2545,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDEROPENSTACK__LINKS = PROVIDER__LINKS;
+	int OPENSTACKPROVIDER__LINKS = PROVIDER__LINKS;
 
 	/**
 	 * The feature id for the '<em><b>Rlinks</b></em>' reference list.
@@ -2554,16 +2554,16 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDEROPENSTACK__RLINKS = PROVIDER__RLINKS;
+	int OPENSTACKPROVIDER__RLINKS = PROVIDER__RLINKS;
 
 	/**
-	 * The number of structural features of the '<em>Provideropenstack</em>' class.
+	 * The number of structural features of the '<em>Openstackprovider</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDEROPENSTACK_FEATURE_COUNT = PROVIDER_FEATURE_COUNT + 0;
+	int OPENSTACKPROVIDER_FEATURE_COUNT = PROVIDER_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Occi Create</em>' operation.
@@ -2572,7 +2572,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDEROPENSTACK___OCCI_CREATE = PROVIDER___OCCI_CREATE;
+	int OPENSTACKPROVIDER___OCCI_CREATE = PROVIDER___OCCI_CREATE;
 
 	/**
 	 * The operation id for the '<em>Occi Retrieve</em>' operation.
@@ -2581,7 +2581,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDEROPENSTACK___OCCI_RETRIEVE = PROVIDER___OCCI_RETRIEVE;
+	int OPENSTACKPROVIDER___OCCI_RETRIEVE = PROVIDER___OCCI_RETRIEVE;
 
 	/**
 	 * The operation id for the '<em>Occi Update</em>' operation.
@@ -2590,7 +2590,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDEROPENSTACK___OCCI_UPDATE = PROVIDER___OCCI_UPDATE;
+	int OPENSTACKPROVIDER___OCCI_UPDATE = PROVIDER___OCCI_UPDATE;
 
 	/**
 	 * The operation id for the '<em>Occi Delete</em>' operation.
@@ -2599,26 +2599,26 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDEROPENSTACK___OCCI_DELETE = PROVIDER___OCCI_DELETE;
+	int OPENSTACKPROVIDER___OCCI_DELETE = PROVIDER___OCCI_DELETE;
 
 	/**
-	 * The number of operations of the '<em>Provideropenstack</em>' class.
+	 * The number of operations of the '<em>Openstackprovider</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDEROPENSTACK_OPERATION_COUNT = PROVIDER_OPERATION_COUNT + 0;
+	int OPENSTACKPROVIDER_OPERATION_COUNT = PROVIDER_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.ProvideramazonImpl <em>Provideramazon</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.AmazonproviderImpl <em>Amazonprovider</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ProvideramazonImpl
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getProvideramazon()
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.AmazonproviderImpl
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getAmazonprovider()
 	 * @generated
 	 */
-	int PROVIDERAMAZON = 17;
+	int AMAZONPROVIDER = 17;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -2627,7 +2627,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERAMAZON__ID = PROVIDER__ID;
+	int AMAZONPROVIDER__ID = PROVIDER__ID;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -2636,7 +2636,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERAMAZON__TITLE = PROVIDER__TITLE;
+	int AMAZONPROVIDER__TITLE = PROVIDER__TITLE;
 
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' reference.
@@ -2645,7 +2645,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERAMAZON__KIND = PROVIDER__KIND;
+	int AMAZONPROVIDER__KIND = PROVIDER__KIND;
 
 	/**
 	 * The feature id for the '<em><b>Location</b></em>' attribute.
@@ -2654,7 +2654,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERAMAZON__LOCATION = PROVIDER__LOCATION;
+	int AMAZONPROVIDER__LOCATION = PROVIDER__LOCATION;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -2663,7 +2663,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERAMAZON__ATTRIBUTES = PROVIDER__ATTRIBUTES;
+	int AMAZONPROVIDER__ATTRIBUTES = PROVIDER__ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Mixins</b></em>' reference list.
@@ -2672,7 +2672,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERAMAZON__MIXINS = PROVIDER__MIXINS;
+	int AMAZONPROVIDER__MIXINS = PROVIDER__MIXINS;
 
 	/**
 	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
@@ -2681,7 +2681,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERAMAZON__PARTS = PROVIDER__PARTS;
+	int AMAZONPROVIDER__PARTS = PROVIDER__PARTS;
 
 	/**
 	 * The feature id for the '<em><b>Summary</b></em>' attribute.
@@ -2690,7 +2690,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERAMAZON__SUMMARY = PROVIDER__SUMMARY;
+	int AMAZONPROVIDER__SUMMARY = PROVIDER__SUMMARY;
 
 	/**
 	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
@@ -2699,7 +2699,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERAMAZON__LINKS = PROVIDER__LINKS;
+	int AMAZONPROVIDER__LINKS = PROVIDER__LINKS;
 
 	/**
 	 * The feature id for the '<em><b>Rlinks</b></em>' reference list.
@@ -2708,16 +2708,16 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERAMAZON__RLINKS = PROVIDER__RLINKS;
+	int AMAZONPROVIDER__RLINKS = PROVIDER__RLINKS;
 
 	/**
-	 * The number of structural features of the '<em>Provideramazon</em>' class.
+	 * The number of structural features of the '<em>Amazonprovider</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERAMAZON_FEATURE_COUNT = PROVIDER_FEATURE_COUNT + 0;
+	int AMAZONPROVIDER_FEATURE_COUNT = PROVIDER_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Occi Create</em>' operation.
@@ -2726,7 +2726,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERAMAZON___OCCI_CREATE = PROVIDER___OCCI_CREATE;
+	int AMAZONPROVIDER___OCCI_CREATE = PROVIDER___OCCI_CREATE;
 
 	/**
 	 * The operation id for the '<em>Occi Retrieve</em>' operation.
@@ -2735,7 +2735,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERAMAZON___OCCI_RETRIEVE = PROVIDER___OCCI_RETRIEVE;
+	int AMAZONPROVIDER___OCCI_RETRIEVE = PROVIDER___OCCI_RETRIEVE;
 
 	/**
 	 * The operation id for the '<em>Occi Update</em>' operation.
@@ -2744,7 +2744,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERAMAZON___OCCI_UPDATE = PROVIDER___OCCI_UPDATE;
+	int AMAZONPROVIDER___OCCI_UPDATE = PROVIDER___OCCI_UPDATE;
 
 	/**
 	 * The operation id for the '<em>Occi Delete</em>' operation.
@@ -2753,26 +2753,26 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERAMAZON___OCCI_DELETE = PROVIDER___OCCI_DELETE;
+	int AMAZONPROVIDER___OCCI_DELETE = PROVIDER___OCCI_DELETE;
 
 	/**
-	 * The number of operations of the '<em>Provideramazon</em>' class.
+	 * The number of operations of the '<em>Amazonprovider</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERAMAZON_OPERATION_COUNT = PROVIDER_OPERATION_COUNT + 0;
+	int AMAZONPROVIDER_OPERATION_COUNT = PROVIDER_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.ProviderazureImpl <em>Providerazure</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.AzureproviderImpl <em>Azureprovider</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ProviderazureImpl
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getProviderazure()
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.AzureproviderImpl
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getAzureprovider()
 	 * @generated
 	 */
-	int PROVIDERAZURE = 18;
+	int AZUREPROVIDER = 18;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -2781,7 +2781,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERAZURE__ID = PROVIDER__ID;
+	int AZUREPROVIDER__ID = PROVIDER__ID;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -2790,7 +2790,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERAZURE__TITLE = PROVIDER__TITLE;
+	int AZUREPROVIDER__TITLE = PROVIDER__TITLE;
 
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' reference.
@@ -2799,7 +2799,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERAZURE__KIND = PROVIDER__KIND;
+	int AZUREPROVIDER__KIND = PROVIDER__KIND;
 
 	/**
 	 * The feature id for the '<em><b>Location</b></em>' attribute.
@@ -2808,7 +2808,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERAZURE__LOCATION = PROVIDER__LOCATION;
+	int AZUREPROVIDER__LOCATION = PROVIDER__LOCATION;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -2817,7 +2817,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERAZURE__ATTRIBUTES = PROVIDER__ATTRIBUTES;
+	int AZUREPROVIDER__ATTRIBUTES = PROVIDER__ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Mixins</b></em>' reference list.
@@ -2826,7 +2826,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERAZURE__MIXINS = PROVIDER__MIXINS;
+	int AZUREPROVIDER__MIXINS = PROVIDER__MIXINS;
 
 	/**
 	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
@@ -2835,7 +2835,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERAZURE__PARTS = PROVIDER__PARTS;
+	int AZUREPROVIDER__PARTS = PROVIDER__PARTS;
 
 	/**
 	 * The feature id for the '<em><b>Summary</b></em>' attribute.
@@ -2844,7 +2844,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERAZURE__SUMMARY = PROVIDER__SUMMARY;
+	int AZUREPROVIDER__SUMMARY = PROVIDER__SUMMARY;
 
 	/**
 	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
@@ -2853,7 +2853,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERAZURE__LINKS = PROVIDER__LINKS;
+	int AZUREPROVIDER__LINKS = PROVIDER__LINKS;
 
 	/**
 	 * The feature id for the '<em><b>Rlinks</b></em>' reference list.
@@ -2862,16 +2862,16 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERAZURE__RLINKS = PROVIDER__RLINKS;
+	int AZUREPROVIDER__RLINKS = PROVIDER__RLINKS;
 
 	/**
-	 * The number of structural features of the '<em>Providerazure</em>' class.
+	 * The number of structural features of the '<em>Azureprovider</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERAZURE_FEATURE_COUNT = PROVIDER_FEATURE_COUNT + 0;
+	int AZUREPROVIDER_FEATURE_COUNT = PROVIDER_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Occi Create</em>' operation.
@@ -2880,7 +2880,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERAZURE___OCCI_CREATE = PROVIDER___OCCI_CREATE;
+	int AZUREPROVIDER___OCCI_CREATE = PROVIDER___OCCI_CREATE;
 
 	/**
 	 * The operation id for the '<em>Occi Retrieve</em>' operation.
@@ -2889,7 +2889,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERAZURE___OCCI_RETRIEVE = PROVIDER___OCCI_RETRIEVE;
+	int AZUREPROVIDER___OCCI_RETRIEVE = PROVIDER___OCCI_RETRIEVE;
 
 	/**
 	 * The operation id for the '<em>Occi Update</em>' operation.
@@ -2898,7 +2898,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERAZURE___OCCI_UPDATE = PROVIDER___OCCI_UPDATE;
+	int AZUREPROVIDER___OCCI_UPDATE = PROVIDER___OCCI_UPDATE;
 
 	/**
 	 * The operation id for the '<em>Occi Delete</em>' operation.
@@ -2907,16 +2907,16 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERAZURE___OCCI_DELETE = PROVIDER___OCCI_DELETE;
+	int AZUREPROVIDER___OCCI_DELETE = PROVIDER___OCCI_DELETE;
 
 	/**
-	 * The number of operations of the '<em>Providerazure</em>' class.
+	 * The number of operations of the '<em>Azureprovider</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDERAZURE_OPERATION_COUNT = PROVIDER_OPERATION_COUNT + 0;
+	int AZUREPROVIDER_OPERATION_COUNT = PROVIDER_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.ProviderinstancelinkImpl <em>Providerinstancelink</em>}' class.
@@ -4441,14 +4441,14 @@ public interface ModemoPackage extends EPackage {
 	int SWAPPINGPOLICY_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.SourcemigrationpolicityImpl <em>Sourcemigrationpolicity</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.SourcemigrationpolicyImpl <em>Sourcemigrationpolicy</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.SourcemigrationpolicityImpl
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getSourcemigrationpolicity()
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.SourcemigrationpolicyImpl
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getSourcemigrationpolicy()
 	 * @generated
 	 */
-	int SOURCEMIGRATIONPOLICITY = 38;
+	int SOURCEMIGRATIONPOLICY = 38;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -4457,7 +4457,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCEMIGRATIONPOLICITY__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
+	int SOURCEMIGRATIONPOLICY__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' container reference.
@@ -4466,7 +4466,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCEMIGRATIONPOLICITY__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
+	int SOURCEMIGRATIONPOLICY__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -4475,35 +4475,35 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCEMIGRATIONPOLICITY__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
+	int SOURCEMIGRATIONPOLICY__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
 
 	/**
-	 * The number of structural features of the '<em>Sourcemigrationpolicity</em>' class.
+	 * The number of structural features of the '<em>Sourcemigrationpolicy</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCEMIGRATIONPOLICITY_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
+	int SOURCEMIGRATIONPOLICY_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>Sourcemigrationpolicity</em>' class.
+	 * The number of operations of the '<em>Sourcemigrationpolicy</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCEMIGRATIONPOLICITY_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
+	int SOURCEMIGRATIONPOLICY_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.MigrationtypeImpl <em>Migrationtype</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.MigrationpolicyImpl <em>Migrationpolicy</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.MigrationtypeImpl
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getMigrationtype()
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.MigrationpolicyImpl
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getMigrationpolicy()
 	 * @generated
 	 */
-	int MIGRATIONTYPE = 41;
+	int MIGRATIONPOLICY = 41;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -4512,7 +4512,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MIGRATIONTYPE__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
+	int MIGRATIONPOLICY__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' container reference.
@@ -4521,7 +4521,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MIGRATIONTYPE__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
+	int MIGRATIONPOLICY__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -4530,25 +4530,25 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MIGRATIONTYPE__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
+	int MIGRATIONPOLICY__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
 
 	/**
-	 * The number of structural features of the '<em>Migrationtype</em>' class.
+	 * The number of structural features of the '<em>Migrationpolicy</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MIGRATIONTYPE_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
+	int MIGRATIONPOLICY_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>Migrationtype</em>' class.
+	 * The number of operations of the '<em>Migrationpolicy</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MIGRATIONTYPE_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
+	int MIGRATIONPOLICY_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.LivemigrationImpl <em>Livemigration</em>}' class.
@@ -4567,7 +4567,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LIVEMIGRATION__MIXIN = MIGRATIONTYPE__MIXIN;
+	int LIVEMIGRATION__MIXIN = MIGRATIONPOLICY__MIXIN;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' container reference.
@@ -4576,7 +4576,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LIVEMIGRATION__ENTITY = MIGRATIONTYPE__ENTITY;
+	int LIVEMIGRATION__ENTITY = MIGRATIONPOLICY__ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -4585,7 +4585,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LIVEMIGRATION__ATTRIBUTES = MIGRATIONTYPE__ATTRIBUTES;
+	int LIVEMIGRATION__ATTRIBUTES = MIGRATIONPOLICY__ATTRIBUTES;
 
 	/**
 	 * The number of structural features of the '<em>Livemigration</em>' class.
@@ -4594,7 +4594,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LIVEMIGRATION_FEATURE_COUNT = MIGRATIONTYPE_FEATURE_COUNT + 0;
+	int LIVEMIGRATION_FEATURE_COUNT = MIGRATIONPOLICY_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Livemigration</em>' class.
@@ -4603,7 +4603,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LIVEMIGRATION_OPERATION_COUNT = MIGRATIONTYPE_OPERATION_COUNT + 0;
+	int LIVEMIGRATION_OPERATION_COUNT = MIGRATIONPOLICY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.NonlivemigrationImpl <em>Nonlivemigration</em>}' class.
@@ -4622,7 +4622,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NONLIVEMIGRATION__MIXIN = MIGRATIONTYPE__MIXIN;
+	int NONLIVEMIGRATION__MIXIN = MIGRATIONPOLICY__MIXIN;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' container reference.
@@ -4631,7 +4631,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NONLIVEMIGRATION__ENTITY = MIGRATIONTYPE__ENTITY;
+	int NONLIVEMIGRATION__ENTITY = MIGRATIONPOLICY__ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -4640,7 +4640,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NONLIVEMIGRATION__ATTRIBUTES = MIGRATIONTYPE__ATTRIBUTES;
+	int NONLIVEMIGRATION__ATTRIBUTES = MIGRATIONPOLICY__ATTRIBUTES;
 
 	/**
 	 * The number of structural features of the '<em>Nonlivemigration</em>' class.
@@ -4649,7 +4649,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NONLIVEMIGRATION_FEATURE_COUNT = MIGRATIONTYPE_FEATURE_COUNT + 0;
+	int NONLIVEMIGRATION_FEATURE_COUNT = MIGRATIONPOLICY_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Nonlivemigration</em>' class.
@@ -4658,7 +4658,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NONLIVEMIGRATION_OPERATION_COUNT = MIGRATIONTYPE_OPERATION_COUNT + 0;
+	int NONLIVEMIGRATION_OPERATION_COUNT = MIGRATIONPOLICY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.DynamicmigrationpolicyImpl <em>Dynamicmigrationpolicy</em>}' class.
@@ -4677,7 +4677,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMICMIGRATIONPOLICY__MIXIN = SOURCEMIGRATIONPOLICITY__MIXIN;
+	int DYNAMICMIGRATIONPOLICY__MIXIN = SOURCEMIGRATIONPOLICY__MIXIN;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' container reference.
@@ -4686,7 +4686,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMICMIGRATIONPOLICY__ENTITY = SOURCEMIGRATIONPOLICITY__ENTITY;
+	int DYNAMICMIGRATIONPOLICY__ENTITY = SOURCEMIGRATIONPOLICY__ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -4695,7 +4695,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMICMIGRATIONPOLICY__ATTRIBUTES = SOURCEMIGRATIONPOLICITY__ATTRIBUTES;
+	int DYNAMICMIGRATIONPOLICY__ATTRIBUTES = SOURCEMIGRATIONPOLICY__ATTRIBUTES;
 
 	/**
 	 * The number of structural features of the '<em>Dynamicmigrationpolicy</em>' class.
@@ -4704,7 +4704,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMICMIGRATIONPOLICY_FEATURE_COUNT = SOURCEMIGRATIONPOLICITY_FEATURE_COUNT + 0;
+	int DYNAMICMIGRATIONPOLICY_FEATURE_COUNT = SOURCEMIGRATIONPOLICY_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Dynamicmigrationpolicy</em>' class.
@@ -4713,7 +4713,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMICMIGRATIONPOLICY_OPERATION_COUNT = SOURCEMIGRATIONPOLICITY_OPERATION_COUNT + 0;
+	int DYNAMICMIGRATIONPOLICY_OPERATION_COUNT = SOURCEMIGRATIONPOLICY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.ManualmigrationpolicyImpl <em>Manualmigrationpolicy</em>}' class.
@@ -4732,7 +4732,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANUALMIGRATIONPOLICY__MIXIN = SOURCEMIGRATIONPOLICITY__MIXIN;
+	int MANUALMIGRATIONPOLICY__MIXIN = SOURCEMIGRATIONPOLICY__MIXIN;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' container reference.
@@ -4741,7 +4741,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANUALMIGRATIONPOLICY__ENTITY = SOURCEMIGRATIONPOLICITY__ENTITY;
+	int MANUALMIGRATIONPOLICY__ENTITY = SOURCEMIGRATIONPOLICY__ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -4750,7 +4750,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANUALMIGRATIONPOLICY__ATTRIBUTES = SOURCEMIGRATIONPOLICITY__ATTRIBUTES;
+	int MANUALMIGRATIONPOLICY__ATTRIBUTES = SOURCEMIGRATIONPOLICY__ATTRIBUTES;
 
 	/**
 	 * The number of structural features of the '<em>Manualmigrationpolicy</em>' class.
@@ -4759,7 +4759,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANUALMIGRATIONPOLICY_FEATURE_COUNT = SOURCEMIGRATIONPOLICITY_FEATURE_COUNT + 0;
+	int MANUALMIGRATIONPOLICY_FEATURE_COUNT = SOURCEMIGRATIONPOLICY_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Manualmigrationpolicy</em>' class.
@@ -4768,62 +4768,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANUALMIGRATIONPOLICY_OPERATION_COUNT = SOURCEMIGRATIONPOLICITY_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.SlaImpl <em>Sla</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.SlaImpl
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getSla()
-	 * @generated
-	 */
-	int SLA = 44;
-
-	/**
-	 * The feature id for the '<em><b>Mixin</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SLA__MIXIN = DYNAMICMIGRATIONPOLICY__MIXIN;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SLA__ENTITY = DYNAMICMIGRATIONPOLICY__ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SLA__ATTRIBUTES = DYNAMICMIGRATIONPOLICY__ATTRIBUTES;
-
-	/**
-	 * The number of structural features of the '<em>Sla</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SLA_FEATURE_COUNT = DYNAMICMIGRATIONPOLICY_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Sla</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SLA_OPERATION_COUNT = DYNAMICMIGRATIONPOLICY_OPERATION_COUNT + 0;
+	int MANUALMIGRATIONPOLICY_OPERATION_COUNT = SOURCEMIGRATIONPOLICY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.LoadvolumeImpl <em>Loadvolume</em>}' class.
@@ -4833,7 +4778,7 @@ public interface ModemoPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getLoadvolume()
 	 * @generated
 	 */
-	int LOADVOLUME = 45;
+	int LOADVOLUME = 44;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -4888,7 +4833,7 @@ public interface ModemoPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getPower()
 	 * @generated
 	 */
-	int POWER = 46;
+	int POWER = 45;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -4936,61 +4881,6 @@ public interface ModemoPackage extends EPackage {
 	int POWER_OPERATION_COUNT = DYNAMICMIGRATIONPOLICY_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.ResourcewastageImpl <em>Resourcewastage</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ResourcewastageImpl
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getResourcewastage()
-	 * @generated
-	 */
-	int RESOURCEWASTAGE = 47;
-
-	/**
-	 * The feature id for the '<em><b>Mixin</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCEWASTAGE__MIXIN = DYNAMICMIGRATIONPOLICY__MIXIN;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCEWASTAGE__ENTITY = DYNAMICMIGRATIONPOLICY__ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCEWASTAGE__ATTRIBUTES = DYNAMICMIGRATIONPOLICY__ATTRIBUTES;
-
-	/**
-	 * The number of structural features of the '<em>Resourcewastage</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCEWASTAGE_FEATURE_COUNT = DYNAMICMIGRATIONPOLICY_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Resourcewastage</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCEWASTAGE_OPERATION_COUNT = DYNAMICMIGRATIONPOLICY_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.TargetmigrationpolicyImpl <em>Targetmigrationpolicy</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4998,7 +4888,7 @@ public interface ModemoPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getTargetmigrationpolicy()
 	 * @generated
 	 */
-	int TARGETMIGRATIONPOLICY = 48;
+	int TARGETMIGRATIONPOLICY = 46;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -5053,7 +4943,7 @@ public interface ModemoPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getAvailableresources()
 	 * @generated
 	 */
-	int AVAILABLERESOURCES = 49;
+	int AVAILABLERESOURCES = 47;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -5108,7 +4998,7 @@ public interface ModemoPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getManualtargetselection()
 	 * @generated
 	 */
-	int MANUALTARGETSELECTION = 50;
+	int MANUALTARGETSELECTION = 48;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -5156,14 +5046,14 @@ public interface ModemoPackage extends EPackage {
 	int MANUALTARGETSELECTION_OPERATION_COUNT = TARGETMIGRATIONPOLICY_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.AvailalbleresourcesorloadImpl <em>Availalbleresourcesorload</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.AvailableresourcesorloadImpl <em>Availableresourcesorload</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.AvailalbleresourcesorloadImpl
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getAvailalbleresourcesorload()
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.AvailableresourcesorloadImpl
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getAvailableresourcesorload()
 	 * @generated
 	 */
-	int AVAILALBLERESOURCESORLOAD = 51;
+	int AVAILABLERESOURCESORLOAD = 49;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -5172,7 +5062,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AVAILALBLERESOURCESORLOAD__MIXIN = TARGETMIGRATIONPOLICY__MIXIN;
+	int AVAILABLERESOURCESORLOAD__MIXIN = TARGETMIGRATIONPOLICY__MIXIN;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' container reference.
@@ -5181,7 +5071,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AVAILALBLERESOURCESORLOAD__ENTITY = TARGETMIGRATIONPOLICY__ENTITY;
+	int AVAILABLERESOURCESORLOAD__ENTITY = TARGETMIGRATIONPOLICY__ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -5190,25 +5080,25 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AVAILALBLERESOURCESORLOAD__ATTRIBUTES = TARGETMIGRATIONPOLICY__ATTRIBUTES;
+	int AVAILABLERESOURCESORLOAD__ATTRIBUTES = TARGETMIGRATIONPOLICY__ATTRIBUTES;
 
 	/**
-	 * The number of structural features of the '<em>Availalbleresourcesorload</em>' class.
+	 * The number of structural features of the '<em>Availableresourcesorload</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AVAILALBLERESOURCESORLOAD_FEATURE_COUNT = TARGETMIGRATIONPOLICY_FEATURE_COUNT + 0;
+	int AVAILABLERESOURCESORLOAD_FEATURE_COUNT = TARGETMIGRATIONPOLICY_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>Availalbleresourcesorload</em>' class.
+	 * The number of operations of the '<em>Availableresourcesorload</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AVAILALBLERESOURCESORLOAD_OPERATION_COUNT = TARGETMIGRATIONPOLICY_OPERATION_COUNT + 0;
+	int AVAILABLERESOURCESORLOAD_OPERATION_COUNT = TARGETMIGRATIONPOLICY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.TargetresponsetimeImpl <em>Targetresponsetime</em>}' class.
@@ -5218,7 +5108,7 @@ public interface ModemoPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getTargetresponsetime()
 	 * @generated
 	 */
-	int TARGETRESPONSETIME = 52;
+	int TARGETRESPONSETIME = 50;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -5273,7 +5163,7 @@ public interface ModemoPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getResponsetimemetric()
 	 * @generated
 	 */
-	int RESPONSETIMEMETRIC = 53;
+	int RESPONSETIMEMETRIC = 51;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -5330,14 +5220,14 @@ public interface ModemoPackage extends EPackage {
 	int RESPONSETIMEMETRIC_OPERATION_COUNT = METRIC_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.NetworkcontentionImpl <em>Networkcontention</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.LoadbalancerpolicyImpl <em>Loadbalancerpolicy</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.NetworkcontentionImpl
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getNetworkcontention()
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.LoadbalancerpolicyImpl
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getLoadbalancerpolicy()
 	 * @generated
 	 */
-	int NETWORKCONTENTION = 54;
+	int LOADBALANCERPOLICY = 52;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -5346,7 +5236,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NETWORKCONTENTION__MIXIN = DYNAMICMIGRATIONPOLICY__MIXIN;
+	int LOADBALANCERPOLICY__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' container reference.
@@ -5355,7 +5245,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NETWORKCONTENTION__ENTITY = DYNAMICMIGRATIONPOLICY__ENTITY;
+	int LOADBALANCERPOLICY__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -5364,98 +5254,43 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NETWORKCONTENTION__ATTRIBUTES = DYNAMICMIGRATIONPOLICY__ATTRIBUTES;
+	int LOADBALANCERPOLICY__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
 
 	/**
-	 * The number of structural features of the '<em>Networkcontention</em>' class.
+	 * The number of structural features of the '<em>Loadbalancerpolicy</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NETWORKCONTENTION_FEATURE_COUNT = DYNAMICMIGRATIONPOLICY_FEATURE_COUNT + 0;
+	int LOADBALANCERPOLICY_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>Networkcontention</em>' class.
+	 * The operation id for the '<em>Start</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NETWORKCONTENTION_OPERATION_COUNT = DYNAMICMIGRATIONPOLICY_OPERATION_COUNT + 0;
+	int LOADBALANCERPOLICY___START = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.LoadbalanceralgorithmImpl <em>Loadbalanceralgorithm</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.LoadbalanceralgorithmImpl
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getLoadbalanceralgorithm()
-	 * @generated
-	 */
-	int LOADBALANCERALGORITHM = 55;
-
-	/**
-	 * The feature id for the '<em><b>Mixin</b></em>' reference.
+	 * The operation id for the '<em>Stop</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOADBALANCERALGORITHM__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
+	int LOADBALANCERPOLICY___STOP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
+	 * The number of operations of the '<em>Loadbalancerpolicy</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOADBALANCERALGORITHM__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOADBALANCERALGORITHM__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
-
-	/**
-	 * The number of structural features of the '<em>Loadbalanceralgorithm</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOADBALANCERALGORITHM_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Apply</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOADBALANCERALGORITHM___APPLY = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Remove</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOADBALANCERALGORITHM___REMOVE = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Loadbalanceralgorithm</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOADBALANCERALGORITHM_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
+	int LOADBALANCERPOLICY_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.RoundrobinalgoImpl <em>Roundrobinalgo</em>}' class.
@@ -5465,7 +5300,7 @@ public interface ModemoPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getRoundrobinalgo()
 	 * @generated
 	 */
-	int ROUNDROBINALGO = 56;
+	int ROUNDROBINALGO = 53;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -5474,7 +5309,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROUNDROBINALGO__MIXIN = LOADBALANCERALGORITHM__MIXIN;
+	int ROUNDROBINALGO__MIXIN = LOADBALANCERPOLICY__MIXIN;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' container reference.
@@ -5483,7 +5318,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROUNDROBINALGO__ENTITY = LOADBALANCERALGORITHM__ENTITY;
+	int ROUNDROBINALGO__ENTITY = LOADBALANCERPOLICY__ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -5492,7 +5327,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROUNDROBINALGO__ATTRIBUTES = LOADBALANCERALGORITHM__ATTRIBUTES;
+	int ROUNDROBINALGO__ATTRIBUTES = LOADBALANCERPOLICY__ATTRIBUTES;
 
 	/**
 	 * The number of structural features of the '<em>Roundrobinalgo</em>' class.
@@ -5501,25 +5336,25 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROUNDROBINALGO_FEATURE_COUNT = LOADBALANCERALGORITHM_FEATURE_COUNT + 0;
+	int ROUNDROBINALGO_FEATURE_COUNT = LOADBALANCERPOLICY_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Apply</em>' operation.
+	 * The operation id for the '<em>Start</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROUNDROBINALGO___APPLY = LOADBALANCERALGORITHM___APPLY;
+	int ROUNDROBINALGO___START = LOADBALANCERPOLICY___START;
 
 	/**
-	 * The operation id for the '<em>Remove</em>' operation.
+	 * The operation id for the '<em>Stop</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROUNDROBINALGO___REMOVE = LOADBALANCERALGORITHM___REMOVE;
+	int ROUNDROBINALGO___STOP = LOADBALANCERPOLICY___STOP;
 
 	/**
 	 * The number of operations of the '<em>Roundrobinalgo</em>' class.
@@ -5528,7 +5363,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROUNDROBINALGO_OPERATION_COUNT = LOADBALANCERALGORITHM_OPERATION_COUNT + 0;
+	int ROUNDROBINALGO_OPERATION_COUNT = LOADBALANCERPOLICY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.LeastconnImpl <em>Leastconn</em>}' class.
@@ -5538,7 +5373,7 @@ public interface ModemoPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getLeastconn()
 	 * @generated
 	 */
-	int LEASTCONN = 57;
+	int LEASTCONN = 54;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -5547,7 +5382,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEASTCONN__MIXIN = LOADBALANCERALGORITHM__MIXIN;
+	int LEASTCONN__MIXIN = LOADBALANCERPOLICY__MIXIN;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' container reference.
@@ -5556,7 +5391,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEASTCONN__ENTITY = LOADBALANCERALGORITHM__ENTITY;
+	int LEASTCONN__ENTITY = LOADBALANCERPOLICY__ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -5565,7 +5400,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEASTCONN__ATTRIBUTES = LOADBALANCERALGORITHM__ATTRIBUTES;
+	int LEASTCONN__ATTRIBUTES = LOADBALANCERPOLICY__ATTRIBUTES;
 
 	/**
 	 * The number of structural features of the '<em>Leastconn</em>' class.
@@ -5574,25 +5409,25 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEASTCONN_FEATURE_COUNT = LOADBALANCERALGORITHM_FEATURE_COUNT + 0;
+	int LEASTCONN_FEATURE_COUNT = LOADBALANCERPOLICY_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Apply</em>' operation.
+	 * The operation id for the '<em>Start</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LEASTCONN___APPLY = LOADBALANCERALGORITHM___APPLY;
+	int LEASTCONN___START = LOADBALANCERPOLICY___START;
 
 	/**
-	 * The operation id for the '<em>Remove</em>' operation.
+	 * The operation id for the '<em>Stop</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LEASTCONN___REMOVE = LOADBALANCERALGORITHM___REMOVE;
+	int LEASTCONN___STOP = LOADBALANCERPOLICY___STOP;
 
 	/**
 	 * The number of operations of the '<em>Leastconn</em>' class.
@@ -5601,17 +5436,17 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LEASTCONN_OPERATION_COUNT = LOADBALANCERALGORITHM_OPERATION_COUNT + 0;
+	int LEASTCONN_OPERATION_COUNT = LOADBALANCERPOLICY_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.StickysessionsImpl <em>Stickysessions</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.LeasttrafficImpl <em>Leasttraffic</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.StickysessionsImpl
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getStickysessions()
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.LeasttrafficImpl
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getLeasttraffic()
 	 * @generated
 	 */
-	int STICKYSESSIONS = 58;
+	int LEASTTRAFFIC = 55;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -5620,7 +5455,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STICKYSESSIONS__MIXIN = LOADBALANCERALGORITHM__MIXIN;
+	int LEASTTRAFFIC__MIXIN = LOADBALANCERPOLICY__MIXIN;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' container reference.
@@ -5629,7 +5464,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STICKYSESSIONS__ENTITY = LOADBALANCERALGORITHM__ENTITY;
+	int LEASTTRAFFIC__ENTITY = LOADBALANCERPOLICY__ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -5638,43 +5473,43 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STICKYSESSIONS__ATTRIBUTES = LOADBALANCERALGORITHM__ATTRIBUTES;
+	int LEASTTRAFFIC__ATTRIBUTES = LOADBALANCERPOLICY__ATTRIBUTES;
 
 	/**
-	 * The number of structural features of the '<em>Stickysessions</em>' class.
+	 * The number of structural features of the '<em>Leasttraffic</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STICKYSESSIONS_FEATURE_COUNT = LOADBALANCERALGORITHM_FEATURE_COUNT + 0;
+	int LEASTTRAFFIC_FEATURE_COUNT = LOADBALANCERPOLICY_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Apply</em>' operation.
+	 * The operation id for the '<em>Start</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STICKYSESSIONS___APPLY = LOADBALANCERALGORITHM___APPLY;
+	int LEASTTRAFFIC___START = LOADBALANCERPOLICY___START;
 
 	/**
-	 * The operation id for the '<em>Remove</em>' operation.
+	 * The operation id for the '<em>Stop</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STICKYSESSIONS___REMOVE = LOADBALANCERALGORITHM___REMOVE;
+	int LEASTTRAFFIC___STOP = LOADBALANCERPOLICY___STOP;
 
 	/**
-	 * The number of operations of the '<em>Stickysessions</em>' class.
+	 * The number of operations of the '<em>Leasttraffic</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STICKYSESSIONS_OPERATION_COUNT = LOADBALANCERALGORITHM_OPERATION_COUNT + 0;
+	int LEASTTRAFFIC_OPERATION_COUNT = LOADBALANCERPOLICY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.WstaticrrImpl <em>Wstaticrr</em>}' class.
@@ -5684,7 +5519,7 @@ public interface ModemoPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getWstaticrr()
 	 * @generated
 	 */
-	int WSTATICRR = 59;
+	int WSTATICRR = 56;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -5693,7 +5528,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WSTATICRR__MIXIN = LOADBALANCERALGORITHM__MIXIN;
+	int WSTATICRR__MIXIN = LOADBALANCERPOLICY__MIXIN;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' container reference.
@@ -5702,7 +5537,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WSTATICRR__ENTITY = LOADBALANCERALGORITHM__ENTITY;
+	int WSTATICRR__ENTITY = LOADBALANCERPOLICY__ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -5711,7 +5546,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WSTATICRR__ATTRIBUTES = LOADBALANCERALGORITHM__ATTRIBUTES;
+	int WSTATICRR__ATTRIBUTES = LOADBALANCERPOLICY__ATTRIBUTES;
 
 	/**
 	 * The number of structural features of the '<em>Wstaticrr</em>' class.
@@ -5720,25 +5555,25 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WSTATICRR_FEATURE_COUNT = LOADBALANCERALGORITHM_FEATURE_COUNT + 0;
+	int WSTATICRR_FEATURE_COUNT = LOADBALANCERPOLICY_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Apply</em>' operation.
+	 * The operation id for the '<em>Start</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WSTATICRR___APPLY = LOADBALANCERALGORITHM___APPLY;
+	int WSTATICRR___START = LOADBALANCERPOLICY___START;
 
 	/**
-	 * The operation id for the '<em>Remove</em>' operation.
+	 * The operation id for the '<em>Stop</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WSTATICRR___REMOVE = LOADBALANCERALGORITHM___REMOVE;
+	int WSTATICRR___STOP = LOADBALANCERPOLICY___STOP;
 
 	/**
 	 * The number of operations of the '<em>Wstaticrr</em>' class.
@@ -5747,7 +5582,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WSTATICRR_OPERATION_COUNT = LOADBALANCERALGORITHM_OPERATION_COUNT + 0;
+	int WSTATICRR_OPERATION_COUNT = LOADBALANCERPOLICY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.SourceImpl <em>Source</em>}' class.
@@ -5757,7 +5592,7 @@ public interface ModemoPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getSource()
 	 * @generated
 	 */
-	int SOURCE = 60;
+	int SOURCE = 57;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -5766,7 +5601,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCE__MIXIN = LOADBALANCERALGORITHM__MIXIN;
+	int SOURCE__MIXIN = LOADBALANCERPOLICY__MIXIN;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' container reference.
@@ -5775,7 +5610,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCE__ENTITY = LOADBALANCERALGORITHM__ENTITY;
+	int SOURCE__ENTITY = LOADBALANCERPOLICY__ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -5784,7 +5619,7 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCE__ATTRIBUTES = LOADBALANCERALGORITHM__ATTRIBUTES;
+	int SOURCE__ATTRIBUTES = LOADBALANCERPOLICY__ATTRIBUTES;
 
 	/**
 	 * The number of structural features of the '<em>Source</em>' class.
@@ -5793,25 +5628,25 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCE_FEATURE_COUNT = LOADBALANCERALGORITHM_FEATURE_COUNT + 0;
+	int SOURCE_FEATURE_COUNT = LOADBALANCERPOLICY_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Apply</em>' operation.
+	 * The operation id for the '<em>Start</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCE___APPLY = LOADBALANCERALGORITHM___APPLY;
+	int SOURCE___START = LOADBALANCERPOLICY___START;
 
 	/**
-	 * The operation id for the '<em>Remove</em>' operation.
+	 * The operation id for the '<em>Stop</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCE___REMOVE = LOADBALANCERALGORITHM___REMOVE;
+	int SOURCE___STOP = LOADBALANCERPOLICY___STOP;
 
 	/**
 	 * The number of operations of the '<em>Source</em>' class.
@@ -5820,17 +5655,153 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCE_OPERATION_COUNT = LOADBALANCERALGORITHM_OPERATION_COUNT + 0;
+	int SOURCE_OPERATION_COUNT = LOADBALANCERPOLICY_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.TypeMetric <em>Type Metric</em>}' enum.
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.FirstImpl <em>First</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.TypeMetric
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getTypeMetric()
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.FirstImpl
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getFirst()
 	 * @generated
 	 */
-	int TYPE_METRIC = 61;
+	int FIRST = 58;
+
+	/**
+	 * The feature id for the '<em><b>Mixin</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIRST__MIXIN = LOADBALANCERPOLICY__MIXIN;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIRST__ENTITY = LOADBALANCERPOLICY__ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIRST__ATTRIBUTES = LOADBALANCERPOLICY__ATTRIBUTES;
+
+	/**
+	 * The number of structural features of the '<em>First</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIRST_FEATURE_COUNT = LOADBALANCERPOLICY_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Start</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIRST___START = LOADBALANCERPOLICY___START;
+
+	/**
+	 * The operation id for the '<em>Stop</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIRST___STOP = LOADBALANCERPOLICY___STOP;
+
+	/**
+	 * The number of operations of the '<em>First</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIRST_OPERATION_COUNT = LOADBALANCERPOLICY_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.LeastlatencyImpl <em>Leastlatency</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.LeastlatencyImpl
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getLeastlatency()
+	 * @generated
+	 */
+	int LEASTLATENCY = 59;
+
+	/**
+	 * The feature id for the '<em><b>Mixin</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEASTLATENCY__MIXIN = LOADBALANCERPOLICY__MIXIN;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEASTLATENCY__ENTITY = LOADBALANCERPOLICY__ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEASTLATENCY__ATTRIBUTES = LOADBALANCERPOLICY__ATTRIBUTES;
+
+	/**
+	 * The number of structural features of the '<em>Leastlatency</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEASTLATENCY_FEATURE_COUNT = LOADBALANCERPOLICY_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Start</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEASTLATENCY___START = LOADBALANCERPOLICY___START;
+
+	/**
+	 * The operation id for the '<em>Stop</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEASTLATENCY___STOP = LOADBALANCERPOLICY___STOP;
+
+	/**
+	 * The number of operations of the '<em>Leastlatency</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LEASTLATENCY_OPERATION_COUNT = LOADBALANCERPOLICY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.OperatorType <em>Operator Type</em>}' enum.
@@ -5840,7 +5811,7 @@ public interface ModemoPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getOperatorType()
 	 * @generated
 	 */
-	int OPERATOR_TYPE = 62;
+	int OPERATOR_TYPE = 60;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.ActionOperation <em>Action Operation</em>}' enum.
@@ -5850,7 +5821,7 @@ public interface ModemoPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getActionOperation()
 	 * @generated
 	 */
-	int ACTION_OPERATION = 63;
+	int ACTION_OPERATION = 61;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.ActionType <em>Action Type</em>}' enum.
@@ -5860,7 +5831,7 @@ public interface ModemoPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getActionType()
 	 * @generated
 	 */
-	int ACTION_TYPE = 64;
+	int ACTION_TYPE = 62;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.MetricTargetTracking <em>Metric Target Tracking</em>}' enum.
@@ -5870,7 +5841,7 @@ public interface ModemoPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getMetricTargetTracking()
 	 * @generated
 	 */
-	int METRIC_TARGET_TRACKING = 65;
+	int METRIC_TARGET_TRACKING = 63;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.cmf.occi.multicloud.modemo.Unit <em>Unit</em>}' enum.
@@ -5880,7 +5851,7 @@ public interface ModemoPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getUnit()
 	 * @generated
 	 */
-	int UNIT = 66;
+	int UNIT = 64;
 
 	/**
 	 * The meta object id for the '<em>Float</em>' data type.
@@ -5890,7 +5861,7 @@ public interface ModemoPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getFloat()
 	 * @generated
 	 */
-	int FLOAT = 67;
+	int FLOAT = 65;
 
 	/**
 	 * The meta object id for the '<em>Date</em>' data type.
@@ -5900,7 +5871,7 @@ public interface ModemoPackage extends EPackage {
 	 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getDate()
 	 * @generated
 	 */
-	int DATE = 68;
+	int DATE = 66;
 
 
 	/**
@@ -6349,44 +6320,44 @@ public interface ModemoPackage extends EPackage {
 	EClass getProviderlink();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.modemo.Providervmware <em>Providervmware</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.modemo.Vmwareprovider <em>Vmwareprovider</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Providervmware</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.Providervmware
+	 * @return the meta object for class '<em>Vmwareprovider</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.Vmwareprovider
 	 * @generated
 	 */
-	EClass getProvidervmware();
+	EClass getVmwareprovider();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.modemo.Provideropenstack <em>Provideropenstack</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.modemo.Openstackprovider <em>Openstackprovider</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Provideropenstack</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.Provideropenstack
+	 * @return the meta object for class '<em>Openstackprovider</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.Openstackprovider
 	 * @generated
 	 */
-	EClass getProvideropenstack();
+	EClass getOpenstackprovider();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.modemo.Provideramazon <em>Provideramazon</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.modemo.Amazonprovider <em>Amazonprovider</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Provideramazon</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.Provideramazon
+	 * @return the meta object for class '<em>Amazonprovider</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.Amazonprovider
 	 * @generated
 	 */
-	EClass getProvideramazon();
+	EClass getAmazonprovider();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.modemo.Providerazure <em>Providerazure</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.modemo.Azureprovider <em>Azureprovider</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Providerazure</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.Providerazure
+	 * @return the meta object for class '<em>Azureprovider</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.Azureprovider
 	 * @generated
 	 */
-	EClass getProviderazure();
+	EClass getAzureprovider();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.modemo.Providerinstancelink <em>Providerinstancelink</em>}'.
@@ -6784,14 +6755,14 @@ public interface ModemoPackage extends EPackage {
 	EClass getSwappingpolicy();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.modemo.Sourcemigrationpolicity <em>Sourcemigrationpolicity</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.modemo.Sourcemigrationpolicy <em>Sourcemigrationpolicy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Sourcemigrationpolicity</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.Sourcemigrationpolicity
+	 * @return the meta object for class '<em>Sourcemigrationpolicy</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.Sourcemigrationpolicy
 	 * @generated
 	 */
-	EClass getSourcemigrationpolicity();
+	EClass getSourcemigrationpolicy();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.modemo.Livemigration <em>Livemigration</em>}'.
@@ -6814,14 +6785,14 @@ public interface ModemoPackage extends EPackage {
 	EClass getNonlivemigration();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.modemo.Migrationtype <em>Migrationtype</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.modemo.Migrationpolicy <em>Migrationpolicy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Migrationtype</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.Migrationtype
+	 * @return the meta object for class '<em>Migrationpolicy</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.Migrationpolicy
 	 * @generated
 	 */
-	EClass getMigrationtype();
+	EClass getMigrationpolicy();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.modemo.Dynamicmigrationpolicy <em>Dynamicmigrationpolicy</em>}'.
@@ -6844,16 +6815,6 @@ public interface ModemoPackage extends EPackage {
 	EClass getManualmigrationpolicy();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.modemo.Sla <em>Sla</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Sla</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.Sla
-	 * @generated
-	 */
-	EClass getSla();
-
-	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.modemo.Loadvolume <em>Loadvolume</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6872,16 +6833,6 @@ public interface ModemoPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getPower();
-
-	/**
-	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.modemo.Resourcewastage <em>Resourcewastage</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Resourcewastage</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.Resourcewastage
-	 * @generated
-	 */
-	EClass getResourcewastage();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.modemo.Targetmigrationpolicy <em>Targetmigrationpolicy</em>}'.
@@ -6914,14 +6865,14 @@ public interface ModemoPackage extends EPackage {
 	EClass getManualtargetselection();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.modemo.Availalbleresourcesorload <em>Availalbleresourcesorload</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.modemo.Availableresourcesorload <em>Availableresourcesorload</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Availalbleresourcesorload</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.Availalbleresourcesorload
+	 * @return the meta object for class '<em>Availableresourcesorload</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.Availableresourcesorload
 	 * @generated
 	 */
-	EClass getAvailalbleresourcesorload();
+	EClass getAvailableresourcesorload();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.modemo.Targetresponsetime <em>Targetresponsetime</em>}'.
@@ -6944,44 +6895,34 @@ public interface ModemoPackage extends EPackage {
 	EClass getResponsetimemetric();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.modemo.Networkcontention <em>Networkcontention</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.modemo.Loadbalancerpolicy <em>Loadbalancerpolicy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Networkcontention</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.Networkcontention
+	 * @return the meta object for class '<em>Loadbalancerpolicy</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.Loadbalancerpolicy
 	 * @generated
 	 */
-	EClass getNetworkcontention();
+	EClass getLoadbalancerpolicy();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.modemo.Loadbalanceralgorithm <em>Loadbalanceralgorithm</em>}'.
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.modemo.Loadbalancerpolicy#start() <em>Start</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Loadbalanceralgorithm</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.Loadbalanceralgorithm
+	 * @return the meta object for the '<em>Start</em>' operation.
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.Loadbalancerpolicy#start()
 	 * @generated
 	 */
-	EClass getLoadbalanceralgorithm();
+	EOperation getLoadbalancerpolicy__Start();
 
 	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.modemo.Loadbalanceralgorithm#apply() <em>Apply</em>}' operation.
+	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.modemo.Loadbalancerpolicy#stop() <em>Stop</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Apply</em>' operation.
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.Loadbalanceralgorithm#apply()
+	 * @return the meta object for the '<em>Stop</em>' operation.
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.Loadbalancerpolicy#stop()
 	 * @generated
 	 */
-	EOperation getLoadbalanceralgorithm__Apply();
-
-	/**
-	 * Returns the meta object for the '{@link org.eclipse.cmf.occi.multicloud.modemo.Loadbalanceralgorithm#remove() <em>Remove</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Remove</em>' operation.
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.Loadbalanceralgorithm#remove()
-	 * @generated
-	 */
-	EOperation getLoadbalanceralgorithm__Remove();
+	EOperation getLoadbalancerpolicy__Stop();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.modemo.Roundrobinalgo <em>Roundrobinalgo</em>}'.
@@ -7004,14 +6945,14 @@ public interface ModemoPackage extends EPackage {
 	EClass getLeastconn();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.modemo.Stickysessions <em>Stickysessions</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.modemo.Leasttraffic <em>Leasttraffic</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Stickysessions</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.Stickysessions
+	 * @return the meta object for class '<em>Leasttraffic</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.Leasttraffic
 	 * @generated
 	 */
-	EClass getStickysessions();
+	EClass getLeasttraffic();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.modemo.Wstaticrr <em>Wstaticrr</em>}'.
@@ -7034,14 +6975,24 @@ public interface ModemoPackage extends EPackage {
 	EClass getSource();
 
 	/**
-	 * Returns the meta object for enum '{@link org.eclipse.cmf.occi.multicloud.modemo.TypeMetric <em>Type Metric</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.modemo.First <em>First</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Type Metric</em>'.
-	 * @see org.eclipse.cmf.occi.multicloud.modemo.TypeMetric
+	 * @return the meta object for class '<em>First</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.First
 	 * @generated
 	 */
-	EEnum getTypeMetric();
+	EClass getFirst();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.cmf.occi.multicloud.modemo.Leastlatency <em>Leastlatency</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Leastlatency</em>'.
+	 * @see org.eclipse.cmf.occi.multicloud.modemo.Leastlatency
+	 * @generated
+	 */
+	EClass getLeastlatency();
 
 	/**
 	 * Returns the meta object for enum '{@link org.eclipse.cmf.occi.multicloud.modemo.OperatorType <em>Operator Type</em>}'.
@@ -7505,44 +7456,44 @@ public interface ModemoPackage extends EPackage {
 		EClass PROVIDERLINK = eINSTANCE.getProviderlink();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.ProvidervmwareImpl <em>Providervmware</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.VmwareproviderImpl <em>Vmwareprovider</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ProvidervmwareImpl
-		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getProvidervmware()
+		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.VmwareproviderImpl
+		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getVmwareprovider()
 		 * @generated
 		 */
-		EClass PROVIDERVMWARE = eINSTANCE.getProvidervmware();
+		EClass VMWAREPROVIDER = eINSTANCE.getVmwareprovider();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.ProvideropenstackImpl <em>Provideropenstack</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.OpenstackproviderImpl <em>Openstackprovider</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ProvideropenstackImpl
-		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getProvideropenstack()
+		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.OpenstackproviderImpl
+		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getOpenstackprovider()
 		 * @generated
 		 */
-		EClass PROVIDEROPENSTACK = eINSTANCE.getProvideropenstack();
+		EClass OPENSTACKPROVIDER = eINSTANCE.getOpenstackprovider();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.ProvideramazonImpl <em>Provideramazon</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.AmazonproviderImpl <em>Amazonprovider</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ProvideramazonImpl
-		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getProvideramazon()
+		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.AmazonproviderImpl
+		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getAmazonprovider()
 		 * @generated
 		 */
-		EClass PROVIDERAMAZON = eINSTANCE.getProvideramazon();
+		EClass AMAZONPROVIDER = eINSTANCE.getAmazonprovider();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.ProviderazureImpl <em>Providerazure</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.AzureproviderImpl <em>Azureprovider</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ProviderazureImpl
-		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getProviderazure()
+		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.AzureproviderImpl
+		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getAzureprovider()
 		 * @generated
 		 */
-		EClass PROVIDERAZURE = eINSTANCE.getProviderazure();
+		EClass AZUREPROVIDER = eINSTANCE.getAzureprovider();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.ProviderinstancelinkImpl <em>Providerinstancelink</em>}' class.
@@ -7887,14 +7838,14 @@ public interface ModemoPackage extends EPackage {
 		EClass SWAPPINGPOLICY = eINSTANCE.getSwappingpolicy();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.SourcemigrationpolicityImpl <em>Sourcemigrationpolicity</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.SourcemigrationpolicyImpl <em>Sourcemigrationpolicy</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.SourcemigrationpolicityImpl
-		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getSourcemigrationpolicity()
+		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.SourcemigrationpolicyImpl
+		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getSourcemigrationpolicy()
 		 * @generated
 		 */
-		EClass SOURCEMIGRATIONPOLICITY = eINSTANCE.getSourcemigrationpolicity();
+		EClass SOURCEMIGRATIONPOLICY = eINSTANCE.getSourcemigrationpolicy();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.LivemigrationImpl <em>Livemigration</em>}' class.
@@ -7917,14 +7868,14 @@ public interface ModemoPackage extends EPackage {
 		EClass NONLIVEMIGRATION = eINSTANCE.getNonlivemigration();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.MigrationtypeImpl <em>Migrationtype</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.MigrationpolicyImpl <em>Migrationpolicy</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.MigrationtypeImpl
-		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getMigrationtype()
+		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.MigrationpolicyImpl
+		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getMigrationpolicy()
 		 * @generated
 		 */
-		EClass MIGRATIONTYPE = eINSTANCE.getMigrationtype();
+		EClass MIGRATIONPOLICY = eINSTANCE.getMigrationpolicy();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.DynamicmigrationpolicyImpl <em>Dynamicmigrationpolicy</em>}' class.
@@ -7947,16 +7898,6 @@ public interface ModemoPackage extends EPackage {
 		EClass MANUALMIGRATIONPOLICY = eINSTANCE.getManualmigrationpolicy();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.SlaImpl <em>Sla</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.SlaImpl
-		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getSla()
-		 * @generated
-		 */
-		EClass SLA = eINSTANCE.getSla();
-
-		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.LoadvolumeImpl <em>Loadvolume</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -7975,16 +7916,6 @@ public interface ModemoPackage extends EPackage {
 		 * @generated
 		 */
 		EClass POWER = eINSTANCE.getPower();
-
-		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.ResourcewastageImpl <em>Resourcewastage</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ResourcewastageImpl
-		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getResourcewastage()
-		 * @generated
-		 */
-		EClass RESOURCEWASTAGE = eINSTANCE.getResourcewastage();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.TargetmigrationpolicyImpl <em>Targetmigrationpolicy</em>}' class.
@@ -8017,14 +7948,14 @@ public interface ModemoPackage extends EPackage {
 		EClass MANUALTARGETSELECTION = eINSTANCE.getManualtargetselection();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.AvailalbleresourcesorloadImpl <em>Availalbleresourcesorload</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.AvailableresourcesorloadImpl <em>Availableresourcesorload</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.AvailalbleresourcesorloadImpl
-		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getAvailalbleresourcesorload()
+		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.AvailableresourcesorloadImpl
+		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getAvailableresourcesorload()
 		 * @generated
 		 */
-		EClass AVAILALBLERESOURCESORLOAD = eINSTANCE.getAvailalbleresourcesorload();
+		EClass AVAILABLERESOURCESORLOAD = eINSTANCE.getAvailableresourcesorload();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.TargetresponsetimeImpl <em>Targetresponsetime</em>}' class.
@@ -8047,40 +7978,30 @@ public interface ModemoPackage extends EPackage {
 		EClass RESPONSETIMEMETRIC = eINSTANCE.getResponsetimemetric();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.NetworkcontentionImpl <em>Networkcontention</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.LoadbalancerpolicyImpl <em>Loadbalancerpolicy</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.NetworkcontentionImpl
-		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getNetworkcontention()
+		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.LoadbalancerpolicyImpl
+		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getLoadbalancerpolicy()
 		 * @generated
 		 */
-		EClass NETWORKCONTENTION = eINSTANCE.getNetworkcontention();
+		EClass LOADBALANCERPOLICY = eINSTANCE.getLoadbalancerpolicy();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.LoadbalanceralgorithmImpl <em>Loadbalanceralgorithm</em>}' class.
+		 * The meta object literal for the '<em><b>Start</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.LoadbalanceralgorithmImpl
-		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getLoadbalanceralgorithm()
 		 * @generated
 		 */
-		EClass LOADBALANCERALGORITHM = eINSTANCE.getLoadbalanceralgorithm();
+		EOperation LOADBALANCERPOLICY___START = eINSTANCE.getLoadbalancerpolicy__Start();
 
 		/**
-		 * The meta object literal for the '<em><b>Apply</b></em>' operation.
+		 * The meta object literal for the '<em><b>Stop</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation LOADBALANCERALGORITHM___APPLY = eINSTANCE.getLoadbalanceralgorithm__Apply();
-
-		/**
-		 * The meta object literal for the '<em><b>Remove</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation LOADBALANCERALGORITHM___REMOVE = eINSTANCE.getLoadbalanceralgorithm__Remove();
+		EOperation LOADBALANCERPOLICY___STOP = eINSTANCE.getLoadbalancerpolicy__Stop();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.RoundrobinalgoImpl <em>Roundrobinalgo</em>}' class.
@@ -8103,14 +8024,14 @@ public interface ModemoPackage extends EPackage {
 		EClass LEASTCONN = eINSTANCE.getLeastconn();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.StickysessionsImpl <em>Stickysessions</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.LeasttrafficImpl <em>Leasttraffic</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.StickysessionsImpl
-		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getStickysessions()
+		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.LeasttrafficImpl
+		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getLeasttraffic()
 		 * @generated
 		 */
-		EClass STICKYSESSIONS = eINSTANCE.getStickysessions();
+		EClass LEASTTRAFFIC = eINSTANCE.getLeasttraffic();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.WstaticrrImpl <em>Wstaticrr</em>}' class.
@@ -8133,14 +8054,24 @@ public interface ModemoPackage extends EPackage {
 		EClass SOURCE = eINSTANCE.getSource();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.modemo.TypeMetric <em>Type Metric</em>}' enum.
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.FirstImpl <em>First</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.cmf.occi.multicloud.modemo.TypeMetric
-		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getTypeMetric()
+		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.FirstImpl
+		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getFirst()
 		 * @generated
 		 */
-		EEnum TYPE_METRIC = eINSTANCE.getTypeMetric();
+		EClass FIRST = eINSTANCE.getFirst();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.modemo.impl.LeastlatencyImpl <em>Leastlatency</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.LeastlatencyImpl
+		 * @see org.eclipse.cmf.occi.multicloud.modemo.impl.ModemoPackageImpl#getLeastlatency()
+		 * @generated
+		 */
+		EClass LEASTLATENCY = eINSTANCE.getLeastlatency();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.cmf.occi.multicloud.modemo.OperatorType <em>Operator Type</em>}' enum.

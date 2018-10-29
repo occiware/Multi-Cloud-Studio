@@ -24,5 +24,5 @@ import org.eclipse.cmf.occi.core.MixinBase;
  * @model
  * @generated
  */
-public interface Livemigration extends Migrationtype, MixinBase {
+public interface Livemigration extends Migrationpolicy, MixinBase {
 } // Livemigration
